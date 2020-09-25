@@ -562,6 +562,10 @@ p {
     }
     .row:first-child {
       margin-bottom: 16px;
+      a:last-child {
+        padding-right: 56px;
+        background: url('../image/github.svg') 0 0 no-repeat;
+      }
     }
     .row:last-child {
       font-size: 12px;
@@ -867,9 +871,10 @@ p {
       li {
         width: 50%;
         margin-bottom: 40px;
+        background-position: left center !important;
       }
       li:nth-child(2n) {
-        background-position: right center;
+        background-position: right center !important;
       }
     }
   }
@@ -918,14 +923,21 @@ p {
         display: flex;
         flex-direction: column;
         a {
-          margin-bottom: 20px;
+          margin: 0 0 20px 0;
           border-right: none;
+          padding: 0;
         }
       }
       .row:first-child {
         font-size: 16px;
         line-height: 19px;
         border-bottom: 1px solid #1F2B32;
+        a:last-child {
+          width: 100%;
+          height: 30px;
+          padding: 0;
+          background-position: center center;
+        }
       }
       .row:last-child a {
         margin-bottom: 0;

@@ -545,6 +545,10 @@ p {
 .footer .left .row:first-child {
   margin-bottom: 16px;
 }
+.footer .left .row:first-child a:last-child {
+  padding-right: 56px;
+  background: url("../image/github.svg") 0 0 no-repeat;
+}
 .footer .left .row:last-child {
   font-size: 12px;
   line-height: 15px;
@@ -844,9 +848,10 @@ p {
   .section-partners .partner li {
     width: 50%;
     margin-bottom: 40px;
+    background-position: left center !important;
   }
   .section-partners .partner li:nth-child(2n) {
-    background-position: right center;
+    background-position: right center !important;
   }
 
   .section-secure h2 {
@@ -892,13 +897,20 @@ p {
     flex-direction: column;
   }
   .footer .left .row a {
-    margin-bottom: 20px;
+    margin: 0 0 20px 0;
     border-right: none;
+    padding: 0;
   }
   .footer .left .row:first-child {
     font-size: 16px;
     line-height: 19px;
     border-bottom: 1px solid #1F2B32;
+  }
+  .footer .left .row:first-child a:last-child {
+    width: 100%;
+    height: 30px;
+    padding: 0;
+    background-position: center center;
   }
   .footer .left .row:last-child a {
     margin-bottom: 0;
