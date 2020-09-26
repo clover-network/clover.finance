@@ -5,13 +5,17 @@
     <ul class='side-nav'></ul>
   </div>`)
 
-  const navs = ['Home', 'Features', 'Service', 'CLV', 'More', 'Partners'];
-  const path = ['#home', '#features', '#service', '#clv', '#more', '#partners'];
+  const navs = ['Home', 'Features', 'Service', 'CLV', 'More'];
+  const path = ['#home', '#features', '#service', '#clv', '#more'];
   const $nav = navs.map((item, index) => {
-    return `<li><a href='${path[index]}'>${item}</a></li>`;
+    return `<li class='mobile-nav-link'><a href='${path[index]}'>${item}</a></li>`;
   });
   $('.nav').html($nav).after(`<div class='side-bar'></div>`);
   $('.side-nav').html($nav);
+
+  $('.mobile-nav-link').click(() => {
+    $sideScreen.fadeOut();
+  })
 
   $sideScreen = $('.side-screen');
   $close = $('.side-screen .close');

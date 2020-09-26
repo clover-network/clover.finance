@@ -403,7 +403,7 @@ p {
 
 .section-governed {
   padding-top: 120px;
-  padding-bottom: 270px;
+  padding-bottom: 40px;
   background: url("../image/lines.svg") 0 140px no-repeat;
 }
 .section-governed h2 {
@@ -460,7 +460,7 @@ p {
 }
 .section-partners .partner {
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 620px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -481,41 +481,59 @@ p {
 .section-partners .partner li:nth-child(3n) {
   background-position: right center;
 }
-.section-partners .partner li:nth-child(1) {
-  background-image: url("../image/partners/bithumb.svg");
+.section-partners .partner li.logo-polkadot {
+  background-image: url("../image/partners/polkadot.svg");
 }
-.section-partners .partner li:nth-child(1):hover {
-  background-image: url("../image/partners/bithumb-hover.svg");
+.section-partners .partner li.logo-polkadot:hover {
+  background-image: url("../image/partners/polkadot-hover.svg");
 }
-.section-partners .partner li:nth-child(2) {
-  background-image: url("../image/partners/bifrost.svg");
+.section-partners .partner li.logo-web3 {
+  background-image: url("../image/partners/web3.svg");
 }
-.section-partners .partner li:nth-child(2):hover {
-  background-image: url("../image/partners/bifrost-hover.svg");
+.section-partners .partner li.logo-web3:hover {
+  background-image: url("../image/partners/web3-hover.svg");
 }
-.section-partners .partner li:nth-child(3) {
-  background-image: url("../image/partners/chainx.svg");
+.section-partners .partner li.logo-parity {
+  background-image: url("../image/partners/parity.svg");
 }
-.section-partners .partner li:nth-child(3):hover {
-  background-image: url("../image/partners/chainx-hover.svg");
+.section-partners .partner li.logo-parity:hover {
+  background-image: url("../image/partners/parity-hover.svg");
 }
-.section-partners .partner li:nth-child(4) {
-  background-image: url("../image/partners/stafi.svg");
-}
-.section-partners .partner li:nth-child(4):hover {
-  background-image: url("../image/partners/stafi-hover.svg");
-}
-.section-partners .partner li:nth-child(5) {
-  background-image: url("../image/partners/plasm.svg");
-}
-.section-partners .partner li:nth-child(5):hover {
-  background-image: url("../image/partners/plasm-hover.svg");
-}
-.section-partners .partner li:nth-child(6) {
+.section-partners .partner li.logo-crust {
   background-image: url("../image/partners/crust.svg");
 }
-.section-partners .partner li:nth-child(6):hover {
+.section-partners .partner li.logo-crust:hover {
   background-image: url("../image/partners/crust-hover.svg");
+}
+.section-partners .partner li.logo-bifrost {
+  background-image: url("../image/partners/bifrost.svg");
+}
+.section-partners .partner li.logo-bifrost:hover {
+  background-image: url("../image/partners/bifrost-hover.svg");
+}
+.section-partners .partner li.logo-stafi {
+  background-image: url("../image/partners/stafi.svg");
+}
+.section-partners .partner li.logo-stafi:hover {
+  background-image: url("../image/partners/stafi-hover.svg");
+}
+.section-partners .partner li.logo-plasm {
+  background-image: url("../image/partners/plasm.svg");
+}
+.section-partners .partner li.logo-plasm:hover {
+  background-image: url("../image/partners/plasm-hover.svg");
+}
+.section-partners .partner li.logo-chainx {
+  background-image: url("../image/partners/chainx.svg");
+}
+.section-partners .partner li.logo-chainx:hover {
+  background-image: url("../image/partners/chainx-hover.svg");
+}
+.section-partners .partner li.logo-acala {
+  background-image: url("../image/partners/acala.svg");
+}
+.section-partners .partner li.logo-acala:hover {
+  background-image: url("../image/partners/acala-hover.svg");
 }
 
 .footer {
@@ -691,7 +709,11 @@ p {
 
 @media only screen and (max-width: 1280px) {
   .content {
-    padding: 40px 20px;
+    padding: 70px 20px;
+  }
+
+  .head .logo {
+    margin-left: 20px;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -764,7 +786,7 @@ p {
   }
 
   .section-secure {
-    padding-top: 40px;
+    padding-top: 70px;
   }
   .section-secure h2 {
     margin-bottom: 40px;
@@ -799,7 +821,7 @@ p {
   }
 
   .section-more .content {
-    padding: 40px 0;
+    padding: 70px 0;
     background: url("../image/circle-part.svg") 25px 30px no-repeat, url("../image/lines.svg") 100% 100% no-repeat;
   }
   .section-more .more-list {
@@ -851,10 +873,34 @@ p {
   .section-partners .partner li {
     width: 50%;
     margin-bottom: 40px;
-    background-position: left center !important;
+    background-position: center center !important;
   }
-  .section-partners .partner li:nth-child(2n) {
-    background-position: right center !important;
+  .section-partners .partner li.logo-polkadot {
+    background-size: 80% 73%;
+  }
+  .section-partners .partner li.logo-web3 {
+    background-size: 79% 78%;
+  }
+  .section-partners .partner li.logo-parity {
+    background-size: 79% 79%;
+  }
+  .section-partners .partner li.logo-crust {
+    background-size: 71% 72%;
+  }
+  .section-partners .partner li.logo-bifrost {
+    background-size: 71% 71%;
+  }
+  .section-partners .partner li.logo-stafi {
+    background-size: 71% 72%;
+  }
+  .section-partners .partner li.logo-plasm {
+    background-size: 71% 71%;
+  }
+  .section-partners .partner li.logo-chainx {
+    background-size: 62% 62%;
+  }
+  .section-partners .partner li.logo-acala {
+    background-size: 80% 80%;
   }
 
   .section-secure h2 {
