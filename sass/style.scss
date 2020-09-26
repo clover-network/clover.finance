@@ -198,7 +198,8 @@ p {
     width: 50%;
     height: 100%;
     padding-top: 172px;
-    background: url('../image/circle-small.svg') 0 117px no-repeat;
+    background: url('../image/circle-top.png') 0 117px no-repeat;
+    background-size: 120px 120px;
     h1 {
       font-weight: bold;
       font-size: 64px;
@@ -369,8 +370,8 @@ p {
     padding-top: 100px;
     padding-bottom: 130px;
     padding-left: 80px;
-    background: url('../image/circle-part.svg') 0 100% no-repeat,
-      url('../image/circle-large.svg') 100% 10px no-repeat,
+    background: url('../image/circle-left.png') 30px 86% / 202px 170px no-repeat ,
+      url('../image/circle-right.png') 100% 10px / 308px 308px no-repeat,
       url('../image/lines.svg') 100% 100% no-repeat;
   }
   h2 {
@@ -840,7 +841,7 @@ p {
   .section-more {
     .content {
       padding: 70px 0;
-      background: url('../image/circle-part.svg') 25px 30px no-repeat,
+      background: url('../image/circle-left.png') 25px 30px / 202px 170px no-repeat,
         url('../image/lines.svg') 100% 100% no-repeat;
     }
     .more-list {
