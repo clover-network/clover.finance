@@ -461,7 +461,7 @@ p {
 }
 .section-partners .partner {
   margin: 0 auto;
-  max-width: 620px;
+  max-width: 800px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -473,13 +473,13 @@ p {
   height: 38px;
   background: url() center center no-repeat;
   cursor: pointer;
-  width: 33%;
+  width: 25%;
   margin-bottom: 68px;
 }
-.section-partners .partner li:nth-child(3n+1) {
+.section-partners .partner li:nth-child(4n+1) {
   background-position: left center;
 }
-.section-partners .partner li:nth-child(3n) {
+.section-partners .partner li:nth-child(4n) {
   background-position: right center;
 }
 .section-partners .partner li.logo-polkadot {
@@ -518,6 +518,12 @@ p {
 .section-partners .partner li.logo-stafi:hover {
   background-image: url("../image/partners/stafi-hover.svg");
 }
+.section-partners .partner li.logo-kusama {
+  background-image: url("../image/partners/kusama.svg");
+}
+.section-partners .partner li.logo-kusama:hover {
+  background-image: url("../image/partners/kusama-hover.svg");
+}
 .section-partners .partner li.logo-plasm {
   background-image: url("../image/partners/plasm.svg");
 }
@@ -535,6 +541,12 @@ p {
 }
 .section-partners .partner li.logo-acala:hover {
   background-image: url("../image/partners/acala-hover.svg");
+}
+.section-partners .partner li.logo-phala {
+  background-image: url("../image/partners/phala.svg");
+}
+.section-partners .partner li.logo-phala:hover {
+  background-image: url("../image/partners/phala-hover.svg");
 }
 
 .footer {
@@ -715,6 +727,10 @@ p {
 
   .head .logo {
     margin-left: 20px;
+  }
+
+  .section-main {
+    padding-top: 0;
   }
 }
 @media only screen and (max-width: 480px) {
