@@ -420,14 +420,13 @@ p {
 }
 .section-governed .govern {
   display: flex;
-  align-items: flex-start;
-  align-items: flex-end;
+  align-items: stretch;
   margin-bottom: 40px;
   padding-top: 30px;
 }
 .section-governed .govern dl {
   width: 25%;
-  height: 340px;
+  min-height: 340px;
   background-color: #1F2B32;
   margin-right: 20px;
   padding: 40px 20px;
@@ -449,9 +448,7 @@ p {
 }
 .section-governed .govern .govern-list dl {
   width: 100%;
-  height: 160px;
-}
-.section-governed .govern .govern-list dl:first-child {
+  min-height: calc(50% - 10px);
   margin-bottom: 20px;
 }
 
@@ -481,6 +478,12 @@ p {
 }
 .section-partners .partner li:nth-child(4n) {
   background-position: right center;
+}
+.section-partners .partner li.logo-bithumb {
+  background-image: url("../image/partners/bithumb.svg");
+}
+.section-partners .partner li.logo-bithumb:hover {
+  background-image: url("../image/partners/bithumb-hover.svg");
 }
 .section-partners .partner li.logo-polkadot {
   background-image: url("../image/partners/polkadot.svg");
@@ -827,14 +830,6 @@ p {
   .section-secure .data-list p {
     font-size: 14px;
     line-height: 24px;
-  }
-  .section-secure .data-text {
-    margin-top: 20px;
-    font-size: 12px;
-    line-height: 26px;
-  }
-  .section-secure .data-text li {
-    margin: 0 15px;
   }
 
   .section-more .content {
