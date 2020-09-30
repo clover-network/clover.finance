@@ -6,11 +6,6 @@ $color-yellow: #DAE968;
 $color-gray: #f9f9f9;
 $color-light: #524E4B;
 
-@font-face {
-  font-family: Inter;
-  src: url('../font/Inter-VariableFont.ttf');
-}
-
 %flex {
   display: flex;
   align-items: center;
@@ -26,7 +21,6 @@ $color-light: #524E4B;
 }
 
 html, body {
-  font-family: Inter;
   height: 100%;
   color: black;
 }

@@ -5,13 +5,7 @@ $color-cyan: #31E4D3;
 $color-yellow: #DAE968;
 $color-gray: #f9f9f9;
 
-@font-face {
-  font-family: Inter;
-  src: url('../font/Inter-VariableFont.ttf');
-}
-
 html, body {
-  font-family: Inter;
   color: black;
 }
 
@@ -130,12 +124,14 @@ p {
 }
 
 .section-main {
-  min-height: 700px;
+  min-height: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   .left {
     width: 100%;
     height: 100%;
-    max-width: 720px;
-    padding-top: 190px;
+    max-width: 900px;
     text-align: center;
     h1 {
       font-weight: bold;
@@ -145,13 +141,13 @@ p {
       background: url('../image/icon.svg') 100% 0 no-repeat;
     }
     h2 {
-      font-size: 24px;
+      font-size: 40px;
       line-height: 29px;
       margin-bottom: 25px;
     }
     p {
-      margin-bottom: 60px;
-      margin-right: 60px;
+      margin: 0 auto 60px auto;
+      max-width: 720px;
     }
     .button {
       display: flex;
@@ -843,6 +839,9 @@ p {
   }
   .section-main {
     padding-top: 0;
+    .left {
+      padding-bottom: 0;
+    }
   }
 }
 
@@ -870,6 +869,9 @@ p {
     }
   }
 
+  .section-main {
+    min-height: 700px;
+  }
   .section-main.column {
     display: block;
     padding: 130px 20px 0 20px;
@@ -878,6 +880,9 @@ p {
       h1 {
         font-size: 36px;
         padding-top: 40px;
+      }
+      h2 {
+        font-size: 20px;
       }
       p {
         margin-right: 0;

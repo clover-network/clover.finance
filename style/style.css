@@ -1,7 +1,3 @@
-@font-face {
-  font-family: Inter;
-  src: url("../font/Inter-VariableFont.ttf");
-}
 .column, .head .container, .clv .content, .protocol .item-list, .head .nav, .button, .roadmap .road .road-data, .roadmap .road .time, .column .left {
   display: flex;
   align-items: center;
@@ -17,7 +13,6 @@
 }
 
 html, body {
-  font-family: Inter;
   height: 100%;
   color: black;
 }

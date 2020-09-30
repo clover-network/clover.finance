@@ -1,3 +1,11 @@
+@font-face {
+  font-family: Inter;
+  src: url("../font/Inter-ExtraBold.otf");
+}
+h1, h2 {
+  font-family: Inter;
+}
+
 .content {
   max-width: 1280px;
   margin: 0 auto;
@@ -66,6 +74,10 @@
   margin-left: 35px;
   font-size: 14px;
   line-height: 17px;
+  border-bottom: 1px solid transparent;
+}
+.nav li:hover {
+  border-bottom-color: #F5663D;
 }
 
 .side-bar {
@@ -95,6 +107,7 @@
   bottom: 80px;
   cursor: pointer;
   display: none;
+  z-index: 10;
 }
 
 .footer {
@@ -200,6 +213,108 @@
   .footer .social {
     display: none;
   }
+}
+@keyframes an-1 {
+  0% {
+    opacity: 0;
+    transform: translate(0, 200%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+@keyframes an-2 {
+  0% {
+    opacity: 0;
+    transform: translate(0, 200%);
+  }
+  50% {
+    opacity: 0;
+    transform: translate(0, 200%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+@keyframes an-3 {
+  0% {
+    opacity: 0;
+    transform: translate(0, 200%);
+  }
+  70% {
+    opacity: 0;
+    transform: translate(0, 200%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+@keyframes an-4 {
+  0% {
+    opacity: 0;
+    transform: translate(0, 200%);
+  }
+  80% {
+    opacity: 0;
+    transform: translate(0, 200%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+.section-main h1, .section-main h2, .section-main h3, .section-main p, .section-main .button {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+.section-main h1 {
+  animation: an-1 0.4s linear;
+}
+
+.section-main h2 {
+  animation: an-2 0.8s linear;
+}
+
+.section-main p {
+  animation: an-3 0.8s linear;
+}
+
+.section-main .button {
+  animation: an-4 0.9s linear;
+}
+
+@keyframes an {
+  0% {
+    opacity: 0;
+    transform: translate(0, 200%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+.clv h2, .clv h3 {
+  animation: an 0.4s linear;
+}
+
+.about-main h2 {
+  animation: an-1 0.5s linear;
+}
+
+.about-main p {
+  animation: an-2 1s linear;
+}
+
+.about-main .button {
+  animation: an-3 1.4s linear;
+}
+
+.section-reason h2.animation {
+  animation: an 0.4s linear;
 }
 
 /*# sourceMappingURL=common.css.map */
