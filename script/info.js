@@ -17,12 +17,19 @@
   });
   $('.nav').html($nav).after(`<div class='side-bar'></div>`);
   $('.footer-nav').html($footNav);
+  $('.side-nav').html($nav);
+  $('.side-nav').after(`<div class='side-social'></div>`);
+
   $('.social').html(`
     <a href='https://twitter.com/CloverDeFi' target='_blank'><img src='image/twitter.svg' /></a>
     <a href='https://medium.com/cloverdefi' target='_blank'><img src='image/media.svg' /></a>
     <a href='https://open.kakao.com/o/ggPlcrzc' target='_blank'><img src='image/talk.svg' /></a>
+`)
+  $('.side-social').html(`
+    <a href='https://twitter.com/CloverDeFi' target='_blank'><img src='image/side-twitter.svg' /></a>
+    <a href='https://medium.com/cloverdefi' target='_blank'><img src='image/side-media.svg' /></a>
+    <a href='https://open.kakao.com/o/ggPlcrzc' target='_blank'><img src='image/side-talk.svg' /></a>
   `)
-  $('.side-nav').html($nav);
 
   $('.mobile-nav-link').click(() => {
     $sideScreen.fadeOut();

@@ -33,34 +33,6 @@ a {
   height: 46px;
 }
 
-.side-bar {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 64px;
-  padding-right: 20px;
-  background: url("../image/menu.svg") right 20px center no-repeat;
-  background-color: rgba(255, 255, 255, 0);
-}
-
-.side-bar.scroll {
-  background-color: white;
-}
-
-.up {
-  width: 48px;
-  height: 48px;
-  background: url("../image/up-icon.svg") 0 0 no-repeat;
-  background-size: 100% 100%;
-  position: fixed;
-  right: 80px;
-  bottom: 80px;
-  cursor: pointer;
-  display: none;
-}
-
 .container {
   width: 100%;
   max-width: 1280px;
@@ -468,21 +440,30 @@ a {
 }
 .clv .content h3 {
   width: 280px;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: bold;
+  white-space: pre;
 }
 .clv .content .content-info {
-  width: 1080px;
+  max-width: 1080px;
   font-size: 16px;
   color: rgba(255, 255, 255, 0.5);
 }
-.clv .utility .content-info {
-  border-left: 1px dashed white;
-  padding-left: 30px;
-}
 .clv .utility .content-info li {
-  margin-bottom: 30px;
+  padding-left: 30px;
+  padding-bottom: 30px;
   position: relative;
+  font-size: 16px;
+  line-height: 24px;
+}
+.clv .utility .content-info li:before {
+  content: " ";
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  top: 7px;
+  left: 0;
+  border-left: 1px dashed white;
 }
 .clv .utility .content-info li:after {
   content: " ";
@@ -491,11 +472,14 @@ a {
   height: 7px;
   background-color: white;
   border-radius: 3px;
-  top: 2px;
-  left: -34px;
+  top: 8px;
+  left: -3px;
 }
 .clv .utility .content-info li:last-child {
-  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.clv .utility .content-info li:last-child:before {
+  border-left: none;
 }
 .clv .economy .content-info {
   display: flex;
@@ -578,6 +562,63 @@ a {
 }
 .clv .allocation em {
   color: #FF8212;
+}
+
+@media only screen and (max-width: 1280px) {
+  .container {
+    padding: 70px 30px;
+  }
+
+  .head .logo {
+    margin-left: 20px;
+  }
+
+  .section-main {
+    padding-top: 0;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .head .container {
+    padding: 0;
+  }
+
+  .container h2 {
+    font-size: 32px;
+  }
+
+  .clv .content {
+    flex-direction: column;
+  }
+  .clv .content h3 {
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 20px;
+  }
+
+  .clv .economy .content-info {
+    flex-direction: column;
+  }
+  .clv .economy .content-info dl {
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .clv .allocation .graphic {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+  .clv .allocation .graphic ul {
+    width: 100%;
+    margin-left: 0;
+  }
+  .clv .allocation .column {
+    flex-direction: column;
+  }
+  .clv .allocation .column ul {
+    width: 100%;
+    padding-right: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

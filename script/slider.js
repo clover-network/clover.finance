@@ -18,7 +18,7 @@
   $right.click(() => {
     left = parseInt($content.css('margin-left'));
     const width = $roadmap.width();
-    const showItem = Math.floor(width/size);
+    const showItem = Math.ceil(width/size);
     const hideItem = Math.ceil(-left/size);
     if (showItem + hideItem < totalItem){
       left -= size

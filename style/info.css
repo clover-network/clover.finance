@@ -38,13 +38,13 @@ p {
   }
 }
 
-.section-more .more-list, .head, .section-secure .data-text, .section-secure .data-list, .section-reason .list, .column, .nav, .button {
+.section-more .more-list, .head, .section-secure .data-text, .section-secure .data-list, .section-reason .list, .column, .button {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.section-secure .data-text, .section-secure .data-list, .section-reason .list, .column, .nav, .button {
+.section-secure .data-text, .section-secure .data-list, .section-reason .list, .column, .button {
   justify-content: center;
 }
 
@@ -122,22 +122,8 @@ p {
   background-image: url("../image/logo-text-white.svg");
 }
 
-.nav li {
-  margin-left: 35px;
-  font-size: 14px;
-  line-height: 17px;
-}
-
-.img-auto {
-  display: block;
-}
-
-.img-mobile {
-  display: none;
-}
-
 .section-main {
-  min-height: 780px;
+  min-height: 700px;
 }
 .section-main .left {
   width: 100%;
@@ -151,7 +137,7 @@ p {
   font-size: 64px;
   line-height: 64px;
   margin-bottom: 30px;
-  background: url("../image/icon.svg") 100% 100% no-repeat;
+  background: url("../image/icon.svg") 100% 0 no-repeat;
 }
 .section-main .left h2 {
   font-size: 24px;
@@ -325,7 +311,10 @@ p {
   background: url("../image/union.svg") right top no-repeat;
 }
 .section-more h2 {
+  text-align: center;
   margin-bottom: 50px;
+  position: relative;
+  z-index: 2;
 }
 .section-more .more-list {
   align-items: stretch;
@@ -620,15 +609,15 @@ p {
 
 .section-join {
   min-height: 600px;
-  background: url("../image/circle-down.svg") 0 0 no-repeat, url("../image/circle-pair.svg") 100% 80px no-repeat;
+  background: url("../image/circle-down.svg") 0 0/100% 100% no-repeat, url("../image/circle-pair.svg") 100% 80px no-repeat;
   padding: 220px 0 110px 0;
 }
 .section-join h2 {
-  width: 610px;
+  max-width: 610px;
   margin-bottom: 40px;
 }
 .section-join p {
-  width: 610px;
+  max-width: 610px;
 }
 
 .section-office {
@@ -844,18 +833,6 @@ p {
     padding: 0;
   }
 
-  .img-auto {
-    display: none;
-  }
-
-  .img-mobile {
-    display: block;
-  }
-
-  .nav {
-    display: none;
-  }
-
   .column {
     flex-direction: column;
   }
@@ -867,11 +844,15 @@ p {
   }
 
   .section-main.column {
-    padding: 0 20px;
-    flex-direction: column-reverse;
+    display: block;
+    padding: 130px 20px 0 20px;
   }
   .section-main.column .left {
     padding: 0;
+  }
+  .section-main.column .left h1 {
+    font-size: 36px;
+    padding-top: 40px;
   }
   .section-main.column .left p {
     margin-right: 0;
@@ -894,7 +875,7 @@ p {
   }
 
   .section-secure {
-    padding-top: 70px;
+    padding-top: 140px;
   }
   .section-secure h2 {
     margin-bottom: 40px;
@@ -922,7 +903,14 @@ p {
 
   .section-more .content {
     padding: 70px 0;
-    background: url("../image/union.svg") right top no-repeat;
+  }
+  .section-more .content .back {
+    background-size: 50% 50%;
+    margin-top: -40px;
+  }
+  .section-more h2 {
+    text-align: left;
+    padding-left: 30px;
   }
   .section-more .more-list {
     flex-direction: column;
@@ -931,9 +919,9 @@ p {
   .section-more .more-list dl {
     width: 100%;
     padding-top: 0;
-    background-position: 8px 0;
     margin-bottom: 20px;
     padding-left: 74px;
+    background-size: 42px 42px;
   }
   .section-more .more-list dt {
     font-size: 20px;
@@ -965,6 +953,19 @@ p {
   }
   .section-governed .govern .govern-list {
     width: 100%;
+  }
+
+  .back-map {
+    background-image: none;
+  }
+
+  .section-roadmap h2 {
+    text-align: left;
+    font-size: 32px;
+  }
+  .section-roadmap .control li {
+    width: 54px;
+    height: 54px;
   }
 
   .section-partners p {
@@ -1096,6 +1097,11 @@ p {
     line-height: 17px;
   }
 
+  .section-join {
+    background: url(../image/circle-pair.svg) center 0/200px 240px no-repeat, url(../image/circle-down.svg) 0 -220px/100% 100% no-repeat;
+    padding-top: 290px;
+  }
+
   .section-service dl {
     animation: none !important;
   }
@@ -1113,6 +1119,30 @@ p {
     font-size: 20px;
     line-height: 24px;
     margin-bottom: 20px;
+  }
+
+  .button {
+    margin: 0 auto;
+  }
+
+  .section-about {
+    padding: 160px 30px 30px 30px;
+    background-image: url("../image/more-background-small.svg");
+    background-position: left 96px;
+  }
+
+  .section-office dl {
+    width: 100%;
+  }
+  .section-office dt {
+    font-size: 24px;
+  }
+
+  .section-position .position li {
+    height: 60px;
+    line-height: 60px;
+    font-size: 16px;
+    font-weight: 500;
   }
 }
 
