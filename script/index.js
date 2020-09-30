@@ -1,70 +1,59 @@
-(function(){
-  $('body').append(`<div class='side-screen'>
-    <a href='index.html' class='logo-text'></a>
-    <a class='close'></a>
-    <ul class='side-nav'></ul>
-  </div>`)
+(function() {
+  let height = $('body').height();
+  $('.section, .screen').css('min-height', `${height}px`);
 
-  const navs = ['Home', 'Features', 'Service', 'CLV', 'More'];
-  const path = ['#home', '#features', '#service', '#clv', '#more'];
-  const $nav = navs.map((item, index) => {
-    return `<li class='mobile-nav-link'><a href='${path[index]}'>${item}</a></li>`;
-  });
-  $('.nav').html($nav).after(`<div class='side-bar'></div>`);
-  $('.side-nav').html($nav);
-
-  $('.mobile-nav-link').click(() => {
-    $sideScreen.fadeOut();
+  $(window).resize(() => {
+    height = $('body').height();
+    $('.section, .screen').css('min-height', `${height}px`);
   })
 
-  $sideScreen = $('.side-screen');
-  $close = $('.side-screen .close');
-  $side = $('.side-bar');
-  $side.click(() => {
-    $sideScreen.fadeIn();
-  });
-  $close.click(() => {
-    $sideScreen.fadeOut();
-  });
-
-  $('body').append(`<div class='up'></a>`);
-  const $up = $('.up');
-  $up.click(() => {
-    $('html,body').animate({scrollTop: 0}, "slow");
-    $up.hide();
-  });
-
-  let scrollTop = $(window).scrollTop();
-
-  const $sideBar = $('.side-bar');
-  const $productor = $('#productor');
-  const proTop = $productor.offset().top;
-
-  $(window).scroll(function(){
-    scrollTop = $(window).scrollTop();
-    if (scrollTop > proTop - 400) {
-      if (!$productor.hasClass('action')) {
-        $productor.addClass('action');
-        setTimeout(() => {
-          $productor.removeClass('action');
-        }, 8000);
-      }
-    }
-    if (scrollTop > 80) {
-      $up.show();
+  $(window).scroll(() => {
+    const scrollTop = $(window).scrollTop();
+    if (scrollTop > height) {
+      $('.screen').attr('class', 'screen static');
     } else {
-      $up.hide();
+      $('.screen').attr('class', 'screen');
     }
-    // if(scrollTop > 80){
-    //   $sideBar.attr('class', 'side-bar scroll');
-    //   $(".head").animate({
-    //     top:'-80px'
-    //   }, 5)
-    // }else{
-    //   $sideBar.attr('class', 'side-bar');
-    //   $(".head").animate({
-    //     top: `-${scrollTop}px`
-    //   }, 5)
-    // }
-})
+  })
+
+  
+    const data = [{
+      value: 25,
+      name: 'Private sale'
+    }, {
+      value: 15,
+      name: 'Ecosystem fund'
+    }, {
+      value: 15,
+      name: 'Team and advisors'
+    }, {
+      value: 5,
+      name: 'Public sale'
+    }, {
+      value: 40,
+      name: 'Community incentive pool'
+    }];
+    const color = ['#F9D403', '#35E5C1', '#037F85', '#802E6D', '#F96158'];
+    const option = {
+      tooltip: {
+        trigger: 'item'
+      },
+      series: [{
+        type: 'pie',
+        rradius: '100%',
+        center: ['50%', '50%'],
+        label: {
+          normal: {
+            position: 'inside',
+            formatter: '{c}%'
+          }
+        },
+        hoverAnimation: false,
+        data: data,
+      }],
+      color: color,
+    }
+    const pie = echarts.init(document.getElementById('pie'));
+    pie.setOption(option);
+  
 }());
