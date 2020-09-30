@@ -109,11 +109,6 @@ p {
   display: flex;
   justify-content: space-between;
 }
-.head .logo {
-  width: 134px;
-  height: 40px;
-  background: url("../image/logo-text.svg") center center no-repeat;
-}
 
 .head.dark {
   color: white;
@@ -609,7 +604,7 @@ p {
 
 .section-join {
   min-height: 600px;
-  background: url("../image/circle-down.svg") 0 0/100% 100% no-repeat, url("../image/circle-pair.svg") 100% 80px no-repeat;
+  background: url("../image/circle-pair.svg") 100% 80px no-repeat, url("../image/circle-down.svg") 0 0/100% 100% no-repeat;
   padding: 220px 0 110px 0;
 }
 .section-join h2 {
@@ -638,7 +633,8 @@ p {
   margin-top: 60px;
 }
 .section-office dt {
-  margin-top: 20px;
+  margin-top: 24px;
+  font-size: 24px;
   text-align: center;
 }
 .section-office dd {
@@ -659,7 +655,7 @@ p {
   margin-top: 60px;
 }
 .section-position .position li {
-  width: calc( 620px - 80px);
+  width: 620px;
   height: 120px;
   line-height: 120px;
   padding: 0 38px;
@@ -668,7 +664,18 @@ p {
   font-size: 24px;
   border-radius: 10px;
   margin: 10px 20px;
-  background: url("../image/position-right.svg") 100% center no-repeat;
+  background: url("../image/position-right.svg") right 20px center no-repeat;
+}
+.section-position .position li:hover {
+  background-color: #172026;
+  color: white;
+  background-image: url("../image/position-right-hover.svg");
+}
+.section-position .position li:nth-child(2n) {
+  margin-right: -20px;
+}
+.section-position .position li:nth-child(2n+1) {
+  margin-left: 20px;
 }
 .section-position .position li a {
   display: block;
@@ -680,6 +687,9 @@ p {
   text-align: center;
   background: none;
   font-weight: bold;
+}
+.section-position .position li.more:hover {
+  color: #172026;
 }
 
 .about-main.content {
@@ -964,8 +974,8 @@ p {
     font-size: 32px;
   }
   .section-roadmap .control li {
-    width: 54px;
-    height: 54px;
+    width: 48px;
+    height: 48px;
   }
 
   .section-partners p {
@@ -1134,15 +1144,13 @@ p {
   .section-office dl {
     width: 100%;
   }
-  .section-office dt {
-    font-size: 24px;
-  }
 
   .section-position .position li {
     height: 60px;
     line-height: 60px;
     font-size: 16px;
     font-weight: 500;
+    margin: 10px 0 !important;
   }
 }
 

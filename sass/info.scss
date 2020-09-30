@@ -117,11 +117,6 @@ p {
     display: flex;
     justify-content: space-between;
   }
-  .logo {
-    width: 134px;
-    height: 40px;
-    background: url('../image/logo-text.svg') center center no-repeat;
-  }
 }
 .head.dark {
   color: white;
@@ -626,8 +621,8 @@ p {
 
 .section-join {
   min-height: 600px;
-  background: url('../image/circle-down.svg')  0 0 /100% 100% no-repeat,
-    url('../image/circle-pair.svg') 100% 80px no-repeat;
+  background: url('../image/circle-pair.svg') 100% 80px no-repeat,
+    url('../image/circle-down.svg')  0 0 /100% 100% no-repeat;
   padding: 220px 0 110px 0;
   h2 {
     max-width: 610px;
@@ -655,7 +650,8 @@ p {
     margin-top: 60px;
   }
   dt {
-    margin-top: 20px;
+    margin-top: 24px;
+    font-size: 24px;
     text-align: center;
   }
   dd {
@@ -676,7 +672,7 @@ p {
     flex-wrap: wrap;
     margin-top: 60px;
     li {
-      width: calc( 620px - 80px);
+      width: 620px;
       height: 120px;
       line-height: 120px;
       padding: 0 38px;
@@ -685,7 +681,18 @@ p {
       font-size: 24px;
       border-radius: 10px;
       margin: 10px 20px;
-      background: url('../image/position-right.svg') 100% center no-repeat;
+      background: url('../image/position-right.svg') right 20px center no-repeat;
+    }
+    li:hover {
+      background-color: #172026;
+      color: white;
+      background-image: url('../image/position-right-hover.svg')
+    }
+    li:nth-child(2n) {
+      margin-right: -20px;
+    }
+    li:nth-child(2n+1) {
+      margin-left: 20px;
     }
     li a {
       display: block;
@@ -697,6 +704,9 @@ p {
       text-align: center;
       background: none;
       font-weight: bold;
+    }
+    li.more:hover {
+      color: #172026;
     }
   }
 }
@@ -986,8 +996,8 @@ p {
     }
     .control {
       li {
-        width: 54px;
-        height: 54px;
+        width: 48px;
+        height: 48px;
       }
     }
   }
@@ -1169,9 +1179,6 @@ p {
     dl {
       width: 100%;
     }
-    dt {
-      font-size: 24px;
-    }
   }
 
   .section-position {
@@ -1180,6 +1187,7 @@ p {
       line-height: 60px;
       font-size: 16px;
       font-weight: 500;
+      margin: 10px 0 !important;
     }
   }
 }
