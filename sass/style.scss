@@ -88,9 +88,6 @@ a {
   }
   .nav {
     @extend %flex-start;
-    li {
-      margin-left: 40px;
-    }
   }
 }
 

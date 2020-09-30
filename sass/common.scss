@@ -3,9 +3,17 @@
   font-family: Inter;
   src: url('../font/Inter-ExtraBold.otf')
 }
+@font-face {
+  font-family: InterRegular;
+  src: url('../font/Inter-Regular.otf')
+}
 
 h1, h2 {
   font-family: Inter;
+}
+
+body {
+  font-family: InterRegular;
 }
 
 .content {
@@ -73,7 +81,7 @@ h1, h2 {
     margin-left: 35px;
     font-size: 14px;
     line-height: 17px;
-    border-bottom: 1px solid transparent;
+    border-bottom: 2px solid transparent;
   }
   li:hover {
     border-bottom-color: #F5663D;
@@ -131,7 +139,6 @@ h1, h2 {
     height: auto !important;
     background: url('../image/logo-text-white.svg') 0 0 no-repeat;
     a {
-      padding-right: 17px;
       border-right: 1px solid rgba(255, 255, 255, 0.5);
       margin-right: 17px;;
       line-height: 14px;
