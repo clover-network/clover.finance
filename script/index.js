@@ -40,7 +40,7 @@
       },
       series: [{
         type: 'pie',
-        rradius: '100%',
+        radius: '100%',
         center: ['50%', '50%'],
         label: {
           normal: {

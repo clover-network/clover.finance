@@ -43,18 +43,6 @@ p {
   justify-content: center;
 }
 
-.up {
-  width: 48px;
-  height: 48px;
-  background: url("../image/up-icon.svg") 0 0 no-repeat;
-  background-size: 100% 100%;
-  position: fixed;
-  right: 80px;
-  bottom: 80px;
-  cursor: pointer;
-  display: none;
-}
-
 .button {
   color: white;
   font-size: 14px;
@@ -62,8 +50,13 @@ p {
   width: 160px;
   height: 40px;
   background: linear-gradient(94.54deg, #FF8212 0%, #ED4454 100%);
+  border: 1px solid transparent;
   border-radius: 3px;
   cursor: pointer;
+}
+
+.button:hover {
+  background: linear-gradient(94.54deg, #FF994F 0%, #E23B8C 100%);
 }
 
 .content {
@@ -126,9 +119,9 @@ p {
 }
 .section-main .left h1 {
   font-weight: bold;
-  font-size: 64px;
-  line-height: 64px;
-  margin-bottom: 30px;
+  font-size: 100px;
+  line-height: 100px;
+  margin-bottom: 60px;
   background: url("../image/icon.svg") 100% 0 no-repeat;
 }
 .section-main .left h2 {
@@ -179,8 +172,14 @@ p {
   width: 426px;
   height: 346px;
   padding: 160px 48px 70px 48px;
-  background-position: 56px 56px;
-  background-repeat: no-repeat;
+  background: url() center 56px no-repeat;
+  text-align: center;
+}
+.section-reason .list dl:hover {
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0px 0px 30px rgba(65, 30, 34, 0.05);
+  cursor: pointer;
 }
 .section-reason .list dt {
   font-weight: bold;
@@ -291,7 +290,6 @@ p {
 .section-more .content {
   padding-top: 100px;
   padding-bottom: 130px;
-  padding-left: 80px;
   position: relative;
 }
 .section-more .content .back {
@@ -379,16 +377,16 @@ p {
   cursor: pointer;
   margin-left: 20px;
 }
-.section-roadmap .control li:first-child {
+.section-roadmap .control li.left-control {
   background-image: url("../image/arr-left.svg");
 }
-.section-roadmap .control li:last-child {
+.section-roadmap .control li.right-control {
   background-image: url("../image/arr-right.svg");
 }
-.section-roadmap .control li:first-child:hover {
+.section-roadmap .control li.left-control.enable {
   background-image: url("../image/arr-left-hover.svg");
 }
-.section-roadmap .control li:last-child:hover {
+.section-roadmap .control li.right-control.enable {
   background-image: url("../image/arr-right-hover.svg");
 }
 .section-roadmap .road-item {
@@ -867,6 +865,8 @@ p {
   .section-main.column .left h1 {
     font-size: 36px;
     padding-top: 40px;
+    line-height: 1;
+    margin-bottom: 20px;
   }
   .section-main.column .left h2 {
     font-size: 20px;

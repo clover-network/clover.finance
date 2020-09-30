@@ -538,6 +538,7 @@ a {
     }
     .count {
       margin-left: 130px;
+      padding-top: 20px;
       li {
         font-size: 16px;
         line-height: 20px;
@@ -609,6 +610,15 @@ a {
     h2 {
       font-size: 32px;
     }
+  }
+  .ring {
+    width: 218px;
+    height: 218px;
+    right: 100%;
+    top: 64px;
+    margin-left: 0;
+    background-position: 0 0;
+    background-size: 218px 218px;
   }
   .clv .content {
     flex-direction: column;

@@ -509,6 +509,7 @@ a {
 }
 .clv .allocation .count {
   margin-left: 130px;
+  padding-top: 20px;
 }
 .clv .allocation .count li {
   font-size: 16px;
@@ -579,6 +580,16 @@ a {
 
   .container h2 {
     font-size: 32px;
+  }
+
+  .ring {
+    width: 218px;
+    height: 218px;
+    right: 100%;
+    top: 64px;
+    margin-left: 0;
+    background-position: 0 0;
+    background-size: 218px 218px;
   }
 
   .clv .content {
