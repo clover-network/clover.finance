@@ -25,6 +25,37 @@ body {
   background: url("../image/logo-text.svg") center center no-repeat;
 }
 
+.head {
+  width: 100%;
+  margin: 0 auto;
+  height: 80px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+.head .content {
+  width: 1280px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.head.dark {
+  color: white;
+}
+.head.dark .logo {
+  background-image: url("../image/logo-text-white.svg");
+}
+
 .head.fixed-back {
   color: #524E4B !important;
   background-color: white !important;
@@ -147,6 +178,16 @@ body {
   margin-right: 17px;
   line-height: 14px;
 }
+.footer .left a.mail {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-right: 10px;
+}
+.footer .left a.mail img {
+  margin-right: 10px;
+  display: inline;
+}
 .footer .left a:last-child {
   border-right: none;
   padding-right: 0;
@@ -159,6 +200,7 @@ body {
   font-size: 12px;
   line-height: 15px;
   text-align: left;
+  display: flex;
 }
 .footer .left .row:last-child a:first-child {
   color: #1B96F1;
@@ -182,6 +224,11 @@ body {
   margin-top: 100px;
 }
 
+@media only screen and (max-width: 1280px) {
+  .content {
+    padding: 0 20px;
+  }
+}
 @media only screen and (max-width: 480px) {
   .head {
     height: 64px !important;
@@ -199,6 +246,12 @@ body {
 
   .nav {
     display: none !important;
+  }
+
+  .up {
+    width: 40px;
+    height: 40px;
+    right: 20px;
   }
 
   .footer {
@@ -219,10 +272,17 @@ body {
   .footer .row {
     width: 100% !important;
   }
-  .footer a {
-    display: block !important;
-    text-align: center !important;
-    margin-top: 40px !important;
+  .footer .row:last-child {
+    flex-direction: column;
+    padding-top: 40px;
+  }
+  .footer .row:last-child a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 10px 0;
+    margin: 0;
+    border: none;
   }
   .footer .social {
     display: none;

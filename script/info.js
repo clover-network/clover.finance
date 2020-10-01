@@ -5,8 +5,8 @@
     <ul class='side-nav'></ul>
   </div>`)
 
-  const navs = ['Home', 'CLV Token', 'Product', 'Join Us', 'Partner', 'Blog'];
-  const path = ['index.html', 'token.html', 'service.html', 'about.html', 'partner.html', `https://medium.com/cloverdefi`];
+  const navs = ['Home', 'Product', 'CLV Token', 'Ecosystem', 'Join Us', 'Blog'];
+  const path = ['index.html', 'service.html', 'token.html', 'partner.html', 'about.html', `https://medium.com/cloverdefi`];
   const $nav = navs.map((item, index) => {
     const append = index === navs.length - 1 ? `target='_blank'` : '';
     return `<li class='mobile-nav-link'><a href='${path[index]}' ${append}>${item}</a></li>`;
@@ -30,6 +30,9 @@
     <a href='https://medium.com/cloverdefi' target='_blank'><img src='image/side-media.svg' /></a>
     <a href='https://open.kakao.com/o/ggPlcrzc' target='_blank'><img src='image/side-talk.svg' /></a>
   `)
+
+  $('.footer').find('.row a').last().before(`<a class='mail' href='mailto:info@projectclover.finance'>
+    <img src='image/email.svg' />info@projectclover.finance</a>`);
 
   $('.mobile-nav-link').click(() => {
     $sideScreen.fadeOut();

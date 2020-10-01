@@ -33,7 +33,7 @@ p {
   }
 }
 
-.section-more .more-list, .head, .section-secure .data-text, .section-secure .data-list, .section-reason .list, .column, .button {
+.section-more .more-list, .section-secure .data-text, .section-secure .data-list, .section-reason .list, .column, .button {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -82,29 +82,6 @@ p {
   background-color: #172026;
 }
 
-.head {
-  width: 100%;
-  margin: 0 auto;
-  height: 80px;
-  background-color: transparent;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
-}
-.head .content {
-  width: 1280px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.head.dark {
-  color: white;
-}
-.head.dark .logo {
-  background-image: url("../image/logo-text-white.svg");
-}
-
 .section-main {
   min-height: 1000px;
   display: flex;
@@ -115,7 +92,7 @@ p {
   width: 100%;
   height: 100%;
   max-width: 900px;
-  text-align: center;
+  text-align: left;
 }
 .section-main .left h1 {
   font-weight: bold;
@@ -128,17 +105,17 @@ p {
   font-size: 40px;
   line-height: 29px;
   margin-bottom: 25px;
+  margin-bottom: 40px;
 }
 .section-main .left p {
   margin: 0 auto 60px auto;
-  max-width: 720px;
 }
 .section-main .left .button {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   padding-left: 28px;
-  margin: 0 auto;
+  margin: 0 0 0 140px;
 }
 .section-main .left .button img {
   margin-right: 12px;
@@ -165,7 +142,7 @@ p {
   margin-bottom: 40px;
 }
 .section-reason .list {
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
 }
 .section-reason .list dl {
@@ -814,10 +791,6 @@ p {
     padding: 70px 20px;
   }
 
-  .head .logo {
-    margin-left: 20px;
-  }
-
   .section-main {
     padding-top: 0;
   }
@@ -826,21 +799,6 @@ p {
   }
 }
 @media only screen and (max-width: 480px) {
-  .up {
-    width: 40px;
-    height: 40px;
-    right: 20px;
-  }
-
-  .head {
-    width: 100%;
-    height: 64px;
-    box-shadow: none;
-  }
-  .head .content {
-    padding: 0;
-  }
-
   .column {
     flex-direction: column;
   }
@@ -867,6 +825,7 @@ p {
     padding-top: 40px;
     line-height: 1;
     margin-bottom: 20px;
+    text-align: center;
   }
   .section-main.column .left h2 {
     font-size: 20px;

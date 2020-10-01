@@ -72,25 +72,6 @@ a {
   cursor: pointer;
 }
 
-.head {
-  position: fixed;
-  z-index: 10;
-  width: 100%;
-  height: 80px;
-  top: 0;
-  left: 0;
-  color: $color-light;
-  background-color: white;
-  font-size: 14px;
-  .container {
-    @extend %flex;
-    height: 100%;
-  }
-  .nav {
-    @extend %flex-start;
-  }
-}
-
 .screen {
   .star {
     width: 50%;
@@ -592,17 +573,11 @@ a {
   .container {
     padding: 70px 30px;
   }
-  .head .logo {
-    margin-left: 20px;
-  }
   .section-main {
     padding-top: 0;
   }
 }
 @media only screen and (max-width: 480px) {
-  .head .container {
-    padding: 0;
-  }
   .container {
     h2 {
       font-size: 32px;

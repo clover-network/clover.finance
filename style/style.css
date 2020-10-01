@@ -1,4 +1,4 @@
-.column, .head .container, .clv .content, .protocol .item-list, .head .nav, .button, .roadmap .road .road-data, .roadmap .road .time, .column .left {
+.column, .clv .content, .protocol .item-list, .button, .roadmap .road .road-data, .roadmap .road .time, .column .left {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -8,7 +8,7 @@
   justify-content: center;
 }
 
-.clv .content, .protocol .item-list, .head .nav, .button {
+.clv .content, .protocol .item-list, .button {
   justify-content: flex-start;
 }
 
@@ -64,20 +64,6 @@ a {
   cursor: pointer;
 }
 
-.head {
-  position: fixed;
-  z-index: 10;
-  width: 100%;
-  height: 80px;
-  top: 0;
-  left: 0;
-  color: #524E4B;
-  background-color: white;
-  font-size: 14px;
-}
-.head .container {
-  height: 100%;
-}
 .screen .star {
   width: 50%;
   height: 100%;
@@ -561,19 +547,11 @@ a {
     padding: 70px 30px;
   }
 
-  .head .logo {
-    margin-left: 20px;
-  }
-
   .section-main {
     padding-top: 0;
   }
 }
 @media only screen and (max-width: 480px) {
-  .head .container {
-    padding: 0;
-  }
-
   .container h2 {
     font-size: 32px;
   }
