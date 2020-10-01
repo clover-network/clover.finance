@@ -198,8 +198,9 @@ body {
       line-height: 15px;
       text-align: left;
       display: flex;
+      white-space: pre;
       a:first-child {
-        color: #1B96F1
+        color: #1B96F1;
       }
       a:last-child {
         color: rgba(255, 255, 255, 0.5);
@@ -223,8 +224,8 @@ body {
   margin-top: 100px;
 }
 @media only screen and (max-width: 1280px) {
-  .content {
-    padding: 0 20px;
+  .footer .content {
+    padding: 0 20px !important;
   }
 }
 @media only screen and (max-width: 480px) {

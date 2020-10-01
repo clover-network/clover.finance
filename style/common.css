@@ -201,6 +201,7 @@ body {
   line-height: 15px;
   text-align: left;
   display: flex;
+  white-space: pre;
 }
 .footer .left .row:last-child a:first-child {
   color: #1B96F1;
@@ -225,8 +226,8 @@ body {
 }
 
 @media only screen and (max-width: 1280px) {
-  .content {
-    padding: 0 20px;
+  .footer .content {
+    padding: 0 20px !important;
   }
 }
 @media only screen and (max-width: 480px) {

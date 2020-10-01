@@ -28,6 +28,10 @@ a {
   height: 46px;
 }
 
+.footer .row:last-child a:first-child {
+  padding-right: 20px;
+}
+
 .container {
   width: 100%;
   max-width: 1280px;
