@@ -115,6 +115,10 @@ body {
 .side-screen .side-nav .drop-link .drop-down {
   padding-right: 10px;
 }
+.side-screen .side-nav .drop-link .drop-item {
+  width: 100px;
+  padding-top: 2em;
+}
 .side-screen .side-nav .drop-link .drop-down:before {
   background-position: 0 4px;
 }
