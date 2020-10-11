@@ -6,12 +6,12 @@
     <ul class='${sideCls}'></ul>
   </div>`)
 
-  const navs = ['Home', 'Features', 'Why Clover', 'Medium'];
-  const path = ['index.html', 'service.html', 'token.html', `https://medium.com/cloverdefi`];
-  const sectionPath = ['#home', '#features', '#token', `https://medium.com/cloverdefi`];
+  const navs = ['Home', 'Features', 'Why Clover', 'Ecosystem', 'Medium'];
+  const path = ['index.html', 'service.html', 'token.html', 'index.html#ecosystem', `https://medium.com/cloverdefi`];
+  const sectionPath = ['#home', '#features', '#token', '#ecosystem', `https://medium.com/cloverdefi`];
 
-  const footer = ['FEATURES', 'WHY CLOVER', 'CAREERS', 'MEDIUM'];
-  const footerPath = ['service.html', 'token.html', 'about.html', `https://medium.com/cloverdefi`];
+  const footer = ['FEATURES', 'WHY CLOVER', 'CAREERS', 'ECOSYSTEM', 'MEDIUM'];
+  const footerPath = ['service.html', 'token.html', 'about.html', 'index.html#ecosystem', `https://medium.com/cloverdefi`];
 
   const $nav = navs.map((item, index) => {
     const append = index === navs.length - 1 ? `target='_blank'` : '';

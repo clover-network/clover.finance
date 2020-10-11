@@ -167,10 +167,15 @@ p {
 }
 
 #features {
-  background: url('../image/back-features.jpg') center top no-repeat;
+  background: linear-gradient(94.54deg, #FF8212 0%, #ED4454 100%);
+  .text-button {
+    border-color: white;
+    color: white;
+  }
 }
 .section-features {
   padding-top: 210px;
+  padding-bottom: 80px;
   h2 {
     text-transform: uppercase;
     font-weight: 900;
@@ -196,25 +201,30 @@ p {
       height: 62px;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.05) url() center center no-repeat;
+      background-size: 100% 100%;
       cursor: pointer;
       margin-right: 20px;
     }
     li.left-control {
-      background-image: url('../image/arr-left.svg');
+      background-image: url('../image/arr-left-white.svg');
     }
     li.right-control {
-      background-image: url('../image/arr-right.svg');
+      background-image: url('../image/arr-right-white.svg');
     }
     li.left-control.enable {
-      background-image: url('../image/arr-left-hover.svg');
+      background-image: url('../image/arr-left-white-hover.svg');
     }
     li.right-control.enable {
-      background-image: url('../image/arr-right-hover.svg');
+      background-image: url('../image/arr-right-white-hover.svg');
     }
   }
 
+  .feature-area {
+    overflow: hidden;
+  }
+
   .feature-content {
-    margin-top: 290px;
+    margin-top: 120px;
     display: flex;
     align-items: stretch;
     justify-content: flex-start;
@@ -226,18 +236,18 @@ p {
       border-radius: 10px;
       margin-right: 20px;
       padding: 140px 20px;
-      background: #000 url('') 20px 40px no-repeat;
+      background: #fff url('') 20px 40px no-repeat;
       flex: 0 0 auto;
 
       dt {
-        color: white;
+        color: #000;
         font-weight: bold;
         font-size: 24px;
         line-height: 29px;
         margin-bottom: 30px;
       }
       dd {
-        color: rgba(255, 255, 255, 0.5);
+        color: rgba(0, 0, 0, 0.5);
         font-size: 16px;
         line-height: 24px;
       }
@@ -747,6 +757,7 @@ p {
       height: 62px;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.05) url() center center no-repeat;
+      background-size: 100% 100%;
       cursor: pointer;
       margin-left: 20px;
     }
@@ -1230,7 +1241,8 @@ p {
   }
 }
 
-@media only screen and (max-width: 1280px) {
+@media only screen and (max-width: 800px) {
+  
   .column {
     flex-direction: column;
     .left, .right {
@@ -1259,6 +1271,7 @@ p {
         text-align: center;
       }
       h2 {
+        text-align: left;
         font-weight: 900;
         font-size: 30px;
         line-height: 36px;
@@ -1285,14 +1298,21 @@ p {
     }
   }
 
+  #features {
+    background-size: 100% 720px;
+  }
   .section-features {
-    padding-bottom: 0;
+    padding-bottom: 60px;
     h2 {
+      text-align: left;
       font-size: 28px;
       margin-bottom: 60px;
     }
     p {
       text-align: left;
+    }
+    .feature-content {
+      margin-top: 120px;
     }
     .control {
       justify-content: center;
@@ -1306,6 +1326,7 @@ p {
     padding: 0;
     .content {
       padding-top: 340px;
+      padding-bottom: 0;
       background-position: center 80px;
     }
     h2 {
@@ -1321,6 +1342,7 @@ p {
 
   .token-top {
     visibility: hidden;
+    height: 80px;
   }
   .token-bottom {
     display: none;
@@ -1376,6 +1398,11 @@ p {
   .section-ecosystem {
     .content {
       padding-top: 0;
+    }
+    h2 {
+      font-size: 28px;
+      line-height: 36px;
+      margin-bottom: 30px;
     }
     .ecosystem {
       width: 100%;
@@ -1489,13 +1516,23 @@ p {
   .section-roadmap {
     h2 {
       text-align: left;
-      font-size: 32px;
+      font-size: 28px;
+      line-height: 36px;
     }
     .control {
       li {
-        width: 48px;
-        height: 48px;
+        width: 36px;
+        height: 36px;
+        margin-left: 12px;
       }
+    }
+  }
+
+  .section-news {
+      padding-top: 60px;
+    h2 {
+      font-size: 28px;
+      line-height: 36px;
     }
   }
 
