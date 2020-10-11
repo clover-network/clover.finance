@@ -1,23 +1,35 @@
 (function(){
+  const sideCls = $('body').hasClass('home') ? 'side-nav index': 'side-nav';
   $('body').append(`<div class='side-screen'>
     <a href='index.html' class='logo-text'></a>
     <a class='close'></a>
-    <ul class='side-nav'></ul>
+    <ul class='${sideCls}'></ul>
   </div>`)
 
-  const navs = ['Home', 'Product', 'CLV Token', 'Ecosystem', 'Join Us', 'Medium'];
-  const path = ['index.html', 'service.html', 'token.html', 'partner.html', 'about.html', `https://medium.com/cloverdefi`];
+  const navs = ['Home', 'Features', 'Why Clover', 'Medium'];
+  const path = ['index.html', 'service.html', 'token.html', `https://medium.com/cloverdefi`];
+  const sectionPath = ['#home', '#features', '#token', `https://medium.com/cloverdefi`];
+
+  const footer = ['FEATURES', 'WHY CLOVER', 'CAREERS', 'MEDIUM'];
+  const footerPath = ['service.html', 'token.html', 'about.html', `https://medium.com/cloverdefi`];
+
   const $nav = navs.map((item, index) => {
     const append = index === navs.length - 1 ? `target='_blank'` : '';
     return `<li class='mobile-nav-link'><a href='${path[index]}' ${append}>${item}</a></li>`;
   });
-  const $footNav = navs.map((item, index) => {
+  const $sectionNav = navs.map((item, index) => {
     const append = index === navs.length - 1 ? `target='_blank'` : '';
-    return `<a href='${path[index]}' ${append}>${item}</a>`;
+    return `<li class='mobile-nav-link'><a href='${sectionPath[index]}' ${append}>${item}</a></li>`;
+  });
+  const $footNav = footer.map((item, index) => {
+    const append = index === navs.length - 1 ? `target='_blank'` : '';
+    return `<a href='${footerPath[index]}' ${append}>${item}</a>`;
   });
   $('.nav').html($nav).after(`<div class='side-bar'></div>`);
+  $('.section-nav').html($sectionNav).after(`<div class='side-bar'></div>`)
   $('.footer-nav').html($footNav);
   $('.side-nav').html($nav);
+  $('.side-nav.index').html($sectionNav);
   $('.side-nav').after(`<div class='side-social'></div>`);
 
   $('.social').html(`
@@ -30,9 +42,6 @@
     <a href='https://medium.com/cloverdefi' target='_blank'><img src='image/side-media.svg' /></a>
     <a href='https://open.kakao.com/o/ggPlcrzc' target='_blank'><img src='image/side-talk.svg' /></a>
   `)
-
-  $('.footer').find('.row a').last().before(`<a class='mail' href='mailto:info@projectclover.finance'>
-    <img src='image/email.svg' />info@projectclover.finance</a>`);
 
   $('.mobile-nav-link').click(() => {
     $sideScreen.fadeOut();

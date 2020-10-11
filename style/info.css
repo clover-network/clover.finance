@@ -424,10 +424,14 @@ p {
   align-items: stretch;
   flex-wrap: wrap;
 }
-.section-ecosystem li a {
-  display: block;
+.section-ecosystem li {
   width: 200px;
   height: 80px;
+}
+.section-ecosystem li a {
+  display: block;
+  width: 100%;
+  height: 100%;
   background: url("") center center no-repeat;
 }
 .section-ecosystem li.logo-bithumb a {
@@ -1206,7 +1210,7 @@ p {
     padding-bottom: 0;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 1280px) {
   .column {
     flex-direction: column;
   }
@@ -1219,11 +1223,13 @@ p {
 
   .section-main {
     min-height: 700px;
+    background-size: 100% 350px;
+    background-position: center 80px;
   }
 
   .section-main.column {
     display: block;
-    padding: 130px 20px 0 20px;
+    padding: 460px 20px 0 20px;
   }
   .section-main.column .left {
     padding: 0;
@@ -1236,11 +1242,20 @@ p {
     text-align: center;
   }
   .section-main.column .left h2 {
-    font-size: 20px;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 20px;
+  }
+  .section-main.column .left h3 {
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 24px;
   }
   .section-main.column .left p {
-    margin-right: 0;
-    margin-bottom: 0;
+    text-align: left;
+    font-size: 16px;
+    line-height: 26px;
   }
   .section-main.column .right, .section-main.column .rotate-item {
     background-size: 100% 430px;
@@ -1249,6 +1264,111 @@ p {
   }
   .section-main.column .button {
     margin: 40px auto;
+  }
+
+  .section-features {
+    padding-bottom: 0;
+  }
+  .section-features h2 {
+    font-size: 28px;
+    margin-bottom: 60px;
+  }
+  .section-features p {
+    text-align: left;
+  }
+  .section-features .control {
+    justify-content: center;
+  }
+  .section-features .text-button {
+    margin: 0 auto;
+  }
+
+  .section-product {
+    padding: 0;
+  }
+  .section-product .content {
+    padding-top: 340px;
+    background-position: center 80px;
+  }
+  .section-product h2 {
+    text-align: left;
+    font-size: 28px;
+    line-height: 36px;
+    margin-bottom: 30px;
+  }
+  .section-product ul li {
+    margin-bottom: 20px;
+  }
+
+  .token-top {
+    visibility: hidden;
+  }
+
+  .token-bottom {
+    display: none;
+  }
+
+  .section-token {
+    padding: 0 20px 60px 20px;
+  }
+  .section-token .content {
+    padding: 400px 0 0 0;
+    background-position: left 60px;
+    background-size: auto;
+  }
+  .section-token h2 {
+    text-align: left;
+    font-size: 28px;
+    line-height: 36px;
+    margin-bottom: 40px;
+  }
+  .section-token ul {
+    margin-bottom: 0;
+  }
+  .section-token li {
+    padding-bottom: 32px;
+  }
+
+  .section-why {
+    padding-top: 0;
+  }
+  .section-why .content {
+    padding-top: 380px;
+    background-position: center 40px;
+    background-size: auto 300px;
+  }
+  .section-why h2 {
+    text-align: left;
+    font-size: 28px;
+    line-height: 36px;
+    margin-bottom: 40px;
+  }
+  .section-why dl {
+    margin-bottom: 30px;
+  }
+  .section-why dt {
+    font-weight: 16px;
+    line-height: 16px;
+    margin-bottom: 10px;
+  }
+
+  #ecosystem {
+    padding-top: 0;
+  }
+
+  .section-ecosystem .content {
+    padding-top: 0;
+  }
+  .section-ecosystem .ecosystem {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .section-ecosystem li {
+    width: 150px;
+    height: 62px;
+  }
+  .section-ecosystem li a {
+    background-size: 70% 70%;
   }
 
   .section-reason .list dl {
