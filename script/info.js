@@ -1,35 +1,45 @@
 (function(){
-  const sideCls = $('body').hasClass('home') ? 'side-nav index': 'side-nav';
   $('body').append(`<div class='side-screen'>
     <a href='index.html' class='logo-text'></a>
     <a class='close'></a>
-    <ul class='${sideCls}'></ul>
+    <ul class='side-nav'></ul>
   </div>`)
 
-  const navs = ['Home', 'Features', 'Why Clover', 'Ecosystem', 'Medium'];
-  const path = ['index.html', 'service.html', 'token.html', 'index.html#ecosystem', `https://medium.com/cloverdefi`];
-  const sectionPath = ['#home', '#features', '#token', '#ecosystem', `https://medium.com/cloverdefi`];
+  const isToken = $('body').hasClass('token');
+  const isService = $('body').hasClass('service');
 
-  const footer = ['FEATURES', 'WHY CLOVER', 'CAREERS', 'ECOSYSTEM', 'MEDIUM'];
-  const footerPath = ['service.html', 'token.html', 'about.html', 'index.html#ecosystem', `https://medium.com/cloverdefi`];
+  const navs = ['Home', 'Discover', 'Token', 'Ecosystem', 'Medium'];
+  const path = ['index.html#home', 'index.html#features', 'index.html#token', 'index.html#ecosystem', `https://medium.com/cloverdefi`];
+
+  const footer = ['DISCOVER', 'TOKEN', 'ECOSYSTEM', 'CAREERS', 'MEDIUM'];
+  const footerPath = ['index.html#features', 'index.html#token', 'index.html#ecosystem', 'about.html', `https://medium.com/cloverdefi`];
 
   const $nav = navs.map((item, index) => {
-    const append = index === navs.length - 1 ? `target='_blank'` : '';
+    const append = index === navs.length - 1 ? `target='_blank'` : '';  
+    if (index === 1 && !isService) {
+      return `<li class='mobile-nav-link drop-link'>
+        <a class='drop-down'>${item}</a>
+        <a class='drop-item' href='service.html'>Features</a>
+      </li>`;
+    } 
+    if (index === 2 && !isToken) {
+      return `<li class='mobile-nav-link drop-link'>
+        <a class='drop-down'>${item}</a>
+        <a class='drop-item' href='token.html'>CLV</a>
+      </li>`;
+    }
     return `<li class='mobile-nav-link'><a href='${path[index]}' ${append}>${item}</a></li>`;
   });
-  const $sectionNav = navs.map((item, index) => {
-    const append = index === navs.length - 1 ? `target='_blank'` : '';
-    return `<li class='mobile-nav-link'><a href='${sectionPath[index]}' ${append}>${item}</a></li>`;
-  });
+  
   const $footNav = footer.map((item, index) => {
     const append = index === navs.length - 1 ? `target='_blank'` : '';
     return `<a href='${footerPath[index]}' ${append}>${item}</a>`;
   });
   $('.nav').html($nav).after(`<div class='side-bar'></div>`);
-  $('.section-nav').html($sectionNav).after(`<div class='side-bar'></div>`)
+  $('.section-nav').html($nav).after(`<div class='side-bar'></div>`)
   $('.footer-nav').html($footNav);
   $('.side-nav').html($nav);
-  $('.side-nav.index').html($sectionNav);
+  $('.side-nav.index').html($nav);
   $('.side-nav').after(`<div class='side-social'></div>`);
 
   $('.social').html(`
@@ -47,6 +57,8 @@
     $sideScreen.fadeOut();
   })
 
+  $('.copy-right').html('&copy; 2020 ProjectClover All Rights Reserved');
+
   $sideScreen = $('.side-screen');
   $close = $('.side-screen .close');
   $side = $('.side-bar');
@@ -55,6 +67,10 @@
   });
   $close.click(() => {
     $sideScreen.fadeOut();
+  });
+
+  $('.side-screen .drop-link').click(function(e){
+    e.stopPropagation();
   });
 
   $('body').append(`<div class='up'></a>`);

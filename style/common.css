@@ -107,11 +107,23 @@ body {
 .side-screen .side-nav li {
   margin-bottom: 36px;
 }
+.side-screen .side-nav .drop-link {
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.side-screen .side-nav .drop-link .drop-down {
+  padding-right: 10px;
+}
+.side-screen .side-nav .drop-link .drop-down:before {
+  background-position: 0 4px;
+}
 
 .nav, .section-nav {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  margin-top: 10px;
 }
 .nav li, .section-nav li {
   margin-left: 35px;
@@ -121,6 +133,56 @@ body {
 }
 .nav li:hover, .section-nav li:hover {
   border-bottom-color: #F5663D;
+}
+
+.mobile-nav-link {
+  font-size: 14px;
+  font-weight: 400;
+}
+.mobile-nav-link a:first-child {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.drop-link {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  position: relative;
+}
+.drop-link .drop-down {
+  position: relative;
+  padding-right: 20px;
+}
+.drop-link .drop-down:before {
+  content: " ";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  top: 5px;
+  right: 0;
+  background: url("../image/s-arr.svg") 0 0 no-repeat;
+  transform-origin: center 5px;
+}
+.drop-link .drop-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 1.5em;
+  padding-left: 1em;
+  display: none;
+}
+
+li.drop-link:hover, li.drop-link.touched {
+  border-bottom: none;
+}
+li.drop-link:hover .drop-item, li.drop-link.touched .drop-item {
+  display: block;
+}
+
+li.drop-link:hover .drop-down:before, li.drop-link.touched .drop-down:before {
+  transform: rotate(180deg);
+  transition: transform 0.2s;
 }
 
 .side-bar {
