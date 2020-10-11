@@ -4,6 +4,7 @@
     const $right = $container.find('li').eq(1);
     const $content = $container.find('.slider-item');
     const totalItem = $content.find('dl').length;
+    
     let left;
     $right.attr('class', 'right-control enable');
 
@@ -50,7 +51,7 @@
     })
   }
 
-  slider($('.feature-area'), $('.feature-content'), 275);
+  slider($('.section-features'), $('.feature-area'), 275);
   slider($('.section-roadmap'), $('.roadmap'), 240);
 
 }());
