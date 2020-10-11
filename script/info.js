@@ -5,7 +5,7 @@
     <ul class='side-nav'></ul>
   </div>`)
 
-  const navs = ['Home', 'Product', 'CLV Token', 'Ecosystem', 'Join Us', 'Blog'];
+  const navs = ['Home', 'Product', 'CLV Token', 'Ecosystem', 'Join Us', 'Medium'];
   const path = ['index.html', 'service.html', 'token.html', 'partner.html', 'about.html', `https://medium.com/cloverdefi`];
   const $nav = navs.map((item, index) => {
     const append = index === navs.length - 1 ? `target='_blank'` : '';

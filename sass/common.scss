@@ -26,6 +26,10 @@ body {
   background: url('../image/logo-text.svg') center center no-repeat;
 }
 
+.hide {
+  display: none;
+}
+
 .head {
   width: 100%;
   margin: 0 auto;
@@ -104,7 +108,7 @@ body {
 }
 
 
-.nav {
+.nav, .section-nav {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -344,10 +348,10 @@ body {
     opacity: 1;
   }
 }
-.section-main h1 {
+.section-main h2 {
   animation: an-1 0.7s linear;
 }
-.section-main h2 {
+.section-main h3 {
   animation: an-2 0.8s linear;
 }
 .section-main p {
