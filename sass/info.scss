@@ -1138,8 +1138,9 @@ p {
     width: 320px;
   }
   dt {
+    font-family: Inter;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 20px;
     line-height: 24px;
     margin-bottom: 20px;
     color: black;
@@ -1184,6 +1185,7 @@ p {
     background-image: url('../image/market-3.svg');
   }
   dt {
+    font-family: Inter;
     color: black;
     font-weight: bold;
     font-size: 20px;
@@ -1209,6 +1211,7 @@ p {
     width: 320px;
   }
   dt {
+    font-family: Inter;
     font-weight: bold;
     font-size: 20px;
     line-height: 24px;
@@ -1276,9 +1279,9 @@ p {
       h2 {
         text-align: left;
         font-weight: 900;
-        font-size: 30px;
-        line-height: 36px;
-        margin-bottom: 20px;
+        font-size: 28px;
+        line-height: 28px;
+        margin-bottom: 10px;
       }
       h3 {
         font-weight: 900;

@@ -1119,8 +1119,9 @@ p {
   width: 320px;
 }
 .about-trade-protocol dt {
+  font-family: Inter;
   font-weight: bold;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 24px;
   margin-bottom: 20px;
   color: black;
@@ -1165,6 +1166,7 @@ p {
   background-image: url("../image/market-3.svg");
 }
 .about-money-market dt {
+  font-family: Inter;
   color: black;
   font-weight: bold;
   font-size: 20px;
@@ -1190,6 +1192,7 @@ p {
   width: 320px;
 }
 .about-staking-liquidity dt {
+  font-family: Inter;
   font-weight: bold;
   font-size: 20px;
   line-height: 24px;
@@ -1257,9 +1260,9 @@ p {
   .section-main.column .left h2 {
     text-align: left;
     font-weight: 900;
-    font-size: 30px;
-    line-height: 36px;
-    margin-bottom: 20px;
+    font-size: 28px;
+    line-height: 28px;
+    margin-bottom: 10px;
   }
   .section-main.column .left h3 {
     font-weight: 900;
