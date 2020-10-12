@@ -112,13 +112,15 @@ body {
   margin-bottom: 30px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
+.side-screen .side-nav .drop-link {
+  padding-bottom: 0;
+}
 .side-screen .side-nav .drop-link .drop-down {
   padding-right: 10px;
   padding-bottom: 30px;
 }
 .side-screen .side-nav .drop-link .drop-item {
   position: static;
-  display: block;
   padding-left: 30px;
   padding: 0;
 }
@@ -319,9 +321,7 @@ li.drop-link:hover .drop-down:before, li.drop-link.touched .drop-down:before {
   justify-content: space-around;
   position: absolute;
   width: 200px;
-  bottom: 100px;
-  left: 50%;
-  margin-left: -100px;
+  bottom: 50px;
 }
 .side-social img {
   width: 32px;
