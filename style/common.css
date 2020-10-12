@@ -128,7 +128,7 @@ body {
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   font-size: 16px;
   line-height: 20px;
-  padding: 20px 0 0 30px;
+  padding: 20px 0 30px 30px;
   box-shadow: none;
 }
 .side-screen .side-nav .drop-link .drop-down:before {
