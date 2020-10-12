@@ -138,6 +138,9 @@ p {
       font-size: 40px;
       line-height: 48px;
       margin-bottom: 30px;
+      background-image: linear-gradient(94.54deg, #FF8212 0%, #ED4454 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     p {
       max-width: 640px;
