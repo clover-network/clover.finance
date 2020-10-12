@@ -101,26 +101,36 @@ body {
   font-size: 20px;
   line-height: 24px;
   margin-top: 104px;
-  text-align: center;
+  padding-left: 20px;
+  text-align: left;
   color: black;
 }
 .side-screen .side-nav li {
-  margin-bottom: 36px;
-}
-.side-screen .side-nav .drop-link {
-  width: 100px;
-  margin-left: auto;
-  margin-right: auto;
+  font-size: 20px;
+  line-height: 20px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 .side-screen .side-nav .drop-link .drop-down {
   padding-right: 10px;
+  padding-bottom: 30px;
 }
 .side-screen .side-nav .drop-link .drop-item {
-  width: 100px;
-  padding-top: 2em;
+  position: static;
+  display: block;
+  padding-left: 30px;
+  padding: 0;
+}
+.side-screen .side-nav .drop-link .drop-item a {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  font-size: 16px;
+  line-height: 20px;
+  padding: 20px 0 0 30px;
+  box-shadow: none;
 }
 .side-screen .side-nav .drop-link .drop-down:before {
-  background-position: 0 4px;
+  right: 30px;
 }
 
 .nav, .section-nav {
@@ -141,7 +151,8 @@ body {
 
 .mobile-nav-link {
   font-size: 14px;
-  font-weight: 400;
+  line-height: 17px;
+  font-weight: bold;
 }
 .mobile-nav-link a:first-child {
   font-size: 16px;
@@ -163,18 +174,35 @@ body {
   position: absolute;
   width: 12px;
   height: 12px;
-  top: 5px;
+  top: 6px;
   right: 0;
   background: url("../image/s-arr.svg") 0 0 no-repeat;
-  transform-origin: center 5px;
+  transform-origin: center 3px;
 }
 .drop-link .drop-item {
   position: absolute;
   top: 0;
   left: 0;
-  padding-top: 1.5em;
-  padding-left: 1em;
+  min-width: 100px;
+  padding-top: 28px;
+  padding-left: 0;
   display: none;
+}
+.drop-link .drop-item a {
+  color: #000;
+  display: block;
+  padding: 20px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+.drop-link .drop-item a:hover {
+  color: #FB822A;
+  text-decoration: underline;
+}
+
+.back-black .drop-down:before {
+  background-image: url("../image/s-arr-white.svg");
 }
 
 li.drop-link:hover, li.drop-link.touched {
@@ -290,12 +318,14 @@ li.drop-link:hover .drop-down:before, li.drop-link.touched .drop-down:before {
   align-items: center;
   justify-content: space-around;
   position: absolute;
-  width: 100%;
+  width: 200px;
   bottom: 100px;
+  left: 50%;
+  margin-left: -100px;
 }
 .side-social img {
-  width: 35px;
-  height: 35px;
+  width: 32px;
+  height: 32px;
 }
 
 @media only screen and (max-width: 1280px) {

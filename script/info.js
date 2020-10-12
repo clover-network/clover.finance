@@ -19,13 +19,13 @@
     if (index === 1 && !isService) {
       return `<li class='mobile-nav-link drop-link'>
         <a class='drop-down'>${item}</a>
-        <a class='drop-item' href='service.html'>Features</a>
+        <span class='drop-item'><a href='service.html'>Features</a></span>
       </li>`;
     } 
     if (index === 2 && !isToken) {
       return `<li class='mobile-nav-link drop-link'>
         <a class='drop-down'>${item}</a>
-        <a class='drop-item' href='token.html'>CLV</a>
+        <span class='drop-item'><a href='token.html'>CLV</a></span>
       </li>`;
     }
     return `<li class='mobile-nav-link'><a href='${path[index]}' ${append}>${item}</a></li>`;
