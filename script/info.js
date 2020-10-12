@@ -5,9 +5,6 @@
     <ul class='side-nav'></ul>
   </div>`)
 
-  const isToken = $('body').hasClass('token');
-  const isService = $('body').hasClass('service');
-
   const navs = ['Home', 'Discover', 'Token', 'Ecosystem', 'Medium'];
   const path = ['index.html#home', 'index.html#features', 'index.html#token', 'index.html#ecosystem', `https://medium.com/cloverdefi`];
 
@@ -16,17 +13,21 @@
 
   const $nav = navs.map((item, index) => {
     const append = index === navs.length - 1 ? `target='_blank'` : '';  
-    if (index === 1 && !isService) {
+    if (index === 1) {
       return `<li class='mobile-nav-link drop-link'>
         <a class='drop-down'>${item}</a>
-        <span class='drop-item'><a href='service.html'>Features</a></span>
-      </li>`;
+        <span class='drop-item'><span>
+          <a href='index.html#features'>Discover</a>
+          <a href='service.html'>Features</a></span>
+        </span></li>`;
     } 
-    if (index === 2 && !isToken) {
+    if (index === 2) {
       return `<li class='mobile-nav-link drop-link'>
         <a class='drop-down'>${item}</a>
-        <span class='drop-item'><a href='token.html'>CLV</a></span>
-      </li>`;
+        <span class='drop-item'><span>
+          <a href='index.html#token'>Token</a>
+          <a href='token.html'>CLV</a></span>
+        </span></li>`;   
     }
     return `<li class='mobile-nav-link'><a href='${path[index]}' ${append}>${item}</a></li>`;
   });

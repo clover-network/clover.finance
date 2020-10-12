@@ -1093,8 +1093,8 @@ p {
   height: 720px;
   padding-top: 320px;
   padding-bottom: 80px;
-  background: url("../image/about-main.png") 0 0 no-repeat;
-  background-size: 100% 100%;
+  background: url("../image/about-main.png") 100% center no-repeat;
+  background-size: 50% 50%;
 }
 .about-main.content h2 {
   max-width: 640px;
@@ -1120,7 +1120,7 @@ p {
 }
 .about-trade-protocol dt {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 24px;
   margin-bottom: 20px;
   color: black;

@@ -104,12 +104,13 @@ body {
   padding-left: 20px;
   text-align: left;
   color: black;
+  margin-bottom: 50px;
 }
 .side-screen .side-nav li {
-  font-size: 20px;
+  font-size: 16px;
   line-height: 20px;
-  padding-bottom: 30px;
-  margin-bottom: 30px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 .side-screen .side-nav .drop-link {
@@ -117,19 +118,24 @@ body {
 }
 .side-screen .side-nav .drop-link .drop-down {
   padding-right: 10px;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
 .side-screen .side-nav .drop-link .drop-item {
   position: static;
   padding-left: 30px;
   padding: 0;
 }
-.side-screen .side-nav .drop-link .drop-item a {
+.side-screen .side-nav .drop-link .drop-item span {
+  box-shadow: none;
+  padding-left: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+.side-screen .side-nav .drop-link .drop-item a {
   font-size: 16px;
   line-height: 20px;
-  padding: 20px 0 30px 30px;
-  box-shadow: none;
+  padding: 15px 0 15px 30px;
 }
 .side-screen .side-nav .drop-link .drop-down:before {
   right: 30px;
@@ -185,15 +191,15 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  min-width: 100px;
+  min-width: 120px;
   padding-top: 28px;
   padding-left: 0;
   display: none;
 }
-.drop-link .drop-item a {
+.drop-link .drop-item span {
   color: #000;
   display: block;
-  padding: 20px;
+  padding: 20px 0 0 20px;
   background: #FFFFFF;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
   border-radius: 4px;
@@ -201,6 +207,10 @@ body {
 .drop-link .drop-item a:hover {
   color: #FB822A;
   text-decoration: underline;
+}
+.drop-link .drop-item a {
+  display: block;
+  padding-bottom: 20px;
 }
 
 .back-black .drop-down:before {
@@ -318,10 +328,11 @@ li.drop-link:hover .drop-down:before, li.drop-link.touched .drop-down:before {
 .side-social {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  position: absolute;
-  width: 200px;
-  bottom: 50px;
+  justify-content: flex-start;
+  margin-left: 20px;
+}
+.side-social a {
+  margin-right: 50px;
 }
 .side-social img {
   width: 32px;
