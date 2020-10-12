@@ -1097,6 +1097,7 @@ p {
   background-size: 50% 50%;
 }
 .about-main.content h2 {
+  font-family: Inter;
   max-width: 640px;
   margin-bottom: 40px;
 }
@@ -1260,14 +1261,14 @@ p {
   .section-main.column .left h2 {
     text-align: left;
     font-weight: 900;
-    font-size: 28px;
-    line-height: 28px;
+    font-size: 27px;
+    line-height: 27px;
     margin-bottom: 10px;
   }
   .section-main.column .left h3 {
     font-weight: 900;
-    font-size: 24px;
-    line-height: 24px;
+    font-size: 23px;
+    line-height: 23px;
   }
   .section-main.column .left p {
     text-align: left;
