@@ -44,7 +44,7 @@
   $('.side-nav').after(`<div class='side-social'></div>`);
 
   const social = {
-    'twitter': 'https://twitter.com/CloverDeFi',
+    'twitter': 'https://twitter.com/clover_finance',
     'media': 'https://medium.com/cloverdefi',
     'kakao': 'https://open.kakao.com/o/ggPlcrzc',
     'telegram': 'https://t.me/clover_en'
