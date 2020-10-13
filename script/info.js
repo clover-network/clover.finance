@@ -43,15 +43,24 @@
   $('.side-nav.index').html($nav);
   $('.side-nav').after(`<div class='side-social'></div>`);
 
+  const social = {
+    'twitter': 'https://twitter.com/CloverDeFi',
+    'media': 'https://medium.com/cloverdefi',
+    'kakao': 'https://open.kakao.com/o/ggPlcrzc',
+    'telegram': 'https://t.me/clover_en'
+  }
+
   $('.social').html(`
-    <a href='https://twitter.com/CloverDeFi' target='_blank'><img src='image/twitter.svg' /></a>
-    <a href='https://medium.com/cloverdefi' target='_blank'><img src='image/media.svg' /></a>
-    <a href='https://open.kakao.com/o/ggPlcrzc' target='_blank'><img src='image/talk.svg' /></a>
+    <a href='${social.twitter}' target='_blank'><img src='image/twitter.svg' /></a>
+    <a href='${social.media}' target='_blank'><img src='image/media.svg' /></a>
+    <a href='${social.kakao}' target='_blank'><img src='image/kakao.svg' /></a>
+    <a href='${social.telegram}' target='_blank'><img src='image/telegram.svg' /></a>
 `)
   $('.side-social').html(`
-    <a href='https://twitter.com/CloverDeFi' target='_blank'><img src='image/side-twitter.svg' /></a>
-    <a href='https://medium.com/cloverdefi' target='_blank'><img src='image/side-media.svg' /></a>
-    <a href='https://open.kakao.com/o/ggPlcrzc' target='_blank'><img src='image/side-talk.svg' /></a>
+    <a href='${social.twitter}' target='_blank'><img src='image/side-twitter.svg' /></a>
+    <a href='${social.media}' target='_blank'><img src='image/side-media.svg' /></a>
+    <a href='${social.kakao}' target='_blank'><img src='image/side-kakao.svg' /></a>
+    <a href='${social.telegram}' target='_blank'><img src='image/side-telegram.svg' /></a>
   `)
 
   $('.mobile-nav-link').click(() => {
