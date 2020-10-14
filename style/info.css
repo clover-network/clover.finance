@@ -119,6 +119,9 @@ p {
   background: url("../image/icon.svg") 100% 0 no-repeat;
 }
 .section-main .left h2 {
+  background-image: linear-gradient(94.54deg, #FF8212 0%, #ED4454 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-transform: uppercase;
   font-weight: 900;
   font-size: 64px;
@@ -126,14 +129,15 @@ p {
   margin-bottom: 20px;
 }
 .section-main .left h3 {
-  text-transform: uppercase;
-  font-weight: 900;
-  font-size: 40px;
-  line-height: 48px;
+  display: flex;
+  font-family: InterRegular;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 32px;
   margin-bottom: 30px;
-  background-image: linear-gradient(94.54deg, #FF8212 0%, #ED4454 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+}
+.section-main .left h3 img {
+  margin-left: 0.5em;
 }
 .section-main .left p {
   max-width: 640px;
@@ -1269,7 +1273,7 @@ p {
     margin-bottom: 10px;
   }
   .section-main.column .left h3 {
-    font-weight: 900;
+    font-weight: normal;
     font-size: 23px;
     line-height: 23px;
   }
