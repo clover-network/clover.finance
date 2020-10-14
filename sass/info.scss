@@ -138,12 +138,13 @@ p {
     h3 {
       display: flex;
       font-family: InterRegular;
+      color: rgba(0, 0, 0, 0.5);  
       font-weight: normal;
       font-size: 32px;
       line-height: 32px;
       margin-bottom: 30px;
       img {
-        margin-left: 0.5em;
+        margin-left: 8px;
       }
     }
     p {
@@ -1293,8 +1294,11 @@ p {
       }
       h3 {
         font-weight: normal;
-        font-size: 23px;
-        line-height: 23px;
+        font-size: 22px;
+        line-height: 20px;
+        img {
+          height: 20px;
+        }
       }
       p {
         text-align: left;

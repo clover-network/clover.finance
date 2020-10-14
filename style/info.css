@@ -131,13 +131,14 @@ p {
 .section-main .left h3 {
   display: flex;
   font-family: InterRegular;
+  color: rgba(0, 0, 0, 0.5);
   font-weight: normal;
   font-size: 32px;
   line-height: 32px;
   margin-bottom: 30px;
 }
 .section-main .left h3 img {
-  margin-left: 0.5em;
+  margin-left: 8px;
 }
 .section-main .left p {
   max-width: 640px;
@@ -1274,8 +1275,11 @@ p {
   }
   .section-main.column .left h3 {
     font-weight: normal;
-    font-size: 23px;
-    line-height: 23px;
+    font-size: 22px;
+    line-height: 20px;
+  }
+  .section-main.column .left h3 img {
+    height: 20px;
   }
   .section-main.column .left p {
     text-align: left;
