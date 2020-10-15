@@ -104,7 +104,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background: url("../image/plantform.svg") 100% 270px no-repeat;
+  background: url("../image/plantform.svg") 100% 140px no-repeat;
 }
 .section-main .left {
   width: 100%;
@@ -1099,7 +1099,7 @@ p {
 
 .about-main.content {
   height: 720px;
-  padding-top: 320px;
+  padding-top: 200px;
   padding-bottom: 80px;
   background: url("../image/about-main.png") 100% center no-repeat;
   background-size: 50% 50%;
