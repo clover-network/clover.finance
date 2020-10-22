@@ -206,19 +206,26 @@ p {
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.05) url() center center no-repeat;
   background-size: 100% 100%;
-  cursor: pointer;
   margin-right: 20px;
 }
 .section-features .control li.left-control {
-  background-image: url("../image/arr-left-white.svg");
+  background-image: url("../image/arr-left-white-disable.svg");
 }
 .section-features .control li.right-control {
-  background-image: url("../image/arr-right-white.svg");
+  background-image: url("../image/arr-right-white-disable.svg");
 }
 .section-features .control li.left-control.enable {
-  background-image: url("../image/arr-left-white-hover.svg");
+  cursor: pointer;
+  background-image: url("../image/arr-left-white.svg");
 }
 .section-features .control li.right-control.enable {
+  cursor: pointer;
+  background-image: url("../image/arr-right-white.svg");
+}
+.section-features .control li.left-control.enable:hover {
+  background-image: url("../image/arr-left-white-hover.svg");
+}
+.section-features .control li.right-control.enable:hover {
   background-image: url("../image/arr-right-white-hover.svg");
 }
 .section-features .feature-area {
@@ -230,6 +237,7 @@ p {
   align-items: stretch;
   justify-content: flex-start;
   overflow: hidden;
+  padding-bottom: 10px;
 }
 .section-features .feature-content .feature-item {
   width: 275px;
@@ -239,6 +247,7 @@ p {
   padding: 140px 20px;
   background: #fff url("") 20px 40px no-repeat;
   flex: 0 0 auto;
+  cursor: pointer;
 }
 .section-features .feature-content .feature-item dt {
   color: #000;
@@ -251,6 +260,10 @@ p {
   color: rgba(0, 0, 0, 0.5);
   font-size: 16px;
   line-height: 24px;
+}
+.section-features .feature-content .feature-item:hover {
+  margin-top: 10px;
+  margin-bottom: -10px;
 }
 .section-features .feature-content .feature-item:nth-child(1n) {
   background-image: url("../image/list-1.svg");
@@ -755,19 +768,26 @@ p {
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.05) url() center center no-repeat;
   background-size: 100% 100%;
-  cursor: pointer;
   margin-left: 20px;
 }
 .section-roadmap .control li.left-control {
-  background-image: url("../image/arr-left.svg");
+  background-image: url("../image/arr-left-disable.svg");
 }
 .section-roadmap .control li.right-control {
-  background-image: url("../image/arr-right.svg");
+  background-image: url("../image/arr-right-disable.svg");
 }
 .section-roadmap .control li.left-control.enable {
-  background-image: url("../image/arr-left-hover.svg");
+  cursor: pointer;
+  background-image: url("../image/arr-left.svg");
 }
 .section-roadmap .control li.right-control.enable {
+  cursor: pointer;
+  background-image: url("../image/arr-right.svg");
+}
+.section-roadmap .control li.left-control.enable:hover {
+  background-image: url("../image/arr-left-hover.svg");
+}
+.section-roadmap .control li.right-control.enable:hover {
   background-image: url("../image/arr-right-hover.svg");
 }
 .section-roadmap .road-item {

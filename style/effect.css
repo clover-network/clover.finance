@@ -1,0 +1,211 @@
+.features-section.effect h2.hidden, .features-section.effect p.hidden {
+  transform: translateY(60px);
+  opacity: 0;
+}
+.features-section.effect .feature-area.hidden, .features-section.effect .text-button.hidden {
+  transform: translateY(50px);
+  opacity: 0;
+}
+.features-section.effect h2.action, .features-section.effect p.action {
+  transition-timing-function: linear;
+  transition-property: opacity, transform;
+  transition-duration: 300ms;
+}
+.features-section.effect .feature-area.action, .features-section.effect .text-button.action {
+  transition-timing-function: linear;
+  transition-property: opacity, transform;
+  transition-duration: 300ms;
+  transition-delay: 200ms;
+}
+
+.section-product.effect .content.hidden {
+  transform: translateY(200px);
+  opacity: 0;
+}
+.section-product.effect h2.hidden {
+  transform: translateY(30px);
+  opacity: 0;
+}
+.section-product.effect li.hidden {
+  transform: translateY(40px);
+  opacity: 0;
+}
+.section-product.effect .content.action {
+  transition-timing-function: linear;
+  transition-property: opacity, transform;
+  transition-duration: 600ms;
+}
+.section-product.effect h2.action, .section-product.effect li.action {
+  transition-timing-function: linear;
+  transition-property: opacity, transform;
+  transition-duration: 400ms;
+  transition-delay: 50ms;
+}
+.section-product.effect li.action {
+  transition-delay: 100ms;
+}
+.section-product.effect li.action:nth-child(2) {
+  transition-delay: 200ms;
+}
+.section-product.effect li.action:nth-child(3) {
+  transition-delay: 300ms;
+}
+.section-product.effect li.action:nth-child(4) {
+  transition-delay: 400ms;
+}
+.section-product.effect li.action:nth-child(5) {
+  transition-delay: 500ms;
+}
+.section-product.effect li.action:nth-child(6) {
+  transition-delay: 600ms;
+}
+
+.token-section.effect .token-top.hidden, .token-section.effect .section-token.hidden {
+  transform: translateY(100px);
+  opacity: 0;
+}
+.token-section.effect h2.hidden, .token-section.effect a.hidden {
+  transform: translateY(30px);
+  opacity: 0;
+}
+.token-section.effect ul.hidden {
+  transform: translateY(50px);
+  opacity: 0;
+}
+.token-section.effect .token-top.action, .token-section.effect .section-token.action {
+  transition-timing-function: linear;
+  transition-property: opacity, transform;
+  transition-duration: 700ms;
+}
+.token-section.effect h2.action, .token-section.effect ul.action, .token-section.effect a.action {
+  transition-timing-function: linear;
+  transition-property: opacity, transform;
+  transition-duration: 300ms;
+}
+.token-section.effect ul.action {
+  transition-duration: 500ms;
+  transition-delay: 200ms;
+}
+.token-section.effect a.action {
+  transition-duration: 500ms;
+  transition-delay: 300ms;
+}
+
+.section-why.effect .content.hidden {
+  transform: translateY(100px);
+  opacity: 0;
+}
+.section-why.effect h2.hidden, .section-why.effect dl.hidden {
+  transform: translateY(30px);
+  opacity: 0;
+}
+.section-why.effect .content.action {
+  transition-timing-function: linear;
+  transition-property: opacity, transform;
+  transition-duration: 600ms;
+}
+.section-why.effect h2.action, .section-why.effect dl.action {
+  transition-timing-function: linear;
+  transition-property: opacity, transform;
+  transition-duration: 200ms;
+}
+.section-why.effect dl.action {
+  transition-delay: 100ms;
+}
+.section-why.effect dl.action:nth-child(2) {
+  transition-delay: 200ms;
+}
+.section-why.effect dl.action:nth-child(3) {
+  transition-delay: 300ms;
+}
+.section-why.effect dl.action:nth-child(4) {
+  transition-delay: 400ms;
+}
+.section-why.effect dl.action:nth-child(5) {
+  transition-delay: 500ms;
+}
+.section-why.effect dl.action:nth-child(6) {
+  transition-delay: 600ms;
+}
+
+.ecosystem-section.effect .section-ecosystem.hidden {
+  transform: translateY(120px);
+  opacity: 0;
+}
+.ecosystem-section.effect h2.hidden {
+  transform: translateY(-30px);
+  opacity: 0;
+}
+.ecosystem-section.effect .ecosystem.hidden {
+  transform: translateY(30px);
+  opacity: 0;
+}
+.ecosystem-section.effect .section-ecosystem.action {
+  transition-timing-function: linear;
+  transition-property: opacity, transform;
+  transition-duration: 400ms;
+}
+.ecosystem-section.effect h2.action {
+  transition-timing-function: linear;
+  transition-property: opacity, transform;
+  transition-duration: 200ms;
+  transition-delay: 200ms;
+}
+.ecosystem-section.effect .ecosystem.action {
+  transition-timing-function: linear;
+  transition-property: opacity, transform;
+  transition-duration: 100ms;
+  transition-delay: 440ms;
+}
+
+.section-roadmap.effect ul.hidden {
+  transform: translateX(100px);
+  opacity: 0;
+}
+.section-roadmap.effect h2.hidden, .section-roadmap.effect dl.hidden {
+  transform: translateY(120px);
+  opacity: 0;
+}
+.section-roadmap.effect h2.action, .section-roadmap.effect ul.action, .section-roadmap.effect dl.action {
+  transition-timing-function: linear;
+  transition-property: opacity, transform;
+  transition-duration: 300ms;
+}
+.section-roadmap.effect ul.action {
+  transition-delay: 800ms;
+}
+.section-roadmap.effect dl.action:nth-child(1) {
+  transition-delay: 100ms;
+}
+.section-roadmap.effect dl.action:nth-child(2) {
+  transition-delay: 200ms;
+}
+.section-roadmap.effect dl.action:nth-child(3) {
+  transition-delay: 400ms;
+}
+.section-roadmap.effect dl.action:nth-child(4) {
+  transition-delay: 600ms;
+}
+.section-roadmap.effect dl.action:nth-child(5) {
+  transition-delay: 800ms;
+}
+
+.features-section.init,
+.section-product.init,
+.token-section.init,
+.section-why.init,
+.ecosystem-section.init,
+.section-roadmap.init {
+  opacity: 0;
+}
+
+.features-section.effect,
+.section-product.effect,
+.token-section.effect,
+.section-why.effect,
+.ecosystem-section.effect,
+.section-roadmap.effect {
+  opacity: 1;
+}
+
+/*# sourceMappingURL=effect.css.map */

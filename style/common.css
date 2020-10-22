@@ -270,6 +270,36 @@ li.drop-link:hover .drop-down:before, li.drop-link.touched .drop-down:before {
   justify-content: space-between;
   max-width: 1280px;
 }
+.footer .social a {
+  width: 28px;
+  height: 28px;
+  background: url() 0 0 no-repeat;
+  cursor: pointer;
+}
+.footer a.social-twitter {
+  background-image: url("../image/twitter.svg");
+}
+.footer a.social-twitter:hover {
+  background-image: url("../image/twitter-hover.svg");
+}
+.footer a.social-media {
+  background-image: url("../image/media.svg");
+}
+.footer a.social-media:hover {
+  background-image: url("../image/media-hover.svg");
+}
+.footer a.social-kakao {
+  background-image: url("../image/kakao.svg");
+}
+.footer a.social-kakao:hover {
+  background-image: url("../image/kakao-hover.svg");
+}
+.footer a.social-telegram {
+  background-image: url("../image/telegram.svg");
+}
+.footer a.social-telegram:hover {
+  background-image: url("../image/telegram-hover.svg");
+}
 .footer .footer-nav {
   display: flex;
   white-space: pre;
@@ -284,6 +314,9 @@ li.drop-link:hover .drop-down:before, li.drop-link.touched .drop-down:before {
   padding-right: 20px;
   margin-right: 17px;
   line-height: 14px;
+}
+.footer .left a:hover {
+  color: #FB822A;
 }
 .footer .left a.mail {
   display: flex;

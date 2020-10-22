@@ -1,0 +1,227 @@
+.features-section.effect {
+  h2.hidden, p.hidden {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  .feature-area.hidden, .text-button.hidden {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  
+  h2.action, p.action {
+    transition-timing-function: linear;
+    transition-property: opacity, transform;
+    transition-duration: 300ms;
+  }
+  .feature-area.action, .text-button.action {
+    transition-timing-function: linear;
+    transition-property: opacity, transform;
+    transition-duration: 300ms;
+    transition-delay: 200ms;
+  }
+}
+
+.section-product.effect {
+  .content.hidden {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+  h2.hidden {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  li.hidden {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+
+  .content.action {
+    transition-timing-function: linear;
+    transition-property: opacity, transform;
+    transition-duration: 600ms;
+  }
+  h2.action, li.action {
+    transition-timing-function: linear;
+    transition-property: opacity, transform;
+    transition-duration: 400ms;
+    transition-delay: 50ms;
+  }
+  li.action {
+    transition-delay: 100ms;
+  }
+  li.action:nth-child(2) {
+    transition-delay: 200ms;
+  }
+  li.action:nth-child(3) {
+    transition-delay: 300ms;
+  }
+  li.action:nth-child(4) {
+    transition-delay: 400ms;
+  }
+  li.action:nth-child(5) {
+    transition-delay: 500ms;
+  }
+  li.action:nth-child(6) {
+    transition-delay: 600ms;
+  }
+}
+
+.token-section.effect {
+  .token-top.hidden, .section-token.hidden {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  h2.hidden, a.hidden {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  ul.hidden {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  .token-top.action, .section-token.action {
+    transition-timing-function: linear;
+    transition-property: opacity, transform;
+    transition-duration: 700ms;
+  }
+  h2.action, ul.action, a.action {
+    transition-timing-function: linear;
+    transition-property: opacity, transform;
+    transition-duration: 300ms;
+  }
+  ul.action {
+    transition-duration: 500ms;
+    transition-delay: 200ms;
+  }
+  a.action {
+    transition-duration: 500ms;
+    transition-delay: 300ms;
+  }
+}
+
+.section-why.effect {
+  .content.hidden {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  h2.hidden, dl.hidden {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  .content.action {
+    transition-timing-function: linear;
+    transition-property: opacity, transform;
+    transition-duration: 600ms;
+  }
+  h2.action, dl.action {
+    transition-timing-function: linear;
+    transition-property: opacity, transform;
+    transition-duration: 200ms;
+  }
+  dl.action {
+    transition-delay: 100ms;
+  }
+  dl.action:nth-child(2) {
+    transition-delay: 200ms;
+  }
+  dl.action:nth-child(3) {
+    transition-delay: 300ms;
+  }
+  dl.action:nth-child(4) {
+    transition-delay: 400ms;
+  }
+  dl.action:nth-child(5) {
+    transition-delay: 500ms;
+  }
+  dl.action:nth-child(6) {
+    transition-delay: 600ms;
+  }
+}
+
+.ecosystem-section.effect {
+  .section-ecosystem.hidden {
+    transform: translateY(120px);
+    opacity: 0;
+  }
+  h2.hidden {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  .ecosystem.hidden {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  .section-ecosystem.action {
+    transition-timing-function: linear;
+    transition-property: opacity, transform;
+    transition-duration: 400ms;
+  }
+  h2.action {
+    transition-timing-function: linear;
+    transition-property: opacity, transform;
+    transition-duration: 200ms;
+    transition-delay: 200ms;
+  }
+  .ecosystem.action {
+    transition-timing-function: linear;
+    transition-property: opacity, transform;
+    transition-duration: 100ms;
+    transition-delay: 440ms;
+  }
+}
+
+.section-roadmap.effect {
+  ul.hidden {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  h2.hidden, dl.hidden {
+    transform: translateY(120px);
+    opacity: 0;
+  }
+
+  h2.action, ul.action, dl.action {
+    transition-timing-function: linear;
+    transition-property: opacity, transform;
+    transition-duration: 300ms;
+  }
+  ul.action {
+    transition-delay: 800ms;
+  }
+  dl.action:nth-child(1) {
+    transition-delay: 100ms;
+  }
+  dl.action:nth-child(2) {
+    transition-delay: 200ms;
+  }
+  dl.action:nth-child(3) {
+    transition-delay: 400ms;
+  }
+  dl.action:nth-child(4) {
+    transition-delay: 600ms;
+  }
+  dl.action:nth-child(5) {
+    transition-delay: 800ms;
+  }
+}
+
+.features-section.init,
+.section-product.init,
+.token-section.init,
+.section-why.init,
+.ecosystem-section.init,
+.section-roadmap.init {
+  opacity: 0;
+}
+
+.features-section.effect,
+.section-product.effect,
+.token-section.effect,
+.section-why.effect,
+.ecosystem-section.effect,
+.section-roadmap.effect {
+  opacity: 1;
+}

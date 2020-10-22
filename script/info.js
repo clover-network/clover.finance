@@ -51,10 +51,10 @@
   }
 
   $('.social').html(`
-    <a href='${social.twitter}' target='_blank'><img src='image/twitter.svg' /></a>
-    <a href='${social.media}' target='_blank'><img src='image/media.svg' /></a>
-    <a href='${social.kakao}' target='_blank'><img src='image/kakao.svg' /></a>
-    <a href='${social.telegram}' target='_blank'><img src='image/telegram.svg' /></a>
+    <a href='${social.twitter}' target='_blank' class='social-twitter'></a>
+    <a href='${social.media}' target='_blank' class='social-media'></a>
+    <a href='${social.kakao}' target='_blank' class='social-kakao'></a>
+    <a href='${social.telegram}' target='_blank' class='social-telegram'></a>
 `)
   $('.side-social').html(`
     <a href='${social.twitter}' target='_blank'><img src='image/side-twitter.svg' /></a>

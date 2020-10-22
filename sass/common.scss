@@ -266,6 +266,36 @@ li.drop-link:hover .drop-down:before, li.drop-link.touched .drop-down:before {
     justify-content: space-between;
     max-width: 1280px;
   }
+  .social a {
+    width: 28px;
+    height: 28px;
+    background: url() 0 0 no-repeat;
+    cursor: pointer;
+  }
+  a.social-twitter {
+    background-image: url('../image/twitter.svg');
+  }
+  a.social-twitter:hover {
+    background-image: url('../image/twitter-hover.svg');
+  }
+  a.social-media {
+    background-image: url('../image/media.svg');
+  }
+  a.social-media:hover {
+    background-image: url('../image/media-hover.svg');
+  }
+  a.social-kakao {
+    background-image: url('../image/kakao.svg');
+  }
+  a.social-kakao:hover {
+    background-image: url('../image/kakao-hover.svg');
+  }
+  a.social-telegram {
+    background-image: url('../image/telegram.svg');
+  }
+  a.social-telegram:hover {
+    background-image: url('../image/telegram-hover.svg');
+  }
   .footer-nav {
     display: flex;
     white-space: pre;
@@ -281,6 +311,9 @@ li.drop-link:hover .drop-down:before, li.drop-link.touched .drop-down:before {
       padding-right: 20px;
       margin-right: 17px;;
       line-height: 14px;
+    }
+    a:hover {
+      color: #FB822A;
     }
     a.mail {
       display: flex;
