@@ -8,7 +8,7 @@
   const navs = ['Home', 'Discover', 'Token', 'Ecosystem', 'Medium'];
   const path = ['index.html#home', 'index.html#features', 'index.html#token', 'index.html#ecosystem', `https://medium.com/cloverdefi`];
 
-  const footer = ['DISCOVER', 'TOKEN', 'ECOSYSTEM', 'CAREERS', 'MEDIUM'];
+  const footer = ['DISCOVER', 'TOKEN', 'ECOSYSTEM', 'TEAM', 'MEDIUM'];
   const footerPath = ['index.html#features', 'index.html#token', 'index.html#ecosystem', 'about.html', `https://medium.com/cloverdefi`];
 
   const $nav = navs.map((item, index) => {
