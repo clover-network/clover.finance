@@ -30,39 +30,27 @@
     transform: translateY(30px);
     opacity: 0;
   }
-  li.hidden {
-    transform: translateY(40px);
+  dl.hidden {
+    transform: translateY(300px);
     opacity: 0;
   }
 
-  .content.action {
+  .content.action, dl.action {
     transition-timing-function: linear;
     transition-property: opacity, transform;
     transition-duration: 600ms;
   }
-  h2.action, li.action {
+  h2.action {
     transition-timing-function: linear;
     transition-property: opacity, transform;
     transition-duration: 400ms;
     transition-delay: 50ms;
   }
-  li.action {
-    transition-delay: 100ms;
-  }
-  li.action:nth-child(2) {
-    transition-delay: 200ms;
-  }
-  li.action:nth-child(3) {
-    transition-delay: 300ms;
-  }
-  li.action:nth-child(4) {
+  dl.action:nth-of-type(1) {
     transition-delay: 400ms;
   }
-  li.action:nth-child(5) {
-    transition-delay: 500ms;
-  }
-  li.action:nth-child(6) {
-    transition-delay: 600ms;
+  dl.action:nth-of-type(2) {
+    transition-delay: 700ms;
   }
 }
 

@@ -24,7 +24,7 @@
   ];
   const children = [
     'h2, p, .feature-area, .text-button',
-    '.content, h2, li',
+    '.content, h2, dl',
     '.token-top, .section-token, h2, ul, a',
     '.content, h2, dl',
     '.section-ecosystem, h2, .ecosystem',

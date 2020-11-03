@@ -241,7 +241,7 @@ p {
 }
 .section-features .feature-content .feature-item {
   color: white;
-  width: 400px;
+  width: 426px;
   height: 160px;
   border-radius: 10px;
   flex: 0 0 auto;
@@ -314,10 +314,10 @@ p {
 .section-product {
   color: #172026;
   padding-top: 170px;
-  padding-bottom: 150px;
+  padding-bottom: 120px;
 }
 .section-product .content {
-  background: url("../image/back-token-1.svg") center right no-repeat;
+  overflow: hidden;
 }
 .section-product h2 {
   font-weight: 900;
@@ -325,16 +325,72 @@ p {
   line-height: 40px;
   margin-bottom: 60px;
 }
-.section-product ul {
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 16px;
+.section-product dl {
+  color: #172026;
+  border-radius: 30px;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 106px;
+  background-color: #fafafa;
+  position: relative;
 }
-.section-product ul li {
-  max-width: 720px;
-  margin-bottom: 30px;
-  padding-left: 32px;
-  background: url("../image/arrows.svg") 0 5px no-repeat;
+.section-product dl:after {
+  content: " ";
+  position: absolute;
+  background: url("") 0 0 no-repeat;
+}
+.section-product dl:nth-of-type(1) {
+  max-width: 940px;
+  padding-left: 76px;
+  background-position: right 43px;
+}
+.section-product dl:nth-of-type(1) dd {
+  max-width: 480px;
+}
+.section-product dl:nth-of-type(1):after {
+  width: 280px;
+  height: 300px;
+  top: 43px;
+  right: -140px;
+  background-image: url("../image/wallet.svg");
+}
+.section-product dl:nth-of-type(2) {
+  display: flex;
+  align-items: flex-end;
+  float: right;
+  max-width: 970px;
+  padding-right: 60px;
+  margin-bottom: 60px;
+}
+.section-product dl:nth-of-type(2) dt {
+  width: 100%;
+  max-width: 520px;
+}
+.section-product dl:nth-of-type(2) dd {
+  max-width: 520px;
+}
+.section-product dl:nth-of-type(2):after {
+  width: 245px;
+  height: 300px;
+  top: 43px;
+  left: -110px;
+  background-image: url("../image/explorer.svg");
+}
+.section-product dt {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 20px;
+  margin-bottom: 22px;
+}
+.section-product dd {
+  font-size: 16px;
+  line-height: 26px;
+  width: 100%;
 }
 
 .token-top {
@@ -439,8 +495,9 @@ p {
   background: url("") 0 0 no-repeat;
 }
 .section-why dt {
-  font-size: 16px;
-  line-height: 16px;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 700;
   color: #000;
   margin-bottom: 10px;
 }
@@ -463,6 +520,9 @@ p {
 }
 .section-why dl:nth-of-type(5) {
   background-image: url("../image/arch-5.svg");
+}
+.section-why dl:nth-of-type(2) dt, .section-why dl:nth-of-type(3) dt, .section-why dl:nth-of-type(4) dt {
+  color: #FB822A;
 }
 
 #ecosystem {
@@ -1505,8 +1565,39 @@ p {
     line-height: 36px;
     margin-bottom: 30px;
   }
-  .section-product ul li {
-    margin-bottom: 20px;
+  .section-product dl {
+    margin-top: 160px;
+  }
+  .section-product dl:nth-of-type(1), .section-product dl:nth-of-type(2) {
+    text-align: center;
+    padding: 168px 14px 40px 14px;
+    align-items: flex-start;
+  }
+  .section-product dl:nth-of-type(1) dt, .section-product dl:nth-of-type(2) dt {
+    width: 100%;
+    font-size: 18px;
+  }
+  .section-product dl:nth-of-type(1) dd, .section-product dl:nth-of-type(2) dd {
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .section-product dl:after {
+    background-size: 100% 100%;
+  }
+  .section-product dl:nth-of-type(1):after {
+    top: -92px;
+    left: 50%;
+    height: 200px;
+    width: 188px;
+    margin-left: -94px;
+  }
+  .section-product dl:nth-of-type(2):after {
+    top: -92px;
+    left: 50%;
+    height: 200px;
+    width: 162px;
+    margin-left: -81px;
   }
 
   .token-top {
