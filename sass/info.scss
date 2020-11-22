@@ -108,6 +108,17 @@ p {
   @extend %flex-center; 
 }
 
+@keyframes change {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .section-main {
   .container {
     max-width: 620px;
@@ -146,7 +157,7 @@ p {
     }
   }
   .container:hover .image {
-    transform: scale(1.1);
+    animation: change 20s linear infinite;
   }
   .button {
     margin: 0 auto;
@@ -1399,6 +1410,11 @@ p {
       padding-top: 20px;
     }
   }
+  .section-main {
+    .container {
+      margin-top: 30px;
+    }
+  }
   .section-contain {
     padding-bottom: 120px;
     background-position: right 160px;
@@ -1468,10 +1484,14 @@ p {
   }
   .section-features {
     ul {
+      width: 100%;
       max-width: 410px;
       flex-direction: column;
       margin-left: auto;
       margin-right: auto;
+    }
+    li {
+      width: 100%;
     }
     li:nth-child(2) {
       margin: 40px 0;
