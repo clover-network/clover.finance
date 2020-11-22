@@ -1,130 +1,148 @@
-.features-section.effect {
-  h2.hidden, p.hidden {
-    transform: translateY(60px);
+.section-main.effect {
+  .m-1.hidden, .m-2.hidden, .m-3.hidden {
+    transform: translateY(620px);
     opacity: 0;
   }
-  .feature-area.hidden, .text-button.hidden {
-    transform: translateY(50px);
+  .m-4.hidden {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  .m-1.action, .m-2.action, .m-3.action, .m-4.action {
+    transition-timing-function: linear;
+    transition-property: opacity, transform;
+    transition-duration: 0.8s;
+  }
+  .m-2.action {
+    transition-delay: 0.6s;
+  }
+  .m-3.action {
+    transition-delay: 2s;
+  }
+  .m-4.action {
+    transition-delay: 2.4s;
+  }
+}
+
+.features-section.effect {
+  .li-1.hidden, .li-2.hidden, .li-3.hidden {
+    transform: translateY(300px);
     opacity: 0;
   }
   
-  h2.action, p.action {
+  .li-1.action, .li-2.action, .li-3.action {
     transition-timing-function: linear;
     transition-property: opacity, transform;
-    transition-duration: 300ms;
+    transition-duration: 0.4s;
   }
-  .feature-area.action, .text-button.action {
-    transition-timing-function: linear;
-    transition-property: opacity, transform;
-    transition-duration: 300ms;
-    transition-delay: 200ms;
+  .li-2.action {
+    transition-delay: 0.4s;
+  }
+  .li-3.action {
+    transition-delay: 0.8s;
   }
 }
 
 .section-product.effect {
+  .content.hidden, .m-1.hidden, .m-2.hidden, .m-3.hidden {
+    opacity: 0;
+  }
   .content.hidden {
-    transform: translateY(200px);
-    opacity: 0;
+    transform: translateY(580px);
   }
-  h2.hidden {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  dl.hidden {
-    transform: translateY(300px);
-    opacity: 0;
-  }
-
-  .content.action, dl.action {
-    transition-timing-function: linear;
-    transition-property: opacity, transform;
-    transition-duration: 600ms;
-  }
-  h2.action {
-    transition-timing-function: linear;
-    transition-property: opacity, transform;
-    transition-duration: 400ms;
-    transition-delay: 50ms;
-  }
-  dl.action:nth-of-type(1) {
-    transition-delay: 400ms;
-  }
-  dl.action:nth-of-type(2) {
-    transition-delay: 700ms;
-  }
-}
-
-.token-section.effect {
-  .token-top.hidden, .section-token.hidden {
+  .m-1.hidden {
     transform: translateY(100px);
-    opacity: 0;
   }
-  h2.hidden, a.hidden {
-    transform: translateY(30px);
-    opacity: 0;
+  .m-2.hidden {
+    transform: translateY(40px);
   }
-  ul.hidden {
-    transform: translateY(50px);
-    opacity: 0;
+  .m-3.hidden {
+    transform: translateY(180px);
   }
 
-  .token-top.action, .section-token.action {
+  .content.action, .m-1.action, .m-2.action, .m-3.action {
     transition-timing-function: linear;
     transition-property: opacity, transform;
-    transition-duration: 700ms;
+    transition-duration: 0.6s;
   }
-  h2.action, ul.action, a.action {
-    transition-timing-function: linear;
-    transition-property: opacity, transform;
+  .m-1.action {
     transition-duration: 300ms;
+    transition-delay: 0.6s;
   }
-  ul.action {
-    transition-duration: 500ms;
-    transition-delay: 200ms;
+  .m-2.action {
+    transition-duration: 100ms;
+    transition-delay: 0.9s;
+
   }
-  a.action {
-    transition-duration: 500ms;
-    transition-delay: 300ms;
+  .m-3.action {
+    transition-duration: 300ms;
+    transition-delay: 1s;
+
   }
 }
 
 .section-why.effect {
-  .content.hidden {
-    transform: translateY(100px);
+  .m-1.hidden, .m-3.hidden {
+    transform: translateY(240px);
     opacity: 0;
   }
-  h2.hidden, dl.hidden {
-    transform: translateY(30px);
+  .m-2.hidden, .m-4.hidden {
+    transform: translateY(480px);
     opacity: 0;
   }
 
-  .content.action {
+  .m-1.action, .m-2.action, .m-3.action, .m-4.action{
     transition-timing-function: linear;
     transition-property: opacity, transform;
-    transition-duration: 600ms;
+    transition-duration: 0.6s;
   }
-  h2.action, dl.action {
+  .m-2.action {
+    transition-delay: 0.2s;
+  }
+  .m-3.action {
+    transition-delay: 0.4s;
+  }
+  .m-4.action {
+    transition-delay: 0.6s;
+  }
+}
+
+.token-section.effect {
+  .m-1.hidden {
+    transform: translateY(400px);
+    opacity: 0;
+
+  }
+  .m-2.hidden, .m-3.hidden, .m-4.hidden, .m-5.hidden, .m-6.hidden {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+
+  .m-1.action {
     transition-timing-function: linear;
     transition-property: opacity, transform;
-    transition-duration: 200ms;
+    transition-duration: 0.8s;
+
   }
-  dl.action {
-    transition-delay: 100ms;
+  .m-2.action, .m-3.action, .m-4.action, .m-5.action, .m-6.action {
+    transition-timing-function: linear;
+    transition-property: opacity, transform;
+    transition-duration: 0.5s;
   }
-  dl.action:nth-child(2) {
-    transition-delay: 200ms;
+  .m-2.action {
+    transition-delay: 0.8s;
   }
-  dl.action:nth-child(3) {
-    transition-delay: 300ms;
+  .m-3.action {
+    transition-delay: 1s;
   }
-  dl.action:nth-child(4) {
-    transition-delay: 400ms;
+  .m-4.action {
+    transition-delay: 1.2s;
   }
-  dl.action:nth-child(5) {
-    transition-delay: 500ms;
+  .m-5.action {
+    transition-delay: 1.4s;
   }
-  dl.action:nth-child(6) {
-    transition-delay: 600ms;
+  .m-6.action {
+    transition-delay: 1.6s;
   }
 }
 
@@ -196,6 +214,7 @@
   }
 }
 
+.section-main.init,
 .features-section.init,
 .section-product.init,
 .token-section.init,
@@ -205,6 +224,7 @@
   opacity: 0;
 }
 
+.section-main.effect,
 .features-section.effect,
 .section-product.effect,
 .token-section.effect,

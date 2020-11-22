@@ -50,8 +50,7 @@
       }
     })
   }
-
-  slider($('.section-features'), $('.feature-area'), 275);
+  
   slider($('.section-roadmap'), $('.roadmap'), 240);
 
 }());

@@ -259,7 +259,11 @@ p {
 .section-product {
   padding-bottom: 120px;
   h2 {
+    margin-top: 36px;
     margin-bottom: 96px;
+  }
+  .content {
+    padding-top: 0;
   }
   .product-content {
     font-family: 'PingFangSC-Medium, PingFang SC';
