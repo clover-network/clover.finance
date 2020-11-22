@@ -114,6 +114,7 @@ p {
     height: 620px;
     position: relative;
     margin: 190px auto 0 auto;
+    cursor: pointer;
     .main-item {
       width: 100%;
       height: 100%;
@@ -143,6 +144,9 @@ p {
       position: absolute;
       top: 406px;
     }
+  }
+  .container:hover .image {
+    transform: scale(1.1);
   }
   .button {
     margin: 0 auto;
@@ -179,11 +183,15 @@ p {
     line-height: 33px;
     font-weight: bold;
     color: white;
-    max-width: 410px;
+    width: 410px;
     height: 300px;
     border-radius: 30px;
     padding: 180px 0 0 40px;
     position: relative;
+  }
+  li:hover {
+    background: #272b34 !important;
+    cursor: pointer;
   }
   li:before, li:after{
     content: ' ';
@@ -334,6 +342,10 @@ p {
       padding-top: 20px;
       background: url('../image/index/clover-icon.png') 0 0 no-repeat;
       background-size: 18px 18px;
+      cursor: pointer;
+    }
+    p:hover {
+      color: #fa6400;
     }
   }
 }
@@ -353,6 +365,10 @@ p {
     img {
       width: 50%;
       margin: 0 auto;
+      cursor: pointer;
+    }
+    img:hover {
+      transform: scale(1.1);
     }
     .item:first-child {
       img {
@@ -1332,6 +1348,7 @@ p {
   min-height: 530px;
   padding-left: 80px;
   padding-bottom: 120px;
+  margin-bottom: 120px;
   h2 {
     font-family: Inter;
     margin-top: 110px;
@@ -1385,9 +1402,6 @@ p {
   .section-contain {
     padding-bottom: 120px;
     background-position: right 160px;
-  }
-  .section-main {
-    
   }
 }
 
