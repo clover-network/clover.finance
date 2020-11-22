@@ -110,10 +110,17 @@ p {
 
 .section-main {
   .container {
-    width: 620px;
+    max-width: 620px;
     height: 620px;
     position: relative;
-    margin: 190px auto 250px auto;
+    margin: 190px auto 0 auto;
+    .main-item {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
     .image {
       position: absolute;
       width: 100%;
@@ -129,14 +136,16 @@ p {
       height: 100px;
     }
     p {
-      width: 890px;
+      max-width: 890px;
       font-size: 16px;
       color: #555;
       line-height: 30px;
       position: absolute;
       top: 406px;
-      left: -125px;
     }
+  }
+  .button {
+    margin: 0 auto;
   }
 }
 
@@ -170,7 +179,7 @@ p {
     line-height: 33px;
     font-weight: bold;
     color: white;
-    width: 410px;
+    max-width: 410px;
     height: 300px;
     border-radius: 30px;
     padding: 180px 0 0 40px;
@@ -1031,6 +1040,9 @@ p {
     }
     img {
       margin: 30px auto 50px auto;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
     }
     a:hover {
       box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
@@ -1393,10 +1405,22 @@ p {
       margin-bottom: 60px;
     }
   }
+
+  .section-product {
+    .product-content {
+      flex-direction: column-reverse;
+      img {
+        margin-bottom: 40px;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 800px) {
-  
+  .h2-underline {
+    padding-top: 0;
+    margin-bottom: 30px !important;
+  }
   .column {
     flex-direction: column;
     .left, .right {
@@ -1412,24 +1436,62 @@ p {
       background-image: none !important;
     }
   }
-  .section-main {
-    
-  }
-
-  #features {
-    
+  
+  .section-product {
+    padding-bottom: 50px;
+    .content {
+      padding-bottom: 0;
+    }
+    .product-content {
+      p {
+        font-size: 18px;
+        line-height: 25px;
+      }
+      ol {
+        line-height: 24px;
+      }
+    }
   }
   .section-features {
-  }
-
-  .section-product {
+    ul {
+      max-width: 410px;
+      flex-direction: column;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    li:nth-child(2) {
+      margin: 40px 0;
+    }
   }
 
   .token-section {
-    
+    .token-content {
+      align-items: flex-start;
+      flex-direction: column;
+      .c-1, .c-3 {
+        width: 100%;
+      }
+      p {
+        text-align: left;
+        width: 100% !important;
+        position: static;
+        padding-top: 0;
+        padding-left: 30px;
+        background-position: 0 6px;
+      }
+    }
   }
 
   .section-why {
+    .why-content {
+      flex-direction: column;
+      .item {
+        height: auto;
+      }
+      .item:last-child img{
+        margin-top: 50px;
+      }
+    }
   }
 
   #ecosystem {

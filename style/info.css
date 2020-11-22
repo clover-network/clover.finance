@@ -100,10 +100,17 @@ p {
 }
 
 .section-main .container {
-  width: 620px;
+  max-width: 620px;
   height: 620px;
   position: relative;
-  margin: 190px auto 250px auto;
+  margin: 190px auto 0 auto;
+}
+.section-main .container .main-item {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .section-main .container .image {
   position: absolute;
@@ -120,13 +127,15 @@ p {
   height: 100px;
 }
 .section-main .container p {
-  width: 890px;
+  max-width: 890px;
   font-size: 16px;
   color: #555;
   line-height: 30px;
   position: absolute;
   top: 406px;
-  left: -125px;
+}
+.section-main .button {
+  margin: 0 auto;
 }
 
 .h2-underline {
@@ -160,7 +169,7 @@ p {
   line-height: 33px;
   font-weight: bold;
   color: white;
-  width: 410px;
+  max-width: 410px;
   height: 300px;
   border-radius: 30px;
   padding: 180px 0 0 40px;
@@ -1006,6 +1015,9 @@ p {
 }
 .section-team .leadership img {
   margin: 30px auto 50px auto;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
 }
 .section-team .leadership a:hover {
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
@@ -1359,8 +1371,20 @@ p {
   .section-contain dl:last-child {
     margin-bottom: 60px;
   }
+
+  .section-product .product-content {
+    flex-direction: column-reverse;
+  }
+  .section-product .product-content img {
+    margin-bottom: 40px;
+  }
 }
 @media only screen and (max-width: 800px) {
+  .h2-underline {
+    padding-top: 0;
+    margin-bottom: 30px !important;
+  }
+
   .column {
     flex-direction: column;
   }
@@ -1374,6 +1398,56 @@ p {
   .section-contain dl {
     padding-left: 0;
     background-image: none !important;
+  }
+
+  .section-product {
+    padding-bottom: 50px;
+  }
+  .section-product .content {
+    padding-bottom: 0;
+  }
+  .section-product .product-content p {
+    font-size: 18px;
+    line-height: 25px;
+  }
+  .section-product .product-content ol {
+    line-height: 24px;
+  }
+
+  .section-features ul {
+    max-width: 410px;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .section-features li:nth-child(2) {
+    margin: 40px 0;
+  }
+
+  .token-section .token-content {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .token-section .token-content .c-1, .token-section .token-content .c-3 {
+    width: 100%;
+  }
+  .token-section .token-content p {
+    text-align: left;
+    width: 100% !important;
+    position: static;
+    padding-top: 0;
+    padding-left: 30px;
+    background-position: 0 6px;
+  }
+
+  .section-why .why-content {
+    flex-direction: column;
+  }
+  .section-why .why-content .item {
+    height: auto;
+  }
+  .section-why .why-content .item:last-child img {
+    margin-top: 50px;
   }
 
   #ecosystem {
