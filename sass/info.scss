@@ -919,7 +919,9 @@ p {
     font-size: 16px;
     line-height: 24px;
     color: rgba(0, 0, 0, 0.5);
-    text-align: center;
+    text-align: left;
+    white-space: normal;
+    word-break: break-word;
   }
   dd.type {
     max-width: 210px;
@@ -1316,21 +1318,27 @@ p {
   }
 }
 
-.about-main.content {
-  height: 720px;
-  padding-top: 200px;
-  padding-bottom: 80px;
-  background: url('../image/about-main.png') 100% center no-repeat;
-  background-size: 50% 50%;
-  h2 {
-    font-family: Inter;
+.about-main {
+  height: 400px;
+  background: url('../image/about-main.svg') center center no-repeat;
+  .content{
+    color: white;
+    text-align: center;
+    width: 100%;
     max-width: 640px;
-    margin-bottom: 40px;
-  }
-  p {
-    color: rgba(255, 255, 255, 0.5);
-    max-width: 660px;
-    margin-bottom: 40px;
+    margin: 0 auto;
+    h2 {
+      font-family: Inter;
+      font-weight: 700;
+      font-size: 60px;
+      line-height: 70px;
+      text-transform: uppercase;
+      padding-top: 90px;
+    }
+    p {
+      font-size: 60px;
+      line-height: 72px;
+    }
   }
 }
 
@@ -1343,7 +1351,7 @@ p {
     padding-left: 52px;
     background-position: 0 0;
     background-repeat: no-repeat;
-    width: 320px;
+    width: 460px;
   }
   dt {
     font-family: Inter;
@@ -1356,7 +1364,7 @@ p {
   dd {
     font-size: 16px;
     line-height: 24px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
   dl:nth-child(1) {
     background-image: url('../image/trade-1.svg');
@@ -1364,15 +1372,12 @@ p {
   dl:nth-child(2) {
     background-image: url('../image/trade-2.svg');
   }
-  dl:nth-child(3) {
-    background-image: url('../image/trade-3.svg');
-  }
 }
 
 .about-money-market {
   padding: 40px 0;
   .right {
-    width: 320px;
+    width: 460px;
     margin-right: -140px;
     margin-left: 140px;
   }
@@ -1389,9 +1394,6 @@ p {
   dl:nth-child(2) {
     background-image: url('../image/market-2.svg');
   }
-  dl:nth-child(3) {
-    background-image: url('../image/market-3.svg');
-  }
   dt {
     font-family: Inter;
     color: black;
@@ -1403,7 +1405,7 @@ p {
   dd {
     font-size: 16px;
     line-height: 24px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
 }
 
@@ -1416,7 +1418,7 @@ p {
     padding-left: 52px;
     background-position: 0 0;
     background-repeat: no-repeat;
-    width: 320px;
+    width: 460px;
   }
   dt {
     font-family: Inter;
@@ -1429,7 +1431,7 @@ p {
   dd {
     font-size: 16px;
     line-height: 24px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
   dl:nth-child(1) {
     background-image: url('../image/staking-1.svg');
@@ -1437,8 +1439,79 @@ p {
   dl:nth-child(2) {
     background-image: url('../image/staking-2.svg');
   }
-  dl:nth-child(3) {
-    background-image: url('../image/staking-3.svg');
+}
+.about-storage {
+  padding: 40px 0;
+  .right {
+    width: 460px;
+    margin-right: -140px;
+    margin-left: 140px;
+  }
+  dl {
+    padding-right: 54px;
+    background-position: right 0;
+    background-repeat: no-repeat;
+    width: 400px;
+    text-align: right;
+  }
+  dl:nth-child(1) {
+    background-image: url('../image/storage-1.svg');
+  }
+  dt {
+    font-family: Inter;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 20px;
+  }
+  dd {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+}
+.section-contain {
+  background: url('../image/what-contain.svg') right 10px no-repeat;
+  min-height: 530px;
+  padding-bottom: 120px;
+  h2 {
+    font-family: Inter;
+    margin-top: 110px;
+    font-weight: bold;
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-bottom: 86px;
+  }
+  dl {
+    width: 100%;
+    max-width: 540px;
+    background: url('') 0 0 no-repeat;
+    margin-bottom: 21px;
+    padding-left: 58px;
+  }
+  dl:nth-of-type(1) {
+    background-image: url('../image/contain-1.svg');
+  }
+  dl:nth-of-type(2) {
+    background-image: url('../image/contain-2.svg');
+  }
+  dl:nth-of-type(3) {
+    background-image: url('../image/contain-3.svg');
+  }
+  dl:nth-of-type(4) {
+    background-image: url('../image/contain-4.svg');
+  }
+  dt {
+    font-family: Inter;
+    color: #FB822A;
+    font-size: 20px;
+    margin-bottom: 7px;
+  }
+  dd {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 14px;
+    line-height: 17px;
   }
 }
 
@@ -1447,10 +1520,35 @@ p {
   .content {
     padding: 70px 20px;
   }
+  .about-main {
+    .content {
+      padding-top: 20px;
+    }
+  }
+  .section-contain {
+    padding-bottom: 120px;
+    background-position: right 160px;
+  }
   .section-main {
     padding-top: 0;
     .left {
       padding-bottom: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .section-contain {
+    background-position: center 120px;
+    padding: 0 20px;
+    background-size: auto 280px;
+    h2 {
+      margin-top: 64px;
+      font-size: 30px;
+      margin-bottom: 400px;
+    }
+    dl:last-child {
+      margin-bottom: 60px;
     }
   }
 }
@@ -1466,7 +1564,12 @@ p {
       padding-top: 20px;
     }
   }
-
+  .section-contain {
+    dl {
+      padding-left: 0;
+      background-image: none !important;
+    }
+  }
   .section-main {
     min-height: 700px;
     background-size: 100% 350px;
@@ -1899,10 +2002,20 @@ p {
     }
   }
 
-  .about-main.content {
-    background-size: 100% 200px;
-    background-position: 100% 64px;
-    padding-top: 264px;
+  .about-main {
+    height: 300px;
+    .content {
+      background-position: 100% 64px;
+      h2 {
+        font-size: 36px;
+        line-height: 36px;
+        padding-top: 60px;
+      }
+      p {
+        font-size: 24px;
+        line-height: 30px;
+      }
+    }
   }
 
   .about-trade-protocol {
@@ -1922,7 +2035,7 @@ p {
     }
   }
 
-  .about-money-market {
+  .about-money-market, .about-storage {
     flex-direction: column-reverse;
     .right {
       margin: 0;

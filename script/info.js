@@ -21,14 +21,14 @@
           <a href='service.html'>Features</a></span>
         </span></li>`;
     } 
-    if (index === 2) {
-      return `<li class='mobile-nav-link drop-link'>
-        <a class='drop-down'>${item}</a>
-        <span class='drop-item'><span>
-          <a href='index.html#token'>Token</a>
-          <a href='token.html'>CLV</a></span>
-        </span></li>`;   
-    }
+    // if (index === 2) {
+    //   return `<li class='mobile-nav-link drop-link'>
+    //     <a class='drop-down'>${item}</a>
+    //     <span class='drop-item'><span>
+    //       <a href='index.html#token'>Token</a>
+    //       <a href='token.html'>CLV</a></span>
+    //     </span></li>`;   
+    // }
     return `<li class='mobile-nav-link'><a href='${path[index]}' ${append}>${item}</a></li>`;
   });
   
