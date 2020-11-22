@@ -133,6 +133,10 @@ p {
       top: 0;
       left: 0;
     }
+    .main-item:last-child {
+      width: 890px;
+      margin-left: -135px;
+    }
     .image {
       position: absolute;
       width: 100%;
@@ -160,7 +164,7 @@ p {
     animation: change 20s linear infinite;
   }
   .button {
-    margin: 0 auto;
+    margin: 0 auto 150px auto;
   }
 }
 
@@ -1417,6 +1421,13 @@ p {
   .section-main {
     .container {
       margin-top: 30px;
+      .main-item:last-child {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+    .button {
+      margin-bottom: 0;
     }
   }
   .section-contain {
