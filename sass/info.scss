@@ -358,6 +358,9 @@ p {
       height: 440px;
       position: relative;
       background: url('../image/index/circle.jpg') center center no-repeat;
+      img {
+        display: none;
+      }
       div {
         position: absolute;
         background: url('..') 0 0 no-repeat;
@@ -1534,6 +1537,23 @@ p {
   .section-contain {
     padding-bottom: 120px;
     background-position: right 160px;
+  }
+  .token-section .token-content {
+    .c-2  {
+      padding-right: 20px;
+      max-width: 100%;
+      height: auto;
+      background: none;
+      img {
+        display: block;
+      }
+      div {
+        display: none;
+      }
+    }
+    .c-2:after {
+      display: none;
+    }
   }
 }
 

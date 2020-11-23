@@ -350,6 +350,9 @@ p {
   position: relative;
   background: url("../image/index/circle.jpg") center center no-repeat;
 }
+.token-section .token-content .c-2 img {
+  display: none;
+}
 .token-section .token-content .c-2 div {
   position: absolute;
   background: url("..") 0 0 no-repeat;
@@ -1503,6 +1506,22 @@ p {
   .section-contain {
     padding-bottom: 120px;
     background-position: right 160px;
+  }
+
+  .token-section .token-content .c-2 {
+    padding-right: 20px;
+    max-width: 100%;
+    height: auto;
+    background: none;
+  }
+  .token-section .token-content .c-2 img {
+    display: block;
+  }
+  .token-section .token-content .c-2 div {
+    display: none;
+  }
+  .token-section .token-content .c-2:after {
+    display: none;
   }
 }
 @media only screen and (max-width: 1100px) {
