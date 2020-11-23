@@ -1,5 +1,5 @@
 (function(){
-  function effect($node, child) {
+  function effect($node, child, timeout) {
     $node.addClass('effect');
     const $child = $node.find(child);
     $child.addClass('hidden')
@@ -9,7 +9,7 @@
     setTimeout(function(){
       $node.removeClass('init').removeClass('effect');
       $child.removeClass('action');
-    }, 1200);
+    }, timeout);
   }
 
   let scrollTop = $(window).scrollTop();
@@ -32,13 +32,14 @@
     'h2, dl, ul'
   ];
   const append = [100, 300, 300, 600, 500, 600, 1000];
+  const timeout = [2800, 1400, 1600, 1400, 2200, 1400, 1400];
   const top = nodes.map(function($node, index){
     $node.addClass('init');
     const child  = children[index];
     return $node.offset().top;
   });
 
-  effect(nodes[0], children[0]);
+  effect(nodes[0], children[0], timeout[0]);
 
   $(window).scroll(function(){
     scrollTop = $(window).scrollTop();
@@ -46,7 +47,7 @@
       if (index > 0 && scrollTop > item - append[index]) {
         const $node = nodes[index];
         if ($node.hasClass('init')) {
-          effect($node, children[index]);
+          effect($node, children[index], timeout[index]);
         }
       }
     })

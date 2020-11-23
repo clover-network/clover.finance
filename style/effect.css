@@ -1,8 +1,8 @@
-.section-main.effect .m-1.hidden, .section-main.effect .m-2.hidden, .section-main.effect .m-3.hidden {
+.section-main.effect .m-1.hidden, .section-main.effect .m-2.hidden {
   transform: translateY(620px);
   opacity: 0;
 }
-.section-main.effect .m-4.hidden {
+.section-main.effect .m-3.hidden, .section-main.effect .m-4.hidden {
   transform: translateY(100px);
   opacity: 0;
 }
@@ -12,13 +12,16 @@
   transition-duration: 0.8s;
 }
 .section-main.effect .m-2.action {
+  transition-duration: 0.6s;
   transition-delay: 0.6s;
 }
 .section-main.effect .m-3.action {
-  transition-delay: 2s;
+  transition-duration: 0.2s;
+  transition-delay: 1.4s;
 }
 .section-main.effect .m-4.action {
-  transition-delay: 2.4s;
+  transition-duration: 0.2s;
+  transition-delay: 1.8s;
 }
 
 .features-section.effect .li-1.hidden, .features-section.effect .li-2.hidden, .features-section.effect .li-3.hidden {
@@ -104,7 +107,7 @@
 .token-section.effect .m-1.action {
   transition-timing-function: linear;
   transition-property: opacity, transform;
-  transition-duration: 0.8s;
+  transition-duration: 0.6s;
 }
 .token-section.effect .m-2.action, .token-section.effect .m-3.action, .token-section.effect .m-4.action, .token-section.effect .m-5.action, .token-section.effect .m-6.action {
   transition-timing-function: linear;
