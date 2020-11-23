@@ -266,6 +266,12 @@ p {
   align-items: center;
   justify-content: center;
 }
+.section-product .product-content img {
+  cursor: pointer;
+}
+.section-product .product-content img:hover {
+  transform: scale(1.1);
+}
 .section-product .product-left {
   max-width: 620px;
 }
@@ -325,8 +331,102 @@ p {
 .token-section .token-content .c-1 p:last-child {
   bottom: 0;
 }
+.token-section .token-content .c-2:after {
+  content: " ";
+  width: 162px;
+  height: 162px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -81px;
+  margin-top: -81px;
+  background: url("../image/index/clv.png") 0 0 no-repeat;
+  z-index: 8;
+}
 .token-section .token-content .c-2 {
   margin: 0 16px;
+  width: 784px;
+  height: 440px;
+  position: relative;
+  background: url("../image/index/circle.jpg") center center no-repeat;
+}
+.token-section .token-content .c-2 div {
+  position: absolute;
+  background: url("..") 0 0 no-repeat;
+}
+.token-section .token-content .c-2 div:after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  cursor: pointer;
+}
+.token-section .token-content .c-2 div.hover:after {
+  visibility: visible;
+  z-index: 5;
+}
+.token-section .token-content .c-2 .item-1 {
+  width: 418px;
+  height: 243px;
+  background-image: url("../image/index/intro-1.png");
+  top: 30px;
+  left: 0;
+}
+.token-section .token-content .c-2 .item-2 {
+  width: 342px;
+  height: 142px;
+  background-image: url("../image/index/intro-2.png");
+  top: 161px;
+  left: 0;
+}
+.token-section .token-content .c-2 .item-3 {
+  width: 418px;
+  height: 243px;
+  background-image: url("../image/index/intro-3.png");
+  bottom: 31px;
+  left: 0;
+}
+.token-section .token-content .c-2 .item-4 {
+  width: 419px;
+  height: 244px;
+  background-image: url("../image/index/intro-4.png");
+  top: 0;
+  right: 0;
+}
+.token-section .token-content .c-2 .item-5 {
+  width: 387px;
+  height: 135px;
+  background-image: url("../image/index/intro-5.png");
+  top: 119px;
+  right: 0;
+}
+.token-section .token-content .c-2 .item-6 {
+  width: 420px;
+  height: 243px;
+  background-image: url("../image/index/intro-6.png");
+  bottom: 0;
+  right: 0;
+}
+.token-section .token-content .c-2 .item-1:after {
+  background-image: url("../image/index/intro-h1.png");
+}
+.token-section .token-content .c-2 .item-2:after {
+  background-image: url("../image/index/intro-h2.png");
+}
+.token-section .token-content .c-2 .item-3:after {
+  background-image: url("../image/index/intro-h3.png");
+}
+.token-section .token-content .c-2 .item-4:after {
+  background-image: url("../image/index/intro-h4.png");
+}
+.token-section .token-content .c-2 .item-5:after {
+  background-image: url("../image/index/intro-h5.png");
+}
+.token-section .token-content .c-2 .item-6:after {
+  background-image: url("../image/index/intro-h6.png");
 }
 .token-section .token-content .c-3 {
   width: 270px;

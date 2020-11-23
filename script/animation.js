@@ -1,4 +1,15 @@
 (function(){
+  const $tokenItem = $('.token-content p');
+  const $tokenIcon = $('.token-content .c-2');
+  $tokenItem.mouseover(function(e){
+    const $item = $(this);
+    const intro = $item.data('intro');
+    $tokenIcon.find('.hover').removeClass('hover');
+    $tokenIcon.find(`.${intro}`).addClass('hover');
+  }).mouseout(function(){
+    $tokenIcon.find('.hover').removeClass('hover');
+  });
+
   function effect($node, child, timeout) {
     $node.addClass('effect');
     const $child = $node.find(child);
