@@ -120,51 +120,49 @@ p {
   }
 }
 .section-main {
+  position: relative;
+  canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
   .container {
     max-width: 620px;
-    height: 620px;
-    position: relative;
-    margin: 190px auto 0 auto;
+    margin: 0 auto;
     cursor: pointer;
+    position: relative;
     .main-item {
       width: 100%;
       height: 100%;
       position: absolute;
+      display: flex;
       top: 0;
       left: 0;
     }
-    .main-item:last-child {
+    .main-item.m-2 {
+      align-items: center;
+      justify-content: center;
+      margin-top: -80px;
+    }
+    .main-item.m-3 {
+      align-items: center;
+      justify-content: center;
       width: 890px;
-      margin-left: -135px;
-    }
-    .image {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-    }
-    .text {
-      position: absolute;
-      top: 230px;
-      left: 0;
-      width: 100%;
-      height: 100px;
-    }
-    p {
-      max-width: 890px;
       font-size: 16px;
-      color: #555;
+      color: white;
       line-height: 30px;
-      position: absolute;
-      top: 406px;
+      margin-left: -175px;
+      margin-top: 60px;
     }
-  }
-  .container:hover .image {
-    animation: change 20s linear infinite;
-  }
-  .button {
-    margin: 0 auto 150px auto;
+    .main-item.m-4 {
+      display: flex;
+      align-items: flex-end;
+      .button {
+        margin: 0 auto 150px auto;
+      }
+    }
   }
 }
 
@@ -1525,7 +1523,7 @@ p {
   .section-main {
     .container {
       margin-top: 30px;
-      .main-item:last-child {
+      .main-item.m-3 {
         width: 100%;
         margin-left: 0;
       }
@@ -1586,6 +1584,28 @@ p {
   .h2-underline {
     padding-top: 0;
     margin-bottom: 30px !important;
+  }
+  .section-main .container {
+    margin-top: 0;
+    padding: 0;
+    .main-item {
+      padding: 0 20px;
+    }
+    .main-item.m-2 {
+      align-items: flex-start;
+      margin-top: 200px;
+    }
+    .main-item.m-3 {
+      width: 100%;
+      margin-left: 0;
+      align-items: flex-start;
+      margin-top: 300px;
+    }
+    .main-item.m-4 {
+      .button {
+        margin-bottom: 40px;
+      }
+    }
   }
   .column {
     flex-direction: column;

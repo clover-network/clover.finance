@@ -110,50 +110,50 @@ p {
     transform: rotate(360deg);
   }
 }
+.section-main {
+  position: relative;
+}
+.section-main canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
 .section-main .container {
   max-width: 620px;
-  height: 620px;
-  position: relative;
-  margin: 190px auto 0 auto;
+  margin: 0 auto;
   cursor: pointer;
+  position: relative;
 }
 .section-main .container .main-item {
   width: 100%;
   height: 100%;
   position: absolute;
+  display: flex;
   top: 0;
   left: 0;
 }
-.section-main .container .main-item:last-child {
+.section-main .container .main-item.m-2 {
+  align-items: center;
+  justify-content: center;
+  margin-top: -80px;
+}
+.section-main .container .main-item.m-3 {
+  align-items: center;
+  justify-content: center;
   width: 890px;
-  margin-left: -135px;
-}
-.section-main .container .image {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
-.section-main .container .text {
-  position: absolute;
-  top: 230px;
-  left: 0;
-  width: 100%;
-  height: 100px;
-}
-.section-main .container p {
-  max-width: 890px;
   font-size: 16px;
-  color: #555;
+  color: white;
   line-height: 30px;
-  position: absolute;
-  top: 406px;
+  margin-left: -175px;
+  margin-top: 60px;
 }
-.section-main .container:hover .image {
-  animation: change 20s linear infinite;
+.section-main .container .main-item.m-4 {
+  display: flex;
+  align-items: flex-end;
 }
-.section-main .button {
+.section-main .container .main-item.m-4 .button {
   margin: 0 auto 150px auto;
 }
 
@@ -1495,7 +1495,7 @@ p {
   .section-main .container {
     margin-top: 30px;
   }
-  .section-main .container .main-item:last-child {
+  .section-main .container .main-item.m-3 {
     width: 100%;
     margin-left: 0;
   }
@@ -1550,6 +1550,27 @@ p {
   .h2-underline {
     padding-top: 0;
     margin-bottom: 30px !important;
+  }
+
+  .section-main .container {
+    margin-top: 0;
+    padding: 0;
+  }
+  .section-main .container .main-item {
+    padding: 0 20px;
+  }
+  .section-main .container .main-item.m-2 {
+    align-items: flex-start;
+    margin-top: 200px;
+  }
+  .section-main .container .main-item.m-3 {
+    width: 100%;
+    margin-left: 0;
+    align-items: flex-start;
+    margin-top: 300px;
+  }
+  .section-main .container .main-item.m-4 .button {
+    margin-bottom: 40px;
   }
 
   .column {

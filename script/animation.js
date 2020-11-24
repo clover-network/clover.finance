@@ -34,7 +34,7 @@
     $('.section-roadmap')
   ];
   const children = [
-    '.m-1, .m-2, .m-3, .m-4',
+    '.m-2, .m-3, .m-4',
     '.li-1, .li-2, .li-3',
     '.content, .m-1, .m-2, .m-3',
     '.m-1, .m-2, .m-3, .m-4',

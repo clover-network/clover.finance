@@ -13,28 +13,30 @@
 	<link rel="stylesheet" href="style/info.css" />
   <link rel="stylesheet" href="style/effect.css" />
   <link rel='stylesheet' href='style/animation.css' />
+  <script src='script/three.js'></script>
   <script src='script/jquery.js'></script>
+		<script src='script/TrackballControls.js'></script>
 </head>
 <body class='home'>
-  <div class='head'>
+  <div class='head dark'>
     <div class='content'>
       <a href='index.html' class='logo'></a>
       <ul class='section-nav'>
       </ul>
     </div>
   </div>
-  <div class='content section-main' id='home'>
-    <div class='container'>
-      <div class='main-item m-1'>
-        <div class='image'><img src='image/index/global.jpg' /></div>
-      </div>
+  <div class='back-black section-main' id='home'>
+    <div id='global'></div>
+    <div class='content container'>
       <div class='main-item m-2'>
-        <div class='text'><img src='image/index/main-text.png' /></div>
+        <img src='image/index/main-text.png' />
       </div>
       <div class='main-item m-3'>
-        <p>Clover is a Substrate-based Polkadot parachain. Clover is committed to providing easy-to-use blockchain infrastructure and creating a one-stop comprehensive infrastructure platform, which reduce the threshold and cost for developers, and bring great returns to developers.</div>
+        Clover is a Substrate-based Polkadot parachain. Clover is committed to providing easy-to-use blockchain infrastructure and creating a one-stop comprehensive infrastructure platform, which reduce the threshold and cost for developers, and bring great returns to developers.
       </div>
-      <a class='button m-4' href='whitepaper.pdf' target='_blank'>Whitepaper</a>
+      <div class='main-item m-4'>
+        <a class='button' href='whitepaper.pdf' target='_blank'>Whitepaper</a>
+      </div>
     </div>
   </div>
   <div class='back-gray features-section' id='features'>
@@ -316,6 +318,13 @@
       </div>
     </div>
   </div>
+  <script>
+    $('.container').height($(window).height());
+    $(window).resize(function(){
+      $('.container').height($(window).height());
+    })
+  </script>
+  <script src='script/global.js'></script>
   <script src='script/slider.js'></script>
   <script src='script/info.js'></script>
   <script src='script/animation.js'></script>
