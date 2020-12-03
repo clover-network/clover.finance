@@ -217,6 +217,7 @@ a:hover {
 .platform dl:nth-child(1) ul, .platform dl:nth-child(2) ul {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .platform dl:nth-child(1) ul li, .platform dl:nth-child(2) ul li {
   display: flex;
@@ -281,6 +282,8 @@ a:hover {
 }
 .os-product .op-content {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .os-product .op-content dl {
   width: 513px;
@@ -374,6 +377,7 @@ a:hover {
   margin-top: 64px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   max-width: 1000px;
 }
 .ecosystem .ecosystem-content li {
@@ -475,6 +479,7 @@ a:hover {
 .clover-os .co-row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .clover-os .co-item {
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -520,6 +525,7 @@ a:hover {
   position: relative;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   padding-bottom: 12px;
 }
 .clover-os .co-row-item-content dl {
