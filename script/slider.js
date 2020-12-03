@@ -1,9 +1,10 @@
 (function(){ 
-  function slider ($container, $area, size) {
+  function slider ($container, $area) {
     const $left = $container.find('li').eq(0);
     const $right = $container.find('li').eq(1);
     const $content = $container.find('.slider-item');
     const totalItem = $content.find('dl').length;
+    const size = $content.find('dl').eq(0).width();
     
     let left;
     $right.attr('class', 'right-control enable');
@@ -51,6 +52,6 @@
     })
   }
   
-  slider($('.section-roadmap'), $('.roadmap'), 240);
+  slider($('.section-roadmap'), $('.roadmap'));
 
 }());
