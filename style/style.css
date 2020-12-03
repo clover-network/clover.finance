@@ -27,12 +27,13 @@ body {
   background-color: #e5e5e5;
 }
 
-body.home {
+body.home, body.team {
   background: #e5e5e5 url("../image/background/background-home.svg") center top no-repeat;
 }
 
 body.features {
-  background: #e5e5e5 url("../image/background/background-features.svg") center top no-repeat;
+  background: #e5e5e5 url("../image/background/background-home.svg") center top no-repeat;
+  background-size: 760px 760px;
 }
 
 h1, h2, h3 {
@@ -469,6 +470,7 @@ a {
 }
 .clover-os .co-row {
   display: flex;
+  flex-wrap: wrap;
 }
 .clover-os .co-item {
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -537,6 +539,10 @@ a {
 .kernel-container {
   padding-bottom: 80px;
 }
+.kernel-container .h1 {
+  max-width: 770px;
+  margin-bottom: 56px;
+}
 .kernel-container .ko-container {
   display: flex;
   flex-wrap: wrap;
@@ -582,15 +588,157 @@ a {
   line-height: 141.2%;
 }
 
+.team-intro {
+  padding-top: 150px;
+  padding-bottom: 100px;
+}
+.team-intro em {
+  max-width: 870px;
+  margin-bottom: 50px;
+}
+.team-intro h1 {
+  max-width: 700px;
+  position: relative;
+  padding-bottom: 170px;
+}
+.team-intro h1:after {
+  content: " ";
+  width: 1px;
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.team-intro h3 {
+  max-width: 100%;
+}
+.team-intro .leadership {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.team-intro .leadership dl {
+  width: 600px;
+  margin: 12px;
+  padding: 50px 50px 40px 50px;
+}
+.team-intro .leadership dt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16px;
+  line-height: 24px;
+}
+.team-intro .leadership dt img {
+  margin-bottom: 34px;
+}
+.team-intro .leadership dt em {
+  font-family: Inter;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-size: 20px;
+  line-height: 24px;
+}
+.team-intro .leadership dt a {
+  font-family: Circular-Std-Book;
+  text-decoration: underline;
+}
+.team-intro .leadership dl:nth-child(1), .team-intro .leadership dl:nth-child(4), .team-intro .leadership dl:nth-child(5) {
+  background: linear-gradient(180deg, rgba(32, 34, 37, 0.05) 0%, rgba(32, 34, 37, 0.01) 100%);
+}
+.team-intro .leadership dl:nth-child(2), .team-intro .leadership dl:nth-child(3), .team-intro .leadership dl:nth-child(6) {
+  background: linear-gradient(180deg, rgba(72, 251, 165, 0.5) 0%, rgba(72, 251, 165, 0) 100%);
+}
+.team-intro .leadership dd {
+  margin-top: 20px;
+  font-family: Circular-Std-Book;
+  opacity: 0.4;
+}
+.team-intro .advisory {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.team-intro .advisory dl {
+  padding-top: 28px;
+  width: 290px;
+  height: 260px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 12px;
+}
+.team-intro .advisory dd {
+  text-transform: uppercase;
+  font-family: Inter;
+  margin-top: 40px;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.join {
+  padding-bottom: 60px;
+}
+.join h2 {
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: 500;
+  margin-top: 30px;
+  max-width: 770px;
+}
+.join h3 {
+  margin-top: 0;
+  margin-bottom: 56px;
+}
+.join .position {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.join .position a {
+  font-family: Inter;
+  text-align: left;
+  padding-left: 40px;
+  display: block;
+  text-transform: uppercase;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  font-size: 20px;
+  line-height: 100px;
+  width: 608px;
+  height: 100px;
+  margin: 0 12px 40px 12px;
+  background: url("../image/icon/right-dark.svg") right 48px center no-repeat;
+}
+.join .morePosition {
+  font-family: Circular-Std;
+  width: 208px;
+  height: 54px;
+  border: 1px solid #000;
+  text-transform: uppercase;
+  line-height: 54px;
+}
+
 .footer {
   font-family: Circular-Std-Book;
-  height: 100px;
-  line-height: 100px;
-  align-items: center;
-  font-weight: 400;
-  font-size: 14px;
+  padding: 32px 0;
   text-align: center;
+}
+.footer .copy {
+  font-size: 14px;
+  line-height: 18px;
   opacity: 0.4;
+  margin-bottom: 21px;
+}
+.footer .social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer .social li {
+  margin: 0 16px;
 }
 
 /*# sourceMappingURL=style.css.map */
