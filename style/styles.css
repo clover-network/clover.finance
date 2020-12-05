@@ -25,15 +25,24 @@ body {
   font-size: 17px;
   line-height: 24px;
   background-color: #e5e5e5;
+  position: relative;
+}
+body img.cursor {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -505px;
+  z-index: 1;
+  max-width: inherit;
 }
 
-body.home, body.team {
-  background: #e5e5e5 url("../image/background/background-home.svg") center top no-repeat;
+body.features img.cursor {
+  margin-left: -380px;
 }
 
-body.features {
-  background: #e5e5e5 url("../image/background/background-home.svg") center top no-repeat;
-  background-size: 760px 760px;
+.cursorNormal {
+  position: absolute;
+  z-index: 2;
 }
 
 h1, h2, h3 {
@@ -64,7 +73,7 @@ a {
 }
 
 a:hover {
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 .button {
@@ -82,7 +91,8 @@ a:hover {
 }
 
 .button:hover {
-  opacity: 0.8;
+  opacity: 0.6;
+  border-color: rgba(0, 0, 0, 0.6);
 }
 
 .h1 {
@@ -103,6 +113,8 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+  z-index: 5;
 }
 
 .nav {
@@ -124,6 +136,88 @@ a:hover {
   border-bottom-color: #1d2d31;
 }
 
+.side-bar {
+  width: 32px;
+  height: 16px;
+  background: url("../image/menu/menu.svg") 0 0 no-repeat;
+  cursor: pointer;
+  display: none;
+}
+
+.side-screen {
+  position: fixed;
+  z-index: 12;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #e5e5e5 url("../image/background/background.svg") center -100px no-repeat;
+  background-size: 1000px;
+  display: none;
+}
+.side-screen .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 72px;
+  padding: 0 24px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.side-screen .logo-text {
+  background: url("../image/clover/logo-text.svg") 0 0 no-repeat;
+  width: 133px;
+  height: 40px;
+}
+.side-screen .close {
+  background: url("../image/menu/close.svg") 0 0 no-repeat;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+.side-screen .side-nav {
+  font-family: Circular-Std;
+  padding-top: 120px;
+  font-size: 18px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #1d2d31;
+}
+.side-screen .side-nav li {
+  margin-bottom: 64px;
+  width: 100%;
+  text-align: center;
+}
+.side-screen .social {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.side-screen .social li {
+  margin: 0 20px;
+}
+.side-screen .copy {
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  height: 70px;
+  line-height: 70px;
+  color: #1d2d31;
+  opacity: 0.4;
+}
+
+.social li {
+  opacity: 0.2;
+}
+.social li:hover {
+  opacity: 1;
+}
+
 .content {
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
@@ -133,45 +227,55 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  z-index: 5;
 }
 
-.what {
+.section-what {
   padding-bottom: 200px;
 }
-.what em {
+.section-what em {
   margin-top: 180px;
 }
-.what h1 {
+.section-what h1 {
   max-width: 750px;
   margin-top: 30px;
 }
-.what .button {
+.section-what .button {
   margin-top: 56px;
 }
 
-.vision {
+.section-vision {
   padding-bottom: 160px;
 }
-.vision ul {
+.section-vision ul {
   margin-top: 60px;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.vision ul li {
+.section-vision ul li {
+  width: 200px;
+  margin: 0 125px;
   background: url("") center 0 no-repeat;
 }
-.vision ul li:nth-child(1n) {
+.section-vision ul li:hover {
+  transform: translateY(-60px);
+  transition-timing-function: linear;
+  transition-property: opacity, transform;
+  transition-duration: 0.2s;
+}
+.section-vision ul li:nth-child(1n) {
   width: 180px;
   margin-top: 80px;
   padding-top: 246px;
   background-image: url("../image/vision/benefi.svg");
 }
-.vision ul li:nth-child(2n) {
-  width: 200px;
-  margin: 0 250px;
+.section-vision ul li:nth-child(2n) {
   padding-top: 226px;
   background-image: url("../image/vision/app.svg");
 }
-.vision ul li:nth-child(3n) {
+.section-vision ul li:nth-child(3n) {
   width: 220px;
   margin-top: 100px;
   padding-top: 230px;
@@ -192,7 +296,7 @@ a:hover {
   justify-content: center;
 }
 .platform dl.platform-item {
-  width: 500px;
+  max-width: 500px;
   padding: 140px 96px 0 96px;
   margin: 12px;
 }
@@ -213,6 +317,12 @@ a:hover {
 }
 .platform dl.platform-item ul {
   font-size: 15px;
+}
+.platform dl:hover {
+  transform: translateY(-60px);
+  transition-timing-function: linear;
+  transition-property: opacity, transform;
+  transition-duration: 0.2s;
 }
 .platform dl:nth-child(1) ul, .platform dl:nth-child(2) ul {
   display: flex;
@@ -246,11 +356,11 @@ a:hover {
   background-image: url("../image/logo/eos.svg");
 }
 .platform dl:nth-child(1), .platform dl:nth-child(2) {
-  height: 545px;
+  min-height: 545px;
   margin-bottom: 18px;
 }
 .platform dl:nth-child(3), .platform dl:nth-child(4) {
-  height: 374px;
+  min-height: 374px;
 }
 .platform dl:nth-child(1) {
   background: url("../image/icon/1.svg") center 60px no-repeat, linear-gradient(180deg, rgba(32, 34, 37, 0.05) 0%, rgba(32, 34, 37, 0.01) 100%);
@@ -286,12 +396,18 @@ a:hover {
   justify-content: center;
 }
 .os-product .op-content dl {
-  width: 513px;
-  height: 317px;
+  max-width: 513px;
+  min-height: 317px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   margin: 46px 12px 0 12px;
   padding-top: 105px;
   background: url("") center 50px no-repeat;
+}
+.os-product .op-content dl:hover {
+  transform: translateY(-60px);
+  transition-timing-function: linear;
+  transition-property: opacity, transform;
+  transition-duration: 0.2s;
 }
 .os-product .op-content dt {
   width: 250px;
@@ -328,7 +444,7 @@ a:hover {
 .clv .clv-content {
   margin-top: 100px;
   width: 1040px;
-  height: 580px;
+  min-height: 580px;
   background: url("../image/clv/clv.svg") top center no-repeat;
   position: relative;
   font-size: 18px;
@@ -340,6 +456,12 @@ a:hover {
   text-align: center;
   position: absolute;
   margin-top: -0.5em;
+}
+.clv .clv-content li:hover {
+  transform: translateY(-20px);
+  transition-timing-function: linear;
+  transition-property: opacity, transform;
+  transition-duration: 0.1s;
 }
 .clv .clv-content li:nth-child(1) {
   width: 200px;
@@ -389,13 +511,18 @@ a:hover {
   flex: 0 0 auto;
   margin: 0 25px 38px 25px;
 }
+.ecosystem .ecosystem-content li:hover {
+  transform: translateY(-40px);
+  transition-timing-function: linear;
+  transition-property: opacity, transform;
+  transition-duration: 0.1s;
+}
 .ecosystem .ecosystem-content a {
-  display: block;
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .section-roadmap {
@@ -425,7 +552,6 @@ a:hover {
 }
 .section-roadmap .control .left-control.enable {
   background-image: url("../image/icon/left-dark.svg");
-  cursor: pointer;
 }
 .section-roadmap .control .right-control {
   right: 0;
@@ -433,7 +559,9 @@ a:hover {
 }
 .section-roadmap .control .right-control.enable {
   background-image: url("../image/icon/right-dark.svg");
-  cursor: pointer;
+}
+.section-roadmap .control .enable:hover {
+  opacity: 0.6;
 }
 .section-roadmap .roadmap-item {
   display: flex;
@@ -447,6 +575,12 @@ a:hover {
   margin-right: 24px;
   flex: 0 0 auto;
   padding-top: 32px;
+}
+.section-roadmap .roadmap-item dl:hover {
+  transform: translateY(-40px);
+  transition-timing-function: linear;
+  transition-property: opacity, transform;
+  transition-duration: 0.1s;
 }
 .section-roadmap .roadmap-item dt {
   width: 84px;
@@ -483,10 +617,10 @@ a:hover {
 }
 .clover-os .co-item {
   border: 1px solid rgba(0, 0, 0, 0.2);
-  width: 500px;
-  height: 470px;
-  padding: 136px 80px 0 80px;
-  margin: 0 12px;
+  max-width: 500px;
+  min-height: 420px;
+  padding: 136px 80px 50px 80px;
+  margin: 0 12px 20px 12px;
   background: url() center 54px no-repeat;
 }
 .clover-os .co-item:first-child {
@@ -559,8 +693,8 @@ a:hover {
   justify-content: center;
 }
 .kernel-container .ko-container .ko-item {
-  width: 500px;
-  height: 400px;
+  max-width: 500px;
+  min-height: 400px;
   padding: 126px 90px 0 90px;
   margin: 12px;
 }
@@ -602,6 +736,10 @@ a:hover {
   padding-top: 150px;
   padding-bottom: 100px;
 }
+.team-intro .team-intro-description {
+  display: flex;
+  flex-direction: column;
+}
 .team-intro em {
   max-width: 870px;
   margin-bottom: 50px;
@@ -610,6 +748,7 @@ a:hover {
   max-width: 700px;
   position: relative;
   padding-bottom: 170px;
+  margin: 0 auto;
 }
 .team-intro h1:after {
   content: " ";
@@ -629,7 +768,7 @@ a:hover {
   justify-content: center;
 }
 .team-intro .leadership dl {
-  width: 600px;
+  max-width: 600px;
   margin: 12px;
   padding: 50px 50px 40px 50px;
 }
@@ -712,13 +851,15 @@ a:hover {
   font-family: Inter;
   text-align: left;
   padding-left: 40px;
-  display: block;
+  display: flex;
+  align-items: center;
   text-transform: uppercase;
   border: 1px solid rgba(0, 0, 0, 0.2);
   font-size: 20px;
-  line-height: 100px;
-  width: 608px;
-  height: 100px;
+  line-height: 24px;
+  width: 100%;
+  max-width: 608px;
+  min-height: 100px;
   margin: 0 12px 40px 12px;
   background: url("../image/icon/right-dark.svg") right 48px center no-repeat;
 }
@@ -749,6 +890,226 @@ a:hover {
 }
 .footer .social li {
   margin: 0 16px;
+}
+
+@media only screen and (max-width: 1360px) {
+  .cursorNormal, .cursorHover {
+    display: none;
+  }
+
+  .head {
+    padding: 0 20px;
+  }
+  .head img {
+    max-width: 133px;
+    width: 133px;
+    height: 40px;
+  }
+
+  .container {
+    max-width: 100%;
+  }
+
+  .content {
+    border-width: 1px 0;
+    padding: 0 20px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .clv .clv-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("../image/clv/clv-small.svg");
+    background-position: bottom center;
+    padding-bottom: 200px;
+  }
+  .clv .clv-content li {
+    position: relative;
+    width: 250px !important;
+    padding-bottom: 56px;
+    margin-left: 0 !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: auto !important;
+  }
+  .clv .clv-content li:after {
+    content: " ";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #1d2d31;
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    margin-left: -4px;
+  }
+  .clv .clv-content li:last-child:after {
+    display: none;
+  }
+
+  .section-roadmap .roadmap {
+    padding: 0;
+  }
+
+  .clover-os .co-row-item {
+    padding: 55px 0 65px 0;
+  }
+}
+@media only screen and (max-width: 980px) {
+  .side-bar {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .head {
+    height: 72px;
+    padding: 0 24px;
+  }
+
+  .h1 {
+    font-size: 40px;
+    line-height: 52px;
+  }
+
+  h2 {
+    font-size: 15px;
+    line-height: 141%;
+  }
+
+  .section-what {
+    padding-bottom: 112px;
+  }
+  .section-what .h1 {
+    margin-top: 108px;
+  }
+  .section-what .button {
+    margin-top: 48px;
+  }
+
+  .section-vision {
+    padding-bottom: 64px;
+  }
+  .section-vision ul {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+  }
+  .section-vision ul li {
+    margin-top: 48px !important;
+  }
+  .section-vision ul li:nth-child(1) {
+    padding-top: 210px;
+  }
+  .section-vision ul li:nth-child(2), .section-vision ul li:nth-child(3) {
+    padding-top: 180px;
+  }
+
+  .platform {
+    padding-bottom: 40px;
+  }
+  .platform h2 {
+    margin-top: 16px;
+  }
+  .platform .platform-content {
+    margin-top: 42px;
+  }
+  .platform .platform-content dl.platform-item {
+    margin: 12px 0;
+    padding: 112px 22px 40px 22px;
+  }
+
+  .os-product {
+    padding-bottom: 40px;
+  }
+  .os-product .op-content {
+    margin-top: 32px;
+  }
+  .os-product .op-content dl {
+    margin: 0 0 20px 0;
+  }
+  .os-product .op-content dd {
+    padding: 0 20px;
+  }
+
+  .clv {
+    padding-bottom: 80px;
+  }
+  .clv .clv-content {
+    margin-top: 56px;
+  }
+
+  .ecosystem {
+    padding-top: 0;
+  }
+  .ecosystem .ecosystem-content li {
+    width: 140px;
+    height: 70px;
+    margin: 12px;
+  }
+
+  .section-roadmap .control {
+    width: 100%;
+  }
+
+  .clover-os {
+    margin-top: 82px;
+  }
+  .clover-os .co-content {
+    margin-top: 0;
+  }
+  .clover-os h3 {
+    margin-bottom: 30px;
+  }
+  .clover-os .co-item {
+    margin: 0 0 20px 0;
+  }
+
+  .kernel-container .ko-container .ko-item {
+    margin: 12px 0;
+  }
+
+  .team-intro {
+    padding-top: 110px;
+  }
+  .team-intro .h1 {
+    margin-bottom: 35px;
+    padding-bottom: 100px;
+  }
+  .team-intro .leadership dl {
+    margin: 12px 0;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .cursor {
+    display: none;
+  }
+
+  body {
+    background: #e5e5e5 url("../image/background/background.svg") center -100px no-repeat;
+    background-size: 1000px;
+  }
+
+  .clover-os .co-row-item-content {
+    flex-direction: column;
+  }
+  .clover-os .co-row-item-content dl {
+    width: 100%;
+  }
+  .clover-os .co-row-item-content:after {
+    display: none;
+  }
+
+  .join .position {
+    width: 100%;
+  }
+  .join .position a {
+    padding: 20px 100px 20px 44px;
+    margin: 0 0 20px 0;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

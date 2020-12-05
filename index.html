@@ -10,9 +10,11 @@
   <link rel='icon' href="image/clover/logo.svg" />
 	<link rel="stylesheet" href="style/reset.css" />
 	<link rel="stylesheet" href="style/styles.css" />
+	<link rel="stylesheet" href="style/effect.css" />
   <script src='script/jquery.js'></script>
 </head>
-<body class='home'>
+<body>
+  <img class='cursorNormal' src='image/cursor/normal.svg' />
   <div class='container'>
     <div class='head'>
       <a href='index.html'><img src='image/clover/logo-text.svg' alt='clover' /></a>
@@ -24,17 +26,18 @@
       </ul>
     </div>
     <div class='content'>
-      <div class='section what'>
-        <em class='h1'>What is Clover?</em>
-        <h1>Clover is a Substrate-based Polkadot parachain. Clover is committed to providing easy-to-use blockchain infrastructure and creating a one-stop comprehensive infrastructure platform, which reduce the threshold and cost for developers, and bring great returns to developers.</h1>
-        <a class='button' href='whitepaper.pdf' target='_blank'>whitepaper</a>
+      <img class='cursor' src='image/background/background.svg' />
+      <div class='section section-what'>
+        <em class='h1 m-1'>What is Clover?</em>
+        <h1 class='m-2'>Clover is a Substrate-based Polkadot parachain. Clover is committed to providing easy-to-use blockchain infrastructure and creating a one-stop comprehensive infrastructure platform, which reduce the threshold and cost for developers, and bring great returns to developers.</h1>
+        <a class='button m-3' href='whitepaper.pdf' target='_blank'>whitepaper</a>
       </div>
-      <div class='section vision'>
-        <em class='h1'>Our Vision</em>
+      <div class='section section-vision'>
+        <em class='h1 m-1'>Our Vision</em>
         <ul>
-          <li>Bring Most Benefi to Developers</li>
-          <li>From dApp to eApp (Eternal App)</li>
-          <li>Connecting Blockchain to Everything</li>
+          <li class='m-2'>Bring Most Benefi to Developers</li>
+          <li class='m-3'>From dApp to eApp (Eternal App)</li>
+          <li class='m-4'>Connecting Blockchain to Everything</li>
         </ul>
       </div>
       <div class='section platform'>
@@ -166,14 +169,10 @@
     </div>
   </div>
   <div class='footer'>
-    <div class='copy'>&copy;2020 CloverFinance. All Rights Reserved</div>
-    <ul class='social'>
-      <li><a href='https://twitter.com/clover_finance'><img src='image/logo/twitter.svg' alt='twitter' /></a></li>
-      <li><a href='https://t.me/clover_en'><img src='image/logo/telegram.svg' alt='telegram' /></a></li>
-      <li><a href='https://open.kakao.com/o/ggPlcrzc'><img src='image/logo/kakao.svg' alt='kakao' /></a></li>
-      <li><a href='https://medium.com/cloverdefi'><img src='image/logo/medium.svg' alt='medium' /></a></li>
-    </ul>
+    <div class='copy'></div>
+    <ul class='social'></ul>
   </div>
   <script src='script/slider.js'></script>
+  <script src='script/effect.js'></script>
 </body>
 </html>
