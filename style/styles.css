@@ -36,6 +36,11 @@ body img.cursor {
   max-width: inherit;
 }
 
+*::selection {
+  color: #48FBA5;
+  background-color: #1d2d31;
+}
+
 body.features img.cursor {
   margin-left: -380px;
 }
@@ -433,6 +438,7 @@ a:hover {
 .os-product .op-content dd {
   font-size: 16px;
   line-height: 24px;
+  padding: 0 20px;
 }
 .os-product .op-content dl:first-child {
   background-image: url("../image/icon/user.svg");
@@ -874,22 +880,27 @@ a:hover {
 
 .footer {
   font-family: Circular-Std-Book;
-  padding: 32px 0;
+  padding: 32px 0 11px 0;
   text-align: center;
+  position: relative;
+  z-index: 2;
 }
 .footer .copy {
   font-size: 14px;
   line-height: 18px;
   opacity: 0.4;
-  margin-bottom: 21px;
 }
 .footer .social {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.footer .social li {
-  margin: 0 16px;
+.footer .social li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 62px;
 }
 
 @media only screen and (max-width: 1360px) {
