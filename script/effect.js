@@ -21,6 +21,7 @@
     <li><a href='https://open.kakao.com/o/ggPlcrzc' target='_blank'><img src='image/logo/kakao.svg' alt='kakao' /></a></li>
     <li><a href='https://medium.com/cloverdefi' target='_blank'><img src='image/logo/medium.svg' alt='medium' /></a></li>
     <li><a href='https://github.com/clover-network' target='_blank'><img src='image/logo/github.svg' alt='github' /></a></li>
+    <li><a href='https://discord.gg/z2egJBsBWx' target='_blank'><img src='image/logo/discord.svg' alt='discord' /></a></li>
   `);
   $('.copy').html('&copy;2020 CloverFinance. All Rights Reserved');
 
