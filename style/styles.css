@@ -402,10 +402,12 @@ a:hover {
 }
 .os-product .op-content dl {
   max-width: 513px;
+  width: 40%;
   min-height: 317px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   margin: 46px 12px 0 12px;
   padding-top: 105px;
+  padding-bottom: 30px;
   background: url("") center 50px no-repeat;
 }
 .os-product .op-content dl:hover {
@@ -434,6 +436,7 @@ a:hover {
   font-size: 16px;
   line-height: 21px;
   opacity: 0.4;
+  height: 2em;
 }
 .os-product .op-content dd {
   font-size: 16px;
@@ -863,7 +866,7 @@ a:hover {
   border: 1px solid rgba(0, 0, 0, 0.2);
   font-size: 20px;
   line-height: 24px;
-  width: 100%;
+  width: 40%;
   max-width: 608px;
   min-height: 100px;
   margin: 0 12px 40px 12px;
@@ -1041,6 +1044,7 @@ a:hover {
   }
   .os-product .op-content dl {
     margin: 0 0 20px 0;
+    width: auto;
   }
   .os-product .op-content dd {
     padding: 0 20px;
@@ -1120,6 +1124,7 @@ a:hover {
   .join .position a {
     padding: 20px 100px 20px 44px;
     margin: 0 0 20px 0;
+    width: 100%;
   }
 }
 
