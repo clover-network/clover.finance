@@ -175,22 +175,22 @@
 .home .img-box-h5 .row .polkadot {
   width: 139px;
   height: 69px;
-  background: url("../image/index/polkadot.svg") no-repeat;
+  background: url("../image/index/polkadot.svg") no-repeat center/cover;
 }
 .home .img-box-h5 .row .bithumb-global {
   width: 128.24px;
   height: 35.59px;
-  background: url("../image/index/bithumb-global.svg") no-repeat;
+  background: url("../image/index/bithumb-global.svg") no-repeat center/cover;
 }
 .home .img-box-h5 .row .bifrost {
   width: 103.28px;
   height: 22.33px;
-  background: url("../image/ecosystem/bifrost.svg") no-repeat;
+  background: url("../image/index/bifrost.png") no-repeat center/cover;
 }
 .home .img-box-h5 .row .stafi {
   width: 97.94px;
   height: 23.73px;
-  background: url("../image/ecosystem/stafi.svg") no-repeat;
+  background: url("../image/ecosystem/stafi.svg") no-repeat center/cover;
 }
 .home .img-box-h5 .row img {
   width: 100px;
@@ -389,6 +389,9 @@
     padding: 0 0 48px 0;
     margin: 0;
     min-height: 0;
+  }
+  .home .swaps-body .swaps-list .item .bottom {
+    text-align: center;
   }
   .home .press-box .press-title {
     font-size: 40px;

@@ -183,22 +183,23 @@ $width: calc((1300px - 200px) / 2);
       .polkadot {
         width: 139px;
         height: 69px;
-        background: url('../image/index/polkadot.svg') no-repeat center /cover;
+        background: url("../image/index/polkadot.svg") no-repeat center / cover;
       }
       .bithumb-global {
         width: 128.24px;
         height: 35.59px;
-        background: url('../image/index/bithumb-global.svg') no-repeat center /cover;
+        background: url("../image/index/bithumb-global.svg") no-repeat center /
+          cover;
       }
-      .bifrost{
+      .bifrost {
         width: 103.28px;
         height: 22.33px;
-        background: url('../image/index/bifrost.png') no-repeat center /cover;
+        background: url("../image/index/bifrost.png") no-repeat center / cover;
       }
-      .stafi{
+      .stafi {
         width: 97.94px;
         height: 23.73px;
-        background: url('../image/ecosystem/stafi.svg') no-repeat center /cover;
+        background: url("../image/ecosystem/stafi.svg") no-repeat center / cover;
       }
       img {
         width: 100px;
@@ -411,6 +412,9 @@ $width: calc((1300px - 200px) / 2);
           padding: 0 0 48px 0;
           margin: 0;
           min-height: 0;
+          .bottom {
+            text-align: center;
+          }
         }
       }
     }
