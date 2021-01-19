@@ -40,10 +40,9 @@
   var $body = $(document.documentElement);
   $(window).scroll(function () {
     scrollTop = $(window).scrollTop();
-    console.log(scrollTop, "scrollTop");
-    if (scrollTop > 10) {
+    if (scrollTop > 0) {
       $body.addClass("scroll-page");
-    } else {
+    } else if ($body.hasClass("scroll-page")) {
       $body.removeClass("scroll-page");
     }
   });
