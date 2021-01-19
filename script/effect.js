@@ -67,7 +67,7 @@
   $(window).scroll(function () {
     scrollTop = $(window).scrollTop();
     console.log(scrollTop, "scrollTop");
-    if (scrollTop > 30) {
+    if (scrollTop > 10) {
       $body.addClass("scroll-page");
     } else {
       $body.removeClass("scroll-page");

@@ -145,16 +145,17 @@ a:hover {
   li {
     line-height: 88px;
     margin-left: 88px;
-    opacity: 0.3;
+    // opacity: 0.3;
+    opacity: 1;
     border-bottom: 1px solid transparent;
   }
-  li:hover {
-    opacity: 1;
-  }
-  li.current {
-    opacity: 1;
-    border-bottom-color: $color-text;
-  }
+  // li:hover {
+  //   opacity: 1;
+  // }
+  // li.current {
+  //   opacity: 1;
+  //   border-bottom-color: $color-text;
+  // }
 }
 .side-bar {
   width: 32px;
