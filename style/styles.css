@@ -2,6 +2,10 @@
   --background: #edf5ea;
 }
 
+:root {
+  --background: transparent;
+}
+
 @font-face {
   font-family: Circular-Std;
   src: url("../font/CircularStd-Bold.ttf");
@@ -132,6 +136,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: var(--background);
   position: fixed;
   z-index: 9;
 }
