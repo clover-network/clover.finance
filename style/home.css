@@ -430,6 +430,9 @@
     margin: 0;
     min-height: 0;
   }
+  .home .swaps-body .swaps-list .item .bottom {
+    text-align: center;
+  }
   .home .press-box .press-title {
     font-size: 40px;
     padding: 0;
