@@ -178,6 +178,8 @@
   background: url("../image/index/polkadot.svg") no-repeat;
 }
 .home .img-box-h5 .row .bithumb-global {
+  width: 128.24px;
+  height: 35.59px;
   background: url("../image/index/bithumb-global.svg") no-repeat;
 }
 .home .img-box-h5 .row img {
