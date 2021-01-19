@@ -256,7 +256,7 @@
   transition-duration: 0.1s;
   cursor: pointer;
 }
-@media (max-width: 968px) {
+@media (max-width: 768px) {
   .home .banner {
     width: 100%;
     max-width: 424px;
