@@ -1,11 +1,11 @@
 (function () {
   $("body").append(`<div class='side-screen'>
     <div class='top'>
-      <a href='https://github.com/clover-network' class='logo-text'></a>
+      <a href='/' class='logo-text'></a>
       <a class='close'></a>
     </div>
     <ul class='side-nav'>
-      <li><a href='https://github.com/clover-network'>Github</a></li>
+      <li><a href='https://github.com/clover-network' target='_blank'>Github</a></li>
       <li><a href='https://docs.clover.finance/' target='_blank'>Docs</a></li>
       <li><a href='team.html'>Blog</a></li>
       <li><a href=' https://discord.gg/z2egJBsBWx' target='_blank'>Discord</a></li>
@@ -19,9 +19,7 @@
     <li><a href='https://twitter.com/clover_finance' target='_blank'><img src='image/logo/twitter.svg' alt='twitter' /></a></li>
     <li><a href='https://t.me/clover_en' target='_blank'><img src='image/logo/telegram.svg' alt='telegram' /></a></li>
     <li><a href='https://open.kakao.com/o/ggPlcrzc' target='_blank'><img src='image/logo/kakao.svg' alt='kakao' /></a></li>
-    <li><a href='https://medium.com/cloverdefi' target='_blank'><img src='image/logo/medium.svg' alt='medium' /></a></li>
-    <li><a href='https://github.com/clover-network' target='_blank'><img src='image/logo/github.svg' alt='github' /></a></li>
-    <li><a href='https://discord.gg/z2egJBsBWx' target='_blank'><img src='image/logo/discord.svg' alt='discord' /></a></li>
+    <li><a href='https://medium.com/projectclover' target='_blank'><img src='image/logo/medium.svg' alt='medium' /></a></li>
   `);
 
   $(".copy").html("&copy;2020 CloverFinance. All Rights Reserved");
