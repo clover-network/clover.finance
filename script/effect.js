@@ -7,7 +7,7 @@
     <ul class='side-nav'>
       <li><a href='https://github.com/clover-network' target='_blank'>Github</a></li>
       <li><a href='https://docs.clover.finance/' target='_blank'>Docs</a></li>
-      <li><a href='team.html'>Blog</a></li>
+      <li><a href='https://medium.com/projectclover' target='_blank'>Blog</a></li>
       <li><a href=' https://discord.gg/z2egJBsBWx' target='_blank'>Discord</a></li>
     </ul>
     <ul class='social'></ul>
@@ -18,7 +18,7 @@
   $(".social").html(`
     <li><a href='https://twitter.com/clover_finance' target='_blank'><img src='image/logo/twitter.svg' alt='twitter' /></a></li>
     <li><a href='https://t.me/clover_en' target='_blank'><img src='image/logo/telegram.svg' alt='telegram' /></a></li>
-    <li><a href='https://open.kakao.com/o/ggPlcrzc' target='_blank'><img src='image/logo/kakao.svg' alt='kakao' /></a></li>
+    <li><a href='https://discord.gg/z2egJBsBWx' target='_blank'><img src='image/logo/discord.svg' alt='discord' /></a></li>
     <li><a href='https://medium.com/projectclover' target='_blank'><img src='image/logo/medium.svg' alt='medium' /></a></li>
   `);
 
