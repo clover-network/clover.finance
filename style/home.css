@@ -247,10 +247,20 @@
   }
 }
 @media (max-width: 768px) {
+  .home .banner {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   .home .slogin {
     height: 80px;
     font-size: 30px;
     line-height: 40px;
+    display: flex;
+    position: initial;
+    flex-direction: column;
+    transform: translateX(0);
+    margin-bottom: 30px;
   }
   .home .banner-footer {
     font-size: 10px;
