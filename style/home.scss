@@ -143,4 +143,93 @@ $width: calc((1300px - 200px) / 2);
       margin-left: 10px;
     }
   }
+
+  // *****************
+  .swaps-body {
+    .title {
+      width: 689px;
+      margin: 0 auto;
+      font-weight: bold;
+      font-size: 36px;
+      line-height: 46px;
+      text-align: center;
+      color: #1d2d31;
+      padding-bottom: 68px;
+
+      .what {
+        color: #5ccf00;
+      }
+    }
+    .swaps-list {
+      display: flex;
+      min-height: 452px;
+      justify-content: center;
+      padding-bottom: 60px;
+      flex-wrap: wrap;
+      .item {
+        margin: 20px 10px 0 20px;
+        width: 273px;
+        min-height: 313px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        box-sizing: border-box;
+        padding: 40px 23px;
+        .top {
+          height: 80px;
+          padding-bottom: 36px;
+          display: flex;
+          justify-content: center;
+        }
+      }
+      .item:hover {
+        transform: translateY(-10px);
+        transition-timing-function: linear;
+        transition-property: opacity, transform;
+        transition-duration: 0.1s;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .press-box {
+    .press-title {
+      color: #202225;
+      font-weight: bold;
+      font-size: 72px;
+      text-align: center;
+      padding: 48px 0 68px 0;
+    }
+    .press-list {
+      display: flex;
+      min-height: 452px;
+      justify-content: center;
+      padding-bottom: 60px;
+      flex-wrap: wrap;
+      .item {
+        margin: 20px 10px 0 20px;
+        width: 273px;
+        min-height: 313px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        box-sizing: border-box;
+        padding: 40px 23px;
+        .top {
+          font-size: 15px;
+          color: #1d2d31;
+        }
+        .bottom {
+          width: 74px;
+          height: 74px;
+          border-radius: 50%;
+          background: #19191f;
+          margin-top: 33px;
+        }
+      }
+      .item:hover {
+        transform: translateY(-10px);
+        transition-timing-function: linear;
+        transition-property: opacity, transform;
+        transition-duration: 0.1s;
+        cursor: pointer;
+      }
+    }
+  }
 }
