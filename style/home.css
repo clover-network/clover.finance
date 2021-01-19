@@ -11,7 +11,13 @@
   justify-content: space-between;
   align-items: center;
 }
-.home .wave-item {
+.home .banner-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.home .banner-wrapper .wave-item {
   width: calc((1300px - 200px) / 2);
   height: calc((1300px - 200px) / 2);
   display: flex;
@@ -21,7 +27,7 @@
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
-.home .wave-item::before, .home .wave-item::after {
+.home .banner-wrapper .wave-item::before, .home .banner-wrapper .wave-item::after {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -30,17 +36,17 @@
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
-.home .wave-item::before {
+.home .banner-wrapper .wave-item::before {
   width: 812px;
   height: 812px;
   border-color: rgba(0, 0, 0, 0.05);
 }
-.home .wave-item::after {
+.home .banner-wrapper .wave-item::after {
   width: 1124px;
   height: 1124px;
   border-color: rgba(0, 0, 0, 0.04);
 }
-.home .icon-warp {
+.home .banner-wrapper .icon-warp {
   position: relative;
   z-index: 2;
   border-radius: 50%;
@@ -49,44 +55,44 @@
   justify-content: center;
   align-items: center;
 }
-.home .icon-warp.black {
+.home .banner-wrapper .icon-warp.black {
   background-color: #000000;
 }
-.home .icon-warp-big {
+.home .banner-wrapper .icon-warp-big {
   width: 236px;
   height: 236px;
 }
-.home .icon-warp-small {
+.home .banner-wrapper .icon-warp-small {
   width: 90px;
   height: 90px;
 }
-.home .icon-img-1 {
+.home .banner-wrapper .icon-img-1 {
   width: 54px;
   height: 86px;
 }
-.home .icon-img-2 {
+.home .banner-wrapper .icon-img-2 {
   width: 75px;
   height: 99px;
 }
-.home .right-top {
+.home .banner-wrapper .right-top {
   position: absolute;
   top: 154px;
   right: 0;
   transform: translateX(50%);
 }
-.home .right-bottom {
+.home .banner-wrapper .right-bottom {
   position: absolute;
   bottom: 115px;
   right: 0;
   transform: translateX(25%);
 }
-.home .left-top {
+.home .banner-wrapper .left-top {
   position: absolute;
   top: 135px;
   left: 0;
   transform: translateX(-50%);
 }
-.home .left-bottom {
+.home .banner-wrapper .left-bottom {
   position: absolute;
   bottom: 115px;
   left: 0;
@@ -108,6 +114,8 @@
   color: greenyellow;
 }
 .home .banner-footer {
+  color: #1d2d31;
+  font-weight: 500;
   position: absolute;
   width: 100%;
   bottom: 58px;
@@ -250,33 +258,98 @@
 }
 @media (max-width: 968px) {
   .home .banner {
-    height: 100vh;
     width: 100%;
+    max-width: 424px;
+    height: auto;
+    display: block;
+    padding-top: 128px;
   }
-  .home .wave-item,
-.home .icon-warp {
-    display: none;
+  .home .banner-wrapper {
+    position: relative;
+    height: 186px;
   }
-}
-@media (max-width: 768px) {
-  .home .banner {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  .home .banner-wrapper .uni {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+  }
+  .home .banner-wrapper .wave-item {
+    width: 186px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+  }
+  .home .banner-wrapper .wave-item::before {
+    width: 274px;
+    height: 274px;
+  }
+  .home .banner-wrapper .wave-item::after {
+    width: 360px;
+    height: 360px;
+  }
+  .home .banner-wrapper .wave-item.left {
+    left: -25px;
+  }
+  .home .banner-wrapper .wave-item.right {
+    right: -25px;
+  }
+  .home .banner-wrapper .icon-warp-big {
+    width: 79px;
+    height: 79px;
+  }
+  .home .banner-wrapper .icon-warp-small {
+    width: 30px;
+    height: 30px;
+  }
+  .home .banner-wrapper .icon-img-1 {
+    width: 18px;
+    height: 29px;
+  }
+  .home .banner-wrapper .icon-img-2 {
+    width: 25px;
+    height: 33px;
+  }
+  .home .banner-wrapper .icon-img-5 {
+    width: 16px;
+    height: 16px;
+  }
+  .home .banner-wrapper .right-top {
+    top: 50%;
+    transform: translateX(50%);
+  }
+  .home .banner-wrapper .right-bottom {
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+    transform: translateX(0);
+  }
+  .home .banner-wrapper .left-top {
+    top: 50%;
+    transform: translateX(-50%);
+  }
+  .home .banner-wrapper .left-bottom {
+    bottom: 0;
+    left: 30px;
+    transform: translateX(0);
+  }
+  .home .slogin,
+.home .banner-footer {
+    position: initial;
   }
   .home .slogin {
     height: 80px;
     font-size: 30px;
     line-height: 40px;
     display: flex;
-    position: initial;
     flex-direction: column;
     transform: translateX(0);
-    margin-bottom: 30px;
+    margin-bottom: 60px;
   }
   .home .banner-footer {
+    padding-top: 69px;
     font-size: 10px;
-    position: initial;
+    font-size: 15px;
   }
   .home .img-box-web {
     display: none;
