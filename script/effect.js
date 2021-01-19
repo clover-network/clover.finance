@@ -38,12 +38,19 @@
 
   var scrollTop = $(window).scrollTop();
   var $body = $(document.documentElement);
-  $(window).scroll(function () {
-    scrollTop = $(window).scrollTop();
+
+  pageRun();
+
+  function pageRun() {
     if (scrollTop > 0) {
       $body.addClass("scroll-page");
     } else if ($body.hasClass("scroll-page")) {
       $body.removeClass("scroll-page");
     }
+  }
+
+  $(window).scroll(function () {
+    scrollTop = $(window).scrollTop();
+    pageRun();
   });
 })();
