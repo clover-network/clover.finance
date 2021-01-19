@@ -1,180 +1,322 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-	<meta name="theme-color" content="#ffffff">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
-  <meta name="theme-color" content="#ffffff">
-  <meta charset="utf-8" />
-  <title>Clover - Welcome</title>
-  <link rel='icon' href="image/clover/logo.svg" />
-	<link rel="stylesheet" href="style/reset.css" />
-	<link rel="stylesheet" href="style/styles.css" />
-	<link rel="stylesheet" href="style/effect.css" />
-  <script src='script/jquery.js'></script>
-</head>
-<body>
-  <img class='cursorNormal' src='image/cursor/normal.svg' />
-  <div class='container'>
-    <div class='head'>
-      <a href='index.html'><img src='image/clover/logo-text.svg' alt='clover' /></a>
-      <ul class='nav'>
-        <li class='current'><a href='index.html'>Home</a></li>
-        <li><a href='features.html'>Features</a></li>
-        <li><a href='team.html'>Team</a></li>
-        <li><a href='https://medium.com/projectclover' target='_blank'>Medium</a></li>
-      </ul>
-    </div>
-    <div class='content'>
-      <img class='cursor' src='image/background/background.svg' />
-      <div class='section section-what'>
-        <em class='h1 m-1'>What is Clover?</em>
-        <h1 class='m-2'>Clover is a Substrate-based Polkadot parachain. Clover is committed to providing easy-to-use blockchain infrastructure and creating a one-stop comprehensive infrastructure platform, which to reduce the threshold and cost for developers, and bring great returns to developers.</h1>
-        <!--<a class='button m-3' href='whitepaper.pdf' target='_blank'>whitepaper</a>-->
-      </div>
-      <div class='section section-vision'>
-        <em class='h1 m-1'>Our Vision</em>
-        <ul>
-          <li class='m-2'>Bring Maximize benefits for developers</li>
-          <li class='m-3'>From dApp to eApp (Eternal App)</li>
-          <li class='m-4'>Connecting Blockchains to Everything</li>
+  <head>
+    <meta name="theme-color" content="#ffffff" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0"
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <meta charset="utf-8" />
+    <title>Clover - Welcome</title>
+    <link rel="icon" href="image/clover/logo.svg" />
+    <link rel="stylesheet" href="style/reset.css" />
+    <link rel="stylesheet" href="style/styles.css" />
+    <link rel="stylesheet" href="style/effect.css" />
+    <link rel="stylesheet" href="style/home.css" />
+    <script src="script/jquery.js"></script>
+  </head>
+  <body class="home">
+    <!-- <img class='cursorNormal' src='image/cursor/normal.svg' /> -->
+    <div class="container">
+      <div class="head">
+        <a href="index.html"
+          ><img src="image/clover/logo-text.svg" alt="clover"
+        /></a>
+        <ul class="nav">
+          <li class="current"><a href="index.html">Github</a></li>
+          <li><a href="features.html">Docs</a></li>
+          <li><a href="team.html">Blog</a></li>
+          <li>
+            <a href="https://medium.com/projectclover" target="_blank">
+              Discord
+            </a>
+          </li>
         </ul>
       </div>
-      <div class='section platform'>
-        <em class='h1'>Clover OS / Frame</em>
-        <h2>The bottom layer of the Clover OS is built on the blockchain. Application states are built on the Polkadot network, and the storage protocol is built on IPFS.</h2>
-        <div class='platform-content'>
-          <dl class='platform-item'>
-            <dt>Smart Contract</dt>
-            <dd>The Smart Contract protocol layer supports one-stop cross-chain deployment and dApp calls.</dd>
-            <dd><ul><li>Polkadot</li><li>Ethereum</li><li>Tron</li><li>Eos</li></ul></dd>
-          </dl>
-          <dl class='platform-item'>
-            <dt>Clover Front End (UI/UX)</dt>
-            <dd>The Front End protocol layer supports front-end multi-OS adaptation and operation.</dd>
-            <dd><ul><li>ios</li><li>Android</li><li>Linux</li><li>Windos LoT</li></ul></dd>
-          </dl>
-          <dl class='platform-item'>
-            <dt>Clover Back End</dt>
-            <dd>Back End protocol layer supports various basic Defi protocols.</dd>
-            <dd>Swap / Lending / Insurance</dd>
-          </dl>
-          <dl class='platform-item'>
-            <dt>Storage</dt>
-            <dd>Storage protocol layer supports distributed storage of dApp data.</dd>
-            <dd>IPFS / AR / CRUST</dd>
-          </dl>
+      <div class="banner">
+        <div class="wave-item">
+          <div class="icon-warp icon-warp-big">
+            <img class="icon-img-1" src="image/home/icon1.svg" alt="" />
+          </div>
+          <div class="icon-warp icon-warp-small right-top">
+            <img class="icon-img-5" src="image/home/icon3.svg" alt="" />
+          </div>
+          <div class="icon-warp icon-warp-small right-bottom">
+            <img class="icon-img-5" src="image/home/icon6.svg" alt="" />
+          </div>
+        </div>
+        <div class="icon-warp icon-warp-small">
+          <img class="icon-img-5" src="image/home/icon5.svg" alt="" />
+        </div>
+        <div class="wave-item">
+          <div class="icon-warp icon-warp-big black">
+            <img class="icon-img-2" src="image/home/icon2.svg" alt="" />
+          </div>
+
+          <div class="icon-warp icon-warp-small left-top">
+            <img class="icon-img-5" src="image/home/icon4.svg" alt="" />
+          </div>
+          <div class="icon-warp icon-warp-small left-bottom">
+            <img class="icon-img-5" src="image/home/icon7.svg" alt="" />
+          </div>
+        </div>
+
+        <div class="slogin">
+          <div>Cross-chain DeFi</div>
+          <div class="green">Interoperability</div>
+        </div>
+        <div class="banner-footer">
+          <div class="desc">
+            Clover is a Polkadot parachain, committed to providing easy-to-use
+            blockchain infrastructure and creating a one-stop EVM compatible
+            framework for Substrate-based applications.
+          </div>
+          <a class="btn-start">
+            Start building
+            <img class="icon-arrow" src="image/home/arrow.svg" alt="" />
+          </a>
         </div>
       </div>
-      <div class='section os-product'>
-        <em class='h1'>Clover OS / Product</em>
-        <div class='op-content'>
-          <dl>
-            <dt><em>End-user applications for user</em><span>Wallet + Browser</span></dt>
-            <dd>Multi-chain wallet for easy cross-chain asset swaps</dd>
-            <dd>App explorer</dd>
-            <dd>On-chain asset browser</dd>
-          </dl>
-          <dl>
-            <dt><em>Developer tools For businesses</em><span>Technology stack + Community</span></dt>
-            <dd>EVM compatibility for Polkadot</dd>
-            <dd>SDK for dApps</dd>
-          </dl>
+      <div class="content">
+        <!-- <img class="cursor" src="image/background/background.svg" /> -->
+        <div class="section section-what">
+          <em class="h1 m-1">What is Clover?</em>
+          <h1 class="m-2">
+            Clover is a Substrate-based Polkadot parachain. Clover is committed
+            to providing easy-to-use blockchain infrastructure and creating a
+            one-stop comprehensive infrastructure platform, which to reduce the
+            threshold and cost for developers, and bring great returns to
+            developers.
+          </h1>
+          <!--<a class='button m-3' href='whitepaper.pdf' target='_blank'>whitepaper</a>-->
         </div>
-      </div>
-      <div class='section clv'>
-        <em class='h1'>CLV Token Utility</em>
-        <ul class='clv-content'>
-          <li>Earn rewards from platform usage</li>
-          <li>Stake to run nodes</li>
-          <li>Transact on exchanges and marketplaces</li>
-          <li>Incentivize developers, community and ecosystem contributors</li>
-          <li>Participate in governance activities for a pre-determined set of parameters</li>
-        </ul>
-      </div>
-      <div class='section ecosystem'>
-        <em class='h1'>Ecosystem / Partners</em>
-        <ul class='ecosystem-content'>
-          <li><a href='https://polkadot.network/' target='_blank'><img src='image/ecosystem/polkadot.svg' alt='polkadot' /></a></li>
-          <li><a href='https://www.bithumb.pro/' target='_blank'><img src='image/ecosystem/bithumb-global.svg' alt='bithumb global' /></a></li>
-          <li><a href='https://www.parity.io/substrate/' target='_blank'><img src='image/ecosystem/substrate.svg' alt='substrate' /></a></li>
-          <li><a href='https://bifrost.finance/' target='_blank'><img src='image/ecosystem/bifrost.svg' alt='bifrost' /></a></li>
-          <li><a href='http://stafi.io/' target='_blank'><img src='image/ecosystem/stafi.svg' alt='stafi' /></a></li>
-          <li><a href='https://www.plasmnet.io/' target='_blank'><img src='image/ecosystem/plasmnet.svg' alt='plasmnet' /></a></li>
-          <li><a href='https://kusama.network/' target='_blank'><img src='image/ecosystem/kusama.svg' alt='kusama' /></a></li>
-          <li><a href='https://chainx.org/' target='_blank'><img src='image/ecosystem/chainx.svg' alt='chainx' /></a></li>
-          <li><a href='https://crust.network/' target='_blank'><img src='image/ecosystem/crust.svg' alt='curst' /></a></li>
-          <li><a href='https://phala.network/' target='_blank'><img src='image/ecosystem/phala.svg' alt='phala' /></a></li>
-        </ul>
-      </div>
-      <div class='section section-roadmap'>
-        <div class='roadmap'>
-          <em class='h1'>Roadmap</em>
-          <ul class='control'>
-            <li class='left-control'></li>
-            <li class='right-control'></li>
+        <div class="section section-vision">
+          <em class="h1 m-1">Our Vision</em>
+          <ul>
+            <li class="m-2">Bring Maximize benefits for developers</li>
+            <li class="m-3">From dApp to eApp (Eternal App)</li>
+            <li class="m-4">Connecting Blockchains to Everything</li>
           </ul>
-          <div class='roadmap-item slider-item'>
+        </div>
+        <div class="section platform">
+          <em class="h1">Clover OS / Frame</em>
+          <h2>
+            The bottom layer of the Clover OS is built on the blockchain.
+            Application states are built on the Polkadot network, and the
+            storage protocol is built on IPFS.
+          </h2>
+          <div class="platform-content">
+            <dl class="platform-item">
+              <dt>Smart Contract</dt>
+              <dd>
+                The Smart Contract protocol layer supports one-stop cross-chain
+                deployment and dApp calls.
+              </dd>
+              <dd>
+                <ul>
+                  <li>Polkadot</li>
+                  <li>Ethereum</li>
+                  <li>Tron</li>
+                  <li>Eos</li>
+                </ul>
+              </dd>
+            </dl>
+            <dl class="platform-item">
+              <dt>Clover Front End (UI/UX)</dt>
+              <dd>
+                The Front End protocol layer supports front-end multi-OS
+                adaptation and operation.
+              </dd>
+              <dd>
+                <ul>
+                  <li>ios</li>
+                  <li>Android</li>
+                  <li>Linux</li>
+                  <li>Windos LoT</li>
+                </ul>
+              </dd>
+            </dl>
+            <dl class="platform-item">
+              <dt>Clover Back End</dt>
+              <dd>
+                Back End protocol layer supports various basic Defi protocols.
+              </dd>
+              <dd>Swap / Lending / Insurance</dd>
+            </dl>
+            <dl class="platform-item">
+              <dt>Storage</dt>
+              <dd>
+                Storage protocol layer supports distributed storage of dApp
+                data.
+              </dd>
+              <dd>IPFS / AR / CRUST</dd>
+            </dl>
+          </div>
+        </div>
+        <div class="section os-product">
+          <em class="h1">Clover OS / Product</em>
+          <div class="op-content">
             <dl>
-              <dt>2020 Q3</dt>
-              <dd>Clover Team Establishment</dd>
-              <dd>Whitepaper</dd>
-              <dd>Official Website</dd>
+              <dt>
+                <em>End-user applications for user</em
+                ><span>Wallet + Browser</span>
+              </dt>
+              <dd>Multi-chain wallet for easy cross-chain asset swaps</dd>
+              <dd>App explorer</dd>
+              <dd>On-chain asset browser</dd>
             </dl>
             <dl>
-              <dt>2020 Q4</dt>
-              <dd>Clover Testnet</dd>
-              <dd>User web wallet</dd>
-              <dd>User app wallet</dd>
-              <dd>Swap protocol</dd>
+              <dt>
+                <em>Developer tools For businesses</em
+                ><span>Technology stack + Community</span>
+              </dt>
+              <dd>EVM compatibility for Polkadot</dd>
+              <dd>SDK for dApps</dd>
             </dl>
-            <dl>
-              <dt>2021 Q1</dt>
-              <dd>Substrate’s ability for EVM</dd>
-              <dd>Stablecoin protocol</dd>
-              <dd>User dApp Explorer</dd>
-              <dd>Developer incentive program</dd>
-            </dl>
-            <dl>
-              <dt>2021 Q2</dt>
-              <dd>On-chain Asset Explorer</dd>
-              <dd>On-chain governance</dd>
-              <dd>Clover Mainnet  </dd>
-            </dl>
-            <dl>
-              <dt>2021 Q3</dt>
-              <dd>Sakura Adapter for OSs</dd>
-              <dd>Universal Crypto Signer</dd>
-              <dd>Validator incentive program</dd>
-            </dl>
-            <dl>
-              <dt>2021 Q4</dt>
-              <dd>Clover storage Protocol</dd>
-              <dd>Lending protocol</dd>
-              <dd>Orchid Deep Learning Indexing System</dd>
-            </dl>
-            <dl>
-              <dt>2022 Q1</dt>
-              <dd>Ecosystem grant program</dd>
-              <dd>Vault protocol</dd>
-              <dd>In-wallet cross-chain dApp searching engine</dd>
-            </dl>
-            <dl>
-              <dt>2022 Q2</dt>
-              <dd>One-stop development tool</dd>
-              <dd>Cross-chain deployment tool</dd>
-              <dd>Clover Mainnet</dd>
-            </dl>      
+          </div>
+        </div>
+        <div class="section clv">
+          <em class="h1">CLV Token Utility</em>
+          <ul class="clv-content">
+            <li>Earn rewards from platform usage</li>
+            <li>Stake to run nodes</li>
+            <li>Transact on exchanges and marketplaces</li>
+            <li>
+              Incentivize developers, community and ecosystem contributors
+            </li>
+            <li>
+              Participate in governance activities for a pre-determined set of
+              parameters
+            </li>
+          </ul>
+        </div>
+        <div class="section ecosystem">
+          <em class="h1">Ecosystem / Partners</em>
+          <ul class="ecosystem-content">
+            <li>
+              <a href="https://polkadot.network/" target="_blank"
+                ><img src="image/ecosystem/polkadot.svg" alt="polkadot"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.bithumb.pro/" target="_blank"
+                ><img
+                  src="image/ecosystem/bithumb-global.svg"
+                  alt="bithumb global"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.parity.io/substrate/" target="_blank"
+                ><img src="image/ecosystem/substrate.svg" alt="substrate"
+              /></a>
+            </li>
+            <li>
+              <a href="https://bifrost.finance/" target="_blank"
+                ><img src="image/ecosystem/bifrost.svg" alt="bifrost"
+              /></a>
+            </li>
+            <li>
+              <a href="http://stafi.io/" target="_blank"
+                ><img src="image/ecosystem/stafi.svg" alt="stafi"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.plasmnet.io/" target="_blank"
+                ><img src="image/ecosystem/plasmnet.svg" alt="plasmnet"
+              /></a>
+            </li>
+            <li>
+              <a href="https://kusama.network/" target="_blank"
+                ><img src="image/ecosystem/kusama.svg" alt="kusama"
+              /></a>
+            </li>
+            <li>
+              <a href="https://chainx.org/" target="_blank"
+                ><img src="image/ecosystem/chainx.svg" alt="chainx"
+              /></a>
+            </li>
+            <li>
+              <a href="https://crust.network/" target="_blank"
+                ><img src="image/ecosystem/crust.svg" alt="curst"
+              /></a>
+            </li>
+            <li>
+              <a href="https://phala.network/" target="_blank"
+                ><img src="image/ecosystem/phala.svg" alt="phala"
+              /></a>
+            </li>
+          </ul>
+        </div>
+        <div class="section section-roadmap">
+          <div class="roadmap">
+            <em class="h1">Roadmap</em>
+            <ul class="control">
+              <li class="left-control"></li>
+              <li class="right-control"></li>
+            </ul>
+            <div class="roadmap-item slider-item">
+              <dl>
+                <dt>2020 Q3</dt>
+                <dd>Clover Team Establishment</dd>
+                <dd>Whitepaper</dd>
+                <dd>Official Website</dd>
+              </dl>
+              <dl>
+                <dt>2020 Q4</dt>
+                <dd>Clover Testnet</dd>
+                <dd>User web wallet</dd>
+                <dd>User app wallet</dd>
+                <dd>Swap protocol</dd>
+              </dl>
+              <dl>
+                <dt>2021 Q1</dt>
+                <dd>Substrate’s ability for EVM</dd>
+                <dd>Stablecoin protocol</dd>
+                <dd>User dApp Explorer</dd>
+                <dd>Developer incentive program</dd>
+              </dl>
+              <dl>
+                <dt>2021 Q2</dt>
+                <dd>On-chain Asset Explorer</dd>
+                <dd>On-chain governance</dd>
+                <dd>Clover Mainnet</dd>
+              </dl>
+              <dl>
+                <dt>2021 Q3</dt>
+                <dd>Sakura Adapter for OSs</dd>
+                <dd>Universal Crypto Signer</dd>
+                <dd>Validator incentive program</dd>
+              </dl>
+              <dl>
+                <dt>2021 Q4</dt>
+                <dd>Clover storage Protocol</dd>
+                <dd>Lending protocol</dd>
+                <dd>Orchid Deep Learning Indexing System</dd>
+              </dl>
+              <dl>
+                <dt>2022 Q1</dt>
+                <dd>Ecosystem grant program</dd>
+                <dd>Vault protocol</dd>
+                <dd>In-wallet cross-chain dApp searching engine</dd>
+              </dl>
+              <dl>
+                <dt>2022 Q2</dt>
+                <dd>One-stop development tool</dd>
+                <dd>Cross-chain deployment tool</dd>
+                <dd>Clover Mainnet</dd>
+              </dl>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class='footer'>
-    <div class='copy'></div>
-    <ul class='social'></ul>
-  </div>
-  <script src='script/slider.js'></script>
-  <script src='script/effect.js'></script>
-</body>
+    <div class="footer">
+      <div class="copy"></div>
+      <ul class="social"></ul>
+    </div>
+    <script src="script/slider.js"></script>
+    <script src="script/effect.js"></script>
+  </body>
 </html>

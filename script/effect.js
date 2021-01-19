@@ -5,10 +5,10 @@
       <a class='close'></a>
     </div>
     <ul class='side-nav'>
-      <li><a href='index.html'>Home</a></li>
-      <li><a href='features.html'>Features</a></li>
-      <li><a href='team.html'>Team</a></li>
-      <li><a href='https://medium.com/projectclover' target='_blank'>Medium</a></li>
+      <li><a href='index.html'>Github</a></li>
+      <li><a href='features.html'>Docs</a></li>
+      <li><a href='team.html'>Blog</a></li>
+      <li><a href='https://medium.com/projectclover' target='_blank'>Discord</a></li>
     </ul>
     <ul class='social'></ul>
     <div class='copy'></div>

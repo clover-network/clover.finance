@@ -1,3 +1,7 @@
+:root.scroll-page {
+  --background: #edf5ea;
+}
+
 @font-face {
   font-family: Circular-Std;
   src: url("../font/CircularStd-Bold.ttf");
@@ -24,7 +28,7 @@ body {
   font-weight: 500;
   font-size: 17px;
   line-height: 24px;
-  background-color: #e5e5e5;
+  background-color: #edf5ea;
   position: relative;
 }
 body img.cursor {
@@ -36,8 +40,13 @@ body img.cursor {
   max-width: inherit;
 }
 
+*::-moz-selection {
+  color: #48fba5;
+  background-color: #1d2d31;
+}
+
 *::selection {
-  color: #48FBA5;
+  color: #48fba5;
   background-color: #1d2d31;
 }
 
@@ -50,7 +59,9 @@ body.features img.cursor {
   z-index: 2;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: normal;
 }
 
@@ -114,12 +125,15 @@ a:hover {
 }
 
 .head {
+  width: 100%;
+  top: 0;
+  left: 0;
   height: 88px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
-  z-index: 5;
+  position: fixed;
+  z-index: 9;
 }
 
 .nav {
@@ -329,12 +343,14 @@ a:hover {
   transition-property: opacity, transform;
   transition-duration: 0.2s;
 }
-.platform dl:nth-child(1) ul, .platform dl:nth-child(2) ul {
+.platform dl:nth-child(1) ul,
+.platform dl:nth-child(2) ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-.platform dl:nth-child(1) ul li, .platform dl:nth-child(2) ul li {
+.platform dl:nth-child(1) ul li,
+.platform dl:nth-child(2) ul li {
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -344,27 +360,33 @@ a:hover {
   border: 1px solid rgba(0, 0, 0, 0.2);
   background: url("") center 20px no-repeat;
 }
-.platform dl:nth-child(1) ul li:nth-child(1), .platform dl:nth-child(2) ul li:nth-child(1) {
+.platform dl:nth-child(1) ul li:nth-child(1),
+.platform dl:nth-child(2) ul li:nth-child(1) {
   border-width: 0 1px 1px 0;
   background-image: url("../image/logo/polkadot.svg");
 }
-.platform dl:nth-child(1) ul li:nth-child(2), .platform dl:nth-child(2) ul li:nth-child(2) {
+.platform dl:nth-child(1) ul li:nth-child(2),
+.platform dl:nth-child(2) ul li:nth-child(2) {
   border-width: 0 0 1px 0;
   background-image: url("../image/logo/ethereum.svg");
 }
-.platform dl:nth-child(1) ul li:nth-child(3), .platform dl:nth-child(2) ul li:nth-child(3) {
+.platform dl:nth-child(1) ul li:nth-child(3),
+.platform dl:nth-child(2) ul li:nth-child(3) {
   border-width: 0 1px 0 0;
   background-image: url("../image/logo/tron.svg");
 }
-.platform dl:nth-child(1) ul li:nth-child(4), .platform dl:nth-child(2) ul li:nth-child(4) {
+.platform dl:nth-child(1) ul li:nth-child(4),
+.platform dl:nth-child(2) ul li:nth-child(4) {
   border-width: 0;
   background-image: url("../image/logo/eos.svg");
 }
-.platform dl:nth-child(1), .platform dl:nth-child(2) {
+.platform dl:nth-child(1),
+.platform dl:nth-child(2) {
   min-height: 545px;
   margin-bottom: 18px;
 }
-.platform dl:nth-child(3), .platform dl:nth-child(4) {
+.platform dl:nth-child(3),
+.platform dl:nth-child(4) {
   min-height: 374px;
 }
 .platform dl:nth-child(1) {
@@ -802,10 +824,14 @@ a:hover {
   font-family: Circular-Std-Book;
   text-decoration: underline;
 }
-.team-intro .leadership dl:nth-child(1), .team-intro .leadership dl:nth-child(4), .team-intro .leadership dl:nth-child(5) {
+.team-intro .leadership dl:nth-child(1),
+.team-intro .leadership dl:nth-child(4),
+.team-intro .leadership dl:nth-child(5) {
   background: linear-gradient(180deg, rgba(32, 34, 37, 0.05) 0%, rgba(32, 34, 37, 0.01) 100%);
 }
-.team-intro .leadership dl:nth-child(2), .team-intro .leadership dl:nth-child(3), .team-intro .leadership dl:nth-child(6) {
+.team-intro .leadership dl:nth-child(2),
+.team-intro .leadership dl:nth-child(3),
+.team-intro .leadership dl:nth-child(6) {
   background: linear-gradient(180deg, rgba(72, 251, 165, 0.5) 0%, rgba(72, 251, 165, 0) 100%);
 }
 .team-intro .leadership dd {
@@ -907,7 +933,8 @@ a:hover {
 }
 
 @media only screen and (max-width: 1360px) {
-  .cursorNormal, .cursorHover {
+  .cursorNormal,
+.cursorHover {
     display: none;
   }
 
@@ -1018,7 +1045,8 @@ a:hover {
   .section-vision ul li:nth-child(1) {
     padding-top: 210px;
   }
-  .section-vision ul li:nth-child(2), .section-vision ul li:nth-child(3) {
+  .section-vision ul li:nth-child(2),
+.section-vision ul li:nth-child(3) {
     padding-top: 180px;
   }
 
@@ -1126,6 +1154,4 @@ a:hover {
     margin: 0 0 20px 0;
     width: 100%;
   }
-}
-
-/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */
