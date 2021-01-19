@@ -120,6 +120,7 @@ a:hover {
   // position: relative;
   position: fixed;
   z-index: 9;
+  padding: 0 20px;
 }
 
 .nav {
@@ -293,7 +294,7 @@ a:hover {
   }
 }
 
-@media only screen and (max-width: 1360px) {
+@media only screen and (max-width: 1980px) {
   .head {
     padding: 0 20px;
     img {

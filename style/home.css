@@ -10,7 +10,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
 }
 .home .wave-item {
   width: calc((1300px - 200px) / 2);
@@ -268,6 +267,6 @@
   }
   .home .swaps-body .title {
     width: 200px;
-    font-size: 20px;
+    font-size: 12px;
   }
 }/*# sourceMappingURL=home.css.map */
