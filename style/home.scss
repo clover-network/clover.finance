@@ -264,22 +264,31 @@ $width: calc((1300px - 200px) / 2);
   }
 
   @media (max-width: 768px) {
+    .banner {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
     .slogin {
       height: 80px;
       font-size: 30px;
       line-height: 40px;
+      display: flex;
+      position: initial;
+      flex-direction: column;
+      transform: translateX(0);
+      margin-bottom: 30px;
     }
     .banner-footer {
       font-size: 10px;
       position: initial;
     }
-  
-    .swaps-body{
-      .title{
+
+    .swaps-body {
+      .title {
         width: 200px;
         font-size: 20px;
       }
     }
-   
   }
 }
