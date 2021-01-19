@@ -256,4 +256,8 @@
     font-size: 10px;
     position: initial;
   }
+  .home .swaps-body .title {
+    width: 200px;
+    font-size: 20px;
+  }
 }/*# sourceMappingURL=home.css.map */
