@@ -34,35 +34,7 @@
     $sideScreen.fadeOut();
   });
 
-  // function effect($node, child, timeout) {
-  //   $node.addClass("effect");
-  //   const $child = $node.find(child);
-  //   $child.addClass("hidden");
-  //   setTimeout(function () {
-  //     $child.removeClass("hidden").addClass("action");
-  //   }, 0);
-  //   setTimeout(function () {
-  //     $node.removeClass("init").removeClass("effect");
-  //     $child.removeClass("action");
-  //   }, timeout);
-  // }
-
-  // const nodes = [$(".section-what"), $(".section-vision")];
-  // const children = [".m-1, .m-2, .m-3", ".m-1, .m-2, .m-3, .m-4"];
-  // const append = [100, 300];
-  // const timeout = [1000, 1600];
-  // const top = nodes.map(function ($node, index) {
-  //   if ($node.length > 0) {
-  //     $node.addClass("init");
-  //     return $node.offset().top;
-  //   } else {
-  //     return "";
-  //   }
-  // });
-
-  // effect(nodes[0], children[0], timeout[0]);
-
-  let scrollTop = $(window).scrollTop();
+  var scrollTop = $(window).scrollTop();
   var $body = $(document.documentElement);
   $(window).scroll(function () {
     scrollTop = $(window).scrollTop();
@@ -73,16 +45,4 @@
       $body.removeClass("scroll-page");
     }
   });
-  // let scrollTop = $(window).scrollTop();
-  // $(window).scroll(function () {
-  //   scrollTop = $(window).scrollTop();
-  //   top.forEach((item, index) => {
-  //     if (index > 0 && scrollTop > item - append[index]) {
-  //       const $node = nodes[index];
-  //       if ($node.hasClass("init")) {
-  //         effect($node, children[index], timeout[index]);
-  //       }
-  //     }
-  //   });
-  // });
 })();
