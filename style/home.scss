@@ -180,6 +180,16 @@ $width: calc((1300px - 200px) / 2);
       justify-content: space-between;
       align-items: center;
       padding: 15px 0;
+      .polkadot{
+        width: 139px;
+        height: 69px;
+        background: url('../image/index/polkadot.svg') no-repeat;
+      }
+      .bithumb-global{
+        width: 128.24px;
+        height: 35.59px;
+        background: url('../image/index/bithumb-global.svg') no-repeat;
+      }
       img {
         width: 100px;
       }
@@ -388,8 +398,9 @@ $width: calc((1300px - 200px) / 2);
         .item {
           width: 336px;
           border: none;
-          padding: 0;
+          padding: 0 0 48px 0;
           margin: 0;
+          min-height: 0;
         }
       }
     }

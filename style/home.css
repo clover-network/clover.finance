@@ -172,6 +172,14 @@
   align-items: center;
   padding: 15px 0;
 }
+.home .img-box-h5 .row .polkadot {
+  width: 139px;
+  height: 69px;
+  background: url("../image/index/polkadot.svg") no-repeat;
+}
+.home .img-box-h5 .row .bithumb-global {
+  background: url("../image/index/bithumb-global.svg") no-repeat;
+}
 .home .img-box-h5 .row img {
   width: 100px;
 }
@@ -366,8 +374,9 @@
   .home .swaps-body .swaps-list .item {
     width: 336px;
     border: none;
-    padding: 0;
+    padding: 0 0 48px 0;
     margin: 0;
+    min-height: 0;
   }
   .home .press-box .press-title {
     font-size: 40px;
