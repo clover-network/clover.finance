@@ -150,91 +150,19 @@
   padding: 68px 0;
 }
 .home .img-box-web .row {
-  justify-content: center;
+  justify-content: space-between;
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
 }
-.home .img-box-web .row .box {
-  align-items: center;
-  padding: 20px 0;
-  justify-content: space-between;
-  width: 400px;
-  display: flex;
+.home .img-box-web .row a {
+  height: 70px;
 }
-.home .img-box-web .row .box a {
-  padding: 0 20px;
+.home .img-box-web .row a:not(:nth-child(6n)) {
+  margin-right: 75px;
 }
-.home .img-box-h5 {
-  display: none;
-}
-.home .img-box-h5 .row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 0;
-}
-.home .img-box-h5 .row .polkadot {
-  width: 139px;
-  height: 69px;
-  background: url("../image/index/polkadot.svg") no-repeat center/cover;
-}
-.home .img-box-h5 .row .bithumb-global {
-  width: 128.24px;
-  height: 35.59px;
-  background: url("../image/index/bithumb-global.svg") no-repeat center/cover;
-}
-.home .img-box-h5 .row .bifrost {
-  width: 103.28px;
-  height: 22.33px;
-  background: url("../image/index/bifrost.png") no-repeat center/cover;
-}
-.home .img-box-h5 .row .stafi {
-  width: 97.94px;
-  height: 23.73px;
-  background: url("../image/ecosystem/stafi.svg") no-repeat center/cover;
-}
-.home .img-box-h5 .row .plasmnet {
-  width: 94.98px;
-  height: 34.19px;
-  background: url("../image/ecosystem/plasmnet.svg") no-repeat center/cover;
-}
-.home .img-box-h5 .row .kusama {
-  width: 100px;
-  height: 42.57px;
-  background: url("../image/ecosystem/kusama.svg") no-repeat center/cover;
-}
-.home .img-box-h5 .row .chainx {
-  width: 103.28px;
-  height: 22.33px;
-  background: url("../image/ecosystem/chainx.svg") no-repeat center/cover;
-}
-.home .img-box-h5 .row .crust {
-  width: 97.94px;
-  height: 23.73px;
-  background: url("../image/ecosystem/crust.svg") no-repeat center/cover;
-}
-.home .img-box-h5 .row .phala {
-  width: 110.25px;
-  height: 30.7px;
-  background: url("../image/ecosystem/phala.svg") no-repeat center/cover;
-}
-.home .img-box-h5 .row .litentry {
-  width: 157.01px;
-  height: 53.73px;
-  background: url("../image/index/litentry.svg") no-repeat center/cover;
-}
-.home .img-box-h5 .row .boring {
-  width: 148.63px;
-  height: 36.29px;
-  background: url("../image/index/boring.svg") no-repeat center/cover;
-}
-.home .img-box-h5 .row .substrate {
-  width: 102px;
-  height: 40px;
-  background: url("../image/ecosystem/substrate.svg") no-repeat center/cover;
-}
-.home .img-box-h5 .row img {
-  width: 100px;
+.home .img-box-web .row a img {
+  height: 100%;
 }
 .home .swaps-body .title {
   width: 689px;
@@ -412,11 +340,14 @@
     font-size: 10px;
     font-size: 15px;
   }
-  .home .img-box-web {
-    display: none;
+  .home .img-box-web .row a {
+    margin-right: 0 !important;
+    width: 45%;
+    height: auto;
   }
-  .home .img-box-h5 {
-    display: block;
+  .home .img-box-web .row a img {
+    height: auto;
+    width: 100%;
   }
   .home .swaps-body .title {
     width: 320px;
