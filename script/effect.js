@@ -6,7 +6,7 @@
     </div>
     <ul class='side-nav'>
       <li><a href='index.html'>Github</a></li>
-      <li><a href='https://docs.clover.finance/quick-start/local-node' target='_blank'>Docs</a></li>
+      <li><a href='https://docs.clover.finance/' target='_blank'>Docs</a></li>
       <li><a href='team.html'>Blog</a></li>
       <li><a href='https://medium.com/projectclover' target='_blank'>Discord</a></li>
     </ul>

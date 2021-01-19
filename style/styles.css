@@ -175,7 +175,7 @@ a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #e5e5e5 url("../image/background/background.svg") center -100px no-repeat;
+  background-color: #e5e5e5;
   background-size: 1000px;
   display: none;
 }
@@ -1137,7 +1137,6 @@ a:hover {
   }
 
   body {
-    background: #e5e5e5 url("../image/background/background.svg") center -100px no-repeat;
     background-size: 1000px;
   }
 
