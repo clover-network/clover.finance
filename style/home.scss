@@ -146,12 +146,21 @@ $width: calc((1300px - 200px) / 2);
 
   // *****************
   .img-box{
-    height: 800px;
+    padding: 68px 0;
     .row{
       justify-content: center;
       display: flex;
+      flex-wrap: wrap;
       .box{
+        align-items: center;
+        padding: 20px 0;
+        justify-content: space-between;
+        width: 400px;
         display: flex;
+        a{
+          // height: 35px;
+          padding: 0 20px;
+        }
       }
     }
   }
@@ -229,7 +238,7 @@ $width: calc((1300px - 200px) / 2);
           width: 74px;
           height: 74px;
           border-radius: 50%;
-          background: #19191f;
+          background: rgba(#000000, .2);
           margin-top: 33px;
         }
       }
