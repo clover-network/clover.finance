@@ -227,4 +227,25 @@
   transition-property: opacity, transform;
   transition-duration: 0.1s;
   cursor: pointer;
+}
+@media (max-width: 968px) {
+  .home .banner {
+    height: 100vh;
+    width: 100%;
+  }
+  .home .wave-item,
+.home .icon-warp {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .home .slogin {
+    height: 80px;
+    font-size: 30px;
+    line-height: 40px;
+  }
+  .home .banner-footer {
+    font-size: 10px;
+    position: initial;
+  }
 }/*# sourceMappingURL=home.css.map */

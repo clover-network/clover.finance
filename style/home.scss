@@ -145,12 +145,12 @@ $width: calc((1300px - 200px) / 2);
   }
 
   // *****************
-  .img-box{
+  .img-box {
     height: 800px;
-    .row{
+    .row {
       justify-content: center;
       display: flex;
-      .box{
+      .box {
         display: flex;
       }
     }
@@ -240,6 +240,29 @@ $width: calc((1300px - 200px) / 2);
         transition-duration: 0.1s;
         cursor: pointer;
       }
+    }
+  }
+
+  @media (max-width: 968px) {
+    .banner {
+      height: 100vh;
+      width: 100%;
+    }
+    .wave-item,
+    .icon-warp {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .slogin {
+      height: 80px;
+      font-size: 30px;
+      line-height: 40px;
+    }
+    .banner-footer {
+      font-size: 10px;
+      position: initial;
     }
   }
 }
