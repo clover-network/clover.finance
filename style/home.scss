@@ -273,5 +273,13 @@ $width: calc((1300px - 200px) / 2);
       font-size: 10px;
       position: initial;
     }
+  
+    .swaps-body{
+      .title{
+        width: 200px;
+        font-size: 20px;
+      }
+    }
+   
   }
 }
