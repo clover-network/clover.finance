@@ -28,7 +28,7 @@
 }
 body {
   color: #1d2d31;
-  font-family: IBM-Plex-Mono;
+  font-family: Circular-Std;
   font-weight: 500;
   font-size: 17px;
   line-height: 24px;
@@ -289,10 +289,7 @@ a:hover {
 }
 
 @media only screen and (max-width: 1980px) {
-  .head {
-    padding: 0 20px;
-  }
-  .head img {
+  .logo {
     max-width: 133px;
     width: 133px;
     height: 40px;
@@ -319,6 +316,7 @@ a:hover {
   .head {
     height: 72px;
     padding: 0 24px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   }
 
   .h1 {

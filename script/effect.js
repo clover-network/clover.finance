@@ -1,7 +1,9 @@
 (function () {
   $("body").append(`<div class='side-screen'>
     <div class='top'>
-      <a href='/' class='logo-text'></a>
+      <a class="logo" href="/">
+        <img src="image/clover/logo-text.svg" alt="clover" />
+      </a>
       <a class='close'></a>
     </div>
     <ul class='side-nav'>

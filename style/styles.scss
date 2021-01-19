@@ -34,7 +34,7 @@ $color-text: #1d2d31;
 
 body {
   color: $color-text;
-  font-family: IBM-Plex-Mono;
+  font-family: Circular-Std;
   font-weight: 500;
   font-size: 17px;
   line-height: 24px;
@@ -295,13 +295,10 @@ a:hover {
 }
 
 @media only screen and (max-width: 1980px) {
-  .head {
-    padding: 0 20px;
-    img {
-      max-width: 133px;
-      width: 133px;
-      height: 40px;
-    }
+  .logo {
+    max-width: 133px;
+    width: 133px;
+    height: 40px;
   }
   .container {
     max-width: 100%;
@@ -322,6 +319,7 @@ a:hover {
   .head {
     height: 72px;
     padding: 0 24px;
+    border-bottom: 1px solid rgba(#000000, 0.2);
   }
   .h1 {
     font-size: 40px;
