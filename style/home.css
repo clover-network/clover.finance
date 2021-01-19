@@ -178,7 +178,19 @@
   background: url("../image/index/polkadot.svg") no-repeat;
 }
 .home .img-box-h5 .row .bithumb-global {
+  width: 128.24px;
+  height: 35.59px;
   background: url("../image/index/bithumb-global.svg") no-repeat;
+}
+.home .img-box-h5 .row .bifrost {
+  width: 103.28px;
+  height: 22.33px;
+  background: url("../image/ecosystem/bifrost.svg") no-repeat;
+}
+.home .img-box-h5 .row .stafi {
+  width: 97.94px;
+  height: 23.73px;
+  background: url("../image/ecosystem/stafi.svg") no-repeat;
 }
 .home .img-box-h5 .row img {
   width: 100px;
