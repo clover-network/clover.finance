@@ -145,6 +145,16 @@ $width: calc((1300px - 200px) / 2);
   }
 
   // *****************
+  .img-box{
+    height: 800px;
+    .row{
+      justify-content: center;
+      display: flex;
+      .box{
+        display: flex;
+      }
+    }
+  }
   .swaps-body {
     .title {
       width: 689px;
