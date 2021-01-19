@@ -137,6 +137,16 @@
 .home .btn-start .icon-arrow {
   margin-left: 10px;
 }
+.home .img-box {
+  height: 800px;
+}
+.home .img-box .row {
+  justify-content: center;
+  display: flex;
+}
+.home .img-box .row .box {
+  display: flex;
+}
 .home .swaps-body .title {
   width: 689px;
   margin: 0 auto;
