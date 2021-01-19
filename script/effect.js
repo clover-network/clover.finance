@@ -1,14 +1,14 @@
 (function () {
   $("body").append(`<div class='side-screen'>
     <div class='top'>
-      <a href='index.html' class='logo-text'></a>
+      <a href='https://github.com/clover-network' class='logo-text'></a>
       <a class='close'></a>
     </div>
     <ul class='side-nav'>
-      <li><a href='index.html'>Github</a></li>
+      <li><a href='https://github.com/clover-network'>Github</a></li>
       <li><a href='https://docs.clover.finance/' target='_blank'>Docs</a></li>
       <li><a href='team.html'>Blog</a></li>
-      <li><a href='https://medium.com/projectclover' target='_blank'>Discord</a></li>
+      <li><a href=' https://discord.gg/z2egJBsBWx' target='_blank'>Discord</a></li>
     </ul>
     <ul class='social'></ul>
     <div class='copy'></div>
