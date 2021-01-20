@@ -88,7 +88,7 @@ table {
 img {
 	border: 0;
 	display: block;
-	max-width: 100%;
+	/* max-width: 100%; */
 	height: auto;
 }
 input, select, textarea, optgroup {
