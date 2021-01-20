@@ -284,7 +284,7 @@ $width: calc((1300px - 200px) / 2);
     }
   }
   @media (max-width: 768px) {
-    .home {
+    body.home {
       width: 100vw;
       overflow: hidden;
     }

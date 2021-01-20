@@ -263,7 +263,7 @@
   }
 }
 @media (max-width: 768px) {
-  .home .home {
+  .home body.home {
     width: 100vw;
     overflow: hidden;
   }
