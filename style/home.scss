@@ -31,7 +31,7 @@ $width: calc((1300px - 200px) / 2);
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        content: "";
+        content: '';
         border-radius: 50%;
         border: 1px solid rgba(#000000, 0.1);
       }
@@ -114,7 +114,7 @@ $width: calc((1300px - 200px) / 2);
     color: #1e3723;
     line-height: 80px;
     .green {
-      color:  #5CCF00;
+      color: #5ccf00;
     }
   }
 
@@ -158,103 +158,22 @@ $width: calc((1300px - 200px) / 2);
   .img-box-web {
     display: block;
     margin: 68px 0;
-    width: 100%;
-    overflow-x: scroll;
     .row {
       margin: 0 auto;
-      width: 1422px;
-      justify-content: space-between;
+      max-width: 1180px;
+      justify-content: flex-start;
       display: flex;
       align-items: center;
       flex-wrap: wrap;
       a {
         height: 70px;
-        &:not(:nth-child(6n)) {
-          margin-right: 75px;
-        }
         img {
           height: 100%;
         }
       }
     }
   }
-  // .img-box-h5 {
-  //   display: none;
-  //   .row {
-  //     display: flex;
-  //     justify-content: space-between;
-  //     align-items: center;
-  //     padding: 15px 0;
-  //     .polkadot {
-  //       width: 139px;
-  //       height: 69px;
-  //       background: url("../image/index/polkadot.svg") no-repeat center / cover;
-  //     }
-  //     .bithumb-global {
-  //       width: 128.24px;
-  //       height: 35.59px;
-  //       background: url("../image/index/bithumb-global.svg") no-repeat center /
-  //         cover;
-  //     }
-  //     .bifrost {
-  //       width: 103.28px;
-  //       height: 22.33px;
-  //       background: url("../image/index/bifrost.png") no-repeat center / cover;
-  //     }
-  //     .stafi {
-  //       width: 97.94px;
-  //       height: 23.73px;
-  //       background: url("../image/ecosystem/stafi.svg") no-repeat center / cover;
-  //     }
-  //     .plasmnet {
-  //       width: 94.98px;
-  //       height: 34.19px;
-  //       background: url("../image/ecosystem/plasmnet.svg") no-repeat center /
-  //         cover;
-  //     }
-  //     .kusama {
-  //       width: 100px;
-  //       height: 42.57px;
-  //       background: url("../image/ecosystem/kusama.svg") no-repeat center /
-  //         cover;
-  //     }
-  //     .chainx {
-  //       width: 103.28px;
-  //       height: 22.33px;
-  //       background: url("../image/ecosystem/chainx.svg") no-repeat center /
-  //         cover;
-  //     }
-  //     .crust {
-  //       width: 97.94px;
-  //       height: 23.73px;
-  //       background: url("../image/ecosystem/crust.svg") no-repeat center / cover;
-  //     }
-  //     .phala {
-  //       width: 110.25px;
-  //       height: 30.7px;
-  //       background: url("../image/ecosystem/phala.svg") no-repeat center / cover;
-  //     }
-  //     .litentry {
-  //       width: 157.01px;
-  //       height: 53.73px;
-  //       background: url("../image/index/litentry.svg") no-repeat center / cover;
-  //     }
-  //     .boring {
-  //       width: 148.63px;
-  //       height: 36.29px;
-  //       background: url("../image/index/boring.svg") no-repeat center / cover;
-  //     }
-  //     .substrate {
-  //       width: 102px;
-  //       height: 40px;
-  //       background: url("../image/ecosystem/substrate.svg") no-repeat center /
-  //         cover;
-  //     }
-  //     img {
-  //       width: 100px;
-  //     }
-  //   }
-  // }
+
   .swaps-body {
     .title {
       width: 689px;
@@ -343,7 +262,25 @@ $width: calc((1300px - 200px) / 2);
       }
     }
   }
-
+  @media (min-width: 1179px) {
+    .img-box-web {
+      .row {
+        a:not(:nth-child(6n)) {
+          margin-right: 65px;
+        }
+      }
+    }
+  }
+  @media (max-width: 1179px) {
+    .img-box-web {
+      .row {
+        width: 768px;
+        a:not(:nth-child(4n)) {
+          margin-right: 65px;
+        }
+      }
+    }
+  }
   @media (max-width: 768px) {
     .banner {
       width: 100%;
@@ -441,7 +378,7 @@ $width: calc((1300px - 200px) / 2);
       font-size: 15px;
     }
     .img-box-web {
-      margin:0;
+      margin: 0;
       padding: 68px 0 0 0;
       .row {
         width: auto;
@@ -493,12 +430,12 @@ $width: calc((1300px - 200px) / 2);
 
 .img-box-web::-webkit-scrollbar {
   height: 10px;
-  }
+}
 .img-box-web::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background   : #535353;
-  }
+  background: #535353;
+}
 .img-box-web::-webkit-scrollbar-track {
   border-radius: 10px;
-  background   : #edf5ea;
-  }
+  background: #edf5ea;
+}
