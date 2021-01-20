@@ -263,6 +263,9 @@
   }
 }
 @media (max-width: 768px) {
+  .home .home {
+    overflow: hidden;
+  }
   .home .banner {
     width: 100%;
     max-width: 424px;
