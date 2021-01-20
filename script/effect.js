@@ -2,7 +2,7 @@
   $("body").append(`<div class='side-screen'>
     <div class='top'>
       <a class="logo" href="/">
-        <img src="image/clover/logo-text.svg" alt="clover" />
+        <img src="image/clover/new-logo.svg" alt="clover" />
       </a>
       <a class='close'></a>
     </div>

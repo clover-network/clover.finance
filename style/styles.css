@@ -168,11 +168,11 @@ a:hover {
   justify-content: space-between;
   width: 100%;
   height: 72px;
-  padding: 0 24px;
+  padding: 0 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 .side-screen .logo-text {
-  background: url("../image/clover/logo-text.svg") 0 0 no-repeat;
+  background: url("../image/clover/new-logo.svg") 0 0 no-repeat;
   width: 133px;
   height: 40px;
 }
@@ -296,8 +296,7 @@ a:hover {
 
 @media only screen and (max-width: 1980px) {
   .logo {
-    max-width: 133px;
-    width: 133px;
+    /* width: 133px; */
     height: 40px;
   }
 
