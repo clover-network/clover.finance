@@ -355,6 +355,8 @@
   .home .banner-footer {
     padding-top: 69px;
     font-size: 10px;
+  }
+  .home .banner-footer .desc {
     font-size: 15px;
   }
   .home .img-box-web {
