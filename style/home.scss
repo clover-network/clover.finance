@@ -1,6 +1,12 @@
 $width: calc((1300px - 200px) / 2);
 .home {
   position: relative;
+  width: 100vw;
+  height: auto;
+  & > .container {
+    width: 100%;
+    overflow: hidden;
+  }
   .banner {
     position: relative;
     left: 50%;
@@ -284,10 +290,6 @@ $width: calc((1300px - 200px) / 2);
     }
   }
   @media (max-width: 768px) {
-    body.home {
-      width: 100vw;
-      overflow: hidden;
-    }
     .banner {
       width: 100%;
       max-width: 424px;

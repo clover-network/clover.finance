@@ -1,5 +1,11 @@
 .home {
   position: relative;
+  width: 100vw;
+  height: auto;
+}
+.home > .container {
+  width: 100%;
+  overflow: hidden;
 }
 .home .banner {
   position: relative;
@@ -263,10 +269,6 @@
   }
 }
 @media (max-width: 768px) {
-  .home body.home {
-    width: 100vw;
-    overflow: hidden;
-  }
   .home .banner {
     width: 100%;
     max-width: 424px;
