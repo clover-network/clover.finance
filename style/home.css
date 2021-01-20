@@ -365,6 +365,7 @@
   }
   .home .img-box-web .row {
     width: auto;
+    justify-content: space-between;
   }
   .home .img-box-web .row a {
     margin-right: 0 !important;

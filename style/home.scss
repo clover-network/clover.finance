@@ -386,6 +386,7 @@ $width: calc((1300px - 200px) / 2);
       padding: 68px 0 0 0;
       .row {
         width: auto;
+        justify-content: space-between;
         a {
           margin-right: 0 !important;
           width: 45%;
