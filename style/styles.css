@@ -8,22 +8,27 @@
 
 @font-face {
   font-family: Circular-Std;
+  font-style: normal;
   src: url("../font/CircularStd-Bold.ttf");
 }
 @font-face {
   font-family: Circular-Std-Book;
+  font-style: normal;
   src: url("../font/CircularStd-Book.otf");
 }
 @font-face {
   font-family: Space-Mono;
+  font-style: normal;
   src: url("../font/SpaceMono-Regular.ttf");
 }
 @font-face {
   font-family: IBM-Plex-Mono;
+  font-style: normal;
   src: url("../font/IBMPlexMono-Regular.ttf");
 }
 @font-face {
   font-family: Inter;
+  font-style: normal;
   src: url("../font/Inter-ExtraBold.otf");
 }
 body {
@@ -112,6 +117,7 @@ a:hover {
 }
 
 .head {
+  font-family: IBM-Plex-Mono;
   width: 100%;
   top: 0;
   left: 0;
@@ -132,7 +138,7 @@ a:hover {
 }
 .nav li {
   line-height: 88px;
-  margin-left: 88px;
+  margin-left: 90px;
   opacity: 1;
   border-bottom: 1px solid transparent;
 }

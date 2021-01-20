@@ -7,27 +7,32 @@
 
 @font-face {
   font-family: Circular-Std;
-  src: url("../font/CircularStd-Bold.ttf");
+  font-style: normal;
+  src: url('../font/CircularStd-Bold.ttf');
 }
 
 @font-face {
   font-family: Circular-Std-Book;
-  src: url("../font/CircularStd-Book.otf");
+  font-style: normal;
+  src: url('../font/CircularStd-Book.otf');
 }
 
 @font-face {
   font-family: Space-Mono;
-  src: url("../font/SpaceMono-Regular.ttf");
+  font-style: normal;
+  src: url('../font/SpaceMono-Regular.ttf');
 }
 
 @font-face {
   font-family: IBM-Plex-Mono;
-  src: url("../font/IBMPlexMono-Regular.ttf");
+  font-style: normal;
+  src: url('../font/IBMPlexMono-Regular.ttf');
 }
 
 @font-face {
   font-family: Inter;
-  src: url("../font/Inter-ExtraBold.otf");
+  font-style: normal;
+  src: url('../font/Inter-ExtraBold.otf');
 }
 
 $color-text: #1d2d31;
@@ -88,7 +93,7 @@ a:hover {
   align-items: center;
   justify-content: flex-start;
   padding-left: 62px;
-  background: url("../image/icon/download.svg") 24px center no-repeat;
+  background: url('../image/icon/download.svg') 24px center no-repeat;
 }
 .button:hover {
   opacity: 0.6;
@@ -109,6 +114,7 @@ a:hover {
 }
 
 .head {
+  font-family: IBM-Plex-Mono;
   width: 100%;
   top: 0;
   left: 0;
@@ -129,23 +135,15 @@ a:hover {
   font-size: 15px;
   li {
     line-height: 88px;
-    margin-left: 88px;
-    // opacity: 0.3;
+    margin-left: 90px;
     opacity: 1;
     border-bottom: 1px solid transparent;
   }
-  // li:hover {
-  //   opacity: 1;
-  // }
-  // li.current {
-  //   opacity: 1;
-  //   border-bottom-color: $color-text;
-  // }
 }
 .side-bar {
   width: 32px;
   height: 16px;
-  background: url("../image/menu/menu.svg") 0 0 no-repeat;
+  background: url('../image/menu/menu.svg') 0 0 no-repeat;
   cursor: pointer;
   display: none;
 }
@@ -169,12 +167,12 @@ a:hover {
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   }
   .logo-text {
-    background: url("../image/clover/logo-text.svg") 0 0 no-repeat;
+    background: url('../image/clover/logo-text.svg') 0 0 no-repeat;
     width: 133px;
     height: 40px;
   }
   .close {
-    background: url("../image/menu/close.svg") 0 0 no-repeat;
+    background: url('../image/menu/close.svg') 0 0 no-repeat;
     width: 24px;
     height: 24px;
     cursor: pointer;
@@ -236,7 +234,7 @@ a:hover {
 .ecosystem {
   padding-top: 220px;
   padding-bottom: 140px;
-  background: url("../image/background/background-ecosystem.svg") center top
+  background: url('../image/background/background-ecosystem.svg') center top
     no-repeat;
   .ecosystem-content {
     margin-top: 64px;

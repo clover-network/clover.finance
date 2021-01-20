@@ -126,10 +126,10 @@
 }
 .home .banner-footer .desc {
   text-indent: 40px;
-  max-width: 616px;
+  max-width: 816px;
   margin-bottom: 44px;
   text-align: center;
-  font-family: IBM Plex Mono;
+  font-family: IBM-Plex-Mono;
   font-weight: 400;
 }
 .home .btn-start {
@@ -190,9 +190,9 @@
   margin: 20px 10px 0 20px;
   width: 273px;
   min-height: 313px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
   padding: 40px 23px;
+  font-family: IBM-Plex-Mono;
 }
 .home .swaps-body .swaps-list .item .top {
   height: 80px;
