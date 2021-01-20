@@ -264,6 +264,7 @@
 }
 @media (max-width: 768px) {
   .home .home {
+    width: 100vw;
     overflow: hidden;
   }
   .home .banner {
