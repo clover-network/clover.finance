@@ -31,7 +31,7 @@ $width: calc((1300px - 200px) / 2);
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        content: '';
+        content: "";
         border-radius: 50%;
         border: 1px solid rgba(#000000, 0.1);
       }
@@ -186,7 +186,7 @@ $width: calc((1300px - 200px) / 2);
       text-align: center;
       color: #1d2d31;
       padding-bottom: 68px;
-      font-family: 'Circular Std';
+      font-family: Circular-Std;
 
       .what {
         color: #5ccf00;
