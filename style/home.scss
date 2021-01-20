@@ -157,8 +157,12 @@ $width: calc((1300px - 200px) / 2);
   // *****************
   .img-box-web {
     display: block;
-    padding: 68px 0;
+    margin: 68px 0;
+    width: 100%;
+    overflow-x: scroll;
     .row {
+      margin: 0 auto;
+      width: 1422px;
       justify-content: space-between;
       display: flex;
       align-items: center;
@@ -437,7 +441,10 @@ $width: calc((1300px - 200px) / 2);
       font-size: 15px;
     }
     .img-box-web {
+      margin:0;
+      padding: 68px 0;
       .row {
+        width: auto;
         a {
           margin-right: 0 !important;
           width: 45%;
@@ -483,3 +490,15 @@ $width: calc((1300px - 200px) / 2);
     }
   }
 }
+
+.img-box-web::-webkit-scrollbar {
+  height: 10px;
+  }
+.img-box-web::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background   : #535353;
+  }
+.img-box-web::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background   : #edf5ea;
+  }
