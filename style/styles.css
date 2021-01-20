@@ -122,7 +122,7 @@ a:hover {
   background-color: var(--background);
   position: fixed;
   z-index: 9;
-  padding: 0 20px;
+  padding: 0 60px 0 90px;
 }
 
 .nav {
@@ -315,7 +315,7 @@ a:hover {
 
   .head {
     height: 72px;
-    padding: 0 24px;
+    padding: 0 20px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   }
 
