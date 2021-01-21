@@ -80,6 +80,10 @@
   width: 75px;
   height: 99px;
 }
+.home .banner-wrapper .icon-img-png {
+  width: 100%;
+  height: 100%;
+}
 .home .banner-wrapper .right-top {
   position: absolute;
   top: 154px;
