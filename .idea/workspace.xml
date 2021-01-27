@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="819fe514-fc8c-45cd-a1f6-b60c947bb250" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="819fe514-fc8c-45cd-a1f6-b60c947bb250" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +30,7 @@
       <option name="presentableId" value="Default" />
       <updated>1611059521503</updated>
       <workItem from="1611059522584" duration="713000" />
+      <workItem from="1611745247299" duration="18000" />
     </task>
     <servers />
   </component>
@@ -48,6 +47,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="-306" y="-1057" width="1920" height="1057" key="MergeDialog" timestamp="1611059575021">
