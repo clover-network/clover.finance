@@ -21,8 +21,8 @@
     <li><a href='https://twitter.com/clover_finance' target='_blank'><img src='image/logo/twitter.svg' alt='twitter' /></a></li>
     <li><a href='https://t.me/clover_en' target='_blank'><img src='image/logo/telegram.svg' alt='telegram' /></a></li>
     <li><a href='https://discord.gg/z2egJBsBWx' target='_blank'><img src='image/logo/discord.svg' alt='discord' /></a></li>
-    <li><a href='https://medium.com/projectclover' target='_blank'><img src='image/logo/medium.svg' alt='medium' /></a></li>
-    <li><a href='https://www.linkedin.com/company/projectclover/' target='_blank'><img src='image/logo/Union.svg' alt='medium' /></a></li>
+    <li><a href='https://projectclover.medium.com/' target='_blank'><img src='image/logo/medium.svg' alt='medium' /></a></li>
+    <li><a href='https://www.linkedin.com/company/projectclover/' target='_blank'><img src='image/logo/Union.svg' alt='' /></a></li>
   `);
 
   $(".copy").html("&copy;2020 CloverFinance. All Rights Reserved");
