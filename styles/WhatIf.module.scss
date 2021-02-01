@@ -1,0 +1,38 @@
+@import 'variables';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 930px;
+}
+
+.container {
+  width: 100%;
+  max-width: 780px;
+  text-align: center;
+}
+
+.title {
+  font-weight: $fw-bold;
+  font-size: 27px;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.accent {
+  color: $color-accent;
+}
+
+@media (min-width: $media-lg) {
+  .title {
+    font-size: 36px;
+  }
+
+  .accent {
+    display: block;
+    font-size: 96px;
+  }
+}

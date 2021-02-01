@@ -1,0 +1,21 @@
+@import 'variables';
+
+.social {
+  width: 100%;
+  max-width: 185px;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link {
+  fill: $color-link;
+
+  &:hover {
+    fill: $color-text;
+  }
+}

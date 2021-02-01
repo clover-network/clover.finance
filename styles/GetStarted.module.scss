@@ -1,0 +1,34 @@
+@import 'variables';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 610px;
+  text-align: center;
+  height: calc(100vh - 72px);
+}
+
+.title {
+  font-size: 40px;
+  font-weight: $fw-bold;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.accent {
+  color: $color-accent;
+}
+
+.btn {
+  margin: 45px 0 0 0;
+}
+
+@media (min-width: $media-lg) {
+  .title {
+    font-size: 52px;
+    line-height: 1.1;
+  }
+}

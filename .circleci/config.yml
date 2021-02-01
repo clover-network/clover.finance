@@ -1,0 +1,65 @@
+version: 2.1
+
+build-template: &build-template
+  docker:
+    - image: tarampampam/node:14-alpine
+  steps:
+    - checkout
+    - setup_remote_docker
+    - attach_workspace:
+        at: '.'
+    - run:
+        name: 'Build artifacts'
+        command: |
+          node --version
+          npm --version
+          yarn install
+          yarn export
+    - persist_to_workspace:
+        root: '.'
+        paths:
+          - '.'
+
+upload-template: &upload-template
+  docker:
+    - image: bigbadalien/awscli-node-kops-kubectl:0.3
+  steps:
+    - setup_remote_docker
+    - attach_workspace:
+        at: '.'
+    - run:
+        name: 'Upload artifacts'
+        command: |
+          pwd
+          echo "Uploading assets to $DOMAIN"
+          aws s3 cp ./out s3://$DOMAIN/ --acl bucket-owner-full-control --recursive --cache-control "public,max-age=600,s-maxage=3600"
+          echo "Invalidating CDN network"
+          INVALIDATION_ID=`aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths '/*' | jq -r '.Invalidation.Id'`
+          echo "Invalidation ID is $INVALIDATION_ID"
+          echo "CDN Invalidation request is sent."
+
+jobs:
+  # build
+  build-develop:
+    <<: *build-template
+  # upload
+  upload-develop:
+    <<: *upload-template
+
+workflows:
+  version: 2.1
+  stkr_web3:
+    jobs:
+      # develop
+      - approve-develop:
+          type: approval
+      - build-develop:
+          context: clover_test
+          requires:
+            - approve-develop
+      - upload-develop:
+          context:
+            - cicd
+            - clover_test
+          requires:
+            - build-develop
