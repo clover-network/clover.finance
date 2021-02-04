@@ -1,0 +1,108 @@
+@function em($i, $j) {
+  @return round($i / $j * 1em * 1000) / 1000;
+}
+
+%icon-lines {
+  display: block;
+  width: em(32, 32);
+  height: 2px;
+  background-color: #000;
+}
+
+.button {
+  position: relative;
+  display: block;
+  width: 32px;
+  height: 16px;
+  padding: 0;
+
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font-size: 32px;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    > * {
+      background-color: rgba(0,0,0,.5);
+
+      &:before,
+      &:after {
+        background-color: rgba(0,0,0,.5);
+      }
+    }
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.buttonActive {
+
+  &:hover {
+    > * {
+
+      &:before {
+        background-color: rgba(0,0,0,.1);
+      }
+    }
+  }
+}
+
+.icon {
+  @extend %icon-lines;
+  display: block;
+  position: absolute;
+  top: 50%;
+  margin: -1px auto 0;
+  left: 0;
+  right: 0;
+
+  transition: transform 0.2s, background 0.2s, width 0.2s;
+
+  &:before,
+  &:after {
+    @extend %icon-lines;
+    position: absolute;
+    content: '';
+
+    transition: top 0.2s 0.2s, background 0.2s, transform 0.2s, bottom 0.2s 0.2s, width 0.2s;
+  }
+
+  &:before {
+    top: em(-6, 32);
+  }
+
+  &:after {
+    bottom: em(-6, 32);
+  }
+
+  .buttonActive & {
+    transform: rotate(45deg);
+    transition: transform 0.2s 0.2s, background 0.2s, width 0.2s 0.2s;
+
+    &:before,
+    &:after {
+      transition: top 0.2s, background 0.2s, bottom 0.2s, transform 0.2s 0.2s, width 0.2s 0.2s;
+    }
+
+    &:before {
+      top: 0;
+    }
+
+    &:after {
+      bottom: 0;
+      transform: rotate(90deg);
+    }
+  }
+}

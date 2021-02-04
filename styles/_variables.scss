@@ -1,0 +1,46 @@
+// Colors
+
+$color-text: #1D2D31;
+$color-light: #A5ABAD;
+$color-link: #BBC0C1;
+$color-btn: #19191F;
+$color-logo: #1E3723;
+$color-accent: #5CCF00;
+
+// Media
+
+$media-xs: 0;
+$media-sm: 576px;
+$media-md: 768px;
+$media-lg: 992px;
+$media-xl: 1200px;
+$media-xxl: 2000px;
+
+
+// Z-index
+
+$zindex-dropdown: 1000;
+$zindex-sticky: 1020;
+$zindex-fixed: 1030;
+$zindex-modal-backdrop: 1040;
+$zindex-modal: 1050;
+$zindex-popover: 1060;
+$zindex-tooltip: 1070;
+
+
+// Fonts
+
+$fw-extralight: 100;
+$fw-thin: 200;
+$fw-light: 300;
+$fw-regular: 400;
+$fw-normal: $fw-regular;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+$fw-extrabold: 800;
+$fw-black: 900;
+
+$container-width: 1440px;
+$header-width: $container-width - 120px;
+$footer-width: $container-width - 160px;

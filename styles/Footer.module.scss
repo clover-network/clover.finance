@@ -1,0 +1,28 @@
+@import 'variables';
+
+.wrapper {
+  padding: 30px 0;
+  color: $color-light;
+  width: 100%;
+  max-width: $footer-width;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.social {
+  margin: 35px 0 0 0;
+}
+
+@media (min-width: $media-lg) {
+  .wrapper {
+    padding-top: 90px;
+    padding-bottom: 70px;
+    border-top: 1px solid #E8E8E9;
+  }
+}

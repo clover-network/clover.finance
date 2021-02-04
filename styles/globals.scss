@@ -1,0 +1,45 @@
+@import 'fonts';
+@import 'variables';
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'CircularStd', sans-serif;
+  font-weight: $fw-normal;
+  font-size: 15px;
+  line-height: 1.5;
+  color: $color-text;
+  background-color: #FFF;
+
+  @media (min-width: $media-lg) {
+    font-size: 16px;
+  }
+}
+
+ul,
+ol {
+  margin: 0;
+  list-style: none;
+}
+
+a {
+  transition: color 0.25s, fill 0.25s;
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-link;
+  }
+}
+
+button {
+  transition: color 0.25s, fill 0.25s;
+  color: inherit;
+
+  &:hover {
+    color: $color-link;
+  }
+}
