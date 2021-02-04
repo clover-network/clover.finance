@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import Navigation from './Navigation';
 import MenuButton from './MenuButton';
 import styles from '../styles/Header.module.scss';
-import Logo from '../public/logo.svg';
+import Logo from '../public/svg/logo.svg';
 import { HEADER_MENU } from '../constants';
 
 const Header = () => {

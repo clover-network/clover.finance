@@ -8,11 +8,11 @@ const HEADER_MENU = [
     label: 'Docs',
   },
   {
-    link: 'https://medium.com/projectclover/',
+    link: 'https://projectclover.medium.com/',
     label: 'Blog',
   },
   {
-    link: 'https://discord.gg/z2egJBsBWx/',
+    link: 'https://discord.com/invite/z2egJBsBWx/',
     label: 'Discord',
   },
 ];
@@ -22,6 +22,7 @@ const SOCIAL_ICONS = {
   telegram: 'telegram',
   discord: 'discord',
   medium: 'medium',
+  linkedin: 'linkedin',
 };
 const SOCIALS = [
   {
@@ -33,12 +34,16 @@ const SOCIALS = [
     icon: SOCIAL_ICONS.telegram,
   },
   {
-    link: 'https://discord.gg/z2egJBsBWx/',
+    link: 'https://discord.com/invite/z2egJBsBWx/',
     icon: SOCIAL_ICONS.discord,
   },
   {
-    link: 'https://medium.com/projectclover/',
+    link: 'https://projectclover.medium.com/',
     icon: SOCIAL_ICONS.medium,
+  },
+  {
+    link: 'https://www.linkedin.com/company/projectclover/',
+    icon: SOCIAL_ICONS.linkedin,
   },
 ];
 
@@ -51,11 +56,11 @@ const BLOCKS_ICONS = {
 const BLOCKS = [
   {
     icon: BLOCKS_ICONS.polkadot,
-    text: 'EVM compatibility allows deploying Ethereum dApps on&nbsp;Polkadot and creating trustless two-way pegs between ERC20 and DOT-based assets.',
+    text: 'EVM compatibility to&nbsp;easily deploy Ethereum dApps on&nbsp;Polkadot and create trustless two&#8209;way pegs between ERC20 and DOT&#8209;based assets.',
   },
   {
     icon: BLOCKS_ICONS.schedule,
-    text: 'Identity fee-based schedule identifies frequent dApp users and rewards them with lower gas fees.',
+    text: 'Identity fee&#8209;based schedule identifies frequent dApp users and rewards them with lower gas fees.',
   },
   {
     icon: BLOCKS_ICONS.income,
@@ -67,81 +72,149 @@ const BLOCKS = [
   },
 ];
 
-const PROJECTS = [
+const PARTNERS = [
   {
-    image: '/linch.png',
-    width: 141,
-    height: 70,
-    title: 'Linch Exchange',
+    image: '/partners/advanca-mono.png',
+    hover: '/partners/advanca.png',
+    width: 112,
+    height: 60,
+    title: 'Advanca Network',
+    link: 'https://www.advanca.network/',
   },
   {
-    image: '/barnbridge.png',
-    width: 200,
-    height: 34,
-    title: 'Barnridge',
-  },
-  {
-    image: '/litentry.png',
+    image: '/partners/litentry-mono.png',
+    hover: '/partners/litentry.png',
     width: 172,
-    height: 58,
+    height: 59,
     title: 'Litentry',
+    link: 'https://www.litentry.com/',
   },
   {
-    image: '/dodo.png',
-    width: 134,
-    height: 31,
-    title: 'DODO',
-  },
-  {
-    image: '/boring.png',
-    width: 178,
-    height: 54,
+    image: '/partners/boringDAO-mono.png',
+    hover: '/partners/boringDAO.png',
+    width: 172,
+    height: 51,
     title: 'BoringDAO',
+    link: 'https://www.boringdao.com/',
   },
   {
-    image: '/mathWallet.png',
-    width: 211,
-    height: 58,
-    title: 'Math Wallet',
+    image: '/partners/polkadot-mono.png',
+    hover: '/partners/polkadot.png',
+    width: 171,
+    height: 86,
+    title: 'Polkadot',
+    link: 'https://polkadot.network/',
   },
   {
-    image: '/dydx.png',
-    width: 91,
-    height: 50,
-    title: 'dy/dx',
+    image: '/partners/crust-mono.png',
+    hover: '/partners/crust.png',
+    width: 97,
+    height: 24,
+    title: 'CRUST',
+    link: 'https://crust.network/',
   },
   {
-    image: '/injective.png',
-    width: 155,
-    height: 47,
-    title: 'Injective Protocol',
+    image: '/partners/snowswap-mono.png',
+    hover: '/partners/snowswap.png',
+    width: 165,
+    height: 45,
+    title: 'SnowSwap',
+    link: 'https://snowswap.org/',
   },
   {
-    image: '/opium.png',
-    width: 135,
+    image: '/partners/matic-mono.png',
+    hover: '/partners/matic.png',
+    width: 123,
+    height: 33,
+    title: 'Matic',
+    link: 'https://matic.network/',
+  },
+  {
+    image: '/partners/easyfi-mono.png',
+    hover: '/partners/easyfi.png',
+    width: 142,
+    height: 57,
+    title: 'easyfi',
+    link: 'https://easyfi.network/',
+  },
+  {
+    image: '/partners/bithumb-mono.png',
+    hover: '/partners/bithumb.png',
+    width: 178,
+    height: 48,
+    title: 'bithumb',
+    link: 'https://www.bithumb.pro/',
+  },
+  {
+    image: '/partners/hedget-mono.png',
+    hover: '/partners/hedget.png',
+    width: 112,
+    height: 40,
+    title: 'Hedget',
+    link: 'https://www.hedget.com/',
+  },
+  {
+    image: '/partners/substrate-mono.png',
+    hover: '/partners/substrate.png',
+    width: 113,
+    height: 44,
+    title: 'substrate_',
+    link: 'https://www.substrate.io/',
+  },
+  {
+    image: '/partners/injective-mono.png',
+    hover: '/partners/injective.png',
+    width: 150,
+    height: 44,
+    title: 'Injective',
+    link: 'https://injectiveprotocol.com/',
+  },
+  {
+    image: '/partners/barnbridge-mono.png',
+    hover: '/partners/barnbridge.png',
+    width: 186,
     height: 32,
-    title: 'Opium',
+    title: 'BarnBridge',
+    link: 'https://barnbridge.com/',
   },
   {
-    image: '/wbtc.png',
+    image: '/partners/plotx-mono.png',
+    hover: '/partners/plotx.png',
+    width: 160,
+    height: 90,
+    title: 'PlotX',
+    link: 'https://plotx.io/',
+  },
+  {
+    image: '/partners/dodo-mono.png',
+    hover: '/partners/dodo.png',
     width: 117,
-    height: 35,
-    title: 'WBTC',
+    height: 27,
+    title: 'DODO',
+    link: 'https://dodoex.io/',
   },
 ];
 
 const ARTICLES = [
   {
-    text: 'EVM compatibility to&nbsp;easily deploy Ethereum dApps on&nbsp;Polkadot and create trustless 2-way pegs between ERC20 and DOT-based assets.',
+    image: '/Litentry.jpg',
+    link: 'https://projectclover.medium.com/clover-finance-x-litentry-explore-more-adoption-scenarios-of-did-in-defi-158465ce77a8',
+    text: 'Clover Finance X&nbsp;Litentry&nbsp;| Explore More Adoption Scenarios of&nbsp;DID in&nbsp;DeFi',
   },
   {
-    text: 'EVM compatibility to&nbsp;easily deploy Ethereum dApps on&nbsp;Polkadot and create trustless 2-way pegs between ERC20 and DOT-based assets.',
+    image: '/BoringDAO.jpg',
+    link: 'https://projectclover.medium.com/clover-x-boringdao-strategic-partnership-formed-to-empower-polkadot-defi-ecosystem-6fffbe173d21',
+    text: 'Clover X&nbsp;BoringDAO&nbsp;| Strategic Partnership Formed to&nbsp;Empower Polkadot DeFi Ecosystem',
   },
   {
-    text: 'EVM compatibility to&nbsp;easily deploy Ethereum dApps on&nbsp;Polkadot and create trustless 2-way pegs between ERC20 and DOT-based assets.',
+    image: '/Clover.jpg',
+    link: 'https://projectclover.medium.com/clover-a-parachain-for-cross-chain-defi-interoperability-e765f8f644b2',
+    text: 'Clover: a&nbsp;Parachain for Cross&#8209;chain DeFi Interoperability',
   },
   {
-    text: 'EVM compatibility to&nbsp;easily deploy Ethereum dApps on&nbsp;Polkadot and create trustless 2-way pegs between ERC20 and DOT-based assets.',
+    image: '/CDIP.jpg',
+    link: 'https://projectclover.medium.com/clover-developer-incentive-program-cdip-b3467d83d6ea',
+    text: 'Clover Developer Incentive Program (CDIP)',
   },
 ]
 
@@ -151,6 +224,6 @@ export {
   SOCIALS,
   BLOCKS_ICONS,
   BLOCKS,
-  PROJECTS,
+  PARTNERS,
   ARTICLES,
 };

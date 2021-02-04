@@ -1,11 +1,12 @@
 import React, { useMemo } from 'react';
 import cn from 'classnames';
+import { InView } from 'react-intersection-observer';
 import styles from '../styles/Blocks.module.scss';
 import { BLOCKS_ICONS } from '../constants';
-import polkadotIcon from "../public/polkadot.svg";
-import scheduleIcon from "../public/schedule.svg";
-import incomeIcon from "../public/income.svg";
-import noFeeIcon from "../public/noFee.svg";
+import polkadotIcon from '../public/svg/polkadot.svg';
+import scheduleIcon from '../public/svg/schedule.svg';
+import incomeIcon from '../public/svg/income.svg';
+import noFeeIcon from '../public/svg/noFee.svg';
 
 const iconsMap = {
   [`${BLOCKS_ICONS.polkadot}`]: polkadotIcon,
@@ -25,17 +26,28 @@ const Blocks = ({
   }[];
 }) => {
   const data = useMemo(() => (
-    items?.map(({ icon, text}) => {
+    items?.map(({ icon, text}, index) => {
       const IconComponent = iconsMap[icon];
       return (
         <li key={icon} className={styles.item}>
-          <i className={styles.icon}>
-            <IconComponent />
-          </i>
-          <p
-            className={styles.text}
-            dangerouslySetInnerHTML={{ __html: text }}
-          />
+          <InView threshold={0.5} delay={index * 100} triggerOnce>
+            {({ inView, ref}) => (
+              <div
+                ref={ref}
+                className={cn(styles.hidden, {
+                  [`${styles.visible}`]: inView,
+                })}
+              >
+                <i className={styles.icon}>
+                  <IconComponent />
+                </i>
+                <p
+                  className={styles.text}
+                  dangerouslySetInnerHTML={{ __html: text }}
+                />
+              </div>
+            )}
+          </InView>
         </li>
       );
     })

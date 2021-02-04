@@ -26,8 +26,10 @@
   }
 
   &:hover {
-    color: $color-link;
-    fill: $color-link;
+    color: #FFF;
+    fill: #FFF;
+    background-color: $color-logo;
+    border-color: $color-logo;
   }
 }
 

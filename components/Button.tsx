@@ -1,7 +1,7 @@
 import React, { MouseEventHandler } from 'react';
 import cn from 'classnames';
 import styles from '../styles/Button.module.scss';
-import Arrow from '../public/arrow.svg';
+import Arrow from '../public/svg/arrow.svg';
 
 const Button = ({
   children,

@@ -1,10 +1,11 @@
 import React, { useMemo } from 'react';
 import cn from 'classnames';
 import styles from '../styles/Social.module.scss';
-import twitterIcon from '../public/twitter.svg';
-import telegramIcon from '../public/telegram.svg';
-import discordIcon from '../public/discordd.svg';
-import mediumIcon from '../public/medium.svg';
+import twitterIcon from '../public/svg/twitter.svg';
+import telegramIcon from '../public/svg/telegram.svg';
+import discordIcon from '../public/svg/discord.svg';
+import mediumIcon from '../public/svg/medium.svg';
+import linkeinIcon from '../public/svg/linkedin.svg';
 import { SOCIAL_ICONS } from '../constants';
 
 const iconsMap = {
@@ -12,6 +13,7 @@ const iconsMap = {
   [`${SOCIAL_ICONS.telegram}`]: telegramIcon,
   [`${SOCIAL_ICONS.discord}`]: discordIcon,
   [`${SOCIAL_ICONS.medium}`]: mediumIcon,
+  [`${SOCIAL_ICONS.linkedin}`]: linkeinIcon,
 };
 
 const Social = ({
