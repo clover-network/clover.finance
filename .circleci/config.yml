@@ -48,7 +48,7 @@ jobs:
 
 workflows:
   version: 2.1
-  stkr_web3:
+  clover_landing:
     jobs:
       # develop
       - approve-develop:
