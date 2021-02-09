@@ -114,28 +114,12 @@ const PARTNERS = [
     link: 'https://crust.network/',
   },
   {
-    image: '/partners/matic-mono.png',
-    hover: '/partners/matic.png',
-    width: 123,
-    height: 33,
-    title: 'Matic',
-    link: 'https://matic.network/',
-  },
-  {
     image: '/partners/bithumb-mono.png',
     hover: '/partners/bithumb.png',
     width: 178,
     height: 48,
     title: 'bithumb',
     link: 'https://www.bithumb.pro/',
-  },
-  {
-    image: '/partners/hedget-mono.png',
-    hover: '/partners/hedget.png',
-    width: 112,
-    height: 40,
-    title: 'Hedget',
-    link: 'https://www.hedget.com/',
   },
   {
     image: '/partners/substrate-mono.png',
