@@ -6,9 +6,18 @@ import styles from '../styles/Partners.module.scss';
 const Partners = ({
   className,
   items = [],
+  topItems = [],
 }: {
   className?: string;
   items?: {
+    image: string;
+    hover: string;
+    width: number;
+    height: number;
+    title: string;
+    link: string;
+  }[];
+  topItems?: {
     image: string;
     hover: string;
     width: number;
@@ -50,6 +59,41 @@ const Partners = ({
       </li>
     ))
   ), [items]);
+
+  const topData = useMemo(() => (
+    topItems?.map(({ image, hover, width, height, title, link}, index) => (
+      <li key={title} className={styles.item}>
+        <InView threshold={0.5} delay={index * 50} triggerOnce>
+          {({ inView, ref}) => (
+            <a
+              target="_blank"
+              href={link}
+              ref={ref}
+              className={cn(styles.link, styles.hidden, {
+                [`${styles.visible}`]: inView,
+              })}
+            >
+              <img
+                className={styles.mono}
+                src={image}
+                alt={title}
+                width={width}
+                height={height}
+              />
+              <img
+                className={styles.multi}
+                src={hover}
+                alt={title}
+                width={width}
+                height={height}
+              />
+            </a>
+          )}
+        </InView>
+      </li>
+    ))
+  ), [topItems]);
+
   if (data.length) {
     return (
       <div className={cn(styles.wrapper, className)}>
@@ -65,6 +109,7 @@ const Partners = ({
             </h2>
           )}
         </InView>
+        <ul className={styles.list}>{topData}</ul>
         <ul className={styles.list}>{data}</ul>
       </div>
     );

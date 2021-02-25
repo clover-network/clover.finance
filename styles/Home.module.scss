@@ -1,4 +1,4 @@
-@import 'variables';
+@import "variables";
 
 .wrapper {
   display: flex;
@@ -17,7 +17,9 @@
     outline: none;
   }
 
-  *, *::after, *::before {
+  *,
+  *::after,
+  *::before {
     box-sizing: border-box;
   }
 }

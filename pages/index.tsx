@@ -6,7 +6,7 @@ import Partners from '../components/Partners';
 import Blog from '../components/Blog';
 import Footer from '../components/Footer';
 import styles from '../styles/Home.module.scss'
-import { PARTNERS, ARTICLES } from '../constants';
+import { MAIN_PARTNERS, PARTNERS, ARTICLES } from '../constants';
 
 export async function getStaticProps() {
   return {
@@ -25,7 +25,7 @@ const Home = () => {
       <main className={styles.main}>
         <GetStarted />
         <WhatIf />
-        <Partners items={PARTNERS} />
+        <Partners items={PARTNERS} topItems={MAIN_PARTNERS} />
         <Blog items={ARTICLES} />
       </main>
       <Footer />
