@@ -14,7 +14,7 @@ build-template: &build-template
           node --version
           npm --version
           yarn install
-          yarn build
+          yarn export 
     - persist_to_workspace:
         root: '.'
         paths:
@@ -32,7 +32,7 @@ upload-template: &upload-template
         command: |
           pwd
           echo "Uploading assets to $DOMAIN"
-          aws s3 cp ./build s3://$DOMAIN/ --acl bucket-owner-full-control --recursive --cache-control "public,max-age=600,s-maxage=3600"
+          aws s3 cp ./out s3://$DOMAIN/ --acl bucket-owner-full-control --recursive --cache-control "public,max-age=600,s-maxage=3600"
           echo "Invalidating CDN network"
           INVALIDATION_ID=`aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths '/*' | jq -r '.Invalidation.Id'`
           echo "Invalidation ID is $INVALIDATION_ID"
