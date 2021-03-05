@@ -95,7 +95,7 @@ const MAIN_PARTNERS = [
     width: 197,
     height: 26,
     title: 'Divergence',
-    link: 'https://polkadot.network/',
+    link: 'https://www.div.vc/',
   },
 ]
 
