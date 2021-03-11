@@ -35,7 +35,7 @@ const GetStarted = () => {
             Start building
           </Button>
           <p className={styles.text}>
-            Clover is&nbsp;a&nbsp;Polkadot parachain, committed to&nbsp;providing easy&#8209;to&#8209;use blockchain
+            Clover is&nbsp;built&nbsp;for Polkadot, committed to&nbsp;providing easy&#8209;to&#8209;use blockchain
             infrastructure and creating a&nbsp;one&#8209;stop EVM compatible framework for Substrate&#8209;based applications.
           </p>
         </div>
