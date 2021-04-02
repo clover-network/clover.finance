@@ -4,6 +4,7 @@ import {InView} from 'react-intersection-observer'
 import {useLottie} from 'lottie-react'
 import animationJson from './animation.json'
 import styles from './GetStarted.module.scss'
+import Button from "../Button/Button";
 
 const GetStarted = () => {
   const options = {
@@ -27,6 +28,12 @@ const GetStarted = () => {
             </p>
           </div>
           <div className={styles.animation}>{View}</div>
+          <Button
+              className={styles.btn}
+              href="https://docs.clover.finance/quick-start/testnet/"
+          >
+            Start building
+          </Button>
         </div>
       )}
     </InView>
