@@ -25,7 +25,7 @@ export function Introduction() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.launch}>
-        <button className={styles.download}>
+        <button className={styles.download} onClick={() => window.open('https://chrome.google.com/webstore/detail/clover-wallet/nhnkbkgjikgcigadomkphalanndcapjk')}>
           <Arrow className={styles.iconArrow} />
           Download
         </button>

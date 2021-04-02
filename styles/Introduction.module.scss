@@ -19,6 +19,7 @@
   font-size: 22px;
   line-height: 27px;
   margin-right: 25px;
+  font-family: Optima;
 }
 .index,
 .title {
@@ -81,6 +82,7 @@
     top: 100%;
     left: 50%;
     transform: translate(-50%, -50%);
+    cursor: pointer;
   }
   .iconArrow {
     margin-right: 14px;

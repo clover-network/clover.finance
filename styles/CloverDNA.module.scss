@@ -62,7 +62,7 @@
 
 .topContentItem {
   width: 500px;
-  height: 330px;
+  height: 320px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -85,14 +85,15 @@
     opacity: 0.8;
     line-height: 140%;
     font-weight: 300;
+    font-family: Roboto;
   }
 
   a {
-    position: absolute;
-    bottom: 30px;
+    margin-top: 30px;
     color: #27A577;
     border-bottom: 1px solid #27A577;
     cursor: pointer;
+    font-weight: bold;
   }
 
   button {
@@ -185,6 +186,10 @@
   flex-direction: column;
   align-items: center;
 
+  &:nth-child(2), &:nth-child(4) {
+    width: 300px;
+  }
+
   div {
     margin-top: 22px;
     margin-bottom: 10px;
@@ -198,10 +203,10 @@
   }
 
   p {
-    font-family: Roboto;
     font-weight: 300;
     font-size: 18px;
     line-height: 140%;
+    font-family: Roboto;
     color: #ffffff;
   }
 }

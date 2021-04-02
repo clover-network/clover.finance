@@ -80,7 +80,7 @@ const DnaAndFeatures = ({
                     {!!inView && (
                         <div>
                             {dnas.map(dna => (
-                                <div className={styles.topContentItem}>
+                                <div className={styles.topContentItem} key={dna.title}>
                                     <h3>{dna.title}</h3>
                                     <p>{dna.content}</p>
                                     <button onClick={() => window.open( dna.link)}>{dna.btnText}</button>
@@ -105,7 +105,7 @@ const DnaAndFeatures = ({
                     {!!inView && (
                         <div>
                             {features.map(feature => (
-                                <div className={cn(styles.topContentItem, styles.black)}>
+                                <div className={cn(styles.topContentItem, styles.black)} key={feature.title}>
                                     <h3>{feature.title}</h3>
                                     <p className={styles.gray}>{feature.content}</p>
                                     <a href={feature.link} target="_blank">{feature.btnText}</a>
@@ -121,7 +121,7 @@ const DnaAndFeatures = ({
                     <h3 className={styles.clvTokenTitle}>CLV Token</h3>
                     <div className={styles.clvTokenList}>
                         {clvTokens.map(token => (
-                            <div className={styles.clvTokenItem}>
+                            <div className={styles.clvTokenItem} key={token.title}>
                                 {getImgByIcon(token.title)}
                                 <div>{token.title}</div>
                                 <p>{token.content}</p>
