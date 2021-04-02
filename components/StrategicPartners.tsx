@@ -27,7 +27,7 @@ export function StrategicPartners() {
   return (
     <div className={styles.root}>
       <header className={styles.header}>Strategic Partners</header>
-      <div style={{ maxWidth: 1100, overflow: 'hidden' }}>
+      <div className={styles.logos}>
         {LOGO_MAPS.map((url) => {
           return (
             <div

@@ -18,6 +18,12 @@
   margin-bottom: 30px;
 }
 
+.logos {
+  max-width: 1100px;
+  width: 100%;
+  overflow: hidden;
+}
+
 .logo {
   width: 50%;
   height: 100px;
@@ -28,6 +34,5 @@
   .logo {
     width: 220px;
     height: 100px;
-    float: left;
   }
 }
