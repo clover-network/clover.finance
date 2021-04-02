@@ -1,0 +1,83 @@
+@import 'styles/variables';
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.animation {
+  width: 115%;
+}
+
+.textOuter {
+  margin: 50px 0 0 0;
+}
+
+.textInner {
+  font-weight: bold;
+  font-size: 27px;
+  text-align: center;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.85s opacity, 0.85s visibility;
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (min-width: $media-lg) {
+  .wrapper {
+    justify-content: flex-start;
+  }
+
+  .title {
+    font-size: 44px;
+    margin-bottom: -50px;
+    line-height: 1.1;
+  }
+
+  .animation {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: auto;
+    margin: auto -150px;
+    z-index: -1;
+  }
+
+  .btn {
+    margin: 282px 0 0 0;
+  }
+  .textOuter {
+    margin-top: 115px;
+    max-width: 609px;
+  }
+  .textInner {
+    font-size: 44px;
+    line-height: 53px;
+  }
+}
+
+@media (max-width: $media-xl) {
+  .wrapper {
+    overflow: hidden;
+  }
+}
+
+@media (min-width: $media-md) {
+  .wrapper {
+    overflow: hidden;
+    height: 100vh;
+  }
+}

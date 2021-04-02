@@ -1,0 +1,69 @@
+@import "styles/variables";
+
+.wrapper {
+  max-width: 1225px;
+  width: 100%;
+  margin: 95px auto;
+
+  h3 {
+    font-weight: bold;
+    font-size: 44px;
+    line-height: 53px;
+    text-align: center;
+    color: #000000;
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 50px;
+
+
+  & > div {
+    width: 90%;
+    overflow: hidden;
+
+    & > div {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+}
+
+.arrowLeft {
+  margin-right: 50px;
+  cursor: pointer;
+}
+
+.arrowRight {
+  margin-left: 50px;
+  cursor: pointer;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.image {
+  margin: 0 20px;
+  user-select: none;
+}
+@media (max-width: $media-xl), (min-width: $media-md) {
+  .wrapper {
+    width: 80%;
+    overflow: hidden;
+  }
+
+  .content {
+
+    & > div {
+      justify-content: center;
+    }
+  }
+
+}

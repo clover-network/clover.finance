@@ -1,21 +1,61 @@
 const HEADER_MENU = [
   {
-    link: 'https://github.com/clover-network/',
-    label: 'Github',
+    label: 'Community',
+    children: [
+      {
+        link: 'https://t.me/clover_en/',
+        label: 'Telegram',
+      },
+      {
+        link: 'https://discord.com/invite/z2egJBsBWx/',
+        label: 'Discord',
+      },
+      {
+        link: 'https://twitter.com/clover_finance/',
+        label: 'Twitter',
+      },
+      {
+        link: 'https://projectclover.medium.com/',
+        label: 'Medium',
+      },
+    ],
   },
   {
-    link: 'https://docs.clover.finance/',
-    label: 'Docs',
+    label: 'Builders',
+    children: [
+      {
+        link:
+          'https://docs.clover.finance/clover-eco-incentive-program/clover-dapp-developer-incentive-structure',
+        label: 'Developer Incentive Program',
+      },
+      {
+        link: 'https://docs.clover.finance/quick-start/testnet',
+        label: 'Testnet',
+      },
+      {
+        link: 'https://discord.gg/RMwkeyKTqE',
+        label: 'Developer Discord',
+      },
+      {
+        link: 'https://github.com/clover-network',
+        label: 'Github',
+      },
+    ],
   },
   {
-    link: 'https://projectclover.medium.com/',
-    label: 'Blog',
+    label: 'Resources',
+    children: [
+      {
+        link: 'https://docs.clover.finance',
+        label: 'Documentation',
+      },
+      {
+        link: 'https://docs.clover.finance',
+        label: 'Litepaper',
+      },
+    ],
   },
-  {
-    link: 'https://discord.com/invite/z2egJBsBWx/',
-    label: 'Discord',
-  },
-];
+]
 
 const SOCIAL_ICONS = {
   twitter: 'twitter',
@@ -23,7 +63,8 @@ const SOCIAL_ICONS = {
   discord: 'discord',
   medium: 'medium',
   linkedin: 'linkedin',
-};
+}
+
 const SOCIALS = [
   {
     link: 'https://twitter.com/clover_finance/',
@@ -45,32 +86,36 @@ const SOCIALS = [
     link: 'https://www.linkedin.com/company/projectclover/',
     icon: SOCIAL_ICONS.linkedin,
   },
-];
+]
 
 const BLOCKS_ICONS = {
   polkadot: 'polkadot',
   schedule: 'schedule',
   income: 'income',
   nofee: 'nofee',
-};
+}
 const BLOCKS = [
   {
     icon: BLOCKS_ICONS.polkadot,
-    text: 'EVM compatibility to&nbsp;easily deploy Ethereum dApps on&nbsp;Polkadot and create trustless two&#8209;way pegs between ERC20 and DOT&#8209;based assets.',
+    text:
+      'EVM compatibility to&nbsp;easily deploy Ethereum dApps on&nbsp;Polkadot and create trustless two&#8209;way pegs between ERC20 and DOT&#8209;based assets.',
   },
   {
     icon: BLOCKS_ICONS.schedule,
-    text: 'Identity fee&#8209;based schedule identifies frequent dApp users and rewards them with lower gas fees.',
+    text:
+      'Identity fee&#8209;based schedule identifies frequent dApp users and rewards them with lower gas fees.',
   },
   {
     icon: BLOCKS_ICONS.income,
-    text: 'Unique incentive structure creates passive income streams for contract developers.'
+    text:
+      'Unique incentive structure creates passive income streams for contract developers.',
   },
   {
     icon: BLOCKS_ICONS.nofee,
-    text: 'Gasless transactions lowers the barrier by&nbsp;taking the transaction fee directly from the transacted asset.',
+    text:
+      'Gasless transactions lowers the barrier by&nbsp;taking the transaction fee directly from the transacted asset.',
   },
-];
+]
 
 const MAIN_PARTNERS = [
   {
@@ -252,28 +297,104 @@ const PARTNERS = [
     title: 'Injective Protocol',
     link: 'https://injectiveprotocol.com/',
   },
-];
+]
 
 const ARTICLES = [
   {
     image: '/PolychainCapital-Hypersphere.png',
-    link: 'https://medium.com/projectclover/clover-completes-seed-round-with-polychain-hypersphere-bithumb-global-and-divergence-ventures-828120164074',
-    text: 'Clover completes Seed round with Polychain, Hypersphere, Bithumb Global and Divergence Ventures',
+    link:
+      'https://medium.com/projectclover/clover-completes-seed-round-with-polychain-hypersphere-bithumb-global-and-divergence-ventures-828120164074',
+    text:
+      'Clover completes Seed round with Polychain, Hypersphere, Bithumb Global and Divergence Ventures',
   },
   {
     image: '/easyfi.png',
-    link: 'https://medium.com/projectclover/clover-x-easyfi-tapping-into-the-potential-of-staked-derivatives-assets-on-polkadot-659891dbded0',
-    text: 'Clover X EasyFi | Tapping into the Potential of Staked Derivatives Assets on Polkadot',
+    link:
+      'https://medium.com/projectclover/clover-x-easyfi-tapping-into-the-potential-of-staked-derivatives-assets-on-polkadot-659891dbded0',
+    text:
+      'Clover X EasyFi | Tapping into the Potential of Staked Derivatives Assets on Polkadot',
   },
   {
     image: '/bella.png',
-    link: 'https://medium.com/projectclover/clover-x-bella-building-polkadot-based-defi-infrastructure-in-collaboration-b5b89de1db1c',
-    text: 'Clover X Bella | Building Polkadot-Based DeFi Infrastructure in Collaboration',
+    link:
+      'https://medium.com/projectclover/clover-x-bella-building-polkadot-based-defi-infrastructure-in-collaboration-b5b89de1db1c',
+    text:
+      'Clover X Bella | Building Polkadot-Based DeFi Infrastructure in Collaboration',
   },
   {
     image: '/two-way-peg.png',
-    link: 'https://medium.com/projectclover/clover-re-defining-a-two-way-peg-between-blockchains-8d5b8c0dea6a',
+    link:
+      'https://medium.com/projectclover/clover-re-defining-a-two-way-peg-between-blockchains-8d5b8c0dea6a',
     text: 'Clover: re-defining a two-way peg between blockchains',
+  },
+]
+
+const DNAS = [
+  {
+    title: 'SPV Simulation Technology',
+    content: 'Clover’s SPV simulation technology will soon be able to trustlessly peg-in and peg-out Ether and Ethereum based assets on the Clover testnet. Clover will roll out Bitcoin two-way peg support when respective upgrades are activated on Bitcoin Core.',
+    btnText: 'Go To Outline Article',
+    link: 'https://medium.com/projectclover/clover-re-defining-a-two-way-peg-between-blockchains-8d5b8c0dea6a'
+  },
+  {
+    title: 'Threshold Protocol',
+    content: 'Clover utilizes BIP-Schnorr compatible threshold signatures to enable meaningful cross-chain communication between Polkadot and non-Polkadot networks. Clover facilitates end-to-end secure communication between signers for notarising Polkadot block headers to pointing out Proof-Of-Inclusion to Ethereum VM and Bitcoin script',
+    btnText: 'Read Technical Paper',
+    link: 'https://drive.google.com/file/d/1oOFkrViA5YOotjm6GXTl_bFUlMFuvaGA/view?usp=sharing'
+  },
+]
+
+const FEATURES = [
+  {
+    title: 'EVM Compatibility',
+    content: 'Clover is a powerful smart contract platform that enables Ethereum developers and projects to migrate their contracts onto Polkadot. By minimizing the changes required to run existing Solidity smart contracts on the new network, Ethereum projects can simply replicate their dApp and deploy it to Clover using MetaMask, Truffle, Remix, and other familiar developer tools.',
+    btnText: 'Start building on Clover',
+    link: 'http://docs.clover.finance/'
+  },
+  {
+    title: 'Gas-fee Distribution',
+    content: 'Clover incentivizes dApp builders by automatically sharing a percentage of the transaction fee’s with them. The redistribution will ensure a vibrant developer community and foster an innovative DeFi ecosystem on Sakura and Clover.',
+    btnText: 'Learn more',
+    link: 'https://dropsearn.com/events/clover-developer-incentive-program/'
+  },
+  {
+    title: 'Cross-chain Interactions',
+    content: 'Clover comes with various open-source wallet implementations for interacting with cross-chain dApps without navigating between Polkadot based and Ethereum based networks. Users can seamlessly send, receive, wrap and unwrap cross-chain assets across Ethereum and Polkadot trustlessly.',
+    btnText: 'Try Clover Extension Wallet',
+    link: 'https://chrome.google.com/webstore/detail/clover-wallet/nhnkbkgjikgcigadomkphalanndcapjk'
+  },
+  {
+    title: 'Cross-chain Explorer',
+    content: 'Clover offers seamless multi-chain indexing across Bitcoin, Ethereum, Binance Smart Chain, and Polkadot. Users can search through blocks, transactions, and accounts in all-in one streamlined environment.',
+    btnText: 'Try Clover Explorer (Beta)',
+    link: 'https://stage.cloverscan.io/'
+  },
+]
+
+const CLVTOKENS = [
+  {
+    title: 'Opt-in Fees',
+    content: 'Pay gas fee in CLV, or have the option to pay with any network token.',
+  },
+  {
+    title: 'Governance',
+    content: 'Lock CLV to elect council members and guide the developement through on-chain governance. ',
+  },
+  {
+    title: 'Validation',
+    content: 'Stake CLV to validate the network with your validator infrastructure.',
+  },
+  {
+    title: 'Treasury',
+    content: 'Get your projects funded from the treasury.',
+  },
+  {
+    title: 'Nomination',
+    content: 'Stake CLV to nominate your own node validator using a single-click deployment.',
+  },
+  {
+    title: 'Deployment',
+    content: 'Use CLV to deploy your smart contracts and dApps on Clover.',
   },
 ]
 
@@ -286,4 +407,7 @@ export {
   PARTNERS,
   MAIN_PARTNERS,
   ARTICLES,
+  DNAS,
+  FEATURES,
+  CLVTOKENS,
 };

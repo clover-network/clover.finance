@@ -1,18 +1,16 @@
+import React from 'react'
 import Head from 'next/head'
-import Header from '../components/Header';
-import GetStarted from '../components/GetStarted';
-import WhatIf from '../components/WhatIf';
-import Partners from '../components/Partners';
-import Blog from '../components/Blog';
-import Footer from '../components/Footer';
-import styles from '../styles/Home.module.scss'
-import { MAIN_PARTNERS, PARTNERS, ARTICLES } from '../constants';
-
-export async function getStaticProps() {
-  return {
-    props: {},
-  }
-}
+import Header from '../components/Header/Header'
+import GetStarted from '../components/GetStarted/GetStarted'
+import Blog from '../components/Blog/Blog'
+import Footer from '../components/Footer/Footer'
+import DnaAndFeatures from '../components/CloverDnaAndFeature/CloverDnaAndFeature'
+import {Team} from '../components/Team/Team'
+import EarlyBackers from '../components/EarlyBackers/EarlyBackers'
+import styles from './Home.module.scss'
+import {ARTICLES, CLVTOKENS, DNAS, FEATURES,} from '../constants'
+import {StrategicPartners} from '../components/StrategicPartners/StrategicPartners'
+import {Introduction} from '../components/Introduction/Introduction'
 
 const Home = () => {
   return (
@@ -24,13 +22,18 @@ const Home = () => {
       <Header />
       <main className={styles.main}>
         <GetStarted />
-        <WhatIf />
-        <Partners items={PARTNERS} topItems={MAIN_PARTNERS} />
-        <Blog items={ARTICLES} />
+        <Introduction/>
+        <DnaAndFeatures dnas={DNAS} features={FEATURES} clvTokens={CLVTOKENS} />
       </main>
-      <Footer />
+      <div className={styles.bottom}>
+        <EarlyBackers />
+        <Blog items={ARTICLES} />
+        <StrategicPartners />
+        <Team />
+        <Footer />
+      </div>
     </div>
   )
-};
+}
 
-export default Home;
+export default Home
