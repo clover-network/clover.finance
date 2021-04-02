@@ -209,7 +209,7 @@
   }
 }
 
-@media (max-width: $media-xl) {
+@media (max-width: $media-xl), (min-width: $media-lg) {
   .wrapper {
     overflow: hidden;
   }

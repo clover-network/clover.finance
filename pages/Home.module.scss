@@ -38,6 +38,7 @@
 @media (min-width: $media-lg) {
   .main {
     padding-top: 0;
+    overflow: hidden;
     // padding-bottom: 130px;
   }
   .bottom {
@@ -46,6 +47,10 @@
 }
 
 @media (max-width: $media-xl) {
+  .main {
+    overflow: hidden;
+  }
+
   .bottom {
     overflow: hidden;
   }
