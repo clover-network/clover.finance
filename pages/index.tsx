@@ -2,29 +2,14 @@ import React from 'react'
 import Head from 'next/head'
 import Header from '../components/Header'
 import GetStarted from '../components/GetStarted'
-import WhatIf from '../components/WhatIf'
-import Partners from '../components/Partners'
 import Blog from '../components/Blog'
 import Footer from '../components/Footer'
 import DnaAndFeatures from '../components/CloverDnaAndFeature'
-import { Team } from '../components/Team'
+import {Team} from '../components/Team'
 import EarlyBackers from '../components/EarlyBackers'
 import styles from '../styles/Home.module.scss'
-import {
-  // MAIN_PARTNERS,
-  // PARTNERS,
-  ARTICLES,
-  DNAS,
-  FEATURES,
-  CLVTOKENS,
-} from '../constants'
-import { StrategicPartners } from '../components/StrategicPartners'
-
-export async function getStaticProps() {
-  return {
-    props: {},
-  }
-}
+import {ARTICLES, CLVTOKENS, DNAS, FEATURES,} from '../constants'
+import {StrategicPartners} from '../components/StrategicPartners'
 
 const Home = () => {
   return (
