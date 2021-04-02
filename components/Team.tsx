@@ -27,7 +27,7 @@ export function Team() {
       <div className={styles.people}>
         {TEAM_DATA.map((d) => {
           return (
-            <div className={styles.peopleSingle}>
+            <div className={styles.peopleSingle} key={d.name}>
               <img className={styles.avatar} src={d.image} />
               <div className={styles.name}>{d.name}</div>
               <div className={styles.desc}>{d.desc}</div>
