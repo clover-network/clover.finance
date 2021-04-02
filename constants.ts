@@ -50,7 +50,7 @@ const HEADER_MENU = [
         label: 'Documentation',
       },
       {
-        link: 'https://docs.clover.finance',
+        link: 'https://clover.finance/litepaper.pdf',
         label: 'Litepaper',
       },
     ],
