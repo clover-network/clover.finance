@@ -8,7 +8,7 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  border: 1px solid rgba(#27a577, 0.6);
+  border: 1px solid rgba($color-logo, 0.6);
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -32,12 +32,12 @@
   &::after {
     width: 160%;
     height: 160%;
-    border-color: rgba(#27a577, 0.4);
+    border-color: rgba($color-logo, 0.4);
   }
   &::before {
     width: 230%;
     height: 230%;
-    border-color: rgba(#27a577, 0.3);
+    border-color: rgba($color-logo, 0.3);
   }
 }
 

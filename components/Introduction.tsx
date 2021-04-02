@@ -33,7 +33,7 @@ export function Introduction() {
       <div className={styles.itemList}>
         {DESC_LIST.map((d, i) => {
           return (
-            <div className={styles.item}>
+            <div className={styles.item} key={i}>
               <div className={styles.index}>{`0${i + 1}.`}</div>
               <div className={styles.descInner}>
                 <div className={styles.title}>{d.title}</div>

@@ -1,20 +1,20 @@
 import React from 'react'
 import cn from 'classnames'
-import { useLottie } from 'lottie-react'
 import { InView } from 'react-intersection-observer'
+// import { useLottie } from 'lottie-react'
 // import Button from './Button'
-import styles from '../styles/GetStarted.module.scss'
-import animationJson from '../public/animation.json'
+// import animationJson from '../public/animation.json'
 import { Banner } from './Banner'
 import { Introduction } from './Introduction'
+import styles from '../styles/GetStarted.module.scss'
 
 const GetStarted = () => {
-  const options = {
-    animationData: animationJson,
-    loop: true,
-    autoplay: true,
-  }
-  const { View } = useLottie(options)
+  // const options = {
+  //   animationData: animationJson,
+  //   loop: true,
+  //   autoplay: true,
+  // }
+  // const { View } = useLottie(options)
   return (
     <InView threshold={0} triggerOnce>
       {({ inView, ref }) => (
@@ -39,12 +39,6 @@ const GetStarted = () => {
             </p>
           </div>
           <Introduction />
-          {/* <Button
-            className={styles.btn}
-            href="https://docs.clover.finance/quick-start/testnet/"
-          >
-            Start building
-          </Button>*/}
         </div>
       )}
     </InView>

@@ -51,7 +51,7 @@
     content: '';
     position: absolute;
     border-radius: 50%;
-    background-color: #27a577;
+    background-color: $color-logo;
     z-index: -1;
   }
   &::before {
@@ -69,7 +69,7 @@
 
   .download {
     border: none;
-    background-color: #27a577;
+    background-color: $color-logo;
     display: flex;
     align-items: center;
     color: #fff;

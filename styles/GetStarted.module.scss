@@ -8,7 +8,9 @@
   align-items: center;
   width: 100%;
   text-align: center;
-  padding: 55px 0;
+  padding-top: 20px;
+  // padding-top: 125px;
+  // padding: 55px 0;
   // height: calc(100vh - 72px);
   // overflow: hidden;
 }
@@ -88,5 +90,11 @@
 @media (max-width: $media-xl) {
   .wrapper {
     overflow: hidden;
+  }
+}
+
+@media (min-width: $media-md) {
+  .wrapper {
+    padding-top: 60px;
   }
 }
