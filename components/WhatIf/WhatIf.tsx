@@ -67,7 +67,7 @@ const WhatIf = () => {
           )}
         </div>
       </div>
-      <Blocks items={BLOCKS} />
+      {/*<Blocks items={BLOCKS} />*/}
     </div>
   );
 };

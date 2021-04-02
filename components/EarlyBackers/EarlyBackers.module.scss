@@ -16,7 +16,34 @@
 
 .content {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
+  margin-top: 50px;
+
+
+  & > div {
+    width: 90%;
+    overflow: hidden;
+
+    & > div {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+}
+
+.arrowLeft {
+  margin-right: 50px;
+  cursor: pointer;
+}
+
+.arrowRight {
+  margin-left: 50px;
+  cursor: pointer;
   justify-content: space-between;
   align-items: center;
   margin-top: 50px;
@@ -24,5 +51,6 @@
 }
 
 .image {
-  padding: 10px;
+  margin: 0 20px;
+  user-select: none;
 }
