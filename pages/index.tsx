@@ -37,12 +37,14 @@ const Home = () => {
       <main className={styles.main}>
         <GetStarted />
         <DnaAndFeatures dnas={DNAS} features={FEATURES} clvTokens={CLVTOKENS} />
+      </main>
+      <div className={styles.bottom}>
         <EarlyBackers />
         <Blog items={ARTICLES} />
         <StrategicPartners />
         <Team />
-      </main>
-      <Footer />
+        <Footer />
+      </div>
     </div>
   )
 }
