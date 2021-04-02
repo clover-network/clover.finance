@@ -110,7 +110,8 @@
 }
 
 .featureContent {
-  width: 1168px;
+  max-width: 1168px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -147,7 +148,8 @@
 .clvToken {
   margin: 0 auto;
   padding: 70px 0;
-  width: 950px;
+  max-width: 950px;
+  width: 100%;
   text-align: center;
   display: flex;
   flex-direction: column;

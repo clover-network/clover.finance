@@ -1,12 +1,7 @@
 @import 'styles/variables';
 
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
-  position: relative;
 
   img {
     border: 0;

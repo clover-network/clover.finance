@@ -13,12 +13,10 @@ import Nomination from "../../public/svg/nomination.svg";
 import Deployment from "../../public/svg/deployment.svg";
 
 const DnaAndFeatures = ({
-    className,
     dnas = [],
     features = [],
     clvTokens = [],
 }: {
-    className?: string;
     dnas?: {
         title: string;
         content: string;
