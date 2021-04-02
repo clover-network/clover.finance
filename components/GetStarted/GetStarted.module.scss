@@ -4,24 +4,12 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
   text-align: center;
   padding-top: 20px;
-  background: url('/public/images/background-one.png') no-repeat center /
-    cover;
-  // height: calc(100vh - 72px);
-  // overflow: hidden;
-}
-
-.title {
-  padding: 0 20px;
-  font-size: 27px;
-  font-weight: $fw-bold;
-  line-height: 1.25;
-  text-align: center;
-  max-width: 540px;
+  height: 100vh;
 }
 
 .animation {
@@ -36,9 +24,6 @@
   font-weight: bold;
   font-size: 27px;
   text-align: center;
-  &.green {
-    color: $color-logo;
-  }
 }
 
 .hidden {
@@ -52,14 +37,9 @@
   visibility: visible;
 }
 
-// .shadow{
-//   box-shadow: ;
-// }
-
 @media (min-width: $media-lg) {
   .wrapper {
-    justify-content: space-evenly;
-    padding-top: 100px;
+    justify-content: flex-start;
   }
 
   .title {
@@ -98,7 +78,5 @@
 
 @media (min-width: $media-md) {
   .wrapper {
-    padding-top: 145px;
-    padding-bottom: 150px;
   }
 }

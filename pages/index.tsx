@@ -10,6 +10,7 @@ import EarlyBackers from '../components/EarlyBackers/EarlyBackers'
 import styles from './Home.module.scss'
 import {ARTICLES, CLVTOKENS, DNAS, FEATURES,} from '../constants'
 import {StrategicPartners} from '../components/StrategicPartners/StrategicPartners'
+import {Introduction} from '../components/Introduction/Introduction'
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
       <Header />
       <main className={styles.main}>
         <GetStarted />
+        <Introduction/>
         <DnaAndFeatures dnas={DNAS} features={FEATURES} clvTokens={CLVTOKENS} />
       </main>
       <div className={styles.bottom}>
