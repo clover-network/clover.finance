@@ -53,6 +53,10 @@
   visibility: visible;
 }
 
+// .shadow{
+//   box-shadow: ;
+// }
+
 @media (min-width: $media-lg) {
   .wrapper {
     justify-content: space-evenly;
@@ -96,5 +100,6 @@
 @media (min-width: $media-md) {
   .wrapper {
     padding-top: 60px;
+    padding-bottom: 150px;
   }
 }

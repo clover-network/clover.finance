@@ -24,6 +24,10 @@ const GetStarted = () => {
             [`${styles.visible}`]: inView,
           })}
         >
+          {/* <div className="shadow"></div>
+          <div className="shadow"></div>
+          <div className="shadow"></div>
+          <div className="shadow"></div> */}
           <h1 className={styles.title}>
             A&nbsp;Foundational Layer for Cross&#8209;chain Compatibility
           </h1>
