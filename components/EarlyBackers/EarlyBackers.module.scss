@@ -46,11 +46,24 @@
   cursor: pointer;
   justify-content: space-between;
   align-items: center;
-  margin-top: 50px;
   flex-wrap: wrap;
 }
 
 .image {
   margin: 0 20px;
   user-select: none;
+}
+@media (max-width: $media-xl), (min-width: $media-md) {
+  .wrapper {
+    width: 80%;
+    overflow: hidden;
+  }
+
+  .content {
+
+    & > div {
+      justify-content: center;
+    }
+  }
+
 }

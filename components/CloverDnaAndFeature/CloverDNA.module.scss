@@ -208,3 +208,27 @@
     color: #ffffff;
   }
 }
+
+@media (max-width: $media-xl), (min-width: $media-lg) {
+  .wrapper {
+    overflow: hidden;
+  }
+
+  .topContent, .featureContent, .clvToken {
+    width: 80%;
+
+    & > div {
+      justify-content: center;
+    }
+  }
+
+  .topContentItem {
+    height: fit-content;
+
+    button {
+      position: relative;
+      margin-top: 30px;
+    }
+  }
+}
+
