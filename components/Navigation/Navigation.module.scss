@@ -35,7 +35,7 @@
 
 .list {
   display: flex;
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
@@ -61,7 +61,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Roboto;
+    font-family: Roboto, sans-serif;
   }
 
   .links {
@@ -71,7 +71,7 @@
       white-space: nowrap;
       min-width: 160px;
       line-height: 40px;
-      font-family: Roboto;
+      font-family: Roboto, sans-serif;
     }
   }
 }
