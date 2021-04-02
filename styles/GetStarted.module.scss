@@ -8,8 +8,9 @@
   align-items: center;
   width: 100%;
   text-align: center;
-  height: calc(100vh - 72px);
-  overflow: hidden;
+  padding: 55px 0;
+  // height: calc(100vh - 72px);
+  // overflow: hidden;
 }
 
 .title {
@@ -25,19 +26,24 @@
   width: 115%;
 }
 
-.text {
-  padding: 0 20px;
+.textOuter {
   margin: 50px 0 0 0;
-  width: 100%;
-  max-width: 700px;
-  color: $color-logo;
+}
+
+.textInner {
+  font-family: Optima;
+  font-weight: bold;
+  font-size: 27px;
   text-align: center;
+  &.green {
+    color: $color-logo;
+  }
 }
 
 .hidden {
   opacity: 0;
   visibility: hidden;
-  transition: .85s opacity, .85s visibility;
+  transition: 0.85s opacity, 0.85s visibility;
 }
 
 .visible {
@@ -51,7 +57,8 @@
   }
 
   .title {
-    font-size: 56px;
+    font-size: 44px;
+    margin-bottom: -15px;
     line-height: 1.1;
   }
 
@@ -67,10 +74,19 @@
   .btn {
     margin: 200px 0 0 0;
   }
-
-  .text {
-    margin-top: 0;
+  .textOuter {
+    margin-top: 70px;
+    max-width: 609px;
+  }
+  .textInner {
     font-size: 22px;
-    line-height: 1.6;
+    font-size: 44px;
+    line-height: 53px;
+  }
+}
+
+@media (max-width: $media-xl) {
+  .wrapper {
+    overflow: hidden;
   }
 }

@@ -1,12 +1,12 @@
 import Head from 'next/head'
-import Header from '../components/Header';
-import GetStarted from '../components/GetStarted';
-import WhatIf from '../components/WhatIf';
-import Partners from '../components/Partners';
-import Blog from '../components/Blog';
-import Footer from '../components/Footer';
+import Header from '../components/Header'
+import GetStarted from '../components/GetStarted'
+import WhatIf from '../components/WhatIf'
+import Partners from '../components/Partners'
+import Blog from '../components/Blog'
+import Footer from '../components/Footer'
 import styles from '../styles/Home.module.scss'
-import { MAIN_PARTNERS, PARTNERS, ARTICLES } from '../constants';
+import { MAIN_PARTNERS, PARTNERS, ARTICLES } from '../constants'
 
 export async function getStaticProps() {
   return {
@@ -24,13 +24,13 @@ const Home = () => {
       <Header />
       <main className={styles.main}>
         <GetStarted />
-        <WhatIf />
-        <Partners items={PARTNERS} topItems={MAIN_PARTNERS} />
-        <Blog items={ARTICLES} />
+        {/* <WhatIf /> */}
+        {/* <Partners items={PARTNERS} topItems={MAIN_PARTNERS} /> */}
+        {/* <Blog items={ARTICLES} /> */}
       </main>
       <Footer />
     </div>
   )
-};
+}
 
-export default Home;
+export default Home

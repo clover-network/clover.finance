@@ -22,7 +22,7 @@ const Header = () => {
         <div className={styles.rightBox}>
           <div className={styles.sakura}>
             <Sakura />
-            <div className={styles.sakuraText}>Sakura</div>
+            {/* <div className={styles.sakuraText}>Sakura</div> */}
           </div>
           <MenuButton
             className={styles.button}
