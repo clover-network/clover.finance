@@ -4,7 +4,6 @@ import cn from 'classnames'
 import MenuButton from '../MenuButton/MenuButton'
 import styles from './Header.module.scss'
 import Logo from '../../public/svg/logo.svg'
-import Sakura from '../../public/svg/sakura.svg'
 import {HEADER_MENU} from '../../constants'
 
 const Header = () => {
@@ -43,9 +42,6 @@ const Header = () => {
         </div>
         <Navigation items={HEADER_MENU} active={active} />
         <div className={styles.rightBox}>
-          <div className={styles.sakura}>
-            <Sakura />
-          </div>
           <MenuButton
             className={styles.button}
             active={active}

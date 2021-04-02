@@ -36,8 +36,6 @@
 }
 
 .logo {
-  // position: relative;
-  // z-index: 100;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -64,23 +62,10 @@
 }
 
 .rightBox {
-  // position: relative;
-  // z-index: 100;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}
-
-.sakura {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  .sakuraText {
-    margin-left: 7px;
-    font-size: 14px;
-  }
 }
 
 .button {
