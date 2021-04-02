@@ -9,7 +9,6 @@
   width: 100%;
   text-align: center;
   padding-top: 20px;
-  height: 100vh;
 }
 
 .animation {
@@ -79,5 +78,6 @@
 @media (min-width: $media-md) {
   .wrapper {
     overflow: hidden;
+    height: 100vh;
   }
 }
