@@ -1,4 +1,4 @@
-@import "variables";
+@import 'variables';
 
 .wrapper {
   display: flex;
@@ -36,7 +36,7 @@
 
 .bottom {
   width: 100%;
-  background: url('../public/svg/clover_features_bg.png') no-repeat;
+  background: url('../public/images/background-two.png') no-repeat;
   background-size: cover;
 }
 
