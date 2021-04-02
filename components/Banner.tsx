@@ -13,13 +13,19 @@ import styles from '../styles/Banner.module.scss'
 export function Banner() {
   return (
     <div className={styles.banner}>
-      <IconOne className={cn(styles.tokenIcon, styles.one)} />
-      <IconTwo className={cn(styles.tokenIcon, styles.two)} />
-      <IconThree className={cn(styles.tokenIcon, styles.three)} />
-      <IconFour className={cn(styles.tokenIcon, styles.four)} />
-      <IconFive className={cn(styles.tokenIcon, styles.five)} />
-      <IconSix className={cn(styles.tokenIcon, styles.six)} />
-      <div className={styles.ware}>
+      <div className={styles.wareOuter}>
+        <IconOne className={cn(styles.tokenIcon, styles.one)} />
+        <IconSix className={cn(styles.tokenIcon, styles.six)} />
+      </div>
+
+      <div className={styles.wareMiddle}>
+        <IconTwo className={cn(styles.tokenIcon, styles.two)} />
+        <IconThree className={cn(styles.tokenIcon, styles.three)} />
+        <IconFive className={cn(styles.tokenIcon, styles.five)} />
+      </div>
+
+      <div className={styles.wareInner}>
+        <IconFour className={cn(styles.tokenIcon, styles.four)} />
         <i className={styles.logo}>
           <Logo className={styles.icon} />
         </i>

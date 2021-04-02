@@ -9,8 +9,8 @@
   width: 100%;
   text-align: center;
   padding-top: 20px;
-  // padding-top: 125px;
-  // padding: 55px 0;
+  background: url('../public//images/background-one.png') no-repeat center /
+    cover;
   // height: calc(100vh - 72px);
   // overflow: hidden;
 }
@@ -61,11 +61,12 @@
 @media (min-width: $media-lg) {
   .wrapper {
     justify-content: space-evenly;
+    padding-top: 100px;
   }
 
   .title {
     font-size: 44px;
-    margin-bottom: 15px;
+    margin-bottom: -50px;
     line-height: 1.1;
   }
 
@@ -82,7 +83,7 @@
     margin: 200px 0 0 0;
   }
   .textOuter {
-    margin-top: 110px;
+    margin-top: 115px;
     max-width: 609px;
   }
   .textInner {
@@ -100,7 +101,7 @@
 
 @media (min-width: $media-md) {
   .wrapper {
-    padding-top: 60px;
+    padding-top: 145px;
     padding-bottom: 150px;
   }
 }
