@@ -2,16 +2,18 @@
 
 .wrapper {
   padding: 0 20px;
-  margin: 80px 0 0 0;
+  margin: 80px auto 0;
   width: 100%;
   max-width: 1220px;
 }
 
 .title {
-  font-weight: $fw-bold;
-  font-size: 40px;
-  line-height: 1.25;
+  font-family: Optima;
+  font-weight: bold;
+  font-size: 44px !important;
+  line-height: 53px;
   text-align: center;
+  color: #000000;
 }
 
 .list {
@@ -60,10 +62,11 @@
 .text {
   flex: 1 0 auto;
   padding: 20px 20px 40px 30px;
-  font-family: 'IBMPlexMono', sans-serif;
-  font-weight: $fw-medium;
-  font-size: 15px;
   line-height: 1.4;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
 }
 
 .hidden {
@@ -100,7 +103,7 @@
 
 @media (min-width: $media-lg) {
   .wrapper {
-    margin-top: 120px;
+    margin-top: 100px;
   }
 
   .title {
