@@ -86,7 +86,6 @@
 @media (min-width: $media-lg) {
   .nav {
     position: relative;
-    background: transparent;
     top: auto;
     height: auto;
     flex: 1 0 auto;
@@ -96,7 +95,6 @@
 
   .container {
     padding-bottom: 0;
-    // align-items: flex-end;
   }
 
   .list {
@@ -155,5 +153,11 @@
   .footer {
     padding-right: 50px;
     padding-left: 50px;
+  }
+}
+
+@media (min-width: $media-md) {
+  .nav {
+    background: transparent;
   }
 }
