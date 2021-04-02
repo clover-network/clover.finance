@@ -23,11 +23,13 @@ const DnaAndFeatures = ({
         title: string;
         content: string;
         btnText: string;
+        link: string;
     }[];
     features?: {
         title: string;
         content: string;
         btnText: string;
+        link: string;
     }[];
     clvTokens?: {
         title: string,
@@ -64,8 +66,8 @@ const DnaAndFeatures = ({
     }
     return (
         // className={cn(styles.topWrapper, styles.hidden, {
-        // [`${styles.visible}`]: inView,
-    // })}
+            // [`${styles.visible}`]: inView,
+        // })}
         <div className={styles.wrapper}>
             <div
                 ref={ref}
@@ -81,7 +83,7 @@ const DnaAndFeatures = ({
                                 <div className={styles.topContentItem}>
                                     <h3>{dna.title}</h3>
                                     <p>{dna.content}</p>
-                                    <button>{dna.btnText}</button>
+                                    <button onClick={() => window.open( dna.link)}>{dna.btnText}</button>
                                 </div>
                             ))}
                         </div>
@@ -106,7 +108,7 @@ const DnaAndFeatures = ({
                                 <div className={cn(styles.topContentItem, styles.black)}>
                                     <h3>{feature.title}</h3>
                                     <p className={styles.gray}>{feature.content}</p>
-                                    <a>{feature.btnText}</a>
+                                    <a href={feature.link} target="_blank">{feature.btnText}</a>
                                 </div>
                             ))}
                         </div>

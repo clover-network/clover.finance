@@ -38,7 +38,6 @@ const Home = () => {
         <div className={styles.bottom}></div>
         <Team />
       </main>
-
       <Footer />
     </div>
   )

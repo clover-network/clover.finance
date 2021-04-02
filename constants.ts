@@ -334,11 +334,13 @@ const DNAS = [
     title: 'SPV Simulation Technology',
     content: 'Clover’s SPV simulation technology will soon be able to trustlessly peg-in and peg-out Ether and Ethereum based assets on the Clover testnet. Clover will roll out Bitcoin two-way peg support when respective upgrades are activated on Bitcoin Core.',
     btnText: 'Go To Outline Article',
+    link: 'https://medium.com/projectclover/clover-re-defining-a-two-way-peg-between-blockchains-8d5b8c0dea6a'
   },
   {
-    title: 'Schnorr Threshold',
+    title: 'Threshold Protocol',
     content: 'Clover utilizes BIP-Schnorr compatible threshold signatures to enable meaningful cross-chain communication between Polkadot and non-Polkadot networks. Clover facilitates end-to-end secure communication between signers for notarising Polkadot block headers to pointing out Proof-Of-Inclusion to Ethereum VM and Bitcoin script',
     btnText: 'Read Technical Paper',
+    link: 'https://drive.google.com/file/d/1oOFkrViA5YOotjm6GXTl_bFUlMFuvaGA/view?usp=sharing'
   },
 ]
 
@@ -347,21 +349,25 @@ const FEATURES = [
     title: 'EVM Compatibility',
     content: 'Clover is a powerful smart contract platform that enables Ethereum developers and projects to migrate their contracts onto Polkadot. By minimizing the changes required to run existing Solidity smart contracts on the new network, Ethereum projects can simply replicate their dApp and deploy it to Clover using MetaMask, Truffle, Remix, and other familiar developer tools.',
     btnText: 'Start building on Clover',
+    link: 'http://docs.clover.finance/'
   },
   {
     title: 'Gas-fee Distribution',
     content: 'Clover incentivizes dApp builders by automatically sharing a percentage of the transaction fee’s with them. The redistribution will ensure a vibrant developer community and foster an innovative DeFi ecosystem on Sakura and Clover.',
     btnText: 'Learn more',
+    link: 'https://dropsearn.com/events/clover-developer-incentive-program/'
   },
   {
     title: 'Cross-chain Interactions',
     content: 'Clover comes with various open-source wallet implementations for interacting with cross-chain dApps without navigating between Polkadot based and Ethereum based networks. Users can seamlessly send, receive, wrap and unwrap cross-chain assets across Ethereum and Polkadot trustlessly.',
     btnText: 'Try Clover Extension Wallet',
+    link: 'https://chrome.google.com/webstore/detail/clover-wallet/nhnkbkgjikgcigadomkphalanndcapjk'
   },
   {
     title: 'Cross-chain Explorer',
     content: 'Clover offers seamless multi-chain indexing across Bitcoin, Ethereum, Binance Smart Chain, and Polkadot. Users can search through blocks, transactions, and accounts in all-in one streamlined environment.',
     btnText: 'Try Clover Explorer (Beta)',
+    link: 'https://stage.cloverscan.io/'
   },
 ]
 
