@@ -1,9 +1,9 @@
 @import 'variables';
 .wrapper {
-  padding-top: 140px;
+  padding-top: 60px;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .item {
@@ -41,8 +41,8 @@
 }
 
 .launch {
-  width: 316px;
-  height: 531px;
+  width: 318px;
+  height: 614px;
   background: url('../public//images/launch.png') no-repeat center/cover;
   position: relative;
   margin-right: 216px;
@@ -80,7 +80,7 @@
     position: absolute;
     top: 100%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
   }
   .iconArrow {
     margin-right: 14px;
@@ -91,7 +91,6 @@
   .wrapper {
     padding-top: 60px;
     flex-direction: column;
-    align-items: center;
     .launch {
       margin-bottom: 100px;
       margin-right: 0;
