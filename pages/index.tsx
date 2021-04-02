@@ -1,13 +1,20 @@
 import Head from 'next/head'
-import Header from '../components/Header';
-import GetStarted from '../components/GetStarted';
-import WhatIf from '../components/WhatIf';
-import Partners from '../components/Partners';
-import Blog from '../components/Blog';
-import Footer from '../components/Footer';
-import DnaAndFeatures from '../components/CloverDnaAndFeature';
+import Header from '../components/Header'
+import GetStarted from '../components/GetStarted'
+import WhatIf from '../components/WhatIf'
+import Partners from '../components/Partners'
+import Blog from '../components/Blog'
+import Footer from '../components/Footer'
+import DnaAndFeatures from '../components/CloverDnaAndFeature'
 import styles from '../styles/Home.module.scss'
-import { MAIN_PARTNERS, PARTNERS, ARTICLES, DNAS, FEATURES, CLVTOKENS } from '../constants';
+import {
+  // MAIN_PARTNERS,
+  // PARTNERS,
+  // ARTICLES,
+  DNAS,
+  FEATURES,
+  CLVTOKENS,
+} from '../constants'
 
 export async function getStaticProps() {
   return {
@@ -28,11 +35,10 @@ const Home = () => {
         {/* <WhatIf /> */}
         {/* <Partners items={PARTNERS} topItems={MAIN_PARTNERS} /> */}
         {/* <Blog items={ARTICLES} /> */}
+        <DnaAndFeatures dnas={DNAS} features={FEATURES} clvTokens={CLVTOKENS} />
+        <div className={styles.bottom}></div>
       </main>
-      <DnaAndFeatures dnas={DNAS} features={FEATURES} clvTokens={CLVTOKENS} />
-      <div className={styles.bottom}>
 
-      </div>
       <Footer />
     </div>
   )
