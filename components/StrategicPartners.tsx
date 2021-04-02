@@ -31,6 +31,7 @@ export function StrategicPartners() {
         {LOGO_MAPS.map((url) => {
           return (
             <div
+              key={url}
               className={styles.logo}
               style={{
                 background: 'url(' + url + ')no-repeat center',
