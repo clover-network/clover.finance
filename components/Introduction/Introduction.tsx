@@ -24,10 +24,11 @@ export function Introduction() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.launch}>
-        <button className={styles.download} onClick={() => window.open('https://chrome.google.com/webstore/detail/clover-wallet/nhnkbkgjikgcigadomkphalanndcapjk')}>
+        <img src="/images/extension_screen.png" alt="Clover browser extension"/>
+        <a className={styles.download} href="https://chrome.google.com/webstore/detail/clover-wallet/nhnkbkgjikgcigadomkphalanndcapjk" target="_blank" rel="noreferrer noopener">
           <Arrow className={styles.iconArrow} />
           Download
-        </button>
+        </a>
       </div>
       <div className={styles.itemList}>
         {DESC_LIST.map((d, i) => {
