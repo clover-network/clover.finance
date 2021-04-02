@@ -1,8 +1,8 @@
 @import 'variables';
 .banner {
   position: relative;
-  width: 526px;
-  height: 526px;
+  width: 456px;
+  height: 456px;
 }
 .ware {
   width: 100%;
@@ -30,13 +30,13 @@
     border-style: solid;
   }
   &::after {
-    width: 160%;
-    height: 160%;
+    width: 185%;
+    height: 185%;
     border-color: rgba($color-logo, 0.4);
   }
   &::before {
-    width: 230%;
-    height: 230%;
+    width: 270%;
+    height: 270%;
     border-color: rgba($color-logo, 0.3);
   }
 }
@@ -67,27 +67,28 @@
     transform: translate(50%, -50%);
   }
   &.one {
-    left: -74%;
+    left: -94%;
     top: 50%;
   }
   &.two {
-    left: -42%;
+    left: -58%;
     top: 80%;
   }
   &.three {
-    left: -25%;
+    left: -47%;
+    top: 10%;
   }
   &.four {
-    left: 84%;
+    left: 80%;
     top: 34%;
   }
   &.five {
-    left: 98%;
+    left: 108%;
     top: 94%;
   }
   &.six {
-    left: 145%;
-    top: 6%;
+    left: 168%;
+    top: 16%;
   }
 }
 
