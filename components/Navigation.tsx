@@ -20,7 +20,7 @@ const Navigation = ({
   const data = useMemo(
     () =>
       items?.map(({ children, label }) => (
-        <div className={styles.item}>
+        <div className={styles.item} key={label}>
           <div className={styles.itemLabel}>
             {label}
             <ShortArrow className={styles.itemHover} />
