@@ -1,0 +1,29 @@
+@import 'variables';
+
+.root {
+  padding: 50px 0;
+}
+
+.header {
+  font-family: Optima;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 44px;
+  line-height: 53px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo {
+  width: 50%;
+  height: 100px;
+  float: left;
+}
+
+@media (min-width: $media-md) {
+  .logo {
+    width: 220px;
+    height: 100px;
+    float: left;
+  }
+}

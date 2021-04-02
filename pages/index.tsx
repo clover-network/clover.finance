@@ -17,6 +17,7 @@ import {
   FEATURES,
   CLVTOKENS,
 } from '../constants'
+import { StrategicPartners } from '../components/StrategicPartners'
 
 export async function getStaticProps() {
   return {
@@ -36,6 +37,7 @@ const Home = () => {
         <GetStarted />
         <DnaAndFeatures dnas={DNAS} features={FEATURES} clvTokens={CLVTOKENS} />
         <div className={styles.bottom}></div>
+        <StrategicPartners />
         <Team />
       </main>
       <Footer />
