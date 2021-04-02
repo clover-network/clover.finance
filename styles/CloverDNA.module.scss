@@ -1,0 +1,206 @@
+@import "variables";
+
+.wrapper {
+  width: 100%;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: .85s opacity, .85s visibility;
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.topWrapper {
+  width: 100%;
+  background: linear-gradient(98.6deg, #27A577 0.21%, #0080B9 100%),
+  linear-gradient(0deg, #27A577, #27A577),
+  linear-gradient(210.66deg, #02764C 22.56%, #4EF3B7 81.39%);
+  position: relative;
+  overflow: hidden;
+}
+
+.topVector1 {
+  position: absolute;
+  bottom: -85px;
+  width: 100%;
+
+}
+.topVector2 {
+  position: absolute;
+  bottom: -110px;
+  width: 100%;
+}
+
+.title {
+  font-family: Optima;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 52px;
+  line-height: 63px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.topContent {
+  width: 1168px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 96px 0 187px;
+
+  & > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+.topContentItem {
+  width: 500px;
+  height: 330px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  font-family: Roboto;
+  text-align: center;
+  margin-top: 70px;
+  position: relative;
+
+  h3 {
+    font-family: Optima;
+    font-weight: bold;
+    font-size: 38px;
+    line-height: 46px;
+    margin-bottom: 30px;
+  }
+
+  p {
+    font-size: 18px;
+    opacity: 0.8;
+    line-height: 140%;
+    font-weight: 300;
+  }
+
+  a {
+    position: absolute;
+    bottom: 30px;
+    color: #27A577;
+    border-bottom: 1px solid #27A577;
+    cursor: pointer;
+  }
+
+  button {
+    height: 56px;
+    width: 264px;
+    color: #053C4B;
+    background: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 40px;
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+  }
+}
+
+.featureContent {
+  width: 1168px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 96px 0 50px;
+
+  & > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+.featureWrapper {
+  width: 100%;
+  background: url('../public/svg/clover_features_bg.png') no-repeat;
+  background-size: cover;
+}
+.bottomWrapper {
+  background: linear-gradient(98.6deg, #27A577 0.21%, #0080B9 100%),
+  linear-gradient(0deg, #27A577, #27A577),
+  linear-gradient(210.66deg, #02764C 22.56%, #4EF3B7 81.39%);
+  background-size: cover;
+  width: 100%;
+}
+
+.black {
+  color: #000 !important;
+}
+
+.gray {
+  color: #1D2D31 !important;
+}
+
+.clvToken {
+  margin: 0 auto;
+  padding: 70px 0;
+  width: 950px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.clvTokenIcon {
+  width: 88px;
+  height: 88px;
+  margin-bottom: 25px;
+}
+
+.clvTokenTitle {
+  font-family: Optima;
+  font-weight: bold;
+  font-size: 44px;
+  line-height: 53px;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 70px;
+}
+
+.clvTokenList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.clvTokenItem {
+  width: 250px;
+  height: 230px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  div {
+    margin-top: 22px;
+    margin-bottom: 10px;
+    font-family: Optima;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 32px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+  }
+
+  p {
+    font-family: Roboto;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 140%;
+    color: #ffffff;
+  }
+}

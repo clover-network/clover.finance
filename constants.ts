@@ -329,6 +329,69 @@ const ARTICLES = [
   },
 ]
 
+const DNAS = [
+  {
+    title: 'SPV Simulation Technology',
+    content: 'Clover’s SPV simulation technology will soon be able to trustlessly peg-in and peg-out Ether and Ethereum based assets on the Clover testnet. Clover will roll out Bitcoin two-way peg support when respective upgrades are activated on Bitcoin Core.',
+    btnText: 'Go To Outline Article',
+  },
+  {
+    title: 'Schnorr Threshold',
+    content: 'Clover utilizes BIP-Schnorr compatible threshold signatures to enable meaningful cross-chain communication between Polkadot and non-Polkadot networks. Clover facilitates end-to-end secure communication between signers for notarising Polkadot block headers to pointing out Proof-Of-Inclusion to Ethereum VM and Bitcoin script',
+    btnText: 'Read Technical Paper',
+  },
+]
+
+const FEATURES = [
+  {
+    title: 'EVM Compatibility',
+    content: 'Clover is a powerful smart contract platform that enables Ethereum developers and projects to migrate their contracts onto Polkadot. By minimizing the changes required to run existing Solidity smart contracts on the new network, Ethereum projects can simply replicate their dApp and deploy it to Clover using MetaMask, Truffle, Remix, and other familiar developer tools.',
+    btnText: 'Start building on Clover',
+  },
+  {
+    title: 'Gas-fee Distribution',
+    content: 'Clover incentivizes dApp builders by automatically sharing a percentage of the transaction fee’s with them. The redistribution will ensure a vibrant developer community and foster an innovative DeFi ecosystem on Sakura and Clover.',
+    btnText: 'Learn more',
+  },
+  {
+    title: 'Cross-chain Interactions',
+    content: 'Clover comes with various open-source wallet implementations for interacting with cross-chain dApps without navigating between Polkadot based and Ethereum based networks. Users can seamlessly send, receive, wrap and unwrap cross-chain assets across Ethereum and Polkadot trustlessly.',
+    btnText: 'Try Clover Extension Wallet',
+  },
+  {
+    title: 'Cross-chain Explorer',
+    content: 'Clover offers seamless multi-chain indexing across Bitcoin, Ethereum, Binance Smart Chain, and Polkadot. Users can search through blocks, transactions, and accounts in all-in one streamlined environment.',
+    btnText: 'Try Clover Explorer (Beta)',
+  },
+]
+
+const CLVTOKENS = [
+  {
+    title: 'Opt-in Fees',
+    content: 'Pay gas fee in CLV, or have the option to pay with any network token.',
+  },
+  {
+    title: 'Governance',
+    content: 'Lock CLV to elect council members and guide the developement through on-chain governance. ',
+  },
+  {
+    title: 'Validation',
+    content: 'Stake CLV to validate the network with your validator infrastructure.',
+  },
+  {
+    title: 'Treasury',
+    content: 'Get your projects funded from the treasury.',
+  },
+  {
+    title: 'Nomination',
+    content: 'Stake CLV to nominate your own node validator using a single-click deployment.',
+  },
+  {
+    title: 'Deployment',
+    content: 'Use CLV to deploy your smart contracts and dApps on Clover.',
+  },
+]
+
 export {
   HEADER_MENU,
   SOCIAL_ICONS,
@@ -338,4 +401,7 @@ export {
   PARTNERS,
   MAIN_PARTNERS,
   ARTICLES,
-}
+  DNAS,
+  FEATURES,
+  CLVTOKENS,
+};
