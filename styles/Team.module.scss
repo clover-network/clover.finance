@@ -1,6 +1,7 @@
 @import 'variables';
 
 .team {
+  padding: 50px 0;
   font-family: Optima;
   font-style: normal;
   font-weight: bold;
@@ -8,7 +9,7 @@
   line-height: 53px;
   text-align: center;
   width: 100%;
-  max-width: 1230px;
+  max-width: 1030px;
 }
 
 .header {
@@ -17,15 +18,24 @@
 
 .people {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
 
+.peopleSingle {
+  margin-bottom: 30px;
+}
+
+.avatar {
+  margin-bottom: 32px;
+}
 .name {
   font-family: Optima;
   font-style: normal;
   font-weight: bold;
   font-size: 26px;
   line-height: 32px;
+  margin-bottom: 8px;
 }
 .desc {
   font-family: Roboto;
@@ -33,4 +43,10 @@
   font-weight: 300;
   font-size: 18px;
   line-height: 25px;
+}
+
+@media (min-width: $media-lg) {
+  .people {
+    flex-direction: row;
+  }
 }
