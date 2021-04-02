@@ -15,8 +15,36 @@
 
 .content {
   display: flex;
-  width: 100%;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   margin-top: 50px;
+
+  & > div {
+    width: 90%;
+    overflow: hidden;
+
+    & > div {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+
+  img {
+    margin: 0 20px;
+    user-select: none;
+  }
+}
+
+.arrowLeft {
+  margin-right: 50px;
+  cursor: pointer;
+}
+
+.arrowRight {
+  margin-left: 50px;
+  cursor: pointer;
 }

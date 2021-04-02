@@ -65,9 +65,6 @@ const DnaAndFeatures = ({
         }
     }
     return (
-        // className={cn(styles.topWrapper, styles.hidden, {
-            // [`${styles.visible}`]: inView,
-        // })}
         <div className={styles.wrapper}>
             <div
                 ref={ref}
