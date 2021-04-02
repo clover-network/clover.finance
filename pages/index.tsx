@@ -36,10 +36,11 @@ const Home = () => {
         {/* <Partners items={PARTNERS} topItems={MAIN_PARTNERS} /> */}
         {/* <Blog items={ARTICLES} /> */}
         {/* <DnaAndFeatures dnas={DNAS} features={FEATURES} clvTokens={CLVTOKENS} /> */}
-        <div className={styles.bottom}></div>
       </main>
-
-      <Footer />
+        <div className={styles.bottom}>
+            
+            <Footer />
+        </div>
     </div>
   )
 }
