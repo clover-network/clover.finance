@@ -1,3 +1,4 @@
+import React from 'react'
 import Head from 'next/head'
 import Header from '../components/Header'
 import GetStarted from '../components/GetStarted'
@@ -6,6 +7,7 @@ import Partners from '../components/Partners'
 import Blog from '../components/Blog'
 import Footer from '../components/Footer'
 import DnaAndFeatures from '../components/CloverDnaAndFeature'
+import { Team } from '../components/Team'
 import styles from '../styles/Home.module.scss'
 import {
   // MAIN_PARTNERS,
@@ -32,11 +34,9 @@ const Home = () => {
       <Header />
       <main className={styles.main}>
         <GetStarted />
-        {/* <WhatIf /> */}
-        {/* <Partners items={PARTNERS} topItems={MAIN_PARTNERS} /> */}
-        {/* <Blog items={ARTICLES} /> */}
-        {/* <DnaAndFeatures dnas={DNAS} features={FEATURES} clvTokens={CLVTOKENS} /> */}
+        <DnaAndFeatures dnas={DNAS} features={FEATURES} clvTokens={CLVTOKENS} />
         <div className={styles.bottom}></div>
+        <Team />
       </main>
 
       <Footer />

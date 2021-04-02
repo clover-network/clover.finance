@@ -1,0 +1,36 @@
+@import 'variables';
+
+.team {
+  font-family: Optima;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 44px;
+  line-height: 53px;
+  text-align: center;
+  width: 100%;
+  max-width: 1230px;
+}
+
+.header {
+  margin-bottom: 40px;
+}
+
+.people {
+  display: flex;
+  justify-content: space-between;
+}
+
+.name {
+  font-family: Optima;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 32px;
+}
+.desc {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 25px;
+}
