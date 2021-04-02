@@ -40,4 +40,13 @@
     padding-top: 0;
     // padding-bottom: 130px;
   }
+  .bottom {
+    overflow: hidden;
+  }
+}
+
+@media (max-width: $media-xl) {
+  .bottom {
+    overflow: hidden;
+  }
 }
