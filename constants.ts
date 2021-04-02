@@ -16,7 +16,7 @@ const HEADER_MENU = [
       },
       {
         link: 'https://projectclover.medium.com/',
-        icon: 'Medium',
+        label: 'Medium',
       },
     ],
   },
@@ -38,7 +38,7 @@ const HEADER_MENU = [
       },
       {
         link: 'https://github.com/clover-network',
-        icon: 'Github',
+        label: 'Github',
       },
     ],
   },
@@ -56,25 +56,6 @@ const HEADER_MENU = [
     ],
   },
 ]
-
-// const HEADER_MENU = [
-//   {
-//     link: 'https://github.com/clover-network/',
-//     label: 'Github',
-//   },
-//   {
-//     link: 'https://docs.clover.finance/',
-//     label: 'Docs',
-//   },
-//   {
-//     link: 'https://projectclover.medium.com/',
-//     label: 'Blog',
-//   },
-//   {
-//     link: 'https://discord.com/invite/z2egJBsBWx/',
-//     label: 'Discord',
-//   },
-// ];
 
 const SOCIAL_ICONS = {
   twitter: 'twitter',
