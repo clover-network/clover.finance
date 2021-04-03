@@ -81,6 +81,7 @@
     width: 136px;
     height: 44px;
     position: absolute;
+    z-index: 10;
     bottom: 0;
     left: 50%;
     transform: translate(-50%, -80%);
@@ -102,5 +103,25 @@
   }
   .itemList {
     padding: 0 10px;
+  }
+}
+
+@media (max-width: $media-sm), (max-width: $media-xs) {
+  .wrapper {
+    padding-bottom: 50px;
+  }
+
+  .title, .index {
+    font-size: 20px;
+  }
+
+  .desc {
+    font-size: 14px;
+  }
+
+  .item {
+    &:not(:last-child) {
+      padding-bottom: 30px;
+    }
   }
 }

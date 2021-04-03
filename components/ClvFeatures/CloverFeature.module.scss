@@ -144,6 +144,10 @@
     z-index: 10;
     cursor: pointer;
   }
+
+  img {
+    width: 100%;
+  }
 }
 
 .center {
@@ -330,3 +334,27 @@
     }
   }
 }
+
+@media (max-width: $media-xs), (max-width: $media-sm) {
+  .title {
+    font-size: 27px;
+    margin-bottom: 0;
+  }
+
+  .featureContent {
+    padding-top: 30px;
+  }
+
+  .topContentItem {
+    margin-top: 20px;
+    h3 {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+
+    p, button {
+      font-size: 14px;
+    }
+  }
+}
+

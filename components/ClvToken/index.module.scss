@@ -111,7 +111,7 @@
     width: 80%;
 
     & > div {
-      margin: 0 20px;
+      //margin: 0 20px;
       justify-content: center;
     }
   }
@@ -138,6 +138,37 @@
     button {
       position: relative;
       margin-top: 30px;
+    }
+  }
+}
+
+@media (max-width: $media-xs), (max-width: $media-sm) {
+  .clvToken {
+    padding: 0;
+  }
+
+  .clvTokenTitle {
+    font-size: 27px;
+    margin-bottom: 20px;
+  }
+
+  .clvTokenIcon {
+    width: 35px;
+    height: 25px;
+  }
+
+  .clvTokenItem {
+    width: 100%;
+    height: fit-content;
+    padding: 20px;
+
+    div {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+
+    p {
+      font-size: 14px;
     }
   }
 }
