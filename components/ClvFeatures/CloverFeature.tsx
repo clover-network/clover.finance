@@ -2,12 +2,6 @@ import React from 'react'
 import cn from 'classnames'
 import { useInView } from 'react-intersection-observer'
 import styles from './CloverFeature.module.scss'
-import Fees from '../../public/svg/fees.svg'
-import Governance from '../../public/svg/governance.svg'
-import Validation from '../../public/svg/validation.svg'
-import Treasury from '../../public/svg/treasury.svg'
-import Nomination from '../../public/svg/nomination.svg'
-import Deployment from '../../public/svg/deployment.svg'
 
 const Features = ({
   features = [],
