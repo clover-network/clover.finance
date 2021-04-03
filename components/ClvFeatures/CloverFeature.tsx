@@ -58,7 +58,7 @@ const Features = ({
                     className={cn(
                       styles.topContentItem,
                       styles.black,
-                      feature.name
+                      styles[feature.name]
                     )}
                     key={index}
                   >

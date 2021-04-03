@@ -310,3 +310,23 @@
     }
   }
 }
+
+@media (max-width: $media-md) {
+  .title {
+    span {
+      width: 100%;
+      display: block;
+      text-align: center;
+      &:nth-of-type(1) {
+        line-height: 36px;
+        font-size: 30px;
+
+      }
+      &:nth-of-type(2) {
+        line-height: 26px;
+        font-size: 20px;
+        padding: 0;
+      }
+    }
+  }
+}
