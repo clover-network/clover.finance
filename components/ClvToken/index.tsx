@@ -34,7 +34,6 @@ const ClvToken = ({
   }
   return (
     <div className={styles.wrapper}>
-      <img className={styles.line} src="/images/line.jpg" alt="" />
       <div className={styles.bottomWrapper}>
         <div className={styles.clvToken}>
           <h3 className={styles.clvTokenTitle}>
