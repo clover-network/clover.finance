@@ -46,6 +46,12 @@
   visibility: visible;
 }
 
+.btn {
+  position: relative;
+  z-index: 10;
+  margin-top: 44px;
+}
+
 @media (min-width: $media-lg) {
   .wrapper {
     justify-content: flex-start;
@@ -66,15 +72,12 @@
     z-index: -1;
   }
 
-  .btn {
-    margin-top: 44px;
-  }
   .textOuter {
     margin-top: 84px;
-    // max-width: 609px;
+    max-width: 777px;
   }
   .textInner {
-    font-size: 50px;
+    font-size: 60px;
     line-height: 69px;
     &.green {
       font-size: 40px;

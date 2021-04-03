@@ -10,12 +10,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #fff;
+  background: #000;
   color: inherit;
   opacity: 0;
   visibility: hidden;
   transition: all 0.2s;
   height: calc(100vh - 72px);
+  font-family: Alata;
 }
 
 .navActive {
@@ -35,13 +36,12 @@
 
 .list {
   display: flex;
-  font-family: Roboto, sans-serif;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   height: 100%;
   min-height: 300px;
-  max-height: 544px;
+  // max-height: 544px;
 }
 
 .item {
@@ -61,11 +61,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Roboto, sans-serif;
   }
 
   .links {
-    color: rgba(#000, 0.5);
+    color: rgba(#fff, 0.5);
+
     li a {
       display: block;
       white-space: nowrap;

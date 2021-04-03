@@ -38,10 +38,13 @@
 .topVector2 {
   position: absolute;
   bottom: -110px;
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
 }
 
 .title {
+  font-family: Alata;
   font-style: normal;
   font-weight: bold;
   font-size: 52px;
@@ -56,7 +59,6 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  padding: 96px 0 187px;
 }
 .contentBox {
   display: flex;
@@ -69,7 +71,6 @@
 .topContentItem {
   max-width: 474px;
   width: 80vw;
-  height: 332px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -78,12 +79,13 @@
   font-family: Roboto, sans-serif;
   text-align: center;
   position: relative;
-
+  padding-bottom: 40px;
   h3 {
     font-weight: bold;
     font-size: 30px;
     line-height: 41px;
     margin-bottom: 28px;
+    font-family: Alata;
   }
 
   p {
@@ -92,11 +94,15 @@
     color: rgba(#fff, 0.8);
     font-weight: 300;
     font-family: Roboto, sans-serif;
+    margin-bottom: 30px;
   }
 
   button {
     border: 2px solid #41f69f;
     border-radius: 8px;
+    line-height: 50px;
+    font-family: Roboto;
+    font-weight: 500;
   }
 
   &:last-child {
@@ -208,17 +214,16 @@
   }
 }
 
+@media (min-width: $media-md) {
+  .topContentItem {
+    height: 332px;
+  }
+}
+
 @media (max-width: $media-xl), (min-width: $media-lg) {
   .topContent,
   .featureContent,
   .clvToken {
     width: 80%;
-  }
-
-  .topContentItem {
-    button {
-      position: relative;
-      margin-top: 30px;
-    }
   }
 }
