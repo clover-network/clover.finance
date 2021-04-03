@@ -346,24 +346,38 @@ const DNAS = [
 
 const FEATURES = [
   {
+    index: 1,
     title: 'EVM Compatibility',
     content: 'Clover is a powerful smart contract platform that enables Ethereum developers and projects to migrate their contracts onto Polkadot. By minimizing the changes required to run existing Solidity smart contracts on the new network, Ethereum projects can simply replicate their dApp and deploy it to Clover using MetaMask, Truffle, Remix, and other familiar developer tools.',
     btnText: 'Start building on Clover',
     link: 'http://docs.clover.finance/'
   },
   {
+    index: 2,
     title: 'Gas-fee Distribution',
     content: 'Clover incentivizes dApp builders by automatically sharing a percentage of the transaction fee’s with them. The redistribution will ensure a vibrant developer community and foster an innovative DeFi ecosystem on Sakura and Clover.',
     btnText: 'Learn more',
     link: 'https://dropsearn.com/events/clover-developer-incentive-program/'
   },
   {
+    index: 3,
+    title: 'Identity based fee schedule',
+    content: 'Clover’s Dynamic Fee Schedule is a brand-ew gas calculation method which allows Clover users to get gas discounts proportionally to the frequency of their network activity. Users with less interaction pay more gas, and users with more interactions will less gas over time according to a usage curve. '
+  },
+  {
+    index: 4,
+    img: '/fee.svg',
+    name: 'center'
+  },
+  {
+    index: 5,
     title: 'Cross-chain Interactions',
     content: 'Clover comes with various open-source wallet implementations for interacting with cross-chain dApps without navigating between Polkadot based and Ethereum based networks. Users can seamlessly send, receive, wrap and unwrap cross-chain assets across Ethereum and Polkadot trustlessly.',
     btnText: 'Try Clover Extension Wallet',
     link: 'https://chrome.google.com/webstore/detail/clover-wallet/nhnkbkgjikgcigadomkphalanndcapjk'
   },
   {
+    index: 6,
     title: 'Cross-chain Explorer',
     content: 'Clover offers seamless multi-chain indexing across Bitcoin, Ethereum, Binance Smart Chain, and Polkadot. Users can search through blocks, transactions, and accounts in all-in one streamlined environment.',
     btnText: 'Try Clover Explorer (Beta)',

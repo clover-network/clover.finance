@@ -5,13 +5,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 100px;
+  position: relative;
+  z-index: 99;
 }
 
 .item {
   display: flex;
   align-items: flex-start;
   text-align: left;
-  margin-bottom: 58px;
+  &:not(:last-child) {
+    padding-bottom: 58px;
+  }
 }
 
 .index {
@@ -37,35 +42,32 @@
   font-weight: 300;
   font-size: 18px;
   line-height: 25px;
-  color: rgba(#1d2d31, 0.6);
+  color: #a0bfc7;
 }
 
 .launch {
-  width: 318px;
-  height: 614px;
-  background: url('/public//images/launch.png') no-repeat center/cover;
   position: relative;
-  margin-right: 216px;
-  margin-bottom: 100px;
-  &::before,
-  &::after {
-    content: '';
+  margin-right: 223px;
+  .launchPic {
+    width: 80vw;
+    max-width: 370px;
+    position: relative;
+  }
+  .ball {
+    width: 325px;
+    height: 325px;
     position: absolute;
-    border-radius: 50%;
-    background-color: $color-logo;
-    z-index: -1;
-  }
-  &::before {
-    width: 216px;
-    height: 216px;
-    top: 77px;
-    right: -81px;
-  }
-  &::after {
-    width: 278px;
-    height: 278px;
-    left: -135px;
-    bottom: 40px;
+    z-index: 0;
+    &.left {
+      top: 77px;
+      right: 0;
+      transform: translateX(40%);
+    }
+    &.right {
+      left: 0;
+      transform: translateX(-40%);
+      bottom: 75px;
+    }
   }
 
   .download {
@@ -79,9 +81,10 @@
     width: 136px;
     height: 44px;
     position: absolute;
-    bottom: -44px;
+    z-index: 10;
+    bottom: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -80%);
     cursor: pointer;
   }
   .iconArrow {
@@ -89,13 +92,6 @@
   }
 }
 
-@media (min-width: $media-lg) {
-  .item {
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-}
 @media (max-width: $media-lg) {
   .wrapper {
     padding-top: 40px;
@@ -107,5 +103,25 @@
   }
   .itemList {
     padding: 0 10px;
+  }
+}
+
+@media (max-width: $media-sm), (max-width: $media-xs) {
+  .wrapper {
+    padding-bottom: 50px;
+  }
+
+  .title, .index {
+    font-size: 20px;
+  }
+
+  .desc {
+    font-size: 14px;
+  }
+
+  .item {
+    &:not(:last-child) {
+      padding-bottom: 30px;
+    }
   }
 }

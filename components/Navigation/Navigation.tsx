@@ -26,9 +26,9 @@ const Navigation = ({
             <ShortArrow className={styles.itemHover} />
           </div>
           <ul className={styles.links}>
-            {children.map(({ label, link }) => {
+            {children.map(({ label, link }, index) => {
               return (
-                <li key={link}>
+                <li key={index}>
                   <a className={styles.link} href={link} target="_blank">
                     {label}
                   </a>
