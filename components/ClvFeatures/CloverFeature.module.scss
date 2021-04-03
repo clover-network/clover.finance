@@ -57,7 +57,7 @@
 
 .title {
   font-style: normal;
-  font-weight: bold;
+  font-weight: 400;
   font-size: 52px;
   text-align: center;
   color: #ffffff;
@@ -181,7 +181,7 @@
     width: 100%;
     height: 100%;
     background: url('../../public/images/feature-bg.png') no-repeat;
-    background-size: 130% 100%;
+    background-size: 120% 100%;
     background-position: center;
   }
 }
@@ -288,6 +288,23 @@
     button {
       position: relative;
       margin-top: 30px;
+    }
+  }
+
+  .title {
+    span {
+      display: block;
+      text-align: center;
+      &:nth-of-type(1) {
+        line-height: 36px;
+        font-size: 30px;
+
+      }
+      &:nth-of-type(2) {
+        line-height: 34px;
+        font-size: 24px;
+        padding: 0;
+      }
     }
   }
 }
