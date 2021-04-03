@@ -38,7 +38,7 @@ const GetStarted = () => {
           >
             Start building
           </Button>
-          <div className={styles.textOuter}>
+          <div className={styles.textOuter} style={{ maxWidth: 'none' }}>
             <p className={styles.textInner}>
               Navigate and transact with major networks
             </p>
