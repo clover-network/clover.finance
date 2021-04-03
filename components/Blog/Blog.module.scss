@@ -149,3 +149,13 @@
     width: 25%;
   }
 }
+
+@media (max-width: $media-xs), (max-width: $media-sm) {
+  .wrapper {
+    padding: 40px;
+  }
+
+  .title {
+    font-size: 27px !important;
+  }
+}

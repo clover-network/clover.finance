@@ -55,3 +55,18 @@
     flex-direction: row;
   }
 }
+
+@media (max-width: $media-xs), (max-width: $media-sm) {
+  .team {
+    font-size: 27px !important;
+    margin-bottom: 0;
+  }
+
+  .name {
+    font-size: 20px;
+  }
+
+  .desc {
+    font-size: 14px;
+  }
+}

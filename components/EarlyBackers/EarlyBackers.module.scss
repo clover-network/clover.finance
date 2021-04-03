@@ -79,3 +79,11 @@
   }
 
 }
+
+@media (max-width: $media-xs), (max-width: $media-sm) {
+  .wrapper {
+    h3 {
+      font-size: 27px;
+    }
+  }
+}

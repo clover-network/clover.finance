@@ -37,3 +37,13 @@
     height: 100px;
   }
 }
+
+@media (max-width: $media-xs), (max-width: $media-sm) {
+  .root {
+    padding: 30px 0;
+  }
+  .header {
+    font-size: 27px !important;
+    margin-bottom: 0;
+  }
+}

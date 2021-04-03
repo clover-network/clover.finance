@@ -239,3 +239,21 @@
     justify-content: center;
   }
 }
+@media (max-width: $media-xs), (max-width: $media-sm) {
+  .title {
+    font-size: 27px;
+    margin-bottom: 0;
+  }
+
+  .topContentItem {
+    h3 {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+
+    p, button {
+      font-size: 14px;
+    }
+  }
+}
+
