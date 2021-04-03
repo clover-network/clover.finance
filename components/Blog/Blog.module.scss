@@ -1,39 +1,18 @@
 @import 'styles/variables';
 
 .wrapper {
-  padding: 80px 20px;
+  padding: 0 20px;
+  margin: 80px auto 0;
   width: 100%;
-  background: #000000;
-  position: relative;
-
-  &::before {
-    content: url("../../public/images/blog-bg.png");
-    position: absolute;
-    bottom: 0;
-    left: -19px;
-    z-index: 0;
-  }
-
-  &::after {
-    content: url("../../public/images/blog-bg.png");
-    position: absolute;
-    top: 0;
-    right: -19px;
-    z-index: 0;
-  }
-}
-
-.container {
-  max-width: 1230px;
-  margin: 0 auto;
+  max-width: 1220px;
 }
 
 .title {
-  font-weight: 400;
+  font-weight: bold;
   font-size: 44px !important;
   line-height: 53px;
   text-align: center;
-  color: #ffffff;
+  color: #000000;
 }
 
 .list {
@@ -47,8 +26,6 @@
 .item {
   margin: 20px 0 0 0;
   width: 100%;
-  background: #000000;
-  z-index: 1;
 }
 
 .link {
@@ -89,7 +66,6 @@
   font-style: normal;
   font-weight: 300;
   font-size: 18px;
-  color: #41F69F;
 }
 
 .hidden {
@@ -126,7 +102,7 @@
 
 @media (min-width: $media-lg) {
   .wrapper {
-    //margin-top: 100px;
+    margin-top: 100px;
   }
 
   .title {
