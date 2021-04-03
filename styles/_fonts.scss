@@ -1,4 +1,20 @@
 @font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Light.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alata';
+  src: url('/fonts/Alata-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'CircularStd';
   src: local('CircularStd-Black'),
     url('/fonts/CircularStd-Black.eot?#iefix') format('embedded-opentype'),
@@ -64,6 +80,10 @@
 
 .font-Optima {
   font-family: Optima;
+}
+
+.font-Alata {
+  font-family: Alata;
 }
 
 .font-Roboto {

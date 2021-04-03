@@ -1,7 +1,7 @@
-import React, { MouseEventHandler } from 'react';
-import cn from 'classnames';
-import styles from './Button.module.scss';
-import Arrow from '../../public/svg/arrow.svg';
+import React, { MouseEventHandler } from 'react'
+import cn from 'classnames'
+import styles from './Button.module.scss'
+import Arrow from '../../public/svg/arrow.svg'
 
 const Button = ({
   children,
@@ -11,15 +11,15 @@ const Button = ({
   disabled,
   ...restProps
 }: {
-  children?: React.ReactNode;
-  type?: 'submit' | 'button' | 'reset';
-  className?: string;
-  href?: string;
-  disabled?: boolean;
-  id?: string;
-  onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
+  children?: React.ReactNode
+  type?: 'submit' | 'button' | 'reset'
+  className?: string
+  href?: string
+  disabled?: boolean
+  id?: string
+  onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>
 }) => {
-  const Component = href ? 'a' : 'button';
+  const Component = href ? 'a' : 'button'
   return (
     <Component
       className={cn(className, styles.btn)}
@@ -29,11 +29,11 @@ const Button = ({
       {...restProps}
     >
       {children}
-      <i className={styles.icon}>
+      {/* <i className={styles.icon}>
         <Arrow />
-      </i>
+      </i> */}
     </Component>
-  );
-};
+  )
+}
 
-export default Button;
+export default Button

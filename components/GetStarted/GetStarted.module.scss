@@ -9,6 +9,7 @@
   width: 100%;
   text-align: center;
   padding-top: 20px;
+  background: url('/images/sky.png') no-repeat center/cover;
 }
 
 .animation {
@@ -17,12 +18,23 @@
 
 .textOuter {
   margin: 50px 0 0 0;
+  position: relative;
+  z-index: 10;
 }
 
 .textInner {
   font-weight: bold;
   font-size: 27px;
   text-align: center;
+  font-family: Alata;
+  font-style: normal;
+  font-weight: normal;
+  text-align: center;
+  text-transform: capitalize;
+
+  &.green {
+    color: $color-hover;
+  }
 }
 
 .hidden {
@@ -34,6 +46,12 @@
 .visible {
   opacity: 1;
   visibility: visible;
+}
+
+.btn {
+  position: relative;
+  z-index: 10;
+  margin-top: 44px;
 }
 
 @media (min-width: $media-lg) {
@@ -56,28 +74,28 @@
     z-index: -1;
   }
 
-  .btn {
-    margin: 282px 0 0 0;
-  }
   .textOuter {
-    margin-top: 115px;
-    max-width: 609px;
+    margin-top: 84px;
+    max-width: 777px;
   }
   .textInner {
-    font-size: 44px;
-    line-height: 53px;
+    font-size: 60px;
+    line-height: 69px;
+    &.green {
+      font-size: 40px;
+    }
   }
 }
 
-@media (max-width: $media-xl) {
-  .wrapper {
-    overflow: hidden;
-  }
-}
+// @media (max-width: $media-xl) {
+//   .wrapper {
+//     overflow: hidden;
+//   }
+// }
 
-@media (min-width: $media-md) {
-  .wrapper {
-    overflow: hidden;
-    height: 100vh;
-  }
-}
+// @media (min-width: $media-md) {
+//   .wrapper {
+//     overflow: hidden;
+//     height: 100vh;
+//   }
+// }

@@ -1,0 +1,360 @@
+@import 'styles/variables';
+
+.wrapper {
+  width: 100%;
+  position: relative;
+  background-color: #121c24;
+  // &::before {
+  //   content: '';
+  //   position: absolute;
+  //   top: 50%;
+  //   left: 50%;
+  //   transform: translate(-50%, -63%);
+  //   width: 100%;
+  //   height: 100%;
+  //   background-image: url("../../public/images/feature-bg.png");
+  //   background-repeat: no-repeat;
+  //   background-size: 130% 100%;
+  //   background-position: center;
+  // }
+}
+
+.line {
+  width: 100%;
+  position: absolute;
+  top: -42px;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.85s opacity, 0.85s visibility;
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.topWrapper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.topVector1 {
+  position: absolute;
+  bottom: -85px;
+  width: 100%;
+}
+.topVector2 {
+  position: absolute;
+  bottom: -110px;
+  width: 100%;
+}
+
+.title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 52px;
+  text-align: center;
+  color: #ffffff;
+  justify-content: center !important;
+  z-index: 1;
+  span {
+    display: block;
+    text-align: center;
+    &:nth-of-type(1) {
+      color: #27a577;
+      line-height: 69px;
+      font-size: 50px;
+    }
+    &:nth-of-type(2) {
+      line-height: 55px;
+      font-size: 40px;
+      padding: 0 200px;
+    }
+  }
+}
+
+.topContent {
+  width: 1168px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 96px 0 187px;
+
+  & > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+.topContentItem {
+  width: 500px;
+  height: 320px;
+  //display: flex;
+  //flex-direction: column;
+  //align-items: center;
+  color: #fff;
+  font-family: Roboto, sans-serif;
+  text-align: left;
+  margin-top: 70px;
+  position: relative;
+
+  h3 {
+    font-weight: bold;
+    font-size: 38px;
+    line-height: 46px;
+    margin-bottom: 30px;
+    width: 100%;
+    text-align: left;
+  }
+
+  p {
+    font-size: 18px;
+    opacity: 0.8;
+    line-height: 140%;
+    font-weight: 300;
+    font-family: Roboto, sans-serif;
+  }
+
+  a {
+    display: inline-block;
+    margin-top: 30px;
+    color: #27a577;
+    border-bottom: 1px solid #27a577;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  button {
+    height: 56px;
+    width: 264px;
+    color: #053c4b;
+    background: #ffffff;
+    border: 2px solid #ffffff;
+    box-sizing: border-box;
+    border-radius: 40px;
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+    cursor: pointer;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.center {
+  text-align: center !important;
+}
+
+.featureContent {
+  max-width: 1168px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 96px 0 50px;
+
+  & > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+.featureWrapper {
+  width: 100%;
+  position: relative;
+  // &::before {
+  //   content: '';
+  //   position: absolute;
+  //   top: 50%;
+  //   left: 0;
+  //   transform: translateY(-49%);
+  //   z-index: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   background: url('../../public/images/feature-bottom-bg.png') no-repeat;
+  //   background-size: 120% 30%;
+  //   background-position: center 100%;
+  // }
+}
+.bottomWrapper {
+  background: linear-gradient(98.6deg, #27a577 0.21%, #0080b9 100%),
+    linear-gradient(0deg, #27a577, #27a577),
+    linear-gradient(210.66deg, #02764c 22.56%, #4ef3b7 81.39%);
+  background-size: cover;
+  width: 100%;
+}
+
+.black {
+  color: #ffffff !important;
+}
+
+.gray {
+  color: #a0bfc7 !important;
+}
+
+.clvToken {
+  margin: 0 auto;
+  padding: 70px 0;
+  max-width: 950px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.clvTokenIcon {
+  width: 88px;
+  height: 88px;
+  margin-bottom: 25px;
+}
+
+.clvTokenTitle {
+  font-weight: bold;
+  font-size: 44px;
+  line-height: 53px;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 70px;
+}
+
+.clvTokenList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.clvTokenItem {
+  width: 250px;
+  height: 230px;
+  //border: 1px solid red;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &:nth-child(2),
+  &:nth-child(4) {
+    width: 300px;
+  }
+
+  div {
+    margin-top: 22px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 32px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 140%;
+    font-family: Roboto, sans-serif;
+    color: #ffffff;
+  }
+}
+
+@media (max-width: $media-xl) {
+  .wrapper {
+    // overflow: hidden;
+  }
+
+  .topContent,
+  .featureContent,
+  .clvToken {
+    width: 80%;
+
+    & > div {
+      justify-content: center;
+    }
+  }
+
+  .topContentItem {
+    height: fit-content;
+    text-align: center;
+
+    h3 {
+      text-align: center;
+    }
+
+    button {
+      position: relative;
+      margin-top: 30px;
+    }
+  }
+
+  .title {
+    span {
+      width: 100%;
+      display: block;
+      text-align: center;
+      &:nth-of-type(1) {
+        line-height: 46px;
+        font-size: 40px;
+      }
+      &:nth-of-type(2) {
+        line-height: 36px;
+        font-size: 30px;
+        padding: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: $media-md) {
+  .title {
+    span {
+      width: 100%;
+      display: block;
+      text-align: center;
+      &:nth-of-type(1) {
+        line-height: 36px;
+        font-size: 30px;
+
+      }
+      &:nth-of-type(2) {
+        line-height: 26px;
+        font-size: 20px;
+        padding: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: $media-xs), (max-width: $media-sm) {
+  .title {
+    font-size: 27px;
+    margin-bottom: 0;
+  }
+
+  .featureContent {
+    padding-top: 30px;
+  }
+
+  .topContentItem {
+    margin-top: 20px;
+    h3 {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+
+    p, button {
+      font-size: 14px;
+    }
+  }
+}
+

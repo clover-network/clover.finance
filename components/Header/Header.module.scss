@@ -21,8 +21,9 @@
   align-items: center;
   width: 100%;
   padding: 20px 20px 15px 20px;
-  background-color: #fff;
+  background-color: #000;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  color: rgba(#fff, 0.75);
   z-index: $zindex-fixed;
 }
 
@@ -41,7 +42,7 @@
   justify-content: center;
   align-items: center;
   fill: $color-logo;
-  color: $color-logo;
+  color: #fff;
   &:hover {
     .logoImage {
       animation: logo-rotate 1s;
@@ -75,10 +76,11 @@
 @media (min-width: $media-lg) {
   .wrapper {
     border-bottom: none;
-    background: transparent;
+    background-color: rgba(#000, 0.4);
+    // background: transparent;
     z-index: 111;
     &.fixed {
-      background: #fff;
+      background-color: #000;
     }
   }
 

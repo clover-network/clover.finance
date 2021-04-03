@@ -1,7 +1,7 @@
 import React from 'react'
 import Arrow from '../../public/svg/arrow_fill.svg'
 import styles from './Introduction.module.scss'
-
+import cn from 'classnames'
 const DESC_LIST = [
   {
     title: 'Multi-chain connected wallet',
@@ -24,8 +24,27 @@ export function Introduction() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.launch}>
-        <img src="/images/extension_screen.png" alt="Clover browser extension"/>
-        <a className={styles.download} href="https://chrome.google.com/webstore/detail/clover-wallet/nhnkbkgjikgcigadomkphalanndcapjk" target="_blank" rel="noreferrer noopener">
+        <img
+          className={cn(styles.ball, styles.left)}
+          src="/images/ball.jpg"
+          alt="Clover browser extension"
+        />
+        <img
+          className={cn(styles.ball, styles.right)}
+          src="/images/ball.jpg"
+          alt="Clover browser extension"
+        />
+        <img
+          className={styles.launchPic}
+          src="/images/launch.jpg"
+          alt="Clover browser extension"
+        />
+        <a
+          className={styles.download}
+          href="https://chrome.google.com/webstore/detail/clover-wallet/nhnkbkgjikgcigadomkphalanndcapjk"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
           <Arrow className={styles.iconArrow} />
           Download
         </a>
