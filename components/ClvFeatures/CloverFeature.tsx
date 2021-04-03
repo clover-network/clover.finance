@@ -39,11 +39,15 @@ const Features = ({
         >
           <div className={styles.featureContent}>
             <div className={cn(styles.title, styles.black)}>
-              <span>What if...?</span>
-              <span>
+              <div className={cn({
+                [`${styles.visible}`]: inView,
+              })}>
+                <span>What if...?</span>
+                <span>
                 You would pay lower gas fees if you are a frequent user of a
                 DeFi protocol?
               </span>
+              </div>
             </div>
             {!!inView && (
               <div>

@@ -354,7 +354,7 @@ const FEATURES = [
   },
   {
     index: 2,
-    title: 'Gas-fee Distribution',
+    title: 'Gas-fee Redistribution',
     content: 'Clover incentivizes dApp builders by automatically sharing a percentage of the transaction fee’s with them. The redistribution will ensure a vibrant developer community and foster an innovative DeFi ecosystem on Sakura and Clover.',
     btnText: 'Learn more',
     link: 'https://dropsearn.com/events/clover-developer-incentive-program/'
