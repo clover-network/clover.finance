@@ -1,13 +1,22 @@
-@import "styles/variables";
+@import 'styles/variables';
 
 .wrapper {
   width: 100%;
+  position: relative;
+}
+
+.line {
+  width: 100%;
+  position: absolute;
+  top: -42px;
+  left: 0;
+  transform: translateY(-50%);
 }
 
 .hidden {
   opacity: 0;
   visibility: hidden;
-  transition: .85s opacity, .85s visibility;
+  transition: 0.85s opacity, 0.85s visibility;
 }
 
 .visible {
@@ -17,9 +26,6 @@
 
 .topWrapper {
   width: 100%;
-  background: linear-gradient(98.6deg, #27A577 0.21%, #0080B9 100%),
-  linear-gradient(0deg, #27A577, #27A577),
-  linear-gradient(210.66deg, #02764C 22.56%, #4EF3B7 81.39%);
   position: relative;
   overflow: hidden;
 }
@@ -28,7 +34,6 @@
   position: absolute;
   bottom: -85px;
   width: 100%;
-
 }
 .topVector2 {
   position: absolute;
@@ -42,7 +47,7 @@
   font-size: 52px;
   line-height: 63px;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .topContent {
@@ -88,8 +93,8 @@
 
   a {
     margin-top: 30px;
-    color: #27A577;
-    border-bottom: 1px solid #27A577;
+    color: #27a577;
+    border-bottom: 1px solid #27a577;
     cursor: pointer;
     font-weight: bold;
   }
@@ -97,9 +102,9 @@
   button {
     height: 56px;
     width: 264px;
-    color: #053C4B;
-    background: #FFFFFF;
-    border: 2px solid #FFFFFF;
+    color: #053c4b;
+    background: #ffffff;
+    border: 2px solid #ffffff;
     box-sizing: border-box;
     border-radius: 40px;
     position: absolute;
@@ -130,9 +135,9 @@
   background-size: cover;
 }
 .bottomWrapper {
-  background: linear-gradient(98.6deg, #27A577 0.21%, #0080B9 100%),
-  linear-gradient(0deg, #27A577, #27A577),
-  linear-gradient(210.66deg, #02764C 22.56%, #4EF3B7 81.39%);
+  background: linear-gradient(98.6deg, #27a577 0.21%, #0080b9 100%),
+    linear-gradient(0deg, #27a577, #27a577),
+    linear-gradient(210.66deg, #02764c 22.56%, #4ef3b7 81.39%);
   background-size: cover;
   width: 100%;
 }
@@ -142,7 +147,7 @@
 }
 
 .gray {
-  color: #1D2D31 !important;
+  color: #1d2d31 !important;
 }
 
 .clvToken {
@@ -185,7 +190,8 @@
   flex-direction: column;
   align-items: center;
 
-  &:nth-child(2), &:nth-child(4) {
+  &:nth-child(2),
+  &:nth-child(4) {
     width: 300px;
   }
 
@@ -211,10 +217,12 @@
 
 @media (max-width: $media-xl), (min-width: $media-lg) {
   .wrapper {
-    overflow: hidden;
+    // overflow: hidden;
   }
 
-  .topContent, .featureContent, .clvToken {
+  .topContent,
+  .featureContent,
+  .clvToken {
     width: 80%;
 
     & > div {
@@ -231,4 +239,3 @@
     }
   }
 }
-
