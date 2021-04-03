@@ -3,6 +3,7 @@
 .social {
   width: 100%;
   max-width: 235px;
+
 }
 
 .list {
@@ -13,7 +14,7 @@
 }
 
 .link {
-  fill: $color-link;
+  fill: rgba($color-white, .2);
 
   &:hover {
     fill: $color-text;

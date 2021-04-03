@@ -1,5 +1,10 @@
 @import 'styles/variables';
 
+.content{
+  background: url('../../public/images/team.png');
+  width: 100%;
+  color: $color-white;
+}
 .team {
   padding: 50px 0;
   font-style: normal;
@@ -10,6 +15,7 @@
   width: 100%;
   max-width: 1030px;
   margin: 0 auto;
+
 }
 
 .header {

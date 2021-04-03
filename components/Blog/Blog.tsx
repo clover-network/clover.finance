@@ -44,17 +44,19 @@ const Blog = ({
   if (data.length) {
     return (
       <div className={cn(styles.wrapper, className)}>
-          <div className={cn(styles.container)}>
-              <InView threshold={0.5} triggerOnce>
-                  {({ inView, ref}) => (
-                      <h2 ref={ref}
-                          className={cn(styles.title, styles.hidden, {[`${styles.visible}`]: inView,})}>
-                          Blog
-                      </h2>
-                  )}
-              </InView>
-              <ul className={styles.list}>{data}</ul>
-          </div>
+        <InView threshold={0.5} triggerOnce>
+          {({ inView, ref}) => (
+            <h2
+              ref={ref}
+              className={cn(styles.title, styles.hidden, {
+                [`${styles.visible}`]: inView,
+              })}
+            >
+              Blog
+            </h2>
+          )}
+        </InView>
+        <ul className={styles.list}>{data}</ul>
       </div>
     );
   }
