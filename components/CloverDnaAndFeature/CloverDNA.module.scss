@@ -227,3 +227,9 @@
     width: 80%;
   }
 }
+
+@media (max-width: $media-xl) {
+  .contentBox {
+    justify-content: center;
+  }
+}

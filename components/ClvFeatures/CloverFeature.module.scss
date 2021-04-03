@@ -284,6 +284,11 @@
 
   .topContentItem {
     height: fit-content;
+    text-align: center;
+
+    h3 {
+      text-align: center;
+    }
 
     button {
       position: relative;
@@ -293,16 +298,17 @@
 
   .title {
     span {
+      width: 100%;
       display: block;
       text-align: center;
       &:nth-of-type(1) {
-        line-height: 36px;
-        font-size: 30px;
+        line-height: 46px;
+        font-size: 40px;
 
       }
       &:nth-of-type(2) {
-        line-height: 34px;
-        font-size: 24px;
+        line-height: 36px;
+        font-size: 30px;
         padding: 0;
       }
     }
