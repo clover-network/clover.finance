@@ -75,7 +75,7 @@ const Features = ({
           </div>
         </div>
       </div>
-      <img src="/images/background-clip.jpg" alt="" width="100%" />
+      <img src="/images/background-clip.png" alt="" width="100%" />
     </>
   )
 }

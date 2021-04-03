@@ -86,6 +86,7 @@ const DnaAndFeatures = ({
           )}
         </div>
       </div>
+      <img src="/images/line2.png" className={styles.line2} alt=""/>
     </div>
   )
 }
