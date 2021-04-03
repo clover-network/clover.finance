@@ -53,7 +53,7 @@ const Features = ({
             <div>
               {features.map((feature, index) => (
                 <div
-                  className={cn(styles.topContentItem, styles.black, feature.name)}
+                  className={cn(styles.topContentItem, styles.black, styles[feature.name])}
                   key={index}
                 >
                   <h3>{feature.title}</h3>
