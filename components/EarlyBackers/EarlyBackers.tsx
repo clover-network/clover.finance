@@ -31,7 +31,7 @@ const EarlyBackers = ({
                     )
                     }
                     <div>
-                        <div style={{ transform: `translateX(${-200 * imgIndex}px)` }}>
+                        <div style={{ transform: `translateX(${-125 * imgIndex}px)` }}>
                             <img className={styles.image} width={103} src="/backers/bk_polychain.png" alt=""/>
                             <img className={styles.image} width={226} src="/backers/bk_alameda.png" alt=""/>
                             <img className={styles.image} width={168} src="/backers/bk_hypersphere.png" alt=""/>
@@ -45,14 +45,9 @@ const EarlyBackers = ({
                             <img className={styles.image} width={113} src="/backers/bk_blocksynk.png" alt=""/>
                         </div>
                     </div>
-                    {imgIndex < 3 ? (
-                        <ArrowRight className={styles.arrowRight} onClick={() => {
-                            setImgIndex(imgIndex < 3 ? ++imgIndex : 3)
-                        }} />
-                    ) : (
-                        <ArrowRightDisabled />
-                    )
-                    }
+                    <ArrowRight className={styles.arrowRight} onClick={() => {
+                        setImgIndex(imgIndex < (Math.ceil((1921 - window.innerWidth) / 125) - 1) ? ++imgIndex : (Math.ceil((1921 - window.innerWidth) / 125) - 1))
+                    }} />
                 </div>
             </div>
         </div>
