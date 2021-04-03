@@ -43,9 +43,12 @@ const Features = ({
         })}
       >
         <div className={styles.featureContent}>
-          <span className={cn(styles.title, styles.black)}>
-            Clover Features
-          </span>
+          <div className={cn(styles.title, styles.black)}>
+            <span>
+              What if...?
+            </span>
+            <span>You would pay lower gas fees if you are a frequent user of a DeFi protocol?</span>
+          </div>
           {!!inView && (
             <div>
               {features.map((feature) => (
