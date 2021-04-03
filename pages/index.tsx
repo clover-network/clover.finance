@@ -29,7 +29,6 @@ const Home = () => {
                 <DnaAndFeatures dnas={DNAS}/>
                 <Features features={FEATURES}/>
                 <ClvToken clvTokens={CLVTOKENS}/>
-
             </main>
             <div className={styles.bottom}>
                 <EarlyBackers/>
