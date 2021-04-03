@@ -5,14 +5,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 100px;
+  padding-bottom: 100px;
 }
 
 .item {
   display: flex;
   align-items: flex-start;
   text-align: left;
-  margin-bottom: 58px;
+  padding-bottom: 58px;
 }
 
 .index {
@@ -77,9 +77,9 @@
     width: 136px;
     height: 44px;
     position: absolute;
-    bottom: -44px;
+    bottom: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -80%);
     cursor: pointer;
   }
   .iconArrow {
