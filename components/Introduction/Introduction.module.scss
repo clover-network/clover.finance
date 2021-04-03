@@ -12,7 +12,9 @@
   display: flex;
   align-items: flex-start;
   text-align: left;
-  padding-bottom: 58px;
+  &:not(:last-child) {
+    padding-bottom: 58px;
+  }
 }
 
 .index {
@@ -87,13 +89,6 @@
   }
 }
 
-@media (min-width: $media-md) {
-  .item {
-    &:last-child {
-      padding-bottom: 0;
-    }
-  }
-}
 @media (max-width: $media-lg) {
   .wrapper {
     padding-top: 40px;
