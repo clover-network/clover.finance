@@ -48,10 +48,11 @@ const Navigation = ({
     >
       <div className={styles.container}>
         {!!data.length && <ul className={styles.list}>{data}</ul>}
-        <Social className={styles.social} items={SOCIALS} />
       </div>
-      <div className={styles.footer}>
-        &copy;2021&nbsp;CloverProject. All Rights Reserved.
+        <Social className={styles.social} items={SOCIALS} />
+
+        <div className={styles.footer}>
+          &copy;2021&nbsp;Clover.finance All Rights Reserved.
       </div>
     </nav>
   )

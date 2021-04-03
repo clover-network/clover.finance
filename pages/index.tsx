@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Head from 'next/head'
 import Header from '../components/Header/Header'
 import GetStarted from '../components/GetStarted/GetStarted'
@@ -15,6 +15,7 @@ import {Introduction} from '../components/Introduction/Introduction'
 import Features from '../components/ClvFeatures/CloverFeature';
 
 const Home = () => {
+
     return (
         <div className={styles.wrapper}>
             <Head>

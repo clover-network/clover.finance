@@ -10,7 +10,7 @@ const Footer = () => (
       {/*<p className={styles.text}>*/}
       {/*  */}
       {/*</p>*/}
-        &copy;2021&nbsp;CloverProject. All Rights Reserved.
+        &copy;2021&nbsp;Clover.finance All Rights Reserved.
       <Social
         className={styles.social}
         items={SOCIALS}

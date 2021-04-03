@@ -1,10 +1,9 @@
-import React, { useState} from 'react'
+import React, {useRef, useState} from 'react'
 import styles from "./EarlyBackers.module.scss";
 import {useInView} from "react-intersection-observer";
 import ArrowLeft from '../../public/svg/arrow_left.svg'
 import ArrowLeftDisabled from '../../public/svg/arrow_left_disabled.svg'
 import ArrowRight from '../../public/svg/arrow_right.svg'
-import ArrowRightDisabled from '../../public/svg/arrow_right_disabled.svg'
 
 const EarlyBackers = ({
     className,
@@ -16,11 +15,15 @@ const EarlyBackers = ({
         threshold: 1,
         triggerOnce: true,
     });
+    const [clientWidth, setClientWidth] = useState(200)
+    const [totalNumber, setTotalNumber] = useState(0)
+    const scrollView = useRef<HTMLInputElement>();
+
     let [imgIndex, setImgIndex] = useState(0)
     return (
         <div className={styles.wrapper}>
             <div className={styles.container}>
-                <h3>Early Backers</h3>
+                <h3>Early Backers-{imgIndex}</h3>
                 <div className={styles.content}>
                     {imgIndex > 0 ? (
                         <ArrowLeft className={styles.arrowLeft} onClick={() => {
@@ -30,8 +33,8 @@ const EarlyBackers = ({
                         <ArrowLeftDisabled />
                     )
                     }
-                    <div>
-                        <div style={{ transform: `translateX(${-125 * imgIndex}px)` }}>
+                    <div ref={scrollView}>
+                        <div style={{ transform: `translateX(${imgIndex == totalNumber ? -(1830 - clientWidth)  : (-clientWidth * imgIndex) }px)` }}>
                             <img className={styles.image} width={103} src="/backers/bk_polychain.png" alt=""/>
                             <img className={styles.image} width={226} src="/backers/bk_alameda.png" alt=""/>
                             <img className={styles.image} width={168} src="/backers/bk_hypersphere.png" alt=""/>
@@ -42,11 +45,16 @@ const EarlyBackers = ({
                             <img className={styles.image} width={125} src="/backers/bk_bitcoin.png" alt=""/>
                             <img className={styles.image} width={125} src="/backers/bk_moonwhale.png" alt=""/>
                             <img className={styles.image} width={125} src="/backers/bk_kyrosVentures.png" alt=""/>
-                            <img className={styles.image} width={113} src="/backers/bk_blocksynk.png" alt=""/>
+                            <img className={styles.image} width={113} src="/backers/bk_okex.png" alt=""/>
                         </div>
                     </div>
                     <ArrowRight className={styles.arrowRight} onClick={() => {
-                        setImgIndex(imgIndex < (Math.ceil((1921 - window.innerWidth) / 125) - 1) ? ++imgIndex : (Math.ceil((1921 - window.innerWidth) / 125) - 1))
+                        //1820
+                        const clientWidth = scrollView.current.clientWidth;
+                        const totalNumber = Math.ceil(1820 / clientWidth) - 1;
+                        setClientWidth(clientWidth)
+                        setTotalNumber(totalNumber)
+                        setImgIndex(imgIndex < totalNumber ? ++imgIndex : totalNumber )
                     }} />
                 </div>
             </div>
