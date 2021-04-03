@@ -42,6 +42,7 @@
 }
 
 .title {
+  font-family: Alata;
   font-style: normal;
   font-weight: bold;
   font-size: 52px;
@@ -83,6 +84,7 @@
     font-size: 30px;
     line-height: 41px;
     margin-bottom: 28px;
+    font-family: Alata;
   }
 
   p {
@@ -98,6 +100,8 @@
     border: 2px solid #41f69f;
     border-radius: 8px;
     line-height: 50px;
+    font-family: Roboto;
+    font-weight: 500;
   }
 
   &:last-child {

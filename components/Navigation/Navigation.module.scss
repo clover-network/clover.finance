@@ -16,6 +16,7 @@
   visibility: hidden;
   transition: all 0.2s;
   height: calc(100vh - 72px);
+  font-family: Alata;
 }
 
 .navActive {
@@ -35,7 +36,6 @@
 
 .list {
   display: flex;
-  font-family: Roboto, sans-serif;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
@@ -61,7 +61,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Roboto, sans-serif;
   }
 
   .links {
