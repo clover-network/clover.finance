@@ -88,6 +88,7 @@
 
 @media (min-width: $media-lg) {
   .nav {
+    position: relative;
     top: auto;
     height: auto;
     flex: 1 0 auto;
@@ -97,6 +98,7 @@
 
   .container {
     padding-bottom: 0;
+    align-items: flex-end;
   }
 
   .list {
@@ -114,6 +116,7 @@
     font-weight: $fw-normal;
     text-transform: none;
     &:hover {
+      color: $color-hover;
       .itemHover {
         transform: rotate(180deg);
       }
@@ -123,14 +126,14 @@
     }
 
     .links {
-      position: absolute;
-      display: none;
-      color: #1d2d31;
-      background: #ffffff;
+      background: #121b23;
       border: 1px solid rgba(0, 0, 0, 0.1);
       box-sizing: border-box;
       box-shadow: 8px 10px 43px -9px rgba(0, 0, 0, 0.21);
       border-radius: 6px;
+      position: absolute;
+      display: none;
+      color: #fff;
       overflow: hidden;
       text-align: left;
       li a {
@@ -140,8 +143,7 @@
         line-height: 40px;
         padding: 0 17px;
         &:hover {
-          background-color: $color-logo;
-          color: #fff;
+          color: $color-hover;
         }
       }
     }
