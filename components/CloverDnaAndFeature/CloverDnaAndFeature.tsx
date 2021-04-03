@@ -11,6 +11,7 @@ import Validation from '../../public/svg/validation.svg'
 import Treasury from '../../public/svg/treasury.svg'
 import Nomination from '../../public/svg/nomination.svg'
 import Deployment from '../../public/svg/deployment.svg'
+import Button from '../Button/Button'
 
 const DnaAndFeatures = ({
   dnas = [],
@@ -69,14 +70,16 @@ const DnaAndFeatures = ({
         <div className={styles.topContent}>
           <span className={styles.title}>Clover's DNA</span>
           {!!inView && (
-            <div>
+            <div className={styles.contentBox}>
               {dnas.map((dna) => (
                 <div className={styles.topContentItem} key={dna.title}>
-                  <h3>{dna.title}</h3>
-                  <p>{dna.content}</p>
-                  <button onClick={() => window.open(dna.link)}>
+                  <div>
+                    <h3>{dna.title}</h3>
+                    <p>{dna.content}</p>
+                  </div>
+                  <Button onClick={() => window.open(dna.link)}>
                     {dna.btnText}
-                  </button>
+                  </Button>
                 </div>
               ))}
             </div>
