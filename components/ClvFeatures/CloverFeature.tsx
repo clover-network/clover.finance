@@ -48,10 +48,10 @@ const Features = ({
           </span>
           {!!inView && (
             <div>
-              {features.map((feature) => (
+              {features.map((feature, index) => (
                 <div
                   className={cn(styles.topContentItem, styles.black, feature.name)}
-                  key={feature.index}
+                  key={index}
                 >
                   <h3>{feature.title}</h3>
                   <p className={styles.gray}>{feature.content}</p>

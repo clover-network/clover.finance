@@ -1,0 +1,143 @@
+@import 'styles/variables';
+
+.wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.line {
+  width: 100%;
+  position: absolute;
+  top: -42px;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.bottomWrapper {
+  background: #000;
+  width: 100%;
+}
+
+.black {
+  color: #000 !important;
+}
+
+.gray {
+  color: #1d2d31 !important;
+}
+
+.clvToken {
+  margin: 0 auto;
+  padding: 70px 0;
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.clvTokenIcon {
+  width: 67px;
+  height: 49px;
+  margin-right: 25px;
+  position: relative;
+  top: 3px;
+}
+
+.clvTokenTitle {
+  font-weight: bold;
+  font-size: 50px;
+  line-height: 53px;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 70px;
+}
+
+.clvTokenList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.clvTokenItem {
+  width: 359px;
+  height: 251px;
+  border: 5px solid transparent;
+  padding: 29px 29px 0;
+  border-image: -webkit-linear-gradient(to right,#2BFEA4, #1E9EC6) 50 50;
+  border-image: -moz-linear-gradient(to right,#2BFEA4, #1E9EC6) 50 50;
+  border-image: -o-linear-gradient(to right,#2BFEA4, #1E9EC6) 50 50;
+  border-image: linear-gradient(to right,#2BFEA4, #1E9EC6) 50 50;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 33px;
+
+  &:nth-child(2),
+  &:nth-child(5) {
+    border-image: -webkit-linear-gradient(to left,#2BFEA4, #1E9EC6) 50 50;
+    border-image: -moz-linear-gradient(to left,#2BFEA4, #1E9EC6) 50 50;
+    border-image: -o-linear-gradient(to left,#2BFEA4, #1E9EC6) 50 50;
+    border-image: linear-gradient(to left,#2BFEA4, #1E9EC6) 50 50;
+  }
+
+  div {
+    margin-top: 23px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 32px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 140%;
+    font-family: Roboto, sans-serif;
+    color: #ffffff;
+  }
+}
+
+@media (max-width: 935px){
+
+  .topContent,
+  .featureContent,
+  .clvToken {
+    width: 80%;
+
+    & > div {
+      margin: 0 20px;
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: $media-xl){
+  .wrapper {
+    // overflow: hidden;
+  }
+
+  .topContent,
+  .featureContent,
+  .clvToken {
+    width: 80%;
+
+    & > div {
+      //justify-content: center;
+    }
+  }
+
+  .topContentItem {
+    height: fit-content;
+
+    button {
+      position: relative;
+      margin-top: 30px;
+    }
+  }
+}
