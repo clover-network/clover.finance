@@ -5,6 +5,7 @@ import GetStarted from '../components/GetStarted/GetStarted'
 import Blog from '../components/Blog/Blog'
 import Footer from '../components/Footer/Footer'
 import DnaAndFeatures from '../components/CloverDnaAndFeature/CloverDnaAndFeature'
+import ClvToken from '../components/ClvToken'
 import {Team} from '../components/Team/Team'
 import EarlyBackers from '../components/EarlyBackers/EarlyBackers'
 import styles from './Home.module.scss'
@@ -24,6 +25,7 @@ const Home = () => {
         <GetStarted />
         <Introduction/>
         <DnaAndFeatures dnas={DNAS} features={FEATURES} clvTokens={CLVTOKENS} />
+        <ClvToken clvTokens={CLVTOKENS} />
       </main>
       <div className={styles.bottom}>
         <EarlyBackers />
