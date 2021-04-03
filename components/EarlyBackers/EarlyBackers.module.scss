@@ -1,9 +1,11 @@
 @import "styles/variables";
 
 .wrapper {
-  max-width: 1225px;
   width: 100%;
-  margin: 95px auto;
+  height: 376px;
+  background-image: url("../../public/images/backers-bg.png");
+  background-position: left bottom;
+  background-size: 100% 100%;
 
   h3 {
     font-weight: bold;
@@ -11,7 +13,13 @@
     line-height: 53px;
     text-align: center;
     color: #000000;
+    margin-top: 130px;
   }
+}
+
+.container {
+  max-width: 1230px;
+  margin: 0 auto;
 }
 
 .content {
@@ -55,8 +63,12 @@
 }
 @media (max-width: $media-xl), (min-width: $media-md) {
   .wrapper {
-    width: 80%;
+    //width: 80%;
     overflow: hidden;
+  }
+
+  .container {
+    padding: 0 20px;
   }
 
   .content {
