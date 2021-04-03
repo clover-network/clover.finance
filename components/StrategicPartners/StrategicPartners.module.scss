@@ -23,6 +23,9 @@
   max-width: 1230px;
   width: 100%;
   overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .logo {
