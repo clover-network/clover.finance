@@ -3,19 +3,20 @@
 .wrapper {
   width: 100%;
   position: relative;
-  &::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -63%);
-    width: 100%;
-    height: 100%;
-    background-image: url("../../public/images/feature-bg.png");
-    background-repeat: no-repeat;
-    background-size: 130% 100%;
-    background-position: center;
-  }
+  background-color: #121c24;
+  // &::before {
+  //   content: '';
+  //   position: absolute;
+  //   top: 50%;
+  //   left: 50%;
+  //   transform: translate(-50%, -63%);
+  //   width: 100%;
+  //   height: 100%;
+  //   background-image: url("../../public/images/feature-bg.png");
+  //   background-repeat: no-repeat;
+  //   background-size: 130% 100%;
+  //   background-position: center;
+  // }
 }
 
 .line {
@@ -62,15 +63,13 @@
   color: #ffffff;
   justify-content: center !important;
   z-index: 1;
-  padding-top: 100px;
   span {
     display: block;
     text-align: center;
     &:nth-of-type(1) {
-      color: #27A577;
+      color: #27a577;
       line-height: 69px;
       font-size: 50px;
-
     }
     &:nth-of-type(2) {
       line-height: 55px;
@@ -151,7 +150,6 @@
   text-align: center !important;
 }
 
-
 .featureContent {
   max-width: 1168px;
   width: 100%;
@@ -170,19 +168,19 @@
 .featureWrapper {
   width: 100%;
   position: relative;
-  &::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-49%);
-    z-index: 0;
-    width: 100%;
-    height: 100%;
-    background: url('../../public/images/feature-bottom-bg.png') no-repeat;
-    background-size: 120% 30%;
-    background-position: center 100%;
-  }
+  // &::before {
+  //   content: '';
+  //   position: absolute;
+  //   top: 50%;
+  //   left: 0;
+  //   transform: translateY(-49%);
+  //   z-index: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   background: url('../../public/images/feature-bottom-bg.png') no-repeat;
+  //   background-size: 120% 30%;
+  //   background-position: center 100%;
+  // }
 }
 .bottomWrapper {
   background: linear-gradient(98.6deg, #27a577 0.21%, #0080b9 100%),
@@ -197,7 +195,7 @@
 }
 
 .gray {
-  color: #A0BFC7 !important;
+  color: #a0bfc7 !important;
 }
 
 .clvToken {
@@ -303,7 +301,6 @@
       &:nth-of-type(1) {
         line-height: 46px;
         font-size: 40px;
-
       }
       &:nth-of-type(2) {
         line-height: 36px;

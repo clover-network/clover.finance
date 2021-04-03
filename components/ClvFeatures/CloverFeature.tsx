@@ -35,41 +35,48 @@ const Features = ({
   })
 
   return (
-    <div className={styles.wrapper}>
-      <div
-        ref={ref}
-        className={cn(styles.featureWrapper, styles.hidden, {
-          [`${styles.visible}`]: inView,
-        })}
-      >
-        <div className={styles.featureContent}>
-          <div className={cn(styles.title, styles.black)}>
-            <span>
-              What if...?
-            </span>
-            <span>You would pay lower gas fees if you are a frequent user of a DeFi protocol?</span>
-          </div>
-          {!!inView && (
-            <div>
-              {features.map((feature, index) => (
-                <div
-                  className={cn(styles.topContentItem, styles.black, feature.name)}
-                  key={index}
-                >
-                  <h3>{feature.title}</h3>
-                  <p className={styles.gray}>{feature.content}</p>
-                  <a href={feature.link} target="_blank">
-                    {feature.btnText}
-                  </a>
-                  <img src={feature.img} alt=""/>
-                </div>
-              ))}
+    <>
+      <div className={styles.wrapper}>
+        <div
+          ref={ref}
+          className={cn(styles.featureWrapper, styles.hidden, {
+            [`${styles.visible}`]: inView,
+          })}
+        >
+          <div className={styles.featureContent}>
+            <div className={cn(styles.title, styles.black)}>
+              <span>What if...?</span>
+              <span>
+                You would pay lower gas fees if you are a frequent user of a
+                DeFi protocol?
+              </span>
             </div>
-          )}
+            {!!inView && (
+              <div>
+                {features.map((feature, index) => (
+                  <div
+                    className={cn(
+                      styles.topContentItem,
+                      styles.black,
+                      feature.name
+                    )}
+                    key={index}
+                  >
+                    <h3>{feature.title}</h3>
+                    <p className={styles.gray}>{feature.content}</p>
+                    <a href={feature.link} target="_blank">
+                      {feature.btnText}
+                    </a>
+                    <img src={feature.img} alt="" />
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       </div>
-
-    </div>
+      <img src="/images/background-clip.jpg" alt="" width="100%" />
+    </>
   )
 }
 

@@ -3,6 +3,8 @@
 .wrapper {
   width: 100%;
   position: relative;
+  padding-bottom: 30px;
+  background: url('/images/line2.jpg') no-repeat left bottom/100% auto;
 }
 
 .line {
@@ -129,8 +131,9 @@
 
 .featureWrapper {
   width: 100%;
-  background: url('../../public/svg/clover_features_bg.png') no-repeat;
-  background-size: cover;
+  // background-color: #121c24;
+  // background: url('../../public/svg/clover_features_bg.png') no-repeat;
+  // background-size: cover;
 }
 .bottomWrapper {
   background: linear-gradient(98.6deg, #27a577 0.21%, #0080b9 100%),
@@ -215,6 +218,9 @@
 }
 
 @media (min-width: $media-md) {
+  .wrapper {
+    padding-bottom: 140px;
+  }
   .topContentItem {
     height: 332px;
   }
