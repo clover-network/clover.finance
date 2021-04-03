@@ -87,10 +87,10 @@
   }
 }
 
-@media (min-width: $media-lg) {
+@media (min-width: $media-md) {
   .item {
     &:last-child {
-      margin-bottom: 0;
+      padding-bottom: 0;
     }
   }
 }
