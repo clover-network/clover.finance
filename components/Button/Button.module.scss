@@ -4,20 +4,21 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 16px 30px 16px 40px;
+  padding: 0 40px;
   height: 54px;
   text-align: center;
   text-decoration: none;
   font-weight: $fw-bold;
   font-size: 15px;
   line-height: 1.25;
-  color: $color-btn;
+  // color: $color-btn;
   background-color: transparent;
-  border: 1px solid #000;
-  transition: color .15s ease-in-out, fill .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+  border: 1px solid $color-hover;
+  transition: color 0.15s ease-in-out, fill 0.15s ease-in-out,
+    background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
   cursor: pointer;
-
-  &:active{
+  border-radius: 4px;
+  &:active {
     transform: translateY(1px);
   }
 
@@ -26,8 +27,8 @@
   }
 
   &:hover {
-    color: #FFF;
-    fill: #FFF;
+    color: #fff;
+    fill: #fff;
     background-color: $color-logo;
     border-color: $color-logo;
   }

@@ -6,7 +6,8 @@
   display: block;
   width: em(32, 32);
   height: 2px;
-  background-color: #000;
+  // background-color: #000;
+  background-color: #fff;
 }
 
 .button {
@@ -27,11 +28,11 @@
 
   &:hover {
     > * {
-      background-color: rgba(0,0,0,.5);
+      background-color: rgba(#fff, 0.5);
 
       &:before,
       &:after {
-        background-color: rgba(0,0,0,.5);
+        background-color: rgba(#fff, 0.5);
       }
     }
   }
@@ -48,12 +49,10 @@
 }
 
 .buttonActive {
-
   &:hover {
     > * {
-
       &:before {
-        background-color: rgba(0,0,0,.1);
+        background-color: rgba(0, 0, 0, 0.1);
       }
     }
   }
@@ -76,7 +75,8 @@
     position: absolute;
     content: '';
 
-    transition: top 0.2s 0.2s, background 0.2s, transform 0.2s, bottom 0.2s 0.2s, width 0.2s;
+    transition: top 0.2s 0.2s, background 0.2s, transform 0.2s, bottom 0.2s 0.2s,
+      width 0.2s;
   }
 
   &:before {
@@ -93,7 +93,8 @@
 
     &:before,
     &:after {
-      transition: top 0.2s, background 0.2s, bottom 0.2s, transform 0.2s 0.2s, width 0.2s 0.2s;
+      transition: top 0.2s, background 0.2s, bottom 0.2s, transform 0.2s 0.2s,
+        width 0.2s 0.2s;
     }
 
     &:before {

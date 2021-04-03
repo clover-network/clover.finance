@@ -5,6 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 100px;
 }
 
 .item {
@@ -37,35 +38,32 @@
   font-weight: 300;
   font-size: 18px;
   line-height: 25px;
-  color: rgba(#1d2d31, 0.6);
+  color: #a0bfc7;
 }
 
 .launch {
-  width: 318px;
-  height: 614px;
-  background: url('/public//images/launch.png') no-repeat center/cover;
   position: relative;
-  margin-right: 216px;
-  margin-bottom: 100px;
-  &::before,
-  &::after {
-    content: '';
+  margin-right: 223px;
+  .launchPic {
+    width: 80vw;
+    max-width: 370px;
+    position: relative;
+  }
+  .ball {
+    width: 325px;
+    height: 325px;
     position: absolute;
-    border-radius: 50%;
-    background-color: $color-logo;
-    z-index: -1;
-  }
-  &::before {
-    width: 216px;
-    height: 216px;
-    top: 77px;
-    right: -81px;
-  }
-  &::after {
-    width: 278px;
-    height: 278px;
-    left: -135px;
-    bottom: 40px;
+    z-index: 0;
+    &.left {
+      top: 77px;
+      right: 0;
+      transform: translateX(40%);
+    }
+    &.right {
+      left: 0;
+      transform: translateX(-40%);
+      bottom: 40px;
+    }
   }
 
   .download {

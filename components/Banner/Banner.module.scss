@@ -40,17 +40,21 @@
 }
 
 .logo {
-  width: 38%;
-  height: 38%;
+  width: 229px;
+  height: 229px;
+  // width: 38%;
+  // height: 38%;
+  background: rgba(#000, 0.4);
+  box-shadow: 0px 0px 51px #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  background-color: $color-logo;
+  // background-color: $color-logo;
   .icon {
     width: 50%;
     height: 50%;
-    fill: #fff;
+    fill: $color-logo;
   }
 }
 
