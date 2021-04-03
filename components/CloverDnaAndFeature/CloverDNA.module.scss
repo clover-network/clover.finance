@@ -38,7 +38,9 @@
 .topVector2 {
   position: absolute;
   bottom: -110px;
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
 }
 
 .title {

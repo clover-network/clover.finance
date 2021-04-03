@@ -85,51 +85,6 @@ const DnaAndFeatures = ({
             </div>
           )}
         </div>
-        <Vector1 className={styles.topVector1} />
-        <Vector2 className={styles.topVector2} />
-      </div>
-      <div
-        ref={ref}
-        className={cn(styles.featureWrapper, styles.hidden, {
-          [`${styles.visible}`]: inView,
-        })}
-      >
-        <div className={styles.featureContent}>
-          <span className={cn(styles.title, styles.black)}>
-            Clover Features
-          </span>
-          {!!inView && (
-            <div>
-              {features.map((feature) => (
-                <div
-                  className={cn(styles.topContentItem, styles.black)}
-                  key={feature.title}
-                >
-                  <h3>{feature.title}</h3>
-                  <p className={styles.gray}>{feature.content}</p>
-                  <a href={feature.link} target="_blank">
-                    {feature.btnText}
-                  </a>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
-      <div className={styles.bottomWrapper}>
-        <div className={styles.clvToken}>
-          <CloverIcon className={styles.clvTokenIcon} />
-          <h3 className={styles.clvTokenTitle}>CLV Token</h3>
-          <div className={styles.clvTokenList}>
-            {clvTokens.map((token) => (
-              <div className={styles.clvTokenItem} key={token.title}>
-                {getImgByIcon(token.title)}
-                <div>{token.title}</div>
-                <p>{token.content}</p>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </div>
   )

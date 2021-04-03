@@ -3,6 +3,7 @@
 .wrapper {
   width: 100%;
   position: relative;
+  //background-color: #121B23;
 }
 
 .line {
@@ -67,12 +68,12 @@
 .topContentItem {
   width: 500px;
   height: 320px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  //display: flex;
+  //flex-direction: column;
+  //align-items: center;
   color: #fff;
   font-family: Roboto, sans-serif;
-  text-align: center;
+  text-align: left;
   margin-top: 70px;
   position: relative;
 
@@ -81,6 +82,8 @@
     font-size: 38px;
     line-height: 46px;
     margin-bottom: 30px;
+    width: 100%;
+    text-align: left;
   }
 
   p {
@@ -92,6 +95,7 @@
   }
 
   a {
+    display: inline-block;
     margin-top: 30px;
     color: #27a577;
     border-bottom: 1px solid #27a577;
@@ -114,6 +118,11 @@
   }
 }
 
+.center {
+  text-align: center !important;
+}
+
+
 .featureContent {
   max-width: 1168px;
   width: 100%;
@@ -131,8 +140,9 @@
 
 .featureWrapper {
   width: 100%;
-  background: url('../../public/svg/clover_features_bg.png') no-repeat;
-  background-size: cover;
+  background: url('../../public/images/dna-bg.png') no-repeat;
+  background-size: 120% 100%;
+  background-position: center;
 }
 .bottomWrapper {
   background: linear-gradient(98.6deg, #27a577 0.21%, #0080b9 100%),
@@ -143,11 +153,11 @@
 }
 
 .black {
-  color: #000 !important;
+  color: #ffffff !important;
 }
 
 .gray {
-  color: #1d2d31 !important;
+  color: #A0BFC7 !important;
 }
 
 .clvToken {
@@ -216,7 +226,7 @@
   }
 }
 
-@media (max-width: $media-xl), (min-width: $media-lg) {
+@media (max-width: $media-xl) {
   .wrapper {
     // overflow: hidden;
   }
