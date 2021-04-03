@@ -11,6 +11,7 @@ import styles from './Home.module.scss'
 import {ARTICLES, CLVTOKENS, DNAS, FEATURES,} from '../constants'
 import {StrategicPartners} from '../components/StrategicPartners/StrategicPartners'
 import {Introduction} from '../components/Introduction/Introduction'
+import Features from '../components/ClvFeatures/CloverFeature';
 
 const Home = () => {
   return (
@@ -23,7 +24,8 @@ const Home = () => {
       <main className={styles.main}>
         <GetStarted />
         <Introduction/>
-        <DnaAndFeatures dnas={DNAS} features={FEATURES} clvTokens={CLVTOKENS} />
+        <DnaAndFeatures dnas={DNAS}/>
+        <Features features={FEATURES} />
       </main>
       <div className={styles.bottom}>
         <EarlyBackers />
