@@ -66,14 +66,14 @@ const Features = ({
 
   return (
     <>
-      <div className={cn(styles.wrapper,'wow', 'bounceInUp')} data-wow-duration="2s" data-wow-delay="0s">
+      <div className={styles.wrapper}>
         <div
           ref={ref}
           className={cn(styles.featureWrapper, styles.hidden, {
             [`${styles.visible}`]: inView,
           })}
         >
-          <div className={styles.featureContent}>
+          <div className={cn(styles.featureContent,'wow', 'bounceInUp')} data-wow-duration="2s" data-wow-delay="0s">
             <div className={cn(styles.title, styles.black)}>
               <span>What if...?</span>
               <div className={cn(styles.typing)}>
