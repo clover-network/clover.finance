@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './StrategicPartners.module.scss'
+import cn from 'classnames'
 const LOGO_MAPS = [
   '/partner/polkadot.png',
   '/partner/graph.png',
@@ -26,13 +27,13 @@ const LOGO_MAPS = [
 export function StrategicPartners() {
   return (
     <div className={styles.root}>
-      <header className={styles.header}>Strategic Partners</header>
+      <header className={cn(styles.header,'wow', 'bounceInUp')} data-wow-duration="2s" data-wow-delay="0s">Strategic Partners</header>
       <div className={styles.logos}>
         {LOGO_MAPS.map((url) => {
           return (
             <div
               key={url}
-              className={styles.logo}
+              className={cn(styles.logo,'wow', 'bounceInUp')} data-wow-duration="2s" data-wow-delay="0s"
               style={{
                 background: 'url(' + url + ')no-repeat center',
               }}

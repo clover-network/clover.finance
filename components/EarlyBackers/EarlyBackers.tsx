@@ -4,7 +4,7 @@ import {useInView} from "react-intersection-observer";
 import ArrowLeft from '../../public/svg/arrow_left.svg'
 import ArrowLeftDisabled from '../../public/svg/arrow_left_disabled.svg'
 import ArrowRight from '../../public/svg/arrow_right.svg'
-
+import cn from 'classnames'
 const EarlyBackers = ({
     className,
 }: {
@@ -23,7 +23,8 @@ const EarlyBackers = ({
     return (
         <div className={styles.wrapper}>
             <div className={styles.container}>
-                <h3>Early Backers</h3>
+                <h3 className={cn('wow', 'bounceInUp')} data-wow-duration="2s" data-wow-delay="0s"
+                >Early Backers</h3>
                 <div className={styles.content}>
                     {imgIndex > 0 ? (
                         <ArrowLeft className={styles.arrowLeft} onClick={() => {

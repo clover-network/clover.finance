@@ -34,15 +34,15 @@ const ClvToken = ({
     }
   }
   return (
-    <div className={cn(styles.wrapper,'wow', 'bounceInUp')} data-wow-duration="2s" data-wow-delay="0s">
+    <div className={styles.wrapper}>
       <div className={styles.bottomWrapper}>
         <div className={styles.clvToken}>
-          <h3 className={styles.clvTokenTitle}>
+          <h3 className={cn(styles.clvTokenTitle,'wow', 'bounceInUp')} data-wow-duration="2s" data-wow-delay="0s">
             <CloverIcon className={styles.clvTokenIcon} />CLV Token
           </h3>
           <div className={styles.clvTokenList}>
             {clvTokens.map((token) => (
-              <div className={styles.clvTokenItem} key={token.title}>
+              <div className={cn(styles.clvTokenItem,'wow', 'bounceInUp')} data-wow-duration="2s" data-wow-delay="0s" key={token.title}>
                 {getImgByIcon(token.title)}
                 <div>{token.title}</div>
                 <p>{token.content}</p>
