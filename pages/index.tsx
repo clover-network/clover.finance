@@ -19,7 +19,7 @@ const Home = () => {
     useEffect(() => {
         setTimeout(_ => {
             new WOW({ animateClass: 'animated' }).init();
-        },2000)
+        },1000)
     },[])
 
     return (
