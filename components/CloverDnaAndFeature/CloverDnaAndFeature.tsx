@@ -1,10 +1,6 @@
 import React from 'react'
-import cn from 'classnames'
 import { useInView } from 'react-intersection-observer'
 import styles from './CloverDNA.module.scss'
-import Vector1 from '../../public/svg/vector1.svg'
-import Vector2 from '../../public/svg/vector2.svg'
-import CloverIcon from '../../public/svg/clover_icon.svg'
 import Fees from '../../public/svg/fees.svg'
 import Governance from '../../public/svg/governance.svg'
 import Validation from '../../public/svg/validation.svg'
@@ -12,6 +8,7 @@ import Treasury from '../../public/svg/treasury.svg'
 import Nomination from '../../public/svg/nomination.svg'
 import Deployment from '../../public/svg/deployment.svg'
 import Button from '../Button/Button'
+import cn from 'classnames'
 
 const DnaAndFeatures = ({
   dnas = [],
@@ -67,7 +64,7 @@ const DnaAndFeatures = ({
     <div className={styles.wrapper}>
       <img className={styles.line} src="/images/line.jpg" alt="" />
       <div ref={ref} className={styles.topWrapper}>
-        <div className={styles.topContent}>
+        <div className={cn(styles.topContent, 'wow', 'bounceInUp')} data-wow-duration="2s" data-wow-delay="0s">
           <span className={styles.title}>Clover's DNA</span>
           {!!inView && (
             <div className={styles.contentBox}>

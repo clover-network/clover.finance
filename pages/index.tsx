@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Head from 'next/head'
 import Header from '../components/Header/Header'
 import GetStarted from '../components/GetStarted/GetStarted'
@@ -14,12 +14,21 @@ import {StrategicPartners} from '../components/StrategicPartners/StrategicPartne
 import {Introduction} from '../components/Introduction/Introduction'
 import Features from '../components/ClvFeatures/CloverFeature';
 
+declare var WOW
 const Home = () => {
+    useEffect(() => {
+        setTimeout(_ => {
+            new WOW({ animateClass: 'animated' }).init();
+        },1000)
+    },[])
+
     return (
         <div className={styles.wrapper}>
             <Head>
                 <title>Clover&nbsp;&mdash; Cross-chain DeFi Interoperability</title>
                 <link rel="icon" href="/favicon.ico"/>
+                <link rel="stylesheet" type='text/css' href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" />
+                <script src="https://cdn.bootcss.com/wow/1.1.2/wow.min.js"></script>
             </Head>
             <Header/>
             <main className={styles.main}>

@@ -3,6 +3,7 @@
 .wrapper {
   width: 100%;
   position: relative;
+
 }
 
 .line {
@@ -14,8 +15,9 @@
 }
 
 .bottomWrapper {
-  background: #000;
+  //background: #000;
   width: 100%;
+  margin-top: -6%;
 }
 
 .black {
@@ -145,6 +147,10 @@
 @media (max-width: $media-xs), (max-width: $media-sm) {
   .clvToken {
     padding: 0;
+  }
+
+  .bottomWrapper {
+    margin-top: 0;
   }
 
   .clvTokenTitle {

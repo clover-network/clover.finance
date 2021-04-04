@@ -16,7 +16,7 @@ const Blog = ({
 }) => {
   const data = useMemo(() => (
     items?.map(({ image, link, text }, index) => (
-      <li key={link} className={styles.item}>
+      <li key={link} className={cn(styles.item,'wow', 'bounceInUp')} data-wow-duration="2s" data-wow-delay="0s">
         <InView threshold={0.3} delay={index * 100} triggerOnce>
           {({ inView, ref}) => (
             <a
@@ -48,7 +48,9 @@ const Blog = ({
               <InView threshold={0.5} triggerOnce>
                   {({ inView, ref}) => (
                       <h2 ref={ref}
-                          className={cn(styles.title, styles.hidden, {[`${styles.visible}`]: inView,})}>
+                          className={cn(styles.title, styles.hidden,'wow', 'bounceInUp', {[`${styles.visible}`]: inView,})}
+                          data-wow-duration="2s" data-wow-delay="0s"
+                      >
                           Blog
                       </h2>
                   )}
