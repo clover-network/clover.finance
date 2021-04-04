@@ -23,7 +23,7 @@ const DESC_LIST = [
 export function Introduction() {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.launch}>
+      <div className={cn(styles.launch,'wow', 'bounceInUp')} data-wow-duration="2s" data-wow-delay="0s">
         <img
           className={cn(styles.ball, styles.left)}
           src="/images/ball.jpg"
@@ -49,7 +49,7 @@ export function Introduction() {
           Download
         </a>
       </div>
-      <div className={styles.itemList}>
+      <div className={cn(styles.itemList,'wow', 'bounceInUp')} data-wow-duration="2s" data-wow-delay="0s">
         {DESC_LIST.map((d, i) => {
           return (
             <div className={styles.item} key={i}>
