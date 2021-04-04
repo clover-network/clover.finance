@@ -21,6 +21,7 @@
     "react-intersection-observer": "^8.31.0",
     "react-material-ui-carousel": "^2.2.2",
     "react-typist": "^2.0.5",
+    "react-uid": "^2.3.1",
     "sass": "^1.32.5"
   },
   "devDependencies": {
