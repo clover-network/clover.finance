@@ -73,8 +73,8 @@ const Features = ({
             [`${styles.visible}`]: inView,
           })}
         >
-          <div className={cn(styles.featureContent,'wow', 'bounceInUp')} data-wow-duration="2s" data-wow-delay="0s">
-            <div className={cn(styles.title, styles.black)}>
+          <div className={styles.featureContent}>
+            <div className={cn(styles.title, styles.black, 'wow', 'bounceInUp')} data-wow-duration="2s" data-wow-delay="0s">
               <span>What if...?</span>
               <div className={cn(styles.typing)}>
                 <span ref={typingVal}></span>
@@ -87,8 +87,8 @@ const Features = ({
                     className={cn(
                       styles.topContentItem,
                       styles.black,
-                      styles[feature.name]
-                    )}
+                      styles[feature.name],
+                      'wow', 'bounceInUp')} data-wow-duration="2s" data-wow-delay="0s"
                     key={index}
                   >
                     <h3>{feature.title}</h3>
