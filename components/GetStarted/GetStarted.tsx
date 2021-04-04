@@ -28,10 +28,10 @@ const GetStarted = () => {
               A&nbsp;Foundational Layer for Cross&#8209;chain Compatibility
             </p>
           </div>
-          {/*<div>*/}
-          {/*  <Banner />*/}
-          {/*</div>*/}
-           <div className={styles.animation}>{View}</div>
+          <div>
+            <Banner />
+          </div>
+          {/* <div className={styles.animation}>{View}</div>*/}
           <Button
             className={styles.btn}
             href="https://docs.clover.finance/quick-start/testnet/"
