@@ -66,7 +66,7 @@ const Features = ({
 
   return (
     <>
-      <div className={styles.wrapper}>
+      <div className={cn(styles.wrapper,'wow', 'bounceInUp')} data-wow-duration="2s" data-wow-delay="0s">
         <div
           ref={ref}
           className={cn(styles.featureWrapper, styles.hidden, {

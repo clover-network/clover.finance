@@ -1,4 +1,5 @@
 import React from 'react'
+import cn from 'classnames'
 import styles from './index.module.scss'
 import CloverIcon from '../../public/svg/clvtoken.svg'
 import Fees from '../../public/svg/fees.svg'
@@ -33,7 +34,7 @@ const ClvToken = ({
     }
   }
   return (
-    <div className={styles.wrapper}>
+    <div className={cn(styles.wrapper,'wow', 'bounceInUp')} data-wow-duration="2s" data-wow-delay="0s">
       <div className={styles.bottomWrapper}>
         <div className={styles.clvToken}>
           <h3 className={styles.clvTokenTitle}>

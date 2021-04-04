@@ -8,12 +8,12 @@ import Button from '../Button/Button'
 import { Banner } from '../Banner/Banner'
 
 const GetStarted = () => {
-  // const options = {
-  //   animationData: animationJson,
-  //   loop: true,
-  //   autoplay: true,
-  // }
-  // const { View } = useLottie(options)
+  const options = {
+    animationData: animationJson,
+    loop: true,
+    autoplay: true,
+  }
+  const { View } = useLottie(options)
   return (
     <InView threshold={0} triggerOnce>
       {({ inView, ref }) => (
@@ -24,14 +24,14 @@ const GetStarted = () => {
           })}
         >
           <div className={styles.textOuter}>
-            <p className={styles.textInner}>
+            <p className={styles.textInner} >
               A&nbsp;Foundational Layer for Cross&#8209;chain Compatibility
             </p>
           </div>
-          <div>
-            <Banner />
-          </div>
-          {/* <div className={styles.animation}>{View}</div> */}
+          {/*<div>*/}
+          {/*  <Banner />*/}
+          {/*</div>*/}
+           <div className={styles.animation}>{View}</div>
           <Button
             className={styles.btn}
             href="https://docs.clover.finance/quick-start/testnet/"

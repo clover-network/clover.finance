@@ -16,14 +16,14 @@ const EarlyBackers = ({
         triggerOnce: true,
     });
     const [clientWidth, setClientWidth] = useState(200)
-    const [totalNumber, setTotalNumber] = useState(0)
+    const [totalNumber, setTotalNumber] = useState(1)
     const scrollView = useRef<HTMLInputElement>();
 
     let [imgIndex, setImgIndex] = useState(0)
     return (
         <div className={styles.wrapper}>
             <div className={styles.container}>
-                <h3>Early Backers-{imgIndex}</h3>
+                <h3>Early Backers</h3>
                 <div className={styles.content}>
                     {imgIndex > 0 ? (
                         <ArrowLeft className={styles.arrowLeft} onClick={() => {
@@ -34,7 +34,7 @@ const EarlyBackers = ({
                     )
                     }
                     <div ref={scrollView}>
-                        <div style={{ transform: `translateX(${imgIndex == totalNumber ? -(1830 - clientWidth)  : (-clientWidth * imgIndex) }px)` }}>
+                        <div style={{ transform: `translateX(${imgIndex == totalNumber ? -(1825 - clientWidth)  : (-clientWidth * imgIndex) }px)` }}>
                             <img className={styles.image} width={103} src="/backers/bk_polychain.png" alt=""/>
                             <img className={styles.image} width={226} src="/backers/bk_alameda.png" alt=""/>
                             <img className={styles.image} width={168} src="/backers/bk_hypersphere.png" alt=""/>
