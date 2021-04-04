@@ -28,20 +28,6 @@
   align-items: center;
   width: 100%;
   margin-top: 50px;
-
-
-  & > div {
-    width: 90%;
-    overflow: hidden;
-
-    & > div {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: transform 0.3s ease-in-out;
-    }
-  }
 }
 
 .arrowLeft {
@@ -72,12 +58,21 @@
   }
 
   .content {
-
-    & > div {
-      justify-content: center;
+    position: relative;
+    & > * {
+      width: 100%
     }
   }
+}
 
+.sliderContentWrapper {
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  height: 100px;
 }
 
 @media (max-width: $media-xs), (max-width: $media-sm) {
