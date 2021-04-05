@@ -340,7 +340,7 @@ const DNAS = [
     title: 'Threshold Protocol',
     content: 'Clover utilizes BIP-Schnorr compatible threshold signatures to enable meaningful cross-chain communication between Polkadot and non-Polkadot networks. Clover facilitates end-to-end secure communication between signers for notarising Polkadot block headers to pointing out Proof-Of-Inclusion to Ethereum VM and Bitcoin script',
     btnText: 'Read Technical Paper',
-    link: 'https://drive.google.com/file/d/1oOFkrViA5YOotjm6GXTl_bFUlMFuvaGA/view?usp=sharing'
+    link: 'https://clover.finance/techpaper.pdf'
   },
 ]
 
