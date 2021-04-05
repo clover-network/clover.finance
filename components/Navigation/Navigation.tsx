@@ -49,11 +49,11 @@ const Navigation = ({
       <div className={styles.container}>
         {!!data.length && <ul className={styles.list}>{data}</ul>}
       </div>
-        <Social className={styles.social} items={SOCIALS} />
+        {/*<Social className={styles.social} items={SOCIALS} />*/}
 
-        <div className={styles.footer}>
-          &copy;2021&nbsp;Clover.finance All Rights Reserved.
-      </div>
+        {/*<div className={styles.footer}>*/}
+        {/*  &copy;2021&nbsp;Clover.finance All Rights Reserved.*/}
+        {/*</div>*/}
     </nav>
   )
 }

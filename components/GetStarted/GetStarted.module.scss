@@ -8,10 +8,16 @@
   width: 100%;
   text-align: center;
   background: url('/images/sky.png') no-repeat center/cover;
-  padding-bottom: 102px;
-  padding-top: 168px;
+  padding-bottom: 70px;
+  padding-top: 150px;
   height: 100vh;
   justify-content: space-between;
+
+  @media (max-width: $media-sm), (max-width: $media-xs) {
+    & {
+      height: 70vh;
+    }
+  }
 
   @media (max-width: $media-lg) {
     & {
@@ -30,6 +36,7 @@
 }
 
 .textInner {
+  padding: 0 40px;
   font-size: 27px;
   font-family: Alata, serif;
   font-style: normal;
