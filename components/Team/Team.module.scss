@@ -4,6 +4,7 @@
   background: url('../../public/images/team.png');
   width: 100%;
   color: $color-white;
+  background-size: cover;
 }
 .team {
   padding: 120px 0;
@@ -58,7 +59,7 @@
 
 @media (max-width: $media-xs), (max-width: $media-sm) {
   .team {
-    font-size: 27px !important;
+    font-size: 26px !important;
     margin-bottom: 0;
   }
 

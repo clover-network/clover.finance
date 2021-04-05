@@ -97,8 +97,8 @@ const EarlyBackers = ({ className }: { className?: string }) => {
           </h3>
           <div className={styles.content}>
             <Carousel
-              NextIcon={<ArrowRight />}
-              PrevIcon={<ArrowLeft />}
+              PrevIcon={<ArrowLeft className={styles.arrowLeft} />}
+              NextIcon={<ArrowRight className={styles.arrowRight} />}
               animation="slide"
               indicators={false}
               navButtonsAlwaysVisible={true}
@@ -107,7 +107,7 @@ const EarlyBackers = ({ className }: { className?: string }) => {
                   backgroundColor: 'transparent',
                   fontSize: 100,
                 },
-                className: '',
+                className: 'buttons',
               }}
             >
               {elements}

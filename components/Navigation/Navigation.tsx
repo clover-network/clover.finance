@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, {useEffect, useMemo, useState} from 'react'
 import cn from 'classnames'
 import Social from '../Social/Social'
 import styles from './Navigation.module.scss'
@@ -17,29 +17,15 @@ const Navigation = ({
   }[]
   active?: boolean
 }) => {
-  const data = useMemo(
-    () =>
-      items?.map(({ children, label }) => (
-        <div className={styles.item} key={label}>
-          <div className={styles.itemLabel}>
-            {label}
-            <ShortArrow className={styles.itemHover} />
-          </div>
-          <ul className={styles.links}>
-            {children.map(({ label, link }, index) => {
-              return (
-                <li key={index}>
-                  <a className={styles.link} href={link} target="_blank">
-                    {label}
-                  </a>
-                </li>
-              )
-            })}
-          </ul>
-        </div>
-      )),
-    [items]
-  )
+    const [currentMenu, setCurrentMenu] = useState('')
+    const [innerWidth, setInnerWidth] = useState(1024)
+
+    useEffect(() => {
+        const onresize = () => {
+            setInnerWidth(window.innerWidth)
+        }
+        window.addEventListener('resize', onresize)
+    }, [innerWidth])
   return (
     <nav
       className={cn(styles.nav, className, {
@@ -47,7 +33,48 @@ const Navigation = ({
       })}
     >
       <div className={styles.container}>
-        {!!data.length && <ul className={styles.list}>{data}</ul>}
+        {!!items.length && <ul className={styles.list}>
+            {
+                items?.map(({ children, label }) => (
+                    <div className={styles.item} key={label}>
+                        <div
+                            className={styles.itemLabel}
+                            onClick={innerWidth < 576 || innerWidth === 576 ? (e) => {
+                                e.stopPropagation()
+                                e.preventDefault()
+                                setCurrentMenu(label)
+                            } : () => {}}
+                            onMouseEnter={innerWidth > 576 ? (e) => {
+                                e.stopPropagation()
+                                e.preventDefault()
+                                setCurrentMenu(label)
+                            }: () => {}}
+                            onMouseLeave={innerWidth > 576 ? (e) => {
+                                e.stopPropagation()
+                                e.preventDefault()
+                                setCurrentMenu('')
+                            } : () => {}}
+                        >
+                            {label}
+                            <ShortArrow className={styles.itemHover} />
+                        </div>
+                        {currentMenu === label && (
+                            <ul className={styles.links}>
+                                {children.map(({ label, link }, index) => {
+                                    return (
+                                        <li key={index}>
+                                            <a className={styles.link} href={link} target="_blank">
+                                                {label}
+                                            </a>
+                                        </li>
+                                    )
+                                })}
+                            </ul>
+                        )}
+                    </div>
+                ))
+            }
+        </ul>}
       </div>
         {/*<Social className={styles.social} items={SOCIALS} />*/}
 

@@ -23,7 +23,7 @@
   color: $color-logo;
   font-weight: bold;
   font-size: 22px;
-  line-height: 27px;
+  line-height: 26px;
   margin-right: 25px;
 }
 .index,
@@ -50,7 +50,7 @@
   margin-right: 223px;
   .launchPic {
     width: 80vw;
-    max-width: 370px;
+    max-width: 318px;
     position: relative;
   }
   .ball {
@@ -99,12 +99,11 @@
 }
 .textInner {
   text-align: center;
-  font-size: 27px;
+  font-size: 26px;
   line-height: 35px;
   padding: 0 40px;
   &.green {
     font-size: 20px;
-    margin-top: 10px;
   }
 }
 
@@ -144,20 +143,19 @@
 
 .textInner {
   &.green {
-    color: $color-hover;
+    color: #6fcf97;
   }
 }
 
 @media (min-width: $media-lg) {
   .textOuter {
-    margin-top: 25px;
     max-width: 777px;
   }
   .textInner {
-    font-size: 60px;
+    font-size: 38px;
     line-height: 69px;
     &.green {
-      font-size: 40px;
+      font-size: 30px;
     }
   }
 }
