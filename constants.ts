@@ -332,7 +332,7 @@ const ARTICLES = [
 const DNAS = [
   {
     title: 'SPV Simulation Technology',
-    content: 'Clover’s SPV simulation technology will soon be able to trustlessly peg-in and peg-out Ether and Ethereum based assets on the Clover testnet. Clover will roll out Bitcoin two-way peg support when respective upgrades are activated on Bitcoin Core.',
+    content: 'SPV simulation enables trustless two-ways pegs between turing-complete and non-turing-complete blockchains. Clover can interoperate with any external transaction by checking a merkle proof of inclusion, each block references the previous one, and calculating the total proof of work spent to make that chain.',
     btnText: 'Go To Outline Article',
     link: 'https://medium.com/projectclover/clover-re-defining-a-two-way-peg-between-blockchains-8d5b8c0dea6a'
   },
