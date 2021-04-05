@@ -24,6 +24,10 @@
 .animation {
   display: flex;
   align-items: center;
+
+   @media (max-width: $media-md) {
+     width: 160%;
+   }
 }
 
 .textInner {
@@ -77,7 +81,6 @@
     }
   }
 }
-
 @media (max-width: $media-sm), (max-width: $media-xs), (max-width: $media-md), (max-width: $media-lg) {
   .wrapper {
     height: calc(100vh - 72px);
