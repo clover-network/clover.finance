@@ -124,8 +124,8 @@
 
 "@material-ui/core@^4.11.3":
   version "4.11.3"
-  resolved "https://registry.yarnpkg.com/@material-ui/core/-/core-4.11.3.tgz#f22e41775b0bd075e36a7a093d43951bf7f63850"
-  integrity sha512-Adt40rGW6Uds+cAyk3pVgcErpzU/qxc7KBR94jFHBYretU4AtWZltYcNsbeMn9tXL86jjVL1kuGcIHsgLgFGRw==
+  resolved "https://registry.npm.taobao.org/@material-ui/core/download/@material-ui/core-4.11.3.tgz?cache=0&sync_timestamp=1617555525124&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40material-ui%2Fcore%2Fdownload%2F%40material-ui%2Fcore-4.11.3.tgz#f22e41775b0bd075e36a7a093d43951bf7f63850"
+  integrity sha1-8i5Bd1sL0HXjanoJPUOVG/f2OFA=
   dependencies:
     "@babel/runtime" "^7.4.4"
     "@material-ui/styles" "^4.11.3"

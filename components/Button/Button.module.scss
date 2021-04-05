@@ -11,7 +11,6 @@
   font-weight: $fw-bold;
   font-size: 15px;
   line-height: 1.25;
-  // color: $color-btn;
   background-color: transparent;
   border: 1px solid $color-hover;
   transition: color 0.15s ease-in-out, fill 0.15s ease-in-out,
@@ -25,15 +24,15 @@
   &:focus {
     outline: none;
   }
-
-  // &:hover {
-  //   color: #fff;
-  //   fill: #fff;
-  //   background-color: $color-logo;
-  //   border-color: $color-logo;
-  // }
 }
 
 .icon {
   margin: 0 0 0 15px;
+}
+
+@media (max-width: $media-sm), (max-width: $media-xs), (max-width: $media-md), (max-width: $media-lg) {
+  .btn {
+    padding: 0 15px;
+    height: 40px;
+  }
 }
