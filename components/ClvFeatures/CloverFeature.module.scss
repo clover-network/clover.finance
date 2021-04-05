@@ -66,7 +66,7 @@
   &>span {
     display: block;
     text-align: center;
-    color: #27a577;
+    color: #6fcf97;
     line-height: 69px;
     font-size: 50px;
   }
@@ -108,7 +108,8 @@
   position: relative;
 
   h3 {
-    font-weight: bold;
+    font-weight: bold !important;
+    font-family: Alata;
     font-size: 38px;
     line-height: 46px;
     margin-bottom: 30px;
@@ -290,6 +291,7 @@
     text-align: center;
 
     h3 {
+      font-weight: bold !important;
       text-align: center;
     }
 
@@ -343,8 +345,11 @@
 
 @media (max-width: $media-xs), (max-width: $media-sm) {
   .title {
-    font-size: 27px;
+    font-size: 26px;
     margin-bottom: 0;
+    & > span {
+      font-size: 26px;
+    }
   }
 
   .featureContent {
@@ -354,8 +359,13 @@
   .topContentItem {
     margin-top: 20px;
     h3 {
+      font-weight: bold !important;
       font-size: 20px;
       margin-bottom: 15px;
+    }
+
+    p {
+      line-height: 25px
     }
 
     p, button {
