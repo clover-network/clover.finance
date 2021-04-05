@@ -13,9 +13,9 @@
   height: 100vh;
   justify-content: space-between;
 
-  @media (max-width: $media-sm), (max-width: $media-xs) {
+  @media (max-width: $media-sm), (max-width: $media-xs), (max-width: $media-md), (max-width: $media-lg) {
     & {
-      height: 70vh;
+      height: unset;
     }
   }
 
@@ -30,6 +30,12 @@
 }
 
 .animation {
+  @media (max-width: $media-sm), (max-width: $media-xs), (max-width: $media-md), (max-width: $media-lg) {
+    & {
+      padding: 0px 0;
+      height: unset;
+    }
+  }
   height: 0;
   display: flex;
   align-items: center;
