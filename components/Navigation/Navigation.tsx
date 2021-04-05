@@ -36,25 +36,22 @@ const Navigation = ({
         {!!items.length && <ul className={styles.list}>
             {
                 items?.map(({ children, label }) => (
-                    <div className={styles.item} key={label}>
-                        <div
-                            className={styles.itemLabel}
-                            onClick={innerWidth < 576 || innerWidth === 576 ? (e) => {
-                                e.stopPropagation()
-                                e.preventDefault()
-                                setCurrentMenu(label)
-                            } : () => {}}
-                            onMouseEnter={innerWidth > 576 ? (e) => {
-                                e.stopPropagation()
-                                e.preventDefault()
-                                setCurrentMenu(label)
-                            }: () => {}}
-                            onMouseLeave={innerWidth > 576 ? (e) => {
-                                e.stopPropagation()
-                                e.preventDefault()
-                                setCurrentMenu('')
-                            } : () => {}}
-                        >
+                    <div
+                        className={styles.item}
+                        key={label}
+                         onClick={innerWidth < 576 || innerWidth === 576 ? (e) => {
+                             setCurrentMenu(label)
+                         } : () => {}}
+                         onMouseEnter={innerWidth > 576 ? (e) => {
+                             setCurrentMenu(label)
+                         }: () => {}}
+                         onMouseLeave={innerWidth > 576 ? (e) => {
+                             if ( label === currentMenu ) {
+                                 setCurrentMenu('')
+                             }
+                         } : () => {}}
+                    >
+                        <div className={styles.itemLabel}>
                             {label}
                             <ShortArrow className={styles.itemHover} />
                         </div>
