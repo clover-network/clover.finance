@@ -54,9 +54,6 @@ const BACKERS = [
       <img width={123} key={10} src="/backers/bk_kyrosVentures.png" alt="" />
     ),
   },
-  {
-    element: <img width={123} key={11} src="/backers/bk_okex.png" alt="" />,
-  },
 ];
 
 const EarlyBackers = ({ className }: { className?: string }) => {

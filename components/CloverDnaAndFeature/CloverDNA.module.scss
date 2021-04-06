@@ -94,7 +94,7 @@
   margin-bottom: 40px;
   h3 {
     font-weight: bold;
-    font-size: 30px;
+    font-size: 26px;
     line-height: 41px;
     margin-bottom: 28px;
     font-family: Alata;
@@ -180,8 +180,8 @@
 
 .clvTokenTitle {
   font-weight: bold;
-  font-size: 44px;
-  line-height: 53px;
+  font-size: 52px;
+  line-height: 63px;
   text-align: center;
   color: #ffffff;
   margin-bottom: 70px;
@@ -251,7 +251,7 @@
     height: auto;
   }
 }
-@media (max-width: $media-xs), (max-width: $media-sm) {
+@media  (max-width: $media-sm) {
   .title {
     font-size: 26px;
     margin-bottom: 0;
