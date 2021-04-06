@@ -301,7 +301,7 @@ const PARTNERS = [
 
 const ARTICLES = [
   {
-    image: '/polychainCapital-Hypersphere.png',
+    image: '/PolychainCapital-Hypersphere.png',
     link:
       'https://medium.com/projectclover/clover-completes-seed-round-with-polychain-hypersphere-bithumb-global-and-divergence-ventures-828120164074',
     text:
