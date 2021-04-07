@@ -21,8 +21,9 @@
 
 .index {
   color: $color-logo;
+  //font-family: Alata;
   font-weight: bold;
-  font-size: 22px;
+  font-size: 26px;
   line-height: 26px;
   margin-right: 25px;
 }
@@ -32,9 +33,9 @@
 }
 
 .title {
-  font-weight: bold;
+  font-family: Alata;
   font-size: 26px;
-  margin-bottom: 10px;
+  margin-bottom: 28px;
 }
 .desc {
   font-family: Roboto, sans-serif;
@@ -82,7 +83,7 @@
     height: 44px;
     position: absolute;
     z-index: 10;
-    bottom: 0;
+    bottom: -58px;
     left: 50%;
     transform: translate(-50%, -80%);
     cursor: pointer;
@@ -99,11 +100,12 @@
 }
 .textInner {
   text-align: center;
-  font-size: 26px;
-  line-height: 35px;
+  font-size: 52px;
+  line-height: 63px;
   padding: 0 40px;
   &.green {
-    font-size: 20px;
+    font-size: 52px;
+    color: #6fcf97;
   }
 }
 
@@ -121,13 +123,24 @@
   }
 }
 
-@media (max-width: $media-sm), (max-width: $media-xs) {
+@media (max-width: $media-sm) {
   .wrapper {
     padding-bottom: 50px;
   }
 
+  .textInner {
+    font-size: 26px;
+    line-height: 35px;
+    &.green {
+      font-size: 26px;
+      line-height: 35px;
+      color: #6fcf97;
+    }
+  }
+
   .title, .index {
     font-size: 20px;
+    margin-bottom: 15px;
   }
 
   .desc {
@@ -141,21 +154,19 @@
   }
 }
 
-.textInner {
-  &.green {
-    color: #6fcf97;
-  }
-}
 
-@media (min-width: $media-lg) {
+
+@media (min-width: $media-sm), (max-width: $media-md) {
   .textOuter {
     max-width: 777px;
   }
-  .textInner {
-    font-size: 38px;
-    line-height: 69px;
-    &.green {
-      font-size: 30px;
-    }
+  .launch {
+    margin-right: 100px;
+  }
+}
+
+@media (min-width: $media-xl) {
+  .launch {
+    margin-right: 223px !important;
   }
 }
