@@ -58,7 +58,6 @@
 .title {
   font-style: normal;
   font-weight: 400;
-  font-size: 52px;
   text-align: center;
   color: #ffffff;
   justify-content: center !important;
@@ -68,7 +67,7 @@
     text-align: center;
     color: #6fcf97;
     line-height: 69px;
-    font-size: 50px;
+    font-size: 52px;
   }
 }
 
@@ -108,11 +107,10 @@
   position: relative;
 
   h3 {
-    font-weight: bold !important;
     font-family: Alata;
-    font-size: 38px;
+    font-size: 26px;
     line-height: 46px;
-    margin-bottom: 30px;
+    margin-bottom: 28px;
     width: 100%;
     text-align: left;
   }
@@ -125,7 +123,7 @@
     font-family: Roboto, sans-serif;
   }
 
-  a {
+  a, span {
     display: inline-block;
     margin-top: 30px;
     color: #27a577;
@@ -149,7 +147,8 @@
   }
 
   img {
-    width: 100%;
+    width: 80%;
+    margin-top: 20px;
   }
 }
 
@@ -225,7 +224,7 @@
 .clvTokenTitle {
   font-weight: bold;
   font-size: 44px;
-  line-height: 53px;
+  line-height: 63px;
   text-align: center;
   color: #ffffff;
   margin-bottom: 70px;
@@ -265,7 +264,7 @@
   p {
     font-weight: 300;
     font-size: 18px;
-    line-height: 140%;
+    line-height: 25px;
     font-family: Roboto, sans-serif;
     color: #ffffff;
   }
@@ -291,7 +290,6 @@
     text-align: center;
 
     h3 {
-      font-weight: bold !important;
       text-align: center;
     }
 
@@ -306,8 +304,8 @@
       width: 100%;
       display: block;
       text-align: center;
-      line-height: 46px;
-      font-size: 40px;
+      //line-height: 46px;
+      //font-size: 40px;
     }
   }
 
@@ -322,34 +320,26 @@
   }
 }
 
-@media (max-width: $media-md) {
+@media (min-width: $media-md), (max-width: $media-lg) {
   .title {
-    &>span {
-      width: 100%;
-      display: block;
-      text-align: center;
-      line-height: 36px;
-      font-size: 30px;
+    font-size: 52px;
+  }
+}
+
+@media (max-width: $media-sm) {
+  .title {
+    font-size: 26px;
+    margin-bottom: 15px;
+    & > span {
+      line-height: 63px;
+      font-size: 26px;
     }
   }
 
   .typing {
-    width: 100%;
-    height: auto;
-    min-height: 78px;
-    line-height: 26px;
     font-size: 20px;
-    padding: 0;
-  }
-}
-
-@media (max-width: $media-xs), (max-width: $media-sm) {
-  .title {
-    font-size: 26px;
-    margin-bottom: 0;
-    & > span {
-      font-size: 26px;
-    }
+    line-height: 30px;
+    min-height: 60px;
   }
 
   .featureContent {
@@ -359,7 +349,6 @@
   .topContentItem {
     margin-top: 20px;
     h3 {
-      font-weight: bold !important;
       font-size: 20px;
       margin-bottom: 15px;
     }
@@ -373,4 +362,5 @@
     }
   }
 }
+
 
