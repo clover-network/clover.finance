@@ -9,8 +9,7 @@
 
   h3 {
     font-weight: bold;
-    font-size: 44px;
-    line-height: 53px;
+    font-size: 52px;
     text-align: center;
     color: #000000;
     margin-top: 120px;
@@ -61,7 +60,7 @@
   height: 100px;
 }
 
-@media (max-width: $media-xs), (max-width: $media-sm) {
+@media (max-width: $media-sm) {
   .wrapper {
     h3 {
       font-size: 26px;

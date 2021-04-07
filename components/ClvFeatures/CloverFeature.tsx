@@ -5,6 +5,7 @@ import styles from './CloverFeature.module.scss'
 
 const Features = ({
   features = [],
+  handleScroll,
 }: {
   features?: {
     title?: string
@@ -15,6 +16,7 @@ const Features = ({
     name?: string
     index?: number
   }[]
+  handleScroll?: () => void
 }) => {
   const cursor = {
     show: true,
@@ -24,9 +26,10 @@ const Features = ({
     hideWhenDoneDelay: 0,
   }
   const fontList = [
-    'You would pay lower gas fees if you are a frequent user of a DeFi protocol?',
-    'You would earn passive income by deploying smart contracts on Polkadot?',
-    'You could easily build cross-chain swaps,vaults and yield earning strategies?',
+    'You can easily build cross-chain swaps, vaults and yield earning strategies?',
+    'You can earn passive income by deploying smart contracts?',
+    'You can pay gas fee in any token?',
+    'You can pay a lower gas fee as a frequent DeFi protocol user?',
   ];
   const [count, setCount] = useState(0)
   const { ref, inView } = useInView({
@@ -56,13 +59,12 @@ const Features = ({
         // @ts-ignore
         typingVal.current.innerHTML = str;
         setTimeout(_ => {
-          typing(index < 2 ? index + 1 : 0);
+          typing(index < 3 ? index + 1 : 0);
         },1500)
       }
     }
     typingFun();
   }
-
 
   return (
     <>
@@ -93,10 +95,16 @@ const Features = ({
                   >
                     <h3>{feature.title}</h3>
                     <p className={styles.gray}>{feature.content}</p>
-                    <a href={feature.link} target="_blank">
-                      {feature.btnText}
-                    </a>
-                    <img src={feature.img} alt="" />
+                    {feature.link !== 'scroll' ? (
+                        <a href={feature.link} target="_blank">
+                          {feature.btnText}
+                        </a>
+                    ) : (
+                        <span onClick={handleScroll}>
+                          {feature.btnText}
+                        </span>
+                    )}
+                    {feature.img && <img src={feature.img} alt="" />}
                   </div>
                 ))}
               </div>
