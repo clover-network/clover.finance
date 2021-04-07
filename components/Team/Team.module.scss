@@ -10,9 +10,9 @@
 .team {
   padding: 120px 0;
   font-style: normal;
-  //font-weight: bold;
-  font-size: 52px;
-  line-height: 63px;
+  font-weight: bold;
+  font-size: 44px;
+  line-height: 53px;
   text-align: center;
   width: 100%;
   max-width: 1030px;
@@ -58,11 +58,10 @@
   }
 }
 
-@media (max-width: $media-sm) {
+@media (max-width: $media-xs), (max-width: $media-sm) {
   .team {
     font-size: 26px !important;
     margin-bottom: 0;
-    padding: 50px 0;
   }
 
   .name {

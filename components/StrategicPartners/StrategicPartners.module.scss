@@ -12,7 +12,8 @@
 .header {
   font-style: normal;
   font-weight: bold;
-  font-size: 52px;
+  font-size: 44px;
+  line-height: 53px;
   text-align: center;
   margin-bottom: 30px;
   color: #000000;
@@ -31,19 +32,12 @@
   width: 50%;
   height: 100px;
   float: left;
-
-  &:last-child {
-    background-size: 50%!important;
-  }
 }
 
 @media (min-width: $media-md) {
   .logo {
     width: 246px;
     height: 100px;
-    &:last-child {
-      background-size: 50%!important;
-    }
   }
 }
 

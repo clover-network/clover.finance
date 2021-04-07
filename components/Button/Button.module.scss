@@ -4,7 +4,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 15px 40px;
+  padding: 0 40px;
   height: 54px;
   text-align: center;
   text-decoration: none;
@@ -30,7 +30,7 @@
   margin: 0 0 0 15px;
 }
 
-@media (max-width: $media-sm) {
+@media (max-width: $media-sm), (max-width: $media-xs), (max-width: $media-md), (max-width: $media-lg) {
   .btn {
     padding: 0 15px;
     height: 40px;

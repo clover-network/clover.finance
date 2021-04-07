@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import styles from './EarlyBackers.module.scss';
 import ArrowLeft from '../../public/svg/arrow_left.svg';
 import ArrowRight from '../../public/svg/arrow_right.svg';
@@ -22,25 +22,54 @@ const EarlyBackers = ({ className }: { className?: string }) => {
           </h3>
           <div className={styles.content}>
             <Carousel
-                itemWidth={130}
-                infinite
-                autoPlay={1000}
-                slidesPerScroll={2}
-                centered
-                addArrowClickHandler
-                arrowLeft={<ArrowLeft style={{marginRight: '20px', cursor: 'pointer' }}/>}
-                arrowRight={<ArrowRight style={{marginLeft: '20px', cursor: 'pointer' }}/>}
+              itemWidth={130}
+              infinite
+              autoPlay={1000}
+              slidesPerScroll={2}
+              centered
+              addArrowClickHandler
+              arrowLeft={
+                <ArrowLeft style={{ marginRight: '20px', cursor: 'pointer' }} />
+              }
+              arrowRight={
+                <ArrowRight style={{ marginLeft: '20px', cursor: 'pointer' }} />
+              }
             >
-              <img style={{marginLeft: '150px'}} width={123} key={1} src="/backers/bk_polychain.png" alt="" />,
+              <img
+                style={{ marginLeft: '150px' }}
+                width={123}
+                key={1}
+                src="/backers/bk_polychain.png"
+                alt=""
+              />
+              ,
               <img width={123} key={2} src="/backers/bk_alameda.png" alt="" />,
-              <img width={123} key={3} src="/backers/bk_hypersphere.png" alt="" />,
-              <img width={123} key={4} src="/backers/bk_divergence.png" alt="" />,
+              <img
+                width={123}
+                key={3}
+                src="/backers/bk_hypersphere.png"
+                alt=""
+              />
+              ,
+              <img
+                width={123}
+                key={4}
+                src="/backers/bk_divergence.png"
+                alt=""
+              />
+              ,
               <img width={123} key={5} src="/backers/bk_block.png" alt="" />,
               <img width={123} key={6} src="/backers/bk_cms.png" alt="" />,
               <img width={123} key={7} src="/backers/bk_kr1.png" alt="" />,
               <img width={123} key={8} src="/backers/bk_bitcoin.jpg" alt="" />,
-              <img width={123} key={9} src="/backers/bk_moonwhale.png" alt="" />,
-              <img width={123} key={10} src="/backers/bk_kyrosVentures.png" alt="" />
+              <img width={123} key={9} src="/backers/bk_moonwhale.png" alt="" />
+              ,
+              <img
+                width={123}
+                key={10}
+                src="/backers/bk_kyrosVentures.png"
+                alt=""
+              />
             </Carousel>
           </div>
         </div>
