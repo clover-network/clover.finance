@@ -44,7 +44,7 @@ const BACKERS = [
     element: <img width={123} key={7} src="/backers/bk_kr1.png" alt="" />,
   },
   {
-    element: <img width={123} key={8} src="/backers/bk_bitcoin.png" alt="" />,
+    element: <img width={123} key={8} src="/backers/bk_bitcoin.jpg" alt="" />,
   },
   {
     element: <img width={123} key={9} src="/backers/bk_moonwhale.png" alt="" />,
