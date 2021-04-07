@@ -30,31 +30,12 @@
   margin-top: 50px;
 }
 
-.arrowRight {
-  margin-right: 50px;
-  cursor: pointer;
-  position: absolute;
-  top: -55px;
-  left: calc(100vw - 80px)!important;
-}
-
-.arrowLeft {
-  margin-left: 50px;
-  cursor: pointer;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  position: absolute;
-  bottom: 80px;
-}
-
 .image {
   margin: 0 20px;
   user-select: none;
 }
 @media (max-width: $media-xl), (min-width: $media-md) {
   .wrapper {
-    //width: 80%;
     overflow: hidden;
   }
 
@@ -85,13 +66,6 @@
     h3 {
       font-size: 26px;
     }
-  }
-}
-
-
-@media (min-width: $media-lg) {
-  .arrowRight {
-    left: calc(100vw - 170px)!important;
   }
 }
 

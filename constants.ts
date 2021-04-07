@@ -366,6 +366,8 @@ const FEATURES = [
   },
   {
     index: 4,
+    title: 'Identity-based Fee Schedule',
+    content: 'Clover’s Dynamic Fee Schedule is a brand-new gas calculation method which allows Clover users to get gas discounts proportionally to the frequency of their network activity. Users with less interaction pay more gas, and users with more interactions will less gas over time according to a usage curve.',
     img: '/fee.svg',
     name: 'center'
   },
