@@ -70,9 +70,9 @@ workflows:
       # prod
       - approve-prod:
           type: approval
-#          filters:
-#            branches:
-#              only: [ master ]
+          filters:
+            branches:
+              only: [ master ]
       - build-prod:
           context: clover_build_prod
           requires:
