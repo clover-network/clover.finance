@@ -22,7 +22,7 @@ const LOGO_MAPS = [
   '/partner/manta.png',
   '/partner/easyfi.png',
   '/partner/unilend.png',
-  '/partner/parsiq.png',
+  '/partner/parsiq.jpg',
 ]
 
 export function StrategicPartners() {
