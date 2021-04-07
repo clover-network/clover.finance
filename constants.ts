@@ -308,25 +308,24 @@ const ARTICLES = [
       'Clover completes Seed round with Polychain, Hypersphere, Bithumb Global and Divergence Ventures',
   },
   {
-    image: '/clover-monthly.png',
+    image: '/easyfi.png',
     link:
-        'https://projectclover.medium.com/clover-monthly-march-2021-d7cc17146e91',
+      'https://medium.com/projectclover/clover-x-easyfi-tapping-into-the-potential-of-staked-derivatives-assets-on-polkadot-659891dbded0',
     text:
-        'Clover Monthly | March 2021',
+      'Clover X EasyFi | Tapping into the Potential of Staked Derivatives Assets on Polkadot',
   },
   {
-    image: '/clover-finance.png',
+    image: '/bella.png',
     link:
-        'https://projectclover.medium.com/clover-finance-the-lightest-and-easiest-defi-infrastructure-empowered-by-polkadot-6dc729c120c8',
+      'https://medium.com/projectclover/clover-x-bella-building-polkadot-based-defi-infrastructure-in-collaboration-b5b89de1db1c',
     text:
-        'Clover Finance: The Lightest and Easiest DeFi Infrastructure Empowered by Polkadot',
+      'Clover X Bella | Building Polkadot-Based DeFi Infrastructure in Collaboration',
   },
   {
-    image: '/clover-partners.png',
+    image: '/two-way-peg.png',
     link:
-        'https://projectclover.medium.com/clover-partners-with-the-graph-to-joinly-explore-the-border-of-cross-chain-evm-f17161c37096',
-    text:
-        'Clover Partners with The Graph to Joinly Explore The Border of Cross-chain EVM',
+      'https://medium.com/projectclover/clover-re-defining-a-two-way-peg-between-blockchains-8d5b8c0dea6a',
+    text: 'Clover: re-defining a two-way peg between blockchains',
   },
 ]
 
@@ -339,7 +338,7 @@ const DNAS = [
   },
   {
     title: 'Threshold Protocol',
-    content: 'Clover utilizes BIP-Schnorr compatible threshold signatures to enable meaningful cross-chain communication between Polkadot and non-Polkadot networks. Clover facilitates end-to-end secure communication between signers for notarising Polkadot block headers to pointing out Proof-Of-Inclusion to Ethereum VM and Bitcoin script.',
+    content: 'Clover utilizes BIP-Schnorr compatible threshold signatures to enable meaningful cross-chain communication between Polkadot and non-Polkadot networks. Clover facilitates end-to-end secure communication between signers for notarising Polkadot block headers to pointing out Proof-Of-Inclusion to Ethereum VM and Bitcoin script',
     btnText: 'Read Technical Paper',
     link: 'https://clover.finance/techpaper.pdf'
   },
@@ -362,22 +361,14 @@ const FEATURES = [
   },
   {
     index: 3,
-    title: 'Gasless End-user Experience',
-    content: 'Clover reinvented feeconomics to simpify DeFi user experience. Clover’s smart relayer will act on behalf of the sender so that relayers can cover gas fees with the same token from the amount users transact, without depending on base currency like ETH. Transaction fees will be deducted automatically from the asset the user is transacting with.',
-    btnText: 'Pay gas in the way you want',
-    link: 'scroll'
+    title: 'Identity based fee schedule',
+    content: 'Clover’s Dynamic Fee Schedule is a brand-ew gas calculation method which allows Clover users to get gas discounts proportionally to the frequency of their network activity. Users with less interaction pay more gas, and users with more interactions will less gas over time according to a usage curve. '
   },
   {
     index: 4,
-    title: 'Identity-based Fee Schedule',
-    content: 'Clover’s Dynamic Fee Schedule is a brand-ew gas calculation method which allows Clover users to get gas discounts proportionally to the frequency of their network activity. Users with less interaction pay more gas, and users with more interactions will less gas over time according to a usage curve.',
     img: '/fee.svg',
+    name: 'center'
   },
-  // {
-  //   index: 5,
-  //   img: '/fee.svg',
-  //   name: 'center'
-  // },
   {
     index: 5,
     title: 'Cross-chain Interactions',

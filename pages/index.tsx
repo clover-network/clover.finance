@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react'
+import React, {useEffect} from 'react'
 import Head from 'next/head'
 import Header from '../components/Header/Header'
 import GetStarted from '../components/GetStarted/GetStarted'
@@ -16,12 +16,6 @@ import Features from '../components/ClvFeatures/CloverFeature';
 
 declare var WOW
 const Home = () => {
-    const scrollRef = useRef(null);
-    const handleClickScroll = () => {
-        if (scrollRef.current) {
-            scrollRef.current.scrollIntoView({ behavior: "smooth" });
-        }
-    }
     useEffect(() => {
         setTimeout(_ => {
             new WOW({ animateClass: 'animated' }).init();
@@ -42,10 +36,8 @@ const Home = () => {
                 <Introduction/>
 
                 <DnaAndFeatures dnas={DNAS}/>
-                <Features features={FEATURES} handleScroll={handleClickScroll}/>
-                <div ref={scrollRef}>
-                    <ClvToken clvTokens={CLVTOKENS}/>
-                </div>
+                <Features features={FEATURES}/>
+                <ClvToken clvTokens={CLVTOKENS}/>
             </main>
             <div className={styles.bottom}>
                 <EarlyBackers/>

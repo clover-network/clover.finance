@@ -13,7 +13,6 @@
   justify-content: center;
   @media (min-width: $media-lg) {
     & {
-      min-height: 800px;
       padding-top: 72px
     }
   }
@@ -40,7 +39,7 @@
   text-align: center;
   text-transform: capitalize;
   position: relative;
-  top: 40px;
+  top: 50px;
 }
 
 .hidden {
@@ -75,32 +74,26 @@
   }
 
   .textInner {
-    font-size: 52px;
-    line-height: 69px;
+    font-size: 42px;
+    line-height: 50px;
     &.green {
       font-size: 40px;
     }
   }
 }
-
-@media (min-width: $media-md), (max-width: $media-lg) {
+@media (max-width: $media-sm), (max-width: $media-xs), (max-width: $media-md), (max-width: $media-lg) {
   .wrapper {
-    height: 100vh;
-    padding-top: 72px;
+    height: calc(100vh - 72px);
+    padding-top: 10px;
+
   }
   .textInner {
-    font-size: 52px;
-    line-height: 69px;
     top: 20px;
   }
-}
-
-@media (max-width: $media-sm) {
-  .textInner {
-    font-size: 26px;
-    line-height: 35px;
+  .animation {
+    padding: 40px 0;
   }
-  .wrapper {
-    padding-top: 0;
+  .btn {
+    top: -20px;
   }
 }
