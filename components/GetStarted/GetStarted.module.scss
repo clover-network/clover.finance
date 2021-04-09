@@ -87,6 +87,7 @@
   .wrapper {
     height: 100vh;
     padding-top: 0;
+    min-height: 800px;
   }
   .textInner {
     font-size: 52px;
@@ -98,8 +99,10 @@
   .wrapper {
     height: 100vh;
     padding-top: 160px;
+    min-height: 910px;
   }
 }
+
 @media (max-width: $media-sm) {
   .textInner {
     font-size: 26px;
