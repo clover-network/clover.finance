@@ -17,7 +17,7 @@ const DESC_LIST = [
   {
     title: 'Clover-native CLV token',
     desc:
-      'The Clover CLV token is cross-chain compatible as our unique 2-way peg bridge technology allows the EVM based Clover address and Polkadot based Clover address to be bounded together, allowing the utilization of all both chains together.',
+      'The Clover CLV token is cross-chain compatible as our unique 2-way peg bridge technology allows the EVM based Clover address and Polkadot based Clover address to be bounded together, allowing the utilization of all chains together.',
   },
 ];
 
