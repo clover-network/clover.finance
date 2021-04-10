@@ -6,7 +6,7 @@ const LOGO_MAPS = [
   '/partner/graph.png',
   '/partner/chainlink.png',
   '/partner/prosper.png',
-  '/partner/ankr.png',
+  '/partner/ankr.svg',
   '/partner/dodo.png',
   '/partner/polygon.png',
   '/partner/litentry.png',
