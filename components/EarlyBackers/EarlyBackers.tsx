@@ -24,7 +24,7 @@ const EarlyBackers = ({ className }: { className?: string }) => {
             <Carousel
                 itemWidth={210}
                 infinite
-                autoPlay={1000}
+                autoPlay={3000}
                 slidesPerScroll={2}
                 centered
                 addArrowClickHandler

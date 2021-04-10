@@ -6,6 +6,7 @@ const LOGO_MAPS = [
   '/partner/graph.png',
   '/partner/chainlink.png',
   '/partner/prosper.png',
+  '/partner/ankr.png',
   '/partner/dodo.png',
   '/partner/polygon.png',
   '/partner/litentry.png',
@@ -23,7 +24,6 @@ const LOGO_MAPS = [
   '/partner/easyfi.png',
   '/partner/unilend.png',
   '/partner/parsiq.png',
-  '/partner/ankr.png',
 ]
 
 export function StrategicPartners() {
