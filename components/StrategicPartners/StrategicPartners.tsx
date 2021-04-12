@@ -2,7 +2,6 @@ import React from 'react'
 import styles from './StrategicPartners.module.scss'
 import cn from 'classnames'
 const LOGO_MAPS = [
-  '/partner/polkadot.png',
   '/partner/graph.png',
   '/partner/chainlink.png',
   '/partner/prosper.png',
@@ -10,7 +9,6 @@ const LOGO_MAPS = [
   '/partner/dodo.png',
   '/partner/polygon.png',
   '/partner/litentry.png',
-  '/partner/advanca.png',
   '/partner/boringdao.png',
   '/partner/injective.png',
   '/partner/crust.png',
