@@ -7,7 +7,7 @@ const HEADER_MENU = [
         label: 'Telegram',
       },
       {
-        link: 'https://discord.com/invite/z2egJBsBWx/',
+        link: 'https://discord.gg/kkqmpwheRb',
         label: 'Discord',
       },
       {
