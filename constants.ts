@@ -7,10 +7,6 @@ const HEADER_MENU = [
         label: 'Telegram',
       },
       {
-        link: 'https://discord.gg/kkqmpwheRb',
-        label: 'Discord',
-      },
-      {
         link: 'https://twitter.com/clover_finance/',
         label: 'Twitter',
       },
