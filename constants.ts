@@ -359,7 +359,7 @@ const FEATURES = [
   {
     index: 3,
     title: 'Gasless End-user Experience',
-    content: 'Clover reinvented feeconomics to simpify DeFi user experience. Clover’s smart relayer will act on behalf of the sender so that relayers can cover gas fees with the same token from the amount users transact, without depending on base currency like ETH. Transaction fees will be deducted automatically from the asset the user is transacting with.',
+    content: 'Clover reinvented feeconomics to simplify DeFi user experience. Clover’s smart relayer will act on behalf of the sender so that relayers can cover gas fees with the same token from the amount users transact, without depending on base currency like ETH. Transaction fees will be deducted automatically from the asset the user is transacting with.',
     btnText: 'Pay gas in the way you want',
     link: 'scroll'
   },
@@ -397,7 +397,7 @@ const CLVTOKENS = [
   },
   {
     title: 'Governance',
-    content: 'Lock CLV to elect council members and guide the developement through on-chain governance. ',
+    content: 'Lock CLV to elect council members and guide the development through on-chain governance. ',
   },
   {
     title: 'Validation',
