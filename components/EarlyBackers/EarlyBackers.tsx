@@ -22,26 +22,92 @@ const EarlyBackers = ({ className }: { className?: string }) => {
           </h3>
           <div className={styles.content}>
             <Carousel
-                itemWidth={210}
-                infinite
-                autoPlay={3000}
-                slidesPerScroll={2}
-                centered
-                addArrowClickHandler
-                arrowLeft={<ArrowLeft style={{marginRight: '20px', cursor: 'pointer' }}/>}
-                arrowRight={<ArrowRight style={{marginLeft: '20px', cursor: 'pointer' }}/>}
+              itemWidth={210}
+              infinite
+              autoPlay={3000}
+              slidesPerScroll={2}
+              centered
+              addArrowClickHandler
+              arrowLeft={
+                <ArrowLeft style={{ marginRight: '20px', cursor: 'pointer' }} />
+              }
+              arrowRight={
+                <ArrowRight style={{ marginLeft: '20px', cursor: 'pointer' }} />
+              }
             >
-              <img width={123} key={1} src="/backers/bk_polychain.png" alt="" />
-              <img width={123} key={2} src="/backers/bk_alameda.png" alt="" />
-              <img width={123} key={3} src="/backers/bk_hypersphere.png" alt="" />
-              <img width={123} key={4} src="/backers/bk_divergence.png" alt="" />
-              <img width={123} key={5} src="/backers/bk_block.png" alt="" />
-              <img width={123} key={6} src="/backers/bk_cms.png" alt="" />
-              <img width={123} key={7} src="/backers/bk_kr1.png" alt="" />
-              <img width={123} key={8} src="/backers/bk_bitcoin.jpg" alt="" />
-              <img width={123} key={9} src="/backers/bk_moonwhale.png" alt="" />
-              <img width={123} key={10} src="/backers/bk_kyrosVentures.png" alt="" />
-              <img width={123} key={10} src="/backers/bk_illusionist.svg" alt="" />
+              <div className={styles.item}>
+                <img
+                  width={123}
+                  key={1}
+                  src="/backers/bk_polychain.png"
+                  alt=""
+                />
+              </div>
+
+              <div className={styles.item}>
+                <img width={123} key={2} src="/backers/bk_alameda.png" alt="" />
+              </div>
+
+              <div className={styles.item}>
+                <img
+                  width={123}
+                  key={3}
+                  src="/backers/bk_hypersphere.png"
+                  alt=""
+                />
+              </div>
+
+              <div className={styles.item}>
+                <img
+                  width={123}
+                  key={4}
+                  src="/backers/bk_divergence.png"
+                  alt=""
+                />
+              </div>
+
+              <div className={styles.item}>
+                <img width={123} key={5} src="/backers/bk_block.png" alt="" />
+              </div>
+
+              <div className={styles.item}>
+                <img width={123} key={6} src="/backers/bk_cms.png" alt="" />
+              </div>
+
+              <div className={styles.item}>
+                <img width={123} key={7} src="/backers/bk_kr1.png" alt="" />
+              </div>
+
+              <div className={styles.item}>
+                <img width={123} key={8} src="/backers/bk_bitcoin.jpg" alt="" />
+              </div>
+
+              <div className={styles.item}>
+                <img
+                  width={123}
+                  key={9}
+                  src="/backers/bk_moonwhale.png"
+                  alt=""
+                />
+              </div>
+
+              <div className={styles.item}>
+                <img
+                  width={123}
+                  key={10}
+                  src="/backers/bk_kyrosVentures.png"
+                  alt=""
+                />
+              </div>
+
+              <div className={styles.item}>
+                <img
+                  width={123}
+                  key={10}
+                  src="/backers/bk_illusionist.svg"
+                  alt=""
+                />
+              </div>
             </Carousel>
           </div>
         </div>

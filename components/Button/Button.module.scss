@@ -11,18 +11,27 @@
   font-weight: $fw-bold;
   font-size: 15px;
   line-height: 1.25;
-  background-color: transparent;
+  font-family: Gilroy-Bold;
+  background-color: $color-accent;
   border: 1px solid $color-hover;
   transition: color 0.15s ease-in-out, fill 0.15s ease-in-out,
     background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0px 12px 36px rgba(76, 191, 122, 0.35);
+  min-width: 240px;
+
   &:active {
     transform: translateY(1px);
   }
 
   &:focus {
     outline: none;
+  }
+
+  svg {
+    margin-right: 12px;
   }
 }
 

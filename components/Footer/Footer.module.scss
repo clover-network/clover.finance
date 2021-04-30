@@ -20,24 +20,26 @@
 //  margin: 35px 0 0 0;
 //}
 
-
 .wrapper {
   width: 100%;
   height: 56px;
   display: flex;
   align-items: center;
-  background: rgb(0,0,0);
-  padding: 0;
+  padding-bottom: 90px;
 }
 
 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: rgba($color-white,.4);
   width: 90%;
-  //max-width: $footer-width;
   margin: 0 auto;
+
+  font-family: Gilroy-Medium;
+  font-size: 18px;
+  line-height: 30px;
+  max-width: 1230px;
+  color: $color-light;
 }
 
 @media (max-width: $media-lg) {
@@ -58,6 +60,3 @@
     margin: 35px 0 0 0;
   }
 }
-
-
-

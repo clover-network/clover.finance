@@ -7,15 +7,45 @@
   align-items: center;
   width: 100%;
   text-align: center;
-  background: url('/images/sky.jpg') no-repeat center/cover;
-  padding-top: 140px;
   height: 100vh;
-  justify-content: center;
+  justify-content: flex-start;
+
+  a {
+    margin-top: 30px;
+  }
+
   @media (min-width: $media-lg) {
     & {
       min-height: 800px;
-      padding-top: 72px
+      padding-top: 72px;
     }
+  }
+}
+
+.forground {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 0;
+}
+
+.centerLogo {
+  padding: 30px;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  box-shadow: 0px 18px 36px rgba(0, 0, 0, 0.15);
+  border-radius: 36px;
+  z-index: 1;
+  width: 132px;
+  height: 132px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  svg {
+    width: 72px;
+    height: 72px;
   }
 }
 
@@ -26,21 +56,20 @@
   display: flex;
   align-items: center;
 
-   @media (max-width: $media-md) {
-     width: 160%;
-   }
+  @media (max-width: $media-md) {
+    width: 160%;
+  }
 }
 
 .textInner {
   padding: 0 40px;
   font-size: 26px;
-  font-family: Alata, serif;
-  font-style: normal;
-  font-weight: normal;
+  font-family: Gilroy-SemiBold, serif;
   text-align: center;
-  text-transform: capitalize;
   position: relative;
-  top: 40px;
+  letter-spacing: -2px;
+  color: $color-text;
+  margin-top: 30px;
 }
 
 .hidden {
@@ -56,30 +85,73 @@
 
 .btn {
   position: relative;
-  top: -50px;
 }
 
-@media (min-width: $media-lg) {
-  .title {
-    font-size: 44px;
-    margin-bottom: -50px;
-    line-height: 1.1;
+.resources {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transform: translateY(50%);
+
+  &::before {
+    content: '';
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    bottom: 0;
+    background-color: $color-text;
   }
 
-  .btn {
-    top: -110px;
+  &::after {
+    content: '';
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    top: 0;
+    background-color: $color-light-grey;
+    z-index: -1;
+  }
+}
+
+.card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  box-shadow: 0px 18px 36px rgba(0, 0, 0, 0.15);
+  border-radius: 30px;
+  height: 240px;
+  width: 384px;
+  margin: 0 12px;
+  padding: 30px;
+  text-align: left;
+
+  h1 {
+    font-family: Gilroy-SemiBold;
+    font-size: 26px;
+    line-height: 30px;
+    color: $color-text;
+    margin-bottom: 24px;
   }
 
-  .textOuter {
-    max-width: 777px;
+  svg {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
   }
+}
 
-  .textInner {
-    font-size: 52px;
-    line-height: 69px;
-    &.green {
-      font-size: 40px;
-    }
+.cardList {
+  p {
+    color: $color-light;
+    font-family: Gilroy-Medium;
+    font-size: 18px;
+    line-height: 18px;
+    margin-bottom: 15px;
+    cursor: pointer;
   }
 }
 
@@ -92,13 +164,33 @@
   .textInner {
     font-size: 52px;
     line-height: 69px;
-    top: 20px;
   }
 }
+
+@media (min-width: $media-lg) {
+  .title {
+    font-size: 44px;
+    margin-bottom: -50px;
+    line-height: 1.1;
+  }
+
+  .textOuter {
+    max-width: 800px;
+  }
+
+  .textInner {
+    font-size: 80px;
+    line-height: 80px;
+    &.green {
+      font-size: 40px;
+    }
+  }
+}
+
 @media (min-width: $media-lg) {
   .wrapper {
     height: 100vh;
-    padding-top: 160px;
+    padding-top: 10%;
     min-height: 910px;
   }
 }

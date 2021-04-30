@@ -1,19 +1,12 @@
 @import 'styles/variables';
 
-.wrapper {
-  padding-top: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 120px;
-  position: relative;
-  z-index: 99;
-}
-
 .item {
   display: flex;
   align-items: flex-start;
   text-align: left;
+  max-width: 384px;
+  margin: 0 12px;
+
   &:not(:last-child) {
     padding-bottom: 58px;
   }
@@ -21,11 +14,10 @@
 
 .index {
   color: $color-logo;
-  //font-family: Alata;
-  font-weight: bold;
-  font-size: 26px;
-  line-height: 26px;
-  margin-right: 25px;
+  font-family: Gilroy-Bold;
+  font-size: 18px;
+  line-height: 30px;
+  margin-right: 12px;
 }
 .index,
 .title {
@@ -33,97 +25,75 @@
 }
 
 .title {
-  font-family: Alata;
-  font-size: 26px;
-  margin-bottom: 28px;
+  font-family: Gilroy-Medium;
+  font-size: 18px;
+  margin-bottom: 12px;
 }
 .desc {
-  font-family: Roboto, sans-serif;
+  font-family: Gilroy-Medium, sans-serif;
   max-width: 432px;
   font-weight: 300;
   font-size: 18px;
-  line-height: 25px;
-  color: #a0bfc7;
+  line-height: 30px;
+  color: $color-light;
 }
 
 .launch {
   position: relative;
-  top: -30px;
-  margin-right: 223px;
-  .launchPic {
-    width: 80vw;
-    max-width: 280px;
-    position: relative;
-  }
-  .ball {
-    width: 325px;
-    height: 325px;
-    position: absolute;
-    z-index: 0;
-    &.left {
-      top: 77px;
-      right: 0;
-      transform: translateX(40%);
-    }
-    &.right {
-      left: 0;
-      transform: translateX(-40%);
-      bottom: 75px;
-    }
+  width: 100%;
+  padding-top: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(76, 191, 122, 0.4) 0%,
+    rgba(76, 191, 122, 0) 100%
+  );
+
+  img {
+    width: 100%;
+    height: auto;
+    max-width: 888px;
   }
 
-  .download {
-    border: none;
-    background-color: $color-logo;
+  .itemList {
     display: flex;
-    align-items: center;
-    color: #fff;
-    //padding: 0 8px;
-    //border-radius: 22px;
-    //width: 136px;
-    //height: 44px;
-    width: 170px;
-    height: 60px;
-    border-radius: 30px;
-    justify-content: center;
-    font-size: 18px;
-    position: absolute;
-    z-index: 10;
-    //bottom: -68px;
-    bottom: -125px;
-    left: 50%;
-    transform: translate(-50%, -80%);
-    cursor: pointer;
-  }
-  .iconArrow {
-    margin-right: 14px;
   }
 }
 
 .textOuter {
-  margin-top: 20px;
+  margin-top: 200px;
   max-width: 777px;
   text-align: center;
 }
 .textInner {
   text-align: center;
-  font-size: 52px;
-  line-height: 63px;
+  font-size: 54px;
+  line-height: 60px;
   padding: 0 40px;
-  &.green {
+
+  .green {
     font-size: 52px;
     color: #6fcf97;
   }
 }
 
+.btn_secondary {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: $color-accent;
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+}
+
 @media (max-width: $media-lg) {
-  .wrapper {
-    //padding-top: 40px;
-    flex-direction: column;
-    .launch {
-      margin-bottom: 100px;
-      margin-right: 0;
-    }
+  .launch {
+    margin-bottom: 100px;
+    margin-right: 0;
   }
   .itemList {
     padding: 0 10px;
@@ -131,10 +101,6 @@
 }
 
 @media (max-width: $media-sm) {
-  .wrapper {
-    padding-bottom: 50px;
-  }
-
   .textInner {
     font-size: 26px;
     line-height: 35px;
@@ -145,7 +111,8 @@
     }
   }
 
-  .title, .index {
+  .title,
+  .index {
     font-size: 20px;
     margin-bottom: 15px;
   }
@@ -161,19 +128,11 @@
   }
 }
 
-
-
 @media (min-width: $media-sm), (max-width: $media-md) {
   .textOuter {
     max-width: 777px;
   }
-  .launch {
-    margin-right: 100px;
-  }
 }
 
 @media (min-width: $media-xl) {
-  .launch {
-    margin-right: 223px !important;
-  }
 }

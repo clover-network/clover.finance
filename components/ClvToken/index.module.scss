@@ -3,7 +3,13 @@
 .wrapper {
   width: 100%;
   position: relative;
-
+  background: white;
+  margin-top: 150px;
+  padding: 90px 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 54px;
 }
 
 .line {
@@ -15,9 +21,7 @@
 }
 
 .bottomWrapper {
-  //background: #000;
   width: 100%;
-  margin-top: -6%;
 }
 
 .black {
@@ -30,7 +34,6 @@
 
 .clvToken {
   margin: 0 auto;
-  padding: 70px 0;
   max-width: 1200px;
   width: 100%;
   text-align: center;
@@ -40,20 +43,18 @@
 }
 
 .clvTokenIcon {
-  width: 67px;
-  height: 49px;
-  margin-right: 25px;
-  position: relative;
-  top: 3px;
+  width: 90px;
+  height: 90px;
 }
 
 .clvTokenTitle {
-  font-weight: 400;
-  font-size: 52px;
-  line-height: 63px;
+  color: $color-text;
+  margin-top: 24px;
+  font-family: Gilroy-SemiBold;
+  font-size: 80px;
+  line-height: 80px;
   text-align: center;
-  color: #ffffff;
-  margin-bottom: 70px;
+  letter-spacing: -2px;
 }
 
 .clvTokenList {
@@ -65,48 +66,33 @@
 .clvTokenItem {
   width: 359px;
   height: 251px;
-  border: 5px solid #2BFEA4;
   padding: 29px 29px 0;
-  border-image: -webkit-linear-gradient(to right,#2BFEA4, #1E9EC6) 50 50;
-  border-image: -moz-linear-gradient(to right,#2BFEA4, #1E9EC6) 50 50;
-  border-image: -o-linear-gradient(to right,#2BFEA4, #1E9EC6) 50 50;
-  border-image: linear-gradient(to right,#2BFEA4, #1E9EC6) 50 50;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 33px;
 
-  &:nth-child(2),
-  &:nth-child(5) {
-    border-image: -webkit-linear-gradient(to left,#2BFEA4, #1E9EC6) 50 50;
-    border-image: -moz-linear-gradient(to left,#2BFEA4, #1E9EC6) 50 50;
-    border-image: -o-linear-gradient(to left,#2BFEA4, #1E9EC6) 50 50;
-    border-image: linear-gradient(to left,#2BFEA4, #1E9EC6) 50 50;
-  }
-
   div {
-    margin-top: 23px;
-    margin-bottom: 15px;
-    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 18px;
+    font-family: Gilroy-SemiBold;
     font-size: 26px;
-    line-height: 32px;
-    color: #ffffff;
-    display: flex;
-    align-items: center;
+    line-height: 30px;
+    text-align: center;
+    color: $color-text;
   }
 
   p {
-    font-weight: 300;
+    font-family: Gilroy-Medium;
     font-size: 18px;
-    line-height: 25px;
-    font-family: Roboto, sans-serif;
-    color: #ffffff;
+    line-height: 30px;
+    text-align: center;
+    color: $color-light;
   }
 }
 
-@media (max-width: 935px){
-
+@media (max-width: 935px) {
   .topContent,
   .featureContent,
   .clvToken {
@@ -119,7 +105,7 @@
   }
 }
 
-@media (max-width: $media-xl){
+@media (max-width: $media-xl) {
   .wrapper {
     // overflow: hidden;
   }
