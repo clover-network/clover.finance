@@ -28,10 +28,9 @@ export function Introduction() {
     <>
       <div className={styles.textOuter} style={{ maxWidth: 'none' }}>
         <p className={styles.textInner}>
-          Simultaneously navigate and transact with
+          Simultaneously navigate and transact with major networks.{' '}
         </p>
         <p className={styles.textInner}>
-          major networks.{' '}
           <span className={styles.green}>All in one overview!</span>
         </p>
       </div>
@@ -51,30 +50,31 @@ export function Introduction() {
                     {d.title}
                   </div>
                   <p className={styles.desc}>{d.desc}</p>
+                  {i === 1 && (
+                    <Button className={styles.btn_secondary}>
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24ZM17.9957 10.08L13.2957 14.78V5.5H10.7157V14.8L5.9957 10.08V13.5L11.9957 19.5L17.9957 13.5V10.08Z"
+                          fill="#42C37B"
+                        />
+                      </svg>
+                      <span>Download Now</span>
+                    </Button>
+                  )}
                 </div>
               </div>
             );
           })}
         </div>
       </div>
-
-      <Button className={styles.btn_secondary}>
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24ZM17.9957 10.08L13.2957 14.78V5.5H10.7157V14.8L5.9957 10.08V13.5L11.9957 19.5L17.9957 13.5V10.08Z"
-            fill="#42C37B"
-          />
-        </svg>
-        <span>Download Now</span>
-      </Button>
     </>
   );
 }

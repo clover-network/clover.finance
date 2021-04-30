@@ -12,6 +12,16 @@
   box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.15);
   border-radius: 54px;
   margin-top: 120px;
+
+  @media (max-width: $media-lg) {
+    padding: 62px;
+    width: calc(100% - 40px);
+  }
+
+  @media (max-width: $media-sm) {
+    padding: 36px 24px;
+    width: calc(100% - 24px);
+  }
 }
 
 .line {
@@ -68,6 +78,11 @@
   line-height: 60px;
   letter-spacing: -2px;
   color: $color-text;
+
+  @media (max-width: $media-lg) {
+    font-size: 48px;
+    line-height: 54px;
+  }
 }
 
 .backImage {
@@ -124,6 +139,34 @@
     line-height: 18px;
     margin-top: 36px;
     box-shadow: 0px 12px 36px rgba(76, 191, 122, 0.35);
+  }
+
+  @media (max-width: $media-lg) {
+    width: 48%;
+
+    h3 {
+      font-size: 21px;
+      line-height: 24px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 30px;
+    }
+  }
+
+  @media (max-width: $media-sm) {
+    width: 100%;
+
+    h3 {
+      font-size: 21px;
+      line-height: 24px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 30px;
+    }
   }
 }
 
@@ -230,15 +273,15 @@
   }
 }
 
-@media (max-width: $media-xl) {
+@media (max-width: $media-lg) {
   .topContent,
   .featureContent,
   .clvToken {
-    width: 80%;
+    width: 100%;
   }
 
   .contentBox {
-    justify-content: center;
+    justify-content: space-between;
   }
 
   .line2,

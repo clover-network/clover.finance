@@ -51,7 +51,7 @@ const GetStarted = () => {
                 <CommunitySvg />
               </div>
 
-              <div className={styles.card}>
+              <div className={styles.card} style={{ minWidth: 292 }}>
                 <h1>Builders</h1>
                 <div className={styles.cardList}>
                   <p>Developer Incentive Program →</p>

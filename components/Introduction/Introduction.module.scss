@@ -61,6 +61,7 @@
 
   .itemList {
     display: flex;
+    flex-wrap: wrap;
   }
 }
 
@@ -68,6 +69,11 @@
   margin-top: 200px;
   max-width: 777px;
   text-align: center;
+
+  @media (max-width: $media-lg) {
+    margin-top: 0;
+    max-width: 700px !important;
+  }
 }
 .textInner {
   text-align: center;
@@ -79,6 +85,11 @@
     font-size: 52px;
     color: #6fcf97;
   }
+
+  @media (max-width: $media-lg) {
+    font-size: 48px;
+    line-height: 54px;
+  }
 }
 
 .btn_secondary {
@@ -88,11 +99,11 @@
   box-shadow: none;
   border: none;
   cursor: pointer;
+  margin-top: 24px;
 }
 
 @media (max-width: $media-lg) {
   .launch {
-    margin-bottom: 100px;
     margin-right: 0;
   }
   .itemList {

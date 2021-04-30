@@ -50,6 +50,20 @@
   }
   .container {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: $media-sm) {
+  .wrapper {
+    padding-top: 90px;
+    padding-bottom: 70px;
+    //border-top: 1px solid #E8E8E9;
+  }
+  .container {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -57,6 +71,6 @@
   }
 
   .social {
-    margin: 35px 0 0 0;
+    margin-top: 35px;
   }
 }

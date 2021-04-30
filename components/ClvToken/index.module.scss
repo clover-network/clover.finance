@@ -4,7 +4,7 @@
   width: 100%;
   position: relative;
   background: white;
-  margin-top: 150px;
+  margin-top: 90px;
   padding: 90px 0;
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
@@ -105,15 +105,19 @@
   }
 }
 
-@media (max-width: $media-xl) {
+@media (max-width: $media-lg) {
   .wrapper {
-    // overflow: hidden;
+    padding-top: 62px;
+    padding-bottom: 60px;
+    width: calc(100% - 40px);
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .topContent,
   .featureContent,
   .clvToken {
-    width: 80%;
+    width: 100%;
 
     & > div {
       //justify-content: center;
@@ -127,6 +131,11 @@
       position: relative;
       margin-top: 30px;
     }
+  }
+
+  .clvTokenTitle {
+    font-size: 70px;
+    line-height: 70px;
   }
 }
 

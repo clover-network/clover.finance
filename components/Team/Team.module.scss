@@ -6,6 +6,12 @@
   box-sizing: border-box;
   margin-top: 150px;
   margin-bottom: 90px;
+
+  @media (max-width: $media-lg) {
+    width: calc(100% - 40px);
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .team {
@@ -21,6 +27,10 @@
   width: 100%;
   max-width: 1230px;
   margin: 0 auto;
+
+  @media (max-width: $media-lg) {
+    padding: 62px 84px 30px 84px;
+  }
 }
 
 .header {
@@ -32,11 +42,20 @@
   letter-spacing: -2px;
 
   color: $color-text;
+
+  @media (max-width: $media-lg) {
+    font-size: 48px;
+    line-height: 54px;
+  }
 }
 
 .people {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+
+  @media (max-width: $media-sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .peopleSingle {
@@ -44,7 +63,16 @@
 }
 
 .avatar {
+  width: 180px;
   margin-bottom: 32px;
+
+  @media (max-width: $media-lg) {
+    width: 142px;
+  }
+
+  @media (max-width: $media-sm) {
+    width: 120px;
+  }
 }
 .name {
   font-family: Gilroy-SemiBold;

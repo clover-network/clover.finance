@@ -13,6 +13,11 @@
     text-align: center;
     color: white;
     margin-top: 150px;
+
+    @media (max-width: $media-lg) {
+      font-size: 48px;
+      line-height: 54px;
+    }
   }
 }
 
@@ -26,9 +31,17 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin-top: 50px;
+  margin-top: 480px;
   li {
     padding: 0 6px;
+  }
+
+  @media (max-width: $media-lg) {
+    margin-top: 36px;
+
+    svg {
+      display: none;
+    }
   }
 }
 

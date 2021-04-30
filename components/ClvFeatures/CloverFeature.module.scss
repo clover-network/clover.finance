@@ -287,13 +287,12 @@
   }
 }
 
-@media (max-width: $media-xl) {
+@media (max-width: $media-lg) {
   .wrapper {
     // overflow: hidden;
   }
 
   .topContent,
-  .featureContent,
   .clvToken {
     width: 80%;
 
@@ -303,16 +302,26 @@
   }
 
   .topContentItem {
-    height: fit-content;
-    text-align: center;
+    width: 354px;
+    margin: 10px 6px;
 
     h3 {
-      text-align: center;
+      font-size: 21px;
+      line-height: 24px;
     }
 
     button {
       position: relative;
       margin-top: 30px;
+    }
+  }
+
+  .featureContent {
+    width: calc(100% - 40px);
+
+    > div {
+      justify-content: center;
+      margin-top: 90px;
     }
   }
 
@@ -330,7 +339,6 @@
     width: 100%;
     height: auto;
     min-height: 110px;
-    color: #ffffff;
     line-height: 55px;
     font-size: 40px;
     padding: 0;
