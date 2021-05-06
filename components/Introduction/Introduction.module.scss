@@ -155,9 +155,14 @@
 
 @media (min-width: $media-sm), (max-width: $media-md) {
   .textOuter {
+    margin-top: 0;
     max-width: 777px;
   }
 }
 
 @media (min-width: $media-xl) {
+  .textOuter {
+    margin-top: 600px;
+    max-width: 777px;
+  }
 }
