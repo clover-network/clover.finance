@@ -12,6 +12,10 @@
 
   a {
     margin-top: 30px;
+
+    @media (max-width: $media-sm) {
+      margin-top: 0;
+    }
   }
 
   @media (min-width: $media-lg) {
@@ -22,11 +26,33 @@
   }
 }
 
+.arrowDown {
+  display: none;
+
+  @media (max-width: $media-sm) {
+    display: block !important;
+    position: absolute;
+    top: 34px;
+    right: 30px;
+    bottom: initial;
+    transform: rotate(0);
+    transition: transform 0.3s ease-out;
+
+    &.mini {
+      transform: rotate(180deg);
+    }
+  }
+}
+
 .forground {
   position: absolute;
-  width: 100%;
-  height: auto;
   top: 0;
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .centerLogo {
@@ -46,6 +72,15 @@
   svg {
     width: 72px;
     height: 72px;
+  }
+
+  @media (max-width: $media-sm) {
+    margin-top: 120px;
+
+    svg {
+      width: 90px;
+      height: 90px;
+    }
   }
 }
 
@@ -94,7 +129,7 @@
   align-items: center;
   justify-content: center;
   z-index: 10;
-  transform: translateY(30%);
+  transform: translateY(-10%);
 
   &::before {
     content: '';
@@ -103,6 +138,12 @@
     width: 100%;
     bottom: 0;
     background-color: $color-text;
+
+    @media (max-width: $media-sm) {
+      height: 50px;
+      top: 50px;
+      bottom: initial;
+    }
   }
 
   &::after {
@@ -113,17 +154,26 @@
     top: 0;
     background-color: $color-light-grey;
     z-index: -1;
+
+    @media (max-width: $media-sm) {
+      height: 50px;
+    }
   }
   @media (max-width: $media-lg) {
     & {
-      transform: translateY(10%);
+      transform: translateY(-10%);
     }
   }
 
   @media (max-width: $media-md) {
     & {
-      transform: translateY(25%);
+      transform: translateY(-25%);
     }
+  }
+
+  @media (max-width: $media-sm) {
+    flex-direction: column;
+    transform: translateY(-5%);
   }
 }
 
@@ -164,6 +214,18 @@
       & {
         display: none;
       }
+    }
+  }
+
+  @media (max-width: $media-sm) {
+    transition: height 0.3s ease-out;
+    padding: 24px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    border-radius: 21px;
+
+    &.mini {
+      height: 78px;
     }
   }
 }
@@ -228,8 +290,10 @@
 
 @media (max-width: $media-sm) {
   .textInner {
-    font-size: 26px;
-    line-height: 35px;
+    padding: 0;
+    font-size: 40px;
+    line-height: 40px;
+    margin: 24px 0;
   }
   .wrapper {
     padding-top: 0;

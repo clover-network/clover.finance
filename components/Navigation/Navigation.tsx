@@ -4,6 +4,7 @@ import Social from '../Social/Social';
 import styles from './Navigation.module.scss';
 import { SOCIALS } from '../../constants';
 import ShortArrow from '../../public/svg/short-arrow.svg';
+import Logo from '../../public/svg/logo.svg';
 
 const Navigation = ({
   className,
@@ -19,6 +20,25 @@ const Navigation = ({
 }) => {
   const [currentMenu, setCurrentMenu] = useState('');
   const [innerWidth, setInnerWidth] = useState(1024);
+  const [isMobile, setIsMobile] = useState(false);
+
+  const fetchIsMobile = () => {
+    if (
+      typeof window !== 'undefined' &&
+      /Android|webOS|iPhone|iPad|Mac|Macintosh|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent,
+      )
+    ) {
+      return true;
+    }
+    return false;
+  };
+
+  useEffect(() => {
+    if (window) {
+      setIsMobile(fetchIsMobile());
+    }
+  }, []);
 
   useEffect(() => {
     const onresize = () => {
@@ -26,6 +46,7 @@ const Navigation = ({
     };
     window.addEventListener('resize', onresize);
   }, [innerWidth]);
+
   return (
     <nav
       className={cn(styles.nav, className, {
@@ -33,6 +54,14 @@ const Navigation = ({
       })}
     >
       <div className={styles.container}>
+        <div className={styles.logo}>
+          <i className={styles.logoImage}>
+            <Logo />
+          </i>
+          <div className={styles.logoText}>clover</div>
+        </div>
+
+        <h1>Menu</h1>
         {!!items.length && (
           <ul className={styles.list}>
             {items?.map(({ children, label }) => (
@@ -64,7 +93,7 @@ const Navigation = ({
                 }
               >
                 <div className={styles.itemLabel}>{label}</div>
-                {currentMenu === label && (
+                {(currentMenu === label || isMobile) && (
                   <ul className={styles.links}>
                     {children.map(({ label, link }, index) => {
                       return (

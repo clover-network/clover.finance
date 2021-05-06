@@ -79,9 +79,9 @@
 }
 
 .topContent {
-  width: 1168px;
+  width: 1230px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin: 0 auto;
   padding: 96px 0 187px;
 
@@ -322,6 +322,10 @@
     > div {
       justify-content: center;
       margin-top: 90px;
+
+      @media (max-width: $media-sm) {
+        margin-top: 48px;
+      }
     }
   }
 
@@ -353,26 +357,47 @@
 
 @media (max-width: $media-sm) {
   .title {
-    font-size: 26px;
+    font-size: 30px;
     margin-bottom: 15px;
     & > span {
       line-height: 63px;
-      font-size: 26px;
+      font-size: 30px;
     }
   }
 
   .typing {
-    font-size: 20px;
+    font-size: 30px;
     line-height: 30px;
     min-height: 60px;
   }
 
   .featureContent {
     padding-top: 30px;
+    padding-bottom: 0;
+  }
+
+  .topContent {
+    width: initial;
+    flex-direction: row;
+    height: 400px;
+    padding: 0;
+    overflow: auto;
   }
 
   .topContentItem {
+    animation: none;
+    position: sticky;
+    top: 0;
+    margin: 0;
+    height: 100%;
     margin-top: 20px;
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.05),
+        rgba(255, 255, 255, 0.05)
+      ),
+      #151e26;
+
     h3 {
       font-size: 20px;
       margin-bottom: 15px;

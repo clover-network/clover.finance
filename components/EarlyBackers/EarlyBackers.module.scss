@@ -18,6 +18,14 @@
       font-size: 48px;
       line-height: 54px;
     }
+
+    @media (max-width: $media-sm) {
+      margin-top: 90px;
+    }
+  }
+
+  @media (max-width: $media-sm) {
+    height: auto;
   }
 }
 
@@ -31,7 +39,8 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin-top: 480px;
+  margin-top: 48px;
+
   li {
     padding: 0 6px;
   }

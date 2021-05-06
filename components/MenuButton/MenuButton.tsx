@@ -1,15 +1,15 @@
-import React from 'react'
-import cn from 'classnames'
-import styles from './MenuButton.module.scss'
+import React from 'react';
+import cn from 'classnames';
+import styles from './MenuButton.module.scss';
 
 const MenuButton = ({
   className,
   onClick,
   active = false,
 }: {
-  className?: string
-  active?: boolean
-  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
+  className?: string;
+  active?: boolean;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }) => (
   <button
     type="button"
@@ -20,6 +20,6 @@ const MenuButton = ({
   >
     <i className={styles.icon} />
   </button>
-)
+);
 
-export default MenuButton
+export default MenuButton;

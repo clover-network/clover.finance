@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import cn from 'classnames';
 import { useInView } from 'react-intersection-observer';
+
 import styles from './CloverFeature.module.scss';
 
 const Features = ({
@@ -88,7 +89,10 @@ const Features = ({
               </div>
             </div>
             {!!inView && (
-              <div onMouseLeave={() => setHIndex(-1)}>
+              <div
+                className={styles.topContent}
+                onMouseLeave={() => setHIndex(-1)}
+              >
                 {features.map((feature, index) => (
                   <div
                     className={cn(

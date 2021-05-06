@@ -66,12 +66,12 @@
 }
 
 .textOuter {
-  margin-top: 200px;
+  margin-top: 400px;
   max-width: 777px;
   text-align: center;
 
   @media (max-width: $media-lg) {
-    margin-top: 0;
+    margin-top: 400px;
     max-width: 700px !important;
   }
 }
@@ -80,10 +80,15 @@
   font-size: 54px;
   line-height: 60px;
   padding: 0 40px;
+  font-family: Gilroy-SemiBold;
 
   .green {
     font-size: 52px;
     color: #6fcf97;
+
+    @media (max-width: $media-sm) {
+      font-size: 30px;
+    }
   }
 
   @media (max-width: $media-lg) {
@@ -100,6 +105,12 @@
   border: none;
   cursor: pointer;
   margin-top: 24px;
+
+  @media (max-width: $media-sm) {
+    width: 100%;
+    height: 48px;
+    border-radius: 10px;
+  }
 }
 
 @media (max-width: $media-lg) {
@@ -112,11 +123,14 @@
 }
 
 @media (max-width: $media-sm) {
+  .launch {
+    padding-top: 3rem;
+  }
   .textInner {
-    font-size: 26px;
+    font-size: 30px;
     line-height: 35px;
     &.green {
-      font-size: 26px;
+      font-size: 30px !important;
       line-height: 35px;
       color: #6fcf97;
     }
@@ -129,7 +143,7 @@
   }
 
   .desc {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .item {

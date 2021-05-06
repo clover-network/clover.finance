@@ -24,6 +24,10 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   color: rgba(#fff, 0.75);
   z-index: $zindex-fixed;
+
+  @media (max-width: $media-sm) {
+    background-color: #f7f7f7;
+  }
 }
 
 .reminderWrapper {
@@ -129,8 +133,8 @@
 
 .logoText {
   margin: 0 0 0 9px;
-  font-weight: $fw-medium;
-  font-size: 32px;
+  font-family: Gilroy-SemiBold;
+  font-size: 30px;
   line-height: 1.125;
   color: $color-text;
 }

@@ -12,6 +12,10 @@
     margin-left: auto;
     margin-right: auto;
   }
+
+  @media (max-width: $media-sm) {
+    margin-top: 90px;
+  }
 }
 
 .team {
@@ -72,6 +76,7 @@
 
   @media (max-width: $media-sm) {
     width: 120px;
+    margin-bottom: 12px;
   }
 }
 .name {
@@ -109,6 +114,6 @@
   }
 
   .desc {
-    font-size: 14px;
+    font-size: 16px;
   }
 }

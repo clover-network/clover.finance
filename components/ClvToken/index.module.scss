@@ -140,6 +140,10 @@
 }
 
 @media (max-width: $media-xs), (max-width: $media-sm) {
+  .wrapper {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
   .clvToken {
     padding: 0;
   }
@@ -151,17 +155,25 @@
   .clvTokenTitle {
     font-size: 26px;
     margin-bottom: 15px;
+
+    p {
+      margin-top: 12px;
+      line-height: 0;
+      font-size: 40px;
+    }
   }
 
   .clvTokenIcon {
-    width: 35px;
-    height: 25px;
+    width: 60px;
+    height: 60px;
   }
 
   .clvTokenItem {
     width: 100%;
     height: fit-content;
     padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 0;
 
     div {
       font-size: 20px;
@@ -169,7 +181,7 @@
     }
 
     p {
-      font-size: 14px;
+      font-size: 16px;
     }
   }
 }

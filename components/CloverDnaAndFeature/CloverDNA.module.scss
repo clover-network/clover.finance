@@ -1,6 +1,7 @@
 @import 'styles/variables';
 
 .wrapper {
+  max-width: 1230px;
   width: calc(100% - 240px);
   margin: auto;
   position: relative;
@@ -21,6 +22,17 @@
   @media (max-width: $media-sm) {
     padding: 36px 24px;
     width: calc(100% - 24px);
+    border-radius: 30px;
+  }
+}
+
+.btn {
+  height: 54px;
+
+  @media (max-width: $media-sm) {
+    width: 100%;
+    height: 48px;
+    margin-top: 12px;
   }
 }
 

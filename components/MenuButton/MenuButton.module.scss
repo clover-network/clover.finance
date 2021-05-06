@@ -6,8 +6,7 @@
   display: block;
   width: em(32, 32);
   height: 2px;
-  // background-color: #000;
-  background-color: #fff;
+  background-color: #151e26;
 }
 
 .button {
@@ -31,11 +30,11 @@
 
   &:hover {
     > * {
-      background-color: rgba(#fff, 0.5);
+      background-color: #151e26;
 
       &:before,
       &:after {
-        background-color: rgba(#fff, 0.5);
+        background-color: #151e26;
       }
     }
   }
