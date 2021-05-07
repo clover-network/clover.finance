@@ -23,15 +23,7 @@ const Navigation = ({
   const [isMobile, setIsMobile] = useState(false);
 
   const fetchIsMobile = () => {
-    if (
-      typeof window !== 'undefined' &&
-      /Android|webOS|iPhone|iPad|Mac|Macintosh|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        navigator.userAgent,
-      )
-    ) {
-      return true;
-    }
-    return false;
+    return window.innerWidth <= 600 && window.innerHeight <= 800;
   };
 
   useEffect(() => {
