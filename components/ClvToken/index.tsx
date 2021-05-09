@@ -1,7 +1,9 @@
 import React from 'react';
 import cn from 'classnames';
+import { useTheme } from 'next-themes';
 import styles from './index.module.scss';
 import CloverIcon from '../../public/svg/clvtoken.svg';
+import SacIcon from '../../public/svg/sactoken.svg';
 import Fees from '../../public/svg/fees.svg';
 import Governance from '../../public/svg/governance.svg';
 import Validation from '../../public/svg/validation.svg';
@@ -17,6 +19,7 @@ const ClvToken = ({
     content: string;
   }[];
 }) => {
+  const { theme } = useTheme();
   const getImgByIcon = token => {
     switch (token.toLowerCase()) {
       case 'opt-in fees':
@@ -42,8 +45,12 @@ const ClvToken = ({
             data-wow-duration="2s"
             data-wow-delay="0s"
           >
-            <CloverIcon className={styles.clvTokenIcon} />
-            <p>CLV Token</p>
+            {theme && theme === 'dark' ? (
+              <SacIcon className={styles.clvTokenIcon} />
+            ) : (
+              <CloverIcon className={styles.clvTokenIcon} />
+            )}
+            <p>{theme && theme === 'dark' ? 'SAC Token' : 'CLV Token'}</p>
           </h3>
           <div className={styles.clvTokenList}>
             {clvTokens.map(token => (

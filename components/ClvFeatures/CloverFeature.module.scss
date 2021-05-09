@@ -66,13 +66,14 @@
     text-align: center;
     line-height: 69px;
     font-size: 52px;
+    color: var(--color-background);
   }
 }
 
 .typing {
   width: 100%;
   min-height: 138px;
-  color: $color-accent;
+  color: var(--color-accent);
   line-height: 55px;
   font-size: 40px;
   padding: 0 150px;
@@ -89,6 +90,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    background: var(--feature-background);
   }
 }
 
@@ -112,20 +114,22 @@
     margin-bottom: 24px;
     width: 100%;
     text-align: left;
+    color: var(--color-background);
   }
 
   p {
     font-size: 15px;
     line-height: 24px;
     font-family: Gilroy-Medium;
+    color: var(--color-background);
   }
 
   a,
   span {
     display: inline-block;
     margin-top: 24px;
-    color: $color-accent;
-    border-bottom: 1px solid $color-accent;
+    color: var(--color-accent);
+    border-bottom: 1px solid var(--color-accent);
     cursor: pointer;
     font-weight: bold;
   }

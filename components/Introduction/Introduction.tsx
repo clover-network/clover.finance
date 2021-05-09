@@ -1,5 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
+import { useTheme } from 'next-themes';
 
 import Arrow from '../../public/svg/arrow_fill.svg';
 import styles from './Introduction.module.scss';
@@ -24,6 +25,8 @@ const DESC_LIST = [
 ];
 
 export function Introduction() {
+  const { theme, setTheme } = useTheme();
+
   return (
     <>
       <div className={styles.textOuter} style={{ maxWidth: 'none' }}>
@@ -37,7 +40,11 @@ export function Introduction() {
       <div className={styles.launch}>
         <img
           className={cn(styles.ball, styles.left)}
-          src="/images/introduction.png"
+          src={
+            theme && theme === 'dark'
+              ? '/images/introduction-sakura.png'
+              : '/images/introduction.png'
+          }
           alt="Clover introduction"
         />
         <div className={styles.itemList}>
@@ -63,7 +70,9 @@ export function Introduction() {
                           fill-rule="evenodd"
                           clip-rule="evenodd"
                           d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24ZM17.9957 10.08L13.2957 14.78V5.5H10.7157V14.8L5.9957 10.08V13.5L11.9957 19.5L17.9957 13.5V10.08Z"
-                          fill="#42C37B"
+                          fill={
+                            theme && theme == 'dark' ? '#ff5995' : '#42C37B'
+                          }
                         />
                       </svg>
                       <span>Download Now</span>

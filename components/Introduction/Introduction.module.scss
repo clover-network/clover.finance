@@ -13,7 +13,7 @@
 }
 
 .index {
-  color: $color-logo;
+  color: var(--color-accent);
   font-family: Gilroy-Bold;
   font-size: 18px;
   line-height: 30px;
@@ -25,10 +25,13 @@
 }
 
 .title {
-  font-family: Gilroy-Medium;
   font-size: 18px;
+  font-weight: bold;
+  font-family: Gilroy-Medium;
   margin-bottom: 12px;
+  color: var(--color-background);
 }
+
 .desc {
   font-family: Gilroy-Medium, sans-serif;
   max-width: 432px;
@@ -41,17 +44,14 @@
 .launch {
   position: relative;
   width: 100%;
+  max-width: 1230px;
   padding-top: 10rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    rgba(76, 191, 122, 0.4) 0%,
-    rgba(76, 191, 122, 0) 100%
-  );
+  background: var(--intro-background);
 
   img {
     width: 100%;
@@ -81,10 +81,11 @@
   line-height: 60px;
   padding: 0 40px;
   font-family: Gilroy-SemiBold;
+  color: var(--color-background);
 
   .green {
     font-size: 52px;
-    color: #6fcf97;
+    color: var(--color-accent);
 
     @media (max-width: $media-sm) {
       font-size: 30px;
@@ -98,9 +99,9 @@
 }
 
 .btn_secondary {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--btn-secondary-background);
   border-radius: 12px;
-  color: $color-accent;
+  color: var(--color-accent);
   box-shadow: none;
   border: none;
   cursor: pointer;

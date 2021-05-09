@@ -1,4 +1,6 @@
 import React, { useEffect, useRef } from 'react';
+import cn from 'classnames';
+
 import Head from 'next/head';
 import Header from '../components/Header/Header';
 import GetStarted from '../components/GetStarted/GetStarted';

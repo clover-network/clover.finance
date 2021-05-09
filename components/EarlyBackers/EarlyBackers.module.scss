@@ -11,7 +11,7 @@
     font-size: 54px;
     line-height: 60px;
     text-align: center;
-    color: white;
+    color: var(--color-background);
     margin-top: 150px;
 
     @media (max-width: $media-lg) {
@@ -60,7 +60,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--btn-secondary-background);
   border-radius: 18px;
 }
 

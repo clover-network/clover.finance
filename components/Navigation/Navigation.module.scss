@@ -45,7 +45,7 @@
   height: 100%;
   min-height: 300px;
   min-width: 340px;
-  max-width: 420px;
+  max-width: 600px;
 }
 
 .item {
@@ -135,6 +135,22 @@
 .logo,
 .logoText {
   display: none;
+}
+
+.switch {
+  width: 165px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  svg {
+    margin-right: 10px;
+  }
+
+  span {
+    font-size: 16px;
+    color: var(--color-light);
+  }
 }
 @media (max-width: $media-xl) {
   .item:last-child {
@@ -265,7 +281,7 @@
     visibility: visible;
   }
   .list {
-    min-width: 420px;
+    min-width: 600px;
   }
 }
 @media (min-width: $media-lg) {
@@ -290,7 +306,7 @@
     height: auto;
     width: 100%;
     min-height: 0;
-    max-width: 420px;
+    max-width: 600px;
   }
 
   .item {

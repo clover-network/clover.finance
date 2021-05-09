@@ -3,7 +3,7 @@
 .wrapper {
   width: 100%;
   position: relative;
-  background: white;
+  background: var(--color-background);
   margin-top: 90px;
   padding: 90px 0;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -48,7 +48,7 @@
 }
 
 .clvTokenTitle {
-  color: $color-text;
+  color: var(--color-text);
   margin-top: 24px;
   font-family: Gilroy-SemiBold;
   font-size: 80px;
@@ -80,7 +80,7 @@
     font-size: 26px;
     line-height: 30px;
     text-align: center;
-    color: $color-text;
+    color: var(--color-text);
   }
 
   p {
@@ -89,6 +89,17 @@
     line-height: 30px;
     text-align: center;
     color: $color-light;
+  }
+
+  svg {
+    path {
+      fill: var(--color-accent);
+      stroke: var(--color-accent);
+    }
+
+    circle {
+      stroke: var(--color-accent);
+    }
   }
 }
 

@@ -1,4 +1,6 @@
 import React from 'react';
+import { useTheme } from 'next-themes';
+
 import styles from './StrategicPartners.module.scss';
 import cn from 'classnames';
 const LOGO_MAPS = [
@@ -25,6 +27,13 @@ const LOGO_MAPS = [
 ];
 
 export function StrategicPartners() {
+  const { theme } = useTheme();
+
+  const getDarkImageUrl = (image: string) => {
+    const splits = image.split('.');
+    return `${splits[0]}_dark.${splits[1]}`;
+  };
+
   return (
     <div className={styles.root}>
       <header
@@ -42,12 +51,12 @@ export function StrategicPartners() {
               className={cn(styles.logo, 'wow', 'bounceInUp')}
               data-wow-duration="2s"
               data-wow-delay="0s"
-              style={{
-                background: 'url(' + url + ')no-repeat center',
-                backgroundSize:
-                  url === '/partner/advanca.png' ? '140px' : 'auto',
-              }}
-            />
+            >
+              <img
+                src={theme && theme === 'dark' ? getDarkImageUrl(url) : url}
+                alt=""
+              />
+            </div>
           );
         })}
       </div>

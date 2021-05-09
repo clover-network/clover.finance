@@ -1,7 +1,10 @@
 import React from 'react';
+import { useTheme } from 'next-themes';
 import styles from './EarlyBackers.module.scss';
 import ArrowLeft from '../../public/svg/arrow_left.svg';
 import ArrowRight from '../../public/svg/arrow_right.svg';
+import ArrowLeftSakura from '../../public/svg/arrow_left_sakura.svg';
+import ArrowRightSakura from '../../public/svg/arrow_right_sakura.svg';
 import cn from 'classnames';
 import { ThemeProvider } from '@material-ui/styles';
 import { mainTheme } from '../theme/mainTheme';
@@ -9,6 +12,8 @@ import Carousel from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 
 const EarlyBackers = ({ className }: { className?: string }) => {
+  const { theme } = useTheme();
+
   return (
     <ThemeProvider theme={mainTheme}>
       <div className={styles.wrapper}>
@@ -29,10 +34,26 @@ const EarlyBackers = ({ className }: { className?: string }) => {
               centered
               addArrowClickHandler
               arrowLeft={
-                <ArrowLeft style={{ marginRight: '20px', cursor: 'pointer' }} />
+                theme && theme === 'dark' ? (
+                  <ArrowLeftSakura
+                    style={{ marginRight: '20px', cursor: 'pointer' }}
+                  />
+                ) : (
+                  <ArrowLeft
+                    style={{ marginRight: '20px', cursor: 'pointer' }}
+                  />
+                )
               }
               arrowRight={
-                <ArrowRight style={{ marginLeft: '20px', cursor: 'pointer' }} />
+                theme && theme === 'dark' ? (
+                  <ArrowRightSakura
+                    style={{ marginLeft: '20px', cursor: 'pointer' }}
+                  />
+                ) : (
+                  <ArrowRight
+                    style={{ marginLeft: '20px', cursor: 'pointer' }}
+                  />
+                )
               }
             >
               <div className={styles.item}>

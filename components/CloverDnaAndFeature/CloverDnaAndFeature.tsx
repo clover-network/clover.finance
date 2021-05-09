@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTheme } from 'next-themes';
 import cn from 'classnames';
 import { useInView } from 'react-intersection-observer';
 
@@ -44,23 +45,8 @@ const DnaAndFeatures = ({
     threshold: 1,
     triggerOnce: true,
   });
+  const { theme } = useTheme();
 
-  const getImgByIcon = token => {
-    switch (token.toLowerCase()) {
-      case 'opt-in fees':
-        return <Fees width={48} height={33} />;
-      case 'governance':
-        return <Governance width={48} height={33} />;
-      case 'validation':
-        return <Validation width={48} height={33} />;
-      case 'treasury':
-        return <Treasury width={48} height={33} />;
-      case 'nomination':
-        return <Nomination width={48} height={33} />;
-      case 'deployment':
-        return <Deployment width={48} height={33} />;
-    }
-  };
   return (
     <div className={styles.wrapper}>
       <div ref={ref} className={styles.topWrapper}>
@@ -72,7 +58,11 @@ const DnaAndFeatures = ({
           <span className={styles.title}>Clover's DNA</span>
           <img
             className={styles.backImage}
-            src="/images/clover-dna.png"
+            src={
+              theme && theme === 'dark'
+                ? '/images/clover-dna-sakura.png'
+                : '/images/clover-dna.png'
+            }
             alt=""
           />
           {!!inView && (

@@ -1,13 +1,16 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import { useTheme } from 'next-themes';
 import Navigation from '../Navigation/Navigation';
 import cn from 'classnames';
 import MenuButton from '../MenuButton/MenuButton';
 import styles from './Header.module.scss';
 import Logo from '../../public/svg/logo.svg';
+import SakuraLogo from '../../public/svg/sakura_logo.svg';
 import ReminderIcon from '../../public/svg/reminder_icon.svg';
 import { HEADER_MENU } from '../../constants';
 
 const Header = () => {
+  const { theme, setTheme } = useTheme();
   const [active, setActive] = useState(false);
   const [scroll, setScroll] = useState(false);
   const [showReminder, setShowReminder] = useState(true);
@@ -62,9 +65,11 @@ const Header = () => {
         <div className={styles.container}>
           <div className={styles.logo}>
             <i className={styles.logoImage}>
-              <Logo />
+              {theme && theme === 'dark' ? <SakuraLogo /> : <Logo />}
             </i>
-            <div className={styles.logoText}>clover</div>
+            <div className={styles.logoText}>
+              {theme && theme === 'dark' ? 'sakura' : 'clover'}
+            </div>
           </div>
           <Navigation items={HEADER_MENU} active={active} />
           <div className={styles.rightBox}>

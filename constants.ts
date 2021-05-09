@@ -357,6 +357,7 @@ const FEATURES = [
     btnText: 'Start building on Clover',
     link: 'http://docs.clover.finance/',
     image: '/features/evm-compatibility.svg',
+    imageSakura: '/features/evm-compatibility-sakura.svg',
   },
   {
     index: 2,
@@ -366,6 +367,7 @@ const FEATURES = [
     btnText: 'Learn more',
     link: 'https://dropsearn.com/events/clover-developer-incentive-program/',
     image: '/features/gas-fee-redistribution.svg',
+    imageSakura: '/features/gas-fee-redistribution-sakura.svg',
   },
   {
     index: 3,
@@ -375,6 +377,7 @@ const FEATURES = [
     btnText: 'Pay gas in the way you want',
     link: 'scroll',
     image: '/features/gasless-end-user-experience.svg',
+    imageSakura: '/features/gasless-end-user-experience-sakura.svg',
   },
   {
     index: 4,
@@ -383,6 +386,7 @@ const FEATURES = [
       'Clover’s Dynamic Fee Schedule is a brand-new gas calculation method which allows Clover users to get gas discounts proportionally to the frequency of their network activity. Users with less interaction pay more gas, and users with more interactions will less gas over time according to a usage curve.',
     img: '/fee.svg',
     image: '/features/identity-based-fee-schedule.svg',
+    imageSakura: '/features/identity-based-fee-schedule-sakura.svg',
   },
   // {
   //   index: 5,
@@ -398,6 +402,7 @@ const FEATURES = [
     link:
       'https://chrome.google.com/webstore/detail/clover-wallet/nhnkbkgjikgcigadomkphalanndcapjk',
     image: '/features/cross-chain-interactions.svg',
+    imageSakura: '/features/cross-chain-interactions-sakura.svg',
   },
   {
     index: 6,
@@ -407,6 +412,7 @@ const FEATURES = [
     btnText: 'Try Clover Explorer (Beta)',
     link: 'https://stage.cloverscan.io/',
     image: '/features/cross-chain-explorer.svg',
+    imageSakura: '/features/cross-chain-explorer-sakura.svg',
   },
 ];
 

@@ -1,10 +1,13 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import { useTheme } from 'next-themes';
+
 import cn from 'classnames';
 import Social from '../Social/Social';
 import styles from './Navigation.module.scss';
 import { SOCIALS } from '../../constants';
 import ShortArrow from '../../public/svg/short-arrow.svg';
 import Logo from '../../public/svg/logo.svg';
+import SakuraLogo from '../../public/svg/sakura_logo.svg';
 
 const Navigation = ({
   className,
@@ -18,6 +21,7 @@ const Navigation = ({
   }[];
   active?: boolean;
 }) => {
+  const { theme, setTheme } = useTheme();
   const [currentMenu, setCurrentMenu] = useState('');
   const [innerWidth, setInnerWidth] = useState(1024);
   const [isMobile, setIsMobile] = useState(false);
@@ -26,10 +30,20 @@ const Navigation = ({
     return window.innerWidth <= 600 && window.innerHeight <= 800;
   };
 
+  const handleResize = () => {
+    setIsMobile(fetchIsMobile());
+  };
+
   useEffect(() => {
+    let event = null;
     if (window) {
       setIsMobile(fetchIsMobile());
+      event = window.addEventListener('resize', handleResize);
     }
+
+    return () => {
+      if (event) window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   useEffect(() => {
@@ -48,9 +62,11 @@ const Navigation = ({
       <div className={styles.container}>
         <div className={styles.logo}>
           <i className={styles.logoImage}>
-            <Logo />
+            {theme && theme === 'dark' ? <SakuraLogo /> : <Logo />}
           </i>
-          <div className={styles.logoText}>clover</div>
+          <div className={styles.logoText}>
+            {theme && theme === 'dark' ? 'sakura' : 'clover'}
+          </div>
         </div>
 
         <h1>Menu</h1>
@@ -90,11 +106,7 @@ const Navigation = ({
                     {children.map(({ label, link }, index) => {
                       return (
                         <li key={index}>
-                          <a
-                            className={styles.link}
-                            href={link}
-                            target="_blank"
-                          >
+                          <a className={styles.link} href={link}>
                             {label}
                           </a>
                         </li>
@@ -104,9 +116,21 @@ const Navigation = ({
                 )}
               </div>
             ))}
+            <div
+              className={styles.switch}
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            >
+              {theme && theme === 'dark' ? <Logo /> : <SakuraLogo />}
+              <span>
+                {theme && theme === 'dark'
+                  ? 'Clover Mainnet'
+                  : 'Sakura Sisternet'}
+              </span>
+            </div>
           </ul>
         )}
       </div>
+
       {/*<Social className={styles.social} items={SOCIALS} />*/}
 
       {/*<div className={styles.footer}>*/}

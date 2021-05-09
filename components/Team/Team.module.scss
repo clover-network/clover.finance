@@ -20,7 +20,7 @@
 
 .team {
   border-radius: 54px;
-  background: white;
+  background: var(--color-background);
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.15);
   padding: 120px 102px 90px 102px;
@@ -45,7 +45,7 @@
   text-align: center;
   letter-spacing: -2px;
 
-  color: $color-text;
+  color: var(--color-text);
 
   @media (max-width: $media-lg) {
     font-size: 48px;
@@ -85,7 +85,7 @@
   line-height: 30px;
   text-align: center;
 
-  color: $color-text;
+  color: var(--color-text);
 }
 .desc {
   font-family: Gilroy-Medium;

@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from 'react';
+import { useTheme } from 'next-themes';
 import cn from 'classnames';
 import { InView } from 'react-intersection-observer';
 
 import styles from './GetStarted.module.scss';
 import Button from '../Button/Button';
 import Logo from '../../public/svg/logo.svg';
+import SakuraLogo from '../../public/svg/sakura_logo.svg';
+
 import BuilderSvg from '../../public/svg/builder.svg';
 import CommunitySvg from '../../public/svg/community.svg';
 import ResourcesSvg from '../../public/svg/resources.svg';
 import ArrowDown from '../../public/svg/arrow_down.svg';
 
 const GetStarted = () => {
+  const { theme, setTheme } = useTheme();
   const [builder, setBuilder] = useState(false);
   const [resources, setResources] = useState(false);
   const [community, setCommunity] = useState(false);
@@ -20,10 +24,30 @@ const GetStarted = () => {
     return window.innerWidth <= 600 && window.innerHeight <= 800;
   };
 
+  const getBackgroundUrl = () => {
+    return theme && theme === 'dark'
+      ? isMobile
+        ? '/forground-sakura.svg'
+        : '/forground-sakura.svg'
+      : isMobile
+      ? '/forground-sm.svg'
+      : '/forground.svg';
+  };
+
+  const handleResize = () => {
+    setIsMobile(fetchIsMobile());
+  };
+
   useEffect(() => {
+    let event = null;
     if (window) {
       setIsMobile(fetchIsMobile());
+      event = window.addEventListener('resize', handleResize);
     }
+
+    return () => {
+      if (event) window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (
@@ -37,10 +61,9 @@ const GetStarted = () => {
             })}
           >
             <div className={styles.forground}>
-              <img
-                src={isMobile ? '/forground-sm.svg' : '/forground.svg'}
-                alt="back"
-              />
+              <span>{getBackgroundUrl()}</span>
+              <img src={getBackgroundUrl()} alt="back" />
+
               <div className={styles.resources}>
                 <div className={cn(styles.card, community && styles.mini)}>
                   <ArrowDown
@@ -90,18 +113,32 @@ const GetStarted = () => {
                 </div>
               </div>
             </div>
-
-            <div className={styles.centerLogo}>
-              <Logo />
+            <div
+              className={styles.centerLogo}
+              style={{ padding: theme && theme === 'dark' ? 16 : 30 }}
+            >
+              {theme && theme === 'dark' ? (
+                <SakuraLogo style={{ width: 100, height: 100 }} />
+              ) : (
+                <Logo />
+              )}
             </div>
-
             <div className={styles.textOuter}>
-              <p className={styles.textInner}>
-                A foundational
-                <br />
-                layer for cross-chain
-                <br /> compatibility.
-              </p>
+              {theme && theme === 'dark' ? (
+                <p className={styles.textInner}>
+                  Platform built for
+                  <br />
+                  cross-chain DeFi on
+                  <br /> Kusama.
+                </p>
+              ) : (
+                <p className={styles.textInner}>
+                  A foundational
+                  <br />
+                  layer for cross-chain
+                  <br /> compatibility.
+                </p>
+              )}
             </div>
             <Button
               className={styles.btn}

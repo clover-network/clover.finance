@@ -118,7 +118,9 @@
   justify-content: center;
   align-items: center;
   fill: $color-logo;
+  cursor: default;
   color: #fff;
+
   &:hover {
     .logoImage {
       animation: logo-rotate 1s;
@@ -129,6 +131,11 @@
 .logoImage {
   width: 24px;
   height: 24px;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .logoText {
@@ -136,7 +143,7 @@
   font-family: Gilroy-SemiBold;
   font-size: 30px;
   line-height: 1.125;
-  color: $color-text;
+  color: var(--color-text);
 }
 
 .rightBox {

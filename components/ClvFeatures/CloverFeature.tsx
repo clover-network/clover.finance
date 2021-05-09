@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useTheme } from 'next-themes';
 import cn from 'classnames';
 import { useInView } from 'react-intersection-observer';
 
@@ -17,6 +18,7 @@ const Features = ({
     name?: string;
     index?: number;
     image?: string;
+    imageSakura?: string;
   }[];
   handleScroll?: () => void;
 }) => {
@@ -33,6 +35,7 @@ const Features = ({
     'You can pay gas fee in any token?',
     'You can pay a lower gas fee as a frequent DeFi protocol user?',
   ];
+  const { theme, setTheme } = useTheme();
   const [count, setCount] = useState(0);
   const [hIndex, setHIndex] = useState(-1);
   const { ref, inView } = useInView({
@@ -111,7 +114,11 @@ const Features = ({
                     <h3>{feature.title}</h3>
                     <img
                       className={styles.itemBack}
-                      src={feature.image}
+                      src={
+                        theme && theme === 'dark'
+                          ? feature.imageSakura
+                          : feature.image
+                      }
                       alt=""
                     />
                     {hIndex === index && (
