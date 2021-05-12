@@ -13,15 +13,47 @@
   background: transparent;
   color: inherit;
   opacity: 0;
-  visibility: hidden;
   transition: all 0.2s;
-  height: calc(100vh - 72px);
   font-family: Gilroy-Medium;
+
+  @media (max-width: $media-md) {
+    opacity: 1;
+  }
+
+  @media (max-width: 680px) {
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  @media (min-width: 680px) {
+    position: absolute;
+    z-index: $zindex-dropdown;
+    top: 20px;
+    height: auto;
+    flex: 1 0 auto;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @media (min-width: $media-lg) {
+    position: absolute;
+    z-index: $zindex-dropdown;
+    right: 0;
+    height: auto;
+    flex: 1 0 auto;
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 .navActive {
   opacity: 1;
   visibility: visible;
+  pointer-events: initial;
 }
 
 .container {
@@ -43,9 +75,14 @@
   display: flex;
   justify-content: space-around;
   height: 100%;
-  min-height: 300px;
-  min-width: 340px;
-  max-width: 600px;
+
+  @media (max-width: $media-sm) {
+    min-height: 300px;
+  }
+
+  @media (max-width: $media-md) {
+    height: auto;
+  }
 }
 
 .item {
@@ -56,6 +93,7 @@
   cursor: pointer;
   position: relative;
   color: $color-light;
+  padding: 0 15px;
 
   &:last-child {
     .links {
@@ -138,17 +176,17 @@
 }
 
 .switch {
-  width: 165px;
   display: flex;
   align-items: center;
   cursor: pointer;
-
-  svg {
+  padding: 0 15px;
+  margin-left: 6px svg {
     margin-right: 10px;
   }
 
   span {
     font-size: 16px;
+    margin-left: 6px;
     color: var(--color-light);
   }
 }
@@ -159,13 +197,7 @@
     }
   }
 }
-@media (max-width: $media-sm) {
-  .nav {
-    padding: 0;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-  }
+@media (max-width: 680px) {
   .logo {
     position: absolute;
     left: 20px;
@@ -266,35 +298,7 @@
     color: $color-light;
   }
 }
-@media (min-width: $media-md) {
-  .nav {
-    position: absolute;
-    z-index: $zindex-dropdown;
-    top: 20px;
-    height: auto;
-    flex: 1 0 auto;
-    opacity: 1;
-    visibility: hidden;
-  }
-  .navActive {
-    opacity: 1;
-    visibility: visible;
-  }
-  .list {
-    min-width: 600px;
-  }
-}
 @media (min-width: $media-lg) {
-  .nav {
-    position: absolute;
-    z-index: $zindex-dropdown;
-    right: 0;
-    height: auto;
-    flex: 1 0 auto;
-    opacity: 1;
-    visibility: visible;
-  }
-
   .container {
     padding-bottom: 0;
     align-items: flex-end;

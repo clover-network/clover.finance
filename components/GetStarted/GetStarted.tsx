@@ -14,14 +14,21 @@ import ResourcesSvg from '../../public/svg/resources.svg';
 import ArrowDown from '../../public/svg/arrow_down.svg';
 
 const GetStarted = () => {
-  const { theme, setTheme } = useTheme();
+  const { theme } = useTheme();
   const [builder, setBuilder] = useState(false);
   const [resources, setResources] = useState(false);
   const [community, setCommunity] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [forImg, setForImg] = useState('forground.svg');
 
   const fetchIsMobile = () => {
-    return window.innerWidth <= 600 && window.innerHeight <= 800;
+    return window.innerWidth <= 576 && window.innerHeight <= 800;
+  };
+
+  const fetchForgroundImage = () => {
+    if (window.innerWidth <= 576) return 'forground-sm.svg';
+    if (window.innerWidth <= 768) return 'forground-md.svg';
+    return 'forground.svg';
   };
 
   const getBackgroundUrl = () => {
@@ -36,12 +43,14 @@ const GetStarted = () => {
 
   const handleResize = () => {
     setIsMobile(fetchIsMobile());
+    setForImg(fetchForgroundImage());
   };
 
   useEffect(() => {
     let event = null;
     if (window) {
       setIsMobile(fetchIsMobile());
+      setForImg(fetchForgroundImage());
       event = window.addEventListener('resize', handleResize);
     }
 
@@ -61,8 +70,7 @@ const GetStarted = () => {
             })}
           >
             <div className={styles.forground}>
-              <span>{getBackgroundUrl()}</span>
-              <img src={getBackgroundUrl()} alt="back" />
+              <img src={forImg} alt="back" />
 
               <div className={styles.resources}>
                 <div className={cn(styles.card, community && styles.mini)}>
@@ -113,10 +121,7 @@ const GetStarted = () => {
                 </div>
               </div>
             </div>
-            <div
-              className={styles.centerLogo}
-              style={{ padding: theme && theme === 'dark' ? 16 : 30 }}
-            >
+            <div className={styles.centerLogo}>
               {theme && theme === 'dark' ? (
                 <SakuraLogo style={{ width: 100, height: 100 }} />
               ) : (

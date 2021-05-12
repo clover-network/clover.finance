@@ -27,7 +27,7 @@ const Navigation = ({
   const [isMobile, setIsMobile] = useState(false);
 
   const fetchIsMobile = () => {
-    return window.innerWidth <= 600 && window.innerHeight <= 800;
+    return window.innerWidth <= 576 && window.innerHeight <= 800;
   };
 
   const handleResize = () => {

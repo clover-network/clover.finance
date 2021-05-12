@@ -20,8 +20,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: #000;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  background: transparent;
   color: rgba(#fff, 0.75);
   z-index: $zindex-fixed;
 
@@ -160,13 +159,14 @@
 @media (min-width: $media-lg) {
   .wrapper {
     border-bottom: none;
-    background: transparent;
     z-index: 111;
     &.fixed {
       background-color: white;
     }
   }
+}
 
+@media (min-width: 680px) {
   .button {
     display: none;
   }

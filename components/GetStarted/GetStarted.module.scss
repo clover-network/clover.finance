@@ -7,8 +7,9 @@
   align-items: center;
   width: 100%;
   text-align: center;
-  height: 100vh;
   justify-content: flex-start;
+  padding-top: 142px;
+  height: 864px;
 
   a {
     margin-top: 30px;
@@ -18,11 +19,18 @@
     }
   }
 
-  @media (min-width: $media-lg) {
-    & {
-      min-height: 800px;
-      padding-top: 72px;
-    }
+  @media (min-width: $media-xl) {
+    padding-top: calc(208 * 100vw / 1440 - 66px);
+  }
+
+  @media (max-width: $media-md) {
+    height: 900px;
+    padding-top: 172px;
+  }
+
+  @media (max-width: $media-sm) {
+    height: 621px;
+    padding-top: calc(170 * 100vw / 360 - 45px);
   }
 }
 
@@ -51,7 +59,17 @@
 
   img {
     width: 100%;
-    height: auto;
+    height: 864px;
+    object-fit: cover;
+    object-position: top;
+
+    @media (max-width: $media-md) {
+      height: 900px;
+    }
+
+    @media (max-width: $media-sm) {
+      height: 621px;
+    }
   }
 }
 
@@ -75,11 +93,14 @@
   }
 
   @media (max-width: $media-sm) {
-    margin-top: 120px;
+    border-radius: 24px;
+    padding: 20px;
+    width: 90px;
+    height: 90px;
 
     svg {
-      width: 90px;
-      height: 90px;
+      width: 50px;
+      height: 50px;
     }
   }
 }
@@ -129,7 +150,7 @@
   align-items: center;
   justify-content: center;
   z-index: 10;
-  transform: translateY(-10%);
+  transform: translateY(-120px);
 
   &::before {
     content: '';
@@ -159,9 +180,11 @@
       height: 50px;
     }
   }
-  @media (max-width: $media-lg) {
+
+  @media (min-width: $media-xl) {
     & {
-      transform: translateY(-10%);
+      // padding-top: calc(208 * 100vw / 1440 - 66px);
+      transform: translateY(-120px);
     }
   }
 
@@ -254,11 +277,6 @@
 }
 
 @media (min-width: $media-md), (max-width: $media-lg) {
-  .wrapper {
-    height: 100vh;
-    padding-top: 0;
-    min-height: 800px;
-  }
   .textInner {
     font-size: 70px;
     line-height: 70px;
@@ -285,22 +303,11 @@
   }
 }
 
-@media (min-width: $media-lg) {
-  .wrapper {
-    height: 100vh;
-    padding-top: 10%;
-    min-height: 910px;
-  }
-}
-
 @media (max-width: $media-sm) {
   .textInner {
     padding: 0;
     font-size: 40px;
     line-height: 40px;
     margin: 24px 0;
-  }
-  .wrapper {
-    padding-top: 0;
   }
 }

@@ -10,7 +10,7 @@ import ReminderIcon from '../../public/svg/reminder_icon.svg';
 import { HEADER_MENU } from '../../constants';
 
 const Header = () => {
-  const { theme, setTheme } = useTheme();
+  const { theme } = useTheme();
   const [active, setActive] = useState(false);
   const [scroll, setScroll] = useState(false);
   const [showReminder, setShowReminder] = useState(true);
