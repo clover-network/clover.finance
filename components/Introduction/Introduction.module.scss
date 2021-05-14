@@ -127,6 +127,12 @@
   }
 }
 
+.launchSakura {
+  &:after {
+    background: transparent;
+  }
+}
+
 .textOuter {
   margin-top: 400px;
   max-width: 777px;

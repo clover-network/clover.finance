@@ -330,23 +330,42 @@ const ARTICLES = [
   },
 ];
 
-const DNAS = [
-  {
-    title: 'SPV Simulation Technology',
-    content:
-      'The Clover CLV token is cross-chain compatible as our unique 2-way peg bridge technology allows the EVM based Clover address and Polkadot based Clover address to be bounded together, allowing the utilization of all both chains together.',
-    btnText: 'Go To Outline Article',
-    link:
-      'https://medium.com/projectclover/clover-re-defining-a-two-way-peg-between-blockchains-8d5b8c0dea6a',
-  },
-  {
-    title: 'Threshold Protocol',
-    content:
-      'Clover utilizes BIP-Schnorr compatible threshold signatures to enable meaningful cross-chain communication between networks. Clover facilitates end-to-end secure communication between signers for notarising Polkadot block headers to pointing out Proof-Of-Inclusion to Ethereum VM and Bitcoin script.',
-    btnText: 'Read Technical Paper',
-    link: 'https://clover.finance/techpaper.pdf',
-  },
-];
+const DNAS = {
+  dark: [
+    {
+      title: 'Feeconomics',
+      content:
+        'The Clover CLV token is cross-chain compatible as our unique 2-way peg bridge technology allows the EVM based Clover address and Polkadot based Clover address to be bounded together, allowing the utilization of all both chains together.',
+      btnText: 'Go To Outline Article',
+      link:
+        'https://medium.com/projectclover/clover-re-defining-a-two-way-peg-between-blockchains-8d5b8c0dea6a',
+    },
+    {
+      title: 'SKU Bridge',
+      content:
+        'Clover utilizes BIP-Schnorr compatible threshold signatures to enable meaningful cross-chain communication between networks. Clover facilitates end-to-end secure communication between signers for notarising Polkadot block headers to pointing out Proof-Of-Inclusion to Ethereum VM and Bitcoin script.',
+      btnText: 'Read Technical Paper',
+      link: 'https://clover.finance/techpaper.pdf',
+    },
+  ],
+  light: [
+    {
+      title: 'SPV Simulation Technology',
+      content:
+        'The Clover CLV token is cross-chain compatible as our unique 2-way peg bridge technology allows the EVM based Clover address and Polkadot based Clover address to be bounded together, allowing the utilization of all both chains together.',
+      btnText: 'Go To Outline Article',
+      link:
+        'https://medium.com/projectclover/clover-re-defining-a-two-way-peg-between-blockchains-8d5b8c0dea6a',
+    },
+    {
+      title: 'Threshold Protocol',
+      content:
+        'Clover utilizes BIP-Schnorr compatible threshold signatures to enable meaningful cross-chain communication between networks. Clover facilitates end-to-end secure communication between signers for notarising Polkadot block headers to pointing out Proof-Of-Inclusion to Ethereum VM and Bitcoin script.',
+      btnText: 'Read Technical Paper',
+      link: 'https://clover.finance/techpaper.pdf',
+    },
+  ],
+};
 
 const FEATURES = [
   {

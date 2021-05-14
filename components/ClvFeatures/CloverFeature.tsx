@@ -103,6 +103,7 @@ const Features = ({
                       styles.black,
                       styles[feature.name],
                       hIndex === index && styles.hovered,
+                      theme === 'dark' && styles.hoveredSakura,
                       'wow',
                       'bounceInUp',
                     )}

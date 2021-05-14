@@ -4,12 +4,6 @@ import cn from 'classnames';
 import { useInView } from 'react-intersection-observer';
 
 import styles from './CloverDNA.module.scss';
-import Fees from '../../public/svg/fees.svg';
-import Governance from '../../public/svg/governance.svg';
-import Validation from '../../public/svg/validation.svg';
-import Treasury from '../../public/svg/treasury.svg';
-import Nomination from '../../public/svg/nomination.svg';
-import Deployment from '../../public/svg/deployment.svg';
 import Button from '../Button/Button';
 
 const DnaAndFeatures = ({
@@ -55,7 +49,9 @@ const DnaAndFeatures = ({
           data-wow-duration="2s"
           data-wow-delay="0s"
         >
-          <span className={styles.title}>Clover's DNA</span>
+          <span className={styles.title}>
+            {theme === 'dark' ? "Sakura's DNA" : `Clover's DNA`}
+          </span>
           <img
             className={styles.backImage}
             src={

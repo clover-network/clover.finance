@@ -30,7 +30,7 @@ const Header = () => {
     window.addEventListener('scroll', onScroll);
 
     return () => window.removeEventListener('scroll', onScroll);
-  }, [scroll]);
+  }, []);
 
   return (
     <header
@@ -67,7 +67,12 @@ const Header = () => {
             <i className={styles.logoImage}>
               {theme && theme === 'dark' ? <SakuraLogo /> : <Logo />}
             </i>
-            <div className={styles.logoText}>
+            <div
+              className={cn(
+                styles.logoText,
+                theme === 'dark' && styles.logoTextSakura,
+              )}
+            >
               {theme && theme === 'dark' ? 'sakura' : 'clover'}
             </div>
           </div>

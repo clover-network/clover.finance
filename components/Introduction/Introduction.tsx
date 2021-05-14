@@ -2,7 +2,6 @@ import React from 'react';
 import cn from 'classnames';
 import { useTheme } from 'next-themes';
 
-import Arrow from '../../public/svg/arrow_fill.svg';
 import styles from './Introduction.module.scss';
 import Button from '../Button/Button';
 
@@ -24,6 +23,24 @@ const DESC_LIST = [
   },
 ];
 
+const DESC_LIST_SAKURA = [
+  {
+    title: 'Performance and Innovation',
+    desc:
+      ' With Clovers unique "always-on" multi-chain connected wallet, users are able to simultaneously connect with Web3js-based dapps and Polkadotjs-based dapps at the same time, and view their multi-chain assets. ',
+  },
+  {
+    title: 'On-Chain Governance',
+    desc:
+      'DeFi users can connect to Ethereum, Polkadot, Kusama, Binance Smart Chain, Avalanche, Fantom, and Edgeware blockchains and seamlessly transact with the Clover wallet extension interface.',
+  },
+  {
+    title: 'Development Tools',
+    desc:
+      'The Clover CLV token is cross-chain compatible as our unique 2-way peg bridge technology allows the EVM based Clover address and Polkadot based Clover address to be bounded together, allowing the utilization of all both chains together.',
+  },
+];
+
 export function Introduction() {
   const { theme } = useTheme();
 
@@ -31,11 +48,17 @@ export function Introduction() {
     <>
       <div className={styles.textOuter}>
         <p className={styles.textInner}>
-          Simultaneously navigate and transact with major networks.{' '}
-          <span className={styles.green}>All in one overview!</span>
+          {theme === 'dark'
+            ? 'Build powerful DeFi applications on '
+            : 'Simultaneously navigate and transact with major networks.'}
+          <span className={styles.green}>
+            {theme === 'dark' ? 'Sakura' : 'All in one overview!'}
+          </span>
         </p>
       </div>
-      <div className={styles.launch}>
+      <div
+        className={cn(styles.launch, theme === 'dark' && styles.launchSakura)}
+      >
         <img
           className={cn(styles.ball, styles.left)}
           src={
@@ -46,7 +69,7 @@ export function Introduction() {
           alt="Clover introduction"
         />
         <div className={styles.itemList}>
-          {DESC_LIST.map((d, i) => {
+          {(theme === 'dark' ? DESC_LIST_SAKURA : DESC_LIST).map((d, i) => {
             return (
               <div className={cn(styles.item)} key={i}>
                 <div className={styles.descInner}>

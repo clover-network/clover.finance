@@ -39,7 +39,7 @@
   --color-title: #6fcf97;
   --color-light-grey: #1c2833;
   --color-background: #070a0d;
-  --color-accent-light: #070a0d;
+  --color-accent-light: #ff71a5;
   --color-second-background: #e5e5e5;
   --btn-shadow: rgba(255, 89, 149, 0.35);
   --btn-secondary-background: #fff;
@@ -80,6 +80,11 @@ button {
   font-family: Roboto, sans-serif;
 }
 
+h3,
+h2 {
+  user-select: none;
+}
+
 ul,
 ol {
   margin: 0;
@@ -95,8 +100,20 @@ a {
 button {
   transition: color 0.25s, fill 0.25s;
   color: inherit;
+}
 
-  &:hover {
-    color: $color-link;
-  }
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgba(180, 180, 180, 0.3);
 }

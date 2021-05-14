@@ -143,6 +143,10 @@
   font-size: 30px;
   line-height: 1.125;
   color: var(--color-text);
+
+  &.logoTextSakura {
+    color: #151e26 !important;
+  }
 }
 
 .rightBox {
@@ -156,7 +160,7 @@
   margin-left: 20px;
 }
 
-@media (min-width: $media-lg) {
+@media (min-width: $media-sm) {
   .wrapper {
     border-bottom: none;
     z-index: 111;

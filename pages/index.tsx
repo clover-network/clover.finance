@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import cn from 'classnames';
+import { useTheme } from 'next-themes';
 
 import Head from 'next/head';
 import Header from '../components/Header/Header';
@@ -18,6 +18,7 @@ import Features from '../components/ClvFeatures/CloverFeature';
 
 declare var WOW;
 const Home = () => {
+  const { theme, setTheme } = useTheme();
   const scrollRef = useRef(null);
   const handleClickScroll = () => {
     if (scrollRef.current) {
@@ -28,6 +29,10 @@ const Home = () => {
     setTimeout(_ => {
       // new WOW({ animateClass: 'animated' }).init();
     }, 1000);
+  }, []);
+
+  useEffect(() => {
+    setTheme('light');
   }, []);
 
   return (
@@ -46,7 +51,7 @@ const Home = () => {
       <main className={styles.main}>
         <GetStarted />
         <Introduction />
-        <DnaAndFeatures dnas={DNAS} />
+        <DnaAndFeatures dnas={theme === 'dark' ? DNAS.dark : DNAS.light} />
         <Features features={FEATURES} handleScroll={handleClickScroll} />
         <div ref={scrollRef}>
           <ClvToken clvTokens={CLVTOKENS} />

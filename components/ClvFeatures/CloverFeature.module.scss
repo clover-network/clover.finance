@@ -200,6 +200,10 @@
     }
   }
 
+  &.hoveredSakura {
+    background: white !important;
+  }
+
   .bar {
     background: var(--color-accent);
     width: 48px;

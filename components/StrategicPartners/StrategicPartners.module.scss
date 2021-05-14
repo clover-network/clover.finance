@@ -5,6 +5,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 90px;
+
+  @media (max-width: $media-sm) {
+    margin-top: 90px;
+  }
+
+  @media (max-width: $media-md) {
+    margin-top: 120px;
+  }
 }
 
 .header {
@@ -24,6 +33,10 @@
   @media (max-width: $media-sm) {
     overflow: auto;
   }
+
+  @media (max-width: $media-md) {
+    overflow: auto;
+  }
 }
 
 .logosContent {
@@ -35,9 +48,15 @@
   align-items: center;
   justify-content: center;
 
+  @media (max-width: $media-md) {
+    width: 1460px;
+    padding: 0 15px;
+    justify-content: flex-start;
+  }
+
   @media (max-width: $media-sm) {
     width: 1435px;
-    justify-content: flex-start;
+    padding: 0 12px;
   }
 }
 

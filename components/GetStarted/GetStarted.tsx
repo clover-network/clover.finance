@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useTheme } from 'next-themes';
 import cn from 'classnames';
 import { InView } from 'react-intersection-observer';
@@ -16,6 +16,7 @@ import useMobileDetect from '../../utils/hooks/useMobileDetect';
 
 const GetStarted = () => {
   const { theme } = useTheme();
+  const themeRef = useRef(theme);
   const { isMobile } = useMobileDetect();
   const [builder, setBuilder] = useState(false);
   const [resources, setResources] = useState(false);
@@ -24,19 +25,12 @@ const GetStarted = () => {
   const [forImg, setForImg] = useState('forground.svg');
 
   const fetchForgroundImage = () => {
+    if (themeRef.current === 'dark') {
+      return 'forground-sakura.svg';
+    }
     if (window.innerWidth <= 576) return 'forground-sm.svg';
     if (window.innerWidth <= 768) return 'forground-md.svg';
     return 'forground.svg';
-  };
-
-  const getBackgroundUrl = () => {
-    return theme && theme === 'dark'
-      ? isMobile()
-        ? '/forground-sakura.svg'
-        : '/forground-sakura.svg'
-      : isMobile()
-      ? '/forground-sm.svg'
-      : '/forground.svg';
   };
 
   const handleResize = () => {
@@ -55,7 +49,10 @@ const GetStarted = () => {
     };
   }, []);
 
-  console.log(Number(builder) + Number(community) + Number(resources));
+  useEffect(() => {
+    themeRef.current = theme;
+    setForImg(fetchForgroundImage());
+  }, [theme]);
 
   return (
     <>
@@ -139,15 +136,20 @@ const GetStarted = () => {
                 </div>
               </div>
             </div>
-            <div className={styles.centerLogo}>
-              {theme && theme === 'dark' ? (
+            <div
+              className={cn(
+                styles.centerLogo,
+                themeRef.current === 'dark' && styles.centerLogoSakura,
+              )}
+            >
+              {themeRef && themeRef.current === 'dark' ? (
                 <SakuraLogo style={{ width: 100, height: 100 }} />
               ) : (
                 <Logo />
               )}
             </div>
             <div className={styles.textOuter}>
-              {theme && theme === 'dark' ? (
+              {themeRef && themeRef.current === 'dark' ? (
                 <p className={styles.textInner}>
                   Platform built for
                   <br />
