@@ -8,7 +8,7 @@
   width: 100%;
   text-align: center;
   justify-content: flex-start;
-  padding-top: 142px;
+  padding-top: 120px;
   height: 864px !important;
 
   a {
@@ -20,7 +20,7 @@
   }
 
   @media (min-width: $media-xl) {
-    padding-top: calc(208 * 100vw / 1440 - 66px);
+    padding-top: calc(185 * 100vw / 1440 - 66px);
   }
 
   @media (max-width: $media-md) {
@@ -30,7 +30,7 @@
 
   @media (max-width: $media-sm) {
     height: 621px;
-    padding-top: calc(170 * 100vw / 360 - 45px);
+    padding-top: calc(157 * 100vw / 360 - 45px);
   }
 }
 .height3 {

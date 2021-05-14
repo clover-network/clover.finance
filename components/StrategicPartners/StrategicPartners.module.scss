@@ -20,11 +20,25 @@
   max-width: 1230px;
   width: 100%;
   overflow: hidden;
+
+  @media (max-width: $media-sm) {
+    overflow: auto;
+  }
+}
+
+.logosContent {
+  position: relative;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-items: center;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: $media-sm) {
+    width: 1435px;
+    justify-content: flex-start;
+  }
 }
 
 .logo {
@@ -67,6 +81,7 @@
 
   @media (max-width: $media-sm) {
     width: 45%;
+    max-width: 192px;
   }
 }
 

@@ -32,6 +32,10 @@
 .container {
   max-width: 1230px;
   margin: 0 auto;
+
+  @media (max-width: $media-sm) {
+    padding-left: 12px;
+  }
 }
 
 .content {
@@ -71,10 +75,6 @@
 @media (max-width: $media-xl), (min-width: $media-md) {
   .wrapper {
     overflow: hidden;
-  }
-
-  .container {
-    padding: 0 20px;
   }
 
   .content {

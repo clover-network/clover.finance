@@ -4,6 +4,7 @@
   padding: 120px 20px;
   width: 100%;
   position: relative;
+  margin-top: 120px;
 
   // &::before {
   //   content: url('../../public/images/blog-bg.png');
@@ -20,6 +21,17 @@
   //   right: -19px;
   //   z-index: 0;
   // }
+
+  @media (max-width: $media-md) {
+    margin-top: 120px;
+    padding: 0 21px;
+  }
+
+  @media (max-width: $media-sm) {
+    margin-top: 90px;
+    padding-left: 12px;
+    padding-right: 0;
+  }
 }
 
 .container {
@@ -43,12 +55,29 @@
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
+  margin-top: 48px;
+
+  @media (max-width: $media-md) {
+    margin-top: 36px;
+  }
+
+  @media (max-width: $media-sm) {
+    margin-top: 36px;
+    flex-wrap: nowrap !important;
+    overflow: auto;
+  }
 }
 
 .item {
   margin: 20px 0 0 0;
   width: 100%;
   z-index: 1;
+
+  @media (max-width: $media-sm) {
+    margin-top: 0;
+    margin-right: 12px;
+    min-width: 282px;
+  }
 }
 
 .link {
@@ -103,10 +132,6 @@
 }
 
 @media (min-width: $media-md) {
-  .list {
-    margin-top: 30px;
-  }
-
   .item {
     width: 50%;
     padding: 15px;
@@ -124,16 +149,8 @@
 }
 
 @media (min-width: $media-lg) {
-  .wrapper {
-    //margin-top: 100px;
-  }
-
   .title {
     font-size: 56px;
-  }
-
-  .list {
-    margin-top: 50px;
   }
 
   .item {
@@ -150,10 +167,6 @@
 }
 
 @media (max-width: $media-xs), (max-width: $media-sm) {
-  .wrapper {
-    padding: 40px;
-  }
-
   .title {
     font-size: 26px !important;
   }

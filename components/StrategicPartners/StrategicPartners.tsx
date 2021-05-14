@@ -44,21 +44,23 @@ export function StrategicPartners() {
         Strategic Partners
       </header>
       <div className={styles.logos}>
-        {LOGO_MAPS.map(url => {
-          return (
-            <div
-              key={url}
-              className={cn(styles.logo, 'wow', 'bounceInUp')}
-              data-wow-duration="2s"
-              data-wow-delay="0s"
-            >
-              <img
-                src={theme && theme === 'dark' ? getDarkImageUrl(url) : url}
-                alt=""
-              />
-            </div>
-          );
-        })}
+        <div className={styles.logosContent}>
+          {LOGO_MAPS.map(url => {
+            return (
+              <div
+                key={url}
+                className={cn(styles.logo, 'wow', 'bounceInUp')}
+                data-wow-duration="2s"
+                data-wow-delay="0s"
+              >
+                <img
+                  src={theme && theme === 'dark' ? getDarkImageUrl(url) : url}
+                  alt=""
+                />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
