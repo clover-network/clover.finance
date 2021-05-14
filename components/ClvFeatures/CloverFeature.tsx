@@ -86,7 +86,7 @@ const Features = ({
               data-wow-duration="2s"
               data-wow-delay="0s"
             >
-              <span>What if...?</span>
+              <span>What if...</span>
               <div className={cn(styles.typing)}>
                 <span ref={typingVal}></span>
               </div>
@@ -110,6 +110,11 @@ const Features = ({
                     data-wow-delay="0s"
                     key={index}
                     onMouseEnter={() => setHIndex(index)}
+                    onClick={() =>
+                      feature.link !== 'scroll'
+                        ? window.open(feature.link, 'blank')
+                        : handleScroll()
+                    }
                   >
                     <h3>{feature.title}</h3>
                     <img
@@ -124,14 +129,7 @@ const Features = ({
                     {hIndex === index && (
                       <>
                         <p>{feature.content}</p>
-                        {feature.link !== 'scroll' ? (
-                          <a href={feature.link} target="_blank">
-                            {feature.btnText}
-                          </a>
-                        ) : (
-                          <span onClick={handleScroll}>{feature.btnText}</span>
-                        )}
-                        {feature.img && <img src={feature.img} alt="" />}
+                        <div className={styles.bar} />
                       </>
                     )}
                   </div>

@@ -26,7 +26,7 @@ const Home = () => {
   };
   useEffect(() => {
     setTimeout(_ => {
-      new WOW({ animateClass: 'animated' }).init();
+      // new WOW({ animateClass: 'animated' }).init();
     }, 1000);
   }, []);
 

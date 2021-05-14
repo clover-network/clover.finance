@@ -7,14 +7,19 @@
   margin-top: 150px;
   margin-bottom: 90px;
 
-  @media (max-width: $media-lg) {
-    width: calc(100% - 40px);
+  @media (max-width: $media-md) {
+    width: calc(100% - 42px);
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 90px;
   }
 
   @media (max-width: $media-sm) {
     margin-top: 90px;
+    width: calc(100% - 24px);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 60px;
   }
 }
 
@@ -32,8 +37,13 @@
   max-width: 1230px;
   margin: 0 auto;
 
-  @media (max-width: $media-lg) {
+  @media (max-width: $media-md) {
     padding: 62px 84px 30px 84px;
+  }
+
+  @media (max-width: $media-sm) {
+    padding: 48px 30px;
+    border-radius: 30px;
   }
 }
 
@@ -47,9 +57,14 @@
 
   color: var(--color-text);
 
-  @media (max-width: $media-lg) {
+  @media (max-width: $media-md) {
     font-size: 48px;
     line-height: 54px;
+  }
+
+  @media (max-width: $media-sm) {
+    font-size: 30px;
+    line-height: 30px;
   }
 }
 
@@ -103,17 +118,13 @@
 }
 
 @media (max-width: $media-sm) {
-  .team {
-    font-size: 26px !important;
-    margin-bottom: 0;
-    padding: 50px 0;
-  }
-
   .name {
-    font-size: 20px;
+    font-size: 16px;
+    line-height: 24px;
   }
 
   .desc {
     font-size: 16px;
+    line-height: 24px;
   }
 }

@@ -8,7 +8,25 @@
   margin: 0 12px;
 
   &:not(:last-child) {
-    padding-bottom: 58px;
+    padding-bottom: 0;
+  }
+
+  @media (max-width: $media-md) {
+    margin: 0;
+    width: 50%;
+
+    &:not(:last-child) {
+      padding-bottom: 0;
+    }
+  }
+
+  @media (max-width: $media-sm) {
+    margin: 0;
+    width: 100%;
+
+    &:not(:last-child) {
+      padding-bottom: 48px;
+    }
   }
 }
 
@@ -45,23 +63,67 @@
   position: relative;
   width: 100%;
   max-width: 1230px;
-  padding-top: 10rem;
+  padding-top: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 
-  background: var(--intro-background);
+  @media (max-width: $media-md) {
+    padding-top: 54px;
+  }
+
+  @media (max-width: $media-sm) {
+    padding-top: 54px;
+  }
+
+  &:after {
+    z-index: 1;
+    content: '';
+    position: absolute;
+    top: -130px;
+    left: 50%;
+    width: 1440px;
+    height: 1004px;
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(76, 191, 122, 0.4) 0%,
+      rgba(76, 191, 122, 0) 100%
+    );
+    transform: translateX(-50%);
+
+    @media (max-width: $media-md) {
+      top: -130px;
+      width: 768px;
+      height: 768px;
+    }
+
+    @media (max-width: $media-sm) {
+      top: 0;
+      width: 360px;
+      height: 360px;
+    }
+  }
 
   img {
     width: 100%;
     height: auto;
-    max-width: 888px;
+    // max-width: 888px;
+    z-index: 2;
   }
 
   .itemList {
     display: flex;
     flex-wrap: wrap;
+    z-index: 2;
+
+    @media (max-width: $media-md) {
+      padding: 0 21px;
+    }
+
+    @media (max-width: $media-sm) {
+      padding: 0 12px;
+    }
   }
 }
 
@@ -76,11 +138,13 @@
   }
 
   @media (max-width: $media-md) {
+    padding: 0 21px;
     margin-top: 270px;
     max-width: 700px !important;
   }
 
   @media (max-width: $media-sm) {
+    padding: 0 12px;
     margin-top: 90px;
   }
 }
@@ -132,9 +196,6 @@
   .launch {
     margin-right: 0;
   }
-  .itemList {
-    padding: 0 10px;
-  }
 }
 
 @media (max-width: $media-sm) {
@@ -159,11 +220,5 @@
 
   .desc {
     font-size: 16px;
-  }
-
-  .item {
-    &:not(:last-child) {
-      padding-bottom: 30px;
-    }
   }
 }

@@ -42,13 +42,14 @@
   color: $color-light;
 }
 
-@media (max-width: $media-lg) {
+@media (max-width: $media-md) {
   .wrapper {
     padding-top: 90px;
-    padding-bottom: 70px;
+    padding-bottom: 90px;
     //border-top: 1px solid #E8E8E9;
   }
   .container {
+    font-size: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -59,10 +60,11 @@
 @media (max-width: $media-sm) {
   .wrapper {
     padding-top: 90px;
-    padding-bottom: 70px;
+    padding-bottom: 60px;
     //border-top: 1px solid #E8E8E9;
   }
   .container {
+    font-size: 16px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -71,6 +73,7 @@
   }
 
   .social {
-    margin-top: 35px;
+    margin-top: 22px;
+    margin-bottom: 60px;
   }
 }

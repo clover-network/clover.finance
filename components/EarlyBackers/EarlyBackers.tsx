@@ -27,7 +27,7 @@ const EarlyBackers = ({ className }: { className?: string }) => {
           </h3>
           <div className={styles.content}>
             <Carousel
-              itemWidth={210}
+              itemWidth={200}
               infinite
               autoPlay={3000}
               slidesPerScroll={2}
@@ -36,23 +36,19 @@ const EarlyBackers = ({ className }: { className?: string }) => {
               arrowLeft={
                 theme && theme === 'dark' ? (
                   <ArrowLeftSakura
-                    style={{ marginRight: '20px', cursor: 'pointer' }}
+                    style={{ marginRight: 36, cursor: 'pointer' }}
                   />
                 ) : (
-                  <ArrowLeft
-                    style={{ marginRight: '20px', cursor: 'pointer' }}
-                  />
+                  <ArrowLeft style={{ marginRight: 36, cursor: 'pointer' }} />
                 )
               }
               arrowRight={
                 theme && theme === 'dark' ? (
                   <ArrowRightSakura
-                    style={{ marginLeft: '20px', cursor: 'pointer' }}
+                    style={{ marginLeft: 36, cursor: 'pointer' }}
                   />
                 ) : (
-                  <ArrowRight
-                    style={{ marginLeft: '20px', cursor: 'pointer' }}
-                  />
+                  <ArrowRight style={{ marginLeft: 36, cursor: 'pointer' }} />
                 )
               }
             >

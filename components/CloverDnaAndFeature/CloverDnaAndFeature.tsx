@@ -60,8 +60,8 @@ const DnaAndFeatures = ({
             className={styles.backImage}
             src={
               theme && theme === 'dark'
-                ? '/images/clover-dna-sakura.png'
-                : '/images/clover-dna.png'
+                ? '/images/clover-dna-sakura.svg'
+                : '/images/clover-dna.svg'
             }
             alt=""
           />

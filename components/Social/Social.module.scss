@@ -13,9 +13,12 @@
 }
 
 .link {
-  fill: rgba(var(--color-white), 0.2);
+  svg,
+  path {
+    fill: var(--color-accent);
 
-  &:hover {
-    fill: var(--color-hover);
+    &:hover {
+      fill: var(--color-accent-light);
+    }
   }
 }
