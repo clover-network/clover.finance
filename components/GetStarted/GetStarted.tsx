@@ -12,18 +12,16 @@ import BuilderSvg from '../../public/svg/builder.svg';
 import CommunitySvg from '../../public/svg/community.svg';
 import ResourcesSvg from '../../public/svg/resources.svg';
 import ArrowDown from '../../public/svg/arrow_down.svg';
+import useMobileDetect from '../../utils/hooks/useMobileDetect';
 
 const GetStarted = () => {
   const { theme } = useTheme();
+  const { isMobile } = useMobileDetect();
   const [builder, setBuilder] = useState(false);
   const [resources, setResources] = useState(false);
   const [community, setCommunity] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [height, setHeight] = useState('auto');
   const [forImg, setForImg] = useState('forground.svg');
-
-  const fetchIsMobile = () => {
-    return window.innerWidth <= 576 && window.innerHeight <= 800;
-  };
 
   const fetchForgroundImage = () => {
     if (window.innerWidth <= 576) return 'forground-sm.svg';
@@ -33,23 +31,21 @@ const GetStarted = () => {
 
   const getBackgroundUrl = () => {
     return theme && theme === 'dark'
-      ? isMobile
+      ? isMobile()
         ? '/forground-sakura.svg'
         : '/forground-sakura.svg'
-      : isMobile
+      : isMobile()
       ? '/forground-sm.svg'
       : '/forground.svg';
   };
 
   const handleResize = () => {
-    setIsMobile(fetchIsMobile());
     setForImg(fetchForgroundImage());
   };
 
   useEffect(() => {
     let event = null;
     if (window) {
-      setIsMobile(fetchIsMobile());
       setForImg(fetchForgroundImage());
       event = window.addEventListener('resize', handleResize);
     }
@@ -59,16 +55,38 @@ const GetStarted = () => {
     };
   }, []);
 
+  console.log(Number(builder) + Number(community) + Number(resources));
+
   return (
     <>
       <InView threshold={0} triggerOnce>
         {({ inView, ref }) => (
           <div
             ref={ref}
-            className={cn(styles.wrapper, styles.hidden, {
-              [`${styles.visible}`]: inView,
-            })}
+            className={cn(
+              styles.wrapper,
+              styles.hidden,
+              Number(builder) + Number(community) + Number(resources) === 0 &&
+                styles.height0,
+              Number(builder) + Number(community) + Number(resources) === 1 &&
+                styles.height1,
+              Number(builder) + Number(community) + Number(resources) === 2 &&
+                styles.height2,
+              Number(builder) + Number(community) + Number(resources) === 3 &&
+                styles.height3,
+              {
+                [`${styles.visible}`]: inView,
+              },
+            )}
           >
+            {isMobile()
+              ? `${
+                  621 +
+                  (builder ? 270 : 90) +
+                  (community ? 270 : 90) +
+                  (resources ? 270 : 90)
+                }px !important`
+              : 'auto !important'}
             <div className={styles.forground}>
               <img src={forImg} alt="back" />
 

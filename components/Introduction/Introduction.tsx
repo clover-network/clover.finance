@@ -25,15 +25,13 @@ const DESC_LIST = [
 ];
 
 export function Introduction() {
-  const { theme, setTheme } = useTheme();
+  const { theme } = useTheme();
 
   return (
     <>
-      <div className={styles.textOuter} style={{ maxWidth: 'none' }}>
+      <div className={styles.textOuter}>
         <p className={styles.textInner}>
           Simultaneously navigate and transact with major networks.{' '}
-        </p>
-        <p className={styles.textInner}>
           <span className={styles.green}>All in one overview!</span>
         </p>
       </div>
