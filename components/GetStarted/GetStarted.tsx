@@ -26,8 +26,11 @@ const GetStarted = () => {
 
   const fetchForgroundImage = () => {
     if (themeRef.current === 'dark') {
+      if (window.innerWidth <= 576) return 'forground-sakura-sm.svg';
+      if (window.innerWidth <= 768) return 'forground-sakura-md.svg';
       return 'forground-sakura.svg';
     }
+
     if (window.innerWidth <= 576) return 'forground-sm.svg';
     if (window.innerWidth <= 768) return 'forground-md.svg';
     return 'forground.svg';

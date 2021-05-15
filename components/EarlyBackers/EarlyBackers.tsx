@@ -56,20 +56,37 @@ const EarlyBackers = ({ className }: { className?: string }) => {
                 <img
                   width={123}
                   key={1}
-                  src="/backers/bk_polychain.png"
+                  src={
+                    theme && theme === 'dark'
+                      ? '/backers/wh_polychain.png'
+                      : '/backers/bk_polychain.png'
+                  }
                   alt=""
                 />
               </div>
 
               <div className={styles.item}>
-                <img width={123} key={2} src="/backers/bk_alameda.png" alt="" />
+                <img
+                  width={123}
+                  key={2}
+                  src={
+                    theme && theme === 'dark'
+                      ? '/backers/wh_alameda.png'
+                      : '/backers/bk_alameda.png'
+                  }
+                  alt=""
+                />
               </div>
 
               <div className={styles.item}>
                 <img
                   width={123}
                   key={3}
-                  src="/backers/bk_hypersphere.png"
+                  src={
+                    theme && theme === 'dark'
+                      ? '/backers/wh_hypersphere.png'
+                      : '/backers/bk_hypersphere.png'
+                  }
                   alt=""
                 />
               </div>
@@ -78,7 +95,11 @@ const EarlyBackers = ({ className }: { className?: string }) => {
                 <img
                   width={123}
                   key={4}
-                  src="/backers/bk_divergence.png"
+                  src={
+                    theme && theme === 'dark'
+                      ? '/backers/wh_divergence.png'
+                      : '/backers/bk_divergence.png'
+                  }
                   alt=""
                 />
               </div>
@@ -88,7 +109,16 @@ const EarlyBackers = ({ className }: { className?: string }) => {
               </div>
 
               <div className={styles.item}>
-                <img width={123} key={6} src="/backers/bk_cms.png" alt="" />
+                <img
+                  width={123}
+                  key={6}
+                  src={
+                    theme && theme === 'dark'
+                      ? '/backers/wh_cms.png'
+                      : '/backers/bk_cms.png'
+                  }
+                  alt=""
+                />
               </div>
 
               <div className={styles.item}>
