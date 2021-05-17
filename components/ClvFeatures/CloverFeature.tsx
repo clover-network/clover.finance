@@ -4,6 +4,7 @@ import cn from 'classnames';
 import { useInView } from 'react-intersection-observer';
 
 import styles from './CloverFeature.module.scss';
+import useMobileDetect from '../../utils/hooks/useMobileDetect';
 
 const Features = ({
   features = [],
@@ -35,6 +36,7 @@ const Features = ({
     'You can pay gas fee in any token?',
     'You can pay a lower gas fee as a frequent DeFi protocol user?',
   ];
+  const { isMobile } = useMobileDetect();
   const { theme, setTheme } = useTheme();
   const [count, setCount] = useState(0);
   const [hIndex, setHIndex] = useState(-1);
@@ -127,7 +129,7 @@ const Features = ({
                       }
                       alt=""
                     />
-                    {hIndex === index && (
+                    {(isMobile() || hIndex === index) && (
                       <>
                         <p>{feature.content}</p>
                         <div className={styles.bar} />

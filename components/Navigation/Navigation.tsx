@@ -8,6 +8,7 @@ import { SOCIALS } from '../../constants';
 import ShortArrow from '../../public/svg/short-arrow.svg';
 import Logo from '../../public/svg/logo.svg';
 import SakuraLogo from '../../public/svg/sakura_logo.svg';
+import useMobileDetect from '../../utils/hooks/useMobileDetect';
 
 const Navigation = ({
   className,
@@ -24,27 +25,7 @@ const Navigation = ({
   const { theme, setTheme } = useTheme();
   const [currentMenu, setCurrentMenu] = useState('');
   const [innerWidth, setInnerWidth] = useState(1024);
-  const [isMobile, setIsMobile] = useState(false);
-
-  const fetchIsMobile = () => {
-    return window.innerWidth <= 576 && window.innerHeight <= 800;
-  };
-
-  const handleResize = () => {
-    setIsMobile(fetchIsMobile());
-  };
-
-  useEffect(() => {
-    let event = null;
-    if (window) {
-      setIsMobile(fetchIsMobile());
-      event = window.addEventListener('resize', handleResize);
-    }
-
-    return () => {
-      if (event) window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  const { isMobile } = useMobileDetect();
 
   useEffect(() => {
     const onresize = () => {
@@ -101,7 +82,7 @@ const Navigation = ({
                 }
               >
                 <div className={styles.itemLabel}>{label}</div>
-                {(currentMenu === label || isMobile) && (
+                {(currentMenu === label || isMobile()) && (
                   <ul className={styles.links}>
                     {children.map(({ label, link }, index) => {
                       return (

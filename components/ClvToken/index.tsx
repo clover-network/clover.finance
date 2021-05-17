@@ -50,7 +50,7 @@ const ClvToken = ({
             ) : (
               <CloverIcon className={styles.clvTokenIcon} />
             )}
-            <p>{theme && theme === 'dark' ? 'SAC Token' : 'CLV Token'}</p>
+            <p>{theme && theme === 'dark' ? 'SKU Token' : 'CLV Token'}</p>
           </h3>
           <div className={styles.clvTokenList}>
             {clvTokens.map(token => (

@@ -50,7 +50,7 @@ export function Introduction() {
         <p className={styles.textInner}>
           {theme === 'dark'
             ? 'Build powerful DeFi applications on '
-            : 'Simultaneously navigate and transact with major networks.'}
+            : 'Simultaneously navigate and transact with major networks. '}
           <span className={styles.green}>
             {theme === 'dark' ? 'Sakura' : 'All in one overview!'}
           </span>
