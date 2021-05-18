@@ -32,6 +32,12 @@
     height: 621px;
     padding-top: calc(157 * 100vw / 360 - 45px);
   }
+
+  @media (min-width: 2400px) {
+    height: 35vw !important;
+    max-height: 1200px;
+    padding-top: calc(220 * 100vw / 2400 - 66px);
+  }
 }
 .height3 {
   @media (max-width: $media-sm) {
@@ -92,6 +98,11 @@
 
     @media (max-width: $media-sm) {
       height: 621px;
+    }
+
+    @media (min-width: 2400px) {
+      height: 35vw;
+      max-height: 1200px;
     }
   }
 }
