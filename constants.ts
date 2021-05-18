@@ -12,10 +12,6 @@ const HEADER_MENU = [
         label: 'Testnet',
       },
       {
-        link: 'https://discord.gg/RMwkeyKTqE',
-        label: 'Developer Discord',
-      },
-      {
         link: 'https://github.com/clover-network',
         label: 'Github',
       },

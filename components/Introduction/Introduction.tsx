@@ -44,6 +44,15 @@ const DESC_LIST_SAKURA = [
 export function Introduction() {
   const { theme } = useTheme();
 
+  const handleDownload = () => {
+    if (theme !== 'dark') {
+      window.open(
+        'https://chrome.google.com/webstore/detail/clover-wallet/nhnkbkgjikgcigadomkphalanndcapjk',
+        '_blank',
+      );
+    }
+  };
+
   return (
     <>
       <div className={styles.textOuter}>
@@ -78,8 +87,11 @@ export function Introduction() {
                     {d.title}
                   </div>
                   <p className={styles.desc}>{d.desc}</p>
-                  {i === 1 && (
-                    <Button className={styles.btn_secondary}>
+                  {i === 1 && theme !== 'dark' && (
+                    <Button
+                      className={styles.btn_secondary}
+                      onClick={handleDownload}
+                    >
                       <svg
                         width="24"
                         height="24"
