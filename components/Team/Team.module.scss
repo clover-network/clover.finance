@@ -1,33 +1,80 @@
 @import 'styles/variables';
 
-.content{
-  //background: url('../../public/images/team.png');
-  background: #121d24;
+.content {
   width: 100%;
   color: $color-white;
-  background-size: cover;
+  box-sizing: border-box;
+  margin-top: 150px;
+  margin-bottom: 90px;
+
+  @media (max-width: $media-md) {
+    width: calc(100% - 42px);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 90px;
+  }
+
+  @media (max-width: $media-sm) {
+    margin-top: 60px;
+    width: calc(100% - 24px);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 60px;
+  }
 }
+
 .team {
-  padding: 120px 0;
+  border-radius: 30px;
+  background: var(--color-background);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.15);
+  padding: 120px 102px 90px 102px;
   font-style: normal;
-  //font-weight: bold;
   font-size: 52px;
   line-height: 63px;
   text-align: center;
   width: 100%;
-  max-width: 1030px;
+  max-width: 1230px;
   margin: 0 auto;
 
+  @media (max-width: $media-md) {
+    padding: 62px 84px 30px 84px;
+  }
+
+  @media (max-width: $media-sm) {
+    padding: 48px 30px;
+    border-radius: 30px;
+  }
 }
 
 .header {
   margin-bottom: 40px;
+  font-family: Gilroy-SemiBold;
+  font-size: 54px;
+  line-height: 60px;
+  text-align: center;
+  letter-spacing: -2px;
+
+  color: var(--color-text);
+
+  @media (max-width: $media-md) {
+    font-size: 48px;
+    line-height: 54px;
+  }
+
+  @media (max-width: $media-sm) {
+    font-size: 30px;
+    line-height: 30px;
+  }
 }
 
 .people {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  @media (max-width: $media-sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .peopleSingle {
@@ -35,21 +82,33 @@
 }
 
 .avatar {
+  width: 180px;
   margin-bottom: 32px;
+
+  @media (max-width: $media-lg) {
+    width: 142px;
+  }
+
+  @media (max-width: $media-sm) {
+    width: 120px;
+    margin-bottom: 12px;
+  }
 }
 .name {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 26px;
-  line-height: 32px;
-  margin-bottom: 8px;
+  font-family: Gilroy-SemiBold;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+
+  color: var(--color-text);
 }
 .desc {
-  font-family: Roboto, sans-serif;
-  font-style: normal;
-  font-weight: 300;
+  font-family: Gilroy-Medium;
   font-size: 18px;
-  line-height: 25px;
+  line-height: 30px;
+  text-align: center;
+
+  color: $color-light;
 }
 
 @media (min-width: $media-lg) {
@@ -59,17 +118,13 @@
 }
 
 @media (max-width: $media-sm) {
-  .team {
-    font-size: 26px !important;
-    margin-bottom: 0;
-    padding: 50px 0;
-  }
-
   .name {
-    font-size: 20px;
+    font-size: 16px;
+    line-height: 24px;
   }
 
   .desc {
-    font-size: 14px;
+    font-size: 16px;
+    line-height: 24px;
   }
 }

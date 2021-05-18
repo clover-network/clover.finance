@@ -1,44 +1,106 @@
 @import 'styles/variables';
 
 .root {
-  padding: 120px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #ffffff;
+  margin-top: 90px;
+
+  @media (max-width: $media-sm) {
+    margin-top: 90px;
+  }
+
+  @media (max-width: $media-md) {
+    margin-top: 120px;
+  }
 }
 
 .header {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 52px;
   text-align: center;
-  margin-bottom: 30px;
-  color: #000000;
+  margin-bottom: 48px;
+  font-family: Gilroy-SemiBold;
+  font-size: 54px;
+  line-height: 60px;
+  color: var(--color-background);
 }
 
 .logos {
   max-width: 1230px;
   width: 100%;
   overflow: hidden;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 246px);
+
+  @media (max-width: $media-sm) {
+    overflow: auto;
+  }
+
+  @media (max-width: $media-md) {
+    overflow: auto;
+  }
+}
+
+.logosContent {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
   justify-items: center;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: $media-md) {
+    width: 1460px;
+    padding: 0 15px;
+    justify-content: flex-start;
+  }
+
+  @media (max-width: $media-sm) {
+    width: 1460px;
+    padding: 0 12px;
+  }
 }
 
 .logo {
-  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 192px;
   height: 100px;
   float: left;
-}
+  margin: 9px 6px;
 
-@media (min-width: $media-md) {
-  .logo {
-    width: 246px;
+  &::before {
+    content: '';
+    position: absolute;
+    border-radius: 18px;
+    background: var(--btn-secondary-background);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+  }
+
+  &:hover {
+    cursor: pointer;
+    &::before {
+      background: rgba(255, 255, 255, 0.15);
+    }
+  }
+
+  img {
+    max-height: 60px;
+    z-index: 10;
+  }
+
+  @media (max-width: $media-md) {
     height: 100px;
+  }
+
+  @media (max-width: $media-sm) {
+    width: 45%;
+    max-width: 192px;
   }
 }
 

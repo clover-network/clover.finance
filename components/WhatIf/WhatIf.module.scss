@@ -33,13 +33,13 @@
 }
 
 .accent {
-  color: $color-accent;
+  color: var(--color-accent);
 }
 
 .hidden {
   opacity: 0;
   visibility: hidden;
-  transition: .85s opacity, .85s visibility;
+  transition: 0.85s opacity, 0.85s visibility;
 }
 
 .visible {

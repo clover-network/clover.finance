@@ -1,3 +1,13 @@
-<svg width="14" height="22" viewBox="0 0 14 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1.70996 20L11.4023 11L1.70996 2" stroke="#27A577" stroke-width="3"/>
+<svg
+  width="60"
+  height="60"
+  viewBox="0 0 60 60"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+<circle cx="30" cy="30" r="30" fill="white" fill-opacity="0.05" />
+<path
+    d="M32.2116 17.7L44.8116 30.3L32.2116 42.9H26.1636L36.5796 32.484H15.2016V28.116H36.5796L26.1636 17.7H32.2116Z"
+    fill="#42C37B"
+  />
 </svg>

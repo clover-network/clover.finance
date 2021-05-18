@@ -1,14 +1,16 @@
-import React from 'react'
-import styles from './StrategicPartners.module.scss'
-import cn from 'classnames'
+import React from 'react';
+import { useTheme } from 'next-themes';
+
+import styles from './StrategicPartners.module.scss';
+import cn from 'classnames';
 const LOGO_MAPS = [
   '/partner/graph.png',
   '/partner/chainlink.png',
   '/partner/prosper.png',
-  '/partner/ankr.svg',
   '/partner/dodo.png',
   '/partner/polygon.png',
   '/partner/litentry.png',
+  '/partner/advanca.png',
   '/partner/boringdao.png',
   '/partner/injective.png',
   '/partner/crust.png',
@@ -21,26 +23,44 @@ const LOGO_MAPS = [
   '/partner/manta.png',
   '/partner/easyfi.png',
   '/partner/unilend.png',
-  '/partner/parsiq.png',
-]
+];
 
 export function StrategicPartners() {
+  const { theme } = useTheme();
+
+  const getDarkImageUrl = (image: string) => {
+    const splits = image.split('.');
+    return `${splits[0]}_dark.${splits[1]}`;
+  };
+
   return (
     <div className={styles.root}>
-      <header className={cn(styles.header,'wow', 'bounceInUp')} data-wow-duration="2s" data-wow-delay="0s">Strategic Partners</header>
+      <header
+        className={cn(styles.header, 'wow', 'bounceInUp')}
+        data-wow-duration="2s"
+        data-wow-delay="0s"
+      >
+        Strategic Partners
+      </header>
       <div className={styles.logos}>
-        {LOGO_MAPS.map((url) => {
-          return (
-            <div
-              key={url}
-              className={cn(styles.logo,'wow', 'bounceInUp')} data-wow-duration="2s" data-wow-delay="0s"
-              style={{
-                background: 'url(' + url + ')no-repeat center',
-              }}
-            />
-          )
-        })}
+        <div className={styles.logosContent}>
+          {LOGO_MAPS.map(url => {
+            return (
+              <div
+                key={url}
+                className={cn(styles.logo, 'wow', 'bounceInUp')}
+                data-wow-duration="2s"
+                data-wow-delay="0s"
+              >
+                <img
+                  src={theme && theme === 'dark' ? getDarkImageUrl(url) : url}
+                  alt=""
+                />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
-  )
+  );
 }

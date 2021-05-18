@@ -1,5 +1,23 @@
 const HEADER_MENU = [
   {
+    label: 'Builders',
+    children: [
+      {
+        link:
+          'https://docs.clover.finance/clover-eco-incentive-program/clover-dapp-developer-incentive-structure',
+        label: 'Developer Incentive Program',
+      },
+      {
+        link: 'https://docs.clover.finance/quick-start/testnet',
+        label: 'Testnet',
+      },
+      {
+        link: 'https://github.com/clover-network',
+        label: 'Github',
+      },
+    ],
+  },
+  {
     label: 'Community',
     children: [
       {
@@ -16,28 +34,7 @@ const HEADER_MENU = [
       },
     ],
   },
-  {
-    label: 'Builders',
-    children: [
-      {
-        link:
-          'https://docs.clover.finance/clover-eco-incentive-program/clover-dapp-developer-incentive-structure',
-        label: 'Developer Incentive Program',
-      },
-      {
-        link: 'https://docs.clover.finance/quick-start/testnet',
-        label: 'Testnet',
-      },
-      {
-        link: 'https://discord.gg/RMwkeyKTqE',
-        label: 'Developer Discord',
-      },
-      {
-        link: 'https://github.com/clover-network',
-        label: 'Github',
-      },
-    ],
-  },
+
   {
     label: 'Resources',
     children: [
@@ -51,7 +48,7 @@ const HEADER_MENU = [
       },
     ],
   },
-]
+];
 
 const SOCIAL_ICONS = {
   twitter: 'twitter',
@@ -59,7 +56,7 @@ const SOCIAL_ICONS = {
   discord: 'discord',
   medium: 'medium',
   linkedin: 'linkedin',
-}
+};
 
 const SOCIALS = [
   {
@@ -82,14 +79,14 @@ const SOCIALS = [
     link: 'https://www.linkedin.com/company/projectclover/',
     icon: SOCIAL_ICONS.linkedin,
   },
-]
+];
 
 const BLOCKS_ICONS = {
   polkadot: 'polkadot',
   schedule: 'schedule',
   income: 'income',
   nofee: 'nofee',
-}
+};
 const BLOCKS = [
   {
     icon: BLOCKS_ICONS.polkadot,
@@ -111,7 +108,7 @@ const BLOCKS = [
     text:
       'Gasless transactions lowers the barrier by&nbsp;taking the transaction fee directly from the transacted asset.',
   },
-]
+];
 
 const MAIN_PARTNERS = [
   {
@@ -138,7 +135,7 @@ const MAIN_PARTNERS = [
     title: 'Divergence',
     link: 'https://www.div.vc/',
   },
-]
+];
 
 const PARTNERS = [
   {
@@ -293,7 +290,7 @@ const PARTNERS = [
     title: 'Injective Protocol',
     link: 'https://injectiveprotocol.com/',
   },
-]
+];
 
 const ARTICLES = [
   {
@@ -306,68 +303,100 @@ const ARTICLES = [
   {
     image: '/clover-monthly.png',
     link:
-        'https://projectclover.medium.com/clover-monthly-march-2021-d7cc17146e91',
-    text:
-        'Clover Monthly | March 2021',
+      'https://projectclover.medium.com/clover-monthly-march-2021-d7cc17146e91',
+    text: 'Clover Monthly | March 2021',
   },
   {
     image: '/clover-finance.png',
     link:
-        'https://projectclover.medium.com/clover-finance-the-lightest-and-easiest-defi-infrastructure-empowered-by-polkadot-6dc729c120c8',
+      'https://projectclover.medium.com/clover-finance-the-lightest-and-easiest-defi-infrastructure-empowered-by-polkadot-6dc729c120c8',
     text:
-        'Clover Finance: The Lightest and Easiest DeFi Infrastructure Empowered by Polkadot',
+      'Clover Finance: The Lightest and Easiest DeFi Infrastructure Empowered by Polkadot',
   },
   {
     image: '/clover-partners.png',
     link:
-        'https://projectclover.medium.com/clover-partners-with-the-graph-to-joinly-explore-the-border-of-cross-chain-evm-f17161c37096',
+      'https://projectclover.medium.com/clover-partners-with-the-graph-to-joinly-explore-the-border-of-cross-chain-evm-f17161c37096',
     text:
-        'Clover Partners with The Graph to Joinly Explore The Border of Cross-chain EVM',
+      'Clover Partners with The Graph to Joinly Explore The Border of Cross-chain EVM',
   },
-]
+];
 
-const DNAS = [
-  {
-    title: 'SPV Simulation Technology',
-    content: 'SPV simulation enables trustless two-ways pegs between turing-complete and non-turing-complete blockchains. Clover can interoperate with any external transaction by checking a merkle proof of inclusion, each block references the previous one, and calculating the total proof of work spent to make that chain.',
-    btnText: 'Go To Outline Article',
-    link: 'https://medium.com/projectclover/clover-re-defining-a-two-way-peg-between-blockchains-8d5b8c0dea6a'
-  },
-  {
-    title: 'Threshold Protocol',
-    content: 'Clover utilizes BIP-Schnorr compatible threshold signatures to enable meaningful cross-chain communication between Polkadot and non-Polkadot networks. Clover facilitates end-to-end secure communication between signers for notarising Polkadot block headers to pointing out Proof-Of-Inclusion to Ethereum VM and Bitcoin script.',
-    btnText: 'Read Technical Paper',
-    link: 'https://clover.finance/techpaper.pdf'
-  },
-]
+const DNAS = {
+  dark: [
+    {
+      title: 'Feeconomics',
+      content:
+        'Sakura will make use of the original Clover feeconomics design, allowing users to enjoy gasless transactions —meaning a user will not be required to have SKU in their wallet to transact on the Sakura network and can use any other token. Sakura is also working on a Dynamic Fee Schedule, to be proposed through on-chain governance, where the gas-fee will be proportional to the amount of usage a wallet has on the Sakura network. ',
+      btnText: null,
+      link: null,
+    },
+    {
+      title: 'SKU Bridge',
+      content:
+        'The Sakura SKU token is cross-chain compatible as our unique 2-way peg bridge technology allows the EVM based Sakura address and Kusama based Clover address to be bounded together, allowing the utilization of all both chains together. SKU will have a unique native bridge for both SKU<->ETH and SKU<->BSC',
+      btnText: null,
+      link: null,
+    },
+  ],
+  light: [
+    {
+      title: 'SPV Simulation Technology',
+      content:
+        'The Clover CLV token is cross-chain compatible as our unique 2-way peg bridge technology allows the EVM based Clover address and Polkadot based Clover address to be bounded together, allowing the utilization of all both chains together.',
+      btnText: 'Go To Outline Article',
+      link:
+        'https://medium.com/projectclover/clover-re-defining-a-two-way-peg-between-blockchains-8d5b8c0dea6a',
+    },
+    {
+      title: 'Threshold Protocol',
+      content:
+        'Clover utilizes BIP-Schnorr compatible threshold signatures to enable meaningful cross-chain communication between networks. Clover facilitates end-to-end secure communication between signers for notarising Polkadot block headers to pointing out Proof-Of-Inclusion to Ethereum VM and Bitcoin script.',
+      btnText: 'Read Technical Paper',
+      link: 'https://clover.finance/techpaper.pdf',
+    },
+  ],
+};
 
 const FEATURES = [
   {
     index: 1,
     title: 'EVM Compatibility',
-    content: 'Clover is a powerful smart contract platform that enables Ethereum developers and projects to migrate their contracts onto Polkadot. By minimizing the changes required to run existing Solidity smart contracts on the new network, Ethereum projects can simply replicate their dApp and deploy it to Clover using MetaMask, Truffle, Remix, and other familiar developer tools.',
+    content:
+      'Clover offers seamless multi-chain indexing across Bitcoin, Ethereum, Binance Smart Chain, and Polkadot. Users can search through blocks, transactions, and accounts in all-in one streamlined environment.',
     btnText: 'Start building on Clover',
-    link: 'http://docs.clover.finance/'
+    link: 'http://docs.clover.finance/',
+    image: '/features/evm-compatibility.svg',
+    imageSakura: '/features/evm-compatibility-sakura.svg',
   },
   {
     index: 2,
     title: 'Gas-fee Redistribution',
-    content: 'Clover incentivizes dApp builders by automatically sharing a percentage of the transaction fee’s with them. The redistribution will ensure a vibrant developer community and foster an innovative DeFi ecosystem on Sakura and Clover.',
+    content:
+      'Clover incentivizes dApp builders by automatically sharing a percentage of the transaction fee’s with them. The redistribution will ensure a vibrant developer community and foster an innovative DeFi ecosystem on Sakura and Clover.',
     btnText: 'Learn more',
-    link: 'https://dropsearn.com/events/clover-developer-incentive-program/'
+    link: 'https://dropsearn.com/events/clover-developer-incentive-program/',
+    image: '/features/gas-fee-redistribution.svg',
+    imageSakura: '/features/gas-fee-redistribution-sakura.svg',
   },
   {
     index: 3,
     title: 'Gasless End-user Experience',
-    content: 'Clover reinvented feeconomics to simplify DeFi user experience. Clover’s smart relayer will act on behalf of the sender so that relayers can cover gas fees with the same token from the amount users transact, without depending on base currency like ETH. Transaction fees will be deducted automatically from the asset the user is transacting with.',
+    content:
+      'Clover reinvented feeconomics to simplify DeFi user experience. Clover’s smart relayer will act on behalf of the sender so that relayers can cover gas fees with the same token from the amount users transact, without depending on base currency like ETH. Transaction fees will be deducted automatically from the asset the user is transacting with.',
     btnText: 'Pay gas in the way you want',
-    link: 'scroll'
+    link: 'scroll',
+    image: '/features/gasless-end-user-experience.svg',
+    imageSakura: '/features/gasless-end-user-experience-sakura.svg',
   },
   {
     index: 4,
     title: 'Identity-based Fee Schedule',
-    content: 'Clover’s Dynamic Fee Schedule is a brand-new gas calculation method which allows Clover users to get gas discounts proportionally to the frequency of their network activity. Users with less interaction pay more gas, and users with more interactions will less gas over time according to a usage curve.',
+    content:
+      'Clover’s Dynamic Fee Schedule is a brand-new gas calculation method which allows Clover users to get gas discounts proportionally to the frequency of their network activity. Users with less interaction pay more gas, and users with more interactions will less gas over time according to a usage curve.',
     img: '/fee.svg',
+    image: '/features/identity-based-fee-schedule.svg',
+    imageSakura: '/features/identity-based-fee-schedule-sakura.svg',
   },
   // {
   //   index: 5,
@@ -377,31 +406,41 @@ const FEATURES = [
   {
     index: 5,
     title: 'Cross-chain Interactions',
-    content: 'Clover comes with various open-source wallet implementations for interacting with cross-chain dApps without navigating between Polkadot based and Ethereum based networks. Users can seamlessly send, receive, wrap and unwrap cross-chain assets across Ethereum and Polkadot trustlessly.',
+    content:
+      'Clover comes with various open-source wallet implementations for interacting with cross-chain dApps without navigating between Polkadot based and Ethereum based networks. Users can seamlessly send, receive, wrap and unwrap cross-chain assets across Ethereum and Polkadot trustlessly.',
     btnText: 'Try Clover Extension Wallet',
-    link: 'https://chrome.google.com/webstore/detail/clover-wallet/nhnkbkgjikgcigadomkphalanndcapjk'
+    link:
+      'https://chrome.google.com/webstore/detail/clover-wallet/nhnkbkgjikgcigadomkphalanndcapjk',
+    image: '/features/cross-chain-interactions.svg',
+    imageSakura: '/features/cross-chain-interactions-sakura.svg',
   },
   {
     index: 6,
     title: 'Cross-chain Explorer',
-    content: 'Clover offers seamless multi-chain indexing across Bitcoin, Ethereum, Binance Smart Chain, and Polkadot. Users can search through blocks, transactions, and accounts in all-in one streamlined environment.',
+    content:
+      'Clover offers seamless multi-chain indexing across Bitcoin, Ethereum, Binance Smart Chain, and Polkadot. Users can search through blocks, transactions, and accounts in all-in one streamlined environment.',
     btnText: 'Try Clover Explorer (Beta)',
-    link: 'https://stage.cloverscan.io/'
+    link: 'https://stage.cloverscan.io/',
+    image: '/features/cross-chain-explorer.svg',
+    imageSakura: '/features/cross-chain-explorer-sakura.svg',
   },
-]
+];
 
 const CLVTOKENS = [
   {
     title: 'Opt-in Fees',
-    content: 'Pay gas fee in CLV, or have the option to pay with any network token.',
+    content:
+      'Pay gas fee in CLV, or have the option to pay with any network token.',
   },
   {
     title: 'Governance',
-    content: 'Lock CLV to elect council members and guide the development through on-chain governance. ',
+    content:
+      'Lock CLV to elect council members and guide the development through on-chain governance. ',
   },
   {
     title: 'Validation',
-    content: 'Stake CLV to validate the network with your validator infrastructure.',
+    content:
+      'Stake CLV to validate the network with your validator infrastructure.',
   },
   {
     title: 'Treasury',
@@ -409,13 +448,45 @@ const CLVTOKENS = [
   },
   {
     title: 'Nomination',
-    content: 'Stake CLV to nominate your own node validator using a single-click deployment.',
+    content:
+      'Stake CLV to nominate your own node validator using a single-click deployment.',
   },
   {
     title: 'Deployment',
     content: 'Use CLV to deploy your smart contracts and dApps on Clover.',
   },
-]
+];
+
+const SKUTOKENS = [
+  {
+    title: 'Opt-in Fees',
+    content:
+      'Pay gas fee in SKU, or have the option to pay with any network token.',
+  },
+  {
+    title: 'Governance',
+    content:
+      'Lock SKU to elect council members and guide the development through on-chain governance. ',
+  },
+  {
+    title: 'Validation',
+    content:
+      'Stake SKU to validate the network with your validator infrastructure.',
+  },
+  {
+    title: 'Treasury',
+    content: 'Get your projects funded from the treasury.',
+  },
+  {
+    title: 'Nomination',
+    content:
+      'Stake SKU to nominate your own node validator using a single-click deployment.',
+  },
+  {
+    title: 'Deployment',
+    content: 'Use SKU to deploy your smart contracts and dApps on Clover.',
+  },
+];
 
 export {
   HEADER_MENU,
@@ -429,4 +500,5 @@ export {
   DNAS,
   FEATURES,
   CLVTOKENS,
+  SKUTOKENS,
 };

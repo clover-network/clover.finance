@@ -2,7 +2,7 @@
 
 .wrapper {
   min-height: 100vh;
-  background: #000;
+  background: var(--color-second-background);
   img {
     border: 0;
     vertical-align: middle;
@@ -20,6 +20,7 @@
 }
 
 .main {
+  position: relative;
   //padding: 72px 0 0 0;
   flex: 1 0 auto;
   display: flex;

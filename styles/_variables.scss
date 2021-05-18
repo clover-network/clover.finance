@@ -1,21 +1,22 @@
 // Colors
 
-$color-text: #1d2d31;
-$color-light: #a5abad;
+$color-text: #151e26;
+$color-light: #77828c;
 $color-link: #bbc0c1;
 $color-btn: #19191f;
 $color-logo: #22d297;
-$color-accent: #5ccf00;
+$color-accent: #42c37b;
 $color-white: #fff;
 $color-hover: #27a577;
 $color-title: #6fcf97;
+$color-light-grey: #f7f7f7;
 // Media
 
 $media-xs: 0;
 $media-sm: 576px;
 $media-md: 768px;
 $media-lg: 992px;
-$media-xl: 1200px;
+$media-xl: 1440px;
 $media-xxl: 2000px;
 
 // Z-index
@@ -42,5 +43,5 @@ $fw-extrabold: 800;
 $fw-black: 900;
 
 $container-width: 1440px;
-$header-width: $container-width - 120px;
+$header-width: $container-width - 210px;
 $footer-width: $container-width - 160px;

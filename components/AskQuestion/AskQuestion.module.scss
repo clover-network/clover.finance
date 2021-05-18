@@ -1,0 +1,54 @@
+@import 'styles/variables';
+
+.content {
+  max-width: 1230px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 30px;
+  padding: 102px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 100px;
+
+  h1 {
+    font-family: Gilroy-SemiBold;
+    font-size: 54px;
+    line-height: 60px;
+
+    text-align: center;
+    letter-spacing: -2px;
+
+    color: var(--color-text);
+    margin-bottom: 30px;
+  }
+
+  input,
+  textarea {
+    width: 588px;
+    max-width: 588px;
+    background: rgba(45, 67, 89, 0.1);
+    padding: 15px 24px;
+
+    font-family: Gilroy-Medium;
+    font-size: 18px;
+    line-height: 30px;
+    border-radius: 9px;
+    border: none;
+    margin-bottom: 18px;
+    color: var(--color-text);
+
+    &::placeholder {
+      color: var(--color-light);
+    }
+  }
+
+  button {
+    margin-top: 12px;
+  }
+}
