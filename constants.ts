@@ -335,17 +335,16 @@ const DNAS = {
     {
       title: 'Feeconomics',
       content:
-        'The Clover CLV token is cross-chain compatible as our unique 2-way peg bridge technology allows the EVM based Clover address and Polkadot based Clover address to be bounded together, allowing the utilization of all both chains together.',
-      btnText: 'Go To Outline Article',
-      link:
-        'https://medium.com/projectclover/clover-re-defining-a-two-way-peg-between-blockchains-8d5b8c0dea6a',
+        'Sakura will make use of the original Clover feeconomics design, allowing users to enjoy gasless transactions —meaning a user will not be required to have SKU in their wallet to transact on the Sakura network and can use any other token. Sakura is also working on a Dynamic Fee Schedule, to be proposed through on-chain governance, where the gas-fee will be proportional to the amount of usage a wallet has on the Sakura network. ',
+      btnText: null,
+      link: null,
     },
     {
       title: 'SKU Bridge',
       content:
-        'Clover utilizes BIP-Schnorr compatible threshold signatures to enable meaningful cross-chain communication between networks. Clover facilitates end-to-end secure communication between signers for notarising Polkadot block headers to pointing out Proof-Of-Inclusion to Ethereum VM and Bitcoin script.',
-      btnText: 'Read Technical Paper',
-      link: 'https://clover.finance/techpaper.pdf',
+        'The Sakura SKU token is cross-chain compatible as our unique 2-way peg bridge technology allows the EVM based Sakura address and Kusama based Clover address to be bounded together, allowing the utilization of all both chains together. SKU will have a unique native bridge for both SKU<->ETH and SKU<->BSC',
+      btnText: null,
+      link: null,
     },
   ],
   light: [
@@ -466,6 +465,37 @@ const CLVTOKENS = [
   },
 ];
 
+const SKUTOKENS = [
+  {
+    title: 'Opt-in Fees',
+    content:
+      'Pay gas fee in SKU, or have the option to pay with any network token.',
+  },
+  {
+    title: 'Governance',
+    content:
+      'Lock SKU to elect council members and guide the development through on-chain governance. ',
+  },
+  {
+    title: 'Validation',
+    content:
+      'Stake SKU to validate the network with your validator infrastructure.',
+  },
+  {
+    title: 'Treasury',
+    content: 'Get your projects funded from the treasury.',
+  },
+  {
+    title: 'Nomination',
+    content:
+      'Stake SKU to nominate your own node validator using a single-click deployment.',
+  },
+  {
+    title: 'Deployment',
+    content: 'Use SKU to deploy your smart contracts and dApps on Clover.',
+  },
+];
+
 export {
   HEADER_MENU,
   SOCIAL_ICONS,
@@ -478,4 +508,5 @@ export {
   DNAS,
   FEATURES,
   CLVTOKENS,
+  SKUTOKENS,
 };

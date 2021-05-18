@@ -11,7 +11,7 @@ import ClvToken from '../components/ClvToken';
 import { Team } from '../components/Team/Team';
 import EarlyBackers from '../components/EarlyBackers/EarlyBackers';
 import styles from './Home.module.scss';
-import { ARTICLES, CLVTOKENS, DNAS, FEATURES } from '../constants';
+import { ARTICLES, CLVTOKENS, DNAS, FEATURES, SKUTOKENS } from '../constants';
 import { StrategicPartners } from '../components/StrategicPartners/StrategicPartners';
 import { Introduction } from '../components/Introduction/Introduction';
 import Features from '../components/ClvFeatures/CloverFeature';
@@ -54,7 +54,7 @@ const Home = () => {
         <DnaAndFeatures dnas={theme === 'dark' ? DNAS.dark : DNAS.light} />
         <Features features={FEATURES} handleScroll={handleClickScroll} />
         <div ref={scrollRef}>
-          <ClvToken clvTokens={CLVTOKENS} />
+          <ClvToken clvTokens={theme === 'dark' ? SKUTOKENS : CLVTOKENS} />
         </div>
       </main>
       <div className={styles.bottom}>

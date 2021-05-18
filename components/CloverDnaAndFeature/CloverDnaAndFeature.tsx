@@ -69,12 +69,14 @@ const DnaAndFeatures = ({
                     <h3>{dna.title}</h3>
                     <p>{dna.content}</p>
                   </div>
-                  <Button
-                    className={styles.btn}
-                    onClick={() => window.open(dna.link)}
-                  >
-                    {dna.btnText}
-                  </Button>
+                  {dna.btnText && (
+                    <Button
+                      className={styles.btn}
+                      onClick={() => window.open(dna.link)}
+                    >
+                      {dna.btnText}
+                    </Button>
+                  )}
                 </div>
               ))}
             </div>

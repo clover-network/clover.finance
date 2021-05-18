@@ -13,6 +13,7 @@ import CommunitySvg from '../../public/svg/community.svg';
 import ResourcesSvg from '../../public/svg/resources.svg';
 import ArrowDown from '../../public/svg/arrow_down.svg';
 import useMobileDetect from '../../utils/hooks/useMobileDetect';
+import { HEADER_MENU } from '../../constants';
 
 const GetStarted = () => {
   const { theme } = useTheme();
@@ -96,12 +97,17 @@ const GetStarted = () => {
                     className={cn(styles.arrowDown, community && styles.mini)}
                     onClick={() => setCommunity(!community)}
                   />
-                  <h1>Community</h1>
+                  <h1>{HEADER_MENU[1].label}</h1>
                   <div className={styles.cardList}>
-                    <p>Telegram →</p>
-                    <p>Discord →</p>
-                    <p>Twitter →</p>
-                    <p>Medium →</p>
+                    {HEADER_MENU[1].children.map(
+                      (item: { link: string; label: string }) => {
+                        return (
+                          <p
+                            onClick={() => window.open(item.link, '_blank')}
+                          >{`${item.label} →`}</p>
+                        );
+                      },
+                    )}
                   </div>
                   <CommunitySvg />
                 </div>
@@ -114,12 +120,17 @@ const GetStarted = () => {
                     className={cn(styles.arrowDown, builder && styles.mini)}
                     onClick={() => setBuilder(!builder)}
                   />
-                  <h1>Builders</h1>
+                  <h1>{HEADER_MENU[0].label}</h1>
                   <div className={styles.cardList}>
-                    <p>Developer Incentive Program →</p>
-                    <p>Testnet →</p>
-                    <p>Developer Discord →</p>
-                    <p>Github →</p>
+                    {HEADER_MENU[0].children.map(
+                      (item: { link: string; label: string }) => {
+                        return (
+                          <p
+                            onClick={() => window.open(item.link, '_blank')}
+                          >{`${item.label} →`}</p>
+                        );
+                      },
+                    )}
                   </div>
                   <BuilderSvg />
                 </div>
@@ -129,11 +140,17 @@ const GetStarted = () => {
                     className={cn(styles.arrowDown, resources && styles.mini)}
                     onClick={() => setResources(!resources)}
                   />
-                  <h1>Resources</h1>
+                  <h1>{HEADER_MENU[2].label}</h1>
                   <div className={styles.cardList}>
-                    <p>Documentation →</p>
-                    <p>Lightpaper →</p>
-                    <p>FAQ →</p>
+                    {HEADER_MENU[2].children.map(
+                      (item: { link: string; label: string }) => {
+                        return (
+                          <p
+                            onClick={() => window.open(item.link, '_blank')}
+                          >{`${item.label} →`}</p>
+                        );
+                      },
+                    )}
                   </div>
                   <ResourcesSvg />
                 </div>

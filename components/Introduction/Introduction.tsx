@@ -27,17 +27,17 @@ const DESC_LIST_SAKURA = [
   {
     title: 'Performance and Innovation',
     desc:
-      ' With Clovers unique "always-on" multi-chain connected wallet, users are able to simultaneously connect with Web3js-based dapps and Polkadotjs-based dapps at the same time, and view their multi-chain assets. ',
+      'Sakura network will serve as a innovative sibling cross-chain network to Clover with looser restrictions, allowing creators and users on the network with a high performance network powered by the security of Kusama. ',
   },
   {
     title: 'On-Chain Governance',
     desc:
-      'DeFi users can connect to Ethereum, Polkadot, Kusama, Binance Smart Chain, Avalanche, Fantom, and Edgeware blockchains and seamlessly transact with the Clover wallet extension interface.',
+      'Kusama will enable a more community driven and faster on-chain governance methodology, allowing Sakura builders to immediately start developing ground breaking DeFi Dapps without the constraints of stricter governance guidelines. ',
   },
   {
     title: 'Development Tools',
     desc:
-      'The Clover CLV token is cross-chain compatible as our unique 2-way peg bridge technology allows the EVM based Clover address and Polkadot based Clover address to be bounded together, allowing the utilization of all both chains together.',
+      'Sakura developers will be able to use both substrate based and Ethereum compatible development environments. Developers familiar with EVM based development tools like Solidity, Web3, Truffle, etc, will easily be able to deploy their applications on top of the Sakura network, and secured by Kusama.',
   },
 ];
 
