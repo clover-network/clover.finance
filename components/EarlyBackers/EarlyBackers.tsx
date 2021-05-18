@@ -105,7 +105,16 @@ const EarlyBackers = ({ className }: { className?: string }) => {
               </div>
 
               <div className={styles.item}>
-                <img width={123} key={5} src="/backers/bk_block.png" alt="" />
+                <img
+                  width={123}
+                  key={5}
+                  src={
+                    theme && theme === 'dark'
+                      ? '/backers/bk_block.png'
+                      : '/backers/bk_block.png'
+                  }
+                  alt=""
+                />
               </div>
 
               <div className={styles.item}>
@@ -122,18 +131,40 @@ const EarlyBackers = ({ className }: { className?: string }) => {
               </div>
 
               <div className={styles.item}>
-                <img width={123} key={7} src="/backers/bk_kr1.png" alt="" />
+                <img
+                  width={123}
+                  key={7}
+                  src={
+                    theme && theme === 'dark'
+                      ? '/backers/wh_kr1.png'
+                      : '/backers/bk_kr1.png'
+                  }
+                  alt=""
+                />
               </div>
 
               <div className={styles.item}>
-                <img width={123} key={8} src="/backers/bk_bitcoin.jpg" alt="" />
+                <img
+                  width={123}
+                  key={8}
+                  src={
+                    theme && theme === 'dark'
+                      ? '/backers/wh_bitcoin.png'
+                      : '/backers/bk_bitcoin.png'
+                  }
+                  alt=""
+                />
               </div>
 
               <div className={styles.item}>
                 <img
                   width={123}
                   key={9}
-                  src="/backers/bk_moonwhale.png"
+                  src={
+                    theme && theme === 'dark'
+                      ? '/backers/wh_moonwhale.png'
+                      : '/backers/bk_moonwhale.png'
+                  }
                   alt=""
                 />
               </div>
@@ -142,7 +173,11 @@ const EarlyBackers = ({ className }: { className?: string }) => {
                 <img
                   width={123}
                   key={10}
-                  src="/backers/bk_kyrosVentures.png"
+                  src={
+                    theme && theme === 'dark'
+                      ? '/backers/wh_kyrosVentures.png'
+                      : '/backers/bk_kyrosVentures.png'
+                  }
                   alt=""
                 />
               </div>
@@ -151,7 +186,11 @@ const EarlyBackers = ({ className }: { className?: string }) => {
                 <img
                   width={123}
                   key={10}
-                  src="/backers/bk_illusionist.svg"
+                  src={
+                    theme && theme === 'dark'
+                      ? '/backers/wh_illusionist.png'
+                      : '/backers/bk_illusionist.png'
+                  }
                   alt=""
                 />
               </div>
