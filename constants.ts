@@ -46,10 +46,6 @@ const HEADER_MENU = [
         link: 'https://clover.finance/litepaper.pdf',
         label: 'Litepaper',
       },
-      {
-        link: 'https://telegra.ph/Clover--FAQs-04-18-2',
-        label: 'FAQ',
-      },
     ],
   },
 ];
