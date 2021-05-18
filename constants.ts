@@ -47,7 +47,7 @@ const HEADER_MENU = [
         label: 'Litepaper',
       },
       {
-        link: '/faq',
+        link: 'https://telegra.ph/Clover--FAQs-04-18-2',
         label: 'FAQ',
       },
     ],

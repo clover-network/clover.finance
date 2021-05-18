@@ -4,7 +4,6 @@ import { useTheme } from 'next-themes';
 import styles from './StrategicPartners.module.scss';
 import cn from 'classnames';
 const LOGO_MAPS = [
-  '/partner/polkadot.png',
   '/partner/graph.png',
   '/partner/chainlink.png',
   '/partner/prosper.png',
