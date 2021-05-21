@@ -1,6 +1,7 @@
 const path = require('path');
 const withReactSvg = require('next-react-svg');
 const withPlugins = require('next-compose-plugins');
+const { redirect } = require('next/dist/next-server/server/api-utils');
 const withTM = require('next-transpile-modules')([
   'react-material-ui-carousel',
 ]);
