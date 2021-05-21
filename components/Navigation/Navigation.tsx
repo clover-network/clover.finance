@@ -1,11 +1,9 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
+import { useRouter } from 'next/router';
 
 import cn from 'classnames';
-import Social from '../Social/Social';
 import styles from './Navigation.module.scss';
-import { SOCIALS } from '../../constants';
-import ShortArrow from '../../public/svg/short-arrow.svg';
 import Logo from '../../public/svg/logo.svg';
 import SakuraLogo from '../../public/svg/sakura_logo.svg';
 import useMobileDetect from '../../utils/hooks/useMobileDetect';
@@ -22,6 +20,7 @@ const Navigation = ({
   }[];
   active?: boolean;
 }) => {
+  const router = useRouter();
   const { theme, setTheme } = useTheme();
   const [currentMenu, setCurrentMenu] = useState('');
   const [innerWidth, setInnerWidth] = useState(1024);
@@ -99,7 +98,9 @@ const Navigation = ({
             ))}
             <div
               className={styles.switch}
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              onClick={() =>
+                theme === 'dark' ? router.push('/') : router.push('sakura')
+              }
             >
               {theme && theme === 'dark' ? <Logo /> : <SakuraLogo />}
               <span>
