@@ -10,7 +10,6 @@ const LOGO_MAPS = [
   '/partner/dodo.png',
   '/partner/polygon.png',
   '/partner/litentry.png',
-  '/partner/advanca.png',
   '/partner/boringdao.png',
   '/partner/injective.png',
   '/partner/crust.png',

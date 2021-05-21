@@ -56,18 +56,20 @@ const Features = ({
     setCount(index);
     let i = 0;
     function typingFun() {
-      if (i <= str.length) {
-        // @ts-ignore
-        typingVal.current.innerHTML = str.slice(0, i++) + '|';
-        setTimeout(() => {
-          typingFun();
-        }, 100);
-      } else {
-        // @ts-ignore
-        typingVal.current.innerHTML = str;
-        setTimeout(_ => {
-          typing(index < 3 ? index + 1 : 0);
-        }, 1500);
+      if (typingVal.current) {
+        if (i <= str.length) {
+          // @ts-ignore
+          typingVal.current.innerHTML = str.slice(0, i++) + '|';
+          setTimeout(() => {
+            typingFun();
+          }, 100);
+        } else {
+          // @ts-ignore
+          typingVal.current.innerHTML = str;
+          setTimeout(_ => {
+            typing(index < 3 ? index + 1 : 0);
+          }, 1500);
+        }
       }
     }
     typingFun();

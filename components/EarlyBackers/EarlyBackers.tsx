@@ -156,7 +156,7 @@ const EarlyBackers = ({ className }: { className?: string }) => {
                 />
               </div>
 
-              <div className={styles.item}>
+              {/* <div className={styles.item}>
                 <img
                   width={123}
                   key={9}
@@ -167,7 +167,7 @@ const EarlyBackers = ({ className }: { className?: string }) => {
                   }
                   alt=""
                 />
-              </div>
+              </div> */}
 
               <div className={styles.item}>
                 <img
