@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { useTheme } from 'next-themes';
+import Router, { useRouter } from 'next/router';
 
 import Head from 'next/head';
 import Header from '../components/Header/Header';
@@ -18,6 +19,7 @@ import Features from '../components/ClvFeatures/CloverFeature';
 
 declare var WOW;
 const Home = () => {
+  const router = useRouter();
   const { theme, setTheme } = useTheme();
   const scrollRef = useRef(null);
   const handleClickScroll = () => {
@@ -26,9 +28,10 @@ const Home = () => {
     }
   };
   useEffect(() => {
-    setTimeout(_ => {
-      // new WOW({ animateClass: 'animated' }).init();
-    }, 1000);
+    const { asPath } = Router;
+    if (asPath !== '/') {
+      router.push(asPath);
+    }
   }, []);
 
   useEffect(() => {

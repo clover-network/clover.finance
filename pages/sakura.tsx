@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { useTheme } from 'next-themes';
+import Router from 'next/router';
 
 import Head from 'next/head';
 import Header from '../components/Header/Header';
@@ -17,7 +18,7 @@ import { Introduction } from '../components/Introduction/Introduction';
 import Features from '../components/ClvFeatures/CloverFeature';
 
 declare var WOW;
-const Home = () => {
+const Sakura = () => {
   const { theme, setTheme } = useTheme();
   const scrollRef = useRef(null);
   const handleClickScroll = () => {
@@ -25,11 +26,6 @@ const Home = () => {
       scrollRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
-  useEffect(() => {
-    setTimeout(_ => {
-      // new WOW({ animateClass: 'animated' }).init();
-    }, 1000);
-  }, []);
 
   useEffect(() => {
     setTheme('dark');
@@ -68,4 +64,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Sakura;
