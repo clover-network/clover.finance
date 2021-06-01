@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTheme } from 'next-themes';
+import { useRouter } from 'next/router';
 
 import styles from './StrategicPartners.module.scss';
 import cn from 'classnames';
@@ -36,6 +37,7 @@ const LOGO_MAPS = [
 
 export function StrategicPartners() {
   const { theme } = useTheme();
+  const router = useRouter();
 
   const getDarkImageUrl = (image: string) => {
     const splits = image.split('.');
@@ -62,7 +64,7 @@ export function StrategicPartners() {
                 data-wow-delay="0s"
               >
                 <img
-                  src={theme && theme === 'dark' ? getDarkImageUrl(url) : url}
+                  src={router.pathname === '/sakura' ? getDarkImageUrl(url) : url}
                   alt=""
                 />
               </div>

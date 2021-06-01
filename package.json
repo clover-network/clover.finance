@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 6111",
     "build": "next build",
     "export": "next build && next export",
-    "start": "next start"
+    "start": "next start -p 6111"
   },
   "dependencies": {
     "@brainhubeu/react-carousel": "^1.19.26",

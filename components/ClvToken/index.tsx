@@ -1,6 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import { useTheme } from 'next-themes';
+import { useRouter } from 'next/router';
 import styles from './index.module.scss';
 import CloverIcon from '../../public/svg/clvtoken.svg';
 import SacIcon from '../../public/svg/sactoken.svg';
@@ -20,6 +21,7 @@ const ClvToken = ({
   }[];
 }) => {
   const { theme } = useTheme();
+  const router = useRouter();
   const getImgByIcon = token => {
     switch (token.toLowerCase()) {
       case 'opt-in fees':
@@ -45,12 +47,12 @@ const ClvToken = ({
             data-wow-duration="2s"
             data-wow-delay="0s"
           >
-            {theme && theme === 'dark' ? (
+            {router.pathname === '/sakura' ? (
               <SacIcon className={styles.clvTokenIcon} />
             ) : (
               <CloverIcon className={styles.clvTokenIcon} />
             )}
-            <p>{theme && theme === 'dark' ? 'SKU Token' : 'CLV Token'}</p>
+            <p>{router.pathname === '/sakura' ? 'SKU Token' : 'CLV Token'}</p>
           </h3>
           <div className={styles.clvTokenList}>
             {clvTokens.map(token => (

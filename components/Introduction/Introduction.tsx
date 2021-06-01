@@ -1,6 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import { useTheme } from 'next-themes';
+import { useRouter } from 'next/router';
 
 import styles from './Introduction.module.scss';
 import Button from '../Button/Button';
@@ -43,6 +44,7 @@ const DESC_LIST_SAKURA = [
 
 export function Introduction() {
   const { theme } = useTheme();
+  const router = useRouter();
 
   const handleDownload = () => {
     if (theme !== 'dark') {
@@ -57,28 +59,28 @@ export function Introduction() {
     <>
       <div className={styles.textOuter}>
         <p className={styles.textInner}>
-          {theme === 'dark'
+          {router.pathname === '/sakura'
             ? 'Build powerful DeFi applications on '
             : 'Simultaneously navigate and transact with major networks. '}
           <span className={styles.green}>
-            {theme === 'dark' ? 'Sakura' : 'All in one overview!'}
+            {router.pathname === '/sakura' ? 'Sakura' : 'All in one overview!'}
           </span>
         </p>
       </div>
       <div
-        className={cn(styles.launch, theme === 'dark' && styles.launchSakura)}
+        className={cn(styles.launch, router.pathname === '/sakura' && styles.launchSakura)}
       >
         <img
           className={cn(styles.ball, styles.left)}
           src={
-            theme && theme === 'dark'
+            theme && router.pathname === '/sakura'
               ? '/images/introduction-sakura.png'
               : '/images/introduction.png'
           }
           alt="Clover introduction"
         />
         <div className={styles.itemList}>
-          {(theme === 'dark' ? DESC_LIST_SAKURA : DESC_LIST).map((d, i) => {
+          {(router.pathname === '/sakura' ? DESC_LIST_SAKURA : DESC_LIST).map((d, i) => {
             return (
               <div className={cn(styles.item)} key={i}>
                 <div className={styles.descInner}>

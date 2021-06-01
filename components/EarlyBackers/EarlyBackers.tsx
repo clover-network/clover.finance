@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTheme } from 'next-themes';
+import { useRouter } from 'next/router';
 import styles from './EarlyBackers.module.scss';
 import ArrowLeft from '../../public/svg/arrow_left.svg';
 import ArrowRight from '../../public/svg/arrow_right.svg';
@@ -13,6 +14,7 @@ import '@brainhubeu/react-carousel/lib/style.css';
 
 const EarlyBackers = ({ className }: { className?: string }) => {
   const { theme } = useTheme();
+  const router = useRouter();
 
   return (
     <ThemeProvider theme={mainTheme}>
@@ -34,7 +36,7 @@ const EarlyBackers = ({ className }: { className?: string }) => {
               centered
               addArrowClickHandler
               arrowLeft={
-                theme && theme === 'dark' ? (
+                router.pathname === '/sakura' ? (
                   <ArrowLeftSakura
                     style={{ marginRight: 36, cursor: 'pointer' }}
                   />
@@ -43,7 +45,7 @@ const EarlyBackers = ({ className }: { className?: string }) => {
                 )
               }
               arrowRight={
-                theme && theme === 'dark' ? (
+                router.pathname === '/sakura' ? (
                   <ArrowRightSakura
                     style={{ marginLeft: 36, cursor: 'pointer' }}
                   />
@@ -57,7 +59,7 @@ const EarlyBackers = ({ className }: { className?: string }) => {
                   width={123}
                   key={1}
                   src={
-                    theme && theme === 'dark'
+                    router.pathname === '/sakura'
                       ? '/backers/wh_polychain.png'
                       : '/backers/bk_polychain.png'
                   }
@@ -70,7 +72,7 @@ const EarlyBackers = ({ className }: { className?: string }) => {
                   width={123}
                   key={2}
                   src={
-                    theme && theme === 'dark'
+                    router.pathname === '/sakura'
                       ? '/backers/wh_alameda.png'
                       : '/backers/bk_alameda.png'
                   }
@@ -83,7 +85,7 @@ const EarlyBackers = ({ className }: { className?: string }) => {
                   width={123}
                   key={3}
                   src={
-                    theme && theme === 'dark'
+                    router.pathname === '/sakura'
                       ? '/backers/wh_hypersphere.png'
                       : '/backers/bk_hypersphere.png'
                   }
@@ -96,7 +98,7 @@ const EarlyBackers = ({ className }: { className?: string }) => {
                   width={123}
                   key={4}
                   src={
-                    theme && theme === 'dark'
+                    router.pathname === '/sakura'
                       ? '/backers/wh_divergence.png'
                       : '/backers/bk_divergence.png'
                   }
@@ -109,7 +111,7 @@ const EarlyBackers = ({ className }: { className?: string }) => {
                   width={123}
                   key={5}
                   src={
-                    theme && theme === 'dark'
+                    router.pathname === '/sakura'
                       ? '/backers/bk_block.png'
                       : '/backers/bk_block.png'
                   }
@@ -122,7 +124,7 @@ const EarlyBackers = ({ className }: { className?: string }) => {
                   width={123}
                   key={6}
                   src={
-                    theme && theme === 'dark'
+                    router.pathname === '/sakura'
                       ? '/backers/wh_cms.png'
                       : '/backers/bk_cms.png'
                   }
@@ -135,7 +137,7 @@ const EarlyBackers = ({ className }: { className?: string }) => {
                   width={123}
                   key={7}
                   src={
-                    theme && theme === 'dark'
+                    router.pathname === '/sakura'
                       ? '/backers/wh_kr1.png'
                       : '/backers/bk_kr1.png'
                   }
@@ -148,7 +150,7 @@ const EarlyBackers = ({ className }: { className?: string }) => {
                   width={123}
                   key={8}
                   src={
-                    theme && theme === 'dark'
+                    router.pathname === '/sakura'
                       ? '/backers/wh_bitcoin.png'
                       : '/backers/bk_bitcoin.png'
                   }
@@ -174,7 +176,7 @@ const EarlyBackers = ({ className }: { className?: string }) => {
                   width={123}
                   key={10}
                   src={
-                    theme && theme === 'dark'
+                    router.pathname === '/sakura'
                       ? '/backers/wh_kyrosVentures.png'
                       : '/backers/bk_kyrosVentures.png'
                   }
@@ -187,7 +189,7 @@ const EarlyBackers = ({ className }: { className?: string }) => {
                   width={123}
                   key={10}
                   src={
-                    theme && theme === 'dark'
+                    router.pathname === '/sakura'
                       ? '/backers/wh_illusionist.png'
                       : '/backers/bk_illusionist.png'
                   }

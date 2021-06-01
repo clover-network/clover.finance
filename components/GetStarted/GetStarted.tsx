@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useTheme } from 'next-themes';
+import { useRouter } from 'next/router';
 import cn from 'classnames';
 import { InView } from 'react-intersection-observer';
 
@@ -18,6 +19,7 @@ import { HEADER_MENU } from '../../constants';
 const GetStarted = () => {
   const { theme } = useTheme();
   const themeRef = useRef(theme);
+  const router = useRouter();
   const { isMobile } = useMobileDetect();
   const [builder, setBuilder] = useState(false);
   const [resources, setResources] = useState(false);
@@ -26,7 +28,7 @@ const GetStarted = () => {
   const [forImg, setForImg] = useState('forground.svg');
 
   const fetchForgroundImage = () => {
-    if (themeRef.current === 'dark') {
+    if (router.pathname === '/sakura') {
       if (window.innerWidth >= 2400) return 'forground-sakura-xxl.svg';
       if (window.innerWidth <= 576) return 'forground-sakura-sm.svg';
       if (window.innerWidth <= 768) return 'forground-sakura-md.svg';
@@ -161,17 +163,17 @@ const GetStarted = () => {
             <div
               className={cn(
                 styles.centerLogo,
-                themeRef.current === 'dark' && styles.centerLogoSakura,
+                router.pathname === '/sakura' && styles.centerLogoSakura,
               )}
             >
-              {themeRef && themeRef.current === 'dark' ? (
+              {router.pathname === '/sakura' ? (
                 <SakuraLogo style={{ width: 100, height: 100 }} />
               ) : (
                 <Logo />
               )}
             </div>
             <div className={styles.textOuter}>
-              {themeRef && themeRef.current === 'dark' ? (
+              {router.pathname === '/sakura' ? (
                 <p className={styles.textInner}>
                   Platform built for
                   <br />

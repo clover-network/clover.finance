@@ -40,7 +40,7 @@ const Navigation = ({
       })}
     >
       <div className={styles.container}>
-        <div className={styles.logo}>
+        {/* <div className={styles.logo}>
           <i className={styles.logoImage}>
             {theme && theme === 'dark' ? <SakuraLogo /> : <Logo />}
           </i>
@@ -49,7 +49,7 @@ const Navigation = ({
           </div>
         </div>
 
-        <h1>Menu</h1>
+        <h1>Menu</h1> */}
         {!!items.length && (
           <ul className={styles.list}>
             {items?.map(({ children, label }) => (
@@ -99,12 +99,12 @@ const Navigation = ({
             <div
               className={styles.switch}
               onClick={() =>
-                theme === 'dark' ? router.push('/') : router.push('sakura')
+                router.pathname === '/sakura' ? router.push('/') : router.push('sakura')
               }
             >
-              {theme && theme === 'dark' ? <Logo /> : <SakuraLogo />}
+              {router.pathname === '/sakura' ? <Logo /> : <SakuraLogo />}
               <span>
-                {theme && theme === 'dark'
+                {router.pathname === '/sakura'
                   ? 'Clover Mainnet'
                   : 'Sakura Sisternet'}
               </span>

@@ -1,12 +1,13 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
+import { useRouter } from 'next/router';
 import Navigation from '../Navigation/Navigation';
 import cn from 'classnames';
 import MenuButton from '../MenuButton/MenuButton';
 import styles from './Header.module.scss';
 import Logo from '../../public/svg/logo.svg';
 import SakuraLogo from '../../public/svg/sakura_logo.svg';
-import ReminderIcon from '../../public/svg/reminder_icon.svg';
+import LouderIcon from '../../public/svg/louder_icon.svg';
 import { HEADER_MENU } from '../../constants';
 
 const Header = () => {
@@ -15,6 +16,7 @@ const Header = () => {
   const [scroll, setScroll] = useState(false);
   const [showReminder, setShowReminder] = useState(true);
   const toggleActive = useCallback(() => setActive(!active), [active]);
+  const router = useRouter();
 
   useEffect(() => {
     const html = document.documentElement;
@@ -32,6 +34,7 @@ const Header = () => {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  console.log('route:', router.pathname)
   return (
     <header
       className={cn(styles.wrapper, {
@@ -41,14 +44,13 @@ const Header = () => {
       {showReminder && (
         <div className={styles.reminderWrapper}>
           <div className={styles.reminderContent}>
-            <ReminderIcon className={styles.reminderIcon}></ReminderIcon>
+            <LouderIcon className={styles.reminderIcon}></LouderIcon>
             <span className={styles.reminderWord}>
-              Clover is live and Coinlist is the only official token sale
-              channel at the moment{' '}
+            Sakura pre-crowdloan is open now. Support the Sakura parachain auction for a bonus SKU airdrop.{' '}
             </span>
             <span
               className={styles.learnMore}
-              onClick={() => window.open('https://coinlist.co/clover')}
+              onClick={() => window.open('https://auction.clover.finance/#/')}
             >
               Learn more
             </span>
@@ -65,15 +67,15 @@ const Header = () => {
         <div className={styles.container}>
           <div className={styles.logo}>
             <i className={styles.logoImage}>
-              {theme && theme === 'dark' ? <SakuraLogo /> : <Logo />}
+              {router.pathname === '/sakura' ? <SakuraLogo /> : <Logo />}
             </i>
             <div
               className={cn(
                 styles.logoText,
-                theme === 'dark' && styles.logoTextSakura,
+                router.pathname === '/sakura' && styles.logoTextSakura,
               )}
             >
-              {theme && theme === 'dark' ? 'sakura' : 'clover'}
+              {router.pathname === '/sakura' ? 'sakura' : 'clover'}
             </div>
           </div>
           <Navigation items={HEADER_MENU} active={active} />

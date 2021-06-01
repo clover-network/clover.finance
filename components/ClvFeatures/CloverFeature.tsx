@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useTheme } from 'next-themes';
+import { useRouter } from 'next/router';
 import cn from 'classnames';
 import { useInView } from 'react-intersection-observer';
 
@@ -44,6 +45,7 @@ const Features = ({
     threshold: 1,
     triggerOnce: true,
   });
+  const router = useRouter();
 
   const typingVal = useRef();
   useEffect(() => {
@@ -107,7 +109,7 @@ const Features = ({
                       styles.black,
                       styles[feature.name],
                       hIndex === index && styles.hovered,
-                      theme === 'dark' && styles.hoveredSakura,
+                      router.pathname === '/sakura' && styles.hoveredSakura,
                       'wow',
                       'bounceInUp',
                     )}
@@ -125,7 +127,7 @@ const Features = ({
                     <img
                       className={styles.itemBack}
                       src={
-                        theme && theme === 'dark'
+                        router.pathname === '/sakura'
                           ? feature.imageSakura
                           : feature.image
                       }
