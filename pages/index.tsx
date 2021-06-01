@@ -29,9 +29,9 @@ const Home = () => {
     }
   };
   useEffect(() => {
-    setTimeout(_ => {
-      // new WOW({ animateClass: 'animated' }).init();
-    }, 1000);
+    if (router.pathname !== '/') {
+      router.push(router.pathname)
+    }
   }, []);
 
   useEffect(() => {
