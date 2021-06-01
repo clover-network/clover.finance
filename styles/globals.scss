@@ -4,6 +4,7 @@
 :root {
   /* Your default theme */
   --color-text: #151e26;
+  --color-logo-text: #151e26;
   --color-light: #77828c;
   --color-link: #bbc0c1;
   --color-btn: #19191f;
@@ -29,6 +30,7 @@
 
 [data-theme='dark'] {
   --color-text: #fff;
+  --color-logo-text: #77828c;
   --color-light: #77828c;
   --color-link: #bbc0c1;
   --color-btn: #19191f;

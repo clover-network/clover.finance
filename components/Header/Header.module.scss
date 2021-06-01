@@ -24,6 +24,13 @@
   color: rgba(#fff, 0.75);
   z-index: $zindex-fixed;
 
+  &.fixedClover {
+    background-color: white;
+  }
+  &.fixedSakura {
+    background-color: white;
+  }
+
   @media (max-width: $media-sm) {
     background-color: #f7f7f7;
   }
@@ -142,11 +149,7 @@
   font-family: Gilroy-SemiBold;
   font-size: 30px;
   line-height: 1.125;
-  color: var(--color-text);
-
-  &.logoTextSakura {
-    color: white !important;
-  }
+  color: var(--color-logo-text);
 }
 
 .rightBox {
@@ -164,9 +167,6 @@
   .wrapper {
     border-bottom: none;
     z-index: 111;
-    &.fixed {
-      background-color: white;
-    }
   }
 }
 
