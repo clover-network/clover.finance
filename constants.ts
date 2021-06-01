@@ -68,7 +68,7 @@ const SOCIALS = [
     icon: SOCIAL_ICONS.telegram,
   },
   {
-    link: 'https://discord.com/invite/z2egJBsBWx/',
+    link: 'https://discord.com/invite/3gwTGqRuDb/',
     icon: SOCIAL_ICONS.discord,
   },
   {
