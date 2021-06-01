@@ -51,10 +51,10 @@ const Home = () => {
       <main className={styles.main}>
         <GetStarted />
         <Introduction />
-        <DnaAndFeatures dnas={theme === 'dark' ? DNAS.dark : DNAS.light} />
+        <DnaAndFeatures dnas={DNAS.dark} />
         <Features features={FEATURES} handleScroll={handleClickScroll} />
         <div ref={scrollRef}>
-          <ClvToken clvTokens={theme === 'dark' ? SKUTOKENS : CLVTOKENS} />
+          <ClvToken clvTokens={SKUTOKENS} />
         </div>
       </main>
       <div className={styles.bottom}>

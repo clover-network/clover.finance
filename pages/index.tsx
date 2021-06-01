@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { useTheme } from 'next-themes';
+import { useRouter } from 'next/router';
 
 import Head from 'next/head';
 import Header from '../components/Header/Header';
@@ -20,6 +21,8 @@ declare var WOW;
 const Home = () => {
   const { theme, setTheme } = useTheme();
   const scrollRef = useRef(null);
+  const router = useRouter();
+
   const handleClickScroll = () => {
     if (scrollRef.current) {
       scrollRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -51,10 +54,10 @@ const Home = () => {
       <main className={styles.main}>
         <GetStarted />
         <Introduction />
-        <DnaAndFeatures dnas={theme === 'dark' ? DNAS.dark : DNAS.light} />
+        <DnaAndFeatures dnas={DNAS.light} />
         <Features features={FEATURES} handleScroll={handleClickScroll} />
         <div ref={scrollRef}>
-          <ClvToken clvTokens={theme === 'dark' ? SKUTOKENS : CLVTOKENS} />
+          <ClvToken clvTokens={CLVTOKENS} />
         </div>
       </main>
       <div className={styles.bottom}>

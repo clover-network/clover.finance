@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTheme } from 'next-themes';
+import { useRouter } from 'next/router';
 import cn from 'classnames';
 import { useInView } from 'react-intersection-observer';
 
@@ -40,6 +41,7 @@ const DnaAndFeatures = ({
     triggerOnce: true,
   });
   const { theme } = useTheme();
+  const router = useRouter();
 
   return (
     <div className={styles.wrapper}>
@@ -50,12 +52,12 @@ const DnaAndFeatures = ({
           data-wow-delay="0s"
         >
           <span className={styles.title}>
-            {theme === 'dark' ? "Sakura's DNA" : `Clover's DNA`}
+            {router.pathname === '/sakura' ? "Sakura's DNA" : `Clover's DNA`}
           </span>
           <img
             className={styles.backImage}
             src={
-              theme && theme === 'dark'
+              router.pathname === '/sakura'
                 ? '/images/clover-dna-sakura.svg'
                 : '/images/clover-dna.svg'
             }
