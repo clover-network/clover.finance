@@ -17,7 +17,7 @@ import { Introduction } from '../components/Introduction/Introduction';
 import Features from '../components/ClvFeatures/CloverFeature';
 
 declare var WOW;
-const Home = () => {
+const Sakura = () => {
   const { theme, setTheme } = useTheme();
   const scrollRef = useRef(null);
   const handleClickScroll = () => {
@@ -68,4 +68,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Sakura;

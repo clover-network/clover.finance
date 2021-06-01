@@ -73,6 +73,10 @@ body {
   color: #fff;
   background-color: #000;
 
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
   @media (min-width: $media-lg) {
     font-size: 16px;
   }
