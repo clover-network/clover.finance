@@ -34,11 +34,10 @@ const Header = () => {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  console.log('route:', router.pathname)
   return (
     <header
       className={cn(styles.wrapper, {
-        [styles.fixed]: scroll,
+        [router.pathname === '/sakura' ? styles.fixedSakura : styles.fixedClover]: scroll,
       })}
     >
       {showReminder && (
