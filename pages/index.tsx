@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { useTheme } from 'next-themes';
-import { useRouter } from 'next/router';
+import Router, { useRouter } from 'next/router';
 
 import Head from 'next/head';
 import Header from '../components/Header/Header';
@@ -29,10 +29,11 @@ const Home = () => {
     }
   };
   useEffect(() => {
-    if (router.pathname !== '/') {
-      router.push(router.pathname)
+    const { asPath } = Router
+    if (asPath !== '/') {
+      router.push(asPath)
     }
-  }, []);
+  }, [router]);
 
   useEffect(() => {
     setTheme('light');
