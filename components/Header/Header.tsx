@@ -45,7 +45,7 @@ const Header = () => {
           <div className={styles.reminderContent}>
             <LouderIcon className={styles.reminderIcon}></LouderIcon>
             <span className={styles.reminderWord}>
-            Sakura crowdloan is open now. Support the Sakura parachain auction for a bonus SKU airdrop.{' '}
+            Sakura crowdloan is now open. Support the Sakura parachain auction for bonus SKU airdrop and cKSM.{' '}
             </span>
             <span
               className={styles.learnMore}
