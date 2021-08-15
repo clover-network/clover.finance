@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
 import { useRouter } from 'next/router';
 import styles from './EarlyBackers.module.scss';
@@ -15,6 +15,21 @@ import '@brainhubeu/react-carousel/lib/style.css';
 const EarlyBackers = ({ className }: { className?: string }) => {
   const { theme } = useTheme();
   const router = useRouter();
+  const [autoPlay, setAutoPlay] = useState(10000000000000);
+  useEffect(() => {
+    const html = document.getElementById('earlyBackers');
+    const onScroll = () => {
+      if ((window.scrollY + document.documentElement.clientHeight) > html.offsetTop) {
+        setTimeout(() => {
+          setAutoPlay(3000);
+        }, 3000)
+      } else if (scroll) {
+        setAutoPlay(10000000000000);
+      }
+    };
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
     <ThemeProvider theme={mainTheme}>
@@ -27,13 +42,12 @@ const EarlyBackers = ({ className }: { className?: string }) => {
           >
             Early Backers
           </h3>
-          <div className={styles.content}>
+          <div className={styles.content} id="earlyBackers">
             <Carousel
               itemWidth={200}
               infinite
-              autoPlay={3000}
+              autoPlay={autoPlay}
               slidesPerScroll={2}
-              centered
               addArrowClickHandler
               arrowLeft={
                 router.pathname === '/sakura' ? (
@@ -70,11 +84,76 @@ const EarlyBackers = ({ className }: { className?: string }) => {
               <div className={styles.item}>
                 <img
                   width={123}
+                  key={1}
+                  src={
+                    router.pathname === '/sakura'
+                      ? '/backers/wh_huo_bi.png'
+                      : '/backers/bk_huo_bi.jpg'
+                  }
+                  alt=""
+                />
+              </div>
+
+              <div className={styles.item}>
+                <img
+                  width={123}
+                  key={1}
+                  src={
+                    router.pathname === '/sakura'
+                      ? '/backers/wh_okex.png'
+                      : '/backers/bk_okex.jpg'
+                  }
+                  alt=""
+                />
+              </div>
+
+              <div className={styles.item}>
+                <img
+                  width={123}
                   key={2}
                   src={
                     router.pathname === '/sakura'
                       ? '/backers/wh_alameda.png'
                       : '/backers/bk_alameda.png'
+                  }
+                  alt=""
+                />
+              </div>
+
+              <div className={styles.item}>
+                <img
+                  width={123}
+                  key={8}
+                  src={
+                    router.pathname === '/sakura'
+                      ? '/backers/wh_bitcoin.png'
+                      : '/backers/bk_bitcoin.png'
+                  }
+                  alt=""
+                />
+              </div>
+
+              <div className={styles.item}>
+                <img
+                  width={123}
+                  key={8}
+                  src={
+                    router.pathname === '/sakura'
+                      ? '/backers/wh_bithumb_global.png'
+                      : '/backers/bk_bithumb_global.jpg'
+                  }
+                  alt=""
+                />
+              </div>
+
+              <div className={styles.item}>
+                <img
+                  width={123}
+                  key={8}
+                  src={
+                    router.pathname === '/sakura'
+                      ? '/backers/gate_io.jpg'
+                      : '/backers/gate_io.jpg'
                   }
                   alt=""
                 />
@@ -109,19 +188,6 @@ const EarlyBackers = ({ className }: { className?: string }) => {
               <div className={styles.item}>
                 <img
                   width={123}
-                  key={5}
-                  src={
-                    router.pathname === '/sakura'
-                      ? '/backers/bk_block.png'
-                      : '/backers/bk_block.png'
-                  }
-                  alt=""
-                />
-              </div>
-
-              <div className={styles.item}>
-                <img
-                  width={123}
                   key={6}
                   src={
                     router.pathname === '/sakura'
@@ -140,19 +206,6 @@ const EarlyBackers = ({ className }: { className?: string }) => {
                     router.pathname === '/sakura'
                       ? '/backers/wh_kr1.png'
                       : '/backers/bk_kr1.png'
-                  }
-                  alt=""
-                />
-              </div>
-
-              <div className={styles.item}>
-                <img
-                  width={123}
-                  key={8}
-                  src={
-                    router.pathname === '/sakura'
-                      ? '/backers/wh_bitcoin.png'
-                      : '/backers/bk_bitcoin.png'
                   }
                   alt=""
                 />
@@ -184,18 +237,18 @@ const EarlyBackers = ({ className }: { className?: string }) => {
                 />
               </div>
 
-              <div className={styles.item}>
-                <img
-                  width={123}
-                  key={10}
-                  src={
-                    router.pathname === '/sakura'
-                      ? '/backers/wh_illusionist.png'
-                      : '/backers/bk_illusionist.png'
-                  }
-                  alt=""
-                />
-              </div>
+              {/*<div className={styles.item}>*/}
+              {/*  <img*/}
+              {/*    width={123}*/}
+              {/*    key={10}*/}
+              {/*    src={*/}
+              {/*      router.pathname === '/sakura'*/}
+              {/*        ? '/backers/wh_illusionist.png'*/}
+              {/*        : '/backers/bk_illusionist.png'*/}
+              {/*    }*/}
+              {/*    alt=""*/}
+              {/*  />*/}
+              {/*</div>*/}
             </Carousel>
           </div>
         </div>
