@@ -237,18 +237,18 @@ const EarlyBackers = ({ className }: { className?: string }) => {
                 />
               </div>
 
-              {/*<div className={styles.item}>*/}
-              {/*  <img*/}
-              {/*    width={123}*/}
-              {/*    key={10}*/}
-              {/*    src={*/}
-              {/*      router.pathname === '/sakura'*/}
-              {/*        ? '/backers/wh_illusionist.png'*/}
-              {/*        : '/backers/bk_illusionist.png'*/}
-              {/*    }*/}
-              {/*    alt=""*/}
-              {/*  />*/}
-              {/*</div>*/}
+              <div className={styles.item}>
+                <img
+                  width={123}
+                  key={10}
+                  src={
+                    router.pathname === '/sakura'
+                      ? '/backers/wh_illusionist.png'
+                      : '/backers/bk_illusionist.png'
+                  }
+                  alt=""
+                />
+              </div>
             </Carousel>
           </div>
         </div>

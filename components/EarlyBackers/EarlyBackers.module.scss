@@ -52,6 +52,10 @@
   @media (max-width: $media-lg) {
     margin-top: 36px;
 
+    ul {
+      width: fit-content !important;
+    }
+
     svg {
       display: none;
     }
