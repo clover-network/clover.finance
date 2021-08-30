@@ -14,7 +14,7 @@ const Header = () => {
   const { theme } = useTheme();
   const [active, setActive] = useState(false);
   const [scroll, setScroll] = useState(false);
-  const [showReminder, setShowReminder] = useState(false);
+  const [showReminder, setShowReminder] = useState(true);
   const toggleActive = useCallback(() => setActive(!active), [active]);
   const router = useRouter();
 
@@ -45,7 +45,7 @@ const Header = () => {
           <div className={styles.reminderContent}>
             <LouderIcon className={styles.reminderIcon}></LouderIcon>
             <span className={styles.reminderWord}>
-            Sakura crowdloan is now open. Support the Sakura parachain auction for bonus SKU airdrop and sKSM.{' '}
+            Sakura crowdloan is open now. Support the Sakura parachain auction for a bonus SKU airdrop.{' '}
             </span>
             <span
               className={styles.learnMore}
