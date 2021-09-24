@@ -19,16 +19,6 @@ const TEAM_DATA = [
     desc: 'Cofounder & Technical Lead',
   },
   {
-    name: 'Werlandy Wang',
-    image: '/portrait/werlandy.png',
-    desc: 'Lead Architect',
-  },
-  {
-    name: 'Richard Han',
-    image: '/portrait/richard.png',
-    desc: 'Engineering Director',
-  },
-  {
     name: 'Mike Merritt',
     image: '/portrait/mike.png',
     desc: 'Marketing Lead',
