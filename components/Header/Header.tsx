@@ -14,7 +14,7 @@ const Header = () => {
   const { theme } = useTheme();
   const [active, setActive] = useState(false);
   const [scroll, setScroll] = useState(false);
-  const [showReminder, setShowReminder] = useState(true);
+  const [showReminder, setShowReminder] = useState(false);
   const toggleActive = useCallback(() => setActive(!active), [active]);
   const router = useRouter();
 
