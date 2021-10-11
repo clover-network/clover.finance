@@ -88,7 +88,7 @@ const Navigation = ({
                     {children.map(({ label, link }, index) => {
                       return (
                         <li key={index}>
-                          <a className={styles.link} href={link} onClick={() => label === 'Download Wallet' ? handleScroll() : {}}>
+                          <a className={styles.link} href={'Download Wallet' ? null : link} onClick={() => label === 'Download Wallet' ? handleScroll() : {}}>
                             {label}
                           </a>
                         </li>

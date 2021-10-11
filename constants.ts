@@ -46,6 +46,7 @@ const HEADER_MENU = [
         label: 'Litepaper',
       },
       {
+        link: '',
         label: 'Download Wallet',
       },
     ],
