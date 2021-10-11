@@ -12,12 +12,14 @@ const Navigation = ({
   className,
   items = [],
   active = false,
+  handleScroll
 }: {
   className?: string;
   items?: {
     label: string;
     children: { label: string; link: string }[];
   }[];
+  handleScroll?: () => void;
   active?: boolean;
 }) => {
   const router = useRouter();
@@ -86,7 +88,7 @@ const Navigation = ({
                     {children.map(({ label, link }, index) => {
                       return (
                         <li key={index}>
-                          <a className={styles.link} href={link}>
+                          <a className={styles.link} href={link} onClick={() => label === 'Download Wallet' ? handleScroll() : {}}>
                             {label}
                           </a>
                         </li>

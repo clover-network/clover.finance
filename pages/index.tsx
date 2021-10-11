@@ -21,8 +21,14 @@ declare var WOW;
 const Home = () => {
   const { theme, setTheme } = useTheme();
   const scrollRef = useRef(null);
+  const scrollDownloadRef = useRef(null);
   const router = useRouter();
 
+  const handleScrollDownload = () => {
+    if (scrollDownloadRef.current) {
+      scrollDownloadRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  };
   const handleClickScroll = () => {
     if (scrollRef.current) {
       scrollRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -51,10 +57,10 @@ const Home = () => {
         />
         <script src="https://cdn.bootcss.com/wow/1.1.2/wow.min.js"></script>
       </Head>
-      <Header />
+      <Header handleScroll={handleScrollDownload} />
       <main className={styles.main}>
         <GetStarted />
-        <Introduction />
+        <Introduction scrollDownloadRef={scrollDownloadRef} />
         <DnaAndFeatures dnas={DNAS.light} />
         <Features features={FEATURES} handleScroll={handleClickScroll} />
         <div ref={scrollRef}>
