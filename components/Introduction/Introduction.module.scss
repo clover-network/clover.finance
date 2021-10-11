@@ -105,7 +105,7 @@
     }
   }
 
-  img {
+  & > img {
     width: 100%;
     height: auto;
     // max-width: 888px;
@@ -130,6 +130,112 @@
 .launchSakura {
   &:after {
     background: transparent;
+  }
+}
+
+.btnGroup {
+  display: flex;
+  align-items: center;
+  margin-bottom: 70px;
+
+  @media (max-width: $media-sm) {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 20px;
+  }
+}
+
+.btn_item {
+  display: flex;
+  align-items: center;
+  background: #000000;
+  box-shadow: 0px 12px 36px rgba(76, 191, 122, 0.08);
+  border-radius: 12px;
+  margin-right: 24px;
+
+  @media (max-width: $media-md) {
+    &:nth-child(2) {
+      margin-right: 0;
+    }
+    &:nth-child(3) {
+      display: none;
+    }
+    &:last-child {
+      display: none;
+    }
+  }
+
+  @media (max-width: $media-sm) {
+    width: 100%;
+    margin-right: 0;
+    &:first-child {
+      margin-bottom: 18px;
+    }
+  }
+
+  &:hover {
+    background: #191919;
+  }
+
+  img {
+    margin-right: 10px;
+  }
+
+  span {
+    font-size: 18px;
+    line-height: 18px;
+  }
+}
+
+.btn_code {
+  margin-right: 0;
+  width: 54px;
+  min-width: unset;
+  position: relative;
+  img {
+    margin-right: 0;
+  }
+
+  &:hover {
+    &>div {
+      display: block;
+    }
+  }
+  &>div{
+    display: none;
+    position: absolute;
+    top: 54px;
+    left: -80px;
+    z-index: 10;
+
+    &::before {
+      content: ' ';
+      border: 6px solid transparent;
+      position: relative;
+      top: -5px;
+      border-bottom-color: #fff;
+    }
+
+    &>div {
+      width: 240px;
+      height: 266px;
+      background: #FFFFFF;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      box-shadow: 0px 18px 36px rgba(0, 0, 0, 0.15);
+      border-radius: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      span {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 16px;
+        color: #77828C;
+        margin-top: 10px;
+      }
+    }
   }
 }
 
