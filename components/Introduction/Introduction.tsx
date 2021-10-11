@@ -42,7 +42,7 @@ const DESC_LIST_SAKURA = [
   },
 ];
 
-export function Introduction({scrollDownloadRef}) {
+export function Introduction() {
   const { theme } = useTheme();
   const router = useRouter();
 
@@ -99,7 +99,6 @@ export function Introduction({scrollDownloadRef}) {
         />
         {theme !== 'dark' && (
           <div
-            ref={scrollDownloadRef}
             className={cn(styles.btnGroup)}
           >
             <Button

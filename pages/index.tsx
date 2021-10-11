@@ -21,12 +21,12 @@ declare var WOW;
 const Home = () => {
   const { theme, setTheme } = useTheme();
   const scrollRef = useRef(null);
-  const scrollDownloadRef = useRef(null);
+  const scrollDownloadRef: any = useRef(null);
   const router = useRouter();
 
   const handleScrollDownload = () => {
     if (scrollDownloadRef.current) {
-      scrollDownloadRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      scrollDownloadRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
     }
   };
   const handleClickScroll = () => {
@@ -60,7 +60,9 @@ const Home = () => {
       <Header handleScroll={handleScrollDownload} />
       <main className={styles.main}>
         <GetStarted />
-        <Introduction scrollDownloadRef={scrollDownloadRef} />
+        <div ref={scrollDownloadRef}>
+          <Introduction/>
+        </div>
         <DnaAndFeatures dnas={DNAS.light} />
         <Features features={FEATURES} handleScroll={handleClickScroll} />
         <div ref={scrollRef}>

@@ -10,7 +10,7 @@ import SakuraLogo from '../../public/svg/sakura_logo.svg';
 import LouderIcon from '../../public/svg/louder_icon.svg';
 import { HEADER_MENU } from '../../constants';
 
-const Header = ({handleScroll}) => {
+const Header = ({handleScroll}:{handleScroll?: () => void;}) => {
   const { theme } = useTheme();
   const [active, setActive] = useState(false);
   const [scroll, setScroll] = useState(false);
