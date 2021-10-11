@@ -34,7 +34,6 @@ const HEADER_MENU = [
       },
     ],
   },
-
   {
     label: 'Resources',
     children: [
@@ -45,6 +44,9 @@ const HEADER_MENU = [
       {
         link: 'https://clover.finance/litepaper.pdf',
         label: 'Litepaper',
+      },
+      {
+        label: 'Download Wallet',
       },
     ],
   },

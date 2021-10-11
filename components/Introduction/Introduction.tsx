@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import { useTheme } from 'next-themes';
 import { useRouter } from 'next/router';
-
+import QRCode from 'qrcode-react';
 import styles from './Introduction.module.scss';
 import Button from '../Button/Button';
 
@@ -46,7 +46,25 @@ export function Introduction() {
   const { theme } = useTheme();
   const router = useRouter();
 
-  const handleDownload = () => {
+  const handleDownloadIOS = () => {
+    if (theme !== 'dark') {
+      window.open(
+        'https://apps.apple.com/app/clover-wallet/id1570072858',
+        '_blank',
+      );
+    }
+  };
+
+  const handleDownloadAndroid = () => {
+    if (theme !== 'dark') {
+      window.open(
+        'https://github.com/clover-network/clover-multichain-mobile-wallet-release/releases/latest/download/clover.apk',
+        '_blank',
+      );
+    }
+  };
+
+  const handleDownloadChrome = () => {
     if (theme !== 'dark') {
       window.open(
         'https://chrome.google.com/webstore/detail/clover-wallet/nhnkbkgjikgcigadomkphalanndcapjk',
@@ -79,6 +97,42 @@ export function Introduction() {
           }
           alt="Clover introduction"
         />
+        {theme !== 'dark' && (
+          <div
+            className={cn(styles.btnGroup)}
+          >
+            <Button
+              className={styles.btn_item}
+              onClick={handleDownloadIOS}
+            >
+              <img width={24} height={24} src='/images/ios_icon.svg' alt='' />
+              <span>Download for iOS</span>
+            </Button>
+            <Button
+              className={styles.btn_item}
+              onClick={handleDownloadAndroid}
+            >
+              <img width={24} height={24} src='/images/android_icon.svg' alt='' />
+              <span>Download for Android</span>
+            </Button>
+            <Button
+              className={styles.btn_item}
+              onClick={handleDownloadChrome}
+            >
+              <img width={24} height={24} src='/images/chrome_icon.svg' alt='' />
+              <span>Add to Chrome</span>
+            </Button>
+            <Button className={cn(styles.btn_item, styles.btn_code)}>
+              <img width={24} height={24} src='/images/code_icon.svg' alt='' />
+              <div>
+                <div>
+                  <QRCode size={180} value='https://clover.finance/' />
+                  <span>Scan QR code to download</span>
+                </div>
+              </div>
+            </Button>
+          </div>
+        )}
         <div className={styles.itemList}>
           {(router.pathname === '/sakura' ? DESC_LIST_SAKURA : DESC_LIST).map((d, i) => {
             return (
@@ -89,30 +143,6 @@ export function Introduction() {
                     {d.title}
                   </div>
                   <p className={styles.desc}>{d.desc}</p>
-                  {i === 1 && theme !== 'dark' && (
-                    <Button
-                      className={styles.btn_secondary}
-                      onClick={handleDownload}
-                    >
-                      <svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24ZM17.9957 10.08L13.2957 14.78V5.5H10.7157V14.8L5.9957 10.08V13.5L11.9957 19.5L17.9957 13.5V10.08Z"
-                          fill={
-                            theme && theme == 'dark' ? '#ff5995' : '#42C37B'
-                          }
-                        />
-                      </svg>
-                      <span>Download Now</span>
-                    </Button>
-                  )}
                 </div>
               </div>
             );
