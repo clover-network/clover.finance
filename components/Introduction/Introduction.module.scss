@@ -136,9 +136,15 @@
 .btnGroup {
   display: flex;
   align-items: center;
-  margin-bottom: 70px;
+  position: relative;
+  top: -170px;
+  z-index: 3;
+  @media (max-width: $media-md) {
+    top: -100px;
+  }
 
   @media (max-width: $media-sm) {
+    top: -50px;
     flex-direction: column;
     width: 100%;
     padding: 0 20px;
@@ -196,8 +202,17 @@
     margin-right: 0;
   }
 
+  @keyframes ani {
+    from{
+      opacity: 0;
+    }
+    to{
+      opacity: 1;
+    }
+  }
   &:hover {
     &>div {
+      animation: ani 0.5s;
       display: block;
     }
   }

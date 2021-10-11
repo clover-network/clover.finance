@@ -10,7 +10,7 @@ import SakuraLogo from '../../public/svg/sakura_logo.svg';
 import LouderIcon from '../../public/svg/louder_icon.svg';
 import { HEADER_MENU } from '../../constants';
 
-const Header = () => {
+const Header = ({handleScroll}) => {
   const { theme } = useTheme();
   const [active, setActive] = useState(false);
   const [scroll, setScroll] = useState(false);
@@ -77,7 +77,7 @@ const Header = () => {
               {router.pathname === '/sakura' ? 'sakura' : 'clover'}
             </div>
           </div>
-          <Navigation items={HEADER_MENU} active={active} />
+          <Navigation items={HEADER_MENU} active={active} handleScroll={handleScroll} />
           <div className={styles.rightBox}>
             <MenuButton
               className={styles.button}

@@ -107,6 +107,7 @@ const GetStarted = () => {
                       (item: { link: string; label: string }) => {
                         return (
                           <p
+                            key={`1_${item.link}`}
                             onClick={() => window.open(item.link, '_blank')}
                           >{`${item.label} →`}</p>
                         );
@@ -130,6 +131,7 @@ const GetStarted = () => {
                       (item: { link: string; label: string }) => {
                         return (
                           <p
+                            key={`0_${item.link}`}
                             onClick={() => window.open(item.link, '_blank')}
                           >{`${item.label} →`}</p>
                         );
@@ -150,6 +152,7 @@ const GetStarted = () => {
                       (item: { link: string; label: string }) => {
                         return (
                           <p
+                            key={`2_${item.link}`}
                             onClick={() => window.open(item.link, '_blank')}
                           >{`${item.label} →`}</p>
                         );
