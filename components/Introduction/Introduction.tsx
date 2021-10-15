@@ -73,6 +73,15 @@ export function Introduction() {
     }
   };
 
+  const handleOpenWeb = () => {
+    if (theme !== 'dark') {
+      window.open(
+        'https://wallet.clover.finance/',
+        '_blank',
+      );
+    }
+  };
+
   return (
     <>
       <div className={styles.textOuter}>
@@ -121,6 +130,13 @@ export function Introduction() {
             >
               <img width={24} height={24} src='/images/chrome_icon.svg' alt='' />
               <span>Add to Chrome</span>
+            </Button>
+            <Button
+              className={styles.btn_item}
+              onClick={handleOpenWeb}
+            >
+              <img width={24} height={24} src='/images/web_icon.svg' alt='' />
+              <span>Open web wallet</span>
             </Button>
             <Button className={cn(styles.btn_item, styles.btn_code)}>
               <img width={24} height={24} src='/images/code_icon.svg' alt='' />
