@@ -17,7 +17,6 @@ interface CoinInfo {
 interface CoinStats {
   balance: number;
   percentChange: number;
-  valueInUSD: number;
 }
 
 const CoinTicker: React.FC<{
@@ -99,7 +98,8 @@ const DivTicker = styled.div`
   margin-left: 48px;
 `;
 
-export const PriceStats = () => {
+export const PriceStats = (data:any) => {
+  const assetData = data.assetData;
   return (
     <DivPriceStatsContainer>
       <CoinTicker
@@ -109,9 +109,8 @@ export const PriceStats = () => {
           icon: "images/coins/CloverLogo.svg",
         }}
         stats={{
-          balance: Math.random(),
-          percentChange: Math.random() * 99 - 50,
-          valueInUSD: 350.23,
+          balance: assetData['CLV']?.curPrice ?? 0,
+          percentChange: assetData['CLV']?.changepct24hour ?? 0
         }}
       />
       <CoinTicker
@@ -121,9 +120,8 @@ export const PriceStats = () => {
           icon: "images/coins/EthereumLogo.svg",
         }}
         stats={{
-          balance: Math.random(),
-          percentChange: Math.random() * 99 - 50,
-          valueInUSD: 350.23,
+          balance: assetData['ETH']?.curPrice ?? 0,
+          percentChange: assetData['ETH']?.changepct24hour ?? 0
         }}
       />
       <CoinTicker
@@ -133,9 +131,8 @@ export const PriceStats = () => {
           icon: "images/coins/BitcoinLogo.svg",
         }}
         stats={{
-          balance: Math.random(),
-          percentChange: Math.random() * 99 - 50,
-          valueInUSD: 350.23,
+          balance: assetData['BTC']?.curPrice ?? 0,
+          percentChange: assetData['BTC']?.changepct24hour ?? 0,
         }}
       />
       <CoinTicker
@@ -145,9 +142,8 @@ export const PriceStats = () => {
           icon: "images/coins/Polkadot.svg",
         }}
         stats={{
-          balance: Math.random(),
-          percentChange: Math.random() * 99 - 50,
-          valueInUSD: 350.23,
+          balance: assetData['DOT']?.curPrice ?? 0,
+          percentChange: assetData['DOT']?.changepct24hour ?? 0,
         }}
       />
       <CoinTicker
@@ -157,9 +153,8 @@ export const PriceStats = () => {
           icon: "images/coins/SolanaLogo.svg",
         }}
         stats={{
-          balance: Math.random(),
-          percentChange: Math.random() * 99 - 50,
-          valueInUSD: 350.23,
+          balance: assetData['SOL']?.curPrice ?? 0,
+          percentChange: assetData['SOL']?.changepct24hour ?? 0,
         }}
       />
       <CoinTicker
@@ -169,9 +164,8 @@ export const PriceStats = () => {
           icon: "images/coins/FantomLogo.svg",
         }}
         stats={{
-          balance: Math.random(),
-          percentChange: Math.random() * 99 - 50,
-          valueInUSD: 350.23,
+          balance: assetData['FTM']?.curPrice ?? 0,
+          percentChange: assetData['FTM']?.changepct24hour ?? 0,
         }}
       />
       <CoinTicker
@@ -181,9 +175,8 @@ export const PriceStats = () => {
           icon: "images/coins/KusamaLogo.svg",
         }}
         stats={{
-          balance: Math.random(),
-          percentChange: Math.random() * 99 - 50,
-          valueInUSD: 350.23,
+          balance: assetData['KSM']?.curPrice ?? 0,
+          percentChange: assetData['KSM']?.changepct24hour ?? 0,
         }}
       />
     </DivPriceStatsContainer>

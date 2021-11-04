@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styled, { css } from "styled-components";
 import { Spacer, SpacerSection, Title } from "./CloverLibrary";
 import { SplashModeContext, SplashPageMode } from "./SplashModeContext";
@@ -16,8 +16,10 @@ import { HorizontalGutters } from "./mixins/HorizontalGutters";
 import { breakpoint } from "./mixins/breakpoint";
 import { Socials } from "./Socials";
 import { AnchorLinkIds } from "./AnchorLinkIds";
+import axios from "axios";
 
 export const SplashPageEntry: React.FC = () => {
+  const [assetPrice, setAssetPrice] = useState({});
   const mode = useContext(SplashModeContext);
   const logo =
     mode === SplashPageMode.SAKURA
@@ -27,7 +29,18 @@ export const SplashPageEntry: React.FC = () => {
     mode === SplashPageMode.SAKURA
       ? "images/sakura top img.svg"
       : "images/index BG.svg";
-
+  useEffect(() => {
+    axios.get('https://min-api.cryptocompare.com/data/pricemultifull?fsyms=CLV,BTC,ETH,DOT,SOL,FTM,KSM&tsyms=usd')
+    .then((response) => {
+      const tempObj:any = {};
+      const data = response.data.RAW;
+      for (const key in data) {
+        const priceData = data[key].USD;
+        tempObj[key] = {curPrice: priceData.PRICE, changepct24hour: priceData.CHANGEPCT24HOUR}
+      }
+      setAssetPrice(tempObj);
+    })
+  }, [])
   return (
     <div>
       <LandingContainer>
@@ -62,7 +75,7 @@ export const SplashPageEntry: React.FC = () => {
             <VerticalSocials />
           </FloatingLeft>
         </Hero>
-        <PriceStats />
+        <PriceStats assetData = {assetPrice}/>
       </LandingContainer>
       <SpacerSection />
       <SectionArticles />
