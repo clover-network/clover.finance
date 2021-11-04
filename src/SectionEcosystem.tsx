@@ -46,13 +46,10 @@ export const SectionEcosystem = () => {
             <DivButtonRow>
               <ButtonFixedWidth
                 onClick={() =>
-                  window.open(
-                    "https://docs.clover.finance/quick-start/testnet",
-                    "_blank"
-                  )
+                  window.open("https://docs.clover.finance/", "_blank")
                 }
               >
-                Read Docs
+                View Testnet
               </ButtonFixedWidth>
               <ButtonFixedWidth
                 onClick={() =>
@@ -63,10 +60,13 @@ export const SectionEcosystem = () => {
               </ButtonFixedWidth>
               <ButtonFixedWidth
                 onClick={() =>
-                  window.open("https://docs.clover.finance/", "_blank")
+                  window.open(
+                    "https://docs.clover.finance/quick-start/testnet",
+                    "_blank"
+                  )
                 }
               >
-                View Testnet
+                Read Docs
               </ButtonFixedWidth>
             </DivButtonRow>
           </Col>

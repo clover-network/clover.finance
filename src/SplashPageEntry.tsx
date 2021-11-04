@@ -27,8 +27,8 @@ export const SplashPageEntry: React.FC = () => {
       : "images/Clover logo - white.png";
   const background =
     mode === SplashPageMode.SAKURA
-      ? "images/sakura top img.svg"
-      : "images/index BG.svg";
+      ? "images/sakura-top-img.svg"
+      : "images/index-BG.svg";
   useEffect(() => {
     axios.get('https://min-api.cryptocompare.com/data/pricemultifull?fsyms=CLV,BTC,ETH,DOT,SOL,FTM,KSM&tsyms=usd')
     .then((response) => {

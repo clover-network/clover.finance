@@ -13,6 +13,7 @@ import { HorizontalMiniGutters } from "./mixins/HorizontalGutters";
 export const SisterNet: React.FC<{ mode: SplashPageMode; src: string }> = (
   props
 ) => {
+  debugger
   const url = props.mode === SplashPageMode.CLOVER ? "/sakura" : "/";
   return (
     <>
@@ -38,8 +39,8 @@ const Hr = styled.hr`
 
 export const Navbar = () => {
   const mode = useContext(SplashModeContext);
-  const logo = mode ? "images/Sakura.svg" : "images/Clover Logo.svg";
-  const sisterLogo = mode ? "images/Clover Logo.svg" : "images/Sakura.svg";
+  const logo = mode ? "images/Sakura.svg" : "images/Clover-Logo.svg";
+  const sisterLogo = mode ? "images/Clover-Logo.svg" : "images/Sakura.svg";
   const ref = useRef<HTMLDivElement>(null);
 
   const { showMenu, setShowMenu } = useContext(MenuContext);
