@@ -1,0 +1,9 @@
+export enum AnchorLinkIds {
+  ARTICLES = "ARTICLES",
+  COMPONENTS = "COMPONENTS",
+  PITCH = "PITCH",
+  TOKEN = "TOKEN",
+  ECOSYSTEM = "ECOSYSTEM",
+  DNA = "DNA",
+  BLOG = "BLOG",
+}
