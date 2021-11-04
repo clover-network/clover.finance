@@ -49,7 +49,7 @@ export const SectionEcosystem = () => {
                   window.open("https://docs.clover.finance/", "_blank")
                 }
               >
-                View Testnet
+                Read Docs
               </ButtonFixedWidth>
               <ButtonFixedWidth
                 onClick={() =>
@@ -66,7 +66,7 @@ export const SectionEcosystem = () => {
                   )
                 }
               >
-                Read Docs
+                View Testnet
               </ButtonFixedWidth>
             </DivButtonRow>
           </Col>

@@ -9,21 +9,23 @@ import { AnchorLinkIds } from "./AnchorLinkIds";
 import { Socials } from "./Socials";
 import { MenuContext } from "./MenuContextProvider";
 import { HorizontalMiniGutters } from "./mixins/HorizontalGutters";
+import {useRouter} from  'next/router';
 
 export const SisterNet: React.FC<{ mode: SplashPageMode; src: string }> = (
   props
 ) => {
   const url = props.mode === SplashPageMode.CLOVER ? "/sakura" : "/";
+  const router = useRouter();
   return (
     <>
-      <SisterNetworkName>
-        <a href={url}>
-          {props.mode === SplashPageMode.CLOVER && "SAKURA SISTERNET"}
-        </a>
+      <SisterNetworkName onClick={() => {
+        router.push(url)
+      }}>
+        {props.mode === SplashPageMode.CLOVER && "SAKURA SISTERNET"}
       </SisterNetworkName>
-      <a href={url}>
-        <ImgLogo src={props.src} />
-      </a>
+      <ImgLogo src={props.src} onClick={() => {
+        router.push(url)
+      }} />
     </>
   );
 };
@@ -239,6 +241,7 @@ const SisterNetworkContainerHiddenOnMobile = styled(HorizontallyCentered)`
 `;
 
 const SisterNetworkName = styled(SmallerSubtitle)`
+  cursor: pointer;
   margin: 0;
 `;
 
@@ -246,6 +249,7 @@ const ImgLogo = styled.img`
   display: block; //prevent wrapping <a/> from adding bottom padding
   height: 30px;
   min-width: 30px;
+  cursor: pointer;
 `;
 
 const MenuBars = styled(FontAwesomeIcon)`
