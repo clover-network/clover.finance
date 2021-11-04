@@ -84,8 +84,8 @@ export const GlobalStyle = createGlobalStyle`
  .swiper-button-prev {
    background-image: url("${(props) =>
      props.theme.id === "Sakura"
-       ? "images/right arrow pink.svg"
-       : "images/right arrow.svg"}") !important;
+       ? "images/right-arrow-pink.svg"
+       : "images/right-arrow.svg"}") !important;
    background-repeat: no-repeat;
    background-position: center;
    transform: rotateZ(180deg);
@@ -104,8 +104,8 @@ export const GlobalStyle = createGlobalStyle`
  .swiper-button-next {
    background-image: url("${(props) =>
      props.theme.id === "Sakura"
-       ? "images/right arrow pink.svg"
-       : "images/right arrow.svg"}") !important;
+       ? "images/right-arrow-pink.svg"
+       : "images/right-arrow.svg"}") !important;
    background-repeat: no-repeat;
    background-position: center;
 

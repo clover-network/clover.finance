@@ -76,7 +76,7 @@ export const SectionPitch = () => {
       {isSakura && (
         <div>
           <EscapeMargins>
-            <SakuraImg src={"/images/Sakura bg.png"} />
+            <SakuraImg src={"/images/sakura-bg1.png"} />
           </EscapeMargins>
         </div>
       )}
@@ -232,7 +232,7 @@ const Items = [
     ],
   },
   {
-    screenShot: "images/2 mockup.png",
+    screenShot: "images/2-mockup.png",
     title: "Mobile Wallet",
     bullets: [
       "Multi-chain",

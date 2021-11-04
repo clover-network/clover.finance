@@ -38,8 +38,8 @@ const Hr = styled.hr`
 
 export const Navbar = () => {
   const mode = useContext(SplashModeContext);
-  const logo = mode ? "images/Sakura.svg" : "images/Clover-Logo.svg";
-  const sisterLogo = mode ? "images/Clover-Logo.svg" : "images/Sakura.svg";
+  const logo = mode ? "images/sakura.svg" : "images/Clover-Logo.svg";
+  const sisterLogo = mode ? "images/Clover-Logo.svg" : "images/sakura.svg";
   const ref = useRef<HTMLDivElement>(null);
 
   const { showMenu, setShowMenu } = useContext(MenuContext);

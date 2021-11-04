@@ -23,8 +23,8 @@ export const SplashPageEntry: React.FC = () => {
   const mode = useContext(SplashModeContext);
   const logo =
     mode === SplashPageMode.SAKURA
-      ? "images/sakura logo.png"
-      : "images/Clover logo - white.png";
+      ? "images/sakura-logo.png"
+      : "images/clover-logo-white.png";
   const background =
     mode === SplashPageMode.SAKURA
       ? "images/sakura-top-img.svg"
@@ -65,8 +65,8 @@ export const SplashPageEntry: React.FC = () => {
               <ImgGoDown
                 src={
                   mode === SplashPageMode.SAKURA
-                    ? "images/arrow down pink.svg"
-                    : "images/down arrow.svg"
+                    ? "images/arrow-down-pink.svg"
+                    : "images/down-arrow.svg"
                 }
               />
             </a>

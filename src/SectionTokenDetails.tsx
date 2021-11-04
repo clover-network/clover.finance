@@ -21,7 +21,7 @@ export const SectionTokenDetails = () => {
 
   const background =
     mode === SplashPageMode.SAKURA
-      ? "images/CLV-token-Sakura.svg"
+      ? "images/clv-token-sakura.svg"
       : "images/bg-clvtoken.svg";
 
   return (
@@ -88,7 +88,7 @@ const CloverItems = [
     body: "Get your projects funded from the treasury.",
   },
   {
-    icon: "images/icon nomination.svg",
+    icon: "images/icon-nomination.svg",
     title: "Nomination",
     body: "Stake CLV to nominate your own node validator using a single-click deployment.",
   },
