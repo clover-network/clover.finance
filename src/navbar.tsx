@@ -9,23 +9,21 @@ import { AnchorLinkIds } from "./AnchorLinkIds";
 import { Socials } from "./Socials";
 import { MenuContext } from "./MenuContextProvider";
 import { HorizontalMiniGutters } from "./mixins/HorizontalGutters";
-import {useRouter} from  'next/router';
 
 export const SisterNet: React.FC<{ mode: SplashPageMode; src: string }> = (
   props
 ) => {
   const url = props.mode === SplashPageMode.CLOVER ? "/sakura" : "/";
-  const router = useRouter();
   return (
     <>
-      <SisterNetworkName onClick={() => {
-        router.push(url)
-      }}>
-        {props.mode === SplashPageMode.CLOVER && "SAKURA SISTERNET"}
+      <SisterNetworkName>
+        <a href={url}>
+          {props.mode === SplashPageMode.CLOVER && "SAKURA SISTERNET"}
+        </a>
       </SisterNetworkName>
-      <ImgLogo src={props.src} onClick={() => {
-        router.push(url)
-      }} />
+      <a href={url}>
+        <ImgLogo src={props.src} />
+      </a>
     </>
   );
 };

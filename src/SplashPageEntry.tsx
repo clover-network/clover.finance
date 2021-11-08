@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 import { Spacer, SpacerSection, Title } from "./CloverLibrary";
 import { SplashModeContext, SplashPageMode } from "./SplashModeContext";
 import { PriceStats } from "./PriceStats";
-import { Navbar } from "./Navbar";
+import { Navbar } from "./navbar";
 import { SectionEcosystem } from "./SectionEcosystem";
 import { SectionTokenDetails } from "./SectionTokenDetails";
 import { SectionComponentOverview } from "./SectionComponentOverview";
