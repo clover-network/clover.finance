@@ -13,7 +13,7 @@ import { HorizontalMiniGutters } from "./mixins/HorizontalGutters";
 export const SisterNet: React.FC<{ mode: SplashPageMode; src: string }> = (
   props
 ) => {
-  const url = props.mode === SplashPageMode.CLOVER ? "/sakura" : "/";
+  const url = props.mode === SplashPageMode.CLOVER ? "/sakura.html" : "/";
   return (
     <>
       <SisterNetworkName>
