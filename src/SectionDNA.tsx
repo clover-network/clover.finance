@@ -111,7 +111,7 @@ const backedByClover = [
   { image: `images/dna/WhiteSuppo/okex-white.png` },
   { image: `images/dna/WhiteSuppo/ASW.png` },
   { image: `images/dna/31Whitee/bitcom-white.png` },
-  { image: `images/dna/WhiteSuppo/BITW.png` },
+  { image: `images/dna/WhiteSuppo/Bitw.png` },
   { image: `images/dna/WhiteSuppo/CMSW.png` },
   { image: `images/dna/WhiteSuppo/GATEIOW.png` },
   { image: `images/dna/WhiteSuppo/HYPERW.png` },

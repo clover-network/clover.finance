@@ -14,7 +14,6 @@ import { Socials } from "./Socials";
 const modeToBackgroundImage = {
   [SplashPageMode.CLOVER]: "images/bg-footer.svg",
   [SplashPageMode.SAKURA]: "images/sakura-footer-bg.svg",
-  [SplashPageMode.NFT]: "none",
 };
 
 export const SectionFooter = () => {
@@ -22,16 +21,11 @@ export const SectionFooter = () => {
 
   const background = modeToBackgroundImage[mode];
 
-  const hasMinHeight = mode !== SplashPageMode.NFT;
-
-  // const fullWidthFooterBar = mode !== SplashPageMode.NFT;
-
   return (
     <SplashSection bottomBackground={background}>
-      <DivContainer hasMinHeight={hasMinHeight}>
+      <DivContainer hasMinHeight={true}>
         {mode === SplashPageMode.SAKURA && <CloverSakuraColumns />}
         {mode === SplashPageMode.CLOVER && <CloverSakuraColumns />}
-        {mode === SplashPageMode.NFT && <NFTColumns />}
       </DivContainer>
       <EscapeMargins>
         <FooterBar />
@@ -135,45 +129,6 @@ const CloverSakuraColumns = () => {
               rel="noreferrer"
             >
               General Partnership
-            </a>
-          </Link>
-        </Links>
-      </FooterColumn>
-      <EmailColumn>
-        <FooterColumnLabel>
-          <SpanEmailUs>
-            Come say hello at{" "}
-            <a href="mailto:info@clover.finance">info@clover.finance</a>
-          </SpanEmailUs>
-        </FooterColumnLabel>
-      </EmailColumn>
-    </DivFooterColumns>
-  );
-};
-
-const NFTColumns = () => {
-  return (
-    <DivFooterColumns>
-      <FooterColumn>
-        <FooterColumnLabel>Visit Clover.finance</FooterColumnLabel>
-        <Links>
-          <Link>
-            <a href="/" target="_blank" rel="noreferrer">
-              Clover's website
-            </a>
-          </Link>
-        </Links>
-      </FooterColumn>
-      <FooterColumn>
-        <FooterColumnLabel>About Polkadot Parachain</FooterColumnLabel>
-        <Links>
-          <Link>
-            <a
-              href="https://apps.apple.com/app/clover-wallet/id1570072858"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Read more
             </a>
           </Link>
         </Links>

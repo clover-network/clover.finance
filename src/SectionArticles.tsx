@@ -40,7 +40,7 @@ const CloverCopyOne = {
   stripe: "Dot Auction",
 };
 const CloverCopyTwo = {
-  title: "Parachain Crowdload Offering",
+  title: "Parachain Crowdloan Offering",
   body: "Stay Tuned for our upcoming Polkadot Parachain Crowdloan Reward information. ",
   linkName: "To Be Announced",
   linkHref: "/TODO",

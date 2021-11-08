@@ -9,8 +9,6 @@ export const Socials: React.FC<{ className?: string }> = ({ className }) => {
   const prefix =
     mode === SplashPageMode.SAKURA
       ? "pink-"
-      : mode === SplashPageMode.NFT
-      ? "black-"
       : "";
 
   return (
