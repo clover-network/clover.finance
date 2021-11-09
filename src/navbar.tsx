@@ -241,6 +241,9 @@ const SisterNetworkContainerHiddenOnMobile = styled(HorizontallyCentered)`
 const SisterNetworkName = styled(SmallerSubtitle)`
   cursor: pointer;
   margin: 0;
+  a{
+    text-decoration: none;
+  }
 `;
 
 const ImgLogo = styled.img`
