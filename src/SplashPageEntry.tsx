@@ -17,6 +17,7 @@ import { breakpoint } from "./mixins/breakpoint";
 import { Socials } from "./Socials";
 import { AnchorLinkIds } from "./AnchorLinkIds";
 import axios from "axios";
+import Header from './Header';
 
 export const SplashPageEntry: React.FC = () => {
   const [assetPrice, setAssetPrice] = useState({});
@@ -44,6 +45,7 @@ export const SplashPageEntry: React.FC = () => {
   return (
     <div>
       <LandingContainer>
+        <Header />
         <Navbar />
 
         <Hero imageUrl={background}>

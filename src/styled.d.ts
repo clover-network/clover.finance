@@ -17,6 +17,8 @@ declare module "styled-components" {
       ECOSYSTEM_BACKGROUND: string;
       SECONDARY: string;
       FOOTER: string;
+      HEADER: string;
+      HEADERBACK: string;
       EMAIL_US: string;
     };
     fontSizes: {

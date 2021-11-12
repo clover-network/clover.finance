@@ -14,6 +14,8 @@ export const ThemeClover: DefaultTheme = {
     ECOSYSTEM_BACKGROUND: "#151E26",
     SECONDARY: "#262626",
     FOOTER: "#00000000",
+    HEADER: "#000000",
+    HEADERBACK: "#06E594",
     EMAIL_US: "#06E594",
   },
   fontSizes: {

@@ -14,6 +14,8 @@ export const ThemeSakura: DefaultTheme = {
     ECOSYSTEM_BACKGROUND: "#151E26",
     SECONDARY: "#262626",
     FOOTER: "#FFFFFF",
+    HEADER: "#FFFFFF",
+    HEADERBACK: "#FF5994",
     EMAIL_US: "#303030",
   },
   fontSizes: {
