@@ -42,8 +42,8 @@ const CloverCopyOne = {
 const CloverCopyTwo = {
   title: "Parachain Crowdloan Offering",
   body: "Stay Tuned for our upcoming Polkadot Parachain Crowdloan Reward information. ",
-  linkName: "To Be Announced",
-  linkHref: "/TODO",
+  linkName: "Join Crowdloan Now",
+  linkHref: "https://lucky.clover.finance/",
   stripe: "Support CLV",
 };
 
