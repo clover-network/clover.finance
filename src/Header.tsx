@@ -6,8 +6,9 @@ import { breakpoint } from "./mixins/breakpoint";
 import { mobileOnly } from './mixins/mobileOnly';
 
 const ReminderWrapper = styled.div`
-  position: relative;
-  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
   height: 50px;
   background: ${(props) => props.theme.colors.HEADERBACK};
 `;
@@ -83,6 +84,10 @@ const CloseReminder = styled.img`
   height: 18px;
 `;
 
+const PlaceHolder = styled.div`
+  height: 26px;
+`
+
 const Header = () => {
   const [showReminder, setShowReminder] = useState(true);
   const mode = useContext(SplashModeContext);
@@ -91,27 +96,30 @@ const Header = () => {
   return (
     <header>
       {showReminder && (
-        <ReminderWrapper>
-          <ReminderContent>
-            <ReminderIcon src={louderIcon}></ReminderIcon>
-            <ReminderWordDesk>
-              Clover crowdloan is open now.  Support the Clover parachain auction for CLV airdrop and Bonus Rewards.
-            </ReminderWordDesk>
-            <ReminderWordMobile>
-              Clover crowdloan is open now.
-            </ReminderWordMobile>
-            <LearnMore
-              onClick={() => window.open('https://lucky.clover.finance/')}
-            >
-              Learn more
-            </LearnMore>
-            <CloseReminder
-              src="/images/close.svg"
-              alt=""
-              onClick={() => setShowReminder(false)}
-            />
-          </ReminderContent>
-        </ReminderWrapper>
+        <div>
+          <ReminderWrapper>
+            <ReminderContent>
+              <ReminderIcon src={louderIcon}></ReminderIcon>
+              <ReminderWordDesk>
+                Clover crowdloan is open now.  Support the Clover parachain auction for CLV airdrop and Bonus Rewards.
+              </ReminderWordDesk>
+              <ReminderWordMobile>
+                Clover crowdloan is open now.
+              </ReminderWordMobile>
+              <LearnMore
+                onClick={() => window.open('https://lucky.clover.finance/')}
+              >
+                Learn more
+              </LearnMore>
+              <CloseReminder
+                src="/images/close.svg"
+                alt=""
+                onClick={() => setShowReminder(false)}
+              />
+            </ReminderContent>
+          </ReminderWrapper>
+          <PlaceHolder></PlaceHolder>
+        </div>
       )}
     </header>
   );
