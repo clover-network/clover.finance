@@ -29,17 +29,10 @@ import { mobileOnly } from "./mixins/mobileOnly";
 SwiperCore.use([Navigation, Pagination]);
 
 export const SectionPitch = () => {
-  const [initialSlide, setInitialSlide] = useState(2);
+  const isPhone = typeof window !== 'undefined' ? /Android|webOS|iPhone|iPad|BlackBerry/i.test(navigator?.userAgent) : false;
   const mode = useContext(SplashModeContext);
   const isSakura = mode === SplashPageMode.SAKURA;
 
-  useEffect(() => {
-    if (/Android|webOS|iPhone|iPad|BlackBerry/i.test(navigator?.userAgent)) {
-      setInitialSlide(1)
-    } else {
-      setInitialSlide(2)
-    }
-  }, [])
   return (
     <SplashSection>
       <DivContainer id={AnchorLinkIds.PITCH}>
@@ -66,7 +59,7 @@ export const SectionPitch = () => {
       {!isSakura && (
         <SwipeCustomizer>
           <Swiper
-            initialSlide={initialSlide}
+            initialSlide={isPhone? 1 : 2}
             navigation={true}
             pagination={true}
             autoHeight={true}
