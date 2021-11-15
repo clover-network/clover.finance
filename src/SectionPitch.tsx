@@ -29,7 +29,7 @@ import { mobileOnly } from "./mixins/mobileOnly";
 SwiperCore.use([Navigation, Pagination]);
 
 export const SectionPitch = () => {
-  const [initialSlide, setInitialSlide] = useState(0);
+  const [initialSlide, setInitialSlide] = useState(2);
   const mode = useContext(SplashModeContext);
   const isSakura = mode === SplashPageMode.SAKURA;
 
@@ -63,7 +63,7 @@ export const SectionPitch = () => {
         )}
       </DivContainer>
 
-      {!isSakura && initialSlide && (
+      {!isSakura && (
         <SwipeCustomizer>
           <Swiper
             initialSlide={initialSlide}
