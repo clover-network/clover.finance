@@ -107,7 +107,7 @@ const Header = () => {
                 Clover crowdloan is open now.
               </ReminderWordMobile>
               <LearnMore
-                onClick={() => window.open('https://lucky.clover.finance/nft?type=clover')}
+                onClick={() => window.open('https://lucky.clover.finance')}
               >
                 Stake now
               </LearnMore>
