@@ -77,8 +77,17 @@ export const SplashPageEntry: React.FC = () => {
             <VerticalSocials />
           </FloatingLeft>
         </Hero>
-        <PriceStats assetData = {assetPrice}/>
+        {mode === SplashPageMode.SAKURA && (
+          <PriceStats assetData = {assetPrice}/>
+        )}
       </LandingContainer>
+      {
+        mode === SplashPageMode.CLOVER && (
+          <>
+            <SectionPitch />
+          </>
+        )
+      }
       <SpacerSection />
       <SectionArticles />
       <SpacerSection />
@@ -94,15 +103,10 @@ export const SplashPageEntry: React.FC = () => {
           <SpecialSpacer />
         </>
       )}
-      {mode === SplashPageMode.SAKURA ? (
+      {mode === SplashPageMode.SAKURA && (
         <>
           <SectionComponentOverview />
           <SpecialSpacer />
-        </>
-      ) : (
-        <>
-          <SectionPitch />
-          <SpacerSection />
         </>
       )}
 

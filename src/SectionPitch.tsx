@@ -13,7 +13,7 @@ import {
   SpanNeutral,
   Subtitle,
 } from "./CloverLibrary";
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from 'react';
 import styled, { css } from "styled-components";
 import { SplashModeContext, SplashPageMode } from "./SplashModeContext";
 import { AnchorLinkIds } from "./AnchorLinkIds";
@@ -29,8 +29,17 @@ import { mobileOnly } from "./mixins/mobileOnly";
 SwiperCore.use([Navigation, Pagination]);
 
 export const SectionPitch = () => {
+  const [initialSlide, setInitialSlide] = useState(0);
   const mode = useContext(SplashModeContext);
   const isSakura = mode === SplashPageMode.SAKURA;
+
+  useEffect(() => {
+    if (/Android|webOS|iPhone|iPad|BlackBerry/i.test(navigator?.userAgent)) {
+      setInitialSlide(1)
+    } else {
+      setInitialSlide(2)
+    }
+  }, [])
   return (
     <SplashSection>
       <DivContainer id={AnchorLinkIds.PITCH}>
@@ -54,10 +63,11 @@ export const SectionPitch = () => {
         )}
       </DivContainer>
 
-      {!isSakura && (
+      {!isSakura && initialSlide && (
         <SwipeCustomizer>
           <Swiper
-            initialSlide={1}
+            onInit={() => {console.log(navigator)}}
+            initialSlide={initialSlide}
             navigation={true}
             pagination={true}
             autoHeight={true}

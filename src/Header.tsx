@@ -85,7 +85,7 @@ const CloseReminder = styled.img`
 `;
 
 const PlaceHolder = styled.div`
-  height: 26px;
+  height: 50px;
 `
 
 const Header = () => {
@@ -107,9 +107,9 @@ const Header = () => {
                 Clover crowdloan is open now.
               </ReminderWordMobile>
               <LearnMore
-                onClick={() => window.open('https://lucky.clover.finance/')}
+                onClick={() => window.open('https://lucky.clover.finance/nft?type=clover')}
               >
-                Learn more
+                Stake now
               </LearnMore>
               <CloseReminder
                 src="/images/close.svg"
