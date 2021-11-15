@@ -66,7 +66,6 @@ export const SectionPitch = () => {
       {!isSakura && initialSlide && (
         <SwipeCustomizer>
           <Swiper
-            onInit={() => {console.log(navigator)}}
             initialSlide={initialSlide}
             navigation={true}
             pagination={true}
