@@ -33,18 +33,18 @@ const SakuraCopyTwo = {
 };
 const CloverCopyOne = {
   title: "Polkadot Parachain Auction",
-  body: "Read about things you should know about the Polkadot Parachain Auction.",
-  linkName: "Go To Outline Article",
+  body: "Starting reward rate is 1 DOT = 100 CLV. Reward rate will change gradually based on total number of DOT contribution as Crowdloan proceeds. Receive 28% of your CLV token immedately after Clover secures a parachain slot, remaining unlocked linearly in 23 months.",
+  linkName: "",
   linkHref:
     "https://docs.clover.finance/parachain-auction/about-polkadot-parachain-auction",
-  stripe: "Dot Auction",
+  stripe: "AUCTION REWARD",
 };
 const CloverCopyTwo = {
   title: "Parachain Crowdloan Offering",
-  body: "Stay Tuned for our upcoming Polkadot Parachain Crowdloan Reward information. ",
+  body: "In additional to receiving the standard reward, users who staked DOT for CLV will also enter a free lucky draw to our NFT Gachapon which contains potential prizes of 40,000,000 CLV.",
   linkName: "Join Crowdloan Now",
   linkHref: "https://lucky.clover.finance/",
-  stripe: "Support CLV",
+  stripe: "40M BONUS REWARD",
 };
 
 export const SectionArticles = () => {

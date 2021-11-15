@@ -34,9 +34,9 @@ const ReminderIcon = styled.img`
 
 const ReminderWordDesk = styled.span`
   font-weight: 500;
-  line-height: 21px;
+  line-height: 19px;
   color: ${(props) => props.theme.colors.HEADER};
-  font-size: 18px;
+  font-size: 16px;
   max-height: 100%;
   ${desktopOnly};
 `;
@@ -52,25 +52,21 @@ const ReminderWordMobile = styled.span`
 
 const LearnMore = styled.span`
   display: inline-block;
-  padding: 0 10px;
+  padding: 10px 20px;
   min-width: fit-content;
-  height: 27px;
-  line-height: 24px;
   text-align: center;
-  font-weight: 500;
-  font-size: 14px;
-  color: ${(props) => props.theme.colors.HEADER};
-  border-width: 1px;
-  border-style: solid;
-  border-color: ${(props) => props.theme.colors.HEADER};
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 14px;
+  background: #FFFFFF;
+  border: 1px solid #5B1931;
   box-sizing: border-box;
-  border-radius: 24px;
+  border-radius: 20px;
+  color: #000000;
   margin-left: 20px;
   cursor: pointer;
   ${breakpoint(css`
-    padding: 0 5px;
-    height: 23px;
-    line-height: 20px;
+    padding: 5px;
     margin-left: 10px;
     font-size: 12px;
   `)};
@@ -101,10 +97,10 @@ const Header = () => {
             <ReminderContent>
               <ReminderIcon src={louderIcon}></ReminderIcon>
               <ReminderWordDesk>
-                Clover crowdloan is open now.  Support the Clover parachain auction for CLV airdrop and Bonus Rewards.
+                Crowdloan is open now! Stake DOT for CLV to receive standard reward & enter a free draw in a 40,000,000 CLV bonus pool.
               </ReminderWordDesk>
               <ReminderWordMobile>
-                Clover crowdloan is open now.
+                Crowdloan is open now!
               </ReminderWordMobile>
               <LearnMore
                 onClick={() => window.open('https://lucky.clover.finance')}
