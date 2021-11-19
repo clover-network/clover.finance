@@ -162,7 +162,11 @@ const Slide: React.FC<{
               return (
                 <DownloadButton
                   key={i}
-                  onClick={() => window.open(button.url, "_blank")}
+                  onMouseUp={(e) => {
+                    e.stopPropagation()
+                    e.preventDefault()
+                    window.open(button.url, '_blank');
+                  }}
                 >
                   {button.label}
                 </DownloadButton>
@@ -248,9 +252,13 @@ const Items = [
         label: "Download iOS Wallet",
         url: "https://apps.apple.com/app/clover-wallet/id1570072858",
       },
+      // {
+      //   label: "Download Android Wallet",
+      //   url: "https://play.google.com/store/apps/details?id=com.clover.finance.wallet&hl=en_US&gl=US",
+      // },
       {
-        label: "Download Android Wallet",
-        url: "https://play.google.com/store/apps/details?id=com.clover.finance.wallet&hl=en_US&gl=US",
+        label: "Download Android APK",
+        url: "https://github.com/clover-network/clover-multichain-mobile-wallet-release/releases/latest/download/clover.apk",
       },
     ],
   },
