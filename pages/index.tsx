@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { SplashModeContext, SplashPageMode } from "../src/SplashModeContext";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "../src/GlobalStyle";
@@ -8,10 +8,17 @@ import { MenuContextProvider } from "../src/MenuContextProvider";
 
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import Head from "next/head";
+import router, { useRouter } from "next/router";
 
 SwiperCore.use([Navigation, Pagination]);
 
 export default function FirstPost() {
+  const location = useRouter();
+  useEffect(() => {
+    if(window.location.pathname === '/sakura') {
+       router.replace("/sakura.html");
+    }
+  }, [location]);
   return (
     <MenuContextProvider>
       <SplashModeContext.Provider value={SplashPageMode.CLOVER}>
