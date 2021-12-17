@@ -41,7 +41,7 @@ const CloverCopyOne = {
 };
 const CloverCopyTwo = {
   title: "Parachain Crowdloan Offering",
-  body: "In additional to receiving the standard reward, users who staked DOT for CLV will also enter a free lucky draw to our NFT Gachapon which contains potential prizes of 40,000,000 CLV.",
+  body: "In additional to receiving the standard reward, users who staked DOT for CLV through our Clover crowdloan page will also enter a free lucky draw to our NFT Gachapon which contains potential prizes of 40,000,000 CLV.",
   linkName: "Join Crowdloan Now",
   linkHref: "https://lucky.clover.finance/",
   stripe: "40M BONUS REWARD",
