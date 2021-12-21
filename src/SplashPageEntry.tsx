@@ -45,7 +45,7 @@ export const SplashPageEntry: React.FC = () => {
   return (
     <div>
       <LandingContainer>
-        <Header />
+        {/*<Header />*/}
         <Navbar />
 
         <Hero imageUrl={background}>
