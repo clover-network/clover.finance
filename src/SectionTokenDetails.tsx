@@ -75,7 +75,7 @@ const CloverItems = [
   {
     icon: "images/icon-governance.svg",
     title: "Governance",
-    body: "Lock CLV to elect council members and guide the developement through on-chain governance.",
+    body: "Lock CLV to elect council members and guide the development through on-chain governance.",
   },
   {
     icon: "images/icon-valid.svg",
@@ -102,17 +102,17 @@ const SakuraItems = [
   {
     icon: "images/pink-icon-optin.svg",
     title: "Opt-in Fees",
-    body: "Pay gas fee in CLV, or have the option to pay with any network token. ",
+    body: "Pay gas fee in SKU, or have the option to pay with any network token. ",
   },
   {
     icon: "images/pink-icon-governance.svg",
     title: "Governance",
-    body: "Lock CLV to elect council members and guide the developement through on-chain governance.",
+    body: "Lock SKU to elect council members and guide the development through on-chain governance.",
   },
   {
     icon: "images/pink-icon-valid.svg",
     title: "Validation",
-    body: "Stake CLV to validate the network with your validator infrastructure.",
+    body: "Stake SKU to validate the network with your validator infrastructure.",
   },
   {
     icon: "images/pink-icon-treasury.svg",
@@ -122,12 +122,12 @@ const SakuraItems = [
   {
     icon: "images/pink-icon-nomination.svg",
     title: "Nomination",
-    body: "Stake CLV to nominate your own node validator using a single-click deployment.",
+    body: "Stake SKU to nominate your own node validator using a single-click deployment.",
   },
   {
     icon: "images/pink-icon-deploy.svg",
     title: "Deployment",
-    body: "Use CLV to deploy your smart contracts and dApps on Clover.",
+    body: "Use SKU to deploy your smart contracts and dApps on Sakura.",
   },
 ];
 
