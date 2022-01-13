@@ -7,8 +7,8 @@ export const Socials: React.FC<{ className?: string }> = ({ className }) => {
   const mode = useContext(SplashModeContext);
 
   const prefix =
-    mode === SplashPageMode.SAKURA
-      ? "pink-"
+    mode === SplashPageMode.CLOVER
+      ? "black-"
       : "";
 
   return (

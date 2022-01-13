@@ -17,7 +17,7 @@ export const GlobalStyle = createGlobalStyle`
       display: flex;
       flex-direction: column;
       justify-content: center;
-      margin: 0 max(calc((100vw - 1800px)/2), 0px);
+      //margin: 0 max(calc((100vw - 1800px)/2), 0px);
     }
   }
   
