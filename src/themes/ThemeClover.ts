@@ -8,6 +8,7 @@ export const ThemeClover: DefaultTheme = {
     TITLE: "#FFFFFF",
     SUBTITLE: "#FFFFFF",
     BODY: "#C4C4C4",
+    BAR: "#01E493",
     ACCENT: "#06E594",
     BACKGROUND: "#000000",
     NEUTRAL: "#FFFFFF",
@@ -17,6 +18,8 @@ export const ThemeClover: DefaultTheme = {
     HEADER: "#000000",
     HEADERBACK: "#06E594",
     EMAIL_US: "#06E594",
+    YELLOW_BG: "#FEFFCA",
+    PINK_BG: "#EDF3FF",
   },
   fontSizes: {
     TITLE: "48px",

@@ -1,53 +1,80 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+
 import { SplashModeContext, SplashPageMode } from "../src/SplashModeContext";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "../src/GlobalStyle";
-import { SplashPageEntry } from "../src/SplashPageEntry";
+// import { Reward } from "../src/reward";
+// import { SupportClover } from "../src/clover/SupportClover";
 import { ThemeClover } from "../src/themes/ThemeClover";
-import { MenuContextProvider } from "../src/MenuContextProvider";
-
-import SwiperCore, { Navigation, Pagination } from "swiper";
-import Head from "next/head";
-import router, { useRouter } from "next/router";
-
-SwiperCore.use([Navigation, Pagination]);
+import { DefaultHead } from "../src/DefaultHead";
+import { useRouter } from "next/router";
+import Header from "../src/components/Header";
+import { SplashPageEntry } from '../src/SplashPageEntry';
+import { CloverChain } from '../src/CloverChain';
+import { Wallet } from '../src/Wallet';
+import { AboutUs } from '../src/AboutUs';
+import { AppBase } from '../src/layout/AppBase/AppBase';
+import store from '../src/state';
+import { Provider } from 'react-redux';
+import { t } from '../src/i18n/intl';
 
 export default function FirstPost() {
+  const navList = [
+    {
+      name: t('cloverChain'),
+      path: "/",
+    },
+    {
+      name: t('wallet'),
+      path: "/?type=wallet",
+    },
+    {
+      name: t('aboutUs'),
+      path: "/?type=aboutUs",
+    },
+  ];
+  const [selectTab, setSelectTab] = useState({ name: "", path: "" });
   const location = useRouter();
+
   useEffect(() => {
-    if(window.location.pathname === '/sakura') {
-       router.replace("/sakura.html");
+    const routeSearch = window.location.search;
+    switch (routeSearch) {
+      case "":
+        setSelectTab(navList[0]);
+        break;
+      case "?type=wallet":
+        setSelectTab(navList[1]);
+        break;
+      case "?type=aboutUs":
+        setSelectTab(navList[2]);
+        break;
+      default:
+        // router.replace("/");
+        setSelectTab(navList[0]);
+        break;
     }
   }, [location]);
+  const changeTab = (tab: any) => {
+    location.push(tab.path, undefined, { shallow: true });
+    setSelectTab(tab);
+  };
+
   return (
-    <MenuContextProvider>
-      <SplashModeContext.Provider value={SplashPageMode.CLOVER}>
-        <Head>
-          <title>Clover - Cross-chain DeFi Interoperability</title>
-          <meta
-            name="viewport"
-            content="initial-scale=1.0, width=device-width"
-          />
-          <meta
-            name="description"
-            content="initial-scale=1.0, width=device-width"
-          />
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossOrigin={"true"}
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-            rel="stylesheet"
-          />
-        </Head>
-        <ThemeProvider theme={ThemeClover}>
+    <SplashModeContext.Provider value={SplashPageMode.CLOVER}>
+      <Provider store={store}>
+        <AppBase>
+          <DefaultHead />
           <GlobalStyle />
-          <SplashPageEntry />
-        </ThemeProvider>
-      </SplashModeContext.Provider>
-    </MenuContextProvider>
+          <Header
+            navList={navList}
+            currentTab={selectTab}
+            handleChange={(tab: any) => changeTab(tab)}
+          />
+          {selectTab.name === t('cloverChain') && <CloverChain />}
+          {selectTab.name === t('wallet') && <Wallet />}
+          {selectTab.name === t('aboutUs') && <AboutUs />}
+        </AppBase>
+      </Provider>
+    </SplashModeContext.Provider>
   );
 }

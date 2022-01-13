@@ -113,9 +113,13 @@ export const HorizontallyCentered = styled.div`
   align-items: center;
 `;
 
-export const CenteredTitle = styled(Title)`
-  margin-left: auto;
-  margin-right: auto;
+export const CenteredTitle = styled.div`
+  font-weight: bold;
+  font-size: 50px;
+  line-height: 61px;
+  display: flex;
+  align-items: center;
+  color: ${(props) => props.theme.colors.BACKGROUND};
 `;
 
 export const CenteredSubtitle = styled(Subtitle)`

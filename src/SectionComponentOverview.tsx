@@ -10,28 +10,22 @@ import {
 } from "./CloverLibrary";
 import React, { useContext, useEffect, useState } from "react";
 import styled, { css } from "styled-components";
-import { SplashModeContext, SplashPageMode } from "./SplashModeContext";
 import { AnchorLinkIds } from "./AnchorLinkIds";
-import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import SwiperCore, { Pagination } from "swiper";
 import { breakpoint } from "./mixins/breakpoint";
+import { t } from './i18n/intl';
+
 SwiperCore.use([Pagination]);
 
 export const SectionComponentOverview = () => {
-  const mode = useContext(SplashModeContext);
-
-  const title = mode === SplashPageMode.SAKURA ? "What if..." : "Clover is...";
-
-  const items = mode === SplashPageMode.SAKURA ? SakuraItems : CloverItems;
-
-  const typeWriterTexts =
-    mode === SplashPageMode.SAKURA ? SakuraLines : CloverLines;
+  const typeWriterTexts = CloverLines;
 
   const [typeWriterInProgressText, setTypeWriterProgressText] = useState("");
   const [showCaret, setShowCaret] = useState(true);
+  const [selectIndex, setSelectIndex] = useState(0);
 
   useEffect(() => {
     let currentLength = 0;
@@ -68,45 +62,72 @@ export const SectionComponentOverview = () => {
   return (
     <SplashSection>
       <DivContainer id={AnchorLinkIds.COMPONENTS}>
-        {mode === SplashPageMode.SAKURA && (
-          <LeftAlignTitle>
-            <SpanAccent>{title}</SpanAccent>
-          </LeftAlignTitle>
-        )}
-        {mode === SplashPageMode.CLOVER && (
-          <LeftAlignTitle>{title}</LeftAlignTitle>
-        )}
-
-        {mode === SplashPageMode.SAKURA && (
-          <SectionSubtitle>
+        <LeftAlignTitle>{t('cloverIs')}</LeftAlignTitle>
+        <SectionSubtitle>
+          <WriteText>
             {typeWriterInProgressText}
             {showCaret && <Caret>|</Caret>}
-          </SectionSubtitle>
-        )}
-        {mode === SplashPageMode.CLOVER && (
-          <SectionSubtitle>
-            <SpanAccent>
-              {typeWriterInProgressText}
-              {showCaret && <Caret>|</Caret>}
-            </SpanAccent>
-          </SectionSubtitle>
-        )}
-        <MyGrid>
-          {items.map((item, i) => (
-            <Item key={i} {...item} />
-          ))}
-        </MyGrid>
-        <Carousel>
-          <Swiper pagination={true} autoHeight={true}>
-            {items.map((item, i) => {
+          </WriteText>
+        </SectionSubtitle>
+        <ContentWrapper>
+          <ContentLeft>
+            <img
+              src='/images/arrow_up.svg'
+              alt=''
+              onMouseEnter={(e: any) => {
+                e.stopPropagation();
+                e.target.setAttribute("src", "/images/arrow_up_hover.svg");
+              }}
+              onMouseLeave={(e: any) => {
+                e.stopPropagation();
+                e.target.setAttribute("src", "/images/arrow_up.svg");
+              }}
+              onClick={() => {
+                if (selectIndex === 0) {
+                  setSelectIndex(CloverItems.length-1)
+                } else {
+                  setSelectIndex(selectIndex - 1)
+                }
+              }}
+            />
+            {CloverItems.map((item, i) => {
               return (
-                <SwiperSlide key={i}>
-                  <Item {...item} />
-                </SwiperSlide>
-              );
+                <ItemTitle
+                  className={i === selectIndex ? 'selected' : ''}
+                  onClick={() => setSelectIndex(i)}
+                >
+                  {item.title}
+                </ItemTitle>
+              )
             })}
-          </Swiper>
-        </Carousel>
+            <img
+              src='/images/arrow_down.svg'
+              alt=''
+              onMouseEnter={(e: any) => {
+                e.stopPropagation();
+                e.target.setAttribute("src", "/images/arrow_down_hover.svg");
+              }}
+              onMouseLeave={(e: any) => {
+                e.stopPropagation();
+                e.target.setAttribute("src", "/images/arrow_down.svg");
+              }}
+              onClick={() => {
+                if (selectIndex === CloverItems.length-1) {
+                  setSelectIndex(0)
+                } else {
+                  setSelectIndex(selectIndex + 1)
+                }
+              }}
+            />
+          </ContentLeft>
+          <ContentRight>
+            <img src={CloverItems[selectIndex].logo} alt='' />
+            <TextContent>
+              <h3>{CloverItems[selectIndex].title}</h3>
+              <span>{CloverItems[selectIndex].body}</span>
+            </TextContent>
+          </ContentRight>
+        </ContentWrapper>
       </DivContainer>
     </SplashSection>
   );
@@ -119,80 +140,40 @@ interface ItemInfo {
 }
 
 const CloverLines = [
-  "Layer 1 blockchain, Smart contract platform, Multi-chain Defi hub, Cross-chain Wallet",
-  "Everything!",
-];
-
-const SakuraLines = [
-  "You can earn passive income by deploying smart contracts?",
-  "You can easily build cross-chain swaps, vaults and yield earning strategies?",
-  "You can pay gas fee in any token?",
-  "You can pay a lower gas fee as a frequent DeFi protocol user?",
+  t('cloverLines1'),
+  t('cloverLines2'),
 ];
 
 const CloverItems = [
   {
-    title: "EVM Compatibility",
-    body: "Clover offers seamless multi-chain indexing across Bitcoin, Ethereum, Binance Smart Chain, and Polkadot. Users can search through blocks, transactions, and accounts in all-in one streamlined environment.",
+    title: t('eVMCompatibility'),
+    body: t('eVMCompatibilityHint'),
     logo: "images/logo-evm.svg",
   },
   {
-    title: "Gas-fee Redistribution",
-    body: "Clover incentivizes dApp builders by automatically sharing a percentage of the transaction fee’s with them. The redistribution will ensure a vibrant developer community and foster an innovative DeFi ecosystem on Sakura and Clover.",
+    title: t('gasFeeRedistribution'),
+    body: t('gasFeeRedistributionHint'),
     logo: "images/logo-gas-fee.svg",
   },
   {
-    title: "Gasless End-user Experience",
-    body: "Clover reinvented feeconomics to simplify DeFi user experience. Clover’s smart relayer will act on behalf of the sender so that relayers can cover gas fees with the same token from the amount users transact, without depending on base currency like ETH. Transaction fees will be deducted automatically from the asset the user is transacting with.",
+    title: t('gasLessEndUserExperience'),
+    body: t('gasLessEndUserExperienceHint'),
     logo: "images/logo-gasless.svg",
   },
   {
-    title: "Identity-based Fee Schedule",
-    body: "Clover’s Dynamic Fee Schedule is a brand-new gas calculation method which allows Clover users to get gas discounts proportionally to the frequency of their network activity. Users with less interaction pay more gas, and users with more interactions will less gas over time according to a usage curve.",
+    title: t('identityBasedFeeSchedule'),
+    body: t('identityBasedFeeScheduleHint'),
     logo: "images/logo-idbased.svg",
   },
   {
-    title: "Cross-chain Interactions",
-    body: "Clover comes with various open-source wallet implementations for interacting with cross-chain dApps without navigating between Polkadot based and Ethereum based networks. Users can seamlessly send, receive, wrap and unwrap cross-chain assets across Ethereum and Polkadot trustlessly.",
+    title: t('crossChainInteractions'),
+    body: t('crossChainInteractionsHint'),
     logo: "images/logo-cc.svg",
   },
   {
-    title: "Cross-chain Explorer",
-    body: "Clover offers seamless multi-chain indexing across Bitcoin, Ethereum, Binance Smart Chain, and Polkadot. Users can search through blocks, transactions, and accounts in all-in one streamlined environment.",
+    title: t('crossChainExplorer'),
+    body: t('crossChainExplorerHint'),
     logo: "images/logo-ccexplorer.svg",
-  },
-];
-
-const SakuraItems = [
-  {
-    title: "EVM Compatibility",
-    body: "Clover offers seamless multi-chain indexing across Bitcoin, Ethereum, Binance Smart Chain, and Polkadot. Users can search through blocks, transactions, and accounts in all-in one streamlined environment.",
-    logo: "images/logo-pink-evm.svg",
-  },
-  {
-    title: "Gas-fee Redistribution",
-    body: "Clover incentivizes dApp builders by automatically sharing a percentage of the transaction fee’s with them. The redistribution will ensure a vibrant developer community and foster an innovative DeFi ecosystem on Sakura and Clover.",
-    logo: "images/logo-pink-gasfee.svg",
-  },
-  {
-    title: "Gasless End-user Experience",
-    body: "Clover reinvented feeconomics to simplify DeFi user experience. Clover’s smart relayer will act on behalf of the sender so that relayers can cover gas fees with the same token from the amount users transact, without depending on base currency like ETH. Transaction fees will be deducted automatically from the asset the user is transacting with.",
-    logo: "images/logo-pink-enduser.svg",
-  },
-  {
-    title: "Identity-based Fee Schedule",
-    body: "Clover’s Dynamic Fee Schedule is a brand-new gas calculation method which allows Clover users to get gas discounts proportionally to the frequency of their network activity. Users with less interaction pay more gas, and users with more interactions will less gas over time according to a usage curve.",
-    logo: "images/logo-pink-id.svg",
-  },
-  {
-    title: "Cross-chain Interactions",
-    body: "Clover comes with various open-source wallet implementations for interacting with cross-chain dApps without navigating between Polkadot based and Ethereum based networks. Users can seamlessly send, receive, wrap and unwrap cross-chain assets across Ethereum and Polkadot trustlessly.",
-    logo: "images/logo-pink-cc.svg",
-  },
-  {
-    title: "Cross-chain Explorer",
-    body: "Clover offers seamless multi-chain indexing across Bitcoin, Ethereum, Binance Smart Chain, and Polkadot. Users can search through blocks, transactions, and accounts in all-in one streamlined environment.",
-    logo: "images/logo-pink-ccexplorer.svg",
   },
 ];
 
@@ -236,6 +217,9 @@ const CardTitleHover = styled(Subtitle)`
 `;
 const CardbodyHover = styled(BodyText)`
   text-align: justify;
+`;
+const WriteText = styled(SpanAccent)`
+  text-transform: uppercase;
 `;
 
 const Carousel = styled.div`
@@ -382,4 +366,64 @@ const MyGrid = styled(Grid)`
   ${breakpoint(css`
     display: none;
   `)};
+`;
+
+const ContentWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 72px 0;
+`;
+
+const ContentLeft = styled.div`
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  margin-right: 130px;
+  img {
+    width: 10px;
+    margin-bottom: 29px;
+    cursor: pointer;
+  }
+`;
+
+const ContentRight = styled.div`
+  display: flex;
+  align-items: center;
+  img {
+    width: 160px;
+    margin-right: 78px;
+  }
+`;
+
+const TextContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  h3 {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 16px;
+    color: ${(props) => props.theme.colors.ACCENT};
+  }
+  span {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    color: ${(props) => props.theme.colors.BODY};
+  }
+`;
+
+const ItemTitle = styled.div`
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+  color: ${(props) => props.theme.colors.TITLE};
+  opacity: 0.4;
+  margin-bottom: 29px;
+  cursor: pointer;
+  
+  &.selected {
+    opacity: 1!important;
+  }
 `;

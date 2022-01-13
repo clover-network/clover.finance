@@ -13,6 +13,7 @@ declare module "styled-components" {
       SUBTITLE: string;
       BODY: string;
       ACCENT: string;
+      BAR: string;
       BACKGROUND: string;
       ECOSYSTEM_BACKGROUND: string;
       SECONDARY: string;
@@ -20,6 +21,8 @@ declare module "styled-components" {
       HEADER: string;
       HEADERBACK: string;
       EMAIL_US: string;
+      YELLOW_BG: string;
+      PINK_BG: string;
     };
     fontSizes: {
       // used for titles
