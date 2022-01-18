@@ -1,24 +1,15 @@
-import React, { useContext, useEffect, useState } from "react";
+import React from "react";
 import styled, { css } from "styled-components";
 import { Spacer, SpacerSection, Title } from "./CloverLibrary";
-import { SplashModeContext, SplashPageMode } from "./SplashModeContext";
-import { PriceStats } from "./PriceStats";
-import { Navbar } from "./navbar";
 import { SectionEcosystem } from "./SectionEcosystem";
-import { SectionTokenDetails } from "./SectionTokenDetails";
 import { SectionComponentOverview } from "./SectionComponentOverview";
 import { DappInteractionProtocol } from "./DappInteractionProtocol";
 import { PlatformInfrastructure } from "./PlatformInfrastructure";
-import { SectionPitch } from "./SectionPitch";
-import { SectionDNA } from "./SectionDNA";
-import { SectionBlog } from "./SectionBlog";
 import { SectionFooter } from "./SectionFooter";
-import { SectionArticles } from "./SectionArticles";
 import { HorizontalGutters } from "./mixins/HorizontalGutters";
 import { breakpoint } from "./mixins/breakpoint";
 import { Socials } from "./Socials";
 import { AnchorLinkIds } from "./AnchorLinkIds";
-import axios from "axios";
 import { t } from './i18n/intl';
 
 export const CloverChain: React.FC = () => {
@@ -35,6 +26,10 @@ export const CloverChain: React.FC = () => {
   //       setAssetPrice(tempObj);
   //     })
   // }, [])
+  const CloverLines = [
+    t('cloverLines1'),
+    t('cloverLines2'),
+  ];
   return (
     <div>
       <LandingContainer>
@@ -61,14 +56,10 @@ export const CloverChain: React.FC = () => {
         </Hero>
       </LandingContainer>
       <SpacerSection />
-      <SectionComponentOverview />
+      <SectionComponentOverview cloverLines={CloverLines} />
       <DappInteractionProtocol />
       <PlatformInfrastructure />
       <SectionEcosystem />
-      {/*<SpacerSection />*/}
-      {/*<SectionDNA />*/}
-      {/*<SpacerSection />*/}
-      {/*<SectionBlog />*/}
       <SectionFooter />
     </div>
   );
@@ -80,6 +71,10 @@ const ContentWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-left: 128px;
+  ${breakpoint(css`
+    flex-direction: column;
+    margin-left: 0;
+  `)};
 `;
 
 
@@ -104,6 +99,17 @@ const TextWrapper = styled.div`
     font-size: 18px;
     line-height: 28px;
   }
+
+  ${breakpoint(css`
+    h3 {
+      font-size: 32px;
+      line-height: 40px;
+    }
+    span {
+      font-size: 15px;
+      line-height: 24px;
+    }
+  `)};
 `;
 
 const CaptionContainer = styled.div`
@@ -118,15 +124,14 @@ const ImgGoDown = styled.img`
   width: 32px;
   height: 32px;
   object-fit: contain;
-
-  ${breakpoint(css`
-    display: none;
-  `)};
 `;
 
 const FloatingLeft = styled.div`
   position: absolute;
   left: 0;
+  ${breakpoint(css`
+    display: none;
+  `)};
 `;
 
 const VerticalSocials = styled(Socials)`
@@ -149,15 +154,12 @@ const Tagline = styled(Title)`
 `;
 
 const ImgMainLogo = styled.img`
-  width: 30vh;
+  width: 50vh;
   object-fit: contain;
 
   ${breakpoint(css`
-    width: 100px;
-    height: 100px;
-    transform: scale(1.5);
+    width: 100%;
   `)}
-  transform: scale(1.5);
 `;
 
 const ImgWrapper = styled.div`
@@ -166,6 +168,12 @@ const ImgWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  ${breakpoint(css`
+    //width: 100px;
+    //height: 100px;
+    //transform: scale(1.5);
+    margin: 32px 0 24px;
+  `)}
 `;
 
 // hero expand to take up rest of space
@@ -191,10 +199,9 @@ const LandingContainer = styled.div`
   flex-direction: column;
   background: ${(props) => props.theme.colors.YELLOW_BG};
   ${breakpoint(css`
-    //height: unset;
     height: unset;
-    //min-height: unset;
     min-height: 120vw;
+    padding: 48px 0;
   `)}
 `;
 

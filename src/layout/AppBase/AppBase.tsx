@@ -14,13 +14,11 @@ export const AppBase = ({ children }: IAppBaseProps) => {
   const { locale } = useLocale();
 
   useEffect(() => {
-    console.log(locale)
     setInitDone(false);
     intl
       .init({
         currentLocale: locale,
         locales,
-        // fallbackLocale: locale,
       })
       .then(() => {
         setInitDone(true);
@@ -29,8 +27,7 @@ export const AppBase = ({ children }: IAppBaseProps) => {
 
   return (
     <ThemeProvider theme={ThemeClover}>
-      {/*{initDone && children}*/}
-      {children}
+      {initDone && children}
     </ThemeProvider>
   );
 };

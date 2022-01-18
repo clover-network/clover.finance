@@ -80,6 +80,9 @@ const BottomLeft = styled(Corner)`
   background-position: left bottom;
   width: 52%;
   height: 80%;
+  ${breakpoint(css`
+    display: none;
+  `)};
 `;
 
 // full height, on right side when in desktop

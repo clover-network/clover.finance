@@ -128,6 +128,6 @@ export const GlobalStyle = createGlobalStyle`
 
  .swiper-pagination-bullet-active{
    opacity: 1.0;
-   background: ${(props) => props.theme.colors.ACCENT};
+   background: ${(props) => props.theme.colors.TITLE};
  }
 `;

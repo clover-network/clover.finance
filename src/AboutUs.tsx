@@ -16,7 +16,6 @@ export const AboutUs: React.FC = () => {
       <LandingContainer>
         <Hero imageUrl=''>
           <ContentWrapper>
-            <img src='images/iphone.png' alt='' />
             <SpecialSpacer />
             <TextWrapper>
               <h4>{t('cloverDNA')}</h4>
@@ -32,8 +31,7 @@ export const AboutUs: React.FC = () => {
                 </div>
               </GetTheClover>
             </TextWrapper>
-            <ImgWrapper>
-            </ImgWrapper>
+            <img src='images/iphone.png' alt='' />
           </ContentWrapper>
           <FloatingLeft>
             <VerticalSocials />
@@ -62,6 +60,17 @@ const ContentWrapper = styled.div`
     position: absolute;
     top: 180px;
   }
+  ${breakpoint(css`
+    flex-direction: column;
+    margin-left: 0;
+    padding: 0;
+    & > img {
+      width: 340px;
+      position: relative;
+      bottom: -100px;
+      margin-top: -150px;
+    }
+  `)};
 `;
 
 const TextWrapper = styled.div`
@@ -84,7 +93,7 @@ const TextWrapper = styled.div`
     font-size: 52px;
     line-height: 60px;
     text-transform: uppercase;
-    color: ${(props) => props.theme.colors.EMAIL_US};
+    color: ${(props) => props.theme.colors.ACCENT};
     margin-bottom: 24px;
   }
   
@@ -93,6 +102,20 @@ const TextWrapper = styled.div`
     font-size: 18px;
     line-height: 28px;
   }
+  ${breakpoint(css`
+    h4 {
+      font-size: 18px;
+      line-height: 24px;
+    }
+    h3 {
+      font-size: 32px;
+      line-height: 40px;
+    }
+    span {
+      font-size: 15px;
+      line-height: 24px;
+    }
+  `)};
 `;
 
 const GetTheClover = styled.div`
@@ -116,6 +139,16 @@ const GetTheClover = styled.div`
       margin-right: 32px;
     }
   }
+
+  ${breakpoint(css`
+    margin-top: 32px;
+
+    div {
+      img {
+        height: 12px;
+      }
+    }
+  `)};
 `
 
 const FloatingLeft = styled.div`
@@ -166,14 +199,16 @@ const LandingContainer = styled.div`
   flex-direction: column;
   background: ${(props) => props.theme.colors.PINK_BG};
   ${breakpoint(css`
-    //height: unset;
     height: unset;
-    //min-height: unset;
     min-height: 120vw;
+    padding: 48px 0;
   `)}
 `;
 
 // extra space after certain sections on mobile
 const SpecialSpacer = styled(SpacerSection)`
  width: 576px;
+  ${breakpoint(css`
+    display: none;
+  `)}
 `;

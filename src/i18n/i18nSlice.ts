@@ -10,7 +10,7 @@ export interface I18nSlice {
 }
 
 const initialState: I18nSlice = {
-  locale: Locale.zh,
+  locale: Locale.en,
 };
 
 export const i18nSlice = createSlice({
