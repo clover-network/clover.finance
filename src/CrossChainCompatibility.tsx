@@ -1,14 +1,6 @@
 import { SplashSection } from "./SplashSection";
-import {
-  BodyText,
-  Grid,
-  GridItem,
-  SpanAccent,
-  Subtitle,
-  LeftAlignTitle,
-  SectionSubtitle, SpacerSection,
-} from './CloverLibrary';
-import React, { useContext, useEffect, useState } from "react";
+import { SpacerSection } from './CloverLibrary';
+import React, { useState } from "react";
 import styled, { css, useTheme } from 'styled-components';
 import { AnchorLinkIds } from "./AnchorLinkIds";
 import "swiper/css";
@@ -171,7 +163,6 @@ const Slide: React.FC<{
 
 const DivSlideContainer = styled.div`
   display: flex;
-  //flex-direction: column;
   justify-content: flex-start;
   align-items: flex-end;
   height: 100%;
@@ -227,13 +218,6 @@ const SwipeCustomizer = styled.div`
     opacity: 1.0;
     background: ${(props) => props.theme.colors.BACKGROUND}!important;
   }
-
-  //.swiper-autoheight, .swiper-autoheight .swiper-slide {
-  //  height: unset;
-  //}
-  //.swiper-slide .swiper-slide-active {
-  //  height: 100%!important;
-  //}
 `;
 
 const SwipeTabs = styled.div`

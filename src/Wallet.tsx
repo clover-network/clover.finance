@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { Spacer, SpacerSection, Title } from "./CloverLibrary";
+import { Spacer, Title } from "./CloverLibrary";
 import { SectionFooter } from "./SectionFooter";
 import { HorizontalGutters } from "./mixins/HorizontalGutters";
 import { breakpoint } from "./mixins/breakpoint";
@@ -201,18 +201,6 @@ const Tagline = styled(Title)`
   text-transform: uppercase;
 `;
 
-const ImgMainLogo = styled.img`
-  width: 30vh;
-  object-fit: contain;
-
-  ${breakpoint(css`
-    width: 100px;
-    height: 100px;
-    transform: scale(1.5);
-  `)}
-  transform: scale(1.5);
-`;
-
 const ImgWrapper = styled.div`
   flex: 1;
   display: flex;
@@ -250,12 +238,5 @@ const LandingContainer = styled.div`
     height: unset;
     min-height: 120vw;
     padding: 48px 0 0;
-  `)}
-`;
-
-// extra space after certain sections on mobile
-const SpecialSpacer = styled(SpacerSection)`
-  ${breakpoint(css`
-    height: 96px;
   `)}
 `;

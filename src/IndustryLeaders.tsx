@@ -1,5 +1,5 @@
 import { SplashSection } from "./SplashSection";
-import { Grid, SpanAccent } from './CloverLibrary';
+import { Grid } from './CloverLibrary';
 import React from "react";
 import styled, { css, useTheme } from 'styled-components';
 import { AnchorLinkIds } from "./AnchorLinkIds";
@@ -128,9 +128,6 @@ const ContentRight = styled(Grid)`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-  }
-
-
   `)};
 `;
 

@@ -6,16 +6,10 @@ import {
   Subtitle,
 } from "./CloverLibrary";
 import React, { useContext } from "react";
-import styled, { css, useTheme } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { SplashModeContext, SplashPageMode } from "./SplashModeContext";
 import { breakpoint } from "./mixins/breakpoint";
-import { Socials } from "./Socials";
 import { t } from './i18n/intl';
-
-const modeToBackgroundImage = {
-  [SplashPageMode.CLOVER]: "images/bg-footer.svg",
-  [SplashPageMode.SAKURA]: "images/sakura-footer-bg.svg",
-};
 
 export const SectionFooter = () => {
   const mode = useContext(SplashModeContext);
