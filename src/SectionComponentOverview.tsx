@@ -6,22 +6,57 @@ import {
   SpanAccent,
   Subtitle,
   LeftAlignTitle,
-  SectionSubtitle,
-} from "./CloverLibrary";
-import React, { useContext, useEffect, useState } from "react";
+  SectionSubtitle, Row, Col,
+} from './CloverLibrary';
+import React, { useEffect, useState } from "react";
 import styled, { css } from "styled-components";
 import { AnchorLinkIds } from "./AnchorLinkIds";
 
 import "swiper/css";
 import "swiper/css/pagination";
-import SwiperCore, { Pagination } from "swiper";
 import { breakpoint } from "./mixins/breakpoint";
 import { t } from './i18n/intl';
+import "swiper/css";
+import "swiper/css/navigation";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-SwiperCore.use([Pagination]);
+export const SectionComponentOverview: React.FC<{
+  cloverLines: any;
+}> = ({ cloverLines }) => {
+  const typeWriterTexts = cloverLines;
 
-export const SectionComponentOverview = () => {
-  const typeWriterTexts = CloverLines;
+  const CloverItems = [
+    {
+      title: t('eVMCompatibility'),
+      body: t('eVMCompatibilityHint'),
+      logo: "images/logo-evm.svg",
+    },
+    {
+      title: t('gasFeeRedistribution'),
+      body: t('gasFeeRedistributionHint'),
+      logo: "images/logo-gas-fee.svg",
+    },
+    {
+      title: t('gasLessEndUserExperience'),
+      body: t('gasLessEndUserExperienceHint'),
+      logo: "images/logo-gasless.svg",
+    },
+    {
+      title: t('identityBasedFeeSchedule'),
+      body: t('identityBasedFeeScheduleHint'),
+      logo: "images/logo-idbased.svg",
+    },
+    {
+      title: t('crossChainInteractions'),
+      body: t('crossChainInteractionsHint'),
+      logo: "images/logo-cc.svg",
+    },
+    {
+      title: t('crossChainExplorer'),
+      body: t('crossChainExplorerHint'),
+      logo: "images/logo-ccexplorer.svg",
+    },
+  ];
 
   const [typeWriterInProgressText, setTypeWriterProgressText] = useState("");
   const [showCaret, setShowCaret] = useState(true);
@@ -128,54 +163,65 @@ export const SectionComponentOverview = () => {
             </TextContent>
           </ContentRight>
         </ContentWrapper>
+        <SwipeCustomizer>
+          <Swiper
+            initialSlide={selectIndex}
+            pagination={true}
+            autoHeight={true}
+            onSlideChange={(e) => setSelectIndex(e.activeIndex)}
+          >
+            {CloverItems.map((item, i) => {
+              return (
+                <div>
+                  <SwiperSlide key={i}>
+                    <Slide {...item} />
+                  </SwiperSlide>
+                </div>
+              );
+            })}
+          </Swiper>
+          <TextContent>
+            <h3>{CloverItems[selectIndex].title}</h3>
+            <span>{CloverItems[selectIndex].body}</span>
+          </TextContent>
+        </SwipeCustomizer>
       </DivContainer>
     </SplashSection>
   );
 };
 
-interface ItemInfo {
+const Slide: React.FC<{
   title: string;
   body: string;
   logo: string;
-}
+}> = ({ title, body, logo }) => {
+  return (
+    <DivSlideContainer>
+      <img src={logo} alt='' />
+    </DivSlideContainer>
+  );
+};
 
-const CloverLines = [
-  t('cloverLines1'),
-  t('cloverLines2'),
-];
+const DivSlideContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 50%;
+    margin: 20px 0;
+  }
 
-const CloverItems = [
-  {
-    title: t('eVMCompatibility'),
-    body: t('eVMCompatibilityHint'),
-    logo: "images/logo-evm.svg",
-  },
-  {
-    title: t('gasFeeRedistribution'),
-    body: t('gasFeeRedistributionHint'),
-    logo: "images/logo-gas-fee.svg",
-  },
-  {
-    title: t('gasLessEndUserExperience'),
-    body: t('gasLessEndUserExperienceHint'),
-    logo: "images/logo-gasless.svg",
-  },
-  {
-    title: t('identityBasedFeeSchedule'),
-    body: t('identityBasedFeeScheduleHint'),
-    logo: "images/logo-idbased.svg",
-  },
-  {
-    title: t('crossChainInteractions'),
-    body: t('crossChainInteractionsHint'),
-    logo: "images/logo-cc.svg",
-  },
-  {
-    title: t('crossChainExplorer'),
-    body: t('crossChainExplorerHint'),
-    logo: "images/logo-ccexplorer.svg",
-  },
-];
+  margin-bottom: 30px;
+`;
+
+const SwipeCustomizer = styled.div`
+  display: none;
+  ${breakpoint(css`
+    display: unset;
+    margin-bottom: 48px;
+  `)};
+`;
 
 const Caret = styled.span`
   transform: scaleY(1.5);
@@ -190,27 +236,6 @@ const Caret = styled.span`
 
   opacity: 1;
 `;
-
-const Item: React.FC<ItemInfo> = ({ title, body, logo }) => {
-  return (
-    <CardGridItem>
-      <Card>
-        <Overlay>
-          <OverlayCard>
-            <ImgCard src={logo} />
-            <CardTitle>{title}</CardTitle>
-          </OverlayCard>
-        </Overlay>
-
-        <CardTitleHover>{title}</CardTitleHover>
-        <CardbodyHover>{body}</CardbodyHover>
-        <CardbodyHover as={"div"}>
-          <HrShort />
-        </CardbodyHover>
-      </Card>
-    </CardGridItem>
-  );
-};
 
 const CardTitleHover = styled(Subtitle)`
   text-align: center;
@@ -373,6 +398,9 @@ const ContentWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   margin: 72px 0;
+  ${breakpoint(css`
+    display: none;
+  `)};
 `;
 
 const ContentLeft = styled.div`
@@ -412,6 +440,13 @@ const TextContent = styled.div`
     line-height: 28px;
     color: ${(props) => props.theme.colors.BODY};
   }
+  ${breakpoint(css`
+    margin-top: 20px;
+    h3, span {
+      font-size: 15px;
+      line-height: 24px;
+    }
+  `)};
 `;
 
 const ItemTitle = styled.div`

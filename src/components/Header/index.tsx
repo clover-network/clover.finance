@@ -3,17 +3,21 @@ import styled, { css } from "styled-components";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import NavLink from "react-bootstrap/NavLink";
-import { WrapperDesktopOnly } from "../../CloverLibrary";
+import { WrapperDesktopOnly, WrapperMobileOnly } from '../../CloverLibrary';
 import { breakpoint } from "../../mixins/breakpoint";
 import { t } from '../../i18n/intl';
 import { Locale, setLocale } from '../../i18n/i18nSlice';
 import { useLocale } from '../../i18n/useLocale';
 import store from '../../../src/state';
+import { Socials } from '../../Socials';
 
 const HeaderWrapper = styled.div`
   width: 100%;
   height: 88px;
   background: ${(props) => props.theme.colors.NEUTRAL};
+  ${breakpoint(css`
+    height: 70px;
+  `)};
 `;
 const HeaderContent = styled.div`
   display: flex;
@@ -25,8 +29,13 @@ const HeaderContent = styled.div`
   min-width: 1000px;
   ${breakpoint(css`
     min-width: initial;
+    padding: 25px;
   `)};
 `;
+
+const HeaderIcon = styled.img`
+  width: 20px;
+`
 
 const HeaderDiv = styled.div`
   display: flex;
@@ -35,8 +44,8 @@ const HeaderDiv = styled.div`
   font-size: 30px;
   line-height: 36px;
   ${breakpoint(css`
-    width: 100%;
-    justify-content: center;
+    //width: 100%;
+    //justify-content: center;
   `)};
   img {
     width: 128px;
@@ -142,11 +151,56 @@ const LanguageList = styled.div`
       border: none;
     }
   }
+  ${breakpoint(css`
+    top: 69px;
+    left: 0;
+    border: none;
+    border-radius: 0;
+    div {
+      padding-bottom: 24px;
+      border: none;
+      text-align: left;
+    }
+  `)};
 `
+
+const Navs = styled(LanguageList)`
+  height: calc(100vh - 68px);
+`
+
+const VerticalSocials = styled(Socials)`
+  border-top: 1px solid #c4c4c4 !important;
+  padding-top: 24px!important;
+  img {
+    width: 32px;
+  }
+`;
+
+const Languages: React.FC<{
+  hideShowList: () => void;
+}> = ({ hideShowList }) => {
+  return (
+    <LanguageList>
+      <div
+        onClick={() => {
+          hideShowList()
+          store.dispatch(setLocale(Locale.en))
+        }}
+      >ENGLISH</div>
+      <div
+        onClick={() => {
+          hideShowList()
+          store.dispatch(setLocale(Locale.zh))
+        }}
+      >汉语</div>
+    </LanguageList>
+  )
+}
 
 export default function Header(props: any): ReactElement {
   const { navList, currentTab, handleChange } = props;
   const [showList, setShowList] = useState(false);
+  const [showNavs, setShowNavs] = useState(false);
 
   const openUrl = (url: string) => {
     window.open(url, '_blank');
@@ -155,9 +209,23 @@ export default function Header(props: any): ReactElement {
   return (
     <HeaderWrapper>
       <HeaderContent>
+        <WrapperMobileOnly>
+          <HeaderIcon
+            src="images/language_icon.svg"
+            alt=""
+            onClick={() => setShowList(!showList)}
+          />
+        </WrapperMobileOnly>
         <HeaderDiv>
           <img src="images/Logo.svg" alt="" />
         </HeaderDiv>
+        <WrapperMobileOnly>
+          <HeaderIcon
+            src={showNavs ? 'images/close_icon.svg' : 'images/menu_icon.svg'}
+            alt=""
+            onClick={() => setShowNavs(!showNavs)}
+          />
+        </WrapperMobileOnly>
         <WrapperDesktopOnly>
           <HeaderRight>
             <HeaderDiv>
@@ -187,24 +255,32 @@ export default function Header(props: any): ReactElement {
                 alt=""
                 onClick={() => setShowList(!showList)}
               />
-              {showList && (
-                <LanguageList>
-                  <div
-                    onClick={() => {
-                      store.dispatch(setLocale(Locale.en))
-                    }}
-                  >ENGLISH</div>
-                  <div
-                    onClick={() => {
-                      store.dispatch(setLocale(Locale.zh))
-                    }}
-                  >汉语</div>
-                </LanguageList>
-              )}
+              {showList && <Languages hideShowList={() => setShowList(false)} />}
             </Language>
           </HeaderRight>
         </WrapperDesktopOnly>
       </HeaderContent>
+      <WrapperMobileOnly>
+        {showList && <Languages hideShowList={() => setShowList(false)} />}
+      </WrapperMobileOnly>
+      <WrapperMobileOnly>
+        {showNavs && (
+          <Navs>
+            {navList.map((nav: any) => (
+              <div
+                onClick={() => {
+                  handleChange(nav);
+                  setShowNavs(false)
+                }}
+                key={nav.name}
+              >
+                {nav.name}
+              </div>
+            ))}
+            <VerticalSocials />
+          </Navs>
+        )}
+      </WrapperMobileOnly>
     </HeaderWrapper>
   );
 }

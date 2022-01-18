@@ -16,15 +16,15 @@ export const SectionEcosystem = () => {
   return (
     <SplashSection
       backgroundColor={theme.colors.ACCENT}
-      bottomLeftBackground='images/code-snippet.png'
     >
       <DivContainer id={AnchorLinkIds.ECOSYSTEM}>
-        <CenteredTitle>
+        <EcosystemTitle>
           {t('buildOnClover')}
-        </CenteredTitle>
-        <SpacerVertical height={"48px"} />
-        <Row>
-          <Col></Col>
+        </EcosystemTitle>
+        <EcosystemContent>
+          <EcosystemLeft>
+            <img src='images/code-snippet.png' alt='' />
+          </EcosystemLeft>
           <Col>
             <Col>
               <Subtitle>{t('forBuilders')}</Subtitle>
@@ -98,11 +98,57 @@ export const SectionEcosystem = () => {
               </DivButtonRow>
             </Col>
           </Col>
-        </Row>
+          <EcosystemBottom>
+            <img src='images/code-snippet.png' alt='' />
+          </EcosystemBottom>
+        </EcosystemContent>
       </DivContainer>
     </SplashSection>
   );
 };
+
+const EcosystemTitle = styled(CenteredTitle)`
+  ${breakpoint(css`
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 36px;
+  `)};
+`
+
+const EcosystemContent = styled(Row)`
+  margin-top: 78px;
+  ${breakpoint(css`
+    margin-top: 0;
+  `)};
+`
+
+const EcosystemLeft = styled.div`
+  align-items: flex-end;
+  justify-content: flex-end;
+  display: flex;
+  width: 50%;
+  position: relative;
+  left: -100px;
+  margin-right: -100px;
+  
+  ${breakpoint(css`
+    display: none;
+  `)};
+`
+
+const EcosystemBottom = styled.div`
+  display: none;
+
+  ${breakpoint(css`
+    display: flex;
+    position: relative;
+    left: -24px;
+    
+    img {
+      width: 110%;
+    }
+  `)};
+`
 
 const DivButtonRow = styled.div`
   display: flex;
@@ -115,6 +161,11 @@ const DivButtonRow = styled.div`
 
   margin-left: -10px;
   margin-bottom: 38px;
+
+  ${breakpoint(css`
+    flex-direction: column;
+    margin: 0;
+  `)};
 `;
 
 const WhiteButton = styled.div`
@@ -132,6 +183,11 @@ const WhiteButton = styled.div`
   cursor: pointer;
   max-width: 167px;
   color: ${(props) => props.theme.colors.BACKGROUND};
+  ${breakpoint(css`
+    width: 100%;
+    max-width: unset;
+    margin: 0 0 24px
+  `)};
 `
 
 const Subtitle = styled.div`
@@ -140,6 +196,10 @@ const Subtitle = styled.div`
   line-height: 28px;
   margin-bottom: 16px;
   color: ${(props) => props.theme.colors.BACKGROUND};
+  ${breakpoint(css`
+    font-size: 15px;
+    line-height: 24px;
+  `)};
 `
 
 const TextSpan = styled.div`
@@ -147,15 +207,19 @@ const TextSpan = styled.div`
   font-size: 18px;
   line-height: 28px;
   color: ${(props) => props.theme.colors.BACKGROUND};
+  ${breakpoint(css`
+    font-size: 15px;
+    line-height: 24px;
+  `)};
 `
 
 const DivContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 96px 0;
+  padding: 96px 0 0;
 
   ${breakpoint(css`
-    padding: 48px 0;
+    padding: 48px 0 0;
   `)}
 `;

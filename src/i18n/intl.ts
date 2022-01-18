@@ -14,23 +14,27 @@ const format = (key: string, vari?: object): string => {
     str,
   );
 };
-const cache = Object.create(null);
+// const cache = Object.create(null);
+//
+// export function t(key: string, variables?: any): string {
+//   // const cache = Object.create(null);
+//   // console.log(cache)
+//   const memo = cache[key];
+//   if (memo && shallowEqual(memo.variables, variables)) {
+//     return memo.value;
+//   }
+//   const value = intl.get(key, variables) || key;
+//
+//   cache[key] = {
+//     variables,
+//     value,
+//   };
+//
+//   return value;
+// }
 
 export function t(key: string, variables?: any): string {
-  // const cache = Object.create(null);
-  // console.log(cache)
-  const memo = cache[key];
-  if (memo && shallowEqual(memo.variables, variables)) {
-    return memo.value;
-  }
-  const value = intl.get(key, variables) || key;
-
-  cache[key] = {
-    variables,
-    value,
-  };
-
-  return value;
+  return intl.get(key, variables) || key;
 }
 
 export function tHTML(key: string, variables?: any): string {

@@ -13,6 +13,9 @@ import { YourPassport } from './YourPassport';
 import { BuildForUsers } from './BuildForUsers';
 
 export const Wallet: React.FC = () => {
+  const openUrl = (url: string) => {
+    window.open(url, '_blank');
+  }
   return (
     <div>
       <LandingContainer>
@@ -26,8 +29,8 @@ export const Wallet: React.FC = () => {
               <GetTheClover>
                 <span>{t('getTheClover')}</span>
                 <div>
-                  <img src='images/get_google.svg' alt='' />
-                  <img src='images/get_app.svg' alt='' />
+                  <img onClick={() => openUrl('https://play.google.com/store/apps/details?id=com.clover.finance.wallet&hl=en_US&gl=US')} src='images/get_google.svg' alt='' />
+                  <img onClick={() => openUrl('https://apps.apple.com/app/clover-wallet/id1570072858')} src='images/get_app.svg' alt='' />
                 </div>
               </GetTheClover>
             </TextWrapper>
@@ -60,6 +63,10 @@ const ContentWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-left: 128px;
+  ${breakpoint(css`
+    flex-direction: column;
+    margin-left: 0;
+  `)};
 `;
 
 const TextWrapper = styled.div`
@@ -90,6 +97,21 @@ const TextWrapper = styled.div`
     font-size: 18px;
     line-height: 28px;
   }
+
+  ${breakpoint(css`
+    h4 {
+      font-size: 18px;
+      line-height: 24px;
+    }
+    h3 {
+      font-size: 32px;
+      line-height: 40px;
+    }
+    span {
+      font-size: 15px;
+      line-height: 24px;
+    }
+  `)};
 `;
 
 const GetTheClover = styled.div`
@@ -112,8 +134,18 @@ const GetTheClover = styled.div`
     img {
       height: 50px;
       margin-right: 24px;
+      cursor: pointer;
     }
   }
+  ${breakpoint(css`
+    margin-top: 32px;
+    div {
+      margin-top: 8px;
+      img {
+        height: 46px;
+      }
+    }
+  `)};
 `
 
 const CaptionContainer = styled.div`
@@ -122,6 +154,17 @@ const CaptionContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  ${breakpoint(css`
+    flex: unset;
+    width: 100vw;
+    height: 483px;
+    background-image: url("images/mobile_wallet_bg.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    justify-content: flex-end;
+    padding: 30px 0;
+  `)};
 `;
 
 const ImgGoDown = styled.img`
@@ -130,7 +173,7 @@ const ImgGoDown = styled.img`
   object-fit: contain;
 
   ${breakpoint(css`
-    display: none;
+    //display: none;
   `)};
 `;
 
@@ -191,6 +234,9 @@ const Hero = styled.div<{ imageUrl: string }>`
   background-position: 80%;
   position: relative;
   ${HorizontalGutters};
+  ${breakpoint(css`
+    background: none;
+  `)}
 `;
 
 // this is a full height container that contains the Navbar, the Hero, and the bitcoin price
@@ -201,10 +247,9 @@ const LandingContainer = styled.div`
   flex-direction: column;
   background: ${(props) => props.theme.colors.EMAIL_US};
   ${breakpoint(css`
-    //height: unset;
     height: unset;
-    //min-height: unset;
     min-height: 120vw;
+    padding: 48px 0 0;
   `)}
 `;
 

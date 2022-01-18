@@ -1,13 +1,13 @@
 import { SplashSection } from "./SplashSection";
-import { Grid, SpanAccent } from './CloverLibrary';
 import React from "react";
-import styled, { useTheme } from 'styled-components';
+import styled, { css, useTheme } from 'styled-components';
 import { AnchorLinkIds } from "./AnchorLinkIds";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import SwiperCore, { Pagination } from "swiper";
 import { t } from './i18n/intl';
+import { breakpoint } from "./mixins/breakpoint";
 
 SwiperCore.use([Pagination]);
 
@@ -55,6 +55,10 @@ const AlsoPartnerWithTitle = styled.div`
   display: flex;
   align-items: center;
   text-transform: uppercase;
+  ${breakpoint(css`
+    font-size: 32px;
+    line-height: 40px;
+  `)}
 `
 
 const DivContainer = styled.div`
@@ -62,6 +66,11 @@ const DivContainer = styled.div`
   justify-content: start;
   flex-direction: column;
   padding: 128px 0;
+  ${breakpoint(css`
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 0;
+  `)}
 `;
 
 const ContentWrapper = styled.div`
@@ -76,10 +85,22 @@ const ContentWrapper = styled.div`
           minmax(var(--auto-grid-min-size), 1fr)
   );
   grid-gap: 1em;
+  ${breakpoint(css`
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  `)}
 `;
 
 const CloverItem = styled.div`
   img {
     height: 100px;
   }
+  ${breakpoint(css`
+    img {
+      height: 70px;
+    }
+  `)}
 `
