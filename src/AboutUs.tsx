@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { Spacer, SpacerSection, Title } from "./CloverLibrary";
+import { SpacerSection } from "./CloverLibrary";
 import { SectionFooter } from "./SectionFooter";
 import { HorizontalGutters } from "./mixins/HorizontalGutters";
 import { breakpoint } from "./mixins/breakpoint";
@@ -166,14 +166,6 @@ const VerticalSocials = styled(Socials)`
   ${breakpoint(css`
     display: none;
   `)};
-`;
-
-const ImgWrapper = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 `;
 
 // hero expand to take up rest of space

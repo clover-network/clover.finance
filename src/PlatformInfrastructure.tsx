@@ -8,7 +8,6 @@ import "swiper/css/pagination";
 import SwiperCore, { Pagination } from "swiper";
 import { t } from './i18n/intl';
 import { breakpoint } from "./mixins/breakpoint";
-import { Grid } from './CloverLibrary';
 
 SwiperCore.use([Pagination]);
 

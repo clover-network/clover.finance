@@ -2,16 +2,11 @@ import { SplashSection } from "./SplashSection";
 import {
   Grid,
   GridItem,
-  LeftAlignTitle,
-  Small,
   SpanAccent,
 } from "./CloverLibrary";
-import React, { useContext } from "react";
+import React from "react";
 import styled, { css, useTheme } from 'styled-components';
-import { SplashModeContext, SplashPageMode } from "./SplashModeContext";
-import { AnchorLinkIds } from "./AnchorLinkIds";
 import { breakpoint } from "./mixins/breakpoint";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { t } from './i18n/intl';
 
 export const SectionBlog = () => {
@@ -46,17 +41,6 @@ export const SectionBlog = () => {
             return <Blog {...item} key={i} />;
           })}
         </GridWithLargerGaps>
-        {/*<DivMobileOnly>*/}
-        {/*  <Swiper navigation={true}>*/}
-        {/*    {CloverItems.map((item, i) => {*/}
-        {/*      return (*/}
-        {/*        <SwiperSlide key={i}>*/}
-        {/*          <Blog {...item} />*/}
-        {/*        </SwiperSlide>*/}
-        {/*      );*/}
-        {/*    })}*/}
-        {/*  </Swiper>*/}
-        {/*</DivMobileOnly>*/}
       </DivContainer>
     </SplashSection>
   );

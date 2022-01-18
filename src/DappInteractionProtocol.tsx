@@ -1,6 +1,6 @@
 import { SplashSection } from "./SplashSection";
 import {
-  LeftAlignTitle, SpanAccent, WrapperDesktopOnly, WrapperMobileOnly,
+  SpanAccent, WrapperDesktopOnly, WrapperMobileOnly,
 } from './CloverLibrary';
 import React from "react";
 import styled, { css, useTheme } from 'styled-components';

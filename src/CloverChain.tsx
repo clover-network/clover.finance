@@ -169,9 +169,6 @@ const ImgWrapper = styled.div`
   align-items: center;
   justify-content: center;
   ${breakpoint(css`
-    //width: 100px;
-    //height: 100px;
-    //transform: scale(1.5);
     margin: 32px 0 24px;
   `)}
 `;
@@ -205,9 +202,3 @@ const LandingContainer = styled.div`
   `)}
 `;
 
-// extra space after certain sections on mobile
-const SpecialSpacer = styled(SpacerSection)`
-  ${breakpoint(css`
-    height: 96px;
-  `)}
-`;
