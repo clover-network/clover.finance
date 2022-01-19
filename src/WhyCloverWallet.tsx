@@ -86,7 +86,7 @@ const DivContainer = styled.div`
 
 const ContentWrapper = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
   margin-top: 72px;
