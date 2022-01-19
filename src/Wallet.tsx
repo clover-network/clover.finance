@@ -39,7 +39,7 @@ export const Wallet: React.FC = () => {
           </ContentWrapper>
           <CaptionContainer>
             <Tagline>{t('learnMore')}</Tagline>
-            <a href={`#${AnchorLinkIds.ECOSYSTEM}`}>
+            <a href={`#${AnchorLinkIds.COMPONENTS}`}>
               <ImgGoDown src="images/down-arrow.svg" />
             </a>
           </CaptionContainer>
