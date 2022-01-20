@@ -43,8 +43,8 @@ export const SectionComponentOverview: React.FC<{
       logo: "images/logo-idbased.svg",
     },
     {
-      title: t('crossChainInteractions'),
-      body: t('crossChainInteractionsHint'),
+      title: t('universalCrossChain'),
+      body: t('universalCrossChainHint'),
       logo: "images/logo-cc.svg",
     },
     {
