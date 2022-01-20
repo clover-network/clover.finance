@@ -108,7 +108,9 @@ export const SectionEcosystem = () => {
 };
 
 const EcosystemTitle = styled(CenteredTitle)`
+  padding-left: 128px;
   ${breakpoint(css`
+    padding-left: 0;
     font-weight: bold;
     font-size: 24px;
     line-height: 36px;
@@ -124,12 +126,9 @@ const EcosystemContent = styled(Row)`
 
 const EcosystemLeft = styled.div`
   align-items: flex-end;
-  justify-content: flex-end;
   display: flex;
-  width: 50%;
-  position: relative;
-  left: -100px;
-  margin-right: -100px;
+  width: 40%;
+  justify-content: flex-start;
   
   ${breakpoint(css`
     display: none;
@@ -184,9 +183,8 @@ const WhiteButton = styled.div`
   max-width: 167px;
   color: ${(props) => props.theme.colors.BACKGROUND};
   ${breakpoint(css`
-    width: 100%;
     max-width: unset;
-    margin: 0 0 24px
+    margin: 0 0 24px!important;
   `)};
 `
 
@@ -217,9 +215,13 @@ const DivContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 96px 0 0;
+  padding: 96px 128px 0 0;
+  width: 100vw;
+  margin-left: -128px;
 
   ${breakpoint(css`
+    width: unset;
+    margin-left: 0;
     padding: 48px 0 0;
   `)}
 `;

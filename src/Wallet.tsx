@@ -34,8 +34,7 @@ export const Wallet: React.FC = () => {
                 </div>
               </GetTheClover>
             </TextWrapper>
-            <ImgWrapper>
-            </ImgWrapper>
+            <ImgWrapper />
           </ContentWrapper>
           <CaptionContainer>
             <Tagline>{t('learnMore')}</Tagline>
@@ -59,11 +58,13 @@ export const Wallet: React.FC = () => {
 
 const ContentWrapper = styled.div`
   flex: 1;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-left: 128px;
+  margin-left: 30%;
   ${breakpoint(css`
+    width: unset;
     flex-direction: column;
     margin-left: 0;
   `)};
