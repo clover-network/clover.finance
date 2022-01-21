@@ -1,5 +1,5 @@
 import { SplashSection } from "./SplashSection";
-import React from "react";
+import React, { useState } from 'react';
 import styled, { css, useTheme } from 'styled-components';
 import { AnchorLinkIds } from "./AnchorLinkIds";
 
@@ -8,11 +8,13 @@ import "swiper/css/pagination";
 import SwiperCore, { Pagination } from "swiper";
 import { t } from './i18n/intl';
 import { breakpoint } from "./mixins/breakpoint";
+import { WrapperDesktopOnly, WrapperMobileOnly } from './CloverLibrary';
 
 SwiperCore.use([Pagination]);
 
 export const AlsoPartnerWith = () => {
   const theme = useTheme();
+  const [selectIndex, setSelectIndex] = useState(0);
 
   return (
     <SplashSection backgroundColor={theme.colors.YELLOW_BG}>
@@ -20,31 +22,103 @@ export const AlsoPartnerWith = () => {
         <AlsoPartnerWithTitle>
           {t('partnerWith')}
         </AlsoPartnerWithTitle>
+        <WrapperDesktopOnly>
+          <ArrowWrapper>
+            <img
+              src={selectIndex === 0 ? '/images/arrow_left.svg' : '/images/arrow_left_hover.svg'}
+              alt=''
+              onClick={() => {
+                if (selectIndex === 0) {
+                  setSelectIndex(0)
+                } else {
+                  setSelectIndex(selectIndex - 12)
+                }
+              }}
+            />
+            <img
+              src={selectIndex >= (images.length - 12) ? '/images/arrow_right.svg' : '/images/arrow_right_hover.svg'}
+              alt=''
+              onClick={() => {
+                if (selectIndex >= (images.length - 12)) {
+                  setSelectIndex(selectIndex)
+                } else {
+                  setSelectIndex(selectIndex + 12)
+                }
+              }}
+            />
+          </ArrowWrapper>
+        </WrapperDesktopOnly>
         <ContentWrapper>
           {images.map((item, index) => (
-            <CloverItem>
-              <img src={item} alt='' />
-            </CloverItem>
+            index >= selectIndex && index < (selectIndex + 12) && (
+              <CloverItem>
+                <img src={item} alt='' />
+              </CloverItem>
+            )
           ))}
         </ContentWrapper>
+        <WrapperMobileOnly>
+          <ArrowWrapper>
+            <img
+              src={selectIndex === 0 ? '/images/arrow_left.svg' : '/images/arrow_left_hover.svg'}
+              alt=''
+              onClick={() => {
+                if (selectIndex === 0) {
+                  setSelectIndex(0)
+                } else {
+                  setSelectIndex(selectIndex - 12)
+                }
+              }}
+            />
+            <img
+              src={selectIndex >= (images.length - 12) ? '/images/arrow_right.svg' : '/images/arrow_right_hover.svg'}
+              alt=''
+              onClick={() => {
+                if (selectIndex >= (images.length - 12)) {
+                  setSelectIndex(selectIndex)
+                } else {
+                  setSelectIndex(selectIndex + 12)
+                }
+              }}
+            />
+          </ArrowWrapper>
+        </WrapperMobileOnly>
       </DivContainer>
     </SplashSection>
   );
 };
 
 const images = [
-  "images/partner/huobi.png",
-  "images/partner/fantom.png",
-  "images/partner/graph.png",
-  "images/partner/polygon.png",
-  "images/partner/okex.png",
-  "images/partner/solana.png",
-  "images/partner/divergence.png",
-  "images/partner/chainLink.png",
+  "images/partner/chain.png",
   "images/partner/alice.png",
-  "images/partner/avalanche.png",
-  "images/partner/cms.png",
-  "images/partner/kr1.png",
+  "images/partner/ankr.png",
+  "images/partner/apron.png",
+  "images/partner/automata.png",
+  "images/partner/bella.png",
+  "images/partner/bitcoin.png",
+  "images/partner/boring.png",
+  "images/partner/bounce.png",
+  "images/partner/chainLink.png",
+  "images/partner/chainSwap.png",
+  "images/partner/crust.png",
+  "images/partner/cryptoblades.png",
+  "images/partner/darwinia.png",
+  "images/partner/dego.png",
+  "images/partner/dodo.png",
+  "images/partner/easyfi.png",
+  "images/partner/ethalend.png",
+  "images/partner/fantom.png",
+  "images/partner/theGraph.png",
+  "images/partner/hedget.png",
+  "images/partner/injective.png",
+  "images/partner/kira.png",
+  "images/partner/manta.png",
+  "images/partner/mathWallet.png",
+  "images/partner/parsiq.png",
+  "images/partner/polygon.png",
+  "images/partner/showCase.png",
+  "images/partner/snowSwap.png",
+  "images/partner/unilend.png",
 ];
 
 const AlsoPartnerWithTitle = styled.div`
@@ -73,10 +147,29 @@ const DivContainer = styled.div`
   `)}
 `;
 
+const ArrowWrapper = styled.div`
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  img {
+    margin-right: 30px;
+    cursor: pointer;
+    &:last-child {
+      margin: 0;
+    }
+  }
+  ${breakpoint(css`
+    justify-content: space-between;
+    width: 100vw;
+    padding: 0 24px;
+  `)}
+`
+
 const ContentWrapper = styled.div`
   width: 100%;
   display: grid;
-  margin-top: 60px;
+  margin-top: 20px;
   align-items: center;
   --repeat: auto-fill;
   --auto-grid-min-size: 200px;
@@ -90,11 +183,12 @@ const ContentWrapper = styled.div`
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: flex-start;
   `)}
 `;
 
 const CloverItem = styled.div`
+  margin: 0 20px;
   img {
     height: 100px;
   }
