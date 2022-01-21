@@ -51,12 +51,13 @@ const ContentWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-left: 128px;
   position: relative;
   padding: 128px 0;
+  width: 90%;
   
   & > img {
-    width: 576px;
+    //height: 100%;
+    width: 40%;
     position: absolute;
     top: 180px;
   }
@@ -78,6 +79,7 @@ const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 60%;
 
   h4 {
     font-weight: bold;
@@ -103,6 +105,8 @@ const TextWrapper = styled.div`
     line-height: 28px;
   }
   ${breakpoint(css`
+    max-width: unset;
+
     h4 {
       font-size: 18px;
       line-height: 24px;
@@ -173,7 +177,7 @@ const Hero = styled.div<{ imageUrl: string }>`
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   background-image: url("${(props) => props.imageUrl}");
   background-size: contain;
@@ -199,7 +203,7 @@ const LandingContainer = styled.div`
 
 // extra space after certain sections on mobile
 const SpecialSpacer = styled(SpacerSection)`
- width: 576px;
+  width: 40%;
   ${breakpoint(css`
     display: none;
   `)}

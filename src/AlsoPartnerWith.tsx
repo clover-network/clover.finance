@@ -168,15 +168,10 @@ const ArrowWrapper = styled.div`
 
 const ContentWrapper = styled.div`
   width: 100%;
-  display: grid;
   margin-top: 20px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
   align-items: center;
-  --repeat: auto-fill;
-  --auto-grid-min-size: 200px;
-  grid-template-columns: repeat(
-          var(--repeat),
-          minmax(var(--auto-grid-min-size), 1fr)
-  );
   grid-gap: 1em;
   ${breakpoint(css`
     margin-top: 24px;

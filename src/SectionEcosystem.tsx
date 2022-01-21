@@ -129,6 +129,9 @@ const EcosystemLeft = styled.div`
   display: flex;
   width: 40%;
   justify-content: flex-start;
+  img {
+    width: 100%;
+  }
   
   ${breakpoint(css`
     display: none;
