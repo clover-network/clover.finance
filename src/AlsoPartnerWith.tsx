@@ -183,7 +183,6 @@ const ContentWrapper = styled.div`
 `;
 
 const CloverItem = styled.div`
-  margin: 0 20px;
   img {
     height: 100px;
   }

@@ -56,12 +56,12 @@ const ContentWrapper = styled.div`
   width: 90%;
   
   & > img {
-    //height: 100%;
     width: 40%;
     position: absolute;
     top: 180px;
   }
   ${breakpoint(css`
+    width: unset;
     flex-direction: column;
     margin-left: 0;
     padding: 0;
