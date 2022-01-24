@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Inter', sans-serif;
     background: ${(props) => props.theme.colors.BACKGROUND};
     max-width: 100%;
+    overflow-x: hidden;
 
     // for 4k monitors, constrain to 1800px width
     @media (min-width: 1800px) {

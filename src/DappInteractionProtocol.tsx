@@ -79,7 +79,7 @@ const ContentWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   margin: 72px 0;
-  background: url('/images/dapp_bg.png') no-repeat center bottom;
+  background: url('/images/dapp_bg.png') no-repeat right bottom;
   background-size: contain;
   & > img {
     display: none;
