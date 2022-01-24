@@ -50,7 +50,7 @@ export const SectionEcosystem = () => {
                 <WhiteButton
                   onClick={() =>
                     window.open(
-                      "https://docs.clover.finance/quick-start/testnet",
+                      "https://docs.clover.finance/clover-chain/for-developers/using-testnet",
                       "_blank"
                     )
                   }
@@ -69,7 +69,7 @@ export const SectionEcosystem = () => {
                 <WhiteButton
                   onClick={() =>
                     window.open(
-                      "https://docs.google.com/forms/d/e/1FAIpQLScl4kp4hD4Dv9JnPIdKEkTxL4ctVZQJtVoezeVqQVi676iKvw/viewform",
+                      "https://docs.clover.finance/clover-multi-chain-wallet/developer-guide",
                       "_blank"
                     )
                   }
