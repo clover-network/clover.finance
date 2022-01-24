@@ -45,7 +45,7 @@ export const Socials: React.FC<{ className?: string }> = ({ className }) => {
         <SocialsImg src={`images/${prefix}medium.svg`} />
       </a>
       <a
-        href="https://projectclover.medium.com"
+        href="https://www.instagram.com/accounts/login/"
         target="_blank"
         rel="noreferrer"
       >
