@@ -8,6 +8,7 @@ export const ThemeSakura: DefaultTheme = {
     TITLE: "#FF5995",
     SUBTITLE: "#303030",
     BODY: "#555555",
+    BAR: "#01E493",
     NEUTRAL: "#303030",
     ACCENT: "#FF5995",
     BACKGROUND: "#FFFFFF",
@@ -17,6 +18,8 @@ export const ThemeSakura: DefaultTheme = {
     HEADER: "#FFFFFF",
     HEADERBACK: "#FF5994",
     EMAIL_US: "#303030",
+    YELLOW_BG: "#FEFFCA",
+    PINK_BG: "#EDF3FF",
   },
   fontSizes: {
     TITLE: "48px",

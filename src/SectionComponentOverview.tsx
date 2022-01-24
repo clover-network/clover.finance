@@ -17,7 +17,7 @@ import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 export const SectionComponentOverview: React.FC<{
-  cloverLines: any;
+  cloverLines?: any;
 }> = ({ cloverLines }) => {
   const typeWriterTexts = cloverLines;
 
