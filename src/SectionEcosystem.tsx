@@ -1,6 +1,8 @@
 import { SplashSection } from "./SplashSection";
 import {
   CenteredTitle,
+  Row,
+  WrapperMobileOnly,
 } from "./CloverLibrary";
 import React from "react";
 import styled, { css, useTheme } from "styled-components";
@@ -15,6 +17,13 @@ export const SectionEcosystem = () => {
       backgroundColor={theme.colors.NEUTRAL}
     >
       <DivContainer id={AnchorLinkIds.ECOSYSTEM}>
+        <WrapperMobileOnly>
+          <EcosystemTitleMobileWrapper>
+            <EcosystemTitle>{t('SAKURA')}</EcosystemTitle>
+            <CenteredTitle>{t('Metaverse')}</CenteredTitle>
+            <CenteredTitle>{t('Infrastructure')}</CenteredTitle>
+          </EcosystemTitleMobileWrapper>
+        </WrapperMobileOnly>
         <EcosystemTitleWrapper>
           <EcosystemTitle>{t('SAKURA')}</EcosystemTitle>
           <CenteredTitle>{t('metaverseInfrastructure')}</CenteredTitle>
@@ -61,11 +70,13 @@ const EcosystemTitleWrapper = styled.div`
   display: flex;
   
   ${breakpoint(css`
-    padding-left: 0;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 36px;
+    display: none;
   `)};
+`
+
+const EcosystemTitleMobileWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
 `
 
 const EcosystemTitle = styled(CenteredTitle)`
@@ -75,11 +86,17 @@ const EcosystemTitle = styled(CenteredTitle)`
 
 const EcosystemContent = styled.div`
   margin-top: 60px;
+  margin-bottom: 100px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
   ${breakpoint(css`
     margin-top: 0;
+    margin-left: 0;
+    flex-direction: column;
+    img {
+      width: 80%;
+      margin-bottom: 60px;
+    }
   `)};
 `
 
@@ -105,7 +122,14 @@ const EcosystemRightRow = styled.div`
     line-height: 22px;
     color: ${(props) => props.theme.colors.BACKGROUND};
   }
-`;
+
+  ${breakpoint(css`
+    img {
+      margin-bottom: 30px;
+    }
+    margin-bottom: 0;
+  `)};
+`
 
 const DivContainer = styled.div`
   display: flex;

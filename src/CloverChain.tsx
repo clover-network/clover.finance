@@ -106,6 +106,15 @@ const ContentWrapper1 = styled.div`
   justify-content: space-between;
   margin-top: 38px;
   margin-left: 200px;
+
+  ${breakpoint(css`
+    flex-direction: column;
+    margin-left: 0;
+
+    img {
+      width: 80%;
+    }
+  `)};
 `
 
 const TextWrapper1 = styled.div`

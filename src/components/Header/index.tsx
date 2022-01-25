@@ -215,13 +215,6 @@ export default function Header(props: any): ReactElement {
   return (
     <HeaderWrapper>
       <HeaderContent>
-        <WrapperMobileOnly>
-          <HeaderIcon
-            src="images/language_icon.svg"
-            alt=""
-            onClick={() => setShowList(!showList)}
-          />
-        </WrapperMobileOnly>
         <HeaderDiv>
           <img src="images/Logo.svg" alt="" />
           <img className="text-logo" src="images/sakura-text-logo.svg" alt="" />
