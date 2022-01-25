@@ -20,6 +20,7 @@ export const ThemeClover: DefaultTheme = {
     EMAIL_US: "#06E594",
     YELLOW_BG: "#FEFFCA",
     PINK_BG: "#FF7B9F",
+    LIGHT_PINK_BG: "#FFDDE9",
   },
   fontSizes: {
     TITLE: "48px",

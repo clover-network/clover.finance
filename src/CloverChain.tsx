@@ -11,11 +11,12 @@ import { breakpoint } from "./mixins/breakpoint";
 import { Socials } from "./Socials";
 import { AnchorLinkIds } from "./AnchorLinkIds";
 import { t } from './i18n/intl';
+import { SectionDecentralized } from './SectionDecentralized';
+import { SectionGovernance } from './SectionGovernance';
 
 export const CloverChain: React.FC = () => {
-  const CloverLines = [
-    t('cloverLines1'),
-    t('cloverLines2'),
+  const SakuraLines = [
+    t('sakuraLines1'),
   ];
   return (
     <div>
@@ -42,8 +43,9 @@ export const CloverChain: React.FC = () => {
           </FloatingLeft>
         </Hero>
       </LandingContainer>
-      <SpacerSection />
-      <SectionComponentOverview cloverLines={CloverLines} />
+      <SectionDecentralized />
+      <SectionGovernance />
+      <SectionComponentOverview sakuraLines={SakuraLines} />
       <DappInteractionProtocol />
       <PlatformInfrastructure />
       <SectionEcosystem />

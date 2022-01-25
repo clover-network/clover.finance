@@ -6,4 +6,5 @@ export enum AnchorLinkIds {
   ECOSYSTEM = "ECOSYSTEM",
   DNA = "DNA",
   BLOG = "BLOG",
+  DECENTRALIZED = "DECENTRALIZED",
 }

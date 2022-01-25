@@ -23,6 +23,7 @@ declare module "styled-components" {
       EMAIL_US: string;
       YELLOW_BG: string;
       PINK_BG: string;
+      LIGHT_PINK_BG: string;
     };
     fontSizes: {
       // used for titles

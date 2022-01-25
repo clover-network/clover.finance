@@ -2,10 +2,10 @@ import { SplashSection } from "./SplashSection";
 import {
   SpanAccent,
   LeftAlignTitle,
-  SectionSubtitle,
+  SectionSubtitle, CenteredTitle,
 } from './CloverLibrary';
 import React, { useEffect, useState } from "react";
-import styled, { css } from "styled-components";
+import styled, { css, useTheme } from 'styled-components';
 import { AnchorLinkIds } from "./AnchorLinkIds";
 
 import "swiper/css";
@@ -17,40 +17,22 @@ import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 export const SectionComponentOverview: React.FC<{
-  cloverLines?: any;
-}> = ({ cloverLines }) => {
-  const typeWriterTexts = cloverLines;
+  sakuraLines?: any;
+}> = ({ sakuraLines }) => {
+  const typeWriterTexts = sakuraLines;
+  const theme = useTheme();
 
   const CloverItems = [
     {
-      title: t('eVMCompatibility'),
-      body: t('eVMCompatibilityHint'),
-      logo: "images/logo-evm.svg",
+      title: t('SKUBridge'),
+      body: t('SKUBridgeHint'),
+      content: t('SKUBridgeHint2'),
+      logo: "images/bridge.png",
     },
     {
-      title: t('gasFeeRedistribution'),
-      body: t('gasFeeRedistributionHint'),
-      logo: "images/logo-gas-fee.svg",
-    },
-    {
-      title: t('gasLessEndUserExperience'),
-      body: t('gasLessEndUserExperienceHint'),
-      logo: "images/logo-gasless.svg",
-    },
-    {
-      title: t('identityBasedFeeSchedule'),
-      body: t('identityBasedFeeScheduleHint'),
-      logo: "images/logo-idbased.svg",
-    },
-    {
-      title: t('universalCrossChain'),
-      body: t('universalCrossChainHint'),
-      logo: "images/logo-cc.svg",
-    },
-    {
-      title: t('crossChainExplorer'),
-      body: t('crossChainExplorerHint'),
-      logo: "images/logo-ccexplorer.svg",
+      title: t('Feeconomics'),
+      body: t('FeeconomicsHint'),
+      logo: "images/feeconomics.png",
     },
   ];
 
@@ -91,9 +73,9 @@ export const SectionComponentOverview: React.FC<{
   }, [typeWriterTexts]);
 
   return (
-    <SplashSection>
+    <SplashSection backgroundColor={theme.colors.YELLOW_BG}>
       <DivContainer id={AnchorLinkIds.COMPONENTS}>
-        <LeftAlignTitle>{t('cloverIs')}</LeftAlignTitle>
+        <Title>{t('SakuraIs')}</Title>
         <SectionSubtitle>
           <WriteText>
             {typeWriterInProgressText}
@@ -103,15 +85,15 @@ export const SectionComponentOverview: React.FC<{
         <ContentWrapper>
           <ContentLeft>
             <img
-              src='/images/arrow_up.svg'
+              src='/images/sakura_arrow_up.svg'
               alt=''
               onMouseEnter={(e: any) => {
                 e.stopPropagation();
-                e.target.setAttribute("src", "/images/arrow_up_hover.svg");
+                e.target.setAttribute("src", "/images/sakura_arrow_up_hover.svg");
               }}
               onMouseLeave={(e: any) => {
                 e.stopPropagation();
-                e.target.setAttribute("src", "/images/arrow_up.svg");
+                e.target.setAttribute("src", "/images/sakura_arrow_up.svg");
               }}
               onClick={() => {
                 if (selectIndex === 0) {
@@ -132,15 +114,15 @@ export const SectionComponentOverview: React.FC<{
               )
             })}
             <img
-              src='/images/arrow_down.svg'
+              src='/images/sakura_arrow_down.svg'
               alt=''
               onMouseEnter={(e: any) => {
                 e.stopPropagation();
-                e.target.setAttribute("src", "/images/arrow_down_hover.svg");
+                e.target.setAttribute("src", "/images/sakura_arrow_down_hover.svg");
               }}
               onMouseLeave={(e: any) => {
                 e.stopPropagation();
-                e.target.setAttribute("src", "/images/arrow_down.svg");
+                e.target.setAttribute("src", "/images/sakura_arrow_down.svg");
               }}
               onClick={() => {
                 if (selectIndex === CloverItems.length-1) {
@@ -155,7 +137,7 @@ export const SectionComponentOverview: React.FC<{
             <img src={CloverItems[selectIndex].logo} alt='' />
             <TextContent>
               <h3>{CloverItems[selectIndex].title}</h3>
-              <span>{CloverItems[selectIndex].body}</span>
+              <span>{CloverItems[selectIndex].body} <PinkSpan>{CloverItems[selectIndex]?.content??''}</PinkSpan></span>
             </TextContent>
           </ContentRight>
         </ContentWrapper>
@@ -196,6 +178,20 @@ const Slide: React.FC<{
   );
 };
 
+const Title = styled(CenteredTitle)`
+  font-weight: bold;
+  font-size: 50px;
+  line-height: 61px;
+  color: ${(props) => props.theme.colors.BACKGROUND};
+  margin-bottom: 24px;
+  ${breakpoint(css`
+    padding-left: 0;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 36px;
+  `)};
+`
+
 const DivSlideContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -224,14 +220,16 @@ const Caret = styled.span`
   opacity: 1;
 `;
 
-const WriteText = styled(SpanAccent)`
+const WriteText = styled.span`
   text-transform: uppercase;
+  color: #FF5995;
 `;
 
 const DivContainer = styled.div`
   display: flex;
   justify-content: start;
   flex-direction: column;
+  padding: 128px 0;
   .swiper {
     ${(props) =>
       props.theme.id === "Sakura"
@@ -247,7 +245,7 @@ const ContentWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 72px 0;
+  margin-top: 72px;
   ${breakpoint(css`
     display: none;
   `)};
@@ -269,7 +267,7 @@ const ContentRight = styled.div`
   display: flex;
   align-items: center;
   img {
-    width: 160px;
+    width: 353px;
     margin-right: 78px;
   }
 `;
@@ -278,17 +276,17 @@ const TextContent = styled.div`
   display: flex;
   flex-direction: column;
   h3 {
+    margin-bottom: 16px;
     font-weight: bold;
     font-size: 24px;
     line-height: 29px;
-    margin-bottom: 16px;
-    color: ${(props) => props.theme.colors.ACCENT};
+    color: #FF5995;
   }
   span {
-    font-weight: 500;
+    font-weight: 300;
     font-size: 18px;
     line-height: 28px;
-    color: ${(props) => props.theme.colors.BODY};
+    color: ${(props) => props.theme.colors.BACKGROUND};
   }
   ${breakpoint(css`
     margin-top: 20px;
@@ -299,11 +297,15 @@ const TextContent = styled.div`
   `)};
 `;
 
+const PinkSpan = styled.span`
+  color: #FF5995!important;
+`
+
 const ItemTitle = styled.div`
   font-weight: bold;
   font-size: 18px;
   line-height: 24px;
-  color: ${(props) => props.theme.colors.TITLE};
+  color: ${(props) => props.theme.colors.BACKGROUND};
   opacity: 0.4;
   margin-bottom: 29px;
   cursor: pointer;

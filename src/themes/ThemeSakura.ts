@@ -20,6 +20,7 @@ export const ThemeSakura: DefaultTheme = {
     EMAIL_US: "#303030",
     YELLOW_BG: "#FEFFCA",
     PINK_BG: "#EDF3FF",
+    LIGHT_PINK_BG: "#FFDDE9",
   },
   fontSizes: {
     TITLE: "48px",
