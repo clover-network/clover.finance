@@ -6,16 +6,23 @@ import {
   Subtitle,
 } from "./CloverLibrary";
 import React, { useContext } from "react";
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 import { SplashModeContext, SplashPageMode } from "./SplashModeContext";
 import { breakpoint } from "./mixins/breakpoint";
-import { t } from './i18n/intl';
+import { Socials } from "./Socials";
+
+const modeToBackgroundImage = {
+  [SplashPageMode.CLOVER]: "images/bg-footer.svg",
+  [SplashPageMode.SAKURA]: "images/sakura-footer-bg.svg",
+};
 
 export const SectionFooter = () => {
   const mode = useContext(SplashModeContext);
 
+  const background = modeToBackgroundImage[mode];
+
   return (
-    <SplashSection>
+    <SplashSection bottomBackground={background}>
       <DivContainer hasMinHeight={true}>
         {mode === SplashPageMode.SAKURA && <CloverSakuraColumns />}
         {mode === SplashPageMode.CLOVER && <CloverSakuraColumns />}
@@ -31,7 +38,7 @@ const FooterBar = () => {
   return (
     <DivFooterBar>
       <DivCopyright>@Clover Inc. All Rights Reserved</DivCopyright>
-      {/*<Socials />*/}
+      <Socials />
     </DivFooterBar>
   );
 };
@@ -40,7 +47,7 @@ const CloverSakuraColumns = () => {
   return (
     <DivFooterColumns>
       <FooterColumn>
-        <FooterColumnLabel>{t('resources')}</FooterColumnLabel>
+        <FooterColumnLabel>Resources</FooterColumnLabel>
         <Links>
           <Link>
             <a
@@ -48,13 +55,13 @@ const CloverSakuraColumns = () => {
               target="_blank"
               rel="noreferrer"
             >
-              {t('whitepaper')}
+              Whitepaper
             </a>
           </Link>
         </Links>
       </FooterColumn>
       <FooterColumn>
-        <FooterColumnLabel>{t('products')}</FooterColumnLabel>
+        <FooterColumnLabel>Products</FooterColumnLabel>
         <Links>
           <Link>
             <a
@@ -62,7 +69,7 @@ const CloverSakuraColumns = () => {
               target="_blank"
               rel="noreferrer"
             >
-              {t('iOSWallet')}
+              iOS Wallet
             </a>
           </Link>
           <Link>
@@ -71,7 +78,7 @@ const CloverSakuraColumns = () => {
               target="_blank"
               rel="noreferrer"
             >
-              {t('androidWallet')}
+              Android Wallet
             </a>
           </Link>
           <Link>
@@ -80,7 +87,7 @@ const CloverSakuraColumns = () => {
               target="_blank"
               rel="noreferrer"
             >
-              {t('extensionWallet')}
+              Extension Wallet
             </a>
           </Link>
           <Link>
@@ -89,7 +96,7 @@ const CloverSakuraColumns = () => {
               target="_blank"
               rel="noreferrer"
             >
-              {t('webWalletLowercase')}
+              Web Wallet
             </a>
           </Link>
           <Link>
@@ -98,13 +105,13 @@ const CloverSakuraColumns = () => {
               target="_blank"
               rel="noreferrer"
             >
-              {t('explorer')}
+              Explorer
             </a>
           </Link>
         </Links>
       </FooterColumn>
       <FooterColumn>
-        <FooterColumnLabel>{t('contactUs')}</FooterColumnLabel>
+        <FooterColumnLabel>Contact Us</FooterColumnLabel>
         <Links>
           <Link>
             <a
@@ -112,7 +119,7 @@ const CloverSakuraColumns = () => {
               target="_blank"
               rel="noreferrer"
             >
-              {t('walletIntegration')}
+              Wallet Integration
             </a>
           </Link>
           <Link>
@@ -121,7 +128,7 @@ const CloverSakuraColumns = () => {
               target="_blank"
               rel="noreferrer"
             >
-              {t('generalPartnership')}
+              General Partnership
             </a>
           </Link>
         </Links>
@@ -129,7 +136,7 @@ const CloverSakuraColumns = () => {
       <EmailColumn>
         <FooterColumnLabel>
           <SpanEmailUs>
-            {t('comeSayHelloAt')}{" "}
+            Come say hello at{" "}
             <a href="mailto:info@clover.finance">info@clover.finance</a>
           </SpanEmailUs>
         </FooterColumnLabel>
@@ -188,8 +195,11 @@ const DivContainer = styled.div<{
   ${(props) =>
     props.hasMinHeight &&
     css`
-      min-height: 30vw;
+      min-height: 35vw;
     `};
+
+  //min-height: 35vw;
+  margin-top: 24px;
 `;
 
 const DivFooterBar = styled.div`

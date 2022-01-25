@@ -36,33 +36,55 @@ export const SectionPitch = () => {
   return (
     <SplashSection>
       <DivContainer id={AnchorLinkIds.PITCH}>
-        <TitleDesktop>
-          The Clover <SpanAccent>Wallets Suite</SpanAccent>
-        </TitleDesktop>
-        <TitleMobile>
-          CLOVER's <SpanAccent>Wallets</SpanAccent>
-        </TitleMobile>
-        <CenteredSectionSubtitle>
-          Available in Extension Wallet, Mobile Wallet, and Web Wallet.
-        </CenteredSectionSubtitle>
+        {mode === SplashPageMode.SAKURA && (
+          <CenteredTitle>
+            <SpanNeutral>Build Powerful Applications on</SpanNeutral> Sakura
+          </CenteredTitle>
+        )}
+        {mode === SplashPageMode.CLOVER && (
+          <>
+            <TitleDesktop>
+              The Clover <SpanAccent>Wallets Suite</SpanAccent>
+            </TitleDesktop>
+            <TitleMobile>
+              CLOVER's <SpanAccent>Wallets</SpanAccent>
+            </TitleMobile>
+            <CenteredSectionSubtitle>
+              Available in Extension Wallet, Mobile Wallet, and Web Wallet.
+            </CenteredSectionSubtitle>
+          </>
+        )}
       </DivContainer>
-      <SwipeCustomizer>
-        <Swiper
-          initialSlide={isPhone? 1 : 2}
-          navigation={true}
-          pagination={true}
-          autoHeight={true}
-        >
-          {Items.map((item, i) => {
-            return (
-              <SwiperSlide key={i}>
-                <Slide {...item} />
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
-      </SwipeCustomizer>
+
+      {!isSakura && (
+        <SwipeCustomizer>
+          <Swiper
+            initialSlide={isPhone? 1 : 2}
+            navigation={true}
+            pagination={true}
+            autoHeight={true}
+          >
+            {Items.map((item, i) => {
+              return (
+                <SwiperSlide key={i}>
+                  <Slide {...item} />
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        </SwipeCustomizer>
+      )}
+
+      {isSakura && (
+        <div>
+          <EscapeMargins>
+            <SakuraImg src={"/images/sakura-bg1.png"} />
+          </EscapeMargins>
+        </div>
+      )}
+
       <SpacerVertical />
+
       <Row>
         {Features.map((item) => {
           return <Feature key={item.featureNum} {...item} />;

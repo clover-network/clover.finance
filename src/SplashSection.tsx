@@ -10,8 +10,6 @@ export const SplashSection: React.FC<{
   topLeftBackground?: string;
   bottomRightBackground?: string;
   bottomBackground?: string;
-  bottomLeftBackground?: string;
-  bottomLeftSize?: string;
   rightHalfBackground?: string;
 }> = ({
   children,
@@ -21,8 +19,6 @@ export const SplashSection: React.FC<{
   topLeftBackground,
   bottomRightBackground,
   bottomBackground,
-  bottomLeftBackground,
-  bottomLeftSize,
   rightHalfBackground,
 }) => {
   return (
@@ -33,7 +29,6 @@ export const SplashSection: React.FC<{
         <BottomRight backgroundImage={bottomRightBackground} />
       )}
       {bottomBackground && <Bottom backgroundImage={bottomBackground} />}
-      {bottomLeftBackground && <BottomLeft backgroundImage={bottomLeftBackground} bottomLeftSize={bottomLeftSize} />}
       {(backgroundImage || backgroundColor) && (
         <Background
           backgroundImage={backgroundImage}
@@ -53,14 +48,13 @@ const AbsolutePositioned = styled.div`
 `;
 const Corner = styled(AbsolutePositioned)<{
   backgroundImage?: string;
-  bottomLeftSize?: string;
 }>`
   width: 40%;
   height: 40%;
   //background-color: red;
   background-image: ${(props) => `url("${props.backgroundImage}")` || "none"};
   z-index: -5;
-  background-size: ${(props) => `${props.bottomLeftSize}` || "contain"};
+  background-size: contain;
   background-repeat: no-repeat;
 `;
 
@@ -72,17 +66,6 @@ const BottomRight = styled(Corner)`
   bottom: 0;
   right: 0;
   background-position: right bottom;
-`;
-
-const BottomLeft = styled(Corner)`
-  bottom: 0;
-  left: 0;
-  background-position: left bottom;
-  width: 52%;
-  height: 80%;
-  ${breakpoint(css`
-    display: none;
-  `)};
 `;
 
 // full height, on right side when in desktop

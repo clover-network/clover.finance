@@ -11,14 +11,13 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Inter', sans-serif;
     background: ${(props) => props.theme.colors.BACKGROUND};
     max-width: 100%;
-    overflow-x: hidden;
 
     // for 4k monitors, constrain to 1800px width
     @media (min-width: 1800px) {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      //margin: 0 max(calc((100vw - 1800px)/2), 0px);
+      margin: 0 max(calc((100vw - 1800px)/2), 0px);
     }
   }
   
@@ -129,6 +128,6 @@ export const GlobalStyle = createGlobalStyle`
 
  .swiper-pagination-bullet-active{
    opacity: 1.0;
-   background: ${(props) => props.theme.colors.TITLE};
+   background: ${(props) => props.theme.colors.ACCENT};
  }
 `;

@@ -1,17 +1,14 @@
-<svg width="31" height="32" viewBox="0 0 31 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_d_29_838)">
-<path d="M14.4393 22.6964C15.0251 23.2822 15.9749 23.2822 16.5607 22.6964L26.1066 13.1505C26.6924 12.5647 26.6924 11.615 26.1066 11.0292C25.5208 10.4434 24.5711 10.4434 23.9853 11.0292L15.5 19.5145L7.01472 11.0292C6.42893 10.4434 5.47919 10.4434 4.8934 11.0292C4.30761 11.615 4.30761 12.5647 4.8934 13.1505L14.4393 22.6964ZM14 0.105469L14 21.6358L17 21.6358L17 0.105469L14 0.105469Z" fill="black"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 57 57" style="enable-background:new 0 0 57 57;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#33FFB6;}
+	.st1{fill:none;stroke:#6FCF97;stroke-width:4;}
+</style>
+<g>
+	<path class="st0" d="M27.4,36.7c0.6,0.6,1.5,0.6,2.1,0l9.5-9.5c0.6-0.6,0.6-1.5,0-2.1c-0.6-0.6-1.5-0.6-2.1,0l-8.5,8.5L20,25
+		c-0.6-0.6-1.5-0.6-2.1,0c-0.6,0.6-0.6,1.5,0,2.1L27.4,36.7z M27,14.1v21.5h3V14.1H27z"/>
+	<circle class="st1" cx="28.5" cy="24.5" r="22.5"/>
 </g>
-<defs>
-<filter id="filter0_d_29_838" x="0.454059" y="0.105469" width="30.0919" height="31.0303" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dy="4"/>
-<feGaussianBlur stdDeviation="2"/>
-<feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_29_838"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_29_838" result="shape"/>
-</filter>
-</defs>
 </svg>

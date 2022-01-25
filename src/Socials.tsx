@@ -7,8 +7,8 @@ export const Socials: React.FC<{ className?: string }> = ({ className }) => {
   const mode = useContext(SplashModeContext);
 
   const prefix =
-    mode === SplashPageMode.CLOVER
-      ? "black-"
+    mode === SplashPageMode.SAKURA
+      ? "pink-"
       : "";
 
   return (
@@ -43,13 +43,6 @@ export const Socials: React.FC<{ className?: string }> = ({ className }) => {
         rel="noreferrer"
       >
         <SocialsImg src={`images/${prefix}medium.svg`} />
-      </a>
-      <a
-        href="https://www.instagram.com/accounts/login/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <SocialsImg src={`images/${prefix}photo.svg`} />
       </a>
     </SocialsDiv>
   );
