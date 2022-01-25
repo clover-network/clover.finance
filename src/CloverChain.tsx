@@ -49,8 +49,6 @@ export const CloverChain: React.FC = () => {
       <SectionDecentralized />
       <SectionGovernance />
       <SectionComponentOverview sakuraLines={SakuraLines} />
-      <DappInteractionProtocol />
-      <PlatformInfrastructure />
       <SectionEcosystem />
       <SectionFooter />
     </div>
