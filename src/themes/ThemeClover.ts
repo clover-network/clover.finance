@@ -17,7 +17,7 @@ export const ThemeClover: DefaultTheme = {
     FOOTER: "#00000000",
     HEADER: "#000000",
     HEADERBACK: "#06E594",
-    EMAIL_US: "#06E594",
+    EMAIL_US: "#FFFFFF",
     YELLOW_BG: "#FEFFCA",
     PINK_BG: "#FF7B9F",
     LIGHT_PINK_BG: "#FFDDE9",

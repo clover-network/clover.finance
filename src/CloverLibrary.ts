@@ -27,6 +27,15 @@ export const SpanNeutral = styled.span`
 
 export const SpanEmailUs = styled.span`
   color: ${(props) => props.theme.colors.EMAIL_US};
+
+  .title {
+    ${(props) => props.theme.colors.EMAIL_US};
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 32px;
+  }
 `;
 
 export const Subtitle = styled.h2`

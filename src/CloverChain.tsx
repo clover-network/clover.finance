@@ -25,19 +25,22 @@ export const CloverChain: React.FC = () => {
           <Spacer />
           <ContentWrapper>
             <TextWrapper>
-              <h3>{t('substrateBased')}</h3>
-              <span>{t('substrateBasedHint')}</span>
+              <h3>{t('fullStack')}</h3>
+              <span>{t('networkSuite')}</span>
             </TextWrapper>
-            <ImgWrapper>
-              <ImgMainLogo src='images/clover_chain_logo.svg' />
-            </ImgWrapper>
           </ContentWrapper>
-          <CaptionContainer>
-            <Tagline>{t('learnMore')}</Tagline>
-            <a href={`#${AnchorLinkIds.COMPONENTS}`}>
-              <ImgGoDown src="images/down-arrow.svg" />
-            </a>
-          </CaptionContainer>
+          <ContentWrapper1>
+            <TextWrapper1>
+              <h4>{t('decentralizedIdentity')}</h4>
+              <span>{t('nativelyOffers')}</span>
+              <h4>{t('endToEnd')}</h4>
+              <span>{t('uniqueEncryption')}</span>
+              <h4>{t('decentralizedCustodian')}</h4>
+              <span>{t('expandsTheWeb3')}</span>
+            </TextWrapper1>
+            <img src="images/sku-img1.svg" alt=""/>
+          </ContentWrapper1>
+          <Spacer />
           <FloatingLeft>
             <VerticalSocials />
           </FloatingLeft>
@@ -55,11 +58,11 @@ export const CloverChain: React.FC = () => {
 };
 
 const ContentWrapper = styled.div`
-  flex: 1;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-left: 128px;
+  flex-direction: column;
+  margin-left: 200px;
+  justify-content: flex-start;
+  align-items: flex-start;
   ${breakpoint(css`
     flex-direction: column;
     margin-left: 0;
@@ -71,8 +74,6 @@ const TextWrapper = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   
   h3 {
     font-weight: bold;
@@ -80,13 +81,15 @@ const TextWrapper = styled.div`
     line-height: 60px;
     text-transform: uppercase;
     color: ${(props) => props.theme.colors.BACKGROUND};
-    margin-bottom: 24px;
   }
   
   span {
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 28px;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 60px;
+    text-transform: uppercase;
+    color: ${(props) => props.theme.colors.NEUTRAL};
+    margin-bottom: 24px;
   }
 
   ${breakpoint(css`
@@ -95,25 +98,45 @@ const TextWrapper = styled.div`
       line-height: 40px;
     }
     span {
-      font-size: 15px;
-      line-height: 24px;
+      font-size: 32px;
+      line-height: 40px;
     }
   `)};
 `;
 
-const CaptionContainer = styled.div`
+const ContentWrapper1 = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 38px;
+  margin-left: 200px;
+`
+
+const TextWrapper1 = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
 
-const ImgGoDown = styled.img`
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-`;
+  h4 {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 26px;
+    color: ${(props) => props.theme.colors.BACKGROUND};
+    margin-bottom: 16px;
+  }
+
+  span {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #303030;
+    margin-bottom: 24px;
+  }
+`
 
 const FloatingLeft = styled.div`
   position: absolute;
@@ -167,7 +190,7 @@ const Hero = styled.div<{ imageUrl: string }>`
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   background-image: url("${(props) => props.imageUrl}");
   background-size: contain;

@@ -15,100 +15,56 @@ export const SectionEcosystem = () => {
   const theme = useTheme();
   return (
     <SplashSection
-      backgroundColor={theme.colors.ACCENT}
+      backgroundColor={theme.colors.NEUTRAL}
     >
       <DivContainer id={AnchorLinkIds.ECOSYSTEM}>
-        <EcosystemTitle>
-          {t('buildOnClover')}
-        </EcosystemTitle>
+        <EcosystemTitleWrapper>
+          <EcosystemTitle>{t('SAKURA')}</EcosystemTitle>
+          <CenteredTitle>{t('metaverseInfrastructure')}</CenteredTitle>
+        </EcosystemTitleWrapper>
         <EcosystemContent>
-          <EcosystemLeft>
-            <img src='images/code-snippet.png' alt='' />
-          </EcosystemLeft>
-          <Col>
-            <Col>
-              <Subtitle>{t('forBuilders')}</Subtitle>
-              <TextSpan>
-                {t('forBuildersHint')}
-              </TextSpan>
-              <SpacerVertical height={"24px"} />
-              <DivButtonRow>
-                <WhiteButton
-                  onClick={() =>
-                    window.open("https://docs.clover.finance/", "_blank")
-                  }
-                >
-                  {t('readDocs')}
-                </WhiteButton>
-                <WhiteButton
-                  onClick={() =>
-                    window.open("https://github.com/clover-network", "_blank")
-                  }
-                >
-                  {t('getGithubRepo')}
-                </WhiteButton>
-                <WhiteButton
-                  onClick={() =>
-                    window.open(
-                      "https://docs.clover.finance/clover-chain/for-developers/using-testnet",
-                      "_blank"
-                    )
-                  }
-                >
-                  {t('viewTestnet')}
-                </WhiteButton>
-              </DivButtonRow>
-            </Col>
-            <Col>
-              <Subtitle>{t('integrateCloverWallet')}</Subtitle>
-              <TextSpan>
-                {t('integrateCloverWalletHint')}
-              </TextSpan>
-              <SpacerVertical height={"24px"} />
-              <DivButtonRow>
-                <WhiteButton
-                  onClick={() =>
-                    window.open(
-                      "https://docs.clover.finance/clover-multi-chain-wallet/developer-guide",
-                      "_blank"
-                    )
-                  }
-                >
-                  {t('integrate')}
-                </WhiteButton>
-              </DivButtonRow>
-            </Col>
-            <Col>
-              <Subtitle>{t('buildWithClover')}</Subtitle>
-              <TextSpan>
-                {t('buildWithCloverHint')}
-              </TextSpan>
-              <SpacerVertical height={"24px"} />
-              <DivButtonRow>
-                <WhiteButton
-                  onClick={() =>
-                    window.open(
-                      "https://docs.google.com/forms/d/e/1FAIpQLSfQevVEw_hL44vvbcMkYB8kKdzTFAbtD1pR-QVraaA7h4jpKg/viewform",
-                      "_blank"
-                    )
-                  }
-                >
-                  {t('build')}
-                </WhiteButton>
-              </DivButtonRow>
-            </Col>
-          </Col>
-          <EcosystemBottom>
-            <img src='images/code-snippet.png' alt='' />
-          </EcosystemBottom>
+          <img src="images/sku-infra.svg" alt="" />
+          <EcosystemRight>
+            <EcosystemRightRow>
+              <img src="images/sku-infra-icon1.svg" alt="" />
+              <span>{t("smartContractGovernance")}</span>
+            </EcosystemRightRow>
+            <EcosystemRightRow>
+              <img src="images/sku-infra-icon2.svg" alt="" />
+              <span>{t("communicationProtocol")}</span>
+            </EcosystemRightRow>
+            <EcosystemRightRow>
+              <img src="images/sku-infra-icon3.svg" alt="" />
+              <span>{t("dAOPlatformSupport")}</span>
+            </EcosystemRightRow>
+            <EcosystemRightRow>
+              <img src="images/sku-infra-icon4.svg" alt="" />
+              <span>{t("SNS")}</span>
+            </EcosystemRightRow>
+            <EcosystemRightRow>
+              <img src="images/sku-infra-icon5.svg" alt="" />
+              <span>{t("gAMFISupport")}</span>
+            </EcosystemRightRow>
+            <EcosystemRightRow>
+              <img src="images/sku-infra-icon6.svg" alt="" />
+              <span>{t("dAppToolsSDK")}</span>
+            </EcosystemRightRow>
+            <EcosystemRightRow>
+              <img src="images/sku-infra-icon7.svg" alt="" />
+              <span>{t("universalCrosschainSupport")}</span>
+            </EcosystemRightRow>
+          </EcosystemRight>
         </EcosystemContent>
+        
       </DivContainer>
     </SplashSection>
   );
 };
 
-const EcosystemTitle = styled(CenteredTitle)`
+const EcosystemTitleWrapper = styled.div`
   padding-left: 128px;
+  display: flex;
+  
   ${breakpoint(css`
     padding-left: 0;
     font-weight: bold;
@@ -117,25 +73,43 @@ const EcosystemTitle = styled(CenteredTitle)`
   `)};
 `
 
+const EcosystemTitle = styled(CenteredTitle)`
+  color: ${(props) => props.theme.colors.PINK_BG};
+  margin-right: 10px;
+`
+
 const EcosystemContent = styled(Row)`
-  margin-top: 78px;
+  margin-left: 128px;
+  margin-top: 60px;
+  margin-bottom: 100px;
+  justify-content: space-between;
   ${breakpoint(css`
     margin-top: 0;
   `)};
 `
 
-const EcosystemLeft = styled.div`
-  align-items: flex-end;
+const EcosystemRight = styled.div`
   display: flex;
-  width: 40%;
-  justify-content: flex-start;
+  flex-direction: column;
+`
+
+const EcosystemRightRow = styled.div`
+  display: flex;
+  margin-bottom: 30px;
+
   img {
-    width: 100%;
+    width: 18px;
+    margin-right: 36px;
   }
-  
-  ${breakpoint(css`
-    display: none;
-  `)};
+
+  span {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    color: ${(props) => props.theme.colors.BACKGROUND};
+  }
 `
 
 const EcosystemBottom = styled.div`

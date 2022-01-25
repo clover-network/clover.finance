@@ -6,16 +6,17 @@ import {
   Subtitle,
 } from "./CloverLibrary";
 import React, { useContext } from "react";
-import styled, { css } from 'styled-components';
+import styled, { css, useTheme } from 'styled-components';
 import { SplashModeContext, SplashPageMode } from "./SplashModeContext";
 import { breakpoint } from "./mixins/breakpoint";
 import { t } from './i18n/intl';
 
 export const SectionFooter = () => {
   const mode = useContext(SplashModeContext);
+  const theme = useTheme();
 
   return (
-    <SplashSection>
+    <SplashSection backgroundColor={theme.colors.PINK_BG}>
       <DivContainer hasMinHeight={true}>
         {mode === SplashPageMode.SAKURA && <CloverSakuraColumns />}
         {mode === SplashPageMode.CLOVER && <CloverSakuraColumns />}
@@ -30,8 +31,7 @@ export const SectionFooter = () => {
 const FooterBar = () => {
   return (
     <DivFooterBar>
-      <DivCopyright>@Clover Inc. All Rights Reserved</DivCopyright>
-      {/*<Socials />*/}
+      <DivCopyright>@Cloverfinance. All Rights Reserved</DivCopyright>
     </DivFooterBar>
   );
 };
@@ -129,7 +129,7 @@ const CloverSakuraColumns = () => {
       <EmailColumn>
         <FooterColumnLabel>
           <SpanEmailUs>
-            {t('comeSayHelloAt')}{" "}
+            <span className="title">{t('comeSayHelloAt')}{" "}</span>
             <a href="mailto:info@clover.finance">info@clover.finance</a>
           </SpanEmailUs>
         </FooterColumnLabel>
@@ -213,6 +213,7 @@ const DivFooterBar = styled.div`
 
 const DivCopyright = styled(BodyText)`
   margin: 0 auto 0 0;
+  color: ${(props) => props.theme.colors.TITLE};
   ${breakpoint(css`
     margin: 24px 0;
   `)}
