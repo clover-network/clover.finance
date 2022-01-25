@@ -1,9 +1,6 @@
 import { SplashSection } from "./SplashSection";
 import {
   CenteredTitle,
-  Col,
-  Row,
-  SpacerVertical,
 } from "./CloverLibrary";
 import React from "react";
 import styled, { css, useTheme } from "styled-components";
@@ -55,14 +52,12 @@ export const SectionEcosystem = () => {
             </EcosystemRightRow>
           </EcosystemRight>
         </EcosystemContent>
-        
       </DivContainer>
     </SplashSection>
   );
 };
 
 const EcosystemTitleWrapper = styled.div`
-  padding-left: 128px;
   display: flex;
   
   ${breakpoint(css`
@@ -78,10 +73,10 @@ const EcosystemTitle = styled(CenteredTitle)`
   margin-right: 10px;
 `
 
-const EcosystemContent = styled(Row)`
-  margin-left: 128px;
+const EcosystemContent = styled.div`
   margin-top: 60px;
-  margin-bottom: 100px;
+  display: flex;
+  align-items: center;
   justify-content: space-between;
   ${breakpoint(css`
     margin-top: 0;
@@ -110,94 +105,15 @@ const EcosystemRightRow = styled.div`
     line-height: 22px;
     color: ${(props) => props.theme.colors.BACKGROUND};
   }
-`
-
-const EcosystemBottom = styled.div`
-  display: none;
-
-  ${breakpoint(css`
-    display: flex;
-    position: relative;
-    left: -24px;
-    
-    img {
-      width: 110%;
-    }
-  `)};
-`
-
-const DivButtonRow = styled.div`
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-
-  div {
-    margin-left: 10px;
-  }
-
-  margin-left: -10px;
-  margin-bottom: 38px;
-
-  ${breakpoint(css`
-    flex-direction: column;
-    margin: 0;
-  `)};
 `;
-
-const WhiteButton = styled.div`
-  flex: 1;
-  background: #FFFFFF;
-  border: 1px solid #000000;
-  box-sizing: border-box;
-  border-radius: 8px;
-  text-align: center;
-  padding: 14px 0;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 24px;
-  height: fit-content;
-  cursor: pointer;
-  max-width: 167px;
-  color: ${(props) => props.theme.colors.BACKGROUND};
-  ${breakpoint(css`
-    max-width: unset;
-    margin: 0 0 24px!important;
-  `)};
-`
-
-const Subtitle = styled.div`
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 28px;
-  margin-bottom: 16px;
-  color: ${(props) => props.theme.colors.BACKGROUND};
-  ${breakpoint(css`
-    font-size: 15px;
-    line-height: 24px;
-  `)};
-`
-
-const TextSpan = styled.div`
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 28px;
-  color: ${(props) => props.theme.colors.BACKGROUND};
-  ${breakpoint(css`
-    font-size: 15px;
-    line-height: 24px;
-  `)};
-`
 
 const DivContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 96px 128px 0 0;
-  width: 100vw;
-  margin-left: -128px;
+  padding: 98px 0;
 
   ${breakpoint(css`
-    width: unset;
     margin-left: 0;
     padding: 48px 0 0;
   `)}

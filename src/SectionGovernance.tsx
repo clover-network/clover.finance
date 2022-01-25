@@ -1,8 +1,6 @@
 import { SplashSection } from "./SplashSection";
 import {
   CenteredTitle,
-  Col,
-  Row,
   SpacerVertical,
 } from "./CloverLibrary";
 import React from "react";
@@ -17,7 +15,7 @@ export const SectionGovernance = () => {
     <SplashSection
       backgroundColor={theme.colors.LIGHT_PINK_BG}
     >
-      <DivContainer id={AnchorLinkIds.DECENTRALIZED}>
+      <DivContainer id={AnchorLinkIds.GOVERNANCE}>
         <GovernanceContent>
           <GovernanceLeft>
             <GovernanceTitle>{t('GovernanceTitle')}</GovernanceTitle>

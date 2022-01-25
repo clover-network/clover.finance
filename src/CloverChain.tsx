@@ -1,18 +1,16 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { Spacer, SpacerSection, Title } from "./CloverLibrary";
+import { Spacer, Title } from "./CloverLibrary";
 import { SectionEcosystem } from "./SectionEcosystem";
 import { SectionComponentOverview } from "./SectionComponentOverview";
-import { DappInteractionProtocol } from "./DappInteractionProtocol";
-import { PlatformInfrastructure } from "./PlatformInfrastructure";
 import { SectionFooter } from "./SectionFooter";
 import { HorizontalGutters } from "./mixins/HorizontalGutters";
 import { breakpoint } from "./mixins/breakpoint";
 import { Socials } from "./Socials";
-import { AnchorLinkIds } from "./AnchorLinkIds";
 import { t } from './i18n/intl';
 import { SectionDecentralized } from './SectionDecentralized';
 import { SectionGovernance } from './SectionGovernance';
+import { AnchorLinkIds } from './AnchorLinkIds';
 
 export const CloverChain: React.FC = () => {
   const SakuraLines = [
@@ -20,7 +18,7 @@ export const CloverChain: React.FC = () => {
   ];
   return (
     <div>
-      <LandingContainer>
+      <LandingContainer id={AnchorLinkIds.WEB3}>
         <Hero imageUrl=''>
           <Spacer />
           <ContentWrapper>

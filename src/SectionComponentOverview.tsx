@@ -1,7 +1,5 @@
 import { SplashSection } from "./SplashSection";
 import {
-  SpanAccent,
-  LeftAlignTitle,
   SectionSubtitle, CenteredTitle,
 } from './CloverLibrary';
 import React, { useEffect, useState } from "react";

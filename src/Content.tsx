@@ -1,40 +1,39 @@
 import React, { useEffect, useState } from "react";
 import { CloverChain } from '../src/CloverChain';
-import { Wallet } from '../src/Wallet';
-import { AboutUs } from '../src/AboutUs';
 import "swiper/css";
 import "swiper/css/pagination";
 import SwiperCore, { Pagination } from "swiper";
 import Header from './components/Header';
 import { t } from './i18n/intl';
 import { useRouter } from 'next/router';
+import { AnchorLinkIds } from './AnchorLinkIds';
 
 SwiperCore.use([Pagination]);
 export const Content = () => {
   const navList = [
     {
       name: t('WEB3'),
-      path: "/",
+      path: AnchorLinkIds.WEB3,
     },
     {
       name: t('DE-FI'),
-      path: "/",
+      path: AnchorLinkIds.DECENTRALIZED,
     },
     {
       name: t('DAO'),
-      path: "/",
+      path: AnchorLinkIds.GOVERNANCE,
     },
     {
       name: t('SAKURA IS'),
-      path: "/",
+      path: AnchorLinkIds.COMPONENTS,
     },
-    {
-      name: t('BUILD'),
-      path: "/",
-    },
+    // {
+    //   name: t('BUILD'),
+    //   path: AnchorLinkIds.ECOSYSTEM,
+    // },
     {
       name: t('INFRASTRUCTURE'),
-      path: "/",
+      path: AnchorLinkIds.ECOSYSTEM,
     },
   ];
   const [selectTab, setSelectTab] = useState({ name: "", path: "" });
@@ -59,7 +58,7 @@ export const Content = () => {
     }
   }, [location]);
   const changeTab = (tab: any) => {
-    location.push(tab.path, undefined, { shallow: true });
+    // location.push(tab.path, undefined, { shallow: true });
     setSelectTab(tab);
   };
 
@@ -70,9 +69,9 @@ export const Content = () => {
         currentTab={selectTab}
         handleChange={(tab: any) => changeTab(tab)}
       />
-      {selectTab.name === t('WEB3') && <CloverChain />}
-      {selectTab.name === t('DE-FI') && <Wallet />}
-      {selectTab.name === t('DAO') && <AboutUs />}
+      <CloverChain />
+      {/*{selectTab.name === t('DE-FI') && <Wallet />}*/}
+      {/*{selectTab.name === t('DAO') && <AboutUs />}*/}
     </div>
   );
 };

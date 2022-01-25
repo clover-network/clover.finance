@@ -10,6 +10,7 @@ import { Locale, setLocale } from '../../i18n/i18nSlice';
 import { useLocale } from '../../i18n/useLocale';
 import store from '../../../src/state';
 import { Socials } from '../../Socials';
+import { AnchorLinkIds } from '../../AnchorLinkIds';
 
 const HeaderWrapper = styled.div`
   width: 100%;
@@ -71,7 +72,7 @@ const HeaderRight = styled.div`
   align-items: center;
 `
 
-const Link = styled(NavLink)`
+const Link = styled.a`
   margin-right: 32px;
   color: ${(props) => props.theme.colors.BACKGROUND};
   font-weight: 600;
@@ -90,7 +91,7 @@ const Link = styled(NavLink)`
       display: flex;
       width: 100%;
       height: 3px;
-      background: ${(props) => props.theme.colors.BAR};
+      background: ${(props) => props.theme.colors.PINK_BG};
       position: absolute;
       bottom: -10px;
       right: 0;
@@ -238,12 +239,18 @@ export default function Header(props: any): ReactElement {
               <Navbar variant="light" className="nav-bar">
                 <Nav>
                   {navList.map((nav: any) => (
+                    // <a href={`#${AnchorLinkIds.DECENTRALIZED}`}>
+                    //   {nav.name}
+                    // </a>
+
                     <Link
-                      active={currentTab.name === nav.name}
+                      // active={currentTab.name === nav.name}
+                      href={`#${nav.path}`}
                       onClick={() => handleChange(nav)}
                       key={nav.name}
                     >
                       {nav.name}
+
                     </Link>
                   ))}
                 </Nav>
