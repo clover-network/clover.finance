@@ -169,11 +169,37 @@ const Navs = styled(LanguageList)`
 `
 
 const VerticalSocials = styled(Socials)`
-  border-top: 1px solid #c4c4c4 !important;
-  padding-top: 24px!important;
   img {
     width: 32px;
   }
+`;
+
+const SakuraDiv = styled.div`
+  padding-top: 25px!important;
+  border-top: 1px solid #c4c4c4 !important;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 30px;
+  opacity: 0.7;
+  &:hover {
+    opacity: 1;
+  }
+  img {
+    width: 18px;
+    margin-right: 10px;
+  }
+  span {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 12px;
+    color: #000;
+    word-break: break-word;
+  }
+  ${breakpoint(css`
+    margin-left: 0;
+    opacity: 1;
+  `)};
 `;
 
 const Languages: React.FC<{
@@ -257,6 +283,10 @@ export default function Header(props: any): ReactElement {
               />
               {showList && <Languages hideShowList={() => setShowList(false)} />}
             </Language>
+            <SakuraDiv onClick={() => window.open('https://clover.finance/sakura.html')}>
+              <img src='images/sakura_icon.svg' alt='' />
+              <span>Sakura <br/>Sisternet</span>
+            </SakuraDiv>
           </HeaderRight>
         </WrapperDesktopOnly>
       </HeaderContent>
@@ -277,6 +307,10 @@ export default function Header(props: any): ReactElement {
                 {nav.name}
               </div>
             ))}
+            <SakuraDiv onClick={() => window.open('https://clover.finance/sakura.html')}>
+              <img src='images/sakura_icon.svg' alt='' />
+              <span>Sakura <br/>Sisternet</span>
+            </SakuraDiv>
             <VerticalSocials />
           </Navs>
         )}
