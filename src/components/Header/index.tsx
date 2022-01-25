@@ -175,8 +175,6 @@ const Navs = styled(LanguageList)`
 `
 
 const VerticalSocials = styled(Socials)`
-  border-top: 1px solid #c4c4c4 !important;
-  padding-top: 24px!important;
   img {
     width: 32px;
   }
@@ -188,6 +186,10 @@ const CloverDiv = styled.div`
   cursor: pointer;
   margin-top: 5px;
   margin-left: 15px;
+  opacity: 0.7;
+  &:hover {
+    opacity: 1;
+  }
   img {
     width: 18px;
     margin-right: 10px;
@@ -198,6 +200,12 @@ const CloverDiv = styled.div`
     line-height: 12px;
     color: #303030;
   }
+  ${breakpoint(css`
+    border-top: 1px solid #c4c4c4 !important;
+    padding-top: 24px!important;
+    margin-left: 0;
+    opacity: 1;
+  `)};
 `;
 
 const Languages: React.FC<{
@@ -291,6 +299,10 @@ export default function Header(props: any): ReactElement {
                 {nav.name}
               </div>
             ))}
+            <CloverDiv onClick={() => window.open('https://clover.finance/')}>
+              <img src='images/clover_icon.svg' alt='' />
+              <span>Clover</span>
+            </CloverDiv>
             <VerticalSocials />
           </Navs>
         )}
