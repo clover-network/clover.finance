@@ -182,6 +182,24 @@ const VerticalSocials = styled(Socials)`
   }
 `;
 
+const CloverDiv = styled.div`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-left: 15px;
+  img {
+    width: 18px;
+    margin-right: 10px;
+  }
+  span {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 12px;
+    color: #303030;
+  }
+`;
+
 const Languages: React.FC<{
   hideShowList: () => void;
 }> = ({ hideShowList }) => {
@@ -249,6 +267,10 @@ export default function Header(props: any): ReactElement {
                 </Nav>
               </Navbar>
             </HeaderDiv>
+            <CloverDiv onClick={() => window.open('https://clover.finance/')}>
+              <img src='images/clover_icon.svg' alt='' />
+              <span>Clover</span>
+            </CloverDiv>
           </HeaderRight>
         </WrapperDesktopOnly>
       </HeaderContent>
