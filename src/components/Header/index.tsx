@@ -175,8 +175,6 @@ const VerticalSocials = styled(Socials)`
 `;
 
 const SakuraDiv = styled.div`
-  padding-top: 25px!important;
-  border-top: 1px solid #c4c4c4 !important;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -197,6 +195,8 @@ const SakuraDiv = styled.div`
     word-break: break-word;
   }
   ${breakpoint(css`
+    padding-top: 25px!important;
+    border-top: 1px solid #c4c4c4 !important;
     margin-left: 0;
     opacity: 1;
   `)};
