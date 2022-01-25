@@ -4,7 +4,7 @@ import React from "react";
 export const DefaultHead = () => {
   return (
     <Head>
-      <title>Clover - Cross-chain DeFi Interoperability</title>
+      <title>Sakura - Metaverse Infrastructure</title>
       <meta
         name="viewport"
         content="initial-scale=1.0, width=device-width"

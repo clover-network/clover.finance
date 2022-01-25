@@ -10,20 +10,31 @@ import { t } from './i18n/intl';
 import { useRouter } from 'next/router';
 
 SwiperCore.use([Pagination]);
-
 export const Content = () => {
   const navList = [
     {
-      name: t('cloverChain'),
+      name: t('WEB3'),
       path: "/",
     },
     {
-      name: t('wallet'),
-      path: "/?type=wallet",
+      name: t('DE-FI'),
+      path: "/",
     },
     {
-      name: t('aboutUs'),
-      path: "/?type=aboutUs",
+      name: t('DAO'),
+      path: "/",
+    },
+    {
+      name: t('SAKURA IS'),
+      path: "/",
+    },
+    {
+      name: t('BUILD'),
+      path: "/",
+    },
+    {
+      name: t('INFRASTRUCTURE'),
+      path: "/",
     },
   ];
   const [selectTab, setSelectTab] = useState({ name: "", path: "" });
@@ -59,9 +70,9 @@ export const Content = () => {
         currentTab={selectTab}
         handleChange={(tab: any) => changeTab(tab)}
       />
-      {selectTab.name === t('cloverChain') && <CloverChain />}
-      {selectTab.name === t('wallet') && <Wallet />}
-      {selectTab.name === t('aboutUs') && <AboutUs />}
+      {selectTab.name === t('WEB3') && <CloverChain />}
+      {selectTab.name === t('DE-FI') && <Wallet />}
+      {selectTab.name === t('DAO') && <AboutUs />}
     </div>
   );
 };

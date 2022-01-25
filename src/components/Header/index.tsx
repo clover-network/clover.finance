@@ -48,12 +48,17 @@ const HeaderDiv = styled.div`
     //justify-content: center;
   `)};
   img {
-    width: 128px;
+    width: 49px;
     object-fit: contain;
     flex: 1 1 0%;
     ${breakpoint(css`
       height: 24px;
     `)};
+  }
+
+  .text-logo {
+    width: 95px;
+    margin-left: 9px;
   }
 
   .nav-bar {
@@ -218,6 +223,7 @@ export default function Header(props: any): ReactElement {
         </WrapperMobileOnly>
         <HeaderDiv>
           <img src="images/Logo.svg" alt="" />
+          <img className="text-logo" src="images/sakura-text-logo.svg" alt="" />
         </HeaderDiv>
         <WrapperMobileOnly>
           <HeaderIcon
@@ -243,20 +249,6 @@ export default function Header(props: any): ReactElement {
                 </Nav>
               </Navbar>
             </HeaderDiv>
-            <ButtonIcon>
-              <img onClick={() => openUrl('https://apps.apple.com/app/clover-wallet/id1570072858')} src="images/apple_icon.svg" alt="" />
-              <img onClick={() => openUrl('https://play.google.com/store/apps/details?id=com.clover.finance.wallet&hl=en_US&gl=US')} src="images/google_play_icon.svg" alt="" />
-              <img onClick={() => openUrl('https://chrome.google.com/webstore/detail/clover-wallet/nhnkbkgjikgcigadomkphalanndcapjk')} src="images/chrome_icon.svg" alt="" />
-            </ButtonIcon>
-            <WebWallet onClick={() => openUrl('https://wallet.clover.finance/')}>{t('webWallet')}</WebWallet>
-            <Language>
-              <img
-                src="images/language_icon.svg"
-                alt=""
-                onClick={() => setShowList(!showList)}
-              />
-              {showList && <Languages hideShowList={() => setShowList(false)} />}
-            </Language>
           </HeaderRight>
         </WrapperDesktopOnly>
       </HeaderContent>

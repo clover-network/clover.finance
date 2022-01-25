@@ -13,19 +13,6 @@ import { AnchorLinkIds } from "./AnchorLinkIds";
 import { t } from './i18n/intl';
 
 export const CloverChain: React.FC = () => {
-  // const [assetPrice, setAssetPrice] = useState({});
-  // useEffect(() => {
-  //   axios.get('https://min-api.cryptocompare.com/data/pricemultifull?fsyms=CLV,BTC,ETH,DOT,SOL,FTM,KSM&tsyms=usd')
-  //     .then((response) => {
-  //       const tempObj:any = {};
-  //       const data = response.data.RAW;
-  //       for (const key in data) {
-  //         const priceData = data[key].USD;
-  //         tempObj[key] = {curPrice: priceData.PRICE, changepct24hour: priceData.CHANGEPCT24HOUR}
-  //       }
-  //       setAssetPrice(tempObj);
-  //     })
-  // }, [])
   const CloverLines = [
     t('cloverLines1'),
     t('cloverLines2'),
@@ -194,7 +181,7 @@ const LandingContainer = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background: ${(props) => props.theme.colors.YELLOW_BG};
+  background: ${(props) => props.theme.colors.PINK_BG};
   ${breakpoint(css`
     height: unset;
     min-height: 120vw;
