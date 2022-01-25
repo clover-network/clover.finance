@@ -175,6 +175,7 @@ const Navs = styled(LanguageList)`
 `
 
 const VerticalSocials = styled(Socials)`
+  padding-top: 24px!important;
   img {
     width: 32px;
   }
@@ -206,6 +207,27 @@ const CloverDiv = styled.div`
     margin-left: 0;
     opacity: 1;
   `)};
+`;
+
+const CloverVerticalDiv = styled.div`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-left: 15px;
+  border-top: 1px solid #c4c4c4 !important;
+  padding-top: 30px !important;
+  padding-left: 0 !important;
+  img {
+    width: 18px;
+    margin-right: 10px;
+  }
+  span {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 12px;
+    color: #303030;
+  }
 `;
 
 const Languages: React.FC<{
@@ -289,20 +311,23 @@ export default function Header(props: any): ReactElement {
         {showNavs && (
           <Navs>
             {navList.map((nav: any) => (
-              <div
-                onClick={() => {
-                  handleChange(nav);
-                  setShowNavs(false)
-                }}
-                key={nav.name}
-              >
-                {nav.name}
+              <div>
+                <Link
+                  href={`#${nav.path}`}
+                  onClick={() => {
+                    handleChange(nav)
+                    setShowNavs(false)
+                  }}
+                  key={nav.name}
+                >
+                  {nav.name}
+                </Link>
               </div>
             ))}
-            <CloverDiv onClick={() => window.open('https://clover.finance/')}>
+            <CloverVerticalDiv onClick={() => window.open('https://clover.finance/')}>
               <img src='images/clover_icon.svg' alt='' />
               <span>Clover</span>
-            </CloverDiv>
+            </CloverVerticalDiv>
             <VerticalSocials />
           </Navs>
         )}
