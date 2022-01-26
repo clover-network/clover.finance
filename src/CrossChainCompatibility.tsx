@@ -22,7 +22,7 @@ export const CrossChainCompatibility = () => {
       content: t('crossChainCompatibilityHint'),
       logo: "images/logo_extension.png",
       btnText: t('downloadNow'),
-      url: "https://apps.apple.com/app/clover-wallet/id1570072858"
+      url: "https://chrome.google.com/webstore/detail/clover-wallet/nhnkbkgjikgcigadomkphalanndcapjk"
     },
     {
       title: t('web'),
