@@ -283,7 +283,7 @@ export default function Header(props: any): ReactElement {
               />
               {showList && <Languages hideShowList={() => setShowList(false)} />}
             </Language>
-            <SakuraDiv onClick={() => window.open('https://clover.finance/sakura.html')}>
+            <SakuraDiv onClick={() => window.open('https://sakurafinance.io')}>
               <img src='images/sakura_icon.svg' alt='' />
               <span>Sakura <br/>Sisternet</span>
             </SakuraDiv>
@@ -307,7 +307,7 @@ export default function Header(props: any): ReactElement {
                 {nav.name}
               </div>
             ))}
-            <SakuraDiv onClick={() => window.open('https://clover.finance/sakura.html')}>
+            <SakuraDiv onClick={() => window.open('https://sakurafinance.io')}>
               <img src='images/sakura_icon.svg' alt='' />
               <span>Sakura <br/>Sisternet</span>
             </SakuraDiv>
