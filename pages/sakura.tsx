@@ -7,12 +7,6 @@ import { SplashPageEntry } from "../src/SplashPageEntry";
 import { MenuContextProvider } from "../src/MenuContextProvider";
 import router, { useRouter } from "next/router";
 export default function FirstPost() {
-  const location = useRouter();
-  useEffect(() => {
-    if(window.location.pathname === '/sakura') {
-       router.replace("/sakura.html");
-    }
-  }, [location]);
   return (
     <MenuContextProvider>
       <SplashModeContext.Provider value={SplashPageMode.SAKURA}>
