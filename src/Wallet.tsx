@@ -29,7 +29,7 @@ export const Wallet: React.FC = () => {
               <GetTheClover>
                 <span>{t('getTheClover')}</span>
                 <div>
-                  <img onClick={() => openUrl('https://play.google.com/store/apps/details?id=com.clover.finance.wallet&hl=en_US&gl=US')} src='images/get_google.svg' alt='' />
+                  <img onClick={() => openUrl('https://github.com/clover-network/clover-multichain-mobile-wallet-release/releases/latest/download/clover.apk')} src='images/get_google.svg' alt='' />
                   <img onClick={() => openUrl('https://apps.apple.com/app/clover-wallet/id1570072858')} src='images/get_app.svg' alt='' />
                 </div>
               </GetTheClover>

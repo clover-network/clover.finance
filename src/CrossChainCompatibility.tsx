@@ -105,7 +105,7 @@ export const CrossChainCompatibility = () => {
               <h3>{CloverItems[selectIndex].body}</h3>
               <span>{CloverItems[selectIndex].content}</span>
               {CloverItems[selectIndex].btnText ? <ItemBtn onClick={() => openUrl(CloverItems[selectIndex].url)}>{CloverItems[selectIndex].btnText}</ItemBtn> : <ItemBtns>
-                <img onClick={() => openUrl('https://play.google.com/store/apps/details?id=com.clover.finance.wallet&hl=en_US&gl=US')} src='images/mobile_google.svg' alt='' />
+                <img onClick={() => openUrl('https://github.com/clover-network/clover-multichain-mobile-wallet-release/releases/latest/download/clover.apk')} src='images/mobile_google.svg' alt='' />
                 <img onClick={() => openUrl('https://apps.apple.com/app/clover-wallet/id1570072858')} src='images/mobile_app.svg' alt='' />
               </ItemBtns>}
             </TextContent>
@@ -141,7 +141,7 @@ export const CrossChainCompatibility = () => {
             <h3>{CloverItems[selectIndex].body}</h3>
             <span>{CloverItems[selectIndex].content}</span>
             {CloverItems[selectIndex].btnText ? <ItemBtn onClick={() => openUrl(CloverItems[selectIndex].url)}>{CloverItems[selectIndex].btnText}</ItemBtn> : <ItemBtns>
-              <img onClick={() => openUrl('https://play.google.com/store/apps/details?id=com.clover.finance.wallet&hl=en_US&gl=US')} src='images/mobile_google.svg' alt='' />
+              <img onClick={() => openUrl('https://github.com/clover-network/clover-multichain-mobile-wallet-release/releases/latest/download/clover.apk')} src='images/mobile_google.svg' alt='' />
               <img onClick={() => openUrl('https://apps.apple.com/app/clover-wallet/id1570072858')} src='images/mobile_app.svg' alt='' />
             </ItemBtns>}
           </TextContent>

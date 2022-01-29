@@ -232,8 +232,8 @@ const Items = [
       },
       {
         label: "Download Android Wallet",
-        // url: "https://github.com/clover-network/clover-multichain-mobile-wallet-release/releases/latest/download/clover.apk",
-          url: "https://play.google.com/store/apps/details?id=com.clover.finance.wallet&hl=en_US&gl=US",
+        url: "https://github.com/clover-network/clover-multichain-mobile-wallet-release/releases/latest/download/clover.apk",
+        // url: "https://play.google.com/store/apps/details?id=com.clover.finance.wallet&hl=en_US&gl=US",
       },
     ],
   },

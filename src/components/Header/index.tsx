@@ -271,7 +271,7 @@ export default function Header(props: any): ReactElement {
             </HeaderDiv>
             <ButtonIcon>
               <img onClick={() => openUrl('https://apps.apple.com/app/clover-wallet/id1570072858')} src="images/apple_icon.svg" alt="" />
-              <img onClick={() => openUrl('https://play.google.com/store/apps/details?id=com.clover.finance.wallet&hl=en_US&gl=US')} src="images/google_play_icon.svg" alt="" />
+              <img onClick={() => openUrl('https://github.com/clover-network/clover-multichain-mobile-wallet-release/releases/latest/download/clover.apk')} src="images/google_play_icon.svg" alt="" />
               <img onClick={() => openUrl('https://chrome.google.com/webstore/detail/clover-wallet/nhnkbkgjikgcigadomkphalanndcapjk')} src="images/chrome_icon.svg" alt="" />
             </ButtonIcon>
             <WebWallet onClick={() => openUrl('https://wallet.clover.finance/')}>{t('webWallet')}</WebWallet>

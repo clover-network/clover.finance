@@ -67,7 +67,7 @@ const CloverSakuraColumns = () => {
           </Link>
           <Link>
             <a
-              href="https://play.google.com/store/apps/details?id=com.clover.finance.wallet&hl=en_US&gl=US"
+              href="https://github.com/clover-network/clover-multichain-mobile-wallet-release/releases/latest/download/clover.apk"
               target="_blank"
               rel="noreferrer"
             >
