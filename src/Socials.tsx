@@ -13,7 +13,7 @@ export const Socials: React.FC<{ className?: string }> = ({ className }) => {
 
   return (
     <SocialsDiv className={className}>
-      <a href="https://t.me/clover_en/" target="_blank" rel="noreferrer">
+      <a href="https://t.me/cloverofficial_en" target="_blank" rel="noreferrer">
         <SocialsImg src={`images/${prefix}telegram.svg`} />
       </a>
       <a
