@@ -51,6 +51,13 @@ export const Socials: React.FC<{ className?: string }> = ({ className }) => {
       >
         <SocialsImg src={`images/${prefix}photo.svg`} />
       </a>
+      <a
+        href="https://discord.com/invite/M6SxuXqMVB"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <SocialsImg src={`images/${prefix}discord.svg`} />
+      </a>
     </SocialsDiv>
   );
 };
