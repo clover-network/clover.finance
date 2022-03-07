@@ -32,7 +32,7 @@ export const DappInteractionProtocol = () => {
           </DappInteractionProtocolTitle>
         </WrapperMobileOnly>
         <ContentWrapper>
-          <img src='/images/dapp_bg.png' alt='' />
+          <img src='/images/dapp_bg.gif' alt='' />
           <ContentLeft>
             <TextContent>
               <h3>
@@ -79,8 +79,9 @@ const ContentWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   margin: 72px 0;
-  background: url('/images/dapp_bg.png') no-repeat right bottom;
-  background-size: contain;
+  background: url('/images/dapp_bg.gif') no-repeat;
+  background-size: auto 100%;
+  background-position: right -97px bottom;
   & > img {
     display: none;
   }
@@ -90,8 +91,8 @@ const ContentWrapper = styled.div`
     flex-direction: column;
     & > img {
       display: unset;
-      width: 150%;
-      margin-left: -50%;
+      width: 100%;
+      margin-left: 0;
     }
   `)};
 `;

@@ -57,7 +57,7 @@ const HeaderDiv = styled.div`
   }
 
   .nav-bar {
-    margin-top: -3px;
+    margin-top: -13px;
   }
 `;
 

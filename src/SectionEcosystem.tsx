@@ -127,7 +127,7 @@ const EcosystemContent = styled(Row)`
 const EcosystemLeft = styled.div`
   align-items: flex-end;
   display: flex;
-  width: 40%;
+  /*width: 40%;*/
   justify-content: flex-start;
   img {
     width: 100%;
@@ -154,14 +154,13 @@ const EcosystemBottom = styled.div`
 
 const DivButtonRow = styled.div`
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
 
   div {
-    margin-left: 10px;
+    margin-right: 24px;
   }
 
-  margin-left: -10px;
+  /*margin-left: -10px;*/
   margin-bottom: 38px;
 
   ${breakpoint(css`
@@ -218,8 +217,7 @@ const DivContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 96px 128px 0 0;
-  width: 100vw;
+  padding: 96px 0 0 0;
   margin-left: -128px;
 
   ${breakpoint(css`

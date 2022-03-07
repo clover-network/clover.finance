@@ -64,6 +64,7 @@ export const Socials: React.FC<{ className?: string }> = ({ className }) => {
 
 const SocialsDiv = styled.div`
   display: flex;
+  margin-left: 0!important;
   ${breakpoint(css`
     justify-content: space-between;
   `)}

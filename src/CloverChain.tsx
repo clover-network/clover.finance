@@ -70,7 +70,7 @@ const ContentWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-left: 128px;
+  margin-left: 101px;
   ${breakpoint(css`
     flex-direction: column;
     margin-left: 0;
@@ -154,7 +154,7 @@ const Tagline = styled(Title)`
 `;
 
 const ImgMainLogo = styled.img`
-  width: 50vh;
+  width: 60vh;
   object-fit: contain;
 
   ${breakpoint(css`
@@ -185,13 +185,16 @@ const Hero = styled.div<{ imageUrl: string }>`
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
+  margin: 0 auto;
+  max-width: 1440px;
+  min-width: 1000px;
   ${HorizontalGutters};
 `;
 
 // this is a full height container that contains the Navbar, the Hero, and the bitcoin price
 // when a user first visits the site this portion should take up 100% height
 const LandingContainer = styled.div`
-  height: 100vh;
+  height: calc(100vh - 88px);
   display: flex;
   flex-direction: column;
   background: ${(props) => props.theme.colors.YELLOW_BG};
