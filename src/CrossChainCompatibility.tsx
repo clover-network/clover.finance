@@ -181,7 +181,7 @@ const DivContainer = styled.div<{
   justify-content: start;
   flex-direction: column;
   padding: 50px 128px;
-  width: 100vw;
+  /*width: 100vw;*/
   margin-left: -128px;
   background-image: ${(props) => `url("${props.backgroundImage}")` || "none"};
   background-position: bottom left;
@@ -262,7 +262,8 @@ const ContentRight = styled.div`
 const TextContent = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 60%;
+  /*max-width: 60%;*/
+  flex: 1;
   h3 {
     font-weight: bold;
     font-size: 50px;

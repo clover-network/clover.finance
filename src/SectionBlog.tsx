@@ -31,7 +31,7 @@ export const SectionBlog = () => {
   const theme = useTheme();
 
   return (
-    <SplashSection backgroundColor={theme.colors.TITLE} bottomLeftBackground='images/blog_bg.png' bottomLeftSize='60%'>
+    <SplashSection backgroundColor={theme.colors.TITLE} bottomLeftBackground='images/blog_bg.svg' bottomLeftSize='60%'>
       <DivContainer>
         <SectionBlogTitle>
           {t('blog')}

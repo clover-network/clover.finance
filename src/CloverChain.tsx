@@ -41,7 +41,7 @@ export const CloverChain: React.FC = () => {
               <span>{t('substrateBasedHint')}</span>
             </TextWrapper>
             <ImgWrapper>
-              <ImgMainLogo src='images/clover_chain_logo.svg' />
+              <ImgMainLogo src='images/clover_chain_logo.png' />
             </ImgWrapper>
           </ContentWrapper>
           <CaptionContainer>

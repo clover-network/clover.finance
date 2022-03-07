@@ -122,6 +122,7 @@ const ContentLeft = styled.div`
 const ContentRight = styled(Grid)`
   margin-left: 30px;
   align-items: center;
+  text-align: center;
   ${breakpoint(css`
     margin-left: 0;
     width: 100%;

@@ -27,7 +27,7 @@ export const AboutUs: React.FC = () => {
                   <img src='images/forbes.svg' alt='' />
                   <img src='images/yahoo.png' alt='' />
                   <img src='images/coin_desk.svg' alt='' />
-                  <img src='images/cointelegraph.png' alt='' />
+                  <img src='images/cointelegraph.svg' alt='' />
                 </div>
               </GetTheClover>
             </TextWrapper>
@@ -190,7 +190,7 @@ const Hero = styled.div<{ imageUrl: string }>`
 // this is a full height container that contains the Navbar, the Hero, and the bitcoin price
 // when a user first visits the site this portion should take up 100% height
 const LandingContainer = styled.div`
-  height: 100vh;
+  height: calc(100vh - 88px);
   display: flex;
   flex-direction: column;
   background: ${(props) => props.theme.colors.PINK_BG};

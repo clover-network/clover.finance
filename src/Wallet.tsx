@@ -62,7 +62,7 @@ const ContentWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-left: 30%;
+  margin-left: 194px;
   ${breakpoint(css`
     width: unset;
     flex-direction: column;
@@ -231,7 +231,7 @@ const Hero = styled.div<{ imageUrl: string }>`
 // this is a full height container that contains the Navbar, the Hero, and the bitcoin price
 // when a user first visits the site this portion should take up 100% height
 const LandingContainer = styled.div`
-  height: 100vh;
+  height: calc(100vh - 88px);
   display: flex;
   flex-direction: column;
   background: ${(props) => props.theme.colors.EMAIL_US};
