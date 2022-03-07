@@ -56,7 +56,7 @@ export const CloverChain: React.FC = () => {
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 200px;
+  margin-left: 101px;
   justify-content: flex-start;
   align-items: flex-start;
   ${breakpoint(css`
@@ -105,7 +105,7 @@ const ContentWrapper1 = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 38px;
-  margin-left: 200px;
+  margin-left: 101px;
 
   ${breakpoint(css`
     flex-direction: column;
@@ -208,7 +208,7 @@ const Hero = styled.div<{ imageUrl: string }>`
 // this is a full height container that contains the Navbar, the Hero, and the bitcoin price
 // when a user first visits the site this portion should take up 100% height
 const LandingContainer = styled.div`
-  height: 100vh;
+  height: calc(100vh - 88px);
   display: flex;
   flex-direction: column;
   background: ${(props) => props.theme.colors.PINK_BG};

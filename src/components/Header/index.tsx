@@ -24,7 +24,7 @@ const HeaderContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 128px;
+  padding: 20px 128px;
   margin: 0 auto;
   max-width: 1440px;
   min-width: 1000px;
