@@ -79,7 +79,7 @@ export const SectionEcosystem = () => {
               </DivButtonRow>
             </Col>
             <Col>
-              <Subtitle>{t('buildWithClover')}</Subtitle>
+              <Subtitle>{t('buildWithCLV')}</Subtitle>
               <TextSpan>
                 {t('buildWithCLVHint')}
               </TextSpan>

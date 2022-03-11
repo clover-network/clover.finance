@@ -28,7 +28,7 @@ export const SectionDNA = () => {
           <LeftAlignTitle>SAKURA's DNA</LeftAlignTitle>
         )}
         {mode === SplashPageMode.CLOVER && (
-          <LeftAlignTitle>CLOVER'S DNA</LeftAlignTitle>
+          <LeftAlignTitle>CLV'S DNA</LeftAlignTitle>
         )}
 
         <SmallerSubtitle>Backed by</SmallerSubtitle>

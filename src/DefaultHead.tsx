@@ -4,7 +4,7 @@ import React from "react";
 export const DefaultHead = () => {
   return (
     <Head>
-      <title>Clover - Cross-chain DeFi Interoperability</title>
+      <title>CLV - Cross-chain DeFi Interoperability</title>
       <meta
         name="viewport"
         content="initial-scale=1.0, width=device-width"
@@ -23,7 +23,7 @@ export const DefaultHead = () => {
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet"
       />
-      
+
       <script async src="[https://www.googletagmanager.com/gtag/js?id=G-7H4YDWTJF9](https://www.googletagmanager.com/gtag/js?id=G-7H4YDWTJF9)"></script>
       <script
         dangerouslySetInnerHTML={{

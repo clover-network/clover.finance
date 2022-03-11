@@ -87,7 +87,7 @@ export const PlatformInfrastructure = () => {
               <BottomItem key={index}>{item.content}</BottomItem>
             ))}
           </PhoneContentList>
-          <h3>{t('CLVPlatformCloverChain')} </h3>
+          <h3>{t('CLVPlatformCLVChain')} </h3>
         </ContentBottom>
       </ContentWrapper>
     </SplashSection>

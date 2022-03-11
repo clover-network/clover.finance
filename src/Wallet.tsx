@@ -27,7 +27,7 @@ export const Wallet: React.FC = () => {
               <h3>{t('forCrossChain')}</h3>
               <span>{t('forCrossChainHint')}</span>
               <GetTheClover>
-                <span>{t('getTheClover')}</span>
+                <span>{t('getTheCLV')}</span>
                 <div>
                   <img onClick={() => openUrl('https://github.com/clover-network/clover-multichain-mobile-wallet-release/releases/latest/download/clover.apk')} src='images/get_google.svg' alt='' />
                   <img onClick={() => openUrl('https://apps.apple.com/app/clover-wallet/id1570072858')} src='images/get_app.svg' alt='' />
