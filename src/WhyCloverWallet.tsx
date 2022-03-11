@@ -42,7 +42,7 @@ export const WhyCloverWallet = () => {
     <SplashSection backgroundColor={theme.colors.TITLE}>
       <DivContainer id={AnchorLinkIds.COMPONENTS}>
         <WhyCloverWalletTitle>
-          {t('why')}<SpanAccent>&nbsp;{t('cloverWallet')}&nbsp;</SpanAccent>
+          {t('why')}<SpanAccent>&nbsp;{t('CLVWallet')}&nbsp;</SpanAccent>
         </WhyCloverWalletTitle>
         <ContentWrapper>
           {CloverItems.map((item, index) => (

@@ -13,44 +13,44 @@ SwiperCore.use([Pagination]);
 
 export const PlatformInfrastructure = () => {
   const contentList1 = [
-    {content: t('cloverPlatformText1')},
-    {content: t('cloverPlatformText2')},
-    {content: t('cloverPlatformText3')},
-    {content: t('cloverPlatformText4')},
-    {content: t('cloverPlatformText5')},
+    {content: t('CLVPlatformText1')},
+    {content: t('CLVPlatformText2')},
+    {content: t('CLVPlatformText3')},
+    {content: t('CLVPlatformText4')},
+    {content: t('CLVPlatformText5')},
   ]
   const phoneContentList1 = [
-    {content: t('cloverPlatformText1')},
-    {content: t('cloverPlatformText2')},
-    {content: t('cloverPlatformText3')},
+    {content: t('CLVPlatformText1')},
+    {content: t('CLVPlatformText2')},
+    {content: t('CLVPlatformText3')},
   ]
   const phoneContentList2 = [
-    {content: t('cloverPlatformText4')},
-    {content: t('cloverPlatformText5')},
+    {content: t('CLVPlatformText4')},
+    {content: t('CLVPlatformText5')},
   ]
   const contentList2 = [
-    {content: t('cloverPlatformText6')},
-    {content: t('cloverPlatformText7')},
-    {content: t('cloverPlatformText8')},
-    {content: t('cloverPlatformText9')},
-    {content: t('cloverPlatformText10')},
+    {content: t('CLVPlatformText6')},
+    {content: t('CLVPlatformText7')},
+    {content: t('CLVPlatformText8')},
+    {content: t('CLVPlatformText9')},
+    {content: t('CLVPlatformText10')},
   ]
   const phoneContentList3 = [
-    {content: t('cloverPlatformText6')},
-    {content: t('cloverPlatformText7')},
+    {content: t('CLVPlatformText6')},
+    {content: t('CLVPlatformText7')},
   ]
   const phoneContentList4 = [
-    {content: t('cloverPlatformText9')},
+    {content: t('CLVPlatformText9')},
   ]
   const phoneContentList5 = [
-    {content: t('cloverPlatformText8')},
-    {content: t('cloverPlatformText10')},
+    {content: t('CLVPlatformText8')},
+    {content: t('CLVPlatformText10')},
   ]
   return (
     <SplashSection>
       <ContentWrapper>
-        <PlatformTitle>{t('cloverPlatform')}</PlatformTitle>
-        <ContentTop>{t('cloverEcosystemDapp')}</ContentTop>
+        <PlatformTitle>{t('CLVPlatform')}</PlatformTitle>
+        <ContentTop>{t('CLVEcosystemDapp')}</ContentTop>
         <ContentList>
           {contentList1.map((item, index) => (
             <Item key={index}>{item.content}</Item>
@@ -87,7 +87,7 @@ export const PlatformInfrastructure = () => {
               <BottomItem key={index}>{item.content}</BottomItem>
             ))}
           </PhoneContentList>
-          <h3>{t('cloverPlatformCloverChain')} </h3>
+          <h3>{t('CLVPlatformCloverChain')} </h3>
         </ContentBottom>
       </ContentWrapper>
     </SplashSection>

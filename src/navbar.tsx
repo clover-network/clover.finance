@@ -135,12 +135,12 @@ const CloverMenuItems: React.FC<{ closeMenu: () => void }> = ({
       </SmallerSubtitle>
       <SmallerSubtitle>
         <a onClick={closeMenu} href={`#${AnchorLinkIds.COMPONENTS}`}>
-          Clover's Edge
+          CLV's Edge
         </a>
       </SmallerSubtitle>
       <SmallerSubtitle>
         <a onClick={closeMenu} href={`#${AnchorLinkIds.PITCH}`}>
-          Clover Wallets Suites
+          CLV Wallets Suites
         </a>
       </SmallerSubtitle>
       <SmallerSubtitle>
@@ -150,7 +150,7 @@ const CloverMenuItems: React.FC<{ closeMenu: () => void }> = ({
       </SmallerSubtitle>
       <SmallerSubtitle>
         <a onClick={closeMenu} href={`#${AnchorLinkIds.ECOSYSTEM}`}>
-          Build on Clover{" "}
+          Build on CLV{" "}
         </a>
       </SmallerSubtitle>
       <SmallerSubtitle>
@@ -174,12 +174,12 @@ const SakuraMenuItems: React.FC<{ closeMenu: () => void }> = ({
       </SmallerSubtitle>
       <SmallerSubtitle>
         <a onClick={closeMenu} href={`#${AnchorLinkIds.COMPONENTS}`}>
-          Clover's Edge
+          CLV's Edge
         </a>
       </SmallerSubtitle>
       <SmallerSubtitle>
         <a onClick={closeMenu} href={`#${AnchorLinkIds.PITCH}`}>
-          Clover Wallets Suites
+          CLV Wallets Suites
         </a>
       </SmallerSubtitle>
       <SmallerSubtitle>

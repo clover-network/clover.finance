@@ -27,8 +27,8 @@ export const CloverChain: React.FC = () => {
   //     })
   // }, [])
   const CloverLines = [
-    t('cloverLines1'),
-    t('cloverLines2'),
+    t('CLVLines1'),
+    t('CLVLines2'),
   ];
   return (
     <div>
@@ -36,6 +36,7 @@ export const CloverChain: React.FC = () => {
         <Hero imageUrl=''>
           <Spacer />
           <ContentWrapper>
+            <VerticalSocials />
             <TextWrapper>
               <h3>{t('substrateBased')}</h3>
               <span>{t('substrateBasedHint')}</span>
@@ -50,9 +51,9 @@ export const CloverChain: React.FC = () => {
               <ImgGoDown src="images/down-arrow.svg" />
             </a>
           </CaptionContainer>
-          <FloatingLeft>
-            <VerticalSocials />
-          </FloatingLeft>
+          {/*<FloatingLeft>*/}
+          {/*  <VerticalSocials />*/}
+          {/*</FloatingLeft>*/}
         </Hero>
       </LandingContainer>
       <SpacerSection />
@@ -70,7 +71,6 @@ const ContentWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-left: 101px;
   ${breakpoint(css`
     flex-direction: column;
     margin-left: 0;
@@ -137,10 +137,8 @@ const FloatingLeft = styled.div`
 const VerticalSocials = styled(Socials)`
   flex-direction: column;
   margin-left: ${(props) => props.theme.margins.MINI_GUTTER_HORIZONTAL};
+  margin-right: 50px;
 
-  img {
-    margin-left: 128px;
-  }
   ${breakpoint(css`
     display: none;
   `)};
@@ -194,7 +192,7 @@ const Hero = styled.div<{ imageUrl: string }>`
 // this is a full height container that contains the Navbar, the Hero, and the bitcoin price
 // when a user first visits the site this portion should take up 100% height
 const LandingContainer = styled.div`
-  height: calc(100vh - 88px);
+  padding: 128px 0 40px;
   display: flex;
   flex-direction: column;
   background: ${(props) => props.theme.colors.YELLOW_BG};

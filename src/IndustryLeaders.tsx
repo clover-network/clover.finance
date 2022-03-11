@@ -20,7 +20,7 @@ export const IndustryLeaders = () => {
       <DivContainer id={AnchorLinkIds.COMPONENTS}>
         <ContentWrapper>
           <ContentLeft>
-            <h4>{t('cloverDNA')}</h4>
+            <h4>{t('CLVDNA')}</h4>
             <h3>{t('industryLeaders')}</h3>
             <span>{t('industryLeadersHint')}</span>
           </ContentLeft>

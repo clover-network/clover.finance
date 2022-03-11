@@ -20,19 +20,18 @@ export const DappInteractionProtocol = () => {
       <DappInteractionProtocolWrapper>
         <WrapperDesktopOnly>
           <DappInteractionProtocolTitle>
-            {t('clover')}<SpanAccent>&nbsp;{t('dapp')}&nbsp;{t('interaction')}&nbsp;</SpanAccent>{t('protocol')}
+            {t('CLV')}<SpanAccent>&nbsp;{t('dapp')}&nbsp;{t('interaction')}&nbsp;</SpanAccent>{t('protocol')}
           </DappInteractionProtocolTitle>
         </WrapperDesktopOnly>
         <WrapperMobileOnly>
           <DappInteractionProtocolTitle>
-            {t('clover')}<SpanAccent>&nbsp;{t('dapp')}&nbsp;</SpanAccent>
+            {t('CLV')}<SpanAccent>&nbsp;{t('dapp')}&nbsp;</SpanAccent>
           </DappInteractionProtocolTitle>
           <DappInteractionProtocolTitle>
             <SpanAccent>{t('interaction')}&nbsp;</SpanAccent>{t('protocol')}
           </DappInteractionProtocolTitle>
         </WrapperMobileOnly>
         <ContentWrapper>
-          <img src='/images/dapp_bg.gif' alt='' />
           <ContentLeft>
             <TextContent>
               <h3>
@@ -79,9 +78,8 @@ const ContentWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   margin: 72px 0;
-  background: url('/images/dapp_bg.gif') no-repeat;
-  background-size: auto 100%;
-  background-position: right -97px bottom;
+  background: url('/images/dapp_bg.png') no-repeat right bottom;
+  background-size: contain;
   & > img {
     display: none;
   }

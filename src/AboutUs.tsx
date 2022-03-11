@@ -18,9 +18,9 @@ export const AboutUs: React.FC = () => {
           <ContentWrapper>
             <SpecialSpacer />
             <TextWrapper>
-              <h4>{t('cloverDNA')}</h4>
-              <h3>{t('cloverDNAHint')}</h3>
-              <span>{t('cloverDNADesc')}</span>
+              <h4>{t('CLVDNA')}</h4>
+              <h3>{t('CLVDNAHint')}</h3>
+              <span>{t('CLVDNADesc')}</span>
               <GetTheClover>
                 <span>{t('asSeenIn')}</span>
                 <div>

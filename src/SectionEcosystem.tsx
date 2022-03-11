@@ -19,7 +19,7 @@ export const SectionEcosystem = () => {
     >
       <DivContainer id={AnchorLinkIds.ECOSYSTEM}>
         <EcosystemTitle>
-          {t('buildOnClover')}
+          {t('buildOnCLV')}
         </EcosystemTitle>
         <EcosystemContent>
           <EcosystemLeft>
@@ -60,9 +60,9 @@ export const SectionEcosystem = () => {
               </DivButtonRow>
             </Col>
             <Col>
-              <Subtitle>{t('integrateCloverWallet')}</Subtitle>
+              <Subtitle>{t('integrateCLVWallet')}</Subtitle>
               <TextSpan>
-                {t('integrateCloverWalletHint')}
+                {t('integrateCLVWalletHint')}
               </TextSpan>
               <SpacerVertical height={"24px"} />
               <DivButtonRow>
@@ -81,7 +81,7 @@ export const SectionEcosystem = () => {
             <Col>
               <Subtitle>{t('buildWithClover')}</Subtitle>
               <TextSpan>
-                {t('buildWithCloverHint')}
+                {t('buildWithCLVHint')}
               </TextSpan>
               <SpacerVertical height={"24px"} />
               <DivButtonRow>
@@ -127,7 +127,7 @@ const EcosystemContent = styled(Row)`
 const EcosystemLeft = styled.div`
   align-items: flex-end;
   display: flex;
-  /*width: 40%;*/
+  width: calc(50% + 64px);
   justify-content: flex-start;
   img {
     width: 100%;

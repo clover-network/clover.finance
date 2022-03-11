@@ -220,7 +220,7 @@ const Hero = styled.div<{ imageUrl: string }>`
   background-image: url("${(props) => props.imageUrl}");
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: 80%;
+  background-position: 90%;
   position: relative;
   ${HorizontalGutters};
   ${breakpoint(css`

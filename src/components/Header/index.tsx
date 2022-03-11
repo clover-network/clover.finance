@@ -48,7 +48,7 @@ const HeaderDiv = styled.div`
     //justify-content: center;
   `)};
   img {
-    width: 128px;
+    height: 38px;
     object-fit: contain;
     flex: 1 1 0%;
     ${breakpoint(css`

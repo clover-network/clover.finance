@@ -40,7 +40,7 @@ export const SectionPitch = () => {
           The Clover <SpanAccent>Wallets Suite</SpanAccent>
         </TitleDesktop>
         <TitleMobile>
-          CLOVER's <SpanAccent>Wallets</SpanAccent>
+          CLV's <SpanAccent>Wallets</SpanAccent>
         </TitleMobile>
         <CenteredSectionSubtitle>
           Available in Extension Wallet, Mobile Wallet, and Web Wallet.
@@ -97,17 +97,17 @@ const Features = [
   {
     featureNum: "02",
     title: "Support popular blockchains ",
-    copy: "Users can connect to Clover, Ethereum, Polkadot, Solana, Binance Smart Chain, Fantom, Avalanche, Kusama, Edgeware and so many other blockchain.",
+    copy: "Users can connect to CLV, Ethereum, Polkadot, Solana, Binance Smart Chain, Fantom, Avalanche, Kusama, Edgeware and so many other blockchain.",
   },
   {
     featureNum: "03",
     title: "Cross-chain Compatibility",
-    copy: "EVM based assets can be cross-chain transfer to Clover chain and vice versa, which enable lower gas fee and faster transaction confirmation.",
+    copy: "EVM based assets can be cross-chain transfer to CLV chain and vice versa, which enable lower gas fee and faster transaction confirmation.",
   },
   {
     featureNum: "04",
     title: "App store for Decentralized Finance",
-    copy: "Enjoy a seamless DeFi experience with the ability to browse all kinds of dApps such as derivatives or loans deployed on Clover.",
+    copy: "Enjoy a seamless DeFi experience with the ability to browse all kinds of dApps such as derivatives or loans deployed on CLV.",
   },
 ];
 

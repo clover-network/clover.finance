@@ -14,7 +14,7 @@ SwiperCore.use([Pagination]);
 export const Content = () => {
   const navList = [
     {
-      name: t('cloverChain'),
+      name: t('CLVChain'),
       path: "/",
     },
     {
@@ -59,7 +59,7 @@ export const Content = () => {
         currentTab={selectTab}
         handleChange={(tab: any) => changeTab(tab)}
       />
-      {selectTab.name === t('cloverChain') && <CloverChain />}
+      {selectTab.name === t('CLVChain') && <CloverChain />}
       {selectTab.name === t('wallet') && <Wallet />}
       {selectTab.name === t('aboutUs') && <AboutUs />}
     </div>

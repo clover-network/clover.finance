@@ -93,7 +93,7 @@ export const SectionComponentOverview: React.FC<{
   return (
     <SplashSection>
       <DivContainer id={AnchorLinkIds.COMPONENTS}>
-        <LeftAlignTitle>{t('cloverIs')}</LeftAlignTitle>
+        <LeftAlignTitle>{t('CLVIs')}</LeftAlignTitle>
         <SectionSubtitle>
           <WriteText>
             {typeWriterInProgressText}
