@@ -27,6 +27,7 @@ export const SpanNeutral = styled.span`
 
 export const SpanEmailUs = styled.span`
   color: ${(props) => props.theme.colors.EMAIL_US};
+  font-size: ${(props) => props.theme.fontSizes.SUBTITLE};
 `;
 
 export const Subtitle = styled.h2`

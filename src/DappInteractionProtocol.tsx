@@ -32,6 +32,11 @@ export const DappInteractionProtocol = () => {
           </DappInteractionProtocolTitle>
         </WrapperMobileOnly>
         <ContentWrapper>
+          <WrapperMobileOnly>
+            <ContentImg>
+              <img src='/images/dapp_bg.gif' alt='' />
+            </ContentImg>
+          </WrapperMobileOnly>
           <ContentLeft>
             <TextContent>
               <h3>
@@ -43,7 +48,7 @@ export const DappInteractionProtocol = () => {
             </TextContent>
           </ContentLeft>
           <ContentRight>
-            {/*<img src='images/wallet_img.svg' alt='' />*/}
+            <img src='images/dapp_bg.gif' alt='' />
           </ContentRight>
         </ContentWrapper>
       </DappInteractionProtocolWrapper>
@@ -80,35 +85,43 @@ const ContentWrapper = styled.div`
   margin: 72px 0;
   background: url('/images/dapp_bg.png') no-repeat right bottom;
   background-size: contain;
-  & > img {
-    display: none;
-  }
+  padding-bottom: 128px;
+
   ${breakpoint(css`
     margin: 24px 0;
+    padding-bottom: 0;
     background: none;
     flex-direction: column;
-    & > img {
-      display: unset;
-      width: 100%;
-      margin-left: 0;
-    }
   `)};
 `;
+
+const ContentImg = styled.div`
+  background: url('/images/mobile_dapp_bg.png') no-repeat right bottom;
+  background-size: contain;
+  padding-bottom: 54px;
+  margin-left: -24px;
+  & > img {
+    width: 100%;
+    margin-left: 24px;
+  }
+`
 
 const ContentLeft = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
   white-space: nowrap;
-  margin-right: 130px;
+  margin-right: 30px;
   ${breakpoint(css`
     margin: 40px 0;
   `)};
 `;
 
 const ContentRight = styled.div`
-  height: 555px;
-  width: 757px;
+  flex: 1;
+  img {
+    width: 100%;
+  }
   ${breakpoint(css`
     display: none;
   `)};

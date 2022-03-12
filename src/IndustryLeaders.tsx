@@ -16,7 +16,7 @@ export const IndustryLeaders = () => {
   const theme = useTheme();
 
   return (
-    <SplashSection backgroundColor={theme.colors.ACCENT}>
+    <IndustryLeadersWrapper>
       <DivContainer id={AnchorLinkIds.COMPONENTS}>
         <ContentWrapper>
           <ContentLeft>
@@ -33,7 +33,7 @@ export const IndustryLeaders = () => {
           </ContentRight>
         </ContentWrapper>
       </DivContainer>
-    </SplashSection>
+    </IndustryLeadersWrapper>
   );
 };
 
@@ -51,6 +51,14 @@ const images = [
   "images/leaders/alameda.png",
   "images/leaders/automata.png",
 ];
+
+const IndustryLeadersWrapper = styled.div`
+  background: linear-gradient(225deg, #A9FFE0 39.58%, #86D5FF 100%);
+  padding: 0 128px;
+  ${breakpoint(css`
+    padding: 0 24px;
+  `)};
+`;
 
 const DivContainer = styled.div`
   display: flex;

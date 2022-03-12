@@ -160,11 +160,12 @@ const CaptionContainer = styled.div`
     width: 100vw;
     height: 483px;
     background-image: url("images/mobile_wallet_bg.png");
-    background-size: 100%;
+    background-size: 60%;
     background-repeat: no-repeat;
-    background-position: 100% 100%;
+    background-position: 0 100%;
     justify-content: flex-end;
     padding: 30px 0;
+    margin-left: -24px;
   `)};
 `;
 
@@ -234,7 +235,7 @@ const LandingContainer = styled.div`
   height: calc(100vh - 88px);
   display: flex;
   flex-direction: column;
-  background: ${(props) => props.theme.colors.EMAIL_US};
+  background: linear-gradient(225deg, #A9FFE0 39.58%, #86D5FF 100%);
   ${breakpoint(css`
     height: unset;
     min-height: 120vw;

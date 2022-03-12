@@ -118,7 +118,7 @@ const ContentTop = styled.div`
   line-height: 22px;
   padding: 50px 0;
   text-align: center;
-  border: 1px solid #06E594;
+  border: 1px solid #A9FFE0;
   border-radius: 8px;
   margin: 72px 0 32px;
   color: ${(props) => props.theme.colors.NEUTRAL};
@@ -156,7 +156,7 @@ const Item = styled.div`
   padding: 0 16px;
   height: 122px;
   text-align: center;
-  border: 1px solid #06E594;
+  border: 1px solid #68E29B;
   border-radius: 8px;
   flex: 1;
   color: ${(props) => props.theme.colors.NEUTRAL};

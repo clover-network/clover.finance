@@ -14,9 +14,7 @@ import { t } from './i18n/intl';
 export const SectionEcosystem = () => {
   const theme = useTheme();
   return (
-    <SplashSection
-      backgroundColor={theme.colors.ACCENT}
-    >
+    <SectionEcosystemWrapper>
       <DivContainer id={AnchorLinkIds.ECOSYSTEM}>
         <EcosystemTitle>
           {t('buildOnCLV')}
@@ -103,7 +101,7 @@ export const SectionEcosystem = () => {
           </EcosystemBottom>
         </EcosystemContent>
       </DivContainer>
-    </SplashSection>
+    </SectionEcosystemWrapper>
   );
 };
 
@@ -225,4 +223,12 @@ const DivContainer = styled.div`
     margin-left: 0;
     padding: 48px 0 0;
   `)}
+`;
+
+const SectionEcosystemWrapper = styled.div`
+  background: linear-gradient(225deg, #A9FFE0 39.58%, #86D5FF 100%);
+  padding: 0 128px;
+  ${breakpoint(css`
+    padding: 0 24px;
+  `)};
 `;

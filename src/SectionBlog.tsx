@@ -61,11 +61,9 @@ const Blog: React.FC<{
         <DivBlogCaption>
           <TextSpan>{title}</TextSpan>
           <DivSeeMore>
-            <SpanAccent>
-              <a href={url} target="_blank" rel="noreferrer">
-                {t('seeMore')}
-              </a>
-            </SpanAccent>
+            <a href={url} target="_blank" rel="noreferrer">
+              {t('seeMore')}
+            </a>
           </DivSeeMore>
         </DivBlogCaption>
       </DivBlogContainer>
@@ -141,7 +139,7 @@ const DivSeeMore = styled.div`
   font-weight: 600;
   font-size: 18px;
   line-height: 24px;
-  color: ${(props) => props.theme.colors.ACCENT};
+  color: ${(props) => props.theme.colors.HEADER};
   ${breakpoint(css`
     margin-top: 8px;
     font-size: 12px;

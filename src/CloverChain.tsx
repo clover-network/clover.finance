@@ -152,7 +152,7 @@ const Tagline = styled(Title)`
 `;
 
 const ImgMainLogo = styled.img`
-  width: 60vh;
+  width: 100%;
   object-fit: contain;
 
   ${breakpoint(css`
@@ -195,7 +195,7 @@ const LandingContainer = styled.div`
   padding: 128px 0 40px;
   display: flex;
   flex-direction: column;
-  background: ${(props) => props.theme.colors.YELLOW_BG};
+  background: linear-gradient(225deg, #A9FFE0 39.58%, #86D5FF 100%);
   ${breakpoint(css`
     height: unset;
     min-height: 120vw;
