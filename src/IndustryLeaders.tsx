@@ -42,7 +42,7 @@ const images = [
   "images/leaders/huobi.png",
   "images/leaders/polychain.png",
   "images/leaders/gate.png",
-  "images/leaders/illusionist.png",
+  "images/leaders/illusion.png",
   "images/leaders/bitcom.png",
   "images/leaders/cmsw.png",
   "images/leaders/hyperw.png",
