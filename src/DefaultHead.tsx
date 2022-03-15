@@ -24,23 +24,13 @@ export const DefaultHead = () => {
         rel="stylesheet"
       />
 
-      <script async src="[https://www.googletagmanager.com/gtag/js?id=G-7H4YDWTJF9](https://www.googletagmanager.com/gtag/js?id=G-7H4YDWTJF9)"></script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-217926805-1"></script>
       <script
         dangerouslySetInnerHTML={{
           __html: `window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-    
-          gtag('config', 'G-7H4YDWTJF9');`
-        }}
-      />
-      <script async src="[https://www.googletagmanager.com/gtag/js?id=UA-217926805-1](https://www.googletagmanager.com/gtag/js?id=UA-217926805-1)"></script>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-    
+        
           gtag('config', 'UA-217926805-1');`
         }}
       />
