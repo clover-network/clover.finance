@@ -44,7 +44,7 @@ const CloverSakuraColumns = () => {
         <Links>
           <Link>
             <a
-              href="https://clover.finance/whitepaper.pdf"
+              href="https://clv.org/whitepaper.pdf"
               target="_blank"
               rel="noreferrer"
             >
