@@ -24,7 +24,7 @@ export const Socials: React.FC<{ className?: string }> = ({ className }) => {
         <SocialsImg src={`images/${prefix}twitter.svg`} />
       </a>
       <a
-        href="https://www.linkedin.com/company/projectclover/"
+        href="https://www.linkedin.com/company/clv-org"
         target="_blank"
         rel="noreferrer"
       >
@@ -44,13 +44,13 @@ export const Socials: React.FC<{ className?: string }> = ({ className }) => {
       >
         <SocialsImg src={`images/${prefix}medium.svg`} />
       </a>
-      <a
-        href="https://www.instagram.com/accounts/login/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <SocialsImg src={`images/${prefix}photo.svg`} />
-      </a>
+      {/*<a*/}
+      {/*  href="https://www.instagram.com/accounts/login/"*/}
+      {/*  target="_blank"*/}
+      {/*  rel="noreferrer"*/}
+      {/*>*/}
+      {/*  <SocialsImg src={`images/${prefix}photo.svg`} />*/}
+      {/*</a>*/}
       <a
         href="https://discord.com/invite/M6SxuXqMVB"
         target="_blank"
