@@ -86,11 +86,14 @@ const Link = styled(NavLink)`
     margin-bottom: -4px;
     height: 24px !important;
     width: 24px !important;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
   }
   
   &:hover {
     text-decoration: none;
     img {
+      -webkit-transform: rotate(180deg);
       transform: rotate(180deg);
     }
   }
