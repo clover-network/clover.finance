@@ -47,6 +47,7 @@ const HeaderDiv = styled.div`
     //width: 100%;
     //justify-content: center;
   `)};
+
   img {
     height: 38px;
     object-fit: contain;
@@ -74,8 +75,24 @@ const Link = styled(NavLink)`
   line-height: 24px;
   cursor: pointer;
   text-decoration: none;
+  position: relative;
+  
+  & > div {
+    left: 0;
+  }
+  
+  img {
+    margin-left: 4px;
+    margin-bottom: -4px;
+    height: 24px !important;
+    width: 24px !important;
+  }
+  
   &:hover {
     text-decoration: none;
+    img {
+      transform: rotate(180deg);
+    }
   }
 
   &.active {
@@ -124,10 +141,14 @@ const Language = styled.div`
   }
 `
 
-const LanguageList = styled.div`
+const MenuListWrapper = styled.div`
   position: absolute;
-  top: 60px;
   right: 0;
+  padding-top: 40px;
+  margin-top: -10px;
+`
+
+const MenuList = styled.div`
   color: ${(props) => props.theme.colors.BACKGROUND};
   background-color: ${(props) => props.theme.colors.TITLE};
   border: 1px solid #000000;
@@ -135,6 +156,7 @@ const LanguageList = styled.div`
   border-radius: 16px;
   padding: 8px 16px;
   z-index: 10;
+  width: fit-content;
 
   div {
     padding: 8px;
@@ -146,6 +168,11 @@ const LanguageList = styled.div`
     color: ${(props) => props.theme.colors.BACKGROUND};
     border-bottom: 1px solid #C4C4C4;
     cursor: pointer;
+    white-space: nowrap;
+    width: 100%;
+    &:hover {
+      opacity: 0.7;
+    }
     
     &:last-child {
       border: none;
@@ -164,7 +191,7 @@ const LanguageList = styled.div`
   `)};
 `
 
-const Navs = styled(LanguageList)`
+const Navs = styled(MenuList)`
   height: calc(100vh - 68px);
 `
 
@@ -206,26 +233,62 @@ const Languages: React.FC<{
   hideShowList: () => void;
 }> = ({ hideShowList }) => {
   return (
-    <LanguageList>
-      <div
-        onClick={() => {
-          hideShowList()
-          store.dispatch(setLocale(Locale.en))
-        }}
-      >ENGLISH</div>
-      <div
-        onClick={() => {
-          hideShowList()
-          store.dispatch(setLocale(Locale.zh))
-        }}
-      >汉语</div>
-    </LanguageList>
+    <MenuListWrapper>
+      <MenuList>
+        <div
+          onClick={() => {
+            hideShowList()
+            store.dispatch(setLocale(Locale.en))
+          }}
+        >ENGLISH</div>
+        <div
+          onClick={() => {
+            hideShowList()
+            store.dispatch(setLocale(Locale.zh))
+          }}
+        >汉语</div>
+      </MenuList>
+    </MenuListWrapper>
+  )
+}
+
+const ClvChainList: React.FC<{
+  hideShowList: () => void;
+}> = ({ hideShowList }) => {
+  const menuList = [
+    {
+      name: 'CROSS-CHAIN EXPLORER',
+      url: 'https://tx.clover.finance'
+    },
+    {
+      name: 'EVM BRIDGE',
+      url: 'https://bridge.clv.org/'
+    },
+    {
+      name: 'CLOVER SCAN',
+      url: 'https://clvscan.com/'
+    },
+  ]
+  return (
+    <MenuListWrapper>
+      <MenuList>
+        {menuList.map(item => (
+          <div
+            onClick={() => {
+              hideShowList()
+              window.open(item.url)
+            }}
+          >{item.name}</div>
+        ))}
+      </MenuList>
+    </MenuListWrapper>
   )
 }
 
 export default function Header(props: any): ReactElement {
   const { navList, currentTab, handleChange } = props;
   const [showList, setShowList] = useState(false);
+  const [showClvChainList, setShowClvChainList] = useState(false);
   const [showNavs, setShowNavs] = useState(false);
 
   const openUrl = (url: string) => {
@@ -258,13 +321,34 @@ export default function Header(props: any): ReactElement {
               <Navbar variant="light" className="nav-bar">
                 <Nav>
                   {navList.map((nav: any) => (
-                    <Link
-                      active={currentTab.name === nav.name}
-                      onClick={() => handleChange(nav)}
-                      key={nav.name}
-                    >
-                      {nav.name}
-                    </Link>
+                    nav.path === "/" ? (
+                      <Link
+                        active={currentTab.name === nav.name}
+                        onClick={() => handleChange(nav)}
+                        key={nav.name}
+                        onMouseEnter={(e: any) => {
+                          e.stopPropagation();
+                          setShowClvChainList(true)
+                        }}
+                        onMouseLeave={(e: any) => {
+                          e.stopPropagation();
+                          setShowClvChainList(false)
+                        }}
+                      >
+                        {nav.name}
+                        <img src='/images/clv_arrow_down.svg' alt=''/>
+                        {/*<ClvChainList hideShowList={() => setShowClvChainList(false)} />*/}
+                        {showClvChainList && <ClvChainList hideShowList={() => setShowClvChainList(false)} />}
+                      </Link>
+                    ) : (
+                      <Link
+                        active={currentTab.name === nav.name}
+                        onClick={() => handleChange(nav)}
+                        key={nav.name}
+                      >
+                        {nav.name}
+                      </Link>
+                    )
                   ))}
                 </Nav>
               </Navbar>
