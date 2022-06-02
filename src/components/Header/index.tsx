@@ -7,7 +7,6 @@ import { WrapperDesktopOnly, WrapperMobileOnly } from '../../CloverLibrary';
 import { breakpoint } from "../../mixins/breakpoint";
 import { t } from '../../i18n/intl';
 import { Locale, setLocale } from '../../i18n/i18nSlice';
-import { useLocale } from '../../i18n/useLocale';
 import store from '../../../src/state';
 import { Socials } from '../../Socials';
 
@@ -146,9 +145,20 @@ const Language = styled.div`
 
 const MenuListWrapper = styled.div`
   position: absolute;
+  z-index: 10;
   right: 0;
   padding-top: 40px;
   margin-top: -10px;
+
+  ${breakpoint(css`
+    top: 69px;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    & > div {
+      width: 100%;
+    }
+  `)};
 `
 
 const MenuList = styled.div`
@@ -158,10 +168,9 @@ const MenuList = styled.div`
   box-sizing: border-box;
   border-radius: 16px;
   padding: 8px 16px;
-  z-index: 10;
   width: fit-content;
-
-  div {
+ 
+  & > div {
     padding: 8px;
     font-weight: 600;
     font-size: 18px;
@@ -186,7 +195,7 @@ const MenuList = styled.div`
     left: 0;
     border: none;
     border-radius: 0;
-    div {
+    & > div {
       padding-bottom: 24px;
       border: none;
       text-align: left;
@@ -196,6 +205,32 @@ const MenuList = styled.div`
 
 const Navs = styled(MenuList)`
   height: calc(100vh - 68px);
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+  right: 0;
+`
+
+const RowMobile = styled.div`
+  opacity: 1!important;
+  & > div:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  & > div:nth-child(2) {
+    padding: 9px;
+    margin-bottom: -27px;
+    div {
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 24px;
+      text-transform: uppercase;
+      color: #000000;
+      padding: 9px;
+    }
+  }
 `
 
 const VerticalSocials = styled(Socials)`
@@ -257,25 +292,12 @@ const Languages: React.FC<{
 
 const ClvChainList: React.FC<{
   hideShowList: () => void;
-}> = ({ hideShowList }) => {
-  const menuList = [
-    {
-      name: 'CROSS-CHAIN EXPLORER',
-      url: 'https://tx.clover.finance'
-    },
-    {
-      name: 'EVM BRIDGE',
-      url: 'https://bridge.clv.org/'
-    },
-    {
-      name: 'CLOVER SCAN',
-      url: 'https://clvscan.com/'
-    },
-  ]
+  menuList: any;
+}> = ({ hideShowList, menuList }) => {
   return (
     <MenuListWrapper>
       <MenuList>
-        {menuList.map(item => (
+        {menuList.map((item: any) => (
           <div
             onClick={() => {
               hideShowList()
@@ -293,6 +315,23 @@ export default function Header(props: any): ReactElement {
   const [showList, setShowList] = useState(false);
   const [showClvChainList, setShowClvChainList] = useState(false);
   const [showNavs, setShowNavs] = useState(false);
+  const [openMobileMenu, setOpenMobileMenu] = useState(false);
+  const [openMobileLanguages, setOpenMobileLanguages] = useState(false);
+
+  const menuList = [
+    {
+      name: 'CROSS-CHAIN EXPLORER',
+      url: 'https://tx.clover.finance'
+    },
+    {
+      name: 'EVM BRIDGE',
+      url: 'https://bridge.clv.org/'
+    },
+    {
+      name: 'CLOVER SCAN',
+      url: 'https://clvscan.com/'
+    },
+  ]
 
   const openUrl = (url: string) => {
     window.open(url, '_blank');
@@ -301,13 +340,6 @@ export default function Header(props: any): ReactElement {
   return (
     <HeaderWrapper>
       <HeaderContent>
-        <WrapperMobileOnly>
-          <HeaderIcon
-            src="images/language_icon.svg"
-            alt=""
-            onClick={() => setShowList(!showList)}
-          />
-        </WrapperMobileOnly>
         <HeaderDiv>
           <img src="images/Logo.svg" alt="" />
         </HeaderDiv>
@@ -340,8 +372,7 @@ export default function Header(props: any): ReactElement {
                       >
                         {nav.name}
                         <img src='/images/clv_arrow_down.svg' alt=''/>
-                        {/*<ClvChainList hideShowList={() => setShowClvChainList(false)} />*/}
-                        {showClvChainList && <ClvChainList hideShowList={() => setShowClvChainList(false)} />}
+                        {showClvChainList && <ClvChainList hideShowList={() => setShowClvChainList(false)} menuList={menuList} />}
                       </Link>
                     ) : (
                       <Link
@@ -378,22 +409,80 @@ export default function Header(props: any): ReactElement {
         </WrapperDesktopOnly>
       </HeaderContent>
       <WrapperMobileOnly>
-        {showList && <Languages hideShowList={() => setShowList(false)} />}
-      </WrapperMobileOnly>
-      <WrapperMobileOnly>
         {showNavs && (
           <Navs>
             {navList.map((nav: any) => (
-              <div
-                onClick={() => {
-                  handleChange(nav);
-                  setShowNavs(false)
-                }}
-                key={nav.name}
-              >
-                {nav.name}
-              </div>
+              nav.path === "/" ? (
+                <RowMobile
+                  key={nav.name}
+                >
+                  <div>
+                    <span
+                      onClick={() => {
+                        handleChange(nav);
+                        setShowNavs(false)
+                      }}
+                    >{nav.name}</span>
+                    <img
+                      onClick={(e: any) => {
+                        const src = !openMobileMenu ? '/images/clv_arrow_up.svg' : '/images/clv_arrow_down.svg'
+                        e.target.setAttribute("src", src);
+                        setOpenMobileMenu(!openMobileMenu)
+                      }}
+                      src='/images/clv_arrow_down.svg'
+                      alt=''
+                    />
+                  </div>
+                  {openMobileMenu && (<div>
+                    {menuList.map(item => (
+                      <div onClick={() => {
+                        window.open(item.url)
+                      }}>{item.name}</div>
+                    ))}
+                  </div>)}
+                </RowMobile>
+              ) : (
+                <div
+                  onClick={() => {
+                    handleChange(nav);
+                    setShowNavs(false)
+                  }}
+                  key={nav.name}
+                >
+                  {nav.name}
+                </div>
+              )
             ))}
+            <RowMobile>
+              <div>
+                <span
+                  onClick={() => {
+                    setShowNavs(false)
+                  }}
+                >Languages</span>
+                <img
+                  onClick={(e: any) => {
+                    const src = !openMobileLanguages ? '/images/clv_arrow_up.svg' : '/images/clv_arrow_down.svg'
+                    e.target.setAttribute("src", src);
+                    setOpenMobileLanguages(!openMobileLanguages)
+                  }}
+                  src='/images/clv_arrow_down.svg'
+                  alt=''
+                />
+              </div>
+              {openMobileLanguages && (<div>
+                <div
+                  onClick={() => {
+                    store.dispatch(setLocale(Locale.en))
+                  }}
+                >ENGLISH</div>
+                <div
+                  onClick={() => {
+                    store.dispatch(setLocale(Locale.zh))
+                  }}
+                >汉语</div>
+              </div>)}
+            </RowMobile>
             <SakuraDiv onClick={() => window.open('https://sakurafinance.io')}>
               <img src='images/sakura_icon.svg' alt='' />
               <span>Sakura <br/>Sisternet</span>

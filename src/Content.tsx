@@ -53,7 +53,7 @@ export const Content = () => {
   };
 
   return (
-    <div>
+    <div style={{overflow: 'hidden'}}>
       <Header
         navList={navList}
         currentTab={selectTab}
