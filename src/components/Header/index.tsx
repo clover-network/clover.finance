@@ -328,7 +328,7 @@ export default function Header(props: any): ReactElement {
       url: 'https://bridge.clv.org/'
     },
     {
-      name: 'CLOVER SCAN',
+      name: 'CLV SCAN',
       url: 'https://clvscan.com/'
     },
   ]
