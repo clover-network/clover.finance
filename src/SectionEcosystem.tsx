@@ -48,7 +48,7 @@ export const SectionEcosystem = () => {
                 <WhiteButton
                   onClick={() =>
                     window.open(
-                      "https://docs.clover.finance/clover-chain/for-developers/using-testnet",
+                      "https://docs.clv.org/clv-chain-developer-guide/using-testnet",
                       "_blank"
                     )
                   }
