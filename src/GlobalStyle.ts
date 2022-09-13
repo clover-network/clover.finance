@@ -9,7 +9,6 @@ export const GlobalStyle = createGlobalStyle`
   }
   body {
     font-family: 'Inter', sans-serif;
-    background: ${(props) => props.theme.colors.BACKGROUND};
     max-width: 100%;
     overflow-x: hidden;
 

@@ -195,6 +195,7 @@ const LandingContainer = styled.div`
   padding: 128px 0 40px;
   display: flex;
   flex-direction: column;
+  margin-top: -88px;
   background: linear-gradient(225deg, #A9FFE0 39.58%, #86D5FF 100%);
   ${breakpoint(css`
     height: unset;

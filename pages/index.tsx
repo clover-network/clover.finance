@@ -5,6 +5,7 @@ import { GlobalStyle } from "../src/GlobalStyle";
 import { DefaultHead } from "../src/DefaultHead";
 import { AppBase } from '../src/layout/AppBase/AppBase';
 import { Content } from '../src/Content';
+import { NewContent } from '../src/pages/newContent';
 import store from '../src/state';
 import { Provider } from 'react-redux';
 
@@ -15,7 +16,7 @@ export default function FirstPost() {
         <AppBase>
           <DefaultHead />
           <GlobalStyle />
-          <Content />
+          <NewContent />
         </AppBase>
       </Provider>
     </SplashModeContext.Provider>
