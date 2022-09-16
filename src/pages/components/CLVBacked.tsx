@@ -45,7 +45,7 @@ const CLVIsBackedBottom = styled.div`
   grid-template-columns: auto auto auto auto auto;
   align-items: center;
   justify-content: space-between;
-  grid-gap: 1em;
+  grid-gap: 0;
 `
 
 const CLVIsBackedBottomItem = styled.div`
@@ -56,16 +56,16 @@ const CLVIsBackedBottomItem = styled.div`
 
 export default function CLVIsBacked(props: any): ReactElement {
   const images = [
-    "images/leaders/okex.png",
-    "images/leaders/huobi.png",
     "images/leaders/polychain.png",
-    "images/leaders/gate.png",
-    "images/leaders/bitcom.png",
-    "images/leaders/cmsw.png",
+    "images/leaders/huobi.png",
+    "images/leaders/okex.png",
     "images/leaders/hyperw.png",
-    "images/leaders/bithumb.png",
-    "images/leaders/kr1.png",
     "images/leaders/alameda.png",
+    "images/leaders/bithumb.png",
+    "images/leaders/bitcom.png",
+    "images/leaders/kr1.png",
+    "images/leaders/cmsw.png",
+    "images/leaders/gate.png",
   ];
   return (
     <CLVIsBackedWrapper>
