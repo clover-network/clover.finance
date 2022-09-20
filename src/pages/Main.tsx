@@ -1,40 +1,74 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 import styled, { css } from "styled-components";
 import { breakpoint } from "../mixins/breakpoint";
 import { t } from '../i18n/intl';
 import { NormalButton, GrayButton } from '../components/Btn';
 import CLVIsBacked from './components/CLVBacked';
 import { Footer } from './components/Footer';
+import { useRouter } from 'next/router';
 
 export const Main: React.FC = () => {
+  const location = useRouter();
+  const [play, setPlay] = useState(false)
+
+  const handleScroll = () => {
+    const playVideo: any = document.getElementById('playVideo1')
+    if (window.scrollY <= 800) {
+      playVideo.currentTime = 0
+    } else if (window.scrollY > 800 && window.scrollY < 2500) {
+      setPlay(true)
+      playVideo.play()
+      setTimeout(() => {
+        setPlay(false)
+        playVideo.pause()
+      }, playVideo.duration * 1000 / 3)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [location]);
   return (
-    <div>
+    <Wrapper>
       <LandingContainer>
         <SeamlesslyCompatible>
-          <ContentWrapper>
-            <TextWrapper>
-              <div>
-                {t('seamlesslyCompatible')}
-                <img src='images/clv_icon1.svg' alt='' />
-              </div>
-              <span>{t('seamlesslyCompatibleHint')}</span>
-              <Btns>
-                <NormalButton
-                  width='316px'
-                  onClick={() =>
-                    window.open(
-                      "https://docs.google.com/forms/d/e/1FAIpQLSfQevVEw_hL44vvbcMkYB8kKdzTFAbtD1pR-QVraaA7h4jpKg/viewform",
-                      "_blank"
-                    )
-                  }
-                >{t('startBuilding')}</NormalButton>
-                <GrayButton width='316px'>{t('viewDocumentation')}</GrayButton>
-              </Btns>
-            </TextWrapper>
-            <ImgWrapper>
-              <img src='images/video1.svg' alt='' />
-            </ImgWrapper>
-          </ContentWrapper>
+          <div>
+            <ContentWrapper>
+              <TextWrapper>
+                <div>
+                  {t('seamlesslyCompatible')}
+                  <img src='images/clv_icon1.svg' alt='' />
+                </div>
+                <span>{t('seamlesslyCompatibleHint')}</span>
+                <Btns>
+                  <NormalButton
+                    width='316px'
+                    onClick={() =>
+                      window.open(
+                        "https://docs.google.com/forms/d/e/1FAIpQLSfQevVEw_hL44vvbcMkYB8kKdzTFAbtD1pR-QVraaA7h4jpKg/viewform",
+                        "_blank"
+                      )
+                    }
+                  >{t('startBuilding')}</NormalButton>
+                  <GrayButton
+                    width='316px'
+                    onClick={() =>
+                      window.open(
+                        "https://docs.clv.org/",
+                        "_blank"
+                      )
+                    }
+                  >{t('viewDocumentation')}</GrayButton>
+                </Btns>
+              </TextWrapper>
+              <VideoWrapper>
+                <video autoPlay loop muted src='videos/heroAnimation.mp4'></video>
+              </VideoWrapper>
+            </ContentWrapper>
+          </div>
           <BalanceWrapper>
             <BalanceItem>
               <h3>84,309,967,906</h3>
@@ -61,7 +95,7 @@ export const Main: React.FC = () => {
           </AdvantagesTitle>
           <AdvantagesContent>
             <AdvantagesLeft>
-              <img src='images/video2.svg' alt='' />
+              <video id='playVideo1' autoPlay={play} loop muted src='videos/CLVMainInteractiveAnimation.mp4'></video>
             </AdvantagesLeft>
             <AdvantagesRight>
               <AdvantagesRightItem>
@@ -90,63 +124,67 @@ export const Main: React.FC = () => {
             </div>
           </ToolsOnCLVTitle>
           <ToolsOnCLVContent>
-            <ToolsOnCLVItem>
+            <ToolsOnCLVContentLeft>
               <div>
-                <img src='images/clv_icon1.svg' alt='' />
-                <span>{t('integrateCLVWallet')}</span>
+                <div>{t('forBuilders')}</div>
+                <span>{t('forBuildersHint')}</span>
               </div>
-              <span>{t('integrateCLVWalletHint')}</span>
-              <NormalButton
-                onClick={() =>
-                  window.open(
-                    "https://docs.clover.finance/clover-multi-chain-wallet/developer-guide",
-                    "_blank"
-                  )
-                }
-              >{t('integrate')}</NormalButton>
-            </ToolsOnCLVItem>
-            <ToolsOnCLVItem>
-              <div>{t('buildWithCLV')}</div>
-              <span>{t('buildWithCLVHint')}</span>
-              <GrayButton
-                onClick={() =>
-                  window.open(
-                    "https://docs.google.com/forms/d/e/1FAIpQLSfQevVEw_hL44vvbcMkYB8kKdzTFAbtD1pR-QVraaA7h4jpKg/viewform",
-                    "_blank"
-                  )
-                }
-              >{t('startBuilding')}</GrayButton>
-            </ToolsOnCLVItem>
-            <div></div>
-            <ToolsOnCLVItem>
-              <div>{t('forBuilders')}</div>
-              <span>{t('forBuildersHint')}</span>
-              <Btns>
+              <ToolBtns>
                 <GrayButton
-                  width='316px'
+                  margin='0 0 24px'
+                  onClick={() =>
+                    window.open("https://docs.clv.org/clv-chain-developer-guide/introduction", "_blank")
+                  }
+                >{t('readDocs')}</GrayButton>
+                <GrayButton
+                  margin='0 0 24px'
                   onClick={() =>
                     window.open("https://github.com/clover-network", "_blank")
                   }
-                >{t('getGithub')}</GrayButton>
+                >{t('getGithubRepo')}</GrayButton>
                 <GrayButton
-                  width='316px'
                   onClick={() =>
-                    window.open("https://docs.clover.finance/", "_blank")
+                    window.open("https://docs.clv.org/clv-chain-developer-guide/using-testnet", "_blank")
                   }
-                >{t('readDocs')}</GrayButton>
-              </Btns>
-            </ToolsOnCLVItem>
+                >{t('viewTestnet')}</GrayButton>
+              </ToolBtns>
+            </ToolsOnCLVContentLeft>
+            <ToolsOnCLVContentRight>
+              <ToolsOnCLVItem>
+                <div>
+                  <img src='images/clv_icon1.svg' alt='' />
+                  <span>{t('integrateCLVWallet')}</span>
+                </div>
+                <span>{t('integrateCLVWalletHint')}</span>
+                <GrayButton
+                  onClick={() => {
+                    window.open('https://docs.clv.org/use-clv-wallet/clv-extension-wallet', "_blank")
+                  }}
+                >{t('CLVWalletInforamtion')}</GrayButton>
+              </ToolsOnCLVItem>
+              <ToolsOnCLVItem>
+                <div>{t('partnerWithCLV')}</div>
+                <span>{t('partnerWithCLVHint')}</span>
+                <GrayButton
+                  onClick={() => {
+                    window.open('https://docs.google.com/forms/d/e/1FAIpQLSfQevVEw_hL44vvbcMkYB8kKdzTFAbtD1pR-QVraaA7h4jpKg/viewform', "_blank")
+                  }}
+                >{t('contactUs')}</GrayButton>
+              </ToolsOnCLVItem>
+            </ToolsOnCLVContentRight>
           </ToolsOnCLVContent>
         </ToolsOnCLV>
         <CLVIsBacked />
       </LandingContainer>
       <Footer />
-    </div>
+    </Wrapper>
   );
 };
 
 const SeamlesslyCompatible = styled.div`
   width: 100%;
+  position: relative;
+ 
 `
 const ContentWrapper = styled.div`
   width: 100%;
@@ -154,6 +192,7 @@ const ContentWrapper = styled.div`
   align-items: flex-end;
   justify-content: space-between;
   padding-top: 100px;
+  position: relative;
 
   ${breakpoint(css`
     width: unset;
@@ -164,10 +203,12 @@ const ContentWrapper = styled.div`
 
 const TextWrapper = styled.div`
   width: 50%;
+  padding-top: 180px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-right: 16px;
+  min-height: 680px;
 
   & > div:first-child {
     font-weight: 590;
@@ -226,6 +267,7 @@ const BalanceItem = styled.div`
   }
   
   h3 {
+    font-family: RobotoFlex;
     font-weight: 590;
     font-size: 32px;
     line-height: 40px;
@@ -244,11 +286,14 @@ const BalanceItem = styled.div`
   }
 `;
 
-const ImgWrapper = styled.div`
+const VideoWrapper = styled.div`
   width: 50%;
-
-  img {
-    width: 680px;
+  position: absolute;
+  right: 0;
+  top: 100px;
+  video {
+    width: 100%;
+    max-width: 630px;
   }
 `;
 
@@ -261,10 +306,12 @@ const AdvantagesTitle = styled.div`
   width: 50%;
   font-weight: 590;
   font-size: 64px;
-  line-height: 80px;
+  line-height: 68px;
   letter-spacing: 0.008em;
   h3 {
     color: #FFFFFF;
+    font-size: 64px;
+    line-height: 68px;
   }
   span {
     color: #9BDAF6;
@@ -281,8 +328,9 @@ const AdvantagesLeft = styled.div`
   width: 50%;
   margin-right: 16px;
   
-  img {
-    width: 648px;
+  video {
+    width: 100%;
+    max-width: 630px;
   }
 `
 
@@ -339,8 +387,11 @@ const ToolsOnCLVTitle = styled.div`
     line-height: 68px;
     letter-spacing: 0.008em;
     margin-bottom: 64px;
+    text-align: right;
     h3 {
       color: #FFFFFF;
+      font-size: 64px;
+      line-height: 68px;
     }
     span {
       color: #BDFDE2;
@@ -349,19 +400,53 @@ const ToolsOnCLVTitle = styled.div`
 `
 
 const ToolsOnCLVContent = styled.div`
-  display: grid;
-  grid-template-columns: 50% 50%;
-  gap: 16px;
-  align-items: center;
-  justify-content: flex-end;
+  display: flex;
+  align-items: stretch;
   width: 100%;
+`
+
+const ToolsOnCLVContentLeft = styled.div`
+  margin-right: 16px;
+  flex: 0 0 50%;
+  padding: 48px;
+  background: #141414;
+  border-radius: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &>div:first-child {
+    div {
+      color: #FFFFFF;
+      font-weight: 590;
+      font-size: 32px;
+      line-height: 40px;
+      letter-spacing: 0.008em;
+    }
+    span {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 28px;
+      letter-spacing: 0.006em;
+      color: #FFFFFF;
+      opacity: 0.6;
+      margin: 24px 0;
+      display: inline-block;
+    }
+  }
+`
+
+const ToolsOnCLVContentRight = styled.div`
+  flex: 0 0 50%;
+  &>div:first-child {
+    margin-bottom: 16px;
+  }
 `
 
 const ToolsOnCLVItem = styled.div`
   background: #141414;
   border-radius: 32px;
   padding: 48px;
-  height: 304px;
+  min-height: 304px;
 
   &>div:first-child {
     display: flex;
@@ -388,14 +473,25 @@ const ToolsOnCLVItem = styled.div`
   }
 `
 
-// this is a full height container that contains the Navbar, the Hero, and the bitcoin price
-// when a user first visits the site this portion should take up 100% height
-const LandingContainer = styled.div`
-  //height: calc(100vh);
+const ToolBtns = styled.div`
   display: flex;
   flex-direction: column;
-  background: #0C0B0B;
+`
+
+// this is a full height container that contains the Navbar, the Hero, and the bitcoin price
+// when a user first visits the site this portion should take up 100% height
+
+const Wrapper = styled.div`
+  background: #000000;
+`
+const LandingContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   padding: 0 64px 64px;
+  max-width: 1440px;
+  min-width: 1440px;
+  margin: 0 auto;
+
   ${breakpoint(css`
     height: unset;
     min-height: 120vw;

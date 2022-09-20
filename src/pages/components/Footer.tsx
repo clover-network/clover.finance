@@ -2,6 +2,7 @@ import React from "react";
 import styled, { css } from 'styled-components';
 import { breakpoint } from "../../mixins/breakpoint";
 import { t } from '../../i18n/intl';
+import { WrapperDesktopOnly } from '../../CloverLibrary';
 
 interface FooterProps {
   isWallet?: boolean;
@@ -10,143 +11,153 @@ interface FooterProps {
 export const Footer = ({isWallet}: FooterProps) => {
   const prefix = isWallet ? 'black-' : ''
   return (
-    <FooterWrapper isWallet={isWallet}>
-      <DivFooterColumns>
-        <FooterLeft>
-          <div>
-            <FooterColumn>
-              <FooterColumnLabel isWallet={isWallet}>{t('resources')}</FooterColumnLabel>
-              <Links isWallet={isWallet}>
-                <Link>
-                  <a
-                    href="https://clv.org/whitepaper.pdf"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {t('whitepaper')}
-                  </a>
-                </Link>
-                <Link>
-                  <a
-                    href="https://clv.org/whitepaper.pdf"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {t('blog')}
-                  </a>
-                </Link>
-              </Links>
-            </FooterColumn>
-            <FooterColumn>
-              <FooterColumnLabel isWallet={isWallet}>{t('products')}</FooterColumnLabel>
-              <Links isWallet={isWallet}>
-                <Link>
-                  <a
-                    href="https://apps.apple.com/app/clover-wallet/id1570072858"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {t('iOSWallet')}
-                  </a>
-                </Link>
-                <Link>
-                  <a
-                    href="https://clover.subscan.io/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {t('explorer')}
-                  </a>
-                </Link>
-              </Links>
-            </FooterColumn>
-            <FooterColumn>
-              <FooterColumnLabel isWallet={isWallet}>{t('contactUs')}</FooterColumnLabel>
-              <Links isWallet={isWallet}>
-                <Link>
-                  <a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLScl4kp4hD4Dv9JnPIdKEkTxL4ctVZQJtVoezeVqQVi676iKvw/viewform"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {t('walletIntegration')}
-                  </a>
-                </Link>
-                <Link>
-                  <a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSfQevVEw_hL44vvbcMkYB8kKdzTFAbtD1pR-QVraaA7h4jpKg/viewform"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {t('generalPartnership')}
-                  </a>
-                </Link>
-              </Links>
-            </FooterColumn>
-          </div>
-          <FooterBar isWallet={isWallet}>
-            <img src={isWallet ? 'images/logo_gray2.svg' : 'images/logo_gray.svg'} alt='' />
-            <span>@Clover Inc. All Rights Reserved</span>
-          </FooterBar>
-        </FooterLeft>
-        <FooterRight>
-          <FooterRightTop isWallet={isWallet}>
-            <div>{t('comeSayHelloAt')}</div>
-            <a href="mailto:info@clover.finance">info@clover.finance</a>
-          </FooterRightTop>
-          <FooterRightBottom isWallet={isWallet}>
-            <span>{t('orFollowUs')}</span>
-            <SocialsDiv>
-              <a href="https://t.me/clvorg" target="_blank" rel="noreferrer">
-                <SocialsImg src={`images/${prefix}telegram.svg`} />
-              </a>
-              <a href="https://github.com/clover-network" target="_blank" rel="noreferrer">
-                <SocialsImg src={`images/${prefix}github.svg`} />
-              </a>
-              <a href="https://discord.com/invite/M6SxuXqMVB" target="_blank" rel="noreferrer">
-                <SocialsImg src={`images/${prefix}discord.svg`} />
-              </a>
-              <a href="https://www.linkedin.com/company/clv-org" target="_blank" rel="noreferrer">
-                <SocialsImg src={`images/${prefix}linkedin.svg`} />
-              </a>
-              <a href="https://medium.com/@clv_org" target="_blank" rel="noreferrer">
-                <SocialsImg src={`images/${prefix}medium.svg`} />
-              </a>
-              <a href="https://twitter.com/clover_finance/" target="_blank" rel="noreferrer">
-                <SocialsImg src={`images/${prefix}twitter.svg`} />
-              </a>
-            </SocialsDiv>
-          </FooterRightBottom>
-        </FooterRight>
-      </DivFooterColumns>
-    </FooterWrapper>
+    <Wrapper isWallet={isWallet}>
+      <FooterWrapper>
+        <DivFooterColumns>
+          <FooterTop>
+            <FooterTopLeft>
+              <FooterColumn>
+                <FooterColumnLabel isWallet={isWallet}>{t('resources')}</FooterColumnLabel>
+                <Links isWallet={isWallet}>
+                  <Link>
+                    <a
+                      href="https://medium.com/@clv_org"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {t('medium')}
+                    </a>
+                  </Link>
+                </Links>
+              </FooterColumn>
+              <FooterColumn>
+                <FooterColumnLabel isWallet={isWallet}>{t('products')}</FooterColumnLabel>
+                <Links isWallet={isWallet}>
+                  <Link>
+                    <a
+                      href="https://apps.apple.com/app/clover-wallet/id1570072858"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {t('iOSWallet')}
+                    </a>
+                  </Link>
+                  <Link>
+                    <a
+                      href="https://github.com/clover-network/clover-multichain-mobile-wallet-release/releases/latest/download/clover.apk"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {t('androidWallet')}
+                    </a>
+                  </Link>
+                  <Link>
+                    <a
+                      href="https://chrome.google.com/webstore/detail/clover-wallet/nhnkbkgjikgcigadomkphalanndcapjk"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {t('extensionWallet')}
+                    </a>
+                  </Link>
+                  <Link>
+                    <a
+                      // href="https://wallet.clover.finance/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {t('CLVPortal')}
+                    </a>
+                  </Link>
+                  <Link>
+                    <a
+                      href="https://clover.subscan.io/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {t('explorer')}
+                    </a>
+                  </Link>
+                </Links>
+              </FooterColumn>
+              <FooterColumn>
+                <FooterColumnLabel isWallet={isWallet}>{t('contactUs')}</FooterColumnLabel>
+                <Links isWallet={isWallet}>
+                  <Link>
+                    <a
+                      href="https://docs.google.com/forms/d/e/1FAIpQLScl4kp4hD4Dv9JnPIdKEkTxL4ctVZQJtVoezeVqQVi676iKvw/viewform"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {t('walletIntegration')}
+                    </a>
+                  </Link>
+                  <Link>
+                    <a
+                      href="https://docs.google.com/forms/d/e/1FAIpQLSfQevVEw_hL44vvbcMkYB8kKdzTFAbtD1pR-QVraaA7h4jpKg/viewform"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {t('generalPartnership')}
+                    </a>
+                  </Link>
+                </Links>
+              </FooterColumn>
+            </FooterTopLeft>
+            <FooterTopRight isWallet={isWallet}>
+              <div>{t('comeSayHello')}</div>
+              <a href="mailto:info@clover.finance">info@clover.finance</a>
+            </FooterTopRight>
+          </FooterTop>
+          <FooterBottom>
+            <FooterBottomLeft isWallet={isWallet}>
+              <img src={isWallet ? 'images/logo_gray2.svg' : 'images/logo_gray.svg'} alt='' />
+              <span>CLV © All Rights Reserved</span>
+            </FooterBottomLeft>
+            <FooterBottomRight isWallet={isWallet}>
+              <span>{t('orFollowUs')}</span>
+              <SocialsDiv>
+                <a href="https://t.me/clvorg" target="_blank" rel="noreferrer">
+                  <SocialsImg src={`images/${prefix}telegram.svg`} />
+                </a>
+                <a href="https://twitter.com/clover_finance/" target="_blank" rel="noreferrer">
+                  <SocialsImg src={`images/${prefix}twitter.svg`} />
+                </a>
+                <a href="https://discord.com/invite/M6SxuXqMVB" target="_blank" rel="noreferrer">
+                  <SocialsImg src={`images/${prefix}discord.svg`} />
+                </a>
+                <a href="https://medium.com/@clv_org" target="_blank" rel="noreferrer">
+                  <SocialsImg src={`images/${prefix}medium.svg`} />
+                </a>
+                <a href="https://www.youtube.com/channel/UCrEoV9sw6lxTR6PLasqfP9Q" target="_blank" rel="noreferrer">
+                  <SocialsImg src={`images/${prefix}youtobe.svg`} />
+                </a>
+                <a href="https://www.tiktok.com/@clvbyclover" target="_blank" rel="noreferrer">
+                  <SocialsImg src={`images/${prefix}tiktok.svg`} />
+                </a>
+              </SocialsDiv>
+            </FooterBottomRight>
+          </FooterBottom>
+        </DivFooterColumns>
+      </FooterWrapper>
+    </Wrapper>
   );
 };
 
-const FooterBar = styled.div<{
+const Wrapper = styled.div<{
   isWallet?: boolean
 }>`
-  display: flex;
-  align-items: center;
-  margin-top: 88px;
-  span {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 28px;
-    letter-spacing: 0.006em;
-    color: ${({isWallet}) => (isWallet ? '#000000' : '#FFFFFF')};
-    opacity: 0.6;
-  }
-  img {
-    margin-right: 60px;
-  }
+  border-top: 1px solid ${({isWallet}) => (isWallet ? '#EFF5F5' : '#333232')};
+  background: ${({isWallet}) => (isWallet ? 'transparent' : '#000000')};
+  width: 100%;
 `
 
 const FooterWrapper = styled.div<{
   isWallet?: boolean
 }>`
-  border-top: 1px solid ${({isWallet}) => (isWallet ? '#EFF5F5' : '#333232')};
-  background: ${({isWallet}) => (isWallet ? '#ffffff' : '#0C0B0B')};
+  max-width: 1440px;
+  min-width: 1440px;
+  margin: 0 auto;
   padding: 80px 64px;
 `
 
@@ -168,36 +179,26 @@ const FooterColumnLabel = styled.div<{
 `;
 
 const DivFooterColumns = styled.div`
+`;
+
+const FooterTop = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  flex-wrap: wrap;
-
-
-  ${breakpoint(css`
-    margin-bottom: unset; //ensure footer bar has space below
-    flex-direction: column;
-  `)}
-`;
-
-const FooterLeft = styled.div`
-  width: 50%;
-
-  & > div {
-    display: flex;
-    justify-content: flex-start;
-  }
 `
 
-const FooterRight = styled.div`
-  width: 50%;
+const FooterTopLeft = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  flex: 0 0 50%;
 `
 
-const FooterRightTop = styled.div<{
+const FooterTopRight = styled.div<{
   isWallet?: boolean
 }>`
   display: flex;
   flex-direction: column;
+  flex: 0 0 50%;
   div {
     font-weight: 400;
     font-size: 32px;
@@ -216,9 +217,35 @@ const FooterRightTop = styled.div<{
   }
 `
 
-const FooterRightBottom = styled.div<{
+const FooterBottom = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
+
+const FooterBottomLeft = styled.div<{
   isWallet?: boolean
 }>`
+  display: flex;
+  align-items: center;
+  margin-top: 88px;
+  flex: 0 0 50%;
+  span {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0.006em;
+    color: ${({isWallet}) => (isWallet ? '#000000' : '#FFFFFF')};
+    opacity: 0.6;
+  }
+  img {
+    margin-right: 60px;
+  }
+`
+
+const FooterBottomRight = styled.div<{
+  isWallet?: boolean
+}>`
+  flex: 0 0 50%;
   margin-top: 48px;
   & > span {
     font-weight: 400;

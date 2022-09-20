@@ -1,25 +1,33 @@
 import React, { ReactElement, useState } from "react";
 import styled, { css } from "styled-components";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import NavLink from "react-bootstrap/NavLink";
 import { WrapperDesktopOnly, WrapperMobileOnly } from '../../CloverLibrary';
 import { breakpoint } from "../../mixins/breakpoint";
 import { t } from '../../i18n/intl';
 import { Locale, setLocale } from '../../i18n/i18nSlice';
 import store from '../../../src/state';
 import { Socials } from '../../Socials';
+import { useRouter } from 'next/router';
 
-const HeaderWrapper = styled.div<{
+const Wrapper = styled.div<{
   isWallet?: boolean
 }>`
   width: 100%;
   height: 96px;
-  background: transparent;
-  border-bottom: 1px solid ${({isWallet}) => (isWallet ? '#EFF5F5' : '#333232')};
   position: absolute;
   top: 0;
   z-index: 10;
+  background: transparent;
+  border-bottom: 1px solid ${({isWallet}) => (isWallet ? '#EFF5F5' : '#333232')};
+  ${breakpoint(css`
+    height: 70px;
+  `)};
+`
+
+const HeaderWrapper = styled.div`
+  height: 100%;
+  max-width: 1440px;
+  min-width: 1440px;
+  margin: 0 auto;
   ${breakpoint(css`
     height: 70px;
   `)};
@@ -31,8 +39,6 @@ const HeaderContent = styled.div`
   height: 100%;
   padding: 0 64px;
   margin: 0 auto;
-  //max-width: 1440px;
-  min-width: 1000px;
   ${breakpoint(css`
     min-width: initial;
     padding: 25px;
@@ -49,6 +55,7 @@ const HeaderDiv = styled.div`
   font-weight: bold;
   font-size: 30px;
   line-height: 36px;
+  cursor: pointer;
   ${breakpoint(css`
     //width: 100%;
     //justify-content: center;
@@ -91,6 +98,10 @@ const NavWrapper = styled.div<{
 const HeaderRight = styled.div`
   display: flex;
   align-items: center;
+  & > div {
+    display: flex;
+    align-items: center;
+  }
 `
 
 const WalletBtns = styled.div`
@@ -322,166 +333,56 @@ const ClvChainList: React.FC<{
 
 export default function NewHeader(props: any): ReactElement {
   const { navList, currentTab, handleChange } = props;
-  const [showList, setShowList] = useState(false);
-  const [showClvChainList, setShowClvChainList] = useState(false);
   const [showNavs, setShowNavs] = useState(false);
-  const [openMobileMenu, setOpenMobileMenu] = useState(false);
-  const [openMobileLanguages, setOpenMobileLanguages] = useState(false);
   const isWallet = currentTab.name === t('wallet')
-  const textColor = isWallet ? '#000000' : '#FFFFFF'
-
-  const menuList = [
-    {
-      name: 'CROSS-CHAIN EXPLORER',
-      url: 'https://tx.clover.finance'
-    },
-    {
-      name: 'EVM BRIDGE',
-      url: 'https://bridge.clv.org/'
-    },
-    {
-      name: 'CLV SCAN',
-      url: 'https://clvscan.com/'
-    },
-  ]
+  const location = useRouter();
 
   const openUrl = (url: string) => {
     window.open(url, '_blank');
   }
 
   return (
-    <HeaderWrapper isWallet={isWallet}>
-      <HeaderContent>
-        <HeaderDiv>
-          <img src={isWallet ? 'images/logo.svg' : 'images/logo_white.svg'} alt="" />
-        </HeaderDiv>
-        <WrapperMobileOnly>
-          <HeaderIcon
-            src={showNavs ? 'images/close_icon.svg' : 'images/menu_icon.svg'}
-            alt=""
-            onClick={() => setShowNavs(!showNavs)}
-          />
-        </WrapperMobileOnly>
-        <WrapperDesktopOnly>
-          <HeaderRight>
-            <HeaderDiv>
-              <NavWrapper isWallet={isWallet}>
-                {navList.map((nav: any) => (
-                  <span
-                    className={currentTab.name === nav.name ? 'selected' : ''}
-                    onClick={() => handleChange(nav)}
-                    key={nav.name}
-                  >
+    <Wrapper isWallet={isWallet}>
+      <HeaderWrapper>
+        <HeaderContent>
+          <HeaderDiv onClick={() => {location.push('/', undefined, { shallow: true });}}>
+            <img src={isWallet ? 'images/logo.svg' : 'images/logo_white.svg'} alt="" />
+          </HeaderDiv>
+          <WrapperMobileOnly>
+            <HeaderIcon
+              src={showNavs ? 'images/close_icon.svg' : 'images/menu_icon.svg'}
+              alt=""
+              onClick={() => setShowNavs(!showNavs)}
+            />
+          </WrapperMobileOnly>
+          <WrapperDesktopOnly>
+            <HeaderRight>
+              <div>
+                <NavWrapper isWallet={isWallet}>
+                  {navList.map((nav: any) => (
+                    <span
+                      className={currentTab.name === nav.name ? 'selected' : ''}
+                      onClick={() => handleChange(nav)}
+                      key={nav.name}
+                    >
                     {nav.name}
                   </span>
-                ))}
-              </NavWrapper>
-            </HeaderDiv>
-            {isWallet && <WalletBtns>
-              <ButtonIcon>
-                <img onClick={() => openUrl('https://apps.apple.com/app/clover-wallet/id1570072858')} src="images/apple_icon.svg" alt="" />
-                <img onClick={() => openUrl('https://github.com/clover-network/clover-multichain-mobile-wallet-release/releases/latest/download/clover.apk')} src="images/google_play_icon.svg" alt="" />
-                <img onClick={() => openUrl('https://chrome.google.com/webstore/detail/clover-wallet/nhnkbkgjikgcigadomkphalanndcapjk')} src="images/chrome_icon.svg" alt="" />
-              </ButtonIcon>
-              <LogIn>Log In</LogIn>
-              <SignUp>Sign Up</SignUp>
-            </WalletBtns>}
-
-            {/*<WebWallet onClick={() => openUrl('https://wallet.clover.finance/')}>{t('webWallet')}</WebWallet>*/}
-            {/*<Language>*/}
-            {/*  <img*/}
-            {/*    src="images/language_icon.svg"*/}
-            {/*    alt=""*/}
-            {/*    onClick={() => setShowList(!showList)}*/}
-            {/*  />*/}
-            {/*  {showList && <Languages hideShowList={() => setShowList(false)} />}*/}
-            {/*</Language>*/}
-          </HeaderRight>
-        </WrapperDesktopOnly>
-      </HeaderContent>
-      <WrapperMobileOnly>
-        {showNavs && (
-          <Navs>
-            {navList.map((nav: any) => (
-              nav.path === "/" ? (
-                <RowMobile
-                  key={nav.name}
-                >
-                  <div>
-                    <span
-                      onClick={() => {
-                        handleChange(nav);
-                        setShowNavs(false)
-                      }}
-                    >{nav.name}</span>
-                    <img
-                      onClick={(e: any) => {
-                        const src = !openMobileMenu ? '/images/clv_arrow_up.svg' : '/images/clv_arrow_down.svg'
-                        e.target.setAttribute("src", src);
-                        setOpenMobileMenu(!openMobileMenu)
-                      }}
-                      src='/images/clv_arrow_down.svg'
-                      alt=''
-                    />
-                  </div>
-                  {openMobileMenu && (<div>
-                    {menuList.map(item => (
-                      <div onClick={() => {
-                        window.open(item.url)
-                      }}>{item.name}</div>
-                    ))}
-                  </div>)}
-                </RowMobile>
-              ) : (
-                <div
-                  onClick={() => {
-                    handleChange(nav);
-                    setShowNavs(false)
-                  }}
-                  key={nav.name}
-                >
-                  {nav.name}
-                </div>
-              )
-            ))}
-            <RowMobile>
-              <div>
-                <span
-                  onClick={() => {
-                    setShowNavs(false)
-                  }}
-                >Languages</span>
-                <img
-                  onClick={(e: any) => {
-                    const src = !openMobileLanguages ? '/images/clv_arrow_up.svg' : '/images/clv_arrow_down.svg'
-                    e.target.setAttribute("src", src);
-                    setOpenMobileLanguages(!openMobileLanguages)
-                  }}
-                  src='/images/clv_arrow_down.svg'
-                  alt=''
-                />
+                  ))}
+                </NavWrapper>
               </div>
-              {openMobileLanguages && (<div>
-                <div
-                  onClick={() => {
-                    store.dispatch(setLocale(Locale.en))
-                  }}
-                >ENGLISH</div>
-                <div
-                  onClick={() => {
-                    store.dispatch(setLocale(Locale.zh))
-                  }}
-                >汉语</div>
-              </div>)}
-            </RowMobile>
-            <SakuraDiv onClick={() => window.open('https://sakurafinance.io')}>
-              <img src='images/sakura_icon.svg' alt='' />
-              <span>Sakura <br/>Sisternet</span>
-            </SakuraDiv>
-            <VerticalSocials />
-          </Navs>
-        )}
-      </WrapperMobileOnly>
-    </HeaderWrapper>
+              {isWallet && <WalletBtns>
+                <ButtonIcon>
+                  <img onClick={() => openUrl('https://apps.apple.com/app/clover-wallet/id1570072858')} src="images/apple_icon.svg" alt="" />
+                  <img onClick={() => openUrl('https://github.com/clover-network/clover-multichain-mobile-wallet-release/releases/latest/download/clover.apk')} src="images/google_play_icon.svg" alt="" />
+                  <img onClick={() => openUrl('https://chrome.google.com/webstore/detail/clv-wallet/nhnkbkgjikgcigadomkphalanndcapjk')} src="images/chrome_icon.svg" alt="" />
+                </ButtonIcon>
+                <LogIn onClick={() => openUrl('https://wallet.clover.finance/')}>Log In</LogIn>
+                <SignUp onClick={() => openUrl('https://wallet.clover.finance/')}>Sign Up</SignUp>
+              </WalletBtns>}
+            </HeaderRight>
+          </WrapperDesktopOnly>
+        </HeaderContent>
+      </HeaderWrapper>
+    </Wrapper>
   );
 }

@@ -20,6 +20,8 @@ const CLVIsBackedTitle = styled.div`
   margin-right: 16px;
 
   h3 {
+    font-size: 48px;
+    line-height: 60px;
     color: #FFFFFF;
   }
   span {

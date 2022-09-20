@@ -27,7 +27,7 @@ export const NewContent = () => {
       path: "/?type=about",
     },
     {
-      name: t('CLVChain'),
+      name: t('CLVChains'),
       path: "/?type=CLVChain",
     },
     {
@@ -50,6 +50,7 @@ export const NewContent = () => {
     const routeSearch = window.location.search;
     switch (routeSearch) {
       case "":
+        setSelectTab({ name: "", path: "" });
         break;
       case "?type=about":
         setSelectTab(navList[0]);
@@ -83,9 +84,9 @@ export const NewContent = () => {
         currentTab={selectTab}
         handleChange={(tab: any) => changeTab(tab)}
       />
-      {selectTab.name === '' && <Main />}
+      {(selectTab.name === '' || window.location.search === '') && <Main />}
       {selectTab.name === t('about') && <About />}
-      {selectTab.name === t('CLVChain') && <CLVChains />}
+      {selectTab.name === t('CLVChains') && <CLVChains />}
       {selectTab.name === t('wallet') && <Wallet />}
       {selectTab.name === t('developers') && <Developers />}
       {selectTab.name === t('ecosystem') && <Ecosystem />}

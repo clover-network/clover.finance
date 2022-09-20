@@ -3,7 +3,6 @@ import styled, { css } from "styled-components";
 import { breakpoint } from "../mixins/breakpoint";
 import { t } from '../i18n/intl';
 import { Footer } from './components/Footer';
-import CLVIsBacked from './components/CLVBacked';
 import { GrayButton, NormalButton } from '../components/Btn';
 
 export const Ecosystem: React.FC = () => {
@@ -26,175 +25,287 @@ export const Ecosystem: React.FC = () => {
     },
   ]
 
+  const dAppFeatures = [
+    {
+      content: 'CLV Wallet(Extension, Mobile, Web)'
+    }, {
+      content: 'CLV Multi-chain Explorer'
+    }, {
+      content: 'CLV Cross-chain Bridge'
+    }, {
+      content: 'CLV dApp interatctive protocol, wallet SDK'
+    }, {
+      content: 'CLV Service API'
+    },
+  ]
+
   const products = [
     {
-      icon: 'images/product.svg',
-      title: 'Product 1',
-      content: 'A small description of the product'
+      icon: 'images/product1.svg',
+      title: 'Killswitch',
+      content: 'Mutichain Yield Aggregator with Stoploss & Takeprofit',
+      url: 'https://www.killswitch.finance/'
     }, {
-      icon: 'images/product.svg',
-      title: 'Product 2',
-      content: 'A small description of the product'
+      icon: 'images/product2.svg',
+      title: 'SSAP',
+      content: 'An open-source noncustodial lending protocol',
+      url: 'https://app.ssap.finance/dashboard'
     }, {
-      icon: 'images/product.svg',
-      title: 'Product 3',
-      content: 'A small description of the product'
+      icon: 'images/product3.svg',
+      title: 'Huckleberry',
+      content: 'Huckleberry is your community DEX and lendin\' platform',
+      url: 'https://www.huckleberry.finance/'
     }, {
-      icon: 'images/product.svg',
-      title: 'Product 4',
-      content: 'A small description of the product'
+      icon: 'images/product4.svg',
+      title: 'O3Swap',
+      content: 'Cross-chain Aggregation Protocol',
+      url: 'https://o3swap.com/'
+    },
+  ]
+
+  const clvChains = [
+    {
+      icon: 'images/clv_chain1.svg',
+      content: 'Cross chain Modules'
+    }, {
+      icon: 'images/clv_chain2.svg',
+      content: 'Governance'
+    }, {
+      icon: 'images/clv_chain3.svg',
+      content: 'EVM Economics Incentive'
+    }, {
+      icon: 'images/clv_chain4.svg',
+      content: 'Smart Contract On-chain upgrade'
+    }, {
+      icon: 'images/clv_chain5.svg',
+      content: 'Account Binding'
     },
   ]
   return (
     <div>
+      <Background />
       <LandingContainer>
         <EnterWeb3>
-          <ContentWrapper>
-            <TextWrapper>
-              <div>
-                {t('enterWeb3WithConfidence')}
-                <img src='images/clv_icon1.svg' alt='' />
-              </div>
-              <span>{t('enterWeb3WithConfidenceHint')}</span>
-            </TextWrapper>
-            <ImgWrapper>
-            </ImgWrapper>
-          </ContentWrapper>
-          <ContentBottom>
-            <ContentBottomTitle>{t('CLVDAppEcosystem')}</ContentBottomTitle>
-            <ContentBottomContent>
-              {ecosystems.map((item, index) => (
-                <ContentBottomItem
-                  key={`ecosystem_${index}`}
-                  className={index === 2 ? 'selected' : ''}
-                >
-                  <img src={item.icon} alt='' />
-                  <span>{item.name}</span>
-                </ContentBottomItem>
-              ))}
-            </ContentBottomContent>
-          </ContentBottom>
-        </EnterWeb3>
-        <ProductSolution>
-          <ProductSolutionLeft>
-            {products.map((item, index) => (
-              <ProductSolutionItem>
-                <img src={item.icon} alt='' />
+          <video autoPlay loop muted src='videos/particles.mp4'></video>
+          <div>
+            <ContentWrapper>
+              <TextWrapper>
                 <div>
-                  <h3>{item.title}</h3>
-                  <span>{item.content}</span>
+                  {t('theCLVInfrastructure')}
+                  <img src='images/clv_icon1.svg' alt='' />
                 </div>
-              </ProductSolutionItem>
-            ))}
-          </ProductSolutionLeft>
-          <ProductSolutionRight>
-            <h3>{t('productSolution')}</h3>
-            <span>{t('productSolutionHint')}</span>
-            <NormalButton>{t('moreProduct')}</NormalButton>
-          </ProductSolutionRight>
-        </ProductSolution>
-        <Component>
-          <ComponentTitle>
-            <h3>{t('component')}<span>{t('ofTheCLVChain')}</span></h3>
-            <span>{t('ourLayerOneFoundation')}</span>
-          </ComponentTitle>
-          <ComponentContent>
-            <ComponentContentLeft>
-              <ComponentContentItem>
-                <h3>{t('crossChangeModule')}</h3>
-                <span>{t('crossChangeModuleHint')}</span>
-              </ComponentContentItem>
-              <ComponentContentItem>
-                <h3>{t('accountBinding')}</h3>
-                <span>{t('accountBindingHint')}</span>
-              </ComponentContentItem>
-            </ComponentContentLeft>
-            <ComponentContentRight>
-              <ComponentContentItem>
-                <h3>{t('governance')}</h3>
-                <span>{t('governanceHint')}</span>
-              </ComponentContentItem>
-              <ComponentContentItem>
-                <h3>{t('EVMEconomicIncentive')}</h3>
-                <span>{t('EVMEconomicIncentiveHint')}</span>
-              </ComponentContentItem>
-              <ComponentContentItem>
-                <h3>{t('smartContractOnChain')}</h3>
-                <span>{t('smartContractOnChainHint')}</span>
-              </ComponentContentItem>
-            </ComponentContentRight>
-          </ComponentContent>
-        </Component>
-        <ToolsOnCLV>
-          <ToolsOnCLVTitle>
-            <div>
-              <h3>{t('toolsOnCLV')}</h3>
-              <span>{t('ecosystem')}</span>
-            </div>
-          </ToolsOnCLVTitle>
-          <ToolsOnCLVContent>
-            <ToolsOnCLVItem>
-              <div>
-                <img src='images/clv_icon1.svg' alt='' />
-                <span>{t('integrateCLVWallet')}</span>
-              </div>
-              <span>{t('integrateCLVWalletHint')}</span>
-              <GrayButton
-                onClick={() =>
-                  window.open(
-                    "https://docs.clover.finance/clover-multi-chain-wallet/developer-guide",
-                    "_blank"
-                  )
-                }
-              >{t('integrate')}</GrayButton>
-            </ToolsOnCLVItem>
-            <ToolsOnCLVItem>
-              <div>{t('buildWithCLV')}</div>
-              <span>{t('buildWithCLVHint')}</span>
-              <NormalButton
-                onClick={() =>
-                  window.open(
-                    "https://docs.google.com/forms/d/e/1FAIpQLSfQevVEw_hL44vvbcMkYB8kKdzTFAbtD1pR-QVraaA7h4jpKg/viewform",
-                    "_blank"
-                  )
-                }
-              >{t('startBuilding')}</NormalButton>
-            </ToolsOnCLVItem>
-            <ToolsOnCLVItem>
-              <div>{t('CLVPortal')}</div>
-              <span>{t('CLVPortalHint')}</span>
-              <NormalButton>{t('visitCLVPortal')}</NormalButton>
-            </ToolsOnCLVItem>
-            <ToolsOnCLVItem>
-              <div>{t('forBuilders')}</div>
-              <span>{t('forBuildersHint')}</span>
-              <Btns>
-                <GrayButton
-                  width='316px'
-                  onClick={() =>
-                    window.open("https://github.com/clover-network", "_blank")
-                  }
-                >{t('getGithub')}</GrayButton>
-                <GrayButton
-                  width='316px'
-                  onClick={() =>
-                    window.open("https://docs.clover.finance/", "_blank")
-                  }
-                >{t('readDocs')}</GrayButton>
-              </Btns>
-            </ToolsOnCLVItem>
-          </ToolsOnCLVContent>
-        </ToolsOnCLV>
-        <CLVIsBacked />
+              </TextWrapper>
+            </ContentWrapper>
+            <ContentBottom>
+              <ContentBottomTitle>{t('CLVDAppEcosystem')}</ContentBottomTitle>
+              <ContentBottomContent>
+                <ContentBottomTop>
+                  {ecosystems.map((item, index) => (
+                    <ContentBottomItem
+                      key={`ecosystem_${index}`}
+                      className={index === 2 ? 'selected' : ''}
+                    >
+                      <img src={item.icon} alt='' />
+                      <span>{item.name}</span>
+                    </ContentBottomItem>
+                  ))}
+                </ContentBottomTop>
+                <ContentBottomBottom>
+                  <span>{t('dAppFeatures')}</span>
+                  <div>
+                    {dAppFeatures.map((item, index) => (
+                      <DAppFeaturesItem
+                        key={`dAppFeatures_${index}`}
+                        className={index === 2 ? 'selected' : ''}
+                      >
+                        <span>{item.content}</span>
+                      </DAppFeaturesItem>
+                    ))}
+                  </div>
+                </ContentBottomBottom>
+              </ContentBottomContent>
+            </ContentBottom>
+          </div>
+        </EnterWeb3>
+        <Content>
+          <div>
+            <CLVChain>
+              <CLVChainTitle>
+                <h3>{t('CLVChain')}</h3>
+                <span>{t('CLVChainSpan')}</span>
+              </CLVChainTitle>
+              <CLVChainContent>
+                {clvChains.map((item, index) => (
+                  <CLVChainItem
+                    key={`CLVChain_${index}`}
+                  >
+                    <img src={item.icon} alt='' />
+                    <span>{item.content}</span>
+                  </CLVChainItem>
+                ))}
+              </CLVChainContent>
+            </CLVChain>
+            <ProductSolution>
+              <ProductSolutionLeft>
+                {products.map((item, index) => (
+                  <ProductSolutionItem
+                    onClick={() => {
+                      window.open(item.url, "_blank")
+                    }}
+                  >
+                    <img src={item.icon} alt='' />
+                    <div>
+                      <h3>{item.title}</h3>
+                      <span>{item.content}</span>
+                    </div>
+                  </ProductSolutionItem>
+                ))}
+              </ProductSolutionLeft>
+              <ProductSolutionRight>
+                <h3>{t('productSolution')}</h3>
+                <span>{t('productSolutionHint')}</span>
+                <NormalButton
+                  onClick={() => {
+                    window.open('https://docs.clv.org/clover-ecosystem/ecosystem-partners', "_blank")
+                  }}
+                >{t('moreProduct')}</NormalButton>
+              </ProductSolutionRight>
+            </ProductSolution>
+            <ToolsOnCLV>
+              <ToolsOnCLVTitle>
+                <h3>{t('toolsOnCLV')}</h3>
+                <span>{t('ecosystem')}</span>
+              </ToolsOnCLVTitle>
+              <ToolsOnCLVContent>
+                <ToolsOnCLVItem>
+                  <div>
+                    <img src='images/clv_icon1.svg' alt='' />
+                    <span>{t('integrateCLVWallet')}</span>
+                  </div>
+                  <span>{t('integrateCLVWalletHint')}</span>
+                  <NormalButton
+                    onClick={() =>
+                      window.open(
+                        "https://docs.clv.org/clover-wallet/dapp-integration",
+                        "_blank"
+                      )
+                    }
+                  >{t('integrate')}</NormalButton>
+                </ToolsOnCLVItem>
+                <ToolsOnCLVItem>
+                  <div>{t('buildWithCLV')}</div>
+                  <span>{t('buildWithCLVHint')}</span>
+                  <GrayButton
+                    onClick={() =>
+                      window.open(
+                        "https://docs.google.com/forms/u/3/d/e/1FAIpQLSfQevVEw_hL44vvbcMkYB8kKdzTFAbtD1pR-QVraaA7h4jpKg/viewform",
+                        "_blank"
+                      )
+                    }
+                  >{t('startBuilding')}</GrayButton>
+                </ToolsOnCLVItem>
+                <ToolsOnCLVItem>
+                  <div>{t('CLVPortal')}</div>
+                  <span>{t('CLVPortalHint2')}</span>
+                  <GrayButton>{t('learnMore')}</GrayButton>
+                </ToolsOnCLVItem>
+                <ToolsOnCLVItem>
+                  <div>{t('forBuilders')}</div>
+                  <span>{t('forBuildersHint')}</span>
+                  <Btns>
+                    <GrayButton
+                      width='316px'
+                      onClick={() =>
+                        window.open("https://github.com/clover-network", "_blank")
+                      }
+                    >{t('getGithub')}</GrayButton>
+                    <GrayButton
+                      width='316px'
+                      onClick={() =>
+                        window.open("https://docs.clover.finance/", "_blank")
+                      }
+                    >{t('readDocs')}</GrayButton>
+                  </Btns>
+                </ToolsOnCLVItem>
+              </ToolsOnCLVContent>
+            </ToolsOnCLV>
+            {/*<Component>*/}
+            {/*  <ComponentTitle>*/}
+            {/*    <h3>{t('component')}<span>{t('ofTheCLVChain')}</span></h3>*/}
+            {/*    <span>{t('ourLayerOneFoundation')}</span>*/}
+            {/*  </ComponentTitle>*/}
+            {/*  <ComponentContent>*/}
+            {/*    <ComponentContentLeft>*/}
+            {/*      <ComponentContentItem>*/}
+            {/*        <h3>{t('crossChangeModule')}</h3>*/}
+            {/*        <span>{t('crossChangeModuleHint')}</span>*/}
+            {/*      </ComponentContentItem>*/}
+            {/*      <ComponentContentItem>*/}
+            {/*        <h3>{t('accountBinding')}</h3>*/}
+            {/*        <span>{t('accountBindingHint')}</span>*/}
+            {/*      </ComponentContentItem>*/}
+            {/*    </ComponentContentLeft>*/}
+            {/*    <ComponentContentRight>*/}
+            {/*      <ComponentContentItem>*/}
+            {/*        <h3>{t('governance')}</h3>*/}
+            {/*        <span>{t('governanceHint')}</span>*/}
+            {/*      </ComponentContentItem>*/}
+            {/*      <ComponentContentItem>*/}
+            {/*        <h3>{t('EVMEconomicIncentive')}</h3>*/}
+            {/*        <span>{t('EVMEconomicIncentiveHint')}</span>*/}
+            {/*      </ComponentContentItem>*/}
+            {/*      <ComponentContentItem>*/}
+            {/*        <h3>{t('smartContractOnChain')}</h3>*/}
+            {/*        <span>{t('smartContractOnChainHint')}</span>*/}
+            {/*      </ComponentContentItem>*/}
+            {/*    </ComponentContentRight>*/}
+            {/*  </ComponentContent>*/}
+            {/*</Component>*/}
+          </div>
+        </Content>
       </LandingContainer>
       <Footer />
     </div>
   );
 };
 
+const Background = styled.div`
+  background: #000000;
+  width: 100vw;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -2;
+`
+
+const Content = styled.div`
+  width: 100%;
+  background: #000000;
+  & > div {
+    max-width: 1440px;
+    min-width: 1440px;
+    padding: 0 64px 64px;
+    margin: 0 auto;
+  }
+`
+
 const EnterWeb3 = styled.div`
   width: 100%;
-  padding-top: 120px;
+  padding-top: 96px;
+  position: relative;
+  video {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    width: 100%;
+  }
+  & > div {
+    padding: 0 64px;
+    max-width: 1440px;
+    min-width: 1440px;
+    margin: 0 auto;
+  }
 `
 const ContentWrapper = styled.div`
   width: 100%;
@@ -212,6 +323,7 @@ const ContentWrapper = styled.div`
 
 const TextWrapper = styled.div`
   width: 50%;
+  padding-top: 240px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -248,6 +360,9 @@ const TextWrapper = styled.div`
 const ContentBottom = styled.div`
   margin-top: 128px;
   width: 100%;
+  padding: 40px 20px 20px;
+  background: #141414;
+  border-radius: 30px;
 `;
 
 const ContentBottomTitle = styled.div`
@@ -260,11 +375,33 @@ const ContentBottomTitle = styled.div`
 `;
 
 const ContentBottomContent = styled.div`
+  width: 100%;
+`;
+
+const ContentBottomTop = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-`;
+`
+
+const ContentBottomBottom = styled.div`
+  &>span {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.026em;
+    color: rgba(255, 255, 255, 0.6);
+    display: inline-block;
+    margin: 10px 0;
+  }
+  &>div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+`
 
 const ContentBottomItem = styled.div`
   background: #0C0B0B;
@@ -284,8 +421,8 @@ const ContentBottomItem = styled.div`
   letter-spacing: 0.006em;
   color: #FFFFFF;
   &.selected {
-    background: linear-gradient(39.66deg, #BDFDE2 -8.36%, #9BDAF6 143.89%), #FFFFFF;
-    color: #0C0B0B;
+    //background: linear-gradient(39.66deg, #BDFDE2 -8.36%, #9BDAF6 143.89%), #FFFFFF;
+    //color: #0C0B0B;
   }
   img {
     width: 160px;
@@ -296,6 +433,29 @@ const ContentBottomItem = styled.div`
     word-break: break-word;
   }
 `;
+
+
+const DAppFeaturesItem = styled.div`
+  height: 116px;
+  padding: 16px;
+  width: 246.4px;
+  background: #0E0D0D;
+  border: 1px solid #333232;
+  border-radius: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  word-break: break-word;
+  span {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: 0.006em;
+    color: #FFFFFF;
+  }
+`
 
 const ImgWrapper = styled.div`
   width: 50%;
@@ -310,6 +470,67 @@ const Btns = styled.div`
   align-items: center;
   div:first-child {
     margin-right: 16px;
+  }
+`
+
+const CLVChain = styled.div`
+  width: 100%;
+  margin-top: 24px;
+  background: #141414;
+  border-radius: 30px;
+  padding: 40px 20px 20px;
+`
+
+const CLVChainTitle = styled.div`
+  width: 35%;
+  h3 {
+    font-weight: 590;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: 0.008em;
+    color: #FFFFFF;
+    margin: 0 0 24px;
+  }
+  
+  span {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: 0.008em;
+    color: #FFFFFF;
+  }
+`
+
+const CLVChainContent = styled.div`
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  gap: 24px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 60px;
+`
+
+const CLVChainItem = styled.div`
+  height: 210px;
+  width: 235px;
+  padding: 24px;
+  background: #000000;
+  border-radius: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #333232;
+  
+  span {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+    text-align: center;
+    letter-spacing: 0.006em;
+    color: #FFFFFF;
+    word-break: break-word;
   }
 `
 
@@ -336,6 +557,10 @@ const ProductSolutionItem = styled.div`
   align-items: center;
   padding: 24px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  &:hover {
+    background: #0c0b0b;
+  }
   & > div {
     font-weight: 600;
     font-size: 16px;
@@ -376,22 +601,19 @@ const ToolsOnCLV = styled.div`
 `
 
 const ToolsOnCLVTitle = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  & > div {
-    width: 50%;
-    font-weight: 590;
+  width: 50%;
+  font-weight: 590;
+  font-size: 64px;
+  line-height: 68px;
+  letter-spacing: 0.008em;
+  margin-bottom: 64px;
+  h3 {
+    color: #FFFFFF;
     font-size: 64px;
     line-height: 68px;
-    letter-spacing: 0.008em;
-    margin-bottom: 64px;
-    h3 {
-      color: #FFFFFF;
-    }
-    span {
-      color: #BDFDE2;
-    }
+  }
+  span {
+    color: #BDFDE2;
   }
 `
 
@@ -402,13 +624,17 @@ const ToolsOnCLVContent = styled.div`
   align-items: center;
   justify-content: flex-end;
   width: 100%;
+  
+  &>div:first-child, &>div:nth-child(2) {
+    height: 304px!important;
+  }
 `
 
 const ToolsOnCLVItem = styled.div`
   background: #141414;
   border-radius: 32px;
   padding: 48px;
-  height: 304px;
+  height: 360px;
   
   &>div:first-child {
     display: flex;
@@ -515,11 +741,8 @@ const ComponentContentItem = styled.div`
 // this is a full height container that contains the Navbar, the Hero, and the bitcoin price
 // when a user first visits the site this portion should take up 100% height
 const LandingContainer = styled.div`
-  //height: calc(100vh);
   display: flex;
   flex-direction: column;
-  background: #0C0B0B;
-  padding: 0 64px 64px;
   ${breakpoint(css`
     height: unset;
     min-height: 120vw;

@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: RobotoFlex!important;
     max-width: 100%;
     overflow-x: hidden;
 
