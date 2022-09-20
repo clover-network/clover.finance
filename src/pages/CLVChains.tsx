@@ -208,16 +208,20 @@ export const CLVChains: React.FC = () => {
               <EcosystemContent>
                 <EcosystemItem>
                   <div>
-                    <h3>{t('CLVPortal')}</h3>
+                    <div>
+                      <h3>{t('CLVPortal')}</h3>
+                    </div>
+                    <span>{t('CLVPortalHint')}</span>
                   </div>
-                  <span>{t('CLVPortalHint')}</span>
                   <NormalButton>{t('visitCLVPortal')}</NormalButton>
                 </EcosystemItem>
                 <EcosystemItem>
                   <div>
-                    <h3>{t('EVMBridge')}</h3>
+                    <div>
+                      <h3>{t('EVMBridge')}</h3>
+                    </div>
+                    <span>{t('EVMBridgeHint')}</span>
                   </div>
-                  <span>{t('EVMBridgeHint')}</span>
                   <GrayButton
                     onClick={() => {
                       window.open('https://bridge.clv.org/#/', "_blank")
@@ -226,10 +230,12 @@ export const CLVChains: React.FC = () => {
                 </EcosystemItem>
                 <EcosystemItem>
                   <div>
-                    <img src='images/clv_icon1.svg' alt='' />
-                    <h3>{t('crossChainExplorer')}</h3>
+                    <div>
+                      <img src='images/clv_icon1.svg' alt='' />
+                      <h3>{t('crossChainExplorer')}</h3>
+                    </div>
+                    <span>{t('crossChainExplorerHint')}</span>
                   </div>
-                  <span>{t('crossChainExplorerHint')}</span>
                   <GrayButton
                     onClick={() => {
                       window.open('https://tx.clover.finance/#/', "_blank")
@@ -238,9 +244,11 @@ export const CLVChains: React.FC = () => {
                 </EcosystemItem>
                 <EcosystemItem>
                   <div>
-                    <h3>{t('CLVScan')}</h3>
+                    <div>
+                      <h3>{t('CLVScan')}</h3>
+                    </div>
+                    <span>{t('CLVScanHint')}</span>
                   </div>
-                  <span>{t('CLVScanHint')}</span>
                   <GrayButton
                     onClick={() => {
                       window.open('https://clvscan.com/', "_blank")
@@ -284,7 +292,7 @@ const Content = styled.div`
   & > div {
     max-width: 1440px;
     min-width: 1440px;
-    padding: 0 64px 64px;
+    padding: 0 64px 180px;
     margin: 0 auto;
   }
 `
@@ -670,20 +678,25 @@ const EcosystemItem = styled.div`
   height: 332px;
   background: #141414;
   border-radius: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   
   &>div:first-child {
-    display: flex;
-    align-items: center;
-    img {
-      width: 32px;
-      margin-right: 16px;
-    }
-    h3 {
-      font-weight: 590;
-      font-size: 32px;
-      line-height: 40px;
-      letter-spacing: 0.008em;
-      color: #FFFFFF;
+    div {
+      display: flex;
+      align-items: center;
+      img {
+        width: 32px;
+        margin-right: 16px;
+      }
+      h3 {
+        font-weight: 590;
+        font-size: 32px;
+        line-height: 40px;
+        letter-spacing: 0.008em;
+        color: #FFFFFF;
+      }
     }
   }
   
@@ -724,12 +737,14 @@ const FAQsItem = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-weight: 500;
-    font-size: 28px;
-    line-height: 36px;
-    letter-spacing: 0.008em;
-    color: #FFFFFF;
     cursor: pointer;
+    h3 {
+      font-weight: 500;
+      font-size: 28px;
+      line-height: 36px;
+      letter-spacing: 0.008em;
+      color: #FFFFFF;
+    }
     img {
       opacity: 0.5;
       &.selected {

@@ -398,7 +398,6 @@ const ContentBottomLeft = styled.div`
 
 const ContentBottomRight = styled.div`
   display: flex;
-  align-items: flex-end;
   background: #141414;
   border-radius: 32px;
   padding: 48px;
@@ -425,6 +424,7 @@ const ContentBottomRight = styled.div`
   & > div:last-child {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     flex-direction: column;
     margin-left: 24px;
     span {
@@ -476,7 +476,9 @@ const ProgressContent = styled.div`
 
 const ProgressItem = styled.div`
   width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 16px;
   align-items: center;
 `
 
@@ -486,13 +488,13 @@ const ProgressQ1Left = styled.div`
   padding: 48px;
   position: relative;
   margin-right: 16px;
-  width: 50%;
 
   & > img {
     position: absolute;
     right: -20px;
     top: 50%;
     width: 40px;
+    margin-top: -20px;
   }
   div {
     display: flex;
@@ -522,7 +524,6 @@ const ProgressQ1Right = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 50%;
   
   div {
     font-weight: 590;
@@ -550,7 +551,7 @@ const ProgressQ1Right = styled.div`
 `
 
 const ProgressQ2Left = styled(ProgressQ1Left)`
-  background: transparent;
+  background: #141414;
   margin-top: 16px;
   
   span {
@@ -609,6 +610,7 @@ const NewsUpdateContent = styled.div`
 const NewsUpdateItem = styled.div`
   display: flex;
   padding: 40px 0;
+  border-top: 1px solid #333232;
 `
 
 const NewsUpdateItemLeft = styled.div`
@@ -629,6 +631,9 @@ const NewsUpdateItemLeft = styled.div`
     &:nth-child(2) {
       color: #FFFFFF;
       margin-right: 56px;
+      font-size: 24px;
+      line-height: 38px;
+      text-transform: unset;
     }
   }
 `
@@ -697,7 +702,9 @@ const GlobalPresenseContentBottom = styled.div`
   margin-top: 64px;
   position: relative;
   overflow: hidden;
+  border-radius: 32px;
   &>iframe {
+    border-radius: 32px;
     position: absolute;
     top: -150px;
     width: 100%;

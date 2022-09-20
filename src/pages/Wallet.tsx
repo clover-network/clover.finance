@@ -230,7 +230,7 @@ const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-right: 16px;
+  margin-right: 60px;
 
   & > div {
     font-weight: 590;
@@ -245,11 +245,11 @@ const TextWrapper = styled.div`
   }
   
   &>span {
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 24px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
     letter-spacing: 0.026em;
-    color: #4E5D60;
+    color: #0C0B0B;
     margin-bottom: 24px;
   }
 

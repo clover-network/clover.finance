@@ -299,7 +299,8 @@ const ContentBottom = styled.div`
 `;
 
 const ContentBottomLeft = styled.div`
-  width: 50%;
+  width: 616px;
+  height: 388px;
   padding: 32px;
   background: url("images/tools_bg.svg") no-repeat;
   background-size: cover;
@@ -341,6 +342,7 @@ const ContentBottomItem = styled.div`
   justify-content: center;
   align-items: center;
   height: 130px;
+  width: 174px;
   background: url("images/tools_item_bg.svg") no-repeat;
   background-size: cover;
   border-radius: 16px;
