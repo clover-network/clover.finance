@@ -54,7 +54,7 @@ export const Wallet: React.FC = () => {
                 <img src='images/cross_chain.jpg' alt='' />
                 <div style={{marginLeft: '66px'}}>
                   <IdealAvailableItemContent>
-                    <UpperCaseSpan>{t('extensionWalletWith')}</UpperCaseSpan>
+                    <UpperCaseSpan>{t('extensionWallet')}</UpperCaseSpan>
                     <div>{t('crossChainCompatibility')}</div>
                     <span>{t('crossChainCompatibilityHint1')}</span>
                     <span>{t('crossChainCompatibilityHint2')}</span>
@@ -215,9 +215,9 @@ const ContentWrapper = styled.div`
 `;
 
 const UpperCaseSpan = styled.span`
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 24px;
+  font-weight: 700!important;
+  font-size: 16px!important;
+  line-height: 24px!important;
   letter-spacing: 0.026em;
   text-transform: uppercase;
   color: #4E5D60;
@@ -643,7 +643,6 @@ const Wrapper = styled.div`
 const LandingContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0 64px;
  
   ${breakpoint(css`
     height: unset;
