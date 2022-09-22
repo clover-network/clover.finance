@@ -9,6 +9,7 @@ export const Wallet: React.FC = () => {
   return (
     <Wrapper>
       <LandingContainer>
+        <video autoPlay loop muted src='videos/walletPageParticles.mp4'></video>
         <IntroducingCrypto>
           <ContentWrapper>
             <TextWrapper>
@@ -202,16 +203,23 @@ const IntroducingCrypto = styled.div`
 `
 const ContentWrapper = styled.div`
   width: 100%;
+  padding-top: 100px;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  padding-top: 100px;
-
-  ${breakpoint(css`
-    width: unset;
-    flex-direction: column;
-    margin-left: 0;
-  `)};
+  animation: overScroll 1s forwards  ease-in-out;
+  
+  @keyframes overScroll{
+    0%{
+      transform: translateY(200px);
+    }
+    90%{
+      transform: translateY(-20px);
+    }
+    100%{
+      transform: translateY(0);
+    }
+  }
 `;
 
 const UpperCaseSpan = styled.span`
@@ -643,6 +651,19 @@ const Wrapper = styled.div`
 const LandingContainer = styled.div`
   display: flex;
   flex-direction: column;
+  position: relative;
+  video {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    width: 100%;
+  }
+  & > div {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+  }
  
   ${breakpoint(css`
     height: unset;

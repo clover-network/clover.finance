@@ -19,8 +19,12 @@ export const Main: React.FC = () => {
       setPlay(true)
       playVideo.play()
       setTimeout(() => {
+        let canPlay = false
+        if (!canPlay) return
         setPlay(false)
         playVideo.pause()
+        console.log(11111)
+        canPlay = true
       }, playVideo.duration * 1000 / 3)
     }
   }
