@@ -777,8 +777,6 @@ const FAQsItemContent = styled.div`
   }
 `
 
-// this is a full height container that contains the Navbar, the Hero, and the bitcoin price
-// when a user first visits the site this portion should take up 100% height
 const LandingContainer = styled.div`
   display: flex;
   flex-direction: column;
