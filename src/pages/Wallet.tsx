@@ -7,180 +7,182 @@ import { GrayButton, NormalButton } from '../components/Btn';
 
 export const Wallet: React.FC = () => {
   return (
-    <Wrapper>
-      <LandingContainer>
-        <video autoPlay src='videos/walletPageParticles.mp4'></video>
-        <IntroducingCrypto>
-          <ContentWrapper>
-            <TextWrapper>
-              <UpperCaseSpan>{t('introducingCrypto')}</UpperCaseSpan>
+      <Wrapper>
+        <LandingContainer>
+          <video autoPlay src='videos/walletPageParticles.mp4'></video>
+          <IntroducingCrypto>
+            <ContentWrapper>
               <div>
-                {t('builtForCryptoUsers')}
-                <img src='images/clv_icon2.svg' alt='' />
-              </div>
-              <span>{t('builtForCryptoUsersHint')}</span>
-            </TextWrapper>
-            <ImgWrapper>
-              <img src='images/wallet_3d.png' alt='' />
-            </ImgWrapper>
-          </ContentWrapper>
-          <ContentBottom>
-            <ContentBottomTop>
-              <ContentBottomTopLeft>
-                <div>Over 979,030</div>
-                <span>{t('createdAWalletInCLV')}</span>
-              </ContentBottomTopLeft>
-              <ContentBottomTopRight>
-                <NormalButton width='568px'>{t('createWallet')}</NormalButton>
-              </ContentBottomTopRight>
-            </ContentBottomTop>
-            <ContentBottomBottom>
-              <img src='images/gray_forbes.svg' alt='' />
-              <img src='images/gray_telegraph.svg' alt='' />
-              <img src='images/gray_coindesk.svg' alt='' />
-              <img src='images/gray_yahoo.svg' alt='' />
-            </ContentBottomBottom>
-          </ContentBottom>
-        </IntroducingCrypto>
-      </LandingContainer>
-      <Content>
-        <div>
-          <IdealAvailable>
-            <IdealAvailableTitle>
-              <div>{t('theIdealWallet')}</div>
-              <span>{t('theIdealWalletHint')}</span>
-            </IdealAvailableTitle>
-            <IdealAvailableContent>
-              <IdealAvailableItem>
-                <img src='images/cross_chain.jpg' alt='' />
-                <div style={{marginLeft: '66px'}}>
-                  <IdealAvailableItemContent>
-                    <UpperCaseSpan>{t('extensionWallet')}</UpperCaseSpan>
-                    <div>{t('crossChainCompatibility')}</div>
-                    <span>{t('crossChainCompatibilityHint1')}</span>
-                    <span>{t('crossChainCompatibilityHint2')}</span>
-                    <h3>70,000+ Users</h3>
-                    <h4>
-                      <img src='images/reviews.svg' alt='' />
-                      <span>398 Reviews</span>
-                    </h4>
-                  </IdealAvailableItemContent>
-                  <NormalButton
-                    onClick={() => {
-                      window.open('https://chrome.google.com/webstore/detail/clv-wallet/nhnkbkgjikgcigadomkphalanndcapjk', "_blank")
-                    }}
-                  >{t('getTheExtension')}</NormalButton>
-                </div>
-              </IdealAvailableItem>
-              <IdealAvailableItem>
-                <div>
-                  <IdealAvailableItemContent>
-                    <UpperCaseSpan>{t('CLVMobileWallet')}</UpperCaseSpan>
-                    <div>{t('DcentralizedFinance')}</div>
-                    <span>{t('DcentralizedFinanceHint1')}</span>
-                    <span>{t('DcentralizedFinanceHint2')}</span>
-                  </IdealAvailableItemContent>
-                  <Btns>
-                    <img
-                      onClick={() => {
-                        window.open('https://apps.apple.com/app/clover-wallet/id1570072858', '_blank')
-                      }}
-                      src='images/app_store.svg'
-                      alt=''
-                    />
-                    <img
-                      onClick={() => {
-                        window.open('https://github.com/clover-network/clover-multichain-mobile-wallet-release/releases/latest/download/clover.apk', '_blank')
-                      }}
-                      src='images/google_play.svg'
-                      alt=''
-                    />
-                  </Btns>
-                </div>
-                <img src='images/stake_to_earn.svg' alt='' />
-              </IdealAvailableItem>
-              <IdealAvailableItem>
-                <div>
-                  <IdealAvailableItemContent>
-                    <UpperCaseSpan>{t('CLVPortal')}</UpperCaseSpan>
-                    <div>{t('onePortalOfAll')}</div>
-                    <span>{t('onePortalOfAllHint')}</span>
-                  </IdealAvailableItemContent>
-                  <NormalButton>{t('exploreNow')}</NormalButton>
-                </div>
-                <img src='images/dashboard.svg' alt='' />
-              </IdealAvailableItem>
-            </IdealAvailableContent>
-          </IdealAvailable>
-          <YourPassport>
-            <YourPassportTitle>
-              <h3>{t('yourPassport')}</h3>
-              <span>{t('idealForAllUsers')}</span>
-            </YourPassportTitle>
-            <YourPassportContent>
-              <YourPassportTop>
-                <YourPassportTopItem>
-                  <img src='images/introdusing_icon1.svg' alt='' />
-                  <div>{t('firstTimeCryptoUsers')}</div>
-                  <span>{t('firstTimeCryptoUsersHint')}</span>
-                </YourPassportTopItem>
-                <YourPassportTopItem>
-                  <img src='images/introdusing_icon1.svg' alt='' />
-                  <div>{t('defiUsers')}</div>
-                  <span>{t('defiUsersHint')}</span>
-                </YourPassportTopItem>
-                <YourPassportTopItem>
-                  <img src='images/introdusing_icon1.svg' alt='' />
-                  <div>{t('gamingUsers')}</div>
-                  <span>{t('gamingUsersHint')}</span>
-                </YourPassportTopItem>
-              </YourPassportTop>
-              <YourPassportBottom>
-                <YourPassportBottomLeft>
-                  <img src='images/CLV_wallet.svg' alt='' />
+                <TextWrapper>
+                  <UpperCaseSpan>{t('introducingCrypto')}</UpperCaseSpan>
                   <div>
-                    <h3>{t('CLVWallet')}</h3>
-                    <div>
-                      <img src='images/clover_finance.svg' alt='' />
-                      <span>{t('cloverFinance')}</span>
-                    </div>
-                    <div>
-                      <img src='images/reviews.svg' alt='' />
-                      <p>398</p>
-                      <img src='images/remind.svg' alt='' />
-                      <p><span></span>70,000+ Users<span></span></p>
-                      <a>Productivity</a>
-                    </div>
+                    {t('builtForCryptoUsers')}
+                    <img src='images/clv_icon2.svg' alt='' />
                   </div>
-                </YourPassportBottomLeft>
-                <GrayButton
-                  width='316px'
-                  onClick={() => {
-                    window.open('https://www.figma.com/exit?url=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fclv-wallet%2Fnhnkbkgjikgcigadomkphalanndcapjk', '_blank')
-                  }}
-                  color="#0C0B0B"
-                >{t('getTheExtension')}</GrayButton>
-              </YourPassportBottom>
-            </YourPassportContent>
-          </YourPassport>
-          <JoinUs>
-            <JoinUsTitle>
-              <h3>{t('joinUs')}<img src='images/clv_icon2.svg' alt='' /></h3>
-              <span>{t('joinUsHint')}</span>
-            </JoinUsTitle>
-            <JoinUsInput>
-              <input placeholder={t('addYourEmail')} type='text' />
-              <div>
-                <span>{t('send')}</span>
-                <img src='images/send.svg' alt='' />
+                  <span>{t('builtForCryptoUsersHint')}</span>
+                </TextWrapper>
+                <ImgWrapper>
+                  <img src='images/wallet_3d.png' alt='' />
+                </ImgWrapper>
               </div>
-            </JoinUsInput>
-            <span>{t('clickingTheButton')}</span>
-          </JoinUs>
-        </div>
-      </Content>
-      <Footer isWallet />
-    </Wrapper>
+            </ContentWrapper>
+            <ContentBottom>
+              <ContentBottomTop>
+                <ContentBottomTopLeft>
+                  <div>Over 979,030</div>
+                  <span>{t('createdAWalletInCLV')}</span>
+                </ContentBottomTopLeft>
+                <ContentBottomTopRight>
+                  <NormalButton width='568px'>{t('createWallet')}</NormalButton>
+                </ContentBottomTopRight>
+              </ContentBottomTop>
+              <ContentBottomBottom>
+                <img src='images/gray_forbes.svg' alt='' />
+                <img src='images/gray_telegraph.svg' alt='' />
+                <img src='images/gray_coindesk.svg' alt='' />
+                <img src='images/gray_yahoo.svg' alt='' />
+              </ContentBottomBottom>
+            </ContentBottom>
+          </IntroducingCrypto>
+        </LandingContainer>
+        <Content>
+          <div>
+            <IdealAvailable>
+              <IdealAvailableTitle>
+                <div>{t('theIdealWallet')}</div>
+                <span>{t('theIdealWalletHint')}</span>
+              </IdealAvailableTitle>
+              <IdealAvailableContent>
+                <IdealAvailableItem>
+                  <img src='images/cross_chain.jpg' alt='' />
+                  <div style={{marginLeft: '66px'}}>
+                    <IdealAvailableItemContent>
+                      <UpperCaseSpan>{t('extensionWallet')}</UpperCaseSpan>
+                      <div>{t('crossChainCompatibility')}</div>
+                      <span>{t('crossChainCompatibilityHint1')}</span>
+                      <span>{t('crossChainCompatibilityHint2')}</span>
+                      <h3>70,000+ Users</h3>
+                      <h4>
+                        <img src='images/reviews.svg' alt='' />
+                        <span>398 Reviews</span>
+                      </h4>
+                    </IdealAvailableItemContent>
+                    <NormalButton
+                        onClick={() => {
+                          window.open('https://chrome.google.com/webstore/detail/clv-wallet/nhnkbkgjikgcigadomkphalanndcapjk', "_blank")
+                        }}
+                    >{t('getTheExtension')}</NormalButton>
+                  </div>
+                </IdealAvailableItem>
+                <IdealAvailableItem>
+                  <div>
+                    <IdealAvailableItemContent>
+                      <UpperCaseSpan>{t('CLVMobileWallet')}</UpperCaseSpan>
+                      <div>{t('DcentralizedFinance')}</div>
+                      <span>{t('DcentralizedFinanceHint1')}</span>
+                      <span>{t('DcentralizedFinanceHint2')}</span>
+                    </IdealAvailableItemContent>
+                    <Btns>
+                      <img
+                          onClick={() => {
+                            window.open('https://apps.apple.com/app/clover-wallet/id1570072858', '_blank')
+                          }}
+                          src='images/app_store.svg'
+                          alt=''
+                      />
+                      <img
+                          onClick={() => {
+                            window.open('https://github.com/clover-network/clover-multichain-mobile-wallet-release/releases/latest/download/clover.apk', '_blank')
+                          }}
+                          src='images/google_play.svg'
+                          alt=''
+                      />
+                    </Btns>
+                  </div>
+                  <img src='images/stake_to_earn.svg' alt='' />
+                </IdealAvailableItem>
+                <IdealAvailableItem>
+                  <div>
+                    <IdealAvailableItemContent>
+                      <UpperCaseSpan>{t('CLVPortal')}</UpperCaseSpan>
+                      <div>{t('onePortalOfAll')}</div>
+                      <span>{t('onePortalOfAllHint')}</span>
+                    </IdealAvailableItemContent>
+                    <NormalButton>{t('exploreNow')}</NormalButton>
+                  </div>
+                  <img src='images/dashboard.svg' alt='' />
+                </IdealAvailableItem>
+              </IdealAvailableContent>
+            </IdealAvailable>
+            <YourPassport>
+              <YourPassportTitle>
+                <h3>{t('yourPassport')}</h3>
+                <span>{t('idealForAllUsers')}</span>
+              </YourPassportTitle>
+              <YourPassportContent>
+                <YourPassportTop>
+                  <YourPassportTopItem>
+                    <img src='images/introdusing_icon1.svg' alt='' />
+                    <div>{t('firstTimeCryptoUsers')}</div>
+                    <span>{t('firstTimeCryptoUsersHint')}</span>
+                  </YourPassportTopItem>
+                  <YourPassportTopItem>
+                    <img src='images/introdusing_icon1.svg' alt='' />
+                    <div>{t('defiUsers')}</div>
+                    <span>{t('defiUsersHint')}</span>
+                  </YourPassportTopItem>
+                  <YourPassportTopItem>
+                    <img src='images/introdusing_icon1.svg' alt='' />
+                    <div>{t('gamingUsers')}</div>
+                    <span>{t('gamingUsersHint')}</span>
+                  </YourPassportTopItem>
+                </YourPassportTop>
+                <YourPassportBottom>
+                  <YourPassportBottomLeft>
+                    <img src='images/CLV_wallet.svg' alt='' />
+                    <div>
+                      <h3>{t('CLVWallet')}</h3>
+                      <div>
+                        <img src='images/clover_finance.svg' alt='' />
+                        <span>{t('cloverFinance')}</span>
+                      </div>
+                      <div>
+                        <img src='images/reviews.svg' alt='' />
+                        <p>398</p>
+                        <img src='images/remind.svg' alt='' />
+                        <p><span></span>70,000+ Users<span></span></p>
+                        <a>Productivity</a>
+                      </div>
+                    </div>
+                  </YourPassportBottomLeft>
+                  <GrayButton
+                      width='316px'
+                      onClick={() => {
+                        window.open('https://www.figma.com/exit?url=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fclv-wallet%2Fnhnkbkgjikgcigadomkphalanndcapjk', '_blank')
+                      }}
+                      color="#0C0B0B"
+                  >{t('getTheExtension')}</GrayButton>
+                </YourPassportBottom>
+              </YourPassportContent>
+            </YourPassport>
+            <JoinUs>
+              <JoinUsTitle>
+                <h3>{t('joinUs')}<img src='images/clv_icon2.svg' alt='' /></h3>
+                <span>{t('joinUsHint')}</span>
+              </JoinUsTitle>
+              <JoinUsInput>
+                <input placeholder={t('addYourEmail')} type='text' />
+                <div>
+                  <span>{t('send')}</span>
+                  <img src='images/send.svg' alt='' />
+                </div>
+              </JoinUsInput>
+              <span>{t('clickingTheButton')}</span>
+            </JoinUs>
+          </div>
+        </Content>
+        <Footer isWallet />
+      </Wrapper>
   );
 };
 
@@ -204,20 +206,28 @@ const IntroducingCrypto = styled.div`
 const ContentWrapper = styled.div`
   width: 100%;
   padding-top: 100px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  animation: overScroll 1s forwards  ease-in-out;
-  
-  @keyframes overScroll{
-    0%{
-      transform: translateY(200px);
-    }
-    90%{
-      transform: translateY(-20px);
-    }
-    100%{
-      transform: translateY(0);
+  overflow: hidden;
+
+  &>div {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    animation: overScroll 1s forwards ease-in-out;
+    @keyframes overScroll{
+      0%{
+        opacity: 0;
+        transform: translateY(200px);
+      }
+      20%{
+        opacity: 0.5;
+      }
+      90%{
+        transform: translateY(-20px);
+      }
+      100%{
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   }
 `;
@@ -251,7 +261,7 @@ const TextWrapper = styled.div`
       margin-left: 10px;
     }
   }
-  
+
   &>span {
     font-weight: 400;
     font-size: 20px;
@@ -292,7 +302,7 @@ const ContentBottomTopLeft = styled.div`
     letter-spacing: 0.008em;
     color: #0C0B0B;
   }
-  
+
   span {
     font-weight: 400;
     font-size: 16px;
@@ -351,7 +361,7 @@ const IdealAvailableTitle = styled.div`
 const IdealAvailableContent = styled.div`
   width: 100%;
   margin-top: 80px;
-  
+
   &>div {
     margin-bottom: 24px;
     &:last-child {
@@ -372,7 +382,7 @@ const IdealAvailableItem = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
+
   & > img {
     width: 50%;
   }
@@ -391,7 +401,7 @@ const IdealAvailableItemContent = styled(TextWrapper)`
     letter-spacing: 0.006em;
     color: #0C0B0B;
   }
-  
+
   & > div {
     font-size: 48px;
     line-height: 60px;
@@ -565,7 +575,7 @@ const JoinUs = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
   &>span {
     font-weight: 400;
     font-size: 12px;
@@ -613,7 +623,7 @@ const JoinUsInput = styled.div`
   height: 64px;
   overflow: hidden;
   margin: 24px 0;
-  
+
   input {
     flex: 1;
     height: 100%;
@@ -664,7 +674,7 @@ const LandingContainer = styled.div`
     top: 0;
     width: 100%;
   }
- 
+
   ${breakpoint(css`
     height: unset;
     min-height: 120vw;

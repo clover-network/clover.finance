@@ -12,20 +12,20 @@ export const Main: React.FC = () => {
   const [play, setPlay] = useState(false)
 
   const handleScroll = () => {
+    let timer = null
     const playVideo: any = document.getElementById('playVideo1')
     if (window.scrollY <= 800) {
       playVideo.currentTime = 0
     } else if (window.scrollY > 800 && window.scrollY < 2500) {
       setPlay(true)
       playVideo.play()
-      setTimeout(() => {
-        let canPlay = false
-        if (!canPlay) return
-        setPlay(false)
-        playVideo.pause()
-        console.log(11111)
-        canPlay = true
-      }, playVideo.duration * 1000 / 3)
+      if (!timer) {
+        timer = setTimeout(() => {
+          setPlay(false)
+          playVideo.pause()
+          clearTimeout(timer)
+        }, playVideo.duration * 1000 / 3)
+      }
     }
   }
 
@@ -36,159 +36,159 @@ export const Main: React.FC = () => {
     }
   }, [location]);
   return (
-    <Wrapper>
-      <LandingContainer>
-        <SeamlesslyCompatible>
-          <div>
-            <ContentWrapper>
-              <TextWrapper>
-                <div>
-                  {t('seamlesslyCompatible')}
-                  <img src='images/clv_icon1.svg' alt='' />
-                </div>
-                <span>{t('seamlesslyCompatibleHint')}</span>
-                <Btns>
-                  <NormalButton
-                    width='316px'
-                    onClick={() =>
-                      window.open(
-                        "https://docs.google.com/forms/d/e/1FAIpQLSfQevVEw_hL44vvbcMkYB8kKdzTFAbtD1pR-QVraaA7h4jpKg/viewform",
-                        "_blank"
-                      )
-                    }
-                  >{t('startBuilding')}</NormalButton>
-                  <GrayButton
-                    width='316px'
-                    onClick={() =>
-                      window.open(
-                        "https://docs.clv.org/",
-                        "_blank"
-                      )
-                    }
-                  >{t('viewDocumentation')}</GrayButton>
-                </Btns>
-              </TextWrapper>
-              <VideoWrapper>
-                <video autoPlay loop muted src='videos/heroAnimation.mp4'></video>
-              </VideoWrapper>
-            </ContentWrapper>
-          </div>
-          <BalanceWrapper>
-            <BalanceItem>
-              <h3>84,309,967,906</h3>
-              <span>Total Transactions</span>
-            </BalanceItem>
-            <BalanceItem>
-              <h3>24,867</h3>
-              <span>Transactions per second</span>
-            </BalanceItem>
-            <BalanceItem>
-              <h3>$0.00025</h3>
-              <span>Avg. cost per transaction</span>
-            </BalanceItem>
-            <BalanceItem>
-              <h3>12,853</h3>
-              <span>Validator nodes</span>
-            </BalanceItem>
-          </BalanceWrapper>
-        </SeamlesslyCompatible>
-        <Advantages>
-          <AdvantagesTitle>
-            <h3>{t('AdvantagesForEveryone')}</h3>
-            <span>{t('allAtOnce')}</span>
-          </AdvantagesTitle>
-          <AdvantagesContent>
-            <AdvantagesLeft>
-              <video id='playVideo1' autoPlay={play} loop muted src='videos/CLVMainInteractiveAnimation.mp4'></video>
-            </AdvantagesLeft>
-            <AdvantagesRight>
-              <AdvantagesRightItem>
-                <h3>{t('gasFeeRedistribution')}</h3>
-                <span>{t('gasFeeRedistributionHint1')}</span>
-                <span>{t('gasFeeRedistributionHint2')}</span>
-              </AdvantagesRightItem>
-              <AdvantagesRightItem>
-                <h3>{t('inventorOfFeeEconomics')}</h3>
-                <span>{t('inventorOfFeeEconomicsHint')}</span>
-              </AdvantagesRightItem>
-              <AdvantagesRightItem>
-                <h3>{t('EVMCompatible')}</h3>
-                <span>{t('EVMCompatibleHint1')}</span>
-                <span>{t('EVMCompatibleHint2')}</span>
-                <span>{t('EVMCompatibleHint3')}</span>
-              </AdvantagesRightItem>
-            </AdvantagesRight>
-          </AdvantagesContent>
-        </Advantages>
-        <ToolsOnCLV>
-          <ToolsOnCLVTitle>
+      <Wrapper>
+        <LandingContainer>
+          <SeamlesslyCompatible>
             <div>
-              <h3>{t('toolsOnCLV')}</h3>
-              <span>{t('ecosystem')}</span>
+              <ContentWrapper>
+                <TextWrapper>
+                  <div>
+                    {t('seamlesslyCompatible')}
+                    <img src='images/clv_icon1.svg' alt='' />
+                  </div>
+                  <span>{t('seamlesslyCompatibleHint')}</span>
+                  <Btns>
+                    <NormalButton
+                        width='316px'
+                        onClick={() =>
+                            window.open(
+                                "https://docs.google.com/forms/d/e/1FAIpQLSfQevVEw_hL44vvbcMkYB8kKdzTFAbtD1pR-QVraaA7h4jpKg/viewform",
+                                "_blank"
+                            )
+                        }
+                    >{t('startBuilding')}</NormalButton>
+                    <GrayButton
+                        width='316px'
+                        onClick={() =>
+                            window.open(
+                                "https://docs.clv.org/",
+                                "_blank"
+                            )
+                        }
+                    >{t('viewDocumentation')}</GrayButton>
+                  </Btns>
+                </TextWrapper>
+                <VideoWrapper>
+                  <video autoPlay loop muted src='videos/heroAnimation.mp4'></video>
+                </VideoWrapper>
+              </ContentWrapper>
             </div>
-          </ToolsOnCLVTitle>
-          <ToolsOnCLVContent>
-            <ToolsOnCLVContentLeft>
+            <BalanceWrapper>
+              <BalanceItem>
+                <h3>84,309,967,906</h3>
+                <span>Total Transactions</span>
+              </BalanceItem>
+              <BalanceItem>
+                <h3>24,867</h3>
+                <span>Transactions per second</span>
+              </BalanceItem>
+              <BalanceItem>
+                <h3>$0.00025</h3>
+                <span>Avg. cost per transaction</span>
+              </BalanceItem>
+              <BalanceItem>
+                <h3>12,853</h3>
+                <span>Validator nodes</span>
+              </BalanceItem>
+            </BalanceWrapper>
+          </SeamlesslyCompatible>
+          <Advantages>
+            <AdvantagesTitle>
+              <h3>{t('AdvantagesForEveryone')}</h3>
+              <span>{t('allAtOnce')}</span>
+            </AdvantagesTitle>
+            <AdvantagesContent>
+              <AdvantagesLeft>
+                <video id='playVideo1' autoPlay={play} loop muted src='videos/CLVMainInteractiveAnimation.mp4'></video>
+              </AdvantagesLeft>
+              <AdvantagesRight>
+                <AdvantagesRightItem>
+                  <h3>{t('gasFeeRedistribution')}</h3>
+                  <span>{t('gasFeeRedistributionHint1')}</span>
+                  <span>{t('gasFeeRedistributionHint2')}</span>
+                </AdvantagesRightItem>
+                <AdvantagesRightItem>
+                  <h3>{t('inventorOfFeeEconomics')}</h3>
+                  <span>{t('inventorOfFeeEconomicsHint')}</span>
+                </AdvantagesRightItem>
+                <AdvantagesRightItem>
+                  <h3>{t('EVMCompatible')}</h3>
+                  <span>{t('EVMCompatibleHint1')}</span>
+                  <span>{t('EVMCompatibleHint2')}</span>
+                  <span>{t('EVMCompatibleHint3')}</span>
+                </AdvantagesRightItem>
+              </AdvantagesRight>
+            </AdvantagesContent>
+          </Advantages>
+          <ToolsOnCLV>
+            <ToolsOnCLVTitle>
               <div>
-                <div>{t('forBuilders')}</div>
-                <span>{t('forBuildersHint')}</span>
+                <h3>{t('toolsOnCLV')}</h3>
+                <span>{t('ecosystem')}</span>
               </div>
-              <ToolBtns>
-                <GrayButton
-                  margin='0 0 24px'
-                  onClick={() =>
-                    window.open("https://docs.clv.org/clv-chain-developer-guide/introduction", "_blank")
-                  }
-                >{t('readDocs')}</GrayButton>
-                <GrayButton
-                  margin='0 0 24px'
-                  onClick={() =>
-                    window.open("https://github.com/clover-network", "_blank")
-                  }
-                >{t('getGithubRepo')}</GrayButton>
-                <GrayButton
-                  onClick={() =>
-                    window.open("https://docs.clv.org/clv-chain-developer-guide/using-testnet", "_blank")
-                  }
-                >{t('viewTestnet')}</GrayButton>
-              </ToolBtns>
-            </ToolsOnCLVContentLeft>
-            <ToolsOnCLVContentRight>
-              <ToolsOnCLVItem>
+            </ToolsOnCLVTitle>
+            <ToolsOnCLVContent>
+              <ToolsOnCLVContentLeft>
                 <div>
-                  <img src='images/clv_icon1.svg' alt='' />
-                  <span>{t('integrateCLVWallet')}</span>
+                  <div>{t('forBuilders')}</div>
+                  <span>{t('forBuildersHint')}</span>
                 </div>
-                <span>{t('integrateCLVWalletHint')}</span>
-                <GrayButton
-                  onClick={() => {
-                    window.open('https://docs.clv.org/use-clv-wallet/clv-extension-wallet', "_blank")
-                  }}
-                >{t('CLVWalletInforamtion')}</GrayButton>
-              </ToolsOnCLVItem>
-              <ToolsOnCLVItem>
-                <div>{t('partnerWithCLV')}</div>
-                <span>{t('partnerWithCLVHint')}</span>
-                <GrayButton
-                  onClick={() => {
-                    window.open('https://docs.google.com/forms/d/e/1FAIpQLSfQevVEw_hL44vvbcMkYB8kKdzTFAbtD1pR-QVraaA7h4jpKg/viewform', "_blank")
-                  }}
-                >{t('contactUs')}</GrayButton>
-              </ToolsOnCLVItem>
-            </ToolsOnCLVContentRight>
-          </ToolsOnCLVContent>
-        </ToolsOnCLV>
-        <CLVIsBacked />
-      </LandingContainer>
-      <Footer />
-    </Wrapper>
+                <ToolBtns>
+                  <GrayButton
+                      margin='0 0 24px'
+                      onClick={() =>
+                          window.open("https://docs.clv.org/clv-chain-developer-guide/introduction", "_blank")
+                      }
+                  >{t('readDocs')}</GrayButton>
+                  <GrayButton
+                      margin='0 0 24px'
+                      onClick={() =>
+                          window.open("https://github.com/clover-network", "_blank")
+                      }
+                  >{t('getGithubRepo')}</GrayButton>
+                  <GrayButton
+                      onClick={() =>
+                          window.open("https://docs.clv.org/clv-chain-developer-guide/using-testnet", "_blank")
+                      }
+                  >{t('viewTestnet')}</GrayButton>
+                </ToolBtns>
+              </ToolsOnCLVContentLeft>
+              <ToolsOnCLVContentRight>
+                <ToolsOnCLVItem>
+                  <div>
+                    <img src='images/clv_icon1.svg' alt='' />
+                    <span>{t('integrateCLVWallet')}</span>
+                  </div>
+                  <span>{t('integrateCLVWalletHint')}</span>
+                  <GrayButton
+                      onClick={() => {
+                        window.open('https://docs.clv.org/use-clv-wallet/clv-extension-wallet', "_blank")
+                      }}
+                  >{t('CLVWalletInforamtion')}</GrayButton>
+                </ToolsOnCLVItem>
+                <ToolsOnCLVItem>
+                  <div>{t('partnerWithCLV')}</div>
+                  <span>{t('partnerWithCLVHint')}</span>
+                  <GrayButton
+                      onClick={() => {
+                        window.open('https://docs.google.com/forms/d/e/1FAIpQLSfQevVEw_hL44vvbcMkYB8kKdzTFAbtD1pR-QVraaA7h4jpKg/viewform', "_blank")
+                      }}
+                  >{t('contactUs')}</GrayButton>
+                </ToolsOnCLVItem>
+              </ToolsOnCLVContentRight>
+            </ToolsOnCLVContent>
+          </ToolsOnCLV>
+          <CLVIsBacked />
+        </LandingContainer>
+        <Footer />
+      </Wrapper>
   );
 };
 
 const SeamlesslyCompatible = styled.div`
   width: 100%;
   position: relative;
- 
+
 `
 const ContentWrapper = styled.div`
   width: 100%;
@@ -224,7 +224,7 @@ const TextWrapper = styled.div`
       margin-left: 10px;
     }
   }
-  
+
   span {
     font-weight: 400;
     font-size: 20px;
@@ -265,11 +265,11 @@ const BalanceItem = styled.div`
   padding: 20px;
   margin-right: 16px;
   flex: 1;
-  
+
   &:last-child {
     margin: 0;
   }
-  
+
   h3 {
     font-family: RobotoFlex;
     font-weight: 590;
@@ -279,7 +279,7 @@ const BalanceItem = styled.div`
     color: #FFFFFF;
     margin: 0;
   }
-  
+
   span {
     font-weight: 400;
     font-size: 16px;
@@ -331,7 +331,7 @@ const AdvantagesContent = styled.div`
 const AdvantagesLeft = styled.div`
   width: 50%;
   margin-right: 16px;
-  
+
   video {
     width: 100%;
     max-width: 630px;
@@ -357,7 +357,7 @@ const AdvantagesRightItem = styled.div`
     color: #FFFFFF;
     margin-bottom: 32px;
   }
-  
+
   & > span {
     font-weight: 400;
     font-size: 20px;
@@ -369,7 +369,7 @@ const AdvantagesRightItem = styled.div`
       margin: 0!important;
     }
   }
-  
+
   & > div {
     margin-top: 12px;
   }
