@@ -360,7 +360,7 @@ const IdealAvailableTitle = styled.div`
 
 const IdealAvailableContent = styled.div`
   width: 100%;
-  margin-top: 80px;
+  margin-top: 620px;
 
   &>div {
     margin-bottom: 24px;
