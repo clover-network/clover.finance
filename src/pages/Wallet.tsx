@@ -54,13 +54,13 @@ export const Wallet: React.FC = () => {
               </IdealAvailableTitle>
               <IdealAvailableContent>
                 <IdealAvailableItem>
-                  <img src='images/cross_chain.jpg' alt='' />
+                  <img style={{marginLeft: '-80px'}} src='images/cross_chain.svg' alt='' />
                   <div style={{marginLeft: '66px'}}>
                     <IdealAvailableItemContent>
                       <UpperCaseSpan>{t('extensionWallet')}</UpperCaseSpan>
                       <div>{t('crossChainCompatibility')}</div>
-                      <span>{t('crossChainCompatibilityHint1')}</span>
-                      <span>{t('crossChainCompatibilityHint2')}</span>
+                      <span style={{marginTop: '32px'}}>{t('crossChainCompatibilityHint1')}</span>
+                      <span style={{margin: '10px 0 32px'}}>{t('crossChainCompatibilityHint2')}</span>
                       <h3>70,000+ Users</h3>
                       <h4>
                         <img src='images/reviews.svg' alt='' />
@@ -336,7 +336,7 @@ const ImgWrapper = styled.div`
 `;
 
 const IdealAvailable = styled.div`
-  margin-top: 380px;
+  margin-top: 1090px;
   width: 100%;
 `
 
@@ -360,7 +360,7 @@ const IdealAvailableTitle = styled.div`
 
 const IdealAvailableContent = styled.div`
   width: 100%;
-  margin-top: 620px;
+  margin-top: 80px;
 
   &>div {
     margin-bottom: 24px;
@@ -368,30 +368,31 @@ const IdealAvailableContent = styled.div`
       margin: 0;
       padding-right: 0;
       padding-top: 0;
+      align-items: center!important;
     }
   }
 `
 
 const IdealAvailableItem = styled.div`
   width: 100%;
-  padding: 0 80px 0;
+  padding: 0 80px;
   gap: 16px;
   background: rgba(155, 218, 246, 0.08);
   border: 1px solid #EFF5F5;
   border-radius: 32px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
 
   & > img {
     width: 50%;
   }
   &>div {
-    padding: 24px 0;
+    padding: 60px 0;
   }
 `
 
-const IdealAvailableItemContent = styled(TextWrapper)`
+const IdealAvailableItemContent = styled.div`
   width: unset;
   padding: 0;
   &>h3 {
@@ -403,8 +404,18 @@ const IdealAvailableItemContent = styled(TextWrapper)`
   }
 
   & > div {
+    font-weight: 590;
     font-size: 48px;
     line-height: 60px;
+  }
+  
+  & > span {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: 0.006em;
+    color: #0C0B0B;
+    display: inline-block;
   }
 
   &>h4 {
@@ -482,7 +493,7 @@ const YourPassportTop = styled.div`
 
 const YourPassportTopItem = styled.div`
   padding: 48px;
-  background: rgba(155, 218, 246, 0.08);
+  background: rgb(248, 252, 254);
   border: 1px solid #EFF5F5;
   border-radius: 32px;
   height: 444px;

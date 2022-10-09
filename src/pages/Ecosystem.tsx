@@ -65,19 +65,19 @@ export const Ecosystem: React.FC = () => {
 
   const clvChains = [
     {
-      icon: 'images/clv_chain1.svg',
+      icon: 'images/clv_chain1.png',
       content: 'Cross chain Modules'
     }, {
-      icon: 'images/clv_chain2.svg',
+      icon: 'images/clv_chain2.png',
       content: 'Governance'
     }, {
-      icon: 'images/clv_chain3.svg',
+      icon: 'images/clv_chain3.png',
       content: 'EVM Economics Incentive'
     }, {
-      icon: 'images/clv_chain4.svg',
+      icon: 'images/clv_chain4.png',
       content: 'Smart Contract On-chain upgrade'
     }, {
-      icon: 'images/clv_chain5.svg',
+      icon: 'images/clv_chain5.png',
       content: 'Account Binding'
     },
   ]

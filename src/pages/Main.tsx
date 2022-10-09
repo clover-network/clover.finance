@@ -136,17 +136,20 @@ export const Main: React.FC = () => {
                 <ToolBtns>
                   <GrayButton
                       margin='0 0 24px'
+                      color="#0C0B0B"
                       onClick={() =>
                           window.open("https://docs.clv.org/clv-chain-developer-guide/introduction", "_blank")
                       }
                   >{t('readDocs')}</GrayButton>
                   <GrayButton
                       margin='0 0 24px'
+                      color="#0C0B0B"
                       onClick={() =>
                           window.open("https://github.com/clover-network", "_blank")
                       }
                   >{t('getGithubRepo')}</GrayButton>
                   <GrayButton
+                      color="#0C0B0B"
                       onClick={() =>
                           window.open("https://docs.clv.org/clv-chain-developer-guide/using-testnet", "_blank")
                       }
@@ -418,9 +421,10 @@ const ToolsOnCLVContentLeft = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background: linear-gradient(28.19deg, #BDFDE2 -14.72%, #9BDAF6 116.35%);
   &>div:first-child {
     div {
-      color: #FFFFFF;
+      color: #141414;
       font-weight: 590;
       font-size: 32px;
       line-height: 40px;
@@ -431,7 +435,7 @@ const ToolsOnCLVContentLeft = styled.div`
       font-size: 16px;
       line-height: 28px;
       letter-spacing: 0.006em;
-      color: #FFFFFF;
+      color: #141414;
       opacity: 0.6;
       margin: 24px 0;
       display: inline-block;

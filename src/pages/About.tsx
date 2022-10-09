@@ -55,15 +55,15 @@ export const About: React.FC = () => {
           <div>
             <Progress>
               <ProgressTitle>
-                <h3>{t('progress')}</h3>
                 <span>{t('roadmap')}</span>
               </ProgressTitle>
               <ProgressContent>
                 <ProgressItem>
                   <ProgressQ0Left>
-                    <div><sup>2021</sup>(Q3&4)</div>
+                    <div>2021</div>
                   </ProgressQ0Left>
                   <ProgressQ0Right>
+                    <h3>(Q3)</h3>
                     <div>
                       <img src='images/progress_icon1_white.svg' alt='' />
                       <span>{t('CLVEVMBridge')}</span>
@@ -80,6 +80,7 @@ export const About: React.FC = () => {
                       <img src='images/progress_icon1_white.svg' alt='' />
                       <span>{t('walletSocialAccountLogin')}</span>
                     </div>
+                    <h3>(Q4)</h3>
                     <div>
                       <img src='images/progress_icon1_white.svg' alt='' />
                       <span>{t('CLVDAppInteractiveProtocol')}</span>
@@ -100,6 +101,7 @@ export const About: React.FC = () => {
                 </ProgressItem>
                 <ProgressItem>
                   <ProgressQ1Left>
+                    <h3>(Q1)</h3>
                     <div>
                       <img src='images/progress_icon1.svg' alt='' />
                       <span>{t('enableCLVEVM')}</span>
@@ -116,90 +118,72 @@ export const About: React.FC = () => {
                       <img src='images/progress_icon1.svg' alt='' />
                       <span>{t('validatorProgram')}</span>
                     </div>
-                    <div style={{margin: '0'}}>
+                    <div>
                       <img src='images/progress_icon1.svg' alt='' />
                       <span>{t('walletAssetSwap')}</span>
                     </div>
-                    <img src='images/progress_icon2.svg' alt='' />
+                    <h3>(Q2)</h3>
+                    <div>
+                      <img src='images/progress_icon1.svg' alt='' />
+                      <span>{t('enableUniversalCrossChain')}</span>
+                    </div>
+                    <div>
+                      <img src='images/progress_icon1.svg' alt='' />
+                      <span>{t('upgradableSmartContract')}</span>
+                    </div>
+                    <div>
+                      <img src='images/progress_icon1.svg' alt='' />
+                      <span>{t('upgradeCLVEVMBridge')}</span>
+                    </div>
+                    <div>
+                      <img src='images/progress_icon1.svg' alt='' />
+                      <span>{t('CLVWalletAssetBridge')}</span>
+                    </div>
+                    <h3>(Q3)</h3>
+                    <div>
+                      <img src='images/progress_icon1.svg' alt='' />
+                      <span>{t('powerfulAndStable')}</span>
+                    </div>
+                    <div>
+                      <img src='images/progress_icon1.svg' alt='' />
+                      <span>{t('nativeParachainAssetSupport')}</span>
+                    </div>
+                    <div>
+                      <img src='images/progress_icon1.svg' alt='' />
+                      <span>{t('CLVWalletAssetStaking')}</span>
+                    </div>
+                    <div>
+                      <img src='images/progress_icon1.svg' alt='' />
+                      <span>{t('CLVWalletSupport')}</span>
+                    </div>
+                    <h3>(Q4)</h3>
+                    <div>
+                      <img src='images/progress_icon1.svg' alt='' />
+                      <span>{t('supportDApps')}</span>
+                    </div>
+                    <div>
+                      <img src='images/progress_icon1.svg' alt='' />
+                      <span>{t('XCMMultiAssetSupport')}</span>
+                    </div>
+                    <div>
+                      <img src='images/progress_icon1.svg' alt='' />
+                      <span>{t('CLVAssetsSwap')}</span>
+                    </div>
                   </ProgressQ1Left>
                   <ProgressQ1Right>
-                    <div>(Q1)<sup>2022</sup></div>
+                    <div>2022</div>
                   </ProgressQ1Right>
                 </ProgressItem>
                 <ProgressItem>
                   <ProgressQ2Left>
-                    <div>
-                      <img src='images/progress_icon1_white.svg' alt='' />
-                      <span>{t('enableUniversalCrossChain')}</span>
-                    </div>
-                    <div>
-                      <img src='images/progress_icon1_white.svg' alt='' />
-                      <span>{t('upgradableSmartContract')}</span>
-                    </div>
-                    <div>
-                      <img src='images/progress_icon1_white.svg' alt='' />
-                      <span>{t('upgradeCLVEVMBridge')}</span>
-                    </div>
-                    <div>
-                      <img src='images/progress_icon1_white.svg' alt='' />
-                      <span>{t('CLVWalletAssetBridge')}</span>
-                    </div>
-                    <img src='images/progress_icon2.svg' alt='' />
+                    <div>2023</div>
                   </ProgressQ2Left>
                   <ProgressQ2Right>
-                    <div>(Q2)<sup>2022</sup></div>
-                  </ProgressQ2Right>
-                </ProgressItem>
-                <ProgressItem>
-                  <ProgressQ3Left>
-                    <div><sup>2022</sup>(Q3)</div>
-                  </ProgressQ3Left>
-                  <ProgressQ3Right>
+                    <h3>(Q1)</h3>
                     <div>
                       <img src='images/progress_icon1_white.svg' alt='' />
-                      <span>{t('powerfulAndStable')}</span>
+                      <span>TBA</span>
                     </div>
-                    <div>
-                      <img src='images/progress_icon1_white.svg' alt='' />
-                      <span>{t('nativeParachainAssetSupport')}</span>
-                    </div>
-                    <div>
-                      <img src='images/progress_icon1_white.svg' alt='' />
-                      <span>{t('CLVWalletAssetStaking')}</span>
-                    </div>
-                    <div>
-                      <img src='images/progress_icon1_white.svg' alt='' />
-                      <span>{t('CLVWalletSupport')}</span>
-                    </div>
-                  </ProgressQ3Right>
-                </ProgressItem>
-                <ProgressItem>
-                  <ProgressQ4Left>
-                    <div><sup>2022</sup>(Q4)</div>
-                  </ProgressQ4Left>
-                  <ProgressQ4Right>
-                    <div>
-                      <img src='images/progress_icon1_white.svg' alt='' />
-                      <span>{t('supportDApps')}</span>
-                    </div>
-                    <div>
-                      <img src='images/progress_icon1_white.svg' alt='' />
-                      <span>{t('XCMMultiAssetSupport')}</span>
-                    </div>
-                    <div>
-                      <img src='images/progress_icon1_white.svg' alt='' />
-                      <span>{t('CLVAssetsSwap')}</span>
-                    </div>
-                  </ProgressQ4Right>
-                </ProgressItem>
-                <ProgressItem>
-                  <ProgressQ2Left>
-                    <div>
-                      <span>Comming Soon</span>
-                    </div>
-                  </ProgressQ2Left>
-                  <ProgressQ2Right>
-                    <div>(Q1)<sup>2023</sup></div>
                   </ProgressQ2Right>
                 </ProgressItem>
               </ProgressContent>
@@ -479,23 +463,83 @@ const ProgressItem = styled.div`
   display: grid;
   grid-template-columns: 50% 50%;
   gap: 16px;
-  align-items: center;
+  align-items: flex-start;
+  margin-bottom: 48px;
+`
+
+const ProgressQ0Left = styled.div`
+  padding: 40px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+
+  div {
+    font-weight: 590;
+    font-size: 64px;
+    line-height: 68px;
+    letter-spacing: 0.008em;
+    color: #FFFFFF;
+    margin-bottom: 16px;
+  }
+`
+
+const ProgressQ0Right = styled.div`
+  border-radius: 32px;
+  padding: 48px;
+  margin-right: 16px;
+  background: #141414;
+  margin-top: 16px;
+
+  div {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    &:last-child {
+      margin: 0!important;
+    }
+
+    img {
+      width: 32px;
+      margin-right: 16px;
+    }
+
+    span {
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 32px;
+      letter-spacing: 0.006em;
+      color: #ffffff;
+    }
+  }
+  h3 {
+    font-weight: 590;
+    font-size: 48px;
+    line-height: 52px;
+    letter-spacing: 0.008em;
+    color: #FFFFFF;
+    opacity: 0.3;
+    margin-bottom: 24px;
+  }
 `
 
 const ProgressQ1Left = styled.div`
   background: linear-gradient(28.19deg, #BDFDE2 -14.72%, #9BDAF6 116.35%);
   border-radius: 32px;
   padding: 48px;
-  position: relative;
   margin-right: 16px;
-
-  & > img {
-    position: absolute;
-    right: -20px;
-    top: 50%;
-    width: 40px;
-    margin-top: -20px;
+  
+  h3 {
+    font-weight: 590;
+    font-size: 48px;
+    line-height: 52px;
+    text-align: right;
+    letter-spacing: 0.008em;
+    color: #0C0B0B;
+    opacity: 0.7;
+    margin-bottom: 24px;
   }
+
   div {
     display: flex;
     align-items: center;
@@ -520,15 +564,15 @@ const ProgressQ1Left = styled.div`
 `
 
 const ProgressQ1Right = styled.div`
-  padding: 80px;
+  padding: 40px 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   
   div {
     font-weight: 590;
-    font-size: 48px;
-    line-height: 52px;
+    font-size: 64px;
+    line-height: 68px;
     letter-spacing: 0.008em;
     color: #FFFFFF;
     margin-bottom: 16px;
@@ -550,43 +594,9 @@ const ProgressQ1Right = styled.div`
   }
 `
 
-const ProgressQ2Left = styled(ProgressQ1Left)`
-  background: #141414;
-  margin-top: 16px;
-  
-  span {
-    color: #ffffff!important;
-  }
-`
+const ProgressQ2Left = styled(ProgressQ0Left)``
 
-const ProgressQ2Right = styled(ProgressQ1Right)``
-
-const ProgressQ0Left = styled(ProgressQ1Right)`
-  align-items: flex-end;
-`
-
-const ProgressQ0Right = styled(ProgressQ2Left)`
-  & > div {
-    align-items: flex-start;
-    & > div {
-      display: block;
-      span {
-        display: inline-block;
-        margin-bottom: 24px;
-        &:last-child {
-          margin: 0;
-        }
-      }
-    }
-  }
-`
-const ProgressQ3Left = styled(ProgressQ0Left)``
-
-const ProgressQ3Right = styled(ProgressQ0Right)``
-
-const ProgressQ4Left = styled(ProgressQ3Left)``
-
-const ProgressQ4Right = styled(ProgressQ2Left)``
+const ProgressQ2Right = styled(ProgressQ0Right)``
 
 const NewsUpdate = styled.div`
   width: 100%;

@@ -638,7 +638,7 @@ const ClvTokenBottomItem = styled.div`
   line-height: 28px;
   text-align: center;
   letter-spacing: 0.006em;
-  color: #FFFFFF;
+  color: #0C0B0B;
   padding: 16px;
   border: 1px solid #BDFDE2;
 `

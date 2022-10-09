@@ -8,23 +8,23 @@ import { GrayButton, NormalButton } from '../components/Btn';
 export const Developers: React.FC = () => {
   const tools = [
     {
-      icon: 'images/unknown.svg',
-      name: 'Unknown'
-    }, {
       icon: 'images/metaMask.svg',
       name: 'MetaMask'
     }, {
-      icon: 'images/truffle.svg',
-      name: 'Truffle'
+      icon: 'images/onto_wallet.svg',
+      name: 'Onto Wallet'
     }, {
-      icon: 'images/chainlink.svg',
-      name: 'Chainlink'
+      icon: 'images/multichain.svg',
+      name: 'Multichain'
     }, {
-      icon: 'images/unknown2.svg',
-      name: 'Unknown'
+      icon: 'images/beosin.svg',
+      name: 'Beosin'
     }, {
-      icon: 'images/ganache.svg',
-      name: 'Ganache'
+      icon: 'images/dia.svg',
+      name: 'DIA'
+    }, {
+      icon: 'images/standard.svg',
+      name: 'Standard Protocol'
     },
   ]
   return (
@@ -52,7 +52,7 @@ export const Developers: React.FC = () => {
                 <ContentBottomLeftContent>
                   {tools.map((tool, index) => (
                     <ContentBottomItem key={`tool_${index}`}>
-                      <img src={tool.icon} alt='' />
+                      <img width={50} height={50} src={tool.icon} alt='' />
                       <span>{tool.name}</span>
                     </ContentBottomItem>
                   ))}
@@ -164,7 +164,7 @@ export const Developers: React.FC = () => {
             </InterestedPartnerships>
             <GetInvolvedInTheIndustry>
               <div>
-                <img height='280px' src='images/industry.svg' alt='' />
+                <img height='280px' src='images/industry.png' alt='' />
               </div>
               <div>
                 <h3>{t('getInvolvedInTheIndustry')}</h3>
