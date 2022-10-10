@@ -45,7 +45,7 @@ export const CLVChains: React.FC = () => {
   ]
 
   const handleScroll = () => {
-    let timer = null
+    let timer: any = null
     const playVideo: any = document.getElementById('playVideo')
     setPlay(false)
     playVideo.pause()

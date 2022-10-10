@@ -2,7 +2,6 @@ import React from "react";
 import styled, { css } from 'styled-components';
 import { breakpoint } from "../../mixins/breakpoint";
 import { t } from '../../i18n/intl';
-import { WrapperDesktopOnly } from '../../CloverLibrary';
 
 interface FooterProps {
   isWallet?: boolean;
@@ -62,7 +61,7 @@ export const Footer = ({isWallet}: FooterProps) => {
                   </Link>
                   <Link>
                     <a
-                      // href="https://wallet.clover.finance/"
+                      href=""
                       target="_blank"
                       rel="noreferrer"
                     >

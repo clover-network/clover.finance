@@ -12,7 +12,7 @@ export const Main: React.FC = () => {
   const [play, setPlay] = useState(false)
 
   const handleScroll = () => {
-    let timer = null
+    let timer: any = null
     const playVideo: any = document.getElementById('playVideo1')
     if (window.scrollY <= 800) {
       playVideo.currentTime = 0

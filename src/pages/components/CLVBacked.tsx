@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { t } from '../../i18n/intl';
 
 const CLVIsBackedWrapper = styled.div`

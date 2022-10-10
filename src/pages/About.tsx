@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import styled, { css } from "styled-components";
 import { breakpoint } from "../mixins/breakpoint";
 import { t } from '../i18n/intl';
@@ -7,12 +7,6 @@ import { GrayButton, NormalButton } from '../components/Btn';
 import CLVIsBacked from './components/CLVBacked';
 
 export const About: React.FC = () => {
-  // useEffect(() => {
-  //   const iframe = document.getElementById("myIframe");
-  //   var y = (iframe.contentWindow || iframe.contentDocument);
-  //   if (y.document)y=y.document;
-  //   y.body.style.backgroundColor="#000000";
-  // }, [])
   return (
     <div>
       <Background/>
@@ -240,6 +234,7 @@ export const About: React.FC = () => {
                 <GlobalPresenseContentBottom>
                   <iframe
                     id='myIframe'
+                    title='map'
                     src='https://telemetry.polkadot.io/#map/0xe923f1773f4197a862cb4fc4a562f93585b26131dadbc943d524a82bbeecd2eb'
                     frameBorder='0'
                     scrolling='no'
@@ -423,14 +418,6 @@ const ContentBottomRight = styled.div`
     }
   }
 `
-
-const ImgWrapper = styled.div`
-  width: 50%;
-
-  img {
-    width: 680px;
-  }
-`;
 
 const Progress = styled.div`
   margin-top: 180px;

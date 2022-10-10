@@ -229,38 +229,6 @@ export const Ecosystem: React.FC = () => {
                 </ToolsOnCLVItem>
               </ToolsOnCLVContent>
             </ToolsOnCLV>
-            {/*<Component>*/}
-            {/*  <ComponentTitle>*/}
-            {/*    <h3>{t('component')}<span>{t('ofTheCLVChain')}</span></h3>*/}
-            {/*    <span>{t('ourLayerOneFoundation')}</span>*/}
-            {/*  </ComponentTitle>*/}
-            {/*  <ComponentContent>*/}
-            {/*    <ComponentContentLeft>*/}
-            {/*      <ComponentContentItem>*/}
-            {/*        <h3>{t('crossChangeModule')}</h3>*/}
-            {/*        <span>{t('crossChangeModuleHint')}</span>*/}
-            {/*      </ComponentContentItem>*/}
-            {/*      <ComponentContentItem>*/}
-            {/*        <h3>{t('accountBinding')}</h3>*/}
-            {/*        <span>{t('accountBindingHint')}</span>*/}
-            {/*      </ComponentContentItem>*/}
-            {/*    </ComponentContentLeft>*/}
-            {/*    <ComponentContentRight>*/}
-            {/*      <ComponentContentItem>*/}
-            {/*        <h3>{t('governance')}</h3>*/}
-            {/*        <span>{t('governanceHint')}</span>*/}
-            {/*      </ComponentContentItem>*/}
-            {/*      <ComponentContentItem>*/}
-            {/*        <h3>{t('EVMEconomicIncentive')}</h3>*/}
-            {/*        <span>{t('EVMEconomicIncentiveHint')}</span>*/}
-            {/*      </ComponentContentItem>*/}
-            {/*      <ComponentContentItem>*/}
-            {/*        <h3>{t('smartContractOnChain')}</h3>*/}
-            {/*        <span>{t('smartContractOnChainHint')}</span>*/}
-            {/*      </ComponentContentItem>*/}
-            {/*    </ComponentContentRight>*/}
-            {/*  </ComponentContent>*/}
-            {/*</Component>*/}
           </div>
         </Content>
       </LandingContainer>
@@ -457,14 +425,6 @@ const DAppFeaturesItem = styled.div`
   }
 `
 
-const ImgWrapper = styled.div`
-  width: 50%;
-
-  img {
-    width: 680px;
-  }
-`;
-
 const Btns = styled.div`
   display: flex;
   align-items: center;
@@ -658,83 +618,6 @@ const ToolsOnCLVItem = styled.div`
     opacity: 0.6;
     margin: 24px 0;
     display: inline-block;
-  }
-`
-
-const Component = styled.div`
-  width: 100%;
-  margin-top: 140px;
-`
-
-const ComponentTitle = styled.div`
-  h3 {
-    width: 50%;
-    font-weight: 590;
-    font-size: 64px;
-    line-height: 68px;
-    letter-spacing: 0.008em;
-    color: #9BDAF6;
-    margin-bottom: 24px;
-    span {
-      color: #ffffff;
-    }
-  }
-  &>span {
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 48px;
-    letter-spacing: 0.002em;
-    color: #FFFFFF;
-  }
-`
-
-const ComponentContent = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-`
-
-const ComponentContentLeft = styled.div`
-  width: 50%;
-  margin-right: 16px;
-  & > div {
-    margin-bottom: 16px;
-    &:last-child {
-      margin: 0;
-    }
-  }
-`
-
-const ComponentContentRight = styled.div`
-  width: 50%;
-  & > div {
-    margin-bottom: 16px;
-    &:last-child {
-      margin: 0;
-    }
-  }
-`
-
-const ComponentContentItem = styled.div`
-  padding: 48px;
-  background: #0C0B0B;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 32px;
-  h3 {
-    font-weight: 500;
-    font-size: 28px;
-    line-height: 36px;
-    letter-spacing: 0.008em;
-    color: #FFFFFF;
-    margin-bottom: 16px;
-  }
-  span {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 28px;
-    letter-spacing: 0.006em;
-    color: #FFFFFF;
-    opacity: 0.6;
   }
 `
 

@@ -151,7 +151,7 @@ export const Wallet: React.FC = () => {
                         <p>398</p>
                         <img src='images/remind.svg' alt='' />
                         <p><span></span>70,000+ Users<span></span></p>
-                        <a>Productivity</a>
+                        <div>Productivity</div>
                       </div>
                     </div>
                   </YourPassportBottomLeft>
@@ -554,7 +554,7 @@ const YourPassportBottomLeft = styled.div`
         letter-spacing: 0.006em;
         color: #83979F;
       }
-      p, a {
+      p, div {
         font-weight: 400;
         font-size: 16px;
         line-height: 24px;
@@ -571,7 +571,7 @@ const YourPassportBottomLeft = styled.div`
           margin: 0 10px;
         }
       }
-      a {
+      &>div {
         text-decoration: underline;
       }
     }

@@ -385,14 +385,6 @@ const ContentBottomRight = styled.div`
   }
 `
 
-const ImgWrapper = styled.div`
-  width: 50%;
-
-  img {
-    width: 680px;
-  }
-`;
-
 const JoinCommunity = styled.div`
   width: 100%;
   margin-top: 88px;
