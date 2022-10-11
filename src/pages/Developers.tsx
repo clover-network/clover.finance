@@ -204,6 +204,7 @@ const SocialsImg = styled.img`
 `
 
 const UpperCaseSpan = styled.div`
+  font-family: Inter;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -274,6 +275,7 @@ const TextWrapper = styled.div`
   }
   
   span {
+    font-family: Inter;
     font-weight: 400;
     font-size: 20px;
     line-height: 32px;
@@ -320,6 +322,7 @@ const ContentBottomLeftTitle = styled.div`
     color: #FFFFFF;
   }
   span {
+    font-family: Inter;
     font-weight: 400;
     font-size: 16px;
     line-height: 28px;
@@ -351,6 +354,7 @@ const ContentBottomItem = styled.div`
     width: 50px;
   }
   span {
+    font-family: Inter;
     font-weight: 400;
     font-size: 16px;
     line-height: 20px;
@@ -372,6 +376,7 @@ const ContentBottomRight = styled.div`
     color: #FFFFFF;
   }
   span {
+    font-family: Inter;
     font-weight: 400;
     font-size: 20px;
     line-height: 32px;
@@ -430,6 +435,7 @@ const JoinCommunityItem = styled.div`
     color: #FFFFFF;
   }
   span {
+    font-family: Inter;
     font-weight: 400;
     font-size: 16px;
     line-height: 28px;
@@ -462,6 +468,7 @@ const InterestedPartnerships = styled.div`
       margin-bottom: 32px;
     }
     span {
+      font-family: Inter;
       font-weight: 400;
       font-size: 20px;
       line-height: 32px;

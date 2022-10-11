@@ -170,6 +170,7 @@ const FooterColumn = styled.div`
 const FooterColumnLabel = styled.div<{
   isWallet?: boolean
 }>`
+  font-family: Inter;
   font-weight: 600;
   font-size: 16px;
   line-height: 28px;
@@ -199,6 +200,7 @@ const FooterTopRight = styled.div<{
   flex-direction: column;
   flex: 0 0 50%;
   div {
+    font-family: Inter;
     font-weight: 400;
     font-size: 32px;
     line-height: 32px;
@@ -229,6 +231,7 @@ const FooterBottomLeft = styled.div<{
   margin-top: 88px;
   flex: 0 0 50%;
   span {
+    font-family: Inter;
     font-weight: 400;
     font-size: 16px;
     line-height: 28px;
@@ -247,6 +250,7 @@ const FooterBottomRight = styled.div<{
   flex: 0 0 50%;
   margin-top: 48px;
   & > span {
+    font-family: Inter;
     font-weight: 400;
     font-size: 16px;
     line-height: 28px;
@@ -281,6 +285,7 @@ const Links = styled.div<{
 `;
 
 const Link = styled.div`
+  font-family: Inter;
   font-weight: 400;
   font-size: 16px;
   line-height: 28px;

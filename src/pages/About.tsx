@@ -324,6 +324,7 @@ const TextWrapper = styled.div`
   }
   
   span {
+    font-family: Inter;
     font-weight: 400;
     font-size: 20px;
     line-height: 32px;
@@ -366,6 +367,7 @@ const ContentBottomLeft = styled.div`
   }
   
   span {
+    font-family: Inter;
     font-weight: 400;
     font-size: 16px;
     line-height: 28px;
@@ -492,6 +494,7 @@ const ProgressQ0Right = styled.div`
     }
 
     span {
+      font-family: Inter;
       font-weight: 400;
       font-size: 20px;
       line-height: 32px;
@@ -541,6 +544,7 @@ const ProgressQ1Left = styled.div`
     }
     
     span {
+      font-family: Inter;
       font-weight: 400;
       font-size: 20px;
       line-height: 32px;
@@ -562,22 +566,6 @@ const ProgressQ1Right = styled.div`
     line-height: 68px;
     letter-spacing: 0.008em;
     color: #FFFFFF;
-    margin-bottom: 16px;
-
-    sup {
-      opacity: 0.4;
-      font-size: 24px;
-      margin: 0 10px;
-    }
-  }
-  
-  span {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 28px;
-    letter-spacing: 0.006em;
-    color: #FFFFFF;
-    opacity: 0.6;
   }
 `
 
@@ -618,6 +606,7 @@ const NewsUpdateItemLeft = styled.div`
   margin-right: 16px;
   
   span {
+    font-family: Inter;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
@@ -648,6 +637,7 @@ const NewsUpdateItemRight = styled.div`
   }
   
   span {
+    font-family: Inter;
     font-weight: 400;
     font-size: 16px;
     line-height: 28px;
@@ -683,6 +673,7 @@ const GlobalPresenseContentTop = styled.div`
       color: #FFFFFF;
     }
     span {
+      font-family: Inter;
       font-weight: 400;
       font-size: 16px;
       line-height: 28px;

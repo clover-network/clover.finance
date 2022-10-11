@@ -1,5 +1,6 @@
 @font-face {
   font-family: 'RobotoFlex';
-  src: url('/fonts/RobotoFlex.ttf') format('truetype');
-  font-weight: 600;
+  src: url('/fonts/RobotoFlex-VariableFont_GRAD,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght.ttf') format('truetype');
+  font-stretch: 130%;
+  font-variation-settings: 'GRAD' -120, 'slnt' 0, 'XTRA' 480, 'XOPQ' 102, 'YOPQ' 100, 'YTLC' 560, 'YTUC' 712, 'YTAS' 750, 'YTDE' -203, 'YTFI' 738;
 }

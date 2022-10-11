@@ -75,6 +75,7 @@ const NavWrapper = styled.div<{
   align-items: center;
   
   span {
+    font-family: Inter;
     font-weight: 400;
     font-size: 16px;
     line-height: 32px;
@@ -111,6 +112,7 @@ const LogIn = styled.div`
   padding: 8px 18px;
   background: rgba(255, 255, 255, 0.4);
   border-radius: 8px;
+  font-family: Inter;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -123,6 +125,7 @@ const SignUp = styled.div`
   padding: 8px 18px;
   background: #0C0B0B;
   border-radius: 8px;
+  font-family: Inter;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;

@@ -79,8 +79,8 @@ export const Wallet: React.FC = () => {
                     <IdealAvailableItemContent>
                       <UpperCaseSpan>{t('CLVMobileWallet')}</UpperCaseSpan>
                       <div>{t('DcentralizedFinance')}</div>
-                      <span>{t('DcentralizedFinanceHint1')}</span>
-                      <span>{t('DcentralizedFinanceHint2')}</span>
+                      <span style={{marginTop: '32px'}}>{t('DcentralizedFinanceHint1')}</span>
+                      <span style={{margin: '10px 0 32px'}}>{t('DcentralizedFinanceHint2')}</span>
                     </IdealAvailableItemContent>
                     <Btns>
                       <img
@@ -106,7 +106,7 @@ export const Wallet: React.FC = () => {
                     <IdealAvailableItemContent>
                       <UpperCaseSpan>{t('CLVPortal')}</UpperCaseSpan>
                       <div>{t('onePortalOfAll')}</div>
-                      <span>{t('onePortalOfAllHint')}</span>
+                      <span style={{margin: '32px 0'}}>{t('onePortalOfAllHint')}</span>
                     </IdealAvailableItemContent>
                     <NormalButton>{t('exploreNow')}</NormalButton>
                   </div>
@@ -168,7 +168,6 @@ export const Wallet: React.FC = () => {
             <JoinUs>
               <JoinUsTitle>
                 <h3>{t('joinUs')}<img src='images/clv_icon2.svg' alt='' /></h3>
-                <span>{t('joinUsHint')}</span>
               </JoinUsTitle>
               <JoinUsInput>
                 <input placeholder={t('addYourEmail')} type='text' />
@@ -233,12 +232,13 @@ const ContentWrapper = styled.div`
 `;
 
 const UpperCaseSpan = styled.span`
+  font-family: Inter;
   font-weight: 700!important;
   font-size: 16px!important;
   line-height: 24px!important;
   letter-spacing: 0.026em;
   text-transform: uppercase;
-  color: #4E5D60;
+  color: #4E5D60!important;
   margin-bottom: 24px;
 `
 
@@ -263,6 +263,7 @@ const TextWrapper = styled.div`
   }
 
   &>span {
+    font-family: Inter;
     font-weight: 400;
     font-size: 20px;
     line-height: 32px;
@@ -304,6 +305,7 @@ const ContentBottomTopLeft = styled.div`
   }
 
   span {
+    font-family: Inter;
     font-weight: 400;
     font-size: 16px;
     line-height: 28px;
@@ -336,7 +338,7 @@ const ImgWrapper = styled.div`
 `;
 
 const IdealAvailable = styled.div`
-  margin-top: 1090px;
+  margin-top: 380px;
   width: 100%;
 `
 
@@ -350,6 +352,7 @@ const IdealAvailableTitle = styled.div`
     margin-bottom: 24px;
   }
   span {
+    font-family: Inter;
     font-weight: 400;
     font-size: 32px;
     line-height: 48px;
@@ -396,6 +399,7 @@ const IdealAvailableItemContent = styled.div`
   width: unset;
   padding: 0;
   &>h3 {
+    font-family: Inter;
     font-weight: 600;
     font-size: 24px;
     line-height: 36px;
@@ -410,6 +414,7 @@ const IdealAvailableItemContent = styled.div`
   }
   
   & > span {
+    font-family: Inter;
     font-weight: 400;
     font-size: 20px;
     line-height: 32px;
@@ -428,6 +433,7 @@ const IdealAvailableItemContent = styled.div`
     }
 
     span {
+      font-family: Inter;
       font-weight: 400;
       font-size: 16px;
       line-height: 24px;
@@ -469,6 +475,7 @@ const YourPassportTitle = styled.div`
     color: #0C0B0B;
   }
   span {
+    font-family: Inter;
     font-weight: 400;
     font-size: 32px;
     line-height: 48px;
@@ -512,6 +519,7 @@ const YourPassportTopItem = styled.div`
     margin-top: 36px;
   }
   span {
+    font-family: Inter;
     font-weight: 400;
     font-size: 16px;
     line-height: 28px;
@@ -548,6 +556,7 @@ const YourPassportBottomLeft = styled.div`
       align-items: center;
       margin-top: 12px;
       & > span {
+        font-family: Inter;
         font-weight: 400;
         font-size: 14px;
         line-height: 22px;
@@ -555,6 +564,7 @@ const YourPassportBottomLeft = styled.div`
         color: #83979F;
       }
       p, div {
+        font-family: Inter;
         font-weight: 400;
         font-size: 16px;
         line-height: 24px;
@@ -588,6 +598,7 @@ const JoinUs = styled.div`
   align-items: center;
 
   &>span {
+    font-family: Inter;
     font-weight: 400;
     font-size: 12px;
     line-height: 20px;
@@ -615,13 +626,6 @@ const JoinUsTitle = styled.div`
       margin-left: 16px;
     }
   }
-  span {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 28px;
-    letter-spacing: 0.006em;
-    color: #0C0B0B;
-  }
 `
 
 const JoinUsInput = styled.div`
@@ -641,6 +645,7 @@ const JoinUsInput = styled.div`
     outline: none;
     border: none;
     text-indent: 20px;
+    font-family: Inter;
   }
   div {
     display: flex;
@@ -650,6 +655,7 @@ const JoinUsInput = styled.div`
     height: 48px;
     padding: 16px 24px;
     margin: 0 8px;
+    font-family: Inter;
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
@@ -680,7 +686,6 @@ const LandingContainer = styled.div`
     width: 100%;
   }
   & > div {
-    position: absolute;
     z-index: 1;
     top: 0;
     width: 100%;

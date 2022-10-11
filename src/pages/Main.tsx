@@ -223,12 +223,14 @@ const TextWrapper = styled.div`
     line-height: 76px;
     letter-spacing: 0.008em;
     color: #FFFFFF;
+   
     img {
       margin-left: 10px;
     }
   }
 
   span {
+    font-family: Inter;
     font-weight: 400;
     font-size: 20px;
     line-height: 32px;
@@ -284,6 +286,7 @@ const BalanceItem = styled.div`
   }
 
   span {
+    font-family: Inter;
     font-weight: 400;
     font-size: 16px;
     line-height: 28px;
@@ -362,6 +365,7 @@ const AdvantagesRightItem = styled.div`
   }
 
   & > span {
+    font-family: Inter;
     font-weight: 400;
     font-size: 20px;
     line-height: 32px;
@@ -431,6 +435,7 @@ const ToolsOnCLVContentLeft = styled.div`
       letter-spacing: 0.008em;
     }
     span {
+      font-family: Inter;
       font-weight: 400;
       font-size: 16px;
       line-height: 28px;
@@ -470,6 +475,7 @@ const ToolsOnCLVItem = styled.div`
     letter-spacing: 0.008em;
   }
   &>span {
+    font-family: Inter;
     font-weight: 400;
     font-size: 16px;
     line-height: 28px;

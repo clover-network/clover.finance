@@ -29,6 +29,7 @@ const CLVIsBackedTitle = styled.div`
   }
 `;
 const CLVIsBackedHint = styled.div`
+  font-family: Inter;
   font-weight: 400;
   font-size: 20px;
   line-height: 32px;

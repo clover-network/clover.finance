@@ -364,6 +364,7 @@ const TextWrapper = styled.div`
   }
 
   span {
+    font-family: Inter;
     font-weight: 400;
     font-size: 20px;
     line-height: 32px;
@@ -413,6 +414,7 @@ const ContentBottomItem = styled.div`
   border-radius: 32px;
   display: flex;
   align-items: center;
+  font-family: Inter;
   font-weight: 400;
   font-size: 16px;
   line-height: 28px;
@@ -435,6 +437,7 @@ const ContentBottomCenter = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: Inter;
   font-weight: 500;
   font-size: 24px;
   line-height: 36px;
@@ -525,6 +528,7 @@ const FeaturesRightItem = styled.div`
   }
 
   & > p {
+    font-family: Inter;
     font-weight: 600;
     font-size: 20px;
     line-height: 24px;
@@ -536,6 +540,7 @@ const FeaturesRightItem = styled.div`
   }
 
   & > span {
+    font-family: Inter;
     font-weight: 400;
     font-size: 20px;
     line-height: 32px;
@@ -589,7 +594,8 @@ const ClvTokenTop = styled.div`
       color: #FFFFFF;
       margin: 32px 0;
     }
-    span {
+    &>span {
+      font-family: Inter;
       font-weight: 400;
       font-size: 20px;
       line-height: 32px;
@@ -606,6 +612,7 @@ const ClvTokenTop = styled.div`
 
 const ClvTokenBottom = styled.div`
   &>span {
+    font-family: Inter;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
@@ -633,6 +640,7 @@ const ClvTokenBottomItem = styled.div`
   word-break: break-word;
   background: linear-gradient(39.66deg, rgba(189, 253, 226, 0.4) -8.36%, rgba(155, 218, 246, 0.4) 143.89%);
   border-radius: 80px;
+  font-family: Inter;
   font-weight: 500;
   font-size: 20px;
   line-height: 28px;
@@ -707,6 +715,7 @@ const EcosystemItem = styled.div`
   }
 
   span {
+    font-family: Inter;
     font-weight: 400;
     font-size: 16px;
     line-height: 28px;
@@ -766,6 +775,7 @@ const FAQsItemContent = styled.div`
     flex-direction: column;
   }
   span {
+    font-family: Inter;
     font-weight: 400;
     font-size: 20px;
     line-height: 32px;

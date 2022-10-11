@@ -253,7 +253,7 @@ const Content = styled.div`
   & > div {
     max-width: 1440px;
     min-width: 1440px;
-    padding: 0 64px 64px;
+    padding: 0 64px 180px;
     margin: 0 auto;
   }
 `
@@ -328,7 +328,7 @@ const TextWrapper = styled.div`
 const ContentBottom = styled.div`
   margin-top: 128px;
   width: 100%;
-  padding: 40px 20px 20px;
+  padding: 40px 40px 20px;
   background: #141414;
   border-radius: 30px;
 `;
@@ -339,7 +339,8 @@ const ContentBottomTitle = styled.div`
   line-height: 40px;
   letter-spacing: 0.008em;
   color: #FFFFFF;
-  margin-bottom: 80px;
+  margin-bottom: 50px;
+  padding: 10px 24px;
 `;
 
 const ContentBottomContent = styled.div`
@@ -355,6 +356,7 @@ const ContentBottomTop = styled.div`
 
 const ContentBottomBottom = styled.div`
   &>span {
+    font-family: Inter;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
@@ -376,26 +378,28 @@ const ContentBottomItem = styled.div`
   border-radius: 32px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   border: 1px solid #333232;
   height: 210px;
-  width: 243px;
+  width: 230px;
   padding: 24px;
+  font-family: Inter;
   font-weight: 400;
   font-size: 20px;
   line-height: 32px;
   text-align: center;
   letter-spacing: 0.006em;
   color: #FFFFFF;
-  &.selected {
-    //background: linear-gradient(39.66deg, #BDFDE2 -8.36%, #9BDAF6 143.89%), #FFFFFF;
-    //color: #0C0B0B;
+  &:first-child {
+    img {
+      margin-top: -60px;
+    }
   }
   img {
     width: 160px;
     margin-bottom: 8px;
-    margin-top: -80px;
+    margin-top: -40px;
   }
   span {
     word-break: break-word;
@@ -406,7 +410,7 @@ const ContentBottomItem = styled.div`
 const DAppFeaturesItem = styled.div`
   height: 116px;
   padding: 16px;
-  width: 246.4px;
+  width: 230px;
   background: #0E0D0D;
   border: 1px solid #333232;
   border-radius: 80px;
@@ -416,8 +420,9 @@ const DAppFeaturesItem = styled.div`
   align-items: center;
   word-break: break-word;
   span {
+    font-family: Inter;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 28px;
     text-align: center;
     letter-spacing: 0.006em;
@@ -438,7 +443,7 @@ const CLVChain = styled.div`
   margin-top: 24px;
   background: #141414;
   border-radius: 30px;
-  padding: 40px 20px 20px;
+  padding: 40px;
 `
 
 const CLVChainTitle = styled.div`
@@ -453,6 +458,7 @@ const CLVChainTitle = styled.div`
   }
   
   span {
+    font-family: Inter;
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -473,7 +479,7 @@ const CLVChainContent = styled.div`
 
 const CLVChainItem = styled.div`
   height: 210px;
-  width: 235px;
+  width: 230px;
   padding: 24px;
   background: #000000;
   border-radius: 32px;
@@ -484,6 +490,7 @@ const CLVChainItem = styled.div`
   border: 1px solid #333232;
   
   span {
+    font-family: Inter;
     font-weight: 400;
     font-size: 20px;
     line-height: 32px;
@@ -522,6 +529,7 @@ const ProductSolutionItem = styled.div`
     background: #0c0b0b;
   }
   & > div {
+    font-family: Inter;
     font-weight: 600;
     font-size: 16px;
     line-height: 28px;
@@ -530,6 +538,7 @@ const ProductSolutionItem = styled.div`
     margin-left: 24px;
     
     span {
+      font-weight: 400;
       opacity: 0.6;
     }
   }
@@ -545,6 +554,7 @@ const ProductSolutionRight = styled.div`
     color: #FFFFFF;
   }
   span {
+    font-family: Inter;
     font-weight: 400;
     font-size: 20px;
     line-height: 32px;
@@ -610,6 +620,7 @@ const ToolsOnCLVItem = styled.div`
     letter-spacing: 0.008em;
   }
   &>span {
+    font-family: Inter;
     font-weight: 400;
     font-size: 16px;
     line-height: 28px;

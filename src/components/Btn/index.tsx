@@ -12,6 +12,7 @@ export const NormalButton = styled.div<{
   white-space: nowrap;
   background: linear-gradient(45.66deg, #BDFDE2 8.33%, #9BDAF6 94.75%);
   border-radius: 32px;
+  font-family: Inter;
   font-weight: 500;
   font-size: 20px;
   line-height: 32px;
@@ -49,6 +50,7 @@ export const GrayButton = styled.div<{
   white-space: nowrap;
   border: 1px solid #333232;
   border-radius: 32px;
+  font-family: Inter;
   font-weight: 500;
   font-size: 20px;
   line-height: 32px;
