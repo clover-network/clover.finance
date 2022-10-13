@@ -11,6 +11,8 @@ import { SplashModeContext, SplashPageMode } from "./SplashModeContext";
 //https://github.com/FortAwesome/react-fontawesome/issues/234
 import { config } from "@fortawesome/fontawesome-svg-core"; // 👈
 import "@fortawesome/fontawesome-svg-core/styles.css"; // 👈
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.css';
 config.autoAddCss = false; // 👈
 
 function App() {

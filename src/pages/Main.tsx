@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import styled, { css } from "styled-components";
 import { breakpoint } from "../mixins/breakpoint";
 import { t } from '../i18n/intl';
@@ -6,35 +6,69 @@ import { NormalButton, GrayButton } from '../components/Btn';
 import CLVIsBacked from './components/CLVBacked';
 import { Footer } from './components/Footer';
 import { useRouter } from 'next/router';
+import Carousel from 'react-bootstrap/Carousel';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const Main: React.FC = () => {
   const location = useRouter();
   const [play, setPlay] = useState(false)
+  const [scrollIndex, setScrollIndex] = useState(0)
+  const ref = useRef()
 
-  const handleScroll = () => {
-    let timer: any = null
+  const handleScroll1 = useCallback(() => {
     const playVideo: any = document.getElementById('playVideo1')
-    if (window.scrollY <= 800) {
+    let timer: any = null
+    if (ref.current.scrollTop === 0) {
       playVideo.currentTime = 0
-    } else if (window.scrollY > 800 && window.scrollY < 2500) {
-      setPlay(true)
-      playVideo.play()
-      if (!timer) {
-        timer = setTimeout(() => {
-          setPlay(false)
-          playVideo.pause()
-          clearTimeout(timer)
-        }, playVideo.duration * 1000 / 3)
-      }
     }
-  }
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
+    if (ref.current.scrollTop >= 0 && ref.current.scrollTop < 200) {
+      setScrollIndex(0)
+    } else if (ref.current.scrollTop > 200 && ref.current.scrollTop < 400) {
+      setScrollIndex(1)
+    } else {
+      setScrollIndex(2)
     }
-  }, [location]);
+    setPlay(true)
+    playVideo.play()
+    if (!timer) {
+      timer = setTimeout(() => {
+        setPlay(false)
+        playVideo.pause()
+        clearTimeout(timer)
+      }, playVideo.duration * 1000 / 3)
+    }
+  }, [])
+  useEffect(() => {
+    const div = ref.current
+    div.addEventListener("scroll", handleScroll1)
+  }, [handleScroll1])
+
+  // const handleScroll = () => {
+  //   let timer: any = null
+  //   const playVideo: any = document.getElementById('playVideo1')
+  //   if (window.scrollY <= 800) {
+  //     playVideo.currentTime = 0
+  //   } else if (window.scrollY > 800 && window.scrollY < 2500) {
+  //     setPlay(true)
+  //     playVideo.play()
+  //     if (!timer) {
+  //       timer = setTimeout(() => {
+  //         setPlay(false)
+  //         playVideo.pause()
+  //         clearTimeout(timer)
+  //       }, playVideo.duration * 1000 / 3)
+  //     }
+  //   }
+  // }
+
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleScroll)
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll)
+  //   }
+  // }, [location]);
+
   return (
       <Wrapper>
         <LandingContainer>
@@ -101,22 +135,28 @@ export const Main: React.FC = () => {
               <AdvantagesLeft>
                 <video id='playVideo1' autoPlay={play} loop muted src='videos/CLVMainInteractiveAnimation.mp4'></video>
               </AdvantagesLeft>
-              <AdvantagesRight>
-                <AdvantagesRightItem>
-                  <h3>{t('gasFeeRedistribution')}</h3>
-                  <span>{t('gasFeeRedistributionHint1')}</span>
-                  <span>{t('gasFeeRedistributionHint2')}</span>
-                </AdvantagesRightItem>
-                <AdvantagesRightItem>
-                  <h3>{t('inventorOfFeeEconomics')}</h3>
-                  <span>{t('inventorOfFeeEconomicsHint')}</span>
-                </AdvantagesRightItem>
-                <AdvantagesRightItem>
-                  <h3>{t('EVMCompatible')}</h3>
-                  <span>{t('EVMCompatibleHint1')}</span>
-                  <span>{t('EVMCompatibleHint2')}</span>
-                  <span>{t('EVMCompatibleHint3')}</span>
-                </AdvantagesRightItem>
+              <AdvantagesRight ref={ref}>
+                <div
+                    style={{backgroundImage: scrollIndex === 0 ? '-webkit-linear-gradient(top, #fff, #fff, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0))' :
+                          scrollIndex === 1 ? '-webkit-linear-gradient(top, rgba(255, 255, 255, 0), #fff, #fff, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0))'
+                              : '-webkit-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), #fff, #fff)'}}
+                >
+                  <AdvantagesRightItem>
+                    <h3>{t('gasFeeRedistribution')}</h3>
+                    <span>{t('gasFeeRedistributionHint1')}</span>
+                    <span>{t('gasFeeRedistributionHint2')}</span>
+                  </AdvantagesRightItem>
+                  <AdvantagesRightItem>
+                    <h3>{t('inventorOfFeeEconomics')}</h3>
+                    <span>{t('inventorOfFeeEconomicsHint')}</span>
+                  </AdvantagesRightItem>
+                  <AdvantagesRightItem>
+                    <h3>{t('EVMCompatible')}</h3>
+                    <span>{t('EVMCompatibleHint1')}</span>
+                    <span>{t('EVMCompatibleHint2')}</span>
+                    <span>{t('EVMCompatibleHint3')}</span>
+                  </AdvantagesRightItem>
+                </div>
               </AdvantagesRight>
             </AdvantagesContent>
           </Advantages>
@@ -332,6 +372,7 @@ const AdvantagesContent = styled.div`
   width: 100%;
   display: flex;
   margin-top: 64px;
+  align-items: center;
 `
 
 const AdvantagesLeft = styled.div`
@@ -346,8 +387,14 @@ const AdvantagesLeft = styled.div`
 
 const AdvantagesRight = styled.div`
   width: 50%;
-  &>div:last-child {
-    margin-bottom: 0;
+  height: 600px;
+  overflow-y: auto;
+  &>div {
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    &>div:last-child {
+      margin-bottom: 0;
+    }
   }
 `
 

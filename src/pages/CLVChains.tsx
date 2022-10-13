@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef, useCallback} from "react";
 import styled, { css } from "styled-components";
 import { breakpoint } from "../mixins/breakpoint";
 import { t } from '../i18n/intl';
@@ -10,6 +10,40 @@ export const CLVChains: React.FC = () => {
   const location = useRouter();
   const [selectFaq, setSelectFaq] = useState(0)
   const [play, setPlay] = useState(false)
+  const [scrollIndex, setScrollIndex] = useState(0)
+  const ref = useRef()
+
+  const handleScroll1 = useCallback(() => {
+    const playVideo: any = document.getElementById('playVideo')
+    let timer: any = null
+    if (ref.current.scrollTop === 0) {
+      playVideo.currentTime = 0
+    }
+
+    if (ref.current.scrollTop >= 0 && ref.current.scrollTop < 200) {
+      setScrollIndex(0)
+    } else if (ref.current.scrollTop >= 200 && ref.current.scrollTop < 600) {
+      setScrollIndex(1)
+    } else if (ref.current.scrollTop >= 600 && ref.current.scrollTop < 800) {
+      setScrollIndex(2)
+    } else {
+      setScrollIndex(3)
+    }
+    setPlay(true)
+    playVideo.play()
+    if (!timer) {
+      timer = setTimeout(() => {
+        setPlay(false)
+        playVideo.pause()
+        clearTimeout(timer)
+      }, playVideo.duration * 1000 / 3)
+    }
+  }, [])
+  useEffect(() => {
+    const div = ref.current
+    div.addEventListener("scroll", handleScroll1)
+  }, [handleScroll1])
+
   const faqsList = [
     {
       title: "What is the difference between the CLV M-chain and the CLV P-chain?",
@@ -44,32 +78,32 @@ export const CLVChains: React.FC = () => {
     },
   ]
 
-  const handleScroll = () => {
-    let timer: any = null
-    const playVideo: any = document.getElementById('playVideo')
-    setPlay(false)
-    playVideo.pause()
-    if (window.scrollY <= 920) {
-      playVideo.currentTime = 0
-    } else if (window.scrollY > 920 && window.scrollY < 2500) {
-      setPlay(true)
-      playVideo.play()
-      if (!timer) {
-        timer = setTimeout(() => {
-          setPlay(false)
-          playVideo.pause()
-          clearTimeout(timer)
-        }, playVideo.duration * 1000 / 3)
-      }
-    }
-  }
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [location]);
+  // const handleScroll = () => {
+  //   let timer: any = null
+  //   const playVideo: any = document.getElementById('playVideo')
+  //   setPlay(false)
+  //   playVideo.pause()
+  //   if (window.scrollY <= 920) {
+  //     playVideo.currentTime = 0
+  //   } else if (window.scrollY > 920 && window.scrollY < 2500) {
+  //     setPlay(true)
+  //     playVideo.play()
+  //     if (!timer) {
+  //       timer = setTimeout(() => {
+  //         setPlay(false)
+  //         playVideo.pause()
+  //         clearTimeout(timer)
+  //       }, playVideo.duration * 1000 / 3)
+  //     }
+  //   }
+  // }
+  //
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleScroll)
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll)
+  //   }
+  // }, [location]);
 
   return (
       <div id='CLVChains'>
@@ -132,43 +166,50 @@ export const CLVChains: React.FC = () => {
                   <FeaturesLeft>
                     <video id='playVideo' autoPlay={play} loop muted src='videos/CLVDevPageSequence.mp4'></video>
                   </FeaturesLeft>
-                  <FeaturesRight>
-                    <FeaturesRightItem>
-                      <h3>{t('etheriumCompatible')}</h3>
-                      <span>{t('etheriumCompatibleHint')}</span>
-                      <GrayButton
-                          onClick={() => {
-                            window.open('https://docs.clv.org/clv-chain-developer-guide/dapp-example/setup-dapp-project', "_blank")
-                          }}
-                      >{t('learnMore')}</GrayButton>
-                    </FeaturesRightItem>
-                    <FeaturesRightItem>
-                      <h3>{t('EconomicIncentive')}</h3>
-                      <span>{t('EconomicIncentiveHint')}</span>
-                      <GrayButton
-                          onClick={() => {
-                            window.open('https://docs.clv.org/clover-ecosystem/incentive-programs', "_blank")
-                          }}
-                      >{t('learnMore')}</GrayButton>
-                    </FeaturesRightItem>
-                    <FeaturesRightItem>
-                      <h3>{t('highStakingReturn')}</h3>
-                      <p>Current avg. APY <span>26.62%</span></p>
-                      <span>{t('highStakingReturnHint')}</span>
-                      <Btns>
-                        <NormalButton
-                            width='316px'
+                  <FeaturesRight ref={ref}>
+                    <div
+                        style={{backgroundImage: scrollIndex === 0 ? '-webkit-linear-gradient(top, #fff, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0))' :
+                              scrollIndex === 1 ? '-webkit-linear-gradient(top, rgba(255, 255, 255, 0), #fff, #fff, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0))' :
+                              scrollIndex === 2 ?'-webkit-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), #fff, #fff, rgba(255, 255, 255, 0))' :
+                                  '-webkit-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), #fff, #fff)'}}
+                    >
+                      <FeaturesRightItem>
+                        <h3>{t('etheriumCompatible')}</h3>
+                        <span>{t('etheriumCompatibleHint')}</span>
+                        <GrayButton
                             onClick={() => {
-                              window.open('https://apps.apple.com/app/clover-wallet/id1570072858', "_blank")
+                              window.open('https://docs.clv.org/clv-chain-developer-guide/dapp-example/setup-dapp-project', "_blank")
                             }}
-                        >{t('stakeOnMobile')}</NormalButton>
-                        <GrayButton width='316px'>{t('enterCLVPortal')}</GrayButton>
-                      </Btns>
-                    </FeaturesRightItem>
-                    <FeaturesRightItem>
-                      <h3>{t('smartContractsGovernance')}</h3>
-                      <span>{t('smartContractsGovernanceHint')}</span>
-                    </FeaturesRightItem>
+                        >{t('learnMore')}</GrayButton>
+                      </FeaturesRightItem>
+                      <FeaturesRightItem>
+                        <h3>{t('EconomicIncentive')}</h3>
+                        <span>{t('EconomicIncentiveHint')}</span>
+                        <GrayButton
+                            onClick={() => {
+                              window.open('https://docs.clv.org/clover-ecosystem/incentive-programs', "_blank")
+                            }}
+                        >{t('learnMore')}</GrayButton>
+                      </FeaturesRightItem>
+                      <FeaturesRightItem>
+                        <h3>{t('highStakingReturn')}</h3>
+                        <p>Current avg. APY <span>26.62%</span></p>
+                        <span>{t('highStakingReturnHint')}</span>
+                        <Btns>
+                          <NormalButton
+                              width='316px'
+                              onClick={() => {
+                                window.open('https://apps.apple.com/app/clover-wallet/id1570072858', "_blank")
+                              }}
+                          >{t('stakeOnMobile')}</NormalButton>
+                          <GrayButton width='316px'>{t('enterCLVPortal')}</GrayButton>
+                        </Btns>
+                      </FeaturesRightItem>
+                      <FeaturesRightItem>
+                        <h3>{t('smartContractsGovernance')}</h3>
+                        <span>{t('smartContractsGovernanceHint')}</span>
+                      </FeaturesRightItem>
+                    </div>
                   </FeaturesRight>
                 </FeaturesContent>
               </Features>
@@ -466,6 +507,7 @@ const Btns = styled.div`
   align-items: center;
   div:first-child {
     margin-right: 16px;
+    -webkit-text-fill-color: #0C0B0B!important;;
   }
 `
 
@@ -493,6 +535,7 @@ const FeaturesTitle = styled.div`
 const FeaturesContent = styled.div`
   width: 100%;
   display: flex;
+  align-items: center;
   margin-top: 64px;
 `
 
@@ -508,9 +551,14 @@ const FeaturesLeft = styled.div`
 
 const FeaturesRight = styled.div`
   width: 50%;
-
-  &>div:last-child {
-    margin: 0;
+  height: 600px;
+  overflow-y: auto;
+  &>div {
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    &>div:last-child {
+      margin-bottom: 0;
+    }
   }
 `
 

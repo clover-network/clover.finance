@@ -215,6 +215,12 @@ const FooterTopRight = styled.div<{
     line-height: 52px;
     letter-spacing: 0.008em;
     color: ${({isWallet}) => (isWallet ? '#000000' : '#FFFFFF')};
+    text-decoration: none;
+    &:hover {
+      background-image:-webkit-linear-gradient(right, #9BDAF6, #BDFDE2);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
   }
 `
 
@@ -270,6 +276,8 @@ const SocialsImg = styled.img`
   width: 24px;
   height: 24px;
   margin-right: 20px;
+  transition: 0.3s;
+
   &:hover {
     opacity: 0.8;
   }

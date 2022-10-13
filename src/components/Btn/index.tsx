@@ -10,7 +10,9 @@ export const NormalButton = styled.div<{
   height: ${({ height }) => (height ? height : '64px')};
   min-width: fit-content;
   white-space: nowrap;
-  background: linear-gradient(45.66deg, #BDFDE2 8.33%, #9BDAF6 94.75%);
+  --c1: #BDFDE2;
+  --c2: #9BDAF6;
+  background: linear-gradient(90deg, var(--c1, #f6d365), var(--c2, #fda085) 51%, var(--c1, #f6d365)) var(--x, 0)/ 200%;
   border-radius: 32px;
   font-family: Inter;
   font-weight: 500;
@@ -22,10 +24,10 @@ export const NormalButton = styled.div<{
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background 0.3s, color 0.3s;
+  transition: 0.3s;
   
   &:hover {
-    background: linear-gradient(252.09deg, #BDFDE2 21.95%, #9BDAF6 75.57%);
+    --x: 100%;
   }
 
   &:disabled {
@@ -59,9 +61,9 @@ export const GrayButton = styled.div<{
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.3s, color 0.3s;
   opacity: ${({ disabled }) => (disabled ? 0.6 : 1)};
   cursor: ${({ disabled }) => (disabled ? 'unset' : 'pointer')};
+  transition: 0.3s;
 
   svg {
     width: 20px;
