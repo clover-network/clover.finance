@@ -1,10 +1,11 @@
-import React, {useState, useEffect, useRef, useCallback} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import styled, { css } from "styled-components";
 import { breakpoint } from "../mixins/breakpoint";
 import { t } from '../i18n/intl';
 import { Footer } from './components/Footer';
 import { GrayButton, NormalButton } from '../components/Btn';
 import { useRouter } from 'next/router';
+import {debounce} from "@material-ui/core";
 
 export const CLVChains: React.FC = () => {
   const location = useRouter();
@@ -12,13 +13,48 @@ export const CLVChains: React.FC = () => {
   const [play, setPlay] = useState(false)
   const [scrollIndex, setScrollIndex] = useState(0)
   const ref: any = useRef()
+  let intervalRewind: any;
 
-  const handleScroll1 = useCallback(() => {
+  const rewind = (rewindSpeed: any, stopTime: number) => {
     const playVideo: any = document.getElementById('playVideo')
-    let timer: any = null
-    if (ref.current.scrollTop === 0) {
-      playVideo.currentTime = 0
+    clearInterval(intervalRewind);
+    const startSystemTime = new Date().getTime();
+    const startVideoTime = playVideo.currentTime;
+
+    intervalRewind = setInterval(function(){
+      playVideo.playbackRate = 1.0;
+      if(playVideo.currentTime == 0){
+        clearInterval(intervalRewind);
+        playVideo.pause();
+      } else {
+        const elapsed = new Date().getTime()-startSystemTime;
+        playVideo.currentTime = Math.max(startVideoTime - elapsed*rewindSpeed/1000.0, 0);
+        setTimeout(() => {
+          clearInterval(intervalRewind);
+          playVideo.pause();
+        }, stopTime * 1000)
+      }
+    }, 30);
+  }
+  const handleScroll = (e: any) => {
+    let mouseDown
+    const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1
+    if (isFirefox) {
+      if (e.detail > 0) {
+        mouseDown = true
+      } else {
+        mouseDown = false
+      }
+    } else {
+      if (e.wheelDelta > 0) {
+        mouseDown = true
+      } else {
+        mouseDown = false
+      }
     }
+
+    const { scrollTop } = ref.current
+    const playVideo: any = document.getElementById('playVideo')
 
     if (ref.current.scrollTop >= 0 && ref.current.scrollTop < 200) {
       setScrollIndex(0)
@@ -29,6 +65,22 @@ export const CLVChains: React.FC = () => {
     } else {
       setScrollIndex(3)
     }
+
+    if (mouseDown) {
+      const time = scrollTop > 800 ? playVideo.duration / 3 * 1 : (scrollTop > 100 && scrollTop <= 800) ? playVideo.duration / 3 * 2 : playVideo.duration
+      rewind(1.0, time)
+    } else {
+      debounceScroll()
+    }
+  }
+
+  const debounceScroll = debounce(() => {
+    let timer: any = null
+    clearTimeout(timer)
+    const { scrollTop } = ref.current
+    const playVideo: any = document.getElementById('playVideo')
+    const time = scrollTop <= 300 ? playVideo.duration * 1000 / 3 : (scrollTop > 300 && scrollTop <= 800) ? playVideo.duration * 1000 / 3 * 2 : playVideo.duration * 1000
+
     setPlay(true)
     playVideo.play()
     if (!timer) {
@@ -36,13 +88,16 @@ export const CLVChains: React.FC = () => {
         setPlay(false)
         playVideo.pause()
         clearTimeout(timer)
-      }, playVideo.duration * 1000 / 3)
+      }, time)
     }
-  }, [])
+  }, 100)
+
   useEffect(() => {
+    const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1
+    const mousewheel = isFirefox ? 'DOMMouseScroll' : 'mousewheel'
     const div = ref.current
-    div.addEventListener("scroll", handleScroll1)
-  }, [handleScroll1])
+    div.addEventListener(mousewheel, handleScroll)
+  }, [handleScroll])
 
   const faqsList = [
     {
@@ -164,7 +219,7 @@ export const CLVChains: React.FC = () => {
                 </FeaturesTitle>
                 <FeaturesContent>
                   <FeaturesLeft>
-                    <video id='playVideo' autoPlay={play} loop muted src='videos/CLVDevPageSequence.mp4'></video>
+                    <video id='playVideo' autoPlay={play} muted src='videos/CLVDevPageSequence.mp4'></video>
                   </FeaturesLeft>
                   <FeaturesRight ref={ref}>
                     <div
@@ -553,6 +608,10 @@ const FeaturesRight = styled.div`
   width: 50%;
   height: 600px;
   overflow-y: auto;
+  overscroll-behavior: contain;
+  &::-webkit-scrollbar {
+    display: none;
+  }
   &>div {
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
