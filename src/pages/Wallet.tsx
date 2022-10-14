@@ -572,6 +572,7 @@ const YourPassportBottomLeft = styled.div`
         color: #0C0B0B;
         display: flex;
         align-items: center;
+        margin: 0;
         span {
           display: inline-block;
           width: 5px;

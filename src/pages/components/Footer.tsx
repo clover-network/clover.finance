@@ -61,7 +61,7 @@ export const Footer = ({isWallet}: FooterProps) => {
                   </Link>
                   <Link>
                     <a
-                      href=""
+                      href="https://portal.clv.org"
                       target="_blank"
                       rel="noreferrer"
                     >

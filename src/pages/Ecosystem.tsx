@@ -179,10 +179,12 @@ export const Ecosystem: React.FC = () => {
               <ToolsOnCLVContent>
                 <ToolsOnCLVItem>
                   <div>
-                    <img src='images/clv_icon1.svg' alt='' />
-                    <span>{t('integrateCLVWallet')}</span>
+                    <div>
+                      <img src='images/clv_icon1.svg' alt='' />
+                      <span>{t('integrateCLVWallet')}</span>
+                    </div>
+                    <span>{t('integrateCLVWalletHint')}</span>
                   </div>
-                  <span>{t('integrateCLVWalletHint')}</span>
                   <NormalButton
                     onClick={() =>
                       window.open(
@@ -193,8 +195,10 @@ export const Ecosystem: React.FC = () => {
                   >{t('integrate')}</NormalButton>
                 </ToolsOnCLVItem>
                 <ToolsOnCLVItem>
-                  <div>{t('buildWithCLV')}</div>
-                  <span>{t('buildWithCLVHint')}</span>
+                  <div>
+                    <div>{t('buildWithCLV')}</div>
+                    <span>{t('buildWithCLVHint')}</span>
+                  </div>
                   <GrayButton
                     onClick={() =>
                       window.open(
@@ -205,13 +209,17 @@ export const Ecosystem: React.FC = () => {
                   >{t('startBuilding')}</GrayButton>
                 </ToolsOnCLVItem>
                 <ToolsOnCLVItem>
-                  <div>{t('CLVPortal')}</div>
-                  <span>{t('CLVPortalHint2')}</span>
+                  <div>
+                    <div>{t('CLVPortal')}</div>
+                    <span>{t('CLVPortalHint2')}</span>
+                  </div>
                   <GrayButton>{t('learnMore')}</GrayButton>
                 </ToolsOnCLVItem>
                 <ToolsOnCLVItem>
-                  <div>{t('forBuilders')}</div>
-                  <span>{t('forBuildersHint')}</span>
+                  <div>
+                    <div>{t('forBuilders')}</div>
+                    <span>{t('forBuildersHint')}</span>
+                  </div>
                   <Btns>
                     <GrayButton
                       width='316px'
@@ -605,30 +613,35 @@ const ToolsOnCLVItem = styled.div`
   border-radius: 32px;
   padding: 48px;
   height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   
   &>div:first-child {
-    display: flex;
-    align-items: center;
-    img {
-      width: 32px;
-      margin-right: 16px;
+    &>div {
+      display: flex;
+      align-items: center;
+      img {
+        width: 32px;
+        margin-right: 16px;
+      }
+      color: #FFFFFF;
+      font-weight: 590;
+      font-size: 32px;
+      line-height: 40px;
+      letter-spacing: 0.008em;
     }
-    color: #FFFFFF;
-    font-weight: 590;
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: 0.008em;
-  }
-  &>span {
-    font-family: Inter;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 28px;
-    letter-spacing: 0.006em;
-    color: #FFFFFF;
-    opacity: 0.6;
-    margin: 24px 0;
-    display: inline-block;
+    &>span {
+      font-family: Inter;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 28px;
+      letter-spacing: 0.006em;
+      color: #FFFFFF;
+      opacity: 0.6;
+      margin: 24px 0;
+      display: inline-block;
+    }
   }
 `
 

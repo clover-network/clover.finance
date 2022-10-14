@@ -118,20 +118,22 @@ const LogIn = styled.div`
   line-height: 24px;
   letter-spacing: 0.006em;
   color: #0C0B0B;
-  margin-right: 8px;
+  cursor: pointer;
 `
 
-const SignUp = styled.div`
-  padding: 8px 18px;
-  background: #0C0B0B;
-  border-radius: 8px;
-  font-family: Inter;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0.006em;
-  color: #FFFFFF;
-`
+// const SignUp = styled.div`
+//   padding: 8px 18px;
+//   background: #0C0B0B;
+//   border-radius: 8px;
+//   font-family: Inter;
+//   font-weight: 400;
+//   font-size: 16px;
+//   line-height: 24px;
+//   letter-spacing: 0.006em;
+//   color: #FFFFFF;
+//   margin-left: 8px;
+//   cursor: pointer;
+// `
 
 const ButtonIcon = styled.div`
   display: flex;
@@ -187,8 +189,8 @@ export default function NewHeader(props: any): ReactElement {
                   <img onClick={() => openUrl('https://github.com/clover-network/clover-multichain-mobile-wallet-release/releases/latest/download/clover.apk')} src="images/google_play_icon.svg" alt="" />
                   <img onClick={() => openUrl('https://chrome.google.com/webstore/detail/clv-wallet/nhnkbkgjikgcigadomkphalanndcapjk')} src="images/chrome_icon.svg" alt="" />
                 </ButtonIcon>
-                <LogIn onClick={() => openUrl('https://wallet.clover.finance/')}>Log In</LogIn>
-                <SignUp onClick={() => openUrl('https://wallet.clover.finance/')}>Sign Up</SignUp>
+                <LogIn onClick={() => openUrl('https://portal.clv.org')}>Log In</LogIn>
+                {/*<SignUp onClick={() => openUrl('https://portal.clv.org')}>Sign Up</SignUp>*/}
               </WalletBtns>}
             </HeaderRight>
           </WrapperDesktopOnly>

@@ -13,7 +13,7 @@ export const Main: React.FC = () => {
   const location = useRouter();
   const [play, setPlay] = useState(false)
   const [scrollIndex, setScrollIndex] = useState(0)
-  const ref = useRef()
+  const ref: any = useRef()
 
   const handleScroll1 = useCallback(() => {
     const playVideo: any = document.getElementById('playVideo1')
