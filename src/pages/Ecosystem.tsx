@@ -306,7 +306,7 @@ const TextWrapper = styled.div`
   margin-right: 16px;
 
   & > div:first-child {
-    font-weight: 590;
+    font-weight: 600;
     font-size: 72px;
     line-height: 76px;
     letter-spacing: 0.008em;
@@ -342,7 +342,7 @@ const ContentBottom = styled.div`
 `;
 
 const ContentBottomTitle = styled.div`
-  font-weight: 590;
+  font-weight: 600;
   font-size: 32px;
   line-height: 40px;
   letter-spacing: 0.008em;
@@ -408,9 +408,17 @@ const ContentBottomItem = styled.div`
     width: 160px;
     margin-bottom: 8px;
     margin-top: -40px;
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out;
   }
   span {
     word-break: break-word;
+  }
+  
+  &:hover {
+    img {
+      transform: translateY(-10px);
+    }
   }
 `;
 
@@ -457,7 +465,7 @@ const CLVChain = styled.div`
 const CLVChainTitle = styled.div`
   width: 35%;
   h3 {
-    font-weight: 590;
+    font-weight: 600;
     font-size: 32px;
     line-height: 40px;
     letter-spacing: 0.008em;
@@ -555,7 +563,7 @@ const ProductSolutionItem = styled.div`
 const ProductSolutionRight = styled.div`
   width: 50%;
   h3 {
-    font-weight: 590;
+    font-weight: 600;
     font-size: 48px;
     line-height: 60px;
     letter-spacing: 0.008em;
@@ -580,7 +588,7 @@ const ToolsOnCLV = styled.div`
 
 const ToolsOnCLVTitle = styled.div`
   width: 50%;
-  font-weight: 590;
+  font-weight: 600;
   font-size: 64px;
   line-height: 68px;
   letter-spacing: 0.008em;
@@ -626,7 +634,7 @@ const ToolsOnCLVItem = styled.div`
         margin-right: 16px;
       }
       color: #FFFFFF;
-      font-weight: 590;
+      font-weight: 600;
       font-size: 32px;
       line-height: 40px;
       letter-spacing: 0.008em;

@@ -169,7 +169,7 @@ export const Developers: React.FC = () => {
               <div>
                 <h3>{t('getInvolvedInTheIndustry')}</h3>
                 <span>{t('getInvolvedInTheIndustryHint')}</span>
-                <GrayButton>{t('learnMore')}</GrayButton>
+                <GrayButton onClick={() => window.open('https://twitter.com/clv_org')}>{t('learnMore')}</GrayButton>
               </div>
             </GetInvolvedInTheIndustry>
           </div>
@@ -264,7 +264,7 @@ const TextWrapper = styled.div`
   margin-right: 16px;
 
   & > div:first-child {
-    font-weight: 590;
+    font-weight: 600;
     font-size: 72px;
     line-height: 76px;
     letter-spacing: 0.008em;
@@ -315,7 +315,7 @@ const ContentBottomLeftTitle = styled.div`
   justify-content: space-between;
   margin-bottom: 24px;
   h3 {
-    font-weight: 590;
+    font-weight: 600;
     font-size: 24px;
     line-height: 28px;
     letter-spacing: 0.008em;
@@ -369,7 +369,7 @@ const ContentBottomRight = styled.div`
   margin-left: 48px;
   width: 50%;
   h3 {
-    font-weight: 590;
+    font-weight: 600;
     font-size: 48px;
     line-height: 60px;
     letter-spacing: 0.008em;
@@ -400,7 +400,7 @@ const JoinCommunityTitle = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  font-weight: 590;
+  font-weight: 600;
   font-size: 64px;
   line-height: 68px;
   letter-spacing: 0.008em;
@@ -428,7 +428,7 @@ const JoinCommunityItem = styled.div`
   border-radius: 32px;
   
   h3 {
-    font-weight: 590;
+    font-weight: 600;
     font-size: 32px;
     line-height: 40px;
     letter-spacing: 0.008em;
@@ -460,7 +460,7 @@ const InterestedPartnerships = styled.div`
       padding-right: 48px;
     }
     h3 {
-      font-weight: 590;
+      font-weight: 600;
       font-size: 48px;
       line-height: 60px;
       letter-spacing: 0.008em;

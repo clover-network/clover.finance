@@ -251,7 +251,7 @@ const TextWrapper = styled.div`
   margin-right: 60px;
 
   & > div {
-    font-weight: 590;
+    font-weight: 600;
     font-size: 72px;
     line-height: 76px;
     letter-spacing: 0.008em;
@@ -282,7 +282,7 @@ const TextWrapper = styled.div`
 
 const ContentBottom = styled.div`
   margin-bottom: -200px;
-  margin-top: -5px;
+  //margin-top: -5px;
 `
 
 const ContentBottomTop = styled.div`
@@ -297,7 +297,7 @@ const ContentBottomTop = styled.div`
 
 const ContentBottomTopLeft = styled.div`
   div {
-    font-weight: 590;
+    font-weight: 600;
     font-size: 48px;
     line-height: 60px;
     letter-spacing: 0.008em;
@@ -344,7 +344,7 @@ const IdealAvailable = styled.div`
 
 const IdealAvailableTitle = styled.div`
   div {
-    font-weight: 590;
+    font-weight: 600;
     font-size: 64px;
     line-height: 68px;
     letter-spacing: 0.008em;
@@ -408,7 +408,7 @@ const IdealAvailableItemContent = styled.div`
   }
 
   & > div {
-    font-weight: 590;
+    font-weight: 600;
     font-size: 48px;
     line-height: 60px;
   }
@@ -468,7 +468,7 @@ const YourPassportTitle = styled.div`
   align-items: flex-end;
   h3 {
     width: 50%;
-    font-weight: 590;
+    font-weight: 600;
     font-size: 64px;
     line-height: 68px;
     letter-spacing: 0.008em;
@@ -545,7 +545,7 @@ const YourPassportBottomLeft = styled.div`
   & > div {
     margin-left: 16px;
     h3 {
-      font-weight: 590;
+      font-weight: 600;
       font-size: 40px;
       line-height: 52px;
       letter-spacing: 0.008em;
@@ -615,7 +615,7 @@ const JoinUsTitle = styled.div`
   h3 {
     display: flex;
     align-items: center;
-    font-weight: 590;
+    font-weight: 600;
     font-size: 48px;
     line-height: 60px;
     letter-spacing: 0.008em;
@@ -680,11 +680,14 @@ const LandingContainer = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
+  max-height: 1000px;
   video {
     position: absolute;
     z-index: 0;
     top: 0;
-    width: 100%;
+    height: 100%;
+    width: 100vw;
+    object-fit: fill;
   }
   & > div {
     z-index: 1;

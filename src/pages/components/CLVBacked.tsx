@@ -13,7 +13,7 @@ const CLVIsBackedTop = styled.div`
 `;
 const CLVIsBackedTitle = styled.div`
   width: 50%;
-  font-weight: 590;
+  font-weight: 600;
   font-size: 48px;
   line-height: 60px;
   width: 50%;

@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 import NewHeader from '../components/newHeader';
 import { Main } from './Main';
 import { About } from './About';
-import { CLVChains } from './CLVChains';
+import { CLVChain } from './CLVChain';
 import { Wallet } from './Wallet';
 import { Developers } from './Developers';
 import { Ecosystem } from './Ecosystem';
@@ -27,7 +27,7 @@ export const NewContent = () => {
       path: "/?type=about",
     },
     {
-      name: t('CLVChains'),
+      name: t('CLVChain'),
       path: "/?type=CLVChain",
     },
     {
@@ -86,7 +86,7 @@ export const NewContent = () => {
       />
       {(selectTab.name === '' || window.location.search === '') && <Main />}
       {selectTab.name === t('about') && <About />}
-      {selectTab.name === t('CLVChains') && <CLVChains />}
+      {selectTab.name === t('CLVChain') && <CLVChain />}
       {selectTab.name === t('wallet') && <Wallet />}
       {selectTab.name === t('developers') && <Developers />}
       {selectTab.name === t('ecosystem') && <Ecosystem />}

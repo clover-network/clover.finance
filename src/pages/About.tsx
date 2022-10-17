@@ -176,7 +176,15 @@ export const About: React.FC = () => {
                     <h3>(Q1)</h3>
                     <div>
                       <img src='images/progress_icon1_white.svg' alt='' />
-                      <span>TBA</span>
+                      <span>Enhanced version of CLV wallet; improved user experience and web3 features</span>
+                    </div>
+                    <div>
+                      <img src='images/progress_icon1_white.svg' alt='' />
+                      <span>Integration of new blockchains into CLV ecosystem</span>
+                    </div>
+                    <div>
+                      <img src='images/progress_icon1_white.svg' alt='' />
+                      <span>Continue to build strategic partnerships with Web3 and Defi entities.</span>
                     </div>
                   </ProgressQ2Right>
                 </ProgressItem>
@@ -194,8 +202,8 @@ export const About: React.FC = () => {
                     <span>Release 1.01v</span>
                   </NewsUpdateItemLeft>
                   <NewsUpdateItemRight>
-                    <div style={{fontSize: '48px',lineHeight: '60px'}}>{t('preparations')}</div>
-                    <span style={{fontSize: '20px',lineHeight: '32px'}}>{t('Q1Hint')}</span>
+                    <div onClick={() => {window.open('https://medium.com/@clv_org/introducing-clvs-cornerstones-meet-more-clv-team-members-f88fb90900da')}} style={{fontSize: '48px',lineHeight: '60px'}}>{t('introducingCLV')}</div>
+                    <span>{t('Q1Hint')}</span>
                   </NewsUpdateItemRight>
                 </NewsUpdateItem>
                 <NewsUpdateItem>
@@ -203,8 +211,8 @@ export const About: React.FC = () => {
                     <span>19 May 2022</span>
                   </NewsUpdateItemLeft>
                   <NewsUpdateItemRight>
-                    <div>{t('EcosystemInfrastructure')}</div>
-                    <span>{t('Q1Hint')}</span>
+                    <div onClick={() => {window.open('https://medium.com/@clv_org/seamless-access-to-all-things-defi-with-clv-8c4002a001b4')}}>{t('seamlessAccess')}</div>
+                    <span>{t('seamlessAccessHint')}</span>
                   </NewsUpdateItemRight>
                 </NewsUpdateItem>
                 <NewsUpdateItem>
@@ -212,8 +220,8 @@ export const About: React.FC = () => {
                     <span>15 Apr 2022</span>
                   </NewsUpdateItemLeft>
                   <NewsUpdateItemRight>
-                    <div>{t('nativeParachain')}</div>
-                    <span>{t('Q1Hint')}</span>
+                    <div onClick={() => {window.open('https://medium.com/@clv_org/clv-quarterly-wrap-up-a-look-into-q3-2022-722a7baeae11')}}>{t('CLVQuarterly')}</div>
+                    <span>{t('CLVQuarterlyHint')}</span>
                     <GrayButton margin="80px 0 0 0">{t('seeMore')}</GrayButton>
                   </NewsUpdateItemRight>
                 </NewsUpdateItem>
@@ -313,7 +321,7 @@ const TextWrapper = styled.div`
   margin-right: 16px;
 
   & > div:first-child {
-    font-weight: 590;
+    font-weight: 600;
     font-size: 72px;
     line-height: 76px;
     letter-spacing: 0.008em;
@@ -358,7 +366,7 @@ const ContentBottomLeft = styled.div`
   height: 248px;
   
   h3 {
-    font-weight: 590;
+    font-weight: 600;
     font-size: 32px;
     line-height: 40px;
     letter-spacing: 0.008em;
@@ -385,7 +393,7 @@ const ContentBottomRight = styled.div`
   height: 248px;
 
   h3 {
-    font-weight: 590;
+    font-weight: 600;
     font-size: 32px;
     line-height: 40px;
     letter-spacing: 0.008em;
@@ -428,7 +436,7 @@ const Progress = styled.div`
 
 const ProgressTitle = styled.div`
   width: 50%;
-  font-weight: 590;
+  font-weight: 600;
   font-size: 64px;
   line-height: 68px;
   letter-spacing: 0.008em;
@@ -464,7 +472,7 @@ const ProgressQ0Left = styled.div`
   align-items: flex-end;
 
   div {
-    font-weight: 590;
+    font-weight: 600;
     font-size: 64px;
     line-height: 68px;
     letter-spacing: 0.008em;
@@ -503,7 +511,7 @@ const ProgressQ0Right = styled.div`
     }
   }
   h3 {
-    font-weight: 590;
+    font-weight: 600;
     font-size: 48px;
     line-height: 52px;
     letter-spacing: 0.008em;
@@ -520,7 +528,7 @@ const ProgressQ1Left = styled.div`
   margin-right: 16px;
   
   h3 {
-    font-weight: 590;
+    font-weight: 600;
     font-size: 48px;
     line-height: 52px;
     text-align: right;
@@ -561,7 +569,7 @@ const ProgressQ1Right = styled.div`
   justify-content: center;
   
   div {
-    font-weight: 590;
+    font-weight: 600;
     font-size: 64px;
     line-height: 68px;
     letter-spacing: 0.008em;
@@ -628,7 +636,8 @@ const NewsUpdateItemRight = styled.div`
   width: 50%;
   
   div:first-child {
-    font-weight: 590;
+    cursor: pointer;
+    font-weight: 600;
     font-size: 32px;
     line-height: 40px;
     letter-spacing: 0.008em;
@@ -666,7 +675,7 @@ const GlobalPresenseContentTop = styled.div`
   div {
     width: 50%;
     h3 {
-      font-weight: 590;
+      font-weight: 600;
       font-size: 32px;
       line-height: 40px;
       letter-spacing: 0.008em;
@@ -697,6 +706,7 @@ const GlobalPresenseContentBottom = styled.div`
     top: -150px;
     width: 100%;
     height: 100%;
+    filter: hue-rotate(180deg) saturate(10%) contrast(150%) brightness(400%);
 
     .Chain-content {
       background: #000000 !important;

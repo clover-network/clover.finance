@@ -74,11 +74,10 @@ export const Main: React.FC = () => {
       debounceScroll()
     }
   }
+  let timer: any = null
 
   const debounceScroll = debounce(() => {
-    let timer: any = null
     clearTimeout(timer)
-
     const { scrollTop } = ref.current
     const playVideo: any = document.getElementById('playVideo1')
     const time = scrollTop <= 200 ? playVideo.duration * 1000 / 3 : (scrollTop > 200 && scrollTop <= 400) ? playVideo.duration * 1000 / 3 * 2 : playVideo.duration * 1000
@@ -234,6 +233,8 @@ export const Main: React.FC = () => {
                   <GrayButton
                       margin='0 0 24px'
                       color="#0C0B0B"
+                      hoverBackground='#ffffff'
+                      disabledBackground='rgba(255, 255, 255, 0.8)'
                       onClick={() =>
                           window.open("https://docs.clv.org/clv-chain-developer-guide/introduction", "_blank")
                       }
@@ -241,12 +242,16 @@ export const Main: React.FC = () => {
                   <GrayButton
                       margin='0 0 24px'
                       color="#0C0B0B"
+                      hoverBackground='#ffffff'
+                      disabledBackground='rgba(255, 255, 255, 0.8)'
                       onClick={() =>
                           window.open("https://github.com/clover-network", "_blank")
                       }
                   >{t('getGithubRepo')}</GrayButton>
                   <GrayButton
                       color="#0C0B0B"
+                      hoverBackground='#ffffff'
+                      disabledBackground='rgba(255, 255, 255, 0.8)'
                       onClick={() =>
                           window.open("https://docs.clv.org/clv-chain-developer-guide/using-testnet", "_blank")
                       }
@@ -315,7 +320,7 @@ const TextWrapper = styled.div`
   min-height: 680px;
 
   & > div:first-child {
-    font-weight: 590;
+    font-weight: 600;
     font-size: 72px;
     line-height: 76px;
     letter-spacing: 0.008em;
@@ -367,6 +372,11 @@ const BalanceItem = styled.div`
   padding: 20px;
   margin-right: 16px;
   flex: 1;
+  border: 2px solid transparent;
+
+  &:hover {
+    border: 2px solid #0C0B0B;
+  }
 
   &:last-child {
     margin: 0;
@@ -374,7 +384,7 @@ const BalanceItem = styled.div`
 
   h3 {
     font-family: RobotoFlex;
-    font-weight: 590;
+    font-weight: 600;
     font-size: 32px;
     line-height: 40px;
     letter-spacing: 0.008em;
@@ -411,7 +421,7 @@ const Advantages = styled.div`
 
 const AdvantagesTitle = styled.div`
   width: 50%;
-  font-weight: 590;
+  font-weight: 600;
   font-size: 64px;
   line-height: 68px;
   letter-spacing: 0.008em;
@@ -464,7 +474,7 @@ const AdvantagesRightItem = styled.div`
   flex-direction: column;
   margin-bottom: 120px;
   h3 {
-    font-weight: 590;
+    font-weight: 600;
     font-size: 48px;
     line-height: 60px;
     letter-spacing: 0.008em;
@@ -501,7 +511,7 @@ const ToolsOnCLVTitle = styled.div`
   justify-content: flex-end;
   & > div {
     width: 50%;
-    font-weight: 590;
+    font-weight: 600;
     font-size: 64px;
     line-height: 68px;
     letter-spacing: 0.008em;
@@ -537,7 +547,7 @@ const ToolsOnCLVContentLeft = styled.div`
   &>div:first-child {
     div {
       color: #141414;
-      font-weight: 590;
+      font-weight: 600;
       font-size: 32px;
       line-height: 40px;
       letter-spacing: 0.008em;
@@ -577,7 +587,7 @@ const ToolsOnCLVItem = styled.div`
       margin-right: 16px;
     }
     color: #FFFFFF;
-    font-weight: 590;
+    font-weight: 600;
     font-size: 32px;
     line-height: 40px;
     letter-spacing: 0.008em;

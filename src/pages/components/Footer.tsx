@@ -210,7 +210,7 @@ const FooterTopRight = styled.div<{
   }
   
   a {
-    font-weight: 590;
+    font-weight: 600;
     font-size: 48px;
     line-height: 52px;
     letter-spacing: 0.008em;

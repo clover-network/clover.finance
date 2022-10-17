@@ -42,15 +42,18 @@ export const GrayButton = styled.div<{
   height?: string
   margin?: string
   color?: string
+  hoverBackground?: string
+  disabledBackground?: string
   disabled?: boolean
 }>`
   width: ${({ width }) => (width ? width : '100%')};
   height: ${({ height }) => (height ? height : '64px')};
   margin: ${({ margin }) => (margin ? margin : '0')};
   color: ${({ color }) => (color ? color : '#FFFFFF')};
+  background: ${({ disabledBackground, disabled }) => (disabled && disabledBackground ? disabledBackground : 'transparent')};
   min-width: fit-content;
   white-space: nowrap;
-  border: 1px solid #333232;
+  border: 1px solid ${({ disabled, disabledBackground }) => (disabled ? disabledBackground :  '#333232')};
   border-radius: 32px;
   font-family: Inter;
   font-weight: 500;
@@ -74,6 +77,7 @@ export const GrayButton = styled.div<{
   }
   
   &:hover {
-    border: 1px solid ${({ disabled }) => (disabled ? '#333232' : '#ffffff')};
+    background: ${({ hoverBackground, disabledBackground, disabled }) => (disabled ? disabledBackground : hoverBackground)};
+    border: 1px solid ${({ disabled, disabledBackground }) => (disabled ? disabledBackground :  '#ffffff')};
   }
 `

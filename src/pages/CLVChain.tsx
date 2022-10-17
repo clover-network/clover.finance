@@ -7,7 +7,7 @@ import { GrayButton, NormalButton } from '../components/Btn';
 import { useRouter } from 'next/router';
 import {debounce} from "@material-ui/core";
 
-export const CLVChains: React.FC = () => {
+export const CLVChain: React.FC = () => {
   const location = useRouter();
   const [selectFaq, setSelectFaq] = useState(0)
   const [play, setPlay] = useState(false)
@@ -36,6 +36,8 @@ export const CLVChains: React.FC = () => {
       }
     }, 30);
   }
+
+  let timer: any = null
   const handleScroll = (e: any) => {
     let mouseDown
     const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1
@@ -75,7 +77,7 @@ export const CLVChains: React.FC = () => {
   }
 
   const debounceScroll = debounce(() => {
-    let timer: any = null
+    // let timer: any = null
     clearTimeout(timer)
     const { scrollTop } = ref.current
     const playVideo: any = document.getElementById('playVideo')
@@ -103,13 +105,13 @@ export const CLVChains: React.FC = () => {
     {
       title: "What is the difference between the CLV M-chain and the CLV P-chain?",
       content: <div>
-        <span>The M-chain is the CLV mainnet, used for governance and exchange purposes, while the P-Chain is the CLV Parachain. CLV P-Chain is an EVM-compatible smart contract chain currently connected to Polkadot Mainnet as one of the Parachains. Both blockchains are validated and secured by the Substrate framework. You can read more about it in this documentation.</span>
+        <span>The M-chain is the CLV mainnet, used for governance and exchange purposes, while the P-Chain is the CLV Parachain. CLV P-Chain is an EVM-compatible smart contract chain currently connected to Polkadot Mainnet as one of the Parachains. Both blockchains are validated and secured by the Substrate framework. </span>
       </div>
     },
     {
       title: "How do I claim my staking rewards using the CLV wallet on mobile?",
       content: <div>
-        <span>You do not have to do this manually, any staked parties can claim, and you will automatically receive staking rewards along with the others.</span>
+        <span>All claims are made automatically. There is no need to do anything manually.</span>
       </div>
     },
     {
@@ -122,13 +124,13 @@ export const CLVChains: React.FC = () => {
     {
       title: "Why did my CLV Wallet swap fail?",
       content: <div>
-        <span>When you execute a swap through CLV Wallet, you interact directly with the liquidity source that offered the best price for your requested trade. The main reason why your swap might have failed is likely to be slippage. When you perform a swap, you are agreeing to a price quote. If the price of the swap goes outside of the allowed slippage set (typically 2.5%), it will fail, in order to prevent you from seeing a huge variance in value when completed. There is a higher risk of slippage if you're trading a pair that includes a volatile asset, as its price is more likely to change whilst the transaction is processing.If your swap fails, you can retry the swap, but this time, input a higher slippage percentage.</span>
+        <span>When you execute a swap through CLV Wallet, you interact directly with the liquidity source that offered the best price for your requested trade. The main reason why your swap might have failed is likely to be slippage. When you perform a swap, you agree to a price quote. If the price of the swap goes outside of the allowed slippage set (typically 2.5%), it will fail, in order to prevent you from seeing a huge variance in value when completed. There is a higher risk of slippage if you're trading a pair that includes a volatile asset, as its price is more likely to change while processing the transaction. If your swap fails, you can retry the swap, but this time, input a higher slippage percentage.</span>
       </div>
     },
     {
       title: "Why did my CLV Wallet bridge fail?",
       content: <div>
-        <span>The main reason why your bridge might have failed is that you do not have enough native tokens in the network that owned your tokens before the bridge. Except the cross-chain fee appeared in the bridge page, you also need to prepare the native tokens to pay the transaction fee.</span>
+        <span>The most common reason why bridging fails is due to an insufficient balance of native tokens in your account. Therefore, you must ensure you own sufficient native tokens to pay the cross-chain and transaction fees.</span>
       </div>
     },
   ]
@@ -161,7 +163,7 @@ export const CLVChains: React.FC = () => {
   // }, [location]);
 
   return (
-      <div id='CLVChains'>
+      <div id='CLVChain'>
         <Background />
         <LandingContainer>
           <IntrodusingTheCLV>
@@ -288,7 +290,7 @@ export const CLVChains: React.FC = () => {
                       <span>(ERC20)</span>
                     </ClvTokenBottomItem>
                     <ClvTokenBottomItem>
-                      <span>BNB Chain</span>
+                      <span>BNB Smart Chain</span>
                       <span>(BEP20)</span>
                     </ClvTokenBottomItem>
                     <ClvTokenBottomItem>
@@ -449,7 +451,7 @@ const TextWrapper = styled.div`
   margin-right: 16px;
 
   & > div:first-child {
-    font-weight: 590;
+    font-weight: 600;
     font-size: 72px;
     line-height: 76px;
     letter-spacing: 0.008em;
@@ -573,7 +575,7 @@ const Features = styled.div`
 
 const FeaturesTitle = styled.div`
   width: 50%;
-  font-weight: 590;
+  font-weight: 600;
   font-size: 64px;
   line-height: 68px;
   letter-spacing: 0.008em;
@@ -626,7 +628,7 @@ const FeaturesRightItem = styled.div`
   flex-direction: column;
   margin-bottom: 120px;
   h3 {
-    font-weight: 590;
+    font-weight: 600;
     font-size: 48px;
     line-height: 60px;
     letter-spacing: 0.008em;
@@ -682,11 +684,12 @@ const ClvTokenTop = styled.div`
       display: flex;
       align-items: center;
       span {
-        font-weight: 590;
+        font-weight: 600;
         font-size: 64px;
         line-height: 68px;
         letter-spacing: 0.008em;
         color: #BDFDE2;
+        letter-spacing: 0.008em;
       }
       img {
         margin-left: 12px;
@@ -694,7 +697,7 @@ const ClvTokenTop = styled.div`
       }
     }
     h3 {
-      font-weight: 590;
+      font-weight: 600;
       font-size: 48px;
       line-height: 60px;
       letter-spacing: 0.008em;
@@ -768,7 +771,7 @@ const Ecosystem = styled.div`
 
 const EcosystemTitle = styled.div`
   width: 50%;
-  font-weight: 590;
+  font-weight: 600;
   font-size: 64px;
   line-height: 68px;
   letter-spacing: 0.008em;
@@ -812,7 +815,7 @@ const EcosystemItem = styled.div`
         margin-right: 16px;
       }
       h3 {
-        font-weight: 590;
+        font-weight: 600;
         font-size: 32px;
         line-height: 40px;
         letter-spacing: 0.008em;
@@ -841,7 +844,7 @@ const FAQs = styled.div`
 
 const FAQsTitle = styled.div`
   width: 50%;
-  font-weight: 590;
+  font-weight: 600;
   font-size: 64px;
   line-height: 80px;
   letter-spacing: 0.008em;
