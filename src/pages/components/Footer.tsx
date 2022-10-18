@@ -289,6 +289,13 @@ const Links = styled.div<{
   & > div {
     color: ${({isWallet}) => (isWallet ? '#000000' : '#FFFFFF')};
     opacity: 0.6;
+
+    &:hover {
+      opacity: 1;
+      a {
+        color: #fff;
+      }
+    }
   }
 `;
 
