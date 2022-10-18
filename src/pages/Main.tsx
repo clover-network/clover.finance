@@ -165,11 +165,11 @@ export const Main: React.FC = () => {
             </div>
             <BalanceWrapper>
               <BalanceItem>
-                <h3>84,309,967,906</h3>
+                <h3>19,967,906</h3>
                 <span>Total Transactions</span>
               </BalanceItem>
               <BalanceItem>
-                <h3>24,867</h3>
+                <h3>4,867</h3>
                 <span>Transactions per second</span>
               </BalanceItem>
               <BalanceItem>
@@ -177,7 +177,7 @@ export const Main: React.FC = () => {
                 <span>Avg. cost per transaction</span>
               </BalanceItem>
               <BalanceItem>
-                <h3>12,853</h3>
+                <h3>153</h3>
                 <span>Validator nodes</span>
               </BalanceItem>
             </BalanceWrapper>
