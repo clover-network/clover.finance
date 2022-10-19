@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import styled, { css } from "styled-components";
 import { breakpoint } from "../mixins/breakpoint";
 import { t } from '../i18n/intl';
@@ -7,6 +7,16 @@ import { GrayButton, NormalButton } from '../components/Btn';
 import CLVIsBacked from './components/CLVBacked';
 
 export const About: React.FC = () => {
+  const [scrollTop, setScrollTop] = useState(0)
+  const handleScroll = () => {
+    setScrollTop(window.scrollY)
+  }
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [location]);
   return (
     <div>
       <Background/>
@@ -54,40 +64,40 @@ export const About: React.FC = () => {
               <ProgressContent>
                 <ProgressItem>
                   <ProgressQ0Left>
-                    <div>2021</div>
+                    <div className={scrollTop > 550 ? 'animation1' : ''}>2021</div>
                   </ProgressQ0Left>
                   <ProgressQ0Right>
-                    <h3>(Q3)</h3>
-                    <div>
+                    <h3 className={scrollTop > 550 ? 'animation2' : ''}>(Q3)</h3>
+                    <div className={scrollTop > 550 ? 'animation3' : ''}>
                       <img src='images/progress_icon1_white.svg' alt='' />
                       <span>{t('CLVEVMBridge')}</span>
                     </div>
-                    <div>
+                    <div className={scrollTop > 550 ? 'animation3' : ''}>
                       <img src='images/progress_icon1_white.svg' alt='' />
                       <span>{t('walletMultiChain')}</span>
                     </div>
-                    <div>
+                    <div className={scrollTop > 550 ? 'animation3' : ''}>
                       <img src='images/progress_icon1_white.svg' alt='' />
                       <span>{t('walletAuthorizationManagement')}</span>
                     </div>
-                    <div>
+                    <div className={scrollTop > 550 ? 'animation3' : ''}>
                       <img src='images/progress_icon1_white.svg' alt='' />
                       <span>{t('walletSocialAccountLogin')}</span>
                     </div>
-                    <h3>(Q4)</h3>
-                    <div>
+                    <h3 className={scrollTop > 550 ? 'animation2' : ''}>(Q4)</h3>
+                    <div className={scrollTop > 550 ? 'animation3' : ''}>
                       <img src='images/progress_icon1_white.svg' alt='' />
                       <span>{t('CLVDAppInteractiveProtocol')}</span>
                     </div>
-                    <div>
+                    <div className={scrollTop > 550 ? 'animation3' : ''}>
                       <img src='images/progress_icon1_white.svg' alt='' />
                       <span>{t('CLVCrossChainExplorer')}</span>
                     </div>
-                    <div>
+                    <div className={scrollTop > 550 ? 'animation3' : ''}>
                       <img src='images/progress_icon1_white.svg' alt='' />
                       <span>{t('CLVParachainLaunch')}</span>
                     </div>
-                    <div>
+                    <div className={scrollTop > 550 ? 'animation3' : ''}>
                       <img src='images/progress_icon1_white.svg' alt='' />
                       <span>{t('walletMultiChainNFTSupport')}</span>
                     </div>
@@ -95,94 +105,94 @@ export const About: React.FC = () => {
                 </ProgressItem>
                 <ProgressItem>
                   <ProgressQ1Left>
-                    <h3>(Q1)</h3>
-                    <div>
+                    <h3 className={scrollTop > 1200 ? 'animation2' : ''}>(Q1)</h3>
+                    <div className={scrollTop > 1200 ? 'animation3' : ''}>
                       <img src='images/progress_icon1.svg' alt='' />
                       <span>{t('enableCLVEVM')}</span>
                     </div>
-                    <div>
+                    <div className={scrollTop > 1200 ? 'animation3' : ''}>
                       <img src='images/progress_icon1.svg' alt='' />
                       <span>{t('enableCLVEVMGovernance')}</span>
                     </div>
-                    <div>
+                    <div className={scrollTop > 1200 ? 'animation3' : ''}>
                       <img src='images/progress_icon1.svg' alt='' />
                       <span>{t('CLVBlockchainExplorer')}</span>
                     </div>
-                    <div>
+                    <div className={scrollTop > 1200 ? 'animation3' : ''}>
                       <img src='images/progress_icon1.svg' alt='' />
                       <span>{t('validatorProgram')}</span>
                     </div>
-                    <div>
+                    <div className={scrollTop > 1200 ? 'animation3' : ''}>
                       <img src='images/progress_icon1.svg' alt='' />
                       <span>{t('walletAssetSwap')}</span>
                     </div>
-                    <h3>(Q2)</h3>
-                    <div>
+                    <h3 className={scrollTop > 1200 ? 'animation2' : ''}>(Q2)</h3>
+                    <div className={scrollTop > 1200 ? 'animation3' : ''}>
                       <img src='images/progress_icon1.svg' alt='' />
                       <span>{t('enableUniversalCrossChain')}</span>
                     </div>
-                    <div>
+                    <div className={scrollTop > 1200 ? 'animation3' : ''}>
                       <img src='images/progress_icon1.svg' alt='' />
                       <span>{t('upgradableSmartContract')}</span>
                     </div>
-                    <div>
+                    <div className={scrollTop > 1200 ? 'animation3' : ''}>
                       <img src='images/progress_icon1.svg' alt='' />
                       <span>{t('upgradeCLVEVMBridge')}</span>
                     </div>
-                    <div>
+                    <div className={scrollTop > 1200 ? 'animation3' : ''}>
                       <img src='images/progress_icon1.svg' alt='' />
                       <span>{t('CLVWalletAssetBridge')}</span>
                     </div>
-                    <h3>(Q3)</h3>
-                    <div>
+                    <h3 className={scrollTop > 1200 ? 'animation2' : ''}>(Q3)</h3>
+                    <div className={scrollTop > 1200 ? 'animation3' : ''}>
                       <img src='images/progress_icon1.svg' alt='' />
                       <span>{t('powerfulAndStable')}</span>
                     </div>
-                    <div>
+                    <div className={scrollTop > 1200 ? 'animation3' : ''}>
                       <img src='images/progress_icon1.svg' alt='' />
                       <span>{t('nativeParachainAssetSupport')}</span>
                     </div>
-                    <div>
+                    <div className={scrollTop > 1200 ? 'animation3' : ''}>
                       <img src='images/progress_icon1.svg' alt='' />
                       <span>{t('CLVWalletAssetStaking')}</span>
                     </div>
-                    <div>
+                    <div className={scrollTop > 1200 ? 'animation3' : ''}>
                       <img src='images/progress_icon1.svg' alt='' />
                       <span>{t('CLVWalletSupport')}</span>
                     </div>
-                    <h3>(Q4)</h3>
-                    <div>
+                    <h3 className={scrollTop > 1200 ? 'animation2' : ''}>(Q4)</h3>
+                    <div className={scrollTop > 1200 ? 'animation3' : ''}>
                       <img src='images/progress_icon1.svg' alt='' />
                       <span>{t('supportDApps')}</span>
                     </div>
-                    <div>
+                    <div className={scrollTop > 1200 ? 'animation3' : ''}>
                       <img src='images/progress_icon1.svg' alt='' />
                       <span>{t('XCMMultiAssetSupport')}</span>
                     </div>
-                    <div>
+                    <div className={scrollTop > 1200 ? 'animation3' : ''}>
                       <img src='images/progress_icon1.svg' alt='' />
                       <span>{t('CLVAssetsSwap')}</span>
                     </div>
                   </ProgressQ1Left>
                   <ProgressQ1Right>
-                    <div>2022</div>
+                    <div className={scrollTop > 1200 ? 'animation1' : ''}>2022</div>
                   </ProgressQ1Right>
                 </ProgressItem>
                 <ProgressItem>
                   <ProgressQ2Left>
-                    <div>2023</div>
+                    <div className={scrollTop > 2500 ? 'animation1' : ''}>2023</div>
                   </ProgressQ2Left>
                   <ProgressQ2Right>
-                    <h3>(Q1)</h3>
-                    <div>
+                    <h3 className={scrollTop > 2500 ? 'animation2' : ''}>(Q1)</h3>
+                    <div className={scrollTop > 2500 ? 'animation3' : ''}>
                       <img src='images/progress_icon1_white.svg' alt='' />
                       <span>Enhanced version of CLV wallet; improved user experience and web3 features</span>
                     </div>
-                    <div>
+                    <div className={scrollTop > 2500 ? 'animation3' : ''}>
                       <img src='images/progress_icon1_white.svg' alt='' />
                       <span>Integration of new blockchains into CLV ecosystem</span>
                     </div>
-                    <div>
+                    <div className={scrollTop > 2500 ? 'animation3' : ''}>
                       <img src='images/progress_icon1_white.svg' alt='' />
                       <span>Continue to build strategic partnerships with Web3 and Defi entities.</span>
                     </div>
@@ -455,26 +465,55 @@ const ProgressTitle = styled.div`
 const ProgressContent = styled.div`
   width: 100%;
   margin-top: 64px;
-  //opacity: 1;
-  //transform: translateY(0);
-  //visibility: visible;
-  //transition: opacity 1200ms ease-out, transform 600ms ease-out,
-  //visibility 1200ms ease-out;
-  //will-change: opacity, transform, visibility;
+  opacity: 1;
   
-  //animation: overScroll 1s forwards ease-in-out;
-  //@keyframes overScroll{
-  //  0%{
-  //    opacity: 0;
-  //    visibility: hidden;
-  //    transform: translateY(200px);
-  //  }
-  //  100%{
-  //    opacity: 1;
-  //    visibility: visible;
-  //    transform: translateY(0);
-  //  }
-  //}
+  .animation1 {
+    opacity: 0;
+    animation: overScroll 0.5s forwards ease-in-out;
+    @keyframes overScroll{
+      0%{
+        opacity: 0;
+        transform: translateY(100px);
+      }
+      100%{
+        opacity: 1!important;
+        transform: translateY(0);
+      }
+    }
+  }
+  
+  .animation2 {
+    opacity: 0;
+    animation: overScroll 0.5s forwards ease-in-out;
+    animation-delay: 0.5s;
+    @keyframes overScroll{
+      0%{
+        opacity: 0;
+        transform: translateY(100px);
+      }
+      100%{
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+  
+  .animation3 {
+    opacity: 0;
+    animation: overScroll 0.5s forwards ease-in-out;
+    animation-delay: 1s;
+
+    @keyframes overScroll{
+      0%{
+        opacity: 0;
+        transform: translateY(100px);
+      }
+      100%{
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
 `
 
 const ProgressItem = styled.div`
