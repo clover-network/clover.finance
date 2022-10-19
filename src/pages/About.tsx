@@ -199,6 +199,7 @@ export const About: React.FC = () => {
                 <NewsUpdateItem onClick={() => {window.open('https://medium.com/@clv_org/introducing-clvs-cornerstones-meet-more-clv-team-members-f88fb90900da')}}>
                   <NewsUpdateItemLeft>
                     <span>Today</span>
+                    <img src="images/news1.svg" alt=""/>
                   </NewsUpdateItemLeft>
                   <NewsUpdateItemRight>
                     <div style={{fontSize: '48px',lineHeight: '60px'}}>{t('introducingCLV')}</div>
@@ -208,6 +209,7 @@ export const About: React.FC = () => {
                 <NewsUpdateItem onClick={() => {window.open('https://medium.com/@clv_org/seamless-access-to-all-things-defi-with-clv-8c4002a001b4')}}>
                   <NewsUpdateItemLeft>
                     <span>19 May 2022</span>
+                    <img src="images/news2.svg" alt=""/>
                   </NewsUpdateItemLeft>
                   <NewsUpdateItemRight>
                     <div>{t('seamlessAccess')}</div>
@@ -217,6 +219,7 @@ export const About: React.FC = () => {
                 <NewsUpdateItem onClick={() => {window.open('https://medium.com/@clv_org/clv-quarterly-wrap-up-a-look-into-q3-2022-722a7baeae11')}}>
                   <NewsUpdateItemLeft>
                     <span>15 Apr 2022</span>
+                    <img src="images/news3.svg" alt=""/>
                   </NewsUpdateItemLeft>
                   <NewsUpdateItemRight>
                     <div>{t('CLVQuarterly')}</div>
@@ -452,6 +455,26 @@ const ProgressTitle = styled.div`
 const ProgressContent = styled.div`
   width: 100%;
   margin-top: 64px;
+  //opacity: 1;
+  //transform: translateY(0);
+  //visibility: visible;
+  //transition: opacity 1200ms ease-out, transform 600ms ease-out,
+  //visibility 1200ms ease-out;
+  //will-change: opacity, transform, visibility;
+  
+  //animation: overScroll 1s forwards ease-in-out;
+  //@keyframes overScroll{
+  //  0%{
+  //    opacity: 0;
+  //    visibility: hidden;
+  //    transform: translateY(200px);
+  //  }
+  //  100%{
+  //    opacity: 1;
+  //    visibility: visible;
+  //    transform: translateY(0);
+  //  }
+  //}
 `
 
 const ProgressItem = styled.div`
@@ -611,7 +634,7 @@ const NewsUpdateItemLeft = styled.div`
   align-items: flex-start;
   justify-content: space-between;
   width: 50%;
-  margin-right: 16px;
+  margin-right: 48px;
   
   span {
     font-family: Inter;
@@ -621,14 +644,10 @@ const NewsUpdateItemLeft = styled.div`
     letter-spacing: 0.026em;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.6);
-    
-    &:nth-child(2) {
-      color: #FFFFFF;
-      margin-right: 56px;
-      font-size: 24px;
-      line-height: 38px;
-      text-transform: unset;
-    }
+  }
+  
+  img {
+    height: 152px;
   }
 `
 
