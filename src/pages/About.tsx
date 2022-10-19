@@ -196,31 +196,30 @@ export const About: React.FC = () => {
                 <span>&nbsp;&nbsp;{t('update')}</span>
               </NewsUpdateTitle>
               <NewsUpdateContent>
-                <NewsUpdateItem>
+                <NewsUpdateItem onClick={() => {window.open('https://medium.com/@clv_org/introducing-clvs-cornerstones-meet-more-clv-team-members-f88fb90900da')}}>
                   <NewsUpdateItemLeft>
                     <span>Today</span>
-                    <span>Release 1.01v</span>
                   </NewsUpdateItemLeft>
                   <NewsUpdateItemRight>
-                    <div onClick={() => {window.open('https://medium.com/@clv_org/introducing-clvs-cornerstones-meet-more-clv-team-members-f88fb90900da')}} style={{fontSize: '48px',lineHeight: '60px'}}>{t('introducingCLV')}</div>
+                    <div style={{fontSize: '48px',lineHeight: '60px'}}>{t('introducingCLV')}</div>
                     <span>{t('Q1Hint')}</span>
                   </NewsUpdateItemRight>
                 </NewsUpdateItem>
-                <NewsUpdateItem>
+                <NewsUpdateItem onClick={() => {window.open('https://medium.com/@clv_org/seamless-access-to-all-things-defi-with-clv-8c4002a001b4')}}>
                   <NewsUpdateItemLeft>
                     <span>19 May 2022</span>
                   </NewsUpdateItemLeft>
                   <NewsUpdateItemRight>
-                    <div onClick={() => {window.open('https://medium.com/@clv_org/seamless-access-to-all-things-defi-with-clv-8c4002a001b4')}}>{t('seamlessAccess')}</div>
+                    <div>{t('seamlessAccess')}</div>
                     <span>{t('seamlessAccessHint')}</span>
                   </NewsUpdateItemRight>
                 </NewsUpdateItem>
-                <NewsUpdateItem>
+                <NewsUpdateItem onClick={() => {window.open('https://medium.com/@clv_org/clv-quarterly-wrap-up-a-look-into-q3-2022-722a7baeae11')}}>
                   <NewsUpdateItemLeft>
                     <span>15 Apr 2022</span>
                   </NewsUpdateItemLeft>
                   <NewsUpdateItemRight>
-                    <div onClick={() => {window.open('https://medium.com/@clv_org/clv-quarterly-wrap-up-a-look-into-q3-2022-722a7baeae11')}}>{t('CLVQuarterly')}</div>
+                    <div>{t('CLVQuarterly')}</div>
                     <span>{t('CLVQuarterlyHint')}</span>
                     <GrayButton margin="80px 0 0 0">{t('seeMore')}</GrayButton>
                   </NewsUpdateItemRight>
@@ -604,6 +603,7 @@ const NewsUpdateItem = styled.div`
   display: flex;
   padding: 40px 0;
   border-top: 1px solid #333232;
+  cursor: pointer;
 `
 
 const NewsUpdateItemLeft = styled.div`
@@ -636,7 +636,6 @@ const NewsUpdateItemRight = styled.div`
   width: 50%;
   
   div:first-child {
-    cursor: pointer;
     font-weight: 600;
     font-size: 32px;
     line-height: 40px;

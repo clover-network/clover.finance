@@ -165,19 +165,19 @@ export const Wallet: React.FC = () => {
                 </YourPassportBottom>
               </YourPassportContent>
             </YourPassport>
-            <JoinUs>
-              <JoinUsTitle>
-                <h3>{t('joinUs')}<img src='images/clv_icon2.svg' alt='' /></h3>
-              </JoinUsTitle>
-              <JoinUsInput>
-                <input placeholder={t('addYourEmail')} type='text' />
-                <div>
-                  <span>{t('send')}</span>
-                  <img src='images/send.svg' alt='' />
-                </div>
-              </JoinUsInput>
-              <span>{t('clickingTheButton')}</span>
-            </JoinUs>
+            {/*<JoinUs>*/}
+            {/*  <JoinUsTitle>*/}
+            {/*    <h3>{t('joinUs')}<img src='images/clv_icon2.svg' alt='' /></h3>*/}
+            {/*  </JoinUsTitle>*/}
+            {/*  <JoinUsInput>*/}
+            {/*    <input placeholder={t('addYourEmail')} type='text' />*/}
+            {/*    <div>*/}
+            {/*      <span>{t('send')}</span>*/}
+            {/*      <img src='images/send.svg' alt='' />*/}
+            {/*    </div>*/}
+            {/*  </JoinUsInput>*/}
+            {/*  <span>{t('clickingTheButton')}</span>*/}
+            {/*</JoinUs>*/}
           </div>
         </Content>
         <Footer isWallet />
@@ -589,85 +589,85 @@ const YourPassportBottomLeft = styled.div`
   }
 `
 
-const JoinUs = styled.div`
-  padding: 48px;
-  background: linear-gradient(45.66deg, rgba(189, 253, 226, 0.4) 8.33%, rgba(155, 218, 246, 0.4) 94.75%);
-  border-radius: 32px;
-  margin: 180px 0 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  &>span {
-    font-family: Inter;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 20px;
-    text-align: center;
-    letter-spacing: 0.006em;
-    color: #4E5D60;
-  }
-`
-
-const JoinUsTitle = styled.div`
-  text-align: center;
-
-  h3 {
-    display: flex;
-    align-items: center;
-    font-weight: 600;
-    font-size: 48px;
-    line-height: 60px;
-    letter-spacing: 0.008em;
-    color: #0C0B0B;
-
-    img {
-      width: 46px;
-      height: 46px;
-      margin-left: 16px;
-    }
-  }
-`
-
-const JoinUsInput = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #FFFFFF;
-  border-radius: 40px;
-  width: 648px;
-  height: 64px;
-  overflow: hidden;
-  margin: 24px 0;
-
-  input {
-    flex: 1;
-    height: 100%;
-    outline: none;
-    border: none;
-    text-indent: 20px;
-    font-family: Inter;
-  }
-  div {
-    display: flex;
-    align-items: center;
-    background: #0C0B0B;
-    border-radius: 32px;
-    height: 48px;
-    padding: 16px 24px;
-    margin: 0 8px;
-    font-family: Inter;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
-    letter-spacing: 0.002em;
-    color: #FFFFFF;
-    cursor: pointer;
-    &:hover {
-      opacity: 0.8;
-    }
-  }
-`
+// const JoinUs = styled.div`
+//   padding: 48px;
+//   background: linear-gradient(45.66deg, rgba(189, 253, 226, 0.4) 8.33%, rgba(155, 218, 246, 0.4) 94.75%);
+//   border-radius: 32px;
+//   margin: 180px 0 0;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//
+//   &>span {
+//     font-family: Inter;
+//     font-weight: 400;
+//     font-size: 12px;
+//     line-height: 20px;
+//     text-align: center;
+//     letter-spacing: 0.006em;
+//     color: #4E5D60;
+//   }
+// `
+//
+// const JoinUsTitle = styled.div`
+//   text-align: center;
+//
+//   h3 {
+//     display: flex;
+//     align-items: center;
+//     font-weight: 600;
+//     font-size: 48px;
+//     line-height: 60px;
+//     letter-spacing: 0.008em;
+//     color: #0C0B0B;
+//
+//     img {
+//       width: 46px;
+//       height: 46px;
+//       margin-left: 16px;
+//     }
+//   }
+// `
+//
+// const JoinUsInput = styled.div`
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   background: #FFFFFF;
+//   border-radius: 40px;
+//   width: 648px;
+//   height: 64px;
+//   overflow: hidden;
+//   margin: 24px 0;
+//
+//   input {
+//     flex: 1;
+//     height: 100%;
+//     outline: none;
+//     border: none;
+//     text-indent: 20px;
+//     font-family: Inter;
+//   }
+//   div {
+//     display: flex;
+//     align-items: center;
+//     background: #0C0B0B;
+//     border-radius: 32px;
+//     height: 48px;
+//     padding: 16px 24px;
+//     margin: 0 8px;
+//     font-family: Inter;
+//     font-weight: 400;
+//     font-size: 20px;
+//     line-height: 24px;
+//     letter-spacing: 0.002em;
+//     color: #FFFFFF;
+//     cursor: pointer;
+//     &:hover {
+//       opacity: 0.8;
+//     }
+//   }
+// `
 
 // this is a full height container that contains the Navbar, the Hero, and the bitcoin price
 // when a user first visits the site this portion should take up 100% height

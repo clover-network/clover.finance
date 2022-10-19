@@ -84,7 +84,7 @@ export const NewContent = () => {
         currentTab={selectTab}
         handleChange={(tab: any) => changeTab(tab)}
       />
-      {(selectTab.name === '' || window.location.search === '') && <Main />}
+      {(selectTab.name === '' || window.location.search === '') && <Main startBuild={() => {changeTab(navList[3])}} />}
       {selectTab.name === t('about') && <About />}
       {selectTab.name === t('CLVChain') && <CLVChain />}
       {selectTab.name === t('wallet') && <Wallet />}

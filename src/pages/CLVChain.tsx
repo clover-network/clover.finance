@@ -11,11 +11,9 @@ export const CLVChain: React.FC = () => {
   const location = useRouter();
   const [selectFaq, setSelectFaq] = useState(0)
   const [play, setPlay] = useState(false)
-  const [scrollIndex, setScrollIndex] = useState(0)
-  const ref: any = useRef()
   let intervalRewind: any;
 
-  const rewind = (rewindSpeed: any, stopTime: number) => {
+  const rewind = (rewindSpeed: any) => {
     const playVideo: any = document.getElementById('playVideo')
     clearInterval(intervalRewind);
     const startSystemTime = new Date().getTime();
@@ -29,77 +27,9 @@ export const CLVChain: React.FC = () => {
       } else {
         const elapsed = new Date().getTime()-startSystemTime;
         playVideo.currentTime = Math.max(startVideoTime - elapsed*rewindSpeed/1000.0, 0);
-        setTimeout(() => {
-          clearInterval(intervalRewind);
-          playVideo.pause();
-        }, stopTime * 1000)
       }
     }, 30);
   }
-
-  let timer: any = null
-  const handleScroll = (e: any) => {
-    let mouseDown
-    const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1
-    if (isFirefox) {
-      if (e.detail > 0) {
-        mouseDown = true
-      } else {
-        mouseDown = false
-      }
-    } else {
-      if (e.wheelDelta > 0) {
-        mouseDown = true
-      } else {
-        mouseDown = false
-      }
-    }
-
-    const { scrollTop } = ref.current
-    const playVideo: any = document.getElementById('playVideo')
-
-    if (ref.current.scrollTop >= 0 && ref.current.scrollTop < 200) {
-      setScrollIndex(0)
-    } else if (ref.current.scrollTop >= 200 && ref.current.scrollTop < 600) {
-      setScrollIndex(1)
-    } else if (ref.current.scrollTop >= 600 && ref.current.scrollTop < 800) {
-      setScrollIndex(2)
-    } else {
-      setScrollIndex(3)
-    }
-
-    if (mouseDown) {
-      const time = scrollTop > 800 ? playVideo.duration / 3 * 1 : (scrollTop > 100 && scrollTop <= 800) ? playVideo.duration / 3 * 2 : playVideo.duration
-      rewind(1.0, time)
-    } else {
-      debounceScroll()
-    }
-  }
-
-  const debounceScroll = debounce(() => {
-    // let timer: any = null
-    clearTimeout(timer)
-    const { scrollTop } = ref.current
-    const playVideo: any = document.getElementById('playVideo')
-    const time = scrollTop <= 300 ? playVideo.duration * 1000 / 3 : (scrollTop > 300 && scrollTop <= 800) ? playVideo.duration * 1000 / 3 * 2 : playVideo.duration * 1000
-
-    setPlay(true)
-    playVideo.play()
-    if (!timer) {
-      timer = setTimeout(() => {
-        setPlay(false)
-        playVideo.pause()
-        clearTimeout(timer)
-      }, time)
-    }
-  }, 100)
-
-  useEffect(() => {
-    const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1
-    const mousewheel = isFirefox ? 'DOMMouseScroll' : 'mousewheel'
-    const div = ref.current
-    div.addEventListener(mousewheel, handleScroll)
-  }, [handleScroll])
 
   const faqsList = [
     {
@@ -135,32 +65,41 @@ export const CLVChain: React.FC = () => {
     },
   ]
 
-  // const handleScroll = () => {
-  //   let timer: any = null
-  //   const playVideo: any = document.getElementById('playVideo')
-  //   setPlay(false)
-  //   playVideo.pause()
-  //   if (window.scrollY <= 920) {
-  //     playVideo.currentTime = 0
-  //   } else if (window.scrollY > 920 && window.scrollY < 2500) {
-  //     setPlay(true)
-  //     playVideo.play()
-  //     if (!timer) {
-  //       timer = setTimeout(() => {
-  //         setPlay(false)
-  //         playVideo.pause()
-  //         clearTimeout(timer)
-  //       }, playVideo.duration * 1000 / 3)
-  //     }
-  //   }
-  // }
-  //
-  // useEffect(() => {
-  //   window.addEventListener('scroll', handleScroll)
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll)
-  //   }
-  // }, [location]);
+  const handleScroll = (e) => {
+    let mouseDown
+    const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1
+    if (isFirefox) {
+      if (e.detail > 0) {
+        mouseDown = true
+      } else {
+        mouseDown = false
+      }
+    } else {
+      if (e.wheelDelta > 0) {
+        mouseDown = true
+      } else {
+        mouseDown = false
+      }
+    }
+    if (mouseDown) {
+      rewind(1.0)
+      return
+    }
+    const playVideo: any = document.getElementById('playVideo')
+    if (window.scrollY > 920 && window.scrollY < 2500 && playVideo.currentTime === 0) {
+      setPlay(true)
+      playVideo.play()
+    }
+  }
+
+  useEffect(() => {
+    const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1
+    const mousewheel = isFirefox ? 'DOMMouseScroll' : 'mousewheel'
+    window.addEventListener(mousewheel, handleScroll)
+    return () => {
+      window.removeEventListener(mousewheel, handleScroll)
+    }
+  }, [location]);
 
   return (
       <div id='CLVChain'>
@@ -223,13 +162,8 @@ export const CLVChain: React.FC = () => {
                   <FeaturesLeft>
                     <video id='playVideo' autoPlay={play} muted src='videos/CLVDevPageSequence.mp4'></video>
                   </FeaturesLeft>
-                  <FeaturesRight ref={ref}>
-                    <div
-                        style={{backgroundImage: scrollIndex === 0 ? '-webkit-linear-gradient(top, #fff, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0))' :
-                              scrollIndex === 1 ? '-webkit-linear-gradient(top, rgba(255, 255, 255, 0), #fff, #fff, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0))' :
-                              scrollIndex === 2 ?'-webkit-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), #fff, #fff, rgba(255, 255, 255, 0))' :
-                                  '-webkit-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), #fff, #fff)'}}
-                    >
+                  <FeaturesRight>
+                    <div>
                       <FeaturesRightItem>
                         <h3>{t('etheriumCompatible')}</h3>
                         <span>{t('etheriumCompatibleHint')}</span>
@@ -592,7 +526,6 @@ const FeaturesTitle = styled.div`
 const FeaturesContent = styled.div`
   width: 100%;
   display: flex;
-  align-items: center;
   margin-top: 64px;
 `
 
@@ -608,15 +541,7 @@ const FeaturesLeft = styled.div`
 
 const FeaturesRight = styled.div`
   width: 50%;
-  height: 600px;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  &::-webkit-scrollbar {
-    display: none;
-  }
   &>div {
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
     &>div:last-child {
       margin-bottom: 0;
     }

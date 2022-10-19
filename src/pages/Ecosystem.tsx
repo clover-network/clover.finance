@@ -399,6 +399,8 @@ const ContentBottomItem = styled.div`
   text-align: center;
   letter-spacing: 0.006em;
   color: #FFFFFF;
+  transition: background 0.3s ease-in-out;
+
   &:first-child {
     img {
       margin-top: -60px;
@@ -416,6 +418,7 @@ const ContentBottomItem = styled.div`
   }
   
   &:hover {
+    background: rgba(0, 0, 0, 0.1);
     img {
       transform: translateY(-10px);
     }
@@ -504,7 +507,8 @@ const CLVChainItem = styled.div`
   justify-content: space-between;
   align-items: center;
   border: 1px solid #333232;
-  
+  transition: background 0.3s ease-in-out;
+
   span {
     font-family: Inter;
     font-weight: 400;
@@ -514,6 +518,18 @@ const CLVChainItem = styled.div`
     letter-spacing: 0.006em;
     color: #FFFFFF;
     word-break: break-word;
+  }
+
+  img {
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  &:hover {
+    background: rgba(0, 0, 0, 0.1);
+    img {
+      transform: translateY(-10px);
+    }
   }
 `
 
