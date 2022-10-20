@@ -236,13 +236,6 @@ export const About: React.FC = () => {
                   <NewsUpdateItemRight>
                     <div>{t('CLVQuarterly')}</div>
                     <span>{t('CLVQuarterlyHint')}</span>
-                    <GrayButton
-                        onClick={(e) => {
-                          e.stopPropagation()
-                          window.open('https://medium.com/@clv_org')
-                        }}
-                        margin="80px 0 0 0"
-                    >{t('seeMore')}</GrayButton>
                   </NewsUpdateItemRight>
                 </NewsUpdateItem>
                 <NewsUpdateItem onClick={() => {window.open('https://medium.com/@clv_org/introducing-clvs-cornerstones-meet-more-clv-team-members-f88fb90900da')}}>
@@ -253,6 +246,13 @@ export const About: React.FC = () => {
                   <NewsUpdateItemRight>
                     <div>{t('introducingCLV')}</div>
                     <span>{t('Q1Hint')}</span>
+                    <GrayButton
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          window.open('https://medium.com/@clv_org')
+                        }}
+                        margin="80px 0 0 0"
+                    >{t('seeMore')}</GrayButton>
                   </NewsUpdateItemRight>
                 </NewsUpdateItem>
               </NewsUpdateContent>
