@@ -1,11 +1,10 @@
-import React, {useState, useEffect, useRef} from "react";
+import React, {useState, useEffect} from "react";
 import styled, { css } from "styled-components";
 import { breakpoint } from "../mixins/breakpoint";
 import { t } from '../i18n/intl';
 import { Footer } from './components/Footer';
 import { GrayButton, NormalButton } from '../components/Btn';
 import { useRouter } from 'next/router';
-import {debounce} from "@material-ui/core";
 
 export const CLVChain: React.FC = () => {
   const location = useRouter();
@@ -65,7 +64,7 @@ export const CLVChain: React.FC = () => {
     },
   ]
 
-  const handleScroll = (e) => {
+  const handleScroll = (e: any) => {
     let mouseDown
     const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1
     if (isFirefox) {

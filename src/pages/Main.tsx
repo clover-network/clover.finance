@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef} from 'react';
+import React, {useEffect, useState} from 'react';
 import styled, {css} from "styled-components";
 import {breakpoint} from "../mixins/breakpoint";
 import {t} from '../i18n/intl';
@@ -7,12 +7,13 @@ import CLVIsBacked from './components/CLVBacked';
 import {Footer} from './components/Footer';
 import {useRouter} from 'next/router';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {debounce} from "@material-ui/core";
-// import 'react-toastify/dist/ReactToastify.css';
 
-export const Main: React.FC = (props) => {
+interface TypeProps {
+    startBuild: () => void;
+}
+
+export const Main = ({startBuild}: TypeProps) => {
     const location = useRouter();
-    const {startBuild} = props
 
     const [play, setPlay] = useState(false)
     let intervalRewind: any;
@@ -34,7 +35,7 @@ export const Main: React.FC = (props) => {
         }, 30);
     }
 
-    const handleScroll = (e) => {
+    const handleScroll = (e: any) => {
         let mouseDown
         const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1
         if (isFirefox) {
@@ -381,7 +382,7 @@ const BalanceItem = styled.div`
 `;
 
 export const AnimationText = styled.div<{
-    height: string,
+    height?: string,
 }>`
   height: ${({height}) => (height ? height : '40px')};
 
@@ -407,11 +408,11 @@ export const AnimationText = styled.div<{
 `
 
 export const AnimationItem = styled.div<{
-    color: string,
-    height: string,
-    width: string,
-    fontSize: string
-    background: string
+    color?: string,
+    height?: string,
+    width?: string,
+    fontSize?: string
+    background?: string
 }>`
   display: inline-block;
   position: relative;

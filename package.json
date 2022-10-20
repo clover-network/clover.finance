@@ -46,8 +46,13 @@
     "extends": [
       "react-app",
       "react-app/jest",
-      "prettier"
-    ]
+      "prettier",
+      "next"
+    ],
+    "rules": {
+      "react/no-unescaped-entities": "off",
+      "@next/next/no-unescaped-entities": "off"
+    }
   },
   "lint-staged": {
     "*.{ts,tsx}": "eslint --fix",
