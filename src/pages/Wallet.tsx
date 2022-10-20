@@ -35,7 +35,7 @@ export const Wallet: React.FC = () => {
                     <span>Over</span>
                     <AnimationText height="60px">
                       {text1.map((i, index) => (
-                          <AnimationItem key={`text1_${index}`} className="down go" color='#000' width="30px" height="60px" fontSize="48px" background="#fff">
+                          <AnimationItem key={`text1_${index}`} className="down go" color='#000' height="60px" fontSize="48px" background="#fff" width={i === ',' || i === '.' ? '15px' : '30px'}>
                             <div className="digital front null"/>
                             <div className={i === ',' ? 'digital back comma' : i === '.' ? 'digital back point' : i === '$' ? 'digital back dollar' : `digital back number${i}`}/>
                           </AnimationItem>

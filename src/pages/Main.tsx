@@ -70,9 +70,9 @@ export const Main: React.FC = (props) => {
         }
     }, [location]);
 
-    const text1 = ['1', '9', ',', '9', '6', '7', ',' , '9', '0', '6']
+    const text1 = ['1', '9', ',', '9', '6', '7', ',', '9', '0', '6']
     const text2 = ['4', ',', '8', '6', '7']
-    const text3 = ['$', '0', '.', '0', '0', '0', '2' , '5']
+    const text3 = ['$', '0', '.', '0', '0', '0', '2', '5']
     const text4 = ['1', '5', '3']
 
     return (
@@ -114,9 +114,10 @@ export const Main: React.FC = (props) => {
                         <BalanceItem>
                             <AnimationText>
                                 {text1.map((i, index) => (
-                                    <AnimationItem key={`text1_${index}`} className="down go">
+                                    <AnimationItem key={`text1_${index}`} className="down go" width={i === ',' || i === '.' ? '10px' : '20px'}>
                                         <div className="digital front null"/>
-                                        <div className={i === ',' ? 'digital back comma' : i === '.' ? 'digital back point' : i === '$' ? 'digital back dollar' : `digital back number${i}`}/>
+                                        <div
+                                            className={i === ',' ? 'digital back comma' : i === '.' ? 'digital back point' : i === '$' ? 'digital back dollar' : `digital back number${i}`}/>
                                     </AnimationItem>
                                 ))}
                             </AnimationText>
@@ -125,9 +126,10 @@ export const Main: React.FC = (props) => {
                         <BalanceItem>
                             <AnimationText>
                                 {text2.map((i, index) => (
-                                    <AnimationItem key={`text1_${index}`} className="down go">
+                                    <AnimationItem key={`text1_${index}`} className="down go" width={i === ',' || i === '.' ? '10px' : '20px'}>
                                         <div className="digital front null"/>
-                                        <div className={i === ',' ? 'digital back comma' : i === '.' ? 'digital back point' : i === '$' ? 'digital back dollar' : `digital back number${i}`}/>
+                                        <div
+                                            className={i === ',' ? 'digital back comma' : i === '.' ? 'digital back point' : i === '$' ? 'digital back dollar' : `digital back number${i}`}/>
                                     </AnimationItem>
                                 ))}
                             </AnimationText>
@@ -136,9 +138,10 @@ export const Main: React.FC = (props) => {
                         <BalanceItem>
                             <AnimationText>
                                 {text3.map((i, index) => (
-                                    <AnimationItem key={`text1_${index}`} className="down go">
+                                    <AnimationItem key={`text1_${index}`} className="down go" width={i === ',' || i === '.' ? '10px' : '20px'}>
                                         <div className="digital front null"/>
-                                        <div className={i === ',' ? 'digital back comma' : i === '.' ? 'digital back point' : i === '$' ? 'digital back dollar' : `digital back number${i}`}/>
+                                        <div
+                                            className={i === ',' ? 'digital back comma' : i === '.' ? 'digital back point' : i === '$' ? 'digital back dollar' : `digital back number${i}`}/>
                                     </AnimationItem>
                                 ))}
                             </AnimationText>
@@ -147,9 +150,10 @@ export const Main: React.FC = (props) => {
                         <BalanceItem>
                             <AnimationText>
                                 {text4.map((i, index) => (
-                                    <AnimationItem key={`text1_${index}`} className="down go">
+                                    <AnimationItem key={`text1_${index}`} className="down go" width={i === ',' || i === '.' ? '10px' : '20px'}>
                                         <div className="digital front null"/>
-                                        <div className={i === ',' ? 'digital back comma' : i === '.' ? 'digital back point' : i === '$' ? 'digital back dollar' : `digital back number${i}`}/>
+                                        <div
+                                            className={i === ',' ? 'digital back comma' : i === '.' ? 'digital back point' : i === '$' ? 'digital back dollar' : `digital back number${i}`}/>
                                     </AnimationItem>
                                 ))}
                             </AnimationText>
@@ -379,25 +383,27 @@ const BalanceItem = styled.div`
 export const AnimationText = styled.div<{
     height: string,
 }>`
-  height: ${({ height }) => (height ? height : '40px')};
-  &>div:nth-child(odd) {
-      &.down.go .front:before {
-        animation-delay: 0.5s;
-      }
+  height: ${({height}) => (height ? height : '40px')};
 
-      &.down.go .back:after {
-        animation-delay: 0.5s;
-      }
+  & > div:nth-child(odd) {
+    &.down.go .front:before {
+      animation-delay: 0.4s;
     }
-    &>div:last-child, &>div:first-child {
-      &.down.go .front:before {
-        animation-delay: 0.3s;
-      }
 
-      &.down.go .back:after {
-        animation-delay: 0.3s;
-      }
+    &.down.go .back:after {
+      animation-delay: 0.4s;
     }
+  }
+
+  & > div:last-child, & > div:first-child {
+    &.down.go .front:before {
+      animation-delay: 0.2s;
+    }
+
+    &.down.go .back:after {
+      animation-delay: 0.2s;
+    }
+  }
 `
 
 export const AnimationItem = styled.div<{
@@ -409,11 +415,11 @@ export const AnimationItem = styled.div<{
 }>`
   display: inline-block;
   position: relative;
-  width: ${({ width }) => (width ? width : '20px')};
-  height: ${({ height }) => (height ? height : '40px')};
-  line-height: ${({ height }) => (height ? height : '40px')};
-  color: ${({ color }) => (color ? color : '#fff')};
-  font-size: ${({ fontSize }) => (fontSize ? fontSize : '32px')};
+  width: ${({width}) => (width ? width : '20px')};
+  height: ${({height}) => (height ? height : '40px')};
+  line-height: ${({height}) => (height ? height : '40px')};
+  color: ${({color}) => (color ? color : '#fff')};
+  font-size: ${({fontSize}) => (fontSize ? fontSize : '32px')};
   text-align: center;
 
   .digital:before,
@@ -422,7 +428,7 @@ export const AnimationItem = styled.div<{
     position: absolute;
     left: 0;
     right: 0;
-    background: ${({ background }) => (background ? background : '#141414')};
+    background: ${({background}) => (background ? background : '#141414')};
     overflow: hidden;
     box-sizing: border-box;
   }
@@ -525,13 +531,16 @@ export const AnimationItem = styled.div<{
 
   &.down.go .front:before {
     transform-origin: 50% 100%;
-    animation: frontFlipDown 0.6s ease-in-out both;
+    animation: frontFlipDown 0.4s ease-in-out both;
     box-shadow: 0 -2px 6px rgba(255, 255, 255, 0.3);
     backface-visibility: hidden;
+    animation-iteration-count: 3;
   }
 
   &.down.go .back:after {
-    animation: backFlipDown 0.6s ease-in-out both;
+    animation: backFlipDown 0.4s ease-in-out both;
+    animation-iteration-count: 3;
+
   }
 
   @keyframes frontFlipDown {
