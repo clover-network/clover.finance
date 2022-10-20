@@ -1,231 +1,265 @@
 import React, {useEffect, useState, useRef} from 'react';
-import styled, { css } from "styled-components";
-import { breakpoint } from "../mixins/breakpoint";
-import { t } from '../i18n/intl';
-import { NormalButton, GrayButton } from '../components/Btn';
+import styled, {css} from "styled-components";
+import {breakpoint} from "../mixins/breakpoint";
+import {t} from '../i18n/intl';
+import {NormalButton, GrayButton} from '../components/Btn';
 import CLVIsBacked from './components/CLVBacked';
-import { Footer } from './components/Footer';
-import { useRouter } from 'next/router';
+import {Footer} from './components/Footer';
+import {useRouter} from 'next/router';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {debounce} from "@material-ui/core";
-import 'react-toastify/dist/ReactToastify.css';
+// import 'react-toastify/dist/ReactToastify.css';
 
 export const Main: React.FC = (props) => {
-  const location = useRouter();
-  const { startBuild } = props
+    const location = useRouter();
+    const {startBuild} = props
 
-  const [play, setPlay] = useState(false)
-  let intervalRewind: any;
-  const rewind = (rewindSpeed: any) => {
-    const playVideo: any = document.getElementById('playVideo1')
-    clearInterval(intervalRewind);
-    const startSystemTime = new Date().getTime();
-    const startVideoTime = playVideo.currentTime;
-
-    intervalRewind = setInterval(function(){
-      playVideo.playbackRate = 1.0;
-      if(playVideo.currentTime == 0){
+    const [play, setPlay] = useState(false)
+    let intervalRewind: any;
+    const rewind = (rewindSpeed: any) => {
+        const playVideo: any = document.getElementById('playVideo1')
         clearInterval(intervalRewind);
-        playVideo.pause();
-      } else {
-        const elapsed = new Date().getTime()-startSystemTime;
-        playVideo.currentTime = Math.max(startVideoTime - elapsed*rewindSpeed/1000.0, 0);
-      }
-    }, 30);
-  }
+        const startSystemTime = new Date().getTime();
+        const startVideoTime = playVideo.currentTime;
 
-  const handleScroll = (e) => {
-    let mouseDown
-    const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1
-    if (isFirefox) {
-      if (e.detail > 0) {
-        mouseDown = true
-      } else {
-        mouseDown = false
-      }
-    } else {
-      if (e.wheelDelta > 0) {
-        mouseDown = true
-      } else {
-        mouseDown = false
-      }
+        intervalRewind = setInterval(function () {
+            playVideo.playbackRate = 1.0;
+            if (playVideo.currentTime == 0) {
+                clearInterval(intervalRewind);
+                playVideo.pause();
+            } else {
+                const elapsed = new Date().getTime() - startSystemTime;
+                playVideo.currentTime = Math.max(startVideoTime - elapsed * rewindSpeed / 1000.0, 0);
+            }
+        }, 30);
     }
-    if (mouseDown) {
-      rewind(1.0)
-      return
-    }
-    const playVideo: any = document.getElementById('playVideo1')
-    if (window.scrollY > 800 && window.scrollY < 2500 && playVideo.currentTime === 0) {
-      setPlay(true)
-      playVideo.play()
-    }
-  }
 
-  useEffect(() => {
-    const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1
-    const mousewheel = isFirefox ? 'DOMMouseScroll' : 'mousewheel'
-    window.addEventListener(mousewheel, handleScroll)
-    return () => {
-      window.removeEventListener(mousewheel, handleScroll)
+    const handleScroll = (e) => {
+        let mouseDown
+        const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1
+        if (isFirefox) {
+            if (e.detail > 0) {
+                mouseDown = true
+            } else {
+                mouseDown = false
+            }
+        } else {
+            if (e.wheelDelta > 0) {
+                mouseDown = true
+            } else {
+                mouseDown = false
+            }
+        }
+        if (mouseDown) {
+            rewind(1.0)
+            return
+        }
+        const playVideo: any = document.getElementById('playVideo1')
+        if (window.scrollY > 800 && window.scrollY < 2500 && playVideo.currentTime === 0) {
+            setPlay(true)
+            playVideo.play()
+        }
     }
-  }, [location]);
 
-  return (
-      <Wrapper>
-        <LandingContainer>
-          <SeamlesslyCompatible>
-            <div>
-              <ContentWrapper>
-                <TextWrapper>
-                  <div>
-                    {t('seamlesslyCompatible')}
-                    <img src='images/clv_icon1.svg' alt='' />
-                  </div>
-                  <span>{t('seamlesslyCompatibleHint')}</span>
-                  <Btns>
-                    <NormalButton
-                        width='316px'
-                        onClick={() =>
-                            startBuild()
-                        }
-                    >{t('startBuilding')}</NormalButton>
-                    <GrayButton
-                        width='316px'
-                        onClick={() =>
-                            window.open(
-                                "https://docs.clv.org/",
-                                "_blank"
-                            )
-                        }
-                    >{t('viewDocumentation')}</GrayButton>
-                  </Btns>
-                </TextWrapper>
-                <VideoWrapper>
-                  <video autoPlay loop muted src='videos/heroAnimation.mp4'></video>
-                </VideoWrapper>
-              </ContentWrapper>
-            </div>
-            <BalanceWrapper>
-              <BalanceItem>
-                <h3>19,967,906</h3>
-                <span>Total Transactions</span>
-              </BalanceItem>
-              <BalanceItem>
-                <h3>4,867</h3>
-                <span>Transactions per second</span>
-              </BalanceItem>
-              <BalanceItem>
-                <h3>$0.00025</h3>
-                <span>Avg. cost per transaction</span>
-              </BalanceItem>
-              <BalanceItem>
-                <h3>153</h3>
-                <span>Validator nodes</span>
-              </BalanceItem>
-            </BalanceWrapper>
-          </SeamlesslyCompatible>
-          <Advantages>
-            <AdvantagesTitle>
-              <h3>{t('AdvantagesForEveryone')}</h3>
-              <span>{t('allAtOnce')}</span>
-            </AdvantagesTitle>
-            <AdvantagesContent>
-              <AdvantagesLeft>
-                <video id='playVideo1' autoPlay={play} muted src='videos/CLVMainInteractiveAnimation.mp4'></video>
-              </AdvantagesLeft>
-              <AdvantagesRight>
-                <div>
-                  <AdvantagesRightItem>
-                    <h3>{t('gasFeeRedistribution')}</h3>
-                    <span>{t('gasFeeRedistributionHint1')}</span>
-                    <span>{t('gasFeeRedistributionHint2')}</span>
-                  </AdvantagesRightItem>
-                  <AdvantagesRightItem>
-                    <h3>{t('inventorOfFeeEconomics')}</h3>
-                    <span>{t('inventorOfFeeEconomicsHint')}</span>
-                  </AdvantagesRightItem>
-                  <AdvantagesRightItem>
-                    <h3>{t('EVMCompatible')}</h3>
-                    <span>{t('EVMCompatibleHint1')}</span>
-                    <span>{t('EVMCompatibleHint2')}</span>
-                    <span>{t('EVMCompatibleHint3')}</span>
-                  </AdvantagesRightItem>
-                </div>
-              </AdvantagesRight>
-            </AdvantagesContent>
-          </Advantages>
-          <ToolsOnCLV>
-            <ToolsOnCLVTitle>
-              <div>
-                <h3>{t('toolsOnCLV')}</h3>
-                <span>{t('ecosystem')}</span>
-              </div>
-            </ToolsOnCLVTitle>
-            <ToolsOnCLVContent>
-              <ToolsOnCLVContentLeft>
-                <div>
-                  <div>{t('forBuilders')}</div>
-                  <span>{t('forBuildersHint')}</span>
-                </div>
-                <ToolBtns>
-                  <GrayButton
-                      margin='0 0 24px'
-                      color="#0C0B0B"
-                      hoverBackground='#ffffff'
-                      disabledBackground='rgba(255, 255, 255, 0.8)'
-                      onClick={() =>
-                          window.open("https://docs.clv.org/clv-chain-developer-guide/introduction", "_blank")
-                      }
-                  >{t('readDocs')}</GrayButton>
-                  <GrayButton
-                      margin='0 0 24px'
-                      color="#0C0B0B"
-                      hoverBackground='#ffffff'
-                      disabledBackground='rgba(255, 255, 255, 0.8)'
-                      onClick={() =>
-                          window.open("https://github.com/clover-network", "_blank")
-                      }
-                  >{t('getGithubRepo')}</GrayButton>
-                  <GrayButton
-                      color="#0C0B0B"
-                      hoverBackground='#ffffff'
-                      disabledBackground='rgba(255, 255, 255, 0.8)'
-                      onClick={() =>
-                          window.open("https://docs.clv.org/clv-chain-developer-guide/using-testnet", "_blank")
-                      }
-                  >{t('viewTestnet')}</GrayButton>
-                </ToolBtns>
-              </ToolsOnCLVContentLeft>
-              <ToolsOnCLVContentRight>
-                <ToolsOnCLVItem>
-                  <div>
-                    <img src='images/clv_icon1.svg' alt='' />
-                    <span>{t('integrateCLVWallet')}</span>
-                  </div>
-                  <span>{t('integrateCLVWalletHint')}</span>
-                  <GrayButton
-                      onClick={() => {
-                        window.open('https://docs.clv.org/use-clv-wallet/clv-extension-wallet', "_blank")
-                      }}
-                  >{t('CLVWalletInforamtion')}</GrayButton>
-                </ToolsOnCLVItem>
-                <ToolsOnCLVItem>
-                  <div>{t('partnerWithCLV')}</div>
-                  <span>{t('partnerWithCLVHint')}</span>
-                  <GrayButton
-                      onClick={() => {
-                        window.open('https://docs.google.com/forms/d/e/1FAIpQLSfQevVEw_hL44vvbcMkYB8kKdzTFAbtD1pR-QVraaA7h4jpKg/viewform', "_blank")
-                      }}
-                  >{t('contactUs')}</GrayButton>
-                </ToolsOnCLVItem>
-              </ToolsOnCLVContentRight>
-            </ToolsOnCLVContent>
-          </ToolsOnCLV>
-          <CLVIsBacked />
-        </LandingContainer>
-        <Footer />
-      </Wrapper>
-  );
+    useEffect(() => {
+        const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1
+        const mousewheel = isFirefox ? 'DOMMouseScroll' : 'mousewheel'
+        window.addEventListener(mousewheel, handleScroll)
+        return () => {
+            window.removeEventListener(mousewheel, handleScroll)
+        }
+    }, [location]);
+
+    const text1 = ['1', '9', ',', '9', '6', '7', ',' , '9', '0', '6']
+    const text2 = ['4', ',', '8', '6', '7']
+    const text3 = ['$', '0', '.', '0', '0', '0', '2' , '5']
+    const text4 = ['1', '5', '3']
+
+    return (
+        <Wrapper>
+            <LandingContainer>
+                <SeamlesslyCompatible>
+                    <div>
+                        <ContentWrapper>
+                            <TextWrapper>
+                                <div>
+                                    {t('seamlesslyCompatible')}
+                                    <img src='images/clv_icon1.svg' alt=''/>
+                                </div>
+                                <span>{t('seamlesslyCompatibleHint')}</span>
+                                <Btns>
+                                    <NormalButton
+                                        width='316px'
+                                        onClick={() =>
+                                            startBuild()
+                                        }
+                                    >{t('startBuilding')}</NormalButton>
+                                    <GrayButton
+                                        width='316px'
+                                        onClick={() =>
+                                            window.open(
+                                                "https://docs.clv.org/",
+                                                "_blank"
+                                            )
+                                        }
+                                    >{t('viewDocumentation')}</GrayButton>
+                                </Btns>
+                            </TextWrapper>
+                            <VideoWrapper>
+                                <video autoPlay loop muted src='videos/heroAnimation.mp4'></video>
+                            </VideoWrapper>
+                        </ContentWrapper>
+                    </div>
+                    <BalanceWrapper>
+                        <BalanceItem>
+                            <AnimationText>
+                                {text1.map((i, index) => (
+                                    <AnimationItem key={`text1_${index}`} className="down go">
+                                        <div className="digital front null"/>
+                                        <div className={i === ',' ? 'digital back comma' : i === '.' ? 'digital back point' : i === '$' ? 'digital back dollar' : `digital back number${i}`}/>
+                                    </AnimationItem>
+                                ))}
+                            </AnimationText>
+                            <span>Total Transactions</span>
+                        </BalanceItem>
+                        <BalanceItem>
+                            <AnimationText>
+                                {text2.map((i, index) => (
+                                    <AnimationItem key={`text1_${index}`} className="down go">
+                                        <div className="digital front null"/>
+                                        <div className={i === ',' ? 'digital back comma' : i === '.' ? 'digital back point' : i === '$' ? 'digital back dollar' : `digital back number${i}`}/>
+                                    </AnimationItem>
+                                ))}
+                            </AnimationText>
+                            <span>Transactions per second</span>
+                        </BalanceItem>
+                        <BalanceItem>
+                            <AnimationText>
+                                {text3.map((i, index) => (
+                                    <AnimationItem key={`text1_${index}`} className="down go">
+                                        <div className="digital front null"/>
+                                        <div className={i === ',' ? 'digital back comma' : i === '.' ? 'digital back point' : i === '$' ? 'digital back dollar' : `digital back number${i}`}/>
+                                    </AnimationItem>
+                                ))}
+                            </AnimationText>
+                            <span>Avg. cost per transaction</span>
+                        </BalanceItem>
+                        <BalanceItem>
+                            <AnimationText>
+                                {text4.map((i, index) => (
+                                    <AnimationItem key={`text1_${index}`} className="down go">
+                                        <div className="digital front null"/>
+                                        <div className={i === ',' ? 'digital back comma' : i === '.' ? 'digital back point' : i === '$' ? 'digital back dollar' : `digital back number${i}`}/>
+                                    </AnimationItem>
+                                ))}
+                            </AnimationText>
+                            <span>Validator nodes</span>
+                        </BalanceItem>
+                    </BalanceWrapper>
+                </SeamlesslyCompatible>
+                <Advantages>
+                    <AdvantagesTitle>
+                        <h3>{t('AdvantagesForEveryone')}</h3>
+                        <span>{t('allAtOnce')}</span>
+                    </AdvantagesTitle>
+                    <AdvantagesContent>
+                        <AdvantagesLeft>
+                            <video id='playVideo1' autoPlay={play} muted
+                                   src='videos/CLVMainInteractiveAnimation.mp4'></video>
+                        </AdvantagesLeft>
+                        <AdvantagesRight>
+                            <div>
+                                <AdvantagesRightItem>
+                                    <h3>{t('gasFeeRedistribution')}</h3>
+                                    <span>{t('gasFeeRedistributionHint1')}</span>
+                                    <span>{t('gasFeeRedistributionHint2')}</span>
+                                </AdvantagesRightItem>
+                                <AdvantagesRightItem>
+                                    <h3>{t('inventorOfFeeEconomics')}</h3>
+                                    <span>{t('inventorOfFeeEconomicsHint')}</span>
+                                </AdvantagesRightItem>
+                                <AdvantagesRightItem>
+                                    <h3>{t('EVMCompatible')}</h3>
+                                    <span>{t('EVMCompatibleHint1')}</span>
+                                    <span>{t('EVMCompatibleHint2')}</span>
+                                    <span>{t('EVMCompatibleHint3')}</span>
+                                </AdvantagesRightItem>
+                            </div>
+                        </AdvantagesRight>
+                    </AdvantagesContent>
+                </Advantages>
+                <ToolsOnCLV>
+                    <ToolsOnCLVTitle>
+                        <div>
+                            <h3>{t('toolsOnCLV')}</h3>
+                            <span>{t('ecosystem')}</span>
+                        </div>
+                    </ToolsOnCLVTitle>
+                    <ToolsOnCLVContent>
+                        <ToolsOnCLVContentLeft>
+                            <div>
+                                <div>{t('forBuilders')}</div>
+                                <span>{t('forBuildersHint')}</span>
+                            </div>
+                            <ToolBtns>
+                                <GrayButton
+                                    margin='0 0 24px'
+                                    color="#0C0B0B"
+                                    hoverBackground='#ffffff'
+                                    disabledBackground='rgba(255, 255, 255, 0.8)'
+                                    onClick={() =>
+                                        window.open("https://docs.clv.org/clv-chain-developer-guide/introduction", "_blank")
+                                    }
+                                >{t('readDocs')}</GrayButton>
+                                <GrayButton
+                                    margin='0 0 24px'
+                                    color="#0C0B0B"
+                                    hoverBackground='#ffffff'
+                                    disabledBackground='rgba(255, 255, 255, 0.8)'
+                                    onClick={() =>
+                                        window.open("https://github.com/clover-network", "_blank")
+                                    }
+                                >{t('getGithubRepo')}</GrayButton>
+                                <GrayButton
+                                    color="#0C0B0B"
+                                    hoverBackground='#ffffff'
+                                    disabledBackground='rgba(255, 255, 255, 0.8)'
+                                    onClick={() =>
+                                        window.open("https://docs.clv.org/clv-chain-developer-guide/using-testnet", "_blank")
+                                    }
+                                >{t('viewTestnet')}</GrayButton>
+                            </ToolBtns>
+                        </ToolsOnCLVContentLeft>
+                        <ToolsOnCLVContentRight>
+                            <ToolsOnCLVItem>
+                                <div>
+                                    <img src='images/clv_icon1.svg' alt=''/>
+                                    <span>{t('integrateCLVWallet')}</span>
+                                </div>
+                                <span>{t('integrateCLVWalletHint')}</span>
+                                <GrayButton
+                                    onClick={() => {
+                                        window.open('https://docs.clv.org/use-clv-wallet/clv-extension-wallet', "_blank")
+                                    }}
+                                >{t('CLVWalletInforamtion')}</GrayButton>
+                            </ToolsOnCLVItem>
+                            <ToolsOnCLVItem>
+                                <div>{t('partnerWithCLV')}</div>
+                                <span>{t('partnerWithCLVHint')}</span>
+                                <GrayButton
+                                    onClick={() => {
+                                        window.open('https://docs.google.com/forms/d/e/1FAIpQLSfQevVEw_hL44vvbcMkYB8kKdzTFAbtD1pR-QVraaA7h4jpKg/viewform', "_blank")
+                                    }}
+                                >{t('contactUs')}</GrayButton>
+                            </ToolsOnCLVItem>
+                        </ToolsOnCLVContentRight>
+                    </ToolsOnCLVContent>
+                </ToolsOnCLV>
+                <CLVIsBacked/>
+            </LandingContainer>
+            <Footer/>
+        </Wrapper>
+    );
 };
 
 const SeamlesslyCompatible = styled.div`
@@ -290,6 +324,7 @@ const TextWrapper = styled.div`
 const Btns = styled.div`
   display: flex;
   align-items: center;
+
   div:first-child {
     margin-right: 16px;
   }
@@ -341,11 +376,191 @@ const BalanceItem = styled.div`
   }
 `;
 
+export const AnimationText = styled.div<{
+    height: string,
+}>`
+  height: ${({ height }) => (height ? height : '40px')};
+  &>div:nth-child(odd) {
+      &.down.go .front:before {
+        animation-delay: 0.5s;
+      }
+
+      &.down.go .back:after {
+        animation-delay: 0.5s;
+      }
+    }
+    &>div:last-child, &>div:first-child {
+      &.down.go .front:before {
+        animation-delay: 0.3s;
+      }
+
+      &.down.go .back:after {
+        animation-delay: 0.3s;
+      }
+    }
+`
+
+export const AnimationItem = styled.div<{
+    color: string,
+    height: string,
+    width: string,
+    fontSize: string
+    background: string
+}>`
+  display: inline-block;
+  position: relative;
+  width: ${({ width }) => (width ? width : '20px')};
+  height: ${({ height }) => (height ? height : '40px')};
+  line-height: ${({ height }) => (height ? height : '40px')};
+  color: ${({ color }) => (color ? color : '#fff')};
+  font-size: ${({ fontSize }) => (fontSize ? fontSize : '32px')};
+  text-align: center;
+
+  .digital:before,
+  .digital:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: ${({ background }) => (background ? background : '#141414')};
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .digital:before {
+    top: 0;
+    bottom: 50%;
+  }
+
+  .digital:after {
+    top: 50%;
+    bottom: 0;
+    line-height: 0;
+  }
+
+  .null:before,
+  .null:after {
+    content: " ";
+  }
+
+  .number0:before,
+  .number0:after {
+    content: "0";
+  }
+
+  .number1:before,
+  .number1:after {
+    content: "1";
+  }
+
+  .number2:before,
+  .number2:after {
+    content: "2";
+  }
+
+  .number3:before,
+  .number3:after {
+    content: "3";
+  }
+
+  .number4:before,
+  .number4:after {
+    content: "4";
+  }
+
+  .number5:before,
+  .number5:after {
+    content: "5";
+  }
+
+  .number6:before,
+  .number6:after {
+    content: "6";
+  }
+
+  .number7:before,
+  .number7:after {
+    content: "7";
+  }
+
+  .number8:before,
+  .number8:after {
+    content: "8";
+  }
+
+  .number9:before,
+  .number9:after {
+    content: "9";
+  }
+
+  .point:before,
+  .point:after {
+    content: ".";
+  }
+
+  .comma:before,
+  .comma:after {
+    content: ",";
+  }
+
+  .dollar:before,
+  .dollar:after {
+    content: "$";
+  }
+
+  &.down .front:before {
+    z-index: 3;
+  }
+
+  &.down .back:after {
+    z-index: 2;
+    transform-origin: 50% 0%;
+    transform: perspective(160px) rotateX(180deg);
+  }
+
+  &.down .front:after,
+  &.down .back:before {
+    z-index: 1;
+  }
+
+  &.down.go .front:before {
+    transform-origin: 50% 100%;
+    animation: frontFlipDown 0.6s ease-in-out both;
+    box-shadow: 0 -2px 6px rgba(255, 255, 255, 0.3);
+    backface-visibility: hidden;
+  }
+
+  &.down.go .back:after {
+    animation: backFlipDown 0.6s ease-in-out both;
+  }
+
+  @keyframes frontFlipDown {
+    0% {
+      transform: perspective(160px) rotateX(0deg);
+    }
+
+    100% {
+      transform: perspective(160px) rotateX(-180deg);
+    }
+  }
+
+  @keyframes backFlipDown {
+    0% {
+      transform: perspective(160px) rotateX(180deg);
+    }
+
+    100% {
+      transform: perspective(160px) rotateX(0deg);
+    }
+  }
+`
+
 const VideoWrapper = styled.div`
   width: 50%;
   position: absolute;
   right: 0;
   top: 100px;
+
   video {
     width: 100%;
     max-width: 630px;
@@ -363,11 +578,13 @@ const AdvantagesTitle = styled.div`
   font-size: 64px;
   line-height: 68px;
   letter-spacing: 0.008em;
+
   h3 {
     color: #FFFFFF;
     font-size: 64px;
     line-height: 68px;
   }
+
   span {
     color: #9BDAF6;
   }
@@ -391,8 +608,9 @@ const AdvantagesLeft = styled.div`
 
 const AdvantagesRight = styled.div`
   width: 50%;
-  &>div {
-    &>div:last-child {
+
+  & > div {
+    & > div:last-child {
       margin-bottom: 0;
     }
   }
@@ -402,6 +620,7 @@ const AdvantagesRightItem = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 120px;
+
   h3 {
     font-weight: 600;
     font-size: 48px;
@@ -419,8 +638,9 @@ const AdvantagesRightItem = styled.div`
     letter-spacing: 0.006em;
     color: #FFFFFF;
     margin-bottom: 20px;
+
     &:last-child {
-      margin: 0!important;
+      margin: 0 !important;
     }
   }
 
@@ -438,6 +658,7 @@ const ToolsOnCLVTitle = styled.div`
   width: 100%;
   display: flex;
   justify-content: flex-end;
+
   & > div {
     width: 50%;
     font-weight: 600;
@@ -446,11 +667,13 @@ const ToolsOnCLVTitle = styled.div`
     letter-spacing: 0.008em;
     margin-bottom: 64px;
     text-align: right;
+
     h3 {
       color: #FFFFFF;
       font-size: 64px;
       line-height: 68px;
     }
+
     span {
       color: #BDFDE2;
     }
@@ -473,7 +696,8 @@ const ToolsOnCLVContentLeft = styled.div`
   flex-direction: column;
   justify-content: space-between;
   background: linear-gradient(28.19deg, #BDFDE2 -14.72%, #9BDAF6 116.35%);
-  &>div:first-child {
+
+  & > div:first-child {
     div {
       color: #141414;
       font-weight: 600;
@@ -481,6 +705,7 @@ const ToolsOnCLVContentLeft = styled.div`
       line-height: 40px;
       letter-spacing: 0.008em;
     }
+
     span {
       font-family: Inter;
       font-weight: 400;
@@ -497,7 +722,8 @@ const ToolsOnCLVContentLeft = styled.div`
 
 const ToolsOnCLVContentRight = styled.div`
   flex: 0 0 50%;
-  &>div:first-child {
+
+  & > div:first-child {
     margin-bottom: 16px;
   }
 `
@@ -508,20 +734,23 @@ const ToolsOnCLVItem = styled.div`
   padding: 48px;
   min-height: 304px;
 
-  &>div:first-child {
+  & > div:first-child {
     display: flex;
     align-items: center;
+
     img {
       width: 32px;
       margin-right: 16px;
     }
+
     color: #FFFFFF;
     font-weight: 600;
     font-size: 32px;
     line-height: 40px;
     letter-spacing: 0.008em;
   }
-  &>span {
+
+  & > span {
     font-family: Inter;
     font-weight: 400;
     font-size: 16px;

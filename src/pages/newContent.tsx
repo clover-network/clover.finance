@@ -23,6 +23,10 @@ const Wrapper = styled.div`
 export const NewContent = () => {
   const navList = [
     {
+      name: t('home'),
+      path: "/",
+    },
+    {
       name: t('about'),
       path: "/?type=about",
     },
@@ -43,38 +47,39 @@ export const NewContent = () => {
       path: "/?type=ecosystem",
     },
   ];
-  const [selectTab, setSelectTab] = useState({ name: "", path: "" });
+  const [selectTab, setSelectTab] = useState(navList[0]);
   const location = useRouter();
 
   useEffect(() => {
     const routeSearch = window.location.search;
     switch (routeSearch) {
       case "":
-        setSelectTab({ name: "", path: "" });
-        break;
-      case "?type=about":
         setSelectTab(navList[0]);
         break;
-      case "?type=CLVChain":
+      case "?type=about":
         setSelectTab(navList[1]);
         break;
-      case "?type=wallet":
+      case "?type=CLVChain":
         setSelectTab(navList[2]);
         break;
-      case "?type=developers":
+      case "?type=wallet":
         setSelectTab(navList[3]);
         break;
-      case "?type=ecosystem":
+      case "?type=developers":
         setSelectTab(navList[4]);
         break;
+      case "?type=ecosystem":
+        setSelectTab(navList[5]);
+        break;
       default:
-        setSelectTab({ name: "", path: "" });
+        setSelectTab(navList[0]);
         break;
     }
   }, [location]);
   const changeTab = (tab: any) => {
     location.push(tab.path, undefined, { shallow: true });
     setSelectTab(tab);
+    console.log(tab)
   };
 
   return (
@@ -84,7 +89,7 @@ export const NewContent = () => {
         currentTab={selectTab}
         handleChange={(tab: any) => changeTab(tab)}
       />
-      {(selectTab.name === '' || window.location.search === '') && <Main startBuild={() => {changeTab(navList[3])}} />}
+      {(selectTab.name === t('home') || window.location.search === '') && <Main startBuild={() => {changeTab(navList[3])}} />}
       {selectTab.name === t('about') && <About />}
       {selectTab.name === t('CLVChain') && <CLVChain />}
       {selectTab.name === t('wallet') && <Wallet />}

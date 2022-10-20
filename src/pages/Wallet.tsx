@@ -4,8 +4,10 @@ import { breakpoint } from "../mixins/breakpoint";
 import { t } from '../i18n/intl';
 import { Footer } from './components/Footer';
 import { GrayButton, NormalButton } from '../components/Btn';
+import {AnimationItem, AnimationText} from "./Main";
 
 export const Wallet: React.FC = () => {
+  const text1 = ['9', '7', '9', ',', '0', '3', '0']
   return (
       <Wrapper>
         <LandingContainer>
@@ -29,7 +31,17 @@ export const Wallet: React.FC = () => {
             <ContentBottom>
               <ContentBottomTop>
                 <ContentBottomTopLeft>
-                  <div>Over 979,030</div>
+                  <div>
+                    <span>Over</span>
+                    <AnimationText height="60px">
+                      {text1.map((i, index) => (
+                          <AnimationItem key={`text1_${index}`} className="down go" color='#000' width="30px" height="60px" fontSize="48px" background="#fff">
+                            <div className="digital front null"/>
+                            <div className={i === ',' ? 'digital back comma' : i === '.' ? 'digital back point' : i === '$' ? 'digital back dollar' : `digital back number${i}`}/>
+                          </AnimationItem>
+                      ))}
+                    </AnimationText>
+                  </div>
                   <span>{t('createdAWalletInCLV')}</span>
                 </ContentBottomTopLeft>
                 <ContentBottomTopRight>
@@ -296,15 +308,20 @@ const ContentBottomTop = styled.div`
 `;
 
 const ContentBottomTopLeft = styled.div`
-  div {
+  &>div {
     font-weight: 600;
     font-size: 48px;
     line-height: 60px;
     letter-spacing: 0.008em;
     color: #0C0B0B;
+    display: flex;
+    align-items: center;
+    span {
+      margin-right: 16px;
+    }
   }
 
-  span {
+  &>span {
     font-family: Inter;
     font-weight: 400;
     font-size: 16px;

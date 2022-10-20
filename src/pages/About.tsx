@@ -62,7 +62,11 @@ export const About: React.FC = () => {
                 <span>{t('roadmap')}</span>
               </ProgressTitle>
               <ProgressContent>
-                <ProgressItem>
+                <ProgressItem
+                    style={{
+                      background: 'url(images/bg-top.svg) no-repeat',
+                    }}
+                >
                   <ProgressQ0Left>
                     <div className={scrollTop > 550 ? 'animation1' : ''}>2021</div>
                   </ProgressQ0Left>
@@ -103,7 +107,11 @@ export const About: React.FC = () => {
                     </div>
                   </ProgressQ0Right>
                 </ProgressItem>
-                <ProgressItem>
+                <ProgressItem
+                    style={{
+                      background: 'url(images/bg-middle.svg) no-repeat',
+                    }}
+                >
                   <ProgressQ1Left>
                     <h3 className={scrollTop > 1200 ? 'animation2' : ''}>(Q1)</h3>
                     <div className={scrollTop > 1200 ? 'animation3' : ''}>
@@ -178,7 +186,11 @@ export const About: React.FC = () => {
                     <div className={scrollTop > 1200 ? 'animation1' : ''}>2022</div>
                   </ProgressQ1Right>
                 </ProgressItem>
-                <ProgressItem>
+                <ProgressItem
+                    style={{
+                      background: 'url(images/bg-bottom.svg) no-repeat',
+                    }}
+                >
                   <ProgressQ2Left>
                     <div className={scrollTop > 2500 ? 'animation1' : ''}>2023</div>
                   </ProgressQ2Left>
@@ -206,19 +218,9 @@ export const About: React.FC = () => {
                 <span>&nbsp;&nbsp;{t('update')}</span>
               </NewsUpdateTitle>
               <NewsUpdateContent>
-                <NewsUpdateItem onClick={() => {window.open('https://medium.com/@clv_org/introducing-clvs-cornerstones-meet-more-clv-team-members-f88fb90900da')}}>
-                  <NewsUpdateItemLeft>
-                    <span>Today</span>
-                    <img src="images/news1.svg" alt=""/>
-                  </NewsUpdateItemLeft>
-                  <NewsUpdateItemRight>
-                    <div style={{fontSize: '48px',lineHeight: '60px'}}>{t('introducingCLV')}</div>
-                    <span>{t('Q1Hint')}</span>
-                  </NewsUpdateItemRight>
-                </NewsUpdateItem>
                 <NewsUpdateItem onClick={() => {window.open('https://medium.com/@clv_org/seamless-access-to-all-things-defi-with-clv-8c4002a001b4')}}>
                   <NewsUpdateItemLeft>
-                    <span>19 May 2022</span>
+                    <span>13 Oct 2022</span>
                     <img src="images/news2.svg" alt=""/>
                   </NewsUpdateItemLeft>
                   <NewsUpdateItemRight>
@@ -228,13 +230,29 @@ export const About: React.FC = () => {
                 </NewsUpdateItem>
                 <NewsUpdateItem onClick={() => {window.open('https://medium.com/@clv_org/clv-quarterly-wrap-up-a-look-into-q3-2022-722a7baeae11')}}>
                   <NewsUpdateItemLeft>
-                    <span>15 Apr 2022</span>
+                    <span>05 Oct 2022</span>
                     <img src="images/news3.svg" alt=""/>
                   </NewsUpdateItemLeft>
                   <NewsUpdateItemRight>
                     <div>{t('CLVQuarterly')}</div>
                     <span>{t('CLVQuarterlyHint')}</span>
-                    <GrayButton margin="80px 0 0 0">{t('seeMore')}</GrayButton>
+                    <GrayButton
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          window.open('https://medium.com/@clv_org')
+                        }}
+                        margin="80px 0 0 0"
+                    >{t('seeMore')}</GrayButton>
+                  </NewsUpdateItemRight>
+                </NewsUpdateItem>
+                <NewsUpdateItem onClick={() => {window.open('https://medium.com/@clv_org/introducing-clvs-cornerstones-meet-more-clv-team-members-f88fb90900da')}}>
+                  <NewsUpdateItemLeft>
+                    <span>20 Sep 2022</span>
+                    <img src="images/news1.svg" alt=""/>
+                  </NewsUpdateItemLeft>
+                  <NewsUpdateItemRight>
+                    <div>{t('introducingCLV')}</div>
+                    <span>{t('Q1Hint')}</span>
                   </NewsUpdateItemRight>
                 </NewsUpdateItem>
               </NewsUpdateContent>
@@ -523,6 +541,7 @@ const ProgressItem = styled.div`
   gap: 16px;
   align-items: flex-start;
   margin-bottom: 48px;
+  background-size: cover;
 `
 
 const ProgressQ0Left = styled.div`

@@ -189,7 +189,7 @@ export default function NewHeader(props: any): ReactElement {
                   <img onClick={() => openUrl('https://github.com/clover-network/clover-multichain-mobile-wallet-release/releases/latest/download/clover.apk')} src="images/google_play_icon.svg" alt="" />
                   <img onClick={() => openUrl('https://chrome.google.com/webstore/detail/clv-wallet/nhnkbkgjikgcigadomkphalanndcapjk')} src="images/chrome_icon.svg" alt="" />
                 </ButtonIcon>
-                <LogIn onClick={() => openUrl('https://portal.clv.org')}>Log In</LogIn>
+                <LogIn onClick={() => openUrl('https://portal.clv.org')}>CLV Portal</LogIn>
                 {/*<SignUp onClick={() => openUrl('https://portal.clv.org')}>Sign Up</SignUp>*/}
               </WalletBtns>}
             </HeaderRight>
