@@ -159,7 +159,7 @@ export default function NewHeader(props: any): ReactElement {
       <HeaderWrapper>
         <HeaderContent>
           <HeaderDiv onClick={() => {location.push('/', undefined, { shallow: true });}}>
-            <img src={isWallet ? 'images/logo.svg' : 'images/logo_white.svg'} alt="" />
+            <img src={isWallet ? 'images/Logo.svg' : 'images/logo_white.svg'} alt="" />
           </HeaderDiv>
           <WrapperMobileOnly>
             <HeaderIcon
