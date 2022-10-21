@@ -8,6 +8,12 @@ import {AnimationItem, AnimationText} from "./Main";
 
 export const Wallet: React.FC = () => {
   const text1 = ['9', '7', '9', ',', '0', '3', '0']
+  const scrollTo = () => {
+    let anchorElement = document.getElementById("idealAvailableContent")
+    if (anchorElement) {
+      anchorElement.scrollIntoView({behavior: 'smooth'})
+    }
+  }
   return (
       <Wrapper>
         <LandingContainer>
@@ -45,7 +51,7 @@ export const Wallet: React.FC = () => {
                   <span>{t('createdAWalletInCLV')}</span>
                 </ContentBottomTopLeft>
                 <ContentBottomTopRight>
-                  <NormalButton width='568px'>{t('createWallet')}</NormalButton>
+                  <NormalButton onClick={() => scrollTo()} width='568px'>{t('createWallet')}</NormalButton>
                 </ContentBottomTopRight>
               </ContentBottomTop>
               <ContentBottomBottom>
@@ -64,7 +70,7 @@ export const Wallet: React.FC = () => {
                 <div>{t('theIdealWallet')}</div>
                 <span>{t('theIdealWalletHint')}</span>
               </IdealAvailableTitle>
-              <IdealAvailableContent>
+              <IdealAvailableContent id="idealAvailableContent">
                 <IdealAvailableItem>
                   <img style={{marginLeft: '-80px'}} src='images/cross_chain.svg' alt='' />
                   <div style={{marginLeft: '66px'}}>
