@@ -51,12 +51,12 @@ export const Main = ({startBuild}: TypeProps) => {
                 mouseDown = false
             }
         }
-        if (mouseDown) {
+        const playVideo: any = document.getElementById('playVideo1')
+        if (mouseDown && playVideo.currentTime >= (playVideo.duration - 0.00005)) {
             rewind(1.0)
             return
         }
-        const playVideo: any = document.getElementById('playVideo1')
-        if (window.scrollY > 800 && window.scrollY < 2500 && playVideo.currentTime === 0) {
+        if (window.scrollY > 800 && window.scrollY < 2500 && playVideo.currentTime <= 0.00005) {
             setPlay(true)
             playVideo.play()
         }
@@ -70,11 +70,6 @@ export const Main = ({startBuild}: TypeProps) => {
             window.removeEventListener(mousewheel, handleScroll)
         }
     }, [location]);
-
-    const text1 = ['1', '9', ',', '9', '6', '7', ',', '9', '0', '6']
-    const text2 = ['4', ',', '8', '6', '7']
-    const text3 = ['$', '0', '.', '0', '0', '0', '2', '5']
-    const text4 = ['1', '5', '3']
 
     return (
         <Wrapper>
@@ -113,51 +108,35 @@ export const Main = ({startBuild}: TypeProps) => {
                     </div>
                     <BalanceWrapper>
                         <BalanceItem>
-                            <AnimationText>
-                                {text1.map((i, index) => (
-                                    <AnimationItem key={`text1_${index}`} className="down go" width={i === ',' || i === '.' ? '10px' : '20px'}>
-                                        <div className="digital front null"/>
-                                        <div
-                                            className={i === ',' ? 'digital back comma' : i === '.' ? 'digital back point' : i === '$' ? 'digital back dollar' : `digital back number${i}`}/>
-                                    </AnimationItem>
-                                ))}
-                            </AnimationText>
+                            <AnimationTextWrapper>
+                                <span>19,96</span>
+                                <AnimationTextItem>7</AnimationTextItem>
+                                <span>,</span>
+                                <AnimationTextItem delay='0.3s'>9</AnimationTextItem>
+                                <AnimationTextItem delay='0.5s'>0</AnimationTextItem>
+                                <AnimationTextItem delay='0.8s'>6</AnimationTextItem>
+                            </AnimationTextWrapper>
                             <span>Total Transactions</span>
                         </BalanceItem>
                         <BalanceItem>
-                            <AnimationText>
-                                {text2.map((i, index) => (
-                                    <AnimationItem key={`text1_${index}`} className="down go" width={i === ',' || i === '.' ? '10px' : '20px'}>
-                                        <div className="digital front null"/>
-                                        <div
-                                            className={i === ',' ? 'digital back comma' : i === '.' ? 'digital back point' : i === '$' ? 'digital back dollar' : `digital back number${i}`}/>
-                                    </AnimationItem>
-                                ))}
-                            </AnimationText>
+                            <AnimationTextWrapper>
+                                <span>4,8</span>
+                                <AnimationTextItem>6</AnimationTextItem>
+                                <AnimationTextItem delay='0.3s'>7</AnimationTextItem>
+                            </AnimationTextWrapper>
                             <span>Transactions per second</span>
                         </BalanceItem>
                         <BalanceItem>
-                            <AnimationText>
-                                {text3.map((i, index) => (
-                                    <AnimationItem key={`text1_${index}`} className="down go" width={i === ',' || i === '.' ? '10px' : '20px'}>
-                                        <div className="digital front null"/>
-                                        <div
-                                            className={i === ',' ? 'digital back comma' : i === '.' ? 'digital back point' : i === '$' ? 'digital back dollar' : `digital back number${i}`}/>
-                                    </AnimationItem>
-                                ))}
-                            </AnimationText>
+                            <AnimationTextWrapper>
+                                <span>$0.00025</span>
+                            </AnimationTextWrapper>
                             <span>Avg. cost per transaction</span>
                         </BalanceItem>
                         <BalanceItem>
-                            <AnimationText>
-                                {text4.map((i, index) => (
-                                    <AnimationItem key={`text1_${index}`} className="down go" width={i === ',' || i === '.' ? '10px' : '20px'}>
-                                        <div className="digital front null"/>
-                                        <div
-                                            className={i === ',' ? 'digital back comma' : i === '.' ? 'digital back point' : i === '$' ? 'digital back dollar' : `digital back number${i}`}/>
-                                    </AnimationItem>
-                                ))}
-                            </AnimationText>
+                            <AnimationTextWrapper>
+                                <span>15</span>
+                                <AnimationTextItem>3</AnimationTextItem>
+                            </AnimationTextWrapper>
                             <span>Validator nodes</span>
                         </BalanceItem>
                     </BalanceWrapper>
@@ -370,7 +349,7 @@ const BalanceItem = styled.div`
     margin: 0;
   }
 
-  span {
+  & > span {
     font-family: Inter;
     font-weight: 400;
     font-size: 16px;
@@ -381,189 +360,220 @@ const BalanceItem = styled.div`
   }
 `;
 
-export const AnimationText = styled.div<{
-    height?: string,
-}>`
-  height: ${({height}) => (height ? height : '40px')};
+const AnimationTextWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  overflow: hidden;
 
-  & > div:nth-child(odd) {
-    &.down.go .front:before {
-      animation-delay: 0.4s;
-    }
-
-    &.down.go .back:after {
-      animation-delay: 0.4s;
-    }
+  span, div {
+    font-weight: 590;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: 0.008em;
+    color: #FFFFFF;
   }
+`
 
-  & > div:last-child, & > div:first-child {
-    &.down.go .front:before {
-      animation-delay: 0.2s;
+const AnimationTextItem = styled.div<{
+    delay?: string
+}>`
+  animation: textUp 0.3s ease-in-out both;
+  animation-delay: ${({delay}) => (delay ? delay : 0)};
+
+  @keyframes textUp {
+    0% {
+      transform: translateY(40px);
     }
 
-    &.down.go .back:after {
-      animation-delay: 0.2s;
+    100% {
+      transform: translateY(0);
     }
   }
 `
 
-export const AnimationItem = styled.div<{
-    color?: string,
-    height?: string,
-    width?: string,
-    fontSize?: string
-    background?: string
-}>`
-  display: inline-block;
-  position: relative;
-  width: ${({width}) => (width ? width : '20px')};
-  height: ${({height}) => (height ? height : '40px')};
-  line-height: ${({height}) => (height ? height : '40px')};
-  color: ${({color}) => (color ? color : '#fff')};
-  font-size: ${({fontSize}) => (fontSize ? fontSize : '32px')};
-  text-align: center;
-
-  .digital:before,
-  .digital:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    background: ${({background}) => (background ? background : '#141414')};
-    overflow: hidden;
-    box-sizing: border-box;
-  }
-
-  .digital:before {
-    top: 0;
-    bottom: 50%;
-  }
-
-  .digital:after {
-    top: 50%;
-    bottom: 0;
-    line-height: 0;
-  }
-
-  .null:before,
-  .null:after {
-    content: " ";
-  }
-
-  .number0:before,
-  .number0:after {
-    content: "0";
-  }
-
-  .number1:before,
-  .number1:after {
-    content: "1";
-  }
-
-  .number2:before,
-  .number2:after {
-    content: "2";
-  }
-
-  .number3:before,
-  .number3:after {
-    content: "3";
-  }
-
-  .number4:before,
-  .number4:after {
-    content: "4";
-  }
-
-  .number5:before,
-  .number5:after {
-    content: "5";
-  }
-
-  .number6:before,
-  .number6:after {
-    content: "6";
-  }
-
-  .number7:before,
-  .number7:after {
-    content: "7";
-  }
-
-  .number8:before,
-  .number8:after {
-    content: "8";
-  }
-
-  .number9:before,
-  .number9:after {
-    content: "9";
-  }
-
-  .point:before,
-  .point:after {
-    content: ".";
-  }
-
-  .comma:before,
-  .comma:after {
-    content: ",";
-  }
-
-  .dollar:before,
-  .dollar:after {
-    content: "$";
-  }
-
-  &.down .front:before {
-    z-index: 3;
-  }
-
-  &.down .back:after {
-    z-index: 2;
-    transform-origin: 50% 0%;
-    transform: perspective(160px) rotateX(180deg);
-  }
-
-  &.down .front:after,
-  &.down .back:before {
-    z-index: 1;
-  }
-
-  &.down.go .front:before {
-    transform-origin: 50% 100%;
-    animation: frontFlipDown 0.4s ease-in-out both;
-    box-shadow: 0 -2px 6px rgba(255, 255, 255, 0.3);
-    backface-visibility: hidden;
-    animation-iteration-count: 3;
-  }
-
-  &.down.go .back:after {
-    animation: backFlipDown 0.4s ease-in-out both;
-    animation-iteration-count: 3;
-
-  }
-
-  @keyframes frontFlipDown {
-    0% {
-      transform: perspective(160px) rotateX(0deg);
-    }
-
-    100% {
-      transform: perspective(160px) rotateX(-180deg);
-    }
-  }
-
-  @keyframes backFlipDown {
-    0% {
-      transform: perspective(160px) rotateX(180deg);
-    }
-
-    100% {
-      transform: perspective(160px) rotateX(0deg);
-    }
-  }
-`
+// export const AnimationText = styled.div<{
+//     height?: string,
+// }>`
+//   height: ${({height}) => (height ? height : '40px')};
+//
+//   & > div:nth-child(odd) {
+//     &.down.go .front:before {
+//       animation-delay: 0.4s;
+//     }
+//
+//     &.down.go .back:after {
+//       animation-delay: 0.4s;
+//     }
+//   }
+//
+//   & > div:last-child, & > div:first-child {
+//     &.down.go .front:before {
+//       animation-delay: 0.2s;
+//     }
+//
+//     &.down.go .back:after {
+//       animation-delay: 0.2s;
+//     }
+//   }
+// `
+//
+// export const AnimationItem = styled.div<{
+//     color?: string,
+//     height?: string,
+//     width?: string,
+//     fontSize?: string
+//     background?: string
+// }>`
+//   display: inline-block;
+//   position: relative;
+//   width: ${({width}) => (width ? width : '20px')};
+//   height: ${({height}) => (height ? height : '40px')};
+//   line-height: ${({height}) => (height ? height : '40px')};
+//   color: ${({color}) => (color ? color : '#fff')};
+//   font-size: ${({fontSize}) => (fontSize ? fontSize : '32px')};
+//   text-align: center;
+//
+//   .digital:before,
+//   .digital:after {
+//     content: "";
+//     position: absolute;
+//     left: 0;
+//     right: 0;
+//     background: ${({background}) => (background ? background : '#141414')};
+//     overflow: hidden;
+//     box-sizing: border-box;
+//   }
+//
+//   .digital:before {
+//     top: 0;
+//     bottom: 50%;
+//   }
+//
+//   .digital:after {
+//     top: 50%;
+//     bottom: 0;
+//     line-height: 0;
+//   }
+//
+//   .null:before,
+//   .null:after {
+//     content: " ";
+//   }
+//
+//   .number0:before,
+//   .number0:after {
+//     content: "0";
+//   }
+//
+//   .number1:before,
+//   .number1:after {
+//     content: "1";
+//   }
+//
+//   .number2:before,
+//   .number2:after {
+//     content: "2";
+//   }
+//
+//   .number3:before,
+//   .number3:after {
+//     content: "3";
+//   }
+//
+//   .number4:before,
+//   .number4:after {
+//     content: "4";
+//   }
+//
+//   .number5:before,
+//   .number5:after {
+//     content: "5";
+//   }
+//
+//   .number6:before,
+//   .number6:after {
+//     content: "6";
+//   }
+//
+//   .number7:before,
+//   .number7:after {
+//     content: "7";
+//   }
+//
+//   .number8:before,
+//   .number8:after {
+//     content: "8";
+//   }
+//
+//   .number9:before,
+//   .number9:after {
+//     content: "9";
+//   }
+//
+//   .point:before,
+//   .point:after {
+//     content: ".";
+//   }
+//
+//   .comma:before,
+//   .comma:after {
+//     content: ",";
+//   }
+//
+//   .dollar:before,
+//   .dollar:after {
+//     content: "$";
+//   }
+//
+//   &.down .front:before {
+//     z-index: 3;
+//   }
+//
+//   &.down .back:after {
+//     z-index: 2;
+//     transform-origin: 50% 0%;
+//     transform: perspective(160px) rotateX(180deg);
+//   }
+//
+//   &.down .front:after,
+//   &.down .back:before {
+//     z-index: 1;
+//   }
+//
+//   &.down.go .front:before {
+//     transform-origin: 50% 100%;
+//     animation: frontFlipDown 0.4s ease-in-out both;
+//     box-shadow: 0 -2px 6px rgba(255, 255, 255, 0.3);
+//     backface-visibility: hidden;
+//     animation-iteration-count: 3;
+//   }
+//
+//   &.down.go .back:after {
+//     animation: backFlipDown 0.4s ease-in-out both;
+//     animation-iteration-count: 3;
+//
+//   }
+//
+//   @keyframes frontFlipDown {
+//     0% {
+//       transform: perspective(160px) rotateX(0deg);
+//     }
+//
+//     100% {
+//       transform: perspective(160px) rotateX(-180deg);
+//     }
+//   }
+//
+//   @keyframes backFlipDown {
+//     0% {
+//       transform: perspective(160px) rotateX(180deg);
+//     }
+//
+//     100% {
+//       transform: perspective(160px) rotateX(0deg);
+//     }
+//   }
+// `
 
 const VideoWrapper = styled.div`
   width: 50%;

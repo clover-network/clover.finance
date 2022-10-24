@@ -15,7 +15,7 @@
   "gasFeeRedistribution": "Gas-fee Redistribution",
   "gasFeeRedistributionHint1": "CLV incentivizes dApp builders by automatically sharing a percentage of the transaction fee’s with them.",
   "gasFeeRedistributionHint2": "A redistribution mechanism that ensures a productive, innovative, and cost-efficient environment for DeFi development.",
-  "inventorOfFeeEconomics": "We re-invented fee-economics!.",
+  "inventorOfFeeEconomics": "We re-invented fee-economics",
   "inventorOfFeeEconomicsHint": "CLV’s smart relayer acts on behalf of the sender so that relayers can cover gas fees using the same token of the intended transaction, thus avoiding dependency on the base cryptocurrency.",
   "EVMCompatible": "EVM Compatible",
   "EVMCompatibleHint1": "CLV offers seamless multi-chain indexing across Bitcoin, Ethereum, Binance Smart Chain, and Polkadot.",

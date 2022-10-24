@@ -1,210 +1,210 @@
 import React from "react";
-import styled, { css } from "styled-components";
-import { breakpoint } from "../mixins/breakpoint";
-import { t } from '../i18n/intl';
-import { Footer } from './components/Footer';
-import { GrayButton, NormalButton } from '../components/Btn';
-import {AnimationItem, AnimationText} from "./Main";
+import styled, {css} from "styled-components";
+import {breakpoint} from "../mixins/breakpoint";
+import {t} from '../i18n/intl';
+import {Footer} from './components/Footer';
+import {GrayButton, NormalButton} from '../components/Btn';
 
 export const Wallet: React.FC = () => {
-  const text1 = ['9', '7', '9', ',', '0', '3', '0']
-  const scrollTo = () => {
-    let anchorElement = document.getElementById("idealAvailableContent")
-    if (anchorElement) {
-      anchorElement.scrollIntoView({behavior: 'smooth'})
+    const scrollTo = () => {
+        let anchorElement = document.getElementById("idealAvailableContent")
+        if (anchorElement) {
+            anchorElement.scrollIntoView({behavior: 'smooth'})
+        }
     }
-  }
-  return (
-      <Wrapper>
-        <LandingContainer>
-          <video autoPlay src='videos/walletPageParticles.mp4'></video>
-          <IntroducingCrypto>
-            <ContentWrapper>
-              <div>
-                <TextWrapper>
-                  <UpperCaseSpan>{t('introducingCrypto')}</UpperCaseSpan>
-                  <div>
-                    {t('builtForCryptoUsers')}
-                    <img src='images/clv_icon2.svg' alt='' />
-                  </div>
-                  <span>{t('builtForCryptoUsersHint')}</span>
-                </TextWrapper>
-                <ImgWrapper>
-                  <img src='images/wallet_3d.png' alt='' />
-                </ImgWrapper>
-              </div>
-            </ContentWrapper>
-            <ContentBottom>
-              <ContentBottomTop>
-                <ContentBottomTopLeft>
-                  <div>
-                    <span>Over</span>
-                    <AnimationText height="60px">
-                      {text1.map((i, index) => (
-                          <AnimationItem key={`text1_${index}`} className="down go" color='#000' height="60px" fontSize="48px" background="#fff" width={i === ',' || i === '.' ? '15px' : '30px'}>
-                            <div className="digital front null"/>
-                            <div className={i === ',' ? 'digital back comma' : i === '.' ? 'digital back point' : i === '$' ? 'digital back dollar' : `digital back number${i}`}/>
-                          </AnimationItem>
-                      ))}
-                    </AnimationText>
-                  </div>
-                  <span>{t('createdAWalletInCLV')}</span>
-                </ContentBottomTopLeft>
-                <ContentBottomTopRight>
-                  <NormalButton onClick={() => scrollTo()} width='568px'>{t('createWallet')}</NormalButton>
-                </ContentBottomTopRight>
-              </ContentBottomTop>
-              <ContentBottomBottom>
-                <img src='images/gray_forbes.svg' alt='' />
-                <img src='images/gray_telegraph.svg' alt='' />
-                <img src='images/gray_coindesk.svg' alt='' />
-                <img src='images/gray_yahoo.svg' alt='' />
-              </ContentBottomBottom>
-            </ContentBottom>
-          </IntroducingCrypto>
-        </LandingContainer>
-        <Content>
-          <div>
-            <IdealAvailable>
-              <IdealAvailableTitle>
-                <div>{t('theIdealWallet')}</div>
-                <span>{t('theIdealWalletHint')}</span>
-              </IdealAvailableTitle>
-              <IdealAvailableContent id="idealAvailableContent">
-                <IdealAvailableItem>
-                  <img style={{marginLeft: '-80px'}} src='images/cross_chain.svg' alt='' />
-                  <div style={{marginLeft: '66px'}}>
-                    <IdealAvailableItemContent>
-                      <UpperCaseSpan>{t('extensionWallet')}</UpperCaseSpan>
-                      <div>{t('crossChainCompatibility')}</div>
-                      <span style={{marginTop: '32px'}}>{t('crossChainCompatibilityHint1')}</span>
-                      <span style={{margin: '10px 0 32px'}}>{t('crossChainCompatibilityHint2')}</span>
-                      <h3>70,000+ Users</h3>
-                      <h4>
-                        <img src='images/reviews.svg' alt='' />
-                        <span>398 Reviews</span>
-                      </h4>
-                    </IdealAvailableItemContent>
-                    <NormalButton
-                        onClick={() => {
-                          window.open('https://chrome.google.com/webstore/detail/clv-wallet/nhnkbkgjikgcigadomkphalanndcapjk', "_blank")
-                        }}
-                    >{t('getTheExtension')}</NormalButton>
-                  </div>
-                </IdealAvailableItem>
-                <IdealAvailableItem>
-                  <div>
-                    <IdealAvailableItemContent>
-                      <UpperCaseSpan>{t('CLVMobileWallet')}</UpperCaseSpan>
-                      <div>{t('DcentralizedFinance')}</div>
-                      <span style={{marginTop: '32px'}}>{t('DcentralizedFinanceHint1')}</span>
-                      <span style={{margin: '10px 0 32px'}}>{t('DcentralizedFinanceHint2')}</span>
-                    </IdealAvailableItemContent>
-                    <Btns>
-                      <img
-                          onClick={() => {
-                            window.open('https://apps.apple.com/app/clover-wallet/id1570072858', '_blank')
-                          }}
-                          src='images/app_store.svg'
-                          alt=''
-                      />
-                      <img
-                          onClick={() => {
-                            window.open('https://github.com/clover-network/clover-multichain-mobile-wallet-release/releases/latest/download/clover.apk', '_blank')
-                          }}
-                          src='images/google_play.svg'
-                          alt=''
-                      />
-                    </Btns>
-                  </div>
-                  <img src='images/stake_to_earn.svg' alt='' />
-                </IdealAvailableItem>
-                <IdealAvailableItem>
-                  <div>
-                    <IdealAvailableItemContent>
-                      <UpperCaseSpan>{t('CLVPortal')}</UpperCaseSpan>
-                      <div>{t('onePortalOfAll')}</div>
-                      <span style={{margin: '32px 0'}}>{t('onePortalOfAllHint')}</span>
-                    </IdealAvailableItemContent>
-                    <NormalButton>{t('exploreNow')}</NormalButton>
-                  </div>
-                  <img src='images/dashboard.svg' alt='' />
-                </IdealAvailableItem>
-              </IdealAvailableContent>
-            </IdealAvailable>
-            <YourPassport>
-              <YourPassportTitle>
-                <h3>{t('yourPassport')}</h3>
-                <span>{t('idealForAllUsers')}</span>
-              </YourPassportTitle>
-              <YourPassportContent>
-                <YourPassportTop>
-                  <YourPassportTopItem>
-                    <img src='images/introdusing_icon1.svg' alt='' />
-                    <div>{t('firstTimeCryptoUsers')}</div>
-                    <span>{t('firstTimeCryptoUsersHint')}</span>
-                  </YourPassportTopItem>
-                  <YourPassportTopItem>
-                    <img src='images/introdusing_icon1.svg' alt='' />
-                    <div>{t('defiUsers')}</div>
-                    <span>{t('defiUsersHint')}</span>
-                  </YourPassportTopItem>
-                  <YourPassportTopItem>
-                    <img src='images/introdusing_icon1.svg' alt='' />
-                    <div>{t('gamingUsers')}</div>
-                    <span>{t('gamingUsersHint')}</span>
-                  </YourPassportTopItem>
-                </YourPassportTop>
-                <YourPassportBottom>
-                  <YourPassportBottomLeft>
-                    <img src='images/CLV_wallet.svg' alt='' />
-                    <div>
-                      <h3>{t('CLVWallet')}</h3>
-                      <div>
-                        <img src='images/clover_finance.svg' alt='' />
-                        <span>{t('cloverFinance')}</span>
-                      </div>
-                      <div>
-                        <img src='images/reviews.svg' alt='' />
-                        <p>398</p>
-                        <img src='images/remind.svg' alt='' />
-                        <p><span></span>70,000+ Users<span></span></p>
-                        <div>Productivity</div>
-                      </div>
-                    </div>
-                  </YourPassportBottomLeft>
-                  <GrayButton
-                      width='316px'
-                      onClick={() => {
-                        window.open('https://www.figma.com/exit?url=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fclv-wallet%2Fnhnkbkgjikgcigadomkphalanndcapjk', '_blank')
-                      }}
-                      color="#0C0B0B"
-                  >{t('getTheExtension')}</GrayButton>
-                </YourPassportBottom>
-              </YourPassportContent>
-            </YourPassport>
-            {/*<JoinUs>*/}
-            {/*  <JoinUsTitle>*/}
-            {/*    <h3>{t('joinUs')}<img src='images/clv_icon2.svg' alt='' /></h3>*/}
-            {/*  </JoinUsTitle>*/}
-            {/*  <JoinUsInput>*/}
-            {/*    <input placeholder={t('addYourEmail')} type='text' />*/}
-            {/*    <div>*/}
-            {/*      <span>{t('send')}</span>*/}
-            {/*      <img src='images/send.svg' alt='' />*/}
-            {/*    </div>*/}
-            {/*  </JoinUsInput>*/}
-            {/*  <span>{t('clickingTheButton')}</span>*/}
-            {/*</JoinUs>*/}
-          </div>
-        </Content>
-        <Footer isWallet />
-      </Wrapper>
-  );
+    return (
+        <Wrapper>
+            <LandingContainer>
+                <video autoPlay src='videos/walletPageParticles.mp4'></video>
+                <IntroducingCrypto>
+                    <ContentWrapper>
+                        <div>
+                            <TextWrapper>
+                                <UpperCaseSpan>{t('introducingCrypto')}</UpperCaseSpan>
+                                <div>
+                                    {t('builtForCryptoUsers')}
+                                    <img src='images/clv_icon2.svg' alt=''/>
+                                </div>
+                                <span>{t('builtForCryptoUsersHint')}</span>
+                            </TextWrapper>
+                            <ImgWrapper>
+                                <img src='images/wallet_3d.png' alt=''/>
+                            </ImgWrapper>
+                        </div>
+                    </ContentWrapper>
+                    <ContentBottom>
+                        <ContentBottomTop>
+                            <ContentBottomTopLeft>
+                                <div>
+                                    <span>Over</span>
+                                    <AnimationTextWrapper>
+                                        <span>97</span>
+                                        <AnimationTextItem>9</AnimationTextItem>
+                                        <span>,</span>
+                                        <AnimationTextItem delay='0.3s'>0</AnimationTextItem>
+                                        <AnimationTextItem delay='0.5s'>3</AnimationTextItem>
+                                        <AnimationTextItem delay='0.8s'>0</AnimationTextItem>
+                                    </AnimationTextWrapper>
+                                </div>
+                                <span>{t('createdAWalletInCLV')}</span>
+                            </ContentBottomTopLeft>
+                            <ContentBottomTopRight>
+                                <NormalButton onClick={() => scrollTo()}
+                                              width='568px'>{t('createWallet')}</NormalButton>
+                            </ContentBottomTopRight>
+                        </ContentBottomTop>
+                        <ContentBottomBottom>
+                            <img src='images/gray_forbes.svg' alt=''/>
+                            <img src='images/gray_telegraph.svg' alt=''/>
+                            <img src='images/gray_coindesk.svg' alt=''/>
+                            <img src='images/gray_yahoo.svg' alt=''/>
+                        </ContentBottomBottom>
+                    </ContentBottom>
+                </IntroducingCrypto>
+            </LandingContainer>
+            <Content>
+                <div>
+                    <IdealAvailable>
+                        <IdealAvailableTitle>
+                            <div>{t('theIdealWallet')}</div>
+                            <span>{t('theIdealWalletHint')}</span>
+                        </IdealAvailableTitle>
+                        <IdealAvailableContent id="idealAvailableContent">
+                            <IdealAvailableItem>
+                                <img style={{marginLeft: '-80px'}} src='images/cross_chain.svg' alt=''/>
+                                <div style={{marginLeft: '66px'}}>
+                                    <IdealAvailableItemContent>
+                                        <UpperCaseSpan>{t('extensionWallet')}</UpperCaseSpan>
+                                        <div>{t('crossChainCompatibility')}</div>
+                                        <span style={{marginTop: '32px'}}>{t('crossChainCompatibilityHint1')}</span>
+                                        <span style={{margin: '10px 0 32px'}}>{t('crossChainCompatibilityHint2')}</span>
+                                        <h3>70,000+ Users</h3>
+                                        <h4>
+                                            <img src='images/reviews.svg' alt=''/>
+                                            <span>398 Reviews</span>
+                                        </h4>
+                                    </IdealAvailableItemContent>
+                                    <NormalButton
+                                        onClick={() => {
+                                            window.open('https://chrome.google.com/webstore/detail/clv-wallet/nhnkbkgjikgcigadomkphalanndcapjk', "_blank")
+                                        }}
+                                    >{t('getTheExtension')}</NormalButton>
+                                </div>
+                            </IdealAvailableItem>
+                            <IdealAvailableItem>
+                                <div>
+                                    <IdealAvailableItemContent>
+                                        <UpperCaseSpan>{t('CLVMobileWallet')}</UpperCaseSpan>
+                                        <div>{t('DcentralizedFinance')}</div>
+                                        <span style={{marginTop: '32px'}}>{t('DcentralizedFinanceHint1')}</span>
+                                        <span style={{margin: '10px 0 32px'}}>{t('DcentralizedFinanceHint2')}</span>
+                                    </IdealAvailableItemContent>
+                                    <Btns>
+                                        <img
+                                            onClick={() => {
+                                                window.open('https://apps.apple.com/app/clover-wallet/id1570072858', '_blank')
+                                            }}
+                                            src='images/app_store.svg'
+                                            alt=''
+                                        />
+                                        <img
+                                            onClick={() => {
+                                                window.open('https://github.com/clover-network/clover-multichain-mobile-wallet-release/releases/latest/download/clover.apk', '_blank')
+                                            }}
+                                            src='images/google_play.svg'
+                                            alt=''
+                                        />
+                                    </Btns>
+                                </div>
+                                <img src='images/stake_to_earn.svg' alt=''/>
+                            </IdealAvailableItem>
+                            <IdealAvailableItem>
+                                <div>
+                                    <IdealAvailableItemContent>
+                                        <UpperCaseSpan>{t('CLVPortal')}</UpperCaseSpan>
+                                        <div>{t('onePortalOfAll')}</div>
+                                        <span style={{margin: '32px 0'}}>{t('onePortalOfAllHint')}</span>
+                                    </IdealAvailableItemContent>
+                                    <NormalButton>{t('exploreNow')}</NormalButton>
+                                </div>
+                                <img src='images/dashboard.svg' alt=''/>
+                            </IdealAvailableItem>
+                        </IdealAvailableContent>
+                    </IdealAvailable>
+                    <YourPassport>
+                        <YourPassportTitle>
+                            <h3>{t('yourPassport')}</h3>
+                            <span>{t('idealForAllUsers')}</span>
+                        </YourPassportTitle>
+                        <YourPassportContent>
+                            <YourPassportTop>
+                                <YourPassportTopItem>
+                                    <img src='images/introdusing_icon1.svg' alt=''/>
+                                    <div>{t('firstTimeCryptoUsers')}</div>
+                                    <span>{t('firstTimeCryptoUsersHint')}</span>
+                                </YourPassportTopItem>
+                                <YourPassportTopItem>
+                                    <img src='images/introdusing_icon1.svg' alt=''/>
+                                    <div>{t('defiUsers')}</div>
+                                    <span>{t('defiUsersHint')}</span>
+                                </YourPassportTopItem>
+                                <YourPassportTopItem>
+                                    <img src='images/introdusing_icon1.svg' alt=''/>
+                                    <div>{t('gamingUsers')}</div>
+                                    <span>{t('gamingUsersHint')}</span>
+                                </YourPassportTopItem>
+                            </YourPassportTop>
+                            <YourPassportBottom>
+                                <YourPassportBottomLeft>
+                                    <img src='images/CLV_wallet.svg' alt=''/>
+                                    <div>
+                                        <h3>{t('CLVWallet')}</h3>
+                                        <div>
+                                            <img src='images/clover_finance.svg' alt=''/>
+                                            <span>{t('cloverFinance')}</span>
+                                        </div>
+                                        <div>
+                                            <img src='images/reviews.svg' alt=''/>
+                                            <p>398</p>
+                                            <img src='images/remind.svg' alt=''/>
+                                            <p><span></span>70,000+ Users<span></span></p>
+                                            <div>Productivity</div>
+                                        </div>
+                                    </div>
+                                </YourPassportBottomLeft>
+                                <GrayButton
+                                    width='316px'
+                                    onClick={() => {
+                                        window.open('https://chrome.google.com/webstore/detail/clv-wallet/nhnkbkgjikgcigadomkphalanndcapjk', "_blank")
+                                    }}
+                                    color="#0C0B0B"
+                                >{t('getTheExtension')}</GrayButton>
+                            </YourPassportBottom>
+                        </YourPassportContent>
+                    </YourPassport>
+                    {/*<JoinUs>*/}
+                    {/*  <JoinUsTitle>*/}
+                    {/*    <h3>{t('joinUs')}<img src='images/clv_icon2.svg' alt='' /></h3>*/}
+                    {/*  </JoinUsTitle>*/}
+                    {/*  <JoinUsInput>*/}
+                    {/*    <input placeholder={t('addYourEmail')} type='text' />*/}
+                    {/*    <div>*/}
+                    {/*      <span>{t('send')}</span>*/}
+                    {/*      <img src='images/send.svg' alt='' />*/}
+                    {/*    </div>*/}
+                    {/*  </JoinUsInput>*/}
+                    {/*  <span>{t('clickingTheButton')}</span>*/}
+                    {/*</JoinUs>*/}
+                </div>
+            </Content>
+            <Footer isWallet/>
+        </Wrapper>
+    );
 };
 
 const Content = styled.div`
   width: 100%;
+
   & > div {
     max-width: 1440px;
     min-width: 1440px;
@@ -225,23 +225,23 @@ const ContentWrapper = styled.div`
   padding-top: 100px;
   overflow: hidden;
 
-  &>div {
+  & > div {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     animation: overScroll 1s forwards ease-in-out;
-    @keyframes overScroll{
-      0%{
+    @keyframes overScroll {
+      0% {
         opacity: 0;
         transform: translateY(200px);
       }
-      20%{
+      20% {
         opacity: 0.5;
       }
-      90%{
+      90% {
         transform: translateY(-20px);
       }
-      100%{
+      100% {
         opacity: 1;
         transform: translateY(0);
       }
@@ -251,12 +251,12 @@ const ContentWrapper = styled.div`
 
 const UpperCaseSpan = styled.span`
   font-family: Inter;
-  font-weight: 700!important;
-  font-size: 16px!important;
-  line-height: 24px!important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
   letter-spacing: 0.026em;
   text-transform: uppercase;
-  color: #4E5D60!important;
+  color: #4E5D60 !important;
   margin-bottom: 24px;
 `
 
@@ -275,12 +275,13 @@ const TextWrapper = styled.div`
     letter-spacing: 0.008em;
     color: #0C0B0B;
     margin-bottom: 24px;
+
     img {
       margin-left: 10px;
     }
   }
 
-  &>span {
+  & > span {
     font-family: Inter;
     font-weight: 400;
     font-size: 20px;
@@ -314,7 +315,7 @@ const ContentBottomTop = styled.div`
 `;
 
 const ContentBottomTopLeft = styled.div`
-  &>div {
+  & > div {
     font-weight: 600;
     font-size: 48px;
     line-height: 60px;
@@ -322,12 +323,13 @@ const ContentBottomTopLeft = styled.div`
     color: #0C0B0B;
     display: flex;
     align-items: center;
-    span {
+
+    & > span {
       margin-right: 16px;
     }
   }
 
-  &>span {
+  & > span {
     font-family: Inter;
     font-weight: 400;
     font-size: 16px;
@@ -337,9 +339,41 @@ const ContentBottomTopLeft = styled.div`
   }
 `
 
+const AnimationTextWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  span, div {
+    font-weight: 590;
+    font-size: 48px;
+    line-height: 60px;
+    letter-spacing: 0.008em;
+    color: #0C0B0B;
+  }
+`
+
+const AnimationTextItem = styled.div<{
+    delay?: string
+}>`
+  animation: textUp 0.3s ease-in-out both;
+  animation-delay: ${({delay}) => (delay ? delay : 0)};
+
+  @keyframes textUp {
+    0% {
+      transform: translateY(60px);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+`
+
 const ContentBottomTopRight = styled.div`
   display: flex;
   align-items: center;
+
   div:first-child {
     margin-right: 16px;
   }
@@ -374,6 +408,7 @@ const IdealAvailableTitle = styled.div`
     color: #0C0B0B;
     margin-bottom: 24px;
   }
+
   span {
     font-family: Inter;
     font-weight: 400;
@@ -388,13 +423,14 @@ const IdealAvailableContent = styled.div`
   width: 100%;
   margin-top: 80px;
 
-  &>div {
+  & > div {
     margin-bottom: 24px;
+
     &:last-child {
       margin: 0;
       padding-right: 0;
       padding-top: 0;
-      align-items: center!important;
+      align-items: center !important;
     }
   }
 `
@@ -413,7 +449,8 @@ const IdealAvailableItem = styled.div`
   & > img {
     width: 50%;
   }
-  &>div {
+
+  & > div {
     padding: 60px 0;
   }
 `
@@ -421,7 +458,8 @@ const IdealAvailableItem = styled.div`
 const IdealAvailableItemContent = styled.div`
   width: unset;
   padding: 0;
-  &>h3 {
+
+  & > h3 {
     font-family: Inter;
     font-weight: 600;
     font-size: 24px;
@@ -435,7 +473,7 @@ const IdealAvailableItemContent = styled.div`
     font-size: 48px;
     line-height: 60px;
   }
-  
+
   & > span {
     font-family: Inter;
     font-weight: 400;
@@ -446,7 +484,7 @@ const IdealAvailableItemContent = styled.div`
     display: inline-block;
   }
 
-  &>h4 {
+  & > h4 {
     display: flex;
     align-items: center;
 
@@ -464,6 +502,7 @@ const IdealAvailableItemContent = styled.div`
       text-decoration-line: underline;
       color: #0C0B0B;
     }
+
     margin-bottom: 36px;
   }
 `
@@ -472,8 +511,10 @@ const Btns = styled.div`
   display: flex;
   align-items: center;
   margin-top: 8px;
+
   img {
     cursor: pointer;
+
     &:first-child {
       margin-right: 12px;
     }
@@ -489,6 +530,7 @@ const YourPassportTitle = styled.div`
   width: 100%;
   display: flex;
   align-items: flex-end;
+
   h3 {
     width: 50%;
     font-weight: 600;
@@ -497,6 +539,7 @@ const YourPassportTitle = styled.div`
     letter-spacing: 0.008em;
     color: #0C0B0B;
   }
+
   span {
     font-family: Inter;
     font-weight: 400;
@@ -516,7 +559,8 @@ const YourPassportTop = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 12px;
-  &>div:last-child {
+
+  & > div:last-child {
     margin-right: 0;
   }
 `
@@ -532,6 +576,7 @@ const YourPassportTopItem = styled.div`
   img {
     width: 103px;
   }
+
   div {
     font-weight: 500;
     font-size: 28px;
@@ -541,6 +586,7 @@ const YourPassportTopItem = styled.div`
     margin-bottom: 16px;
     margin-top: 36px;
   }
+
   span {
     font-family: Inter;
     font-weight: 400;
@@ -565,8 +611,10 @@ const YourPassportBottom = styled.div`
 const YourPassportBottomLeft = styled.div`
   display: flex;
   align-items: center;
+
   & > div {
     margin-left: 16px;
+
     h3 {
       font-weight: 600;
       font-size: 40px;
@@ -574,10 +622,12 @@ const YourPassportBottomLeft = styled.div`
       letter-spacing: 0.008em;
       color: #0C0B0B;
     }
+
     & > div {
       display: flex;
       align-items: center;
       margin-top: 12px;
+
       & > span {
         font-family: Inter;
         font-weight: 400;
@@ -586,6 +636,7 @@ const YourPassportBottomLeft = styled.div`
         letter-spacing: 0.006em;
         color: #83979F;
       }
+
       p, div {
         font-family: Inter;
         font-weight: 400;
@@ -596,6 +647,7 @@ const YourPassportBottomLeft = styled.div`
         display: flex;
         align-items: center;
         margin: 0;
+
         span {
           display: inline-block;
           width: 5px;
@@ -605,7 +657,8 @@ const YourPassportBottomLeft = styled.div`
           margin: 0 10px;
         }
       }
-      &>div {
+
+      & > div {
         text-decoration: underline;
       }
     }
@@ -704,6 +757,7 @@ const LandingContainer = styled.div`
   flex-direction: column;
   position: relative;
   max-height: 1000px;
+
   video {
     position: absolute;
     z-index: 0;
@@ -712,6 +766,7 @@ const LandingContainer = styled.div`
     width: 100vw;
     object-fit: fill;
   }
+
   & > div {
     z-index: 1;
     top: 0;

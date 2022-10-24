@@ -80,12 +80,12 @@ export const CLVChain: React.FC = () => {
         mouseDown = false
       }
     }
-    if (mouseDown) {
+    const playVideo: any = document.getElementById('playVideo')
+    if (mouseDown && playVideo.currentTime >= (playVideo.duration - 0.00005)) {
       rewind(1.0)
       return
     }
-    const playVideo: any = document.getElementById('playVideo')
-    if (window.scrollY > 920 && window.scrollY < 2500 && playVideo.currentTime === 0) {
+    if (window.scrollY > 920 && window.scrollY < 2500 && playVideo.currentTime <= 0.00005) {
       setPlay(true)
       playVideo.play()
     }

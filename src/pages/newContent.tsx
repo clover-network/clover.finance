@@ -79,7 +79,6 @@ export const NewContent = () => {
   const changeTab = (tab: any) => {
     location.push(tab.path, undefined, { shallow: true });
     setSelectTab(tab);
-    console.log(tab)
   };
 
   return (
@@ -89,7 +88,7 @@ export const NewContent = () => {
         currentTab={selectTab}
         handleChange={(tab: any) => changeTab(tab)}
       />
-      {(selectTab.name === t('home') || window.location.search === '') && <Main startBuild={() => {changeTab(navList[3])}} />}
+      {(selectTab.name === t('home') || window.location.search === '') && <Main startBuild={() => {changeTab(navList[4])}} />}
       {selectTab.name === t('about') && <About />}
       {selectTab.name === t('CLVChain') && <CLVChain />}
       {selectTab.name === t('wallet') && <Wallet />}

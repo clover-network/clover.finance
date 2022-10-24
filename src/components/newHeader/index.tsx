@@ -110,15 +110,20 @@ const WalletBtns = styled.div`
 
 const LogIn = styled.div`
   padding: 8px 18px;
-  background: rgba(255, 255, 255, 0.4);
   border-radius: 8px;
   font-family: Inter;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0.006em;
   color: #0C0B0B;
   cursor: pointer;
+  --c1: #BDFDE2;
+  --c2: #9BDAF6;
+  background: linear-gradient(90deg, var(--c1, #f6d365), var(--c2, #fda085) 51%, var(--c1, #f6d365)) var(--x, 0)/ 200%;
+  &:hover {
+    --x: 100%;
+  }
 `
 
 // const SignUp = styled.div`
