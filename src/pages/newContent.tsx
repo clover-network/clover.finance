@@ -33,6 +33,20 @@ export const NewContent = () => {
     {
       name: t('CLVChain'),
       path: "/?type=CLVChain",
+      menuList: [
+        {
+          text: t('crossChainExplorer'),
+          url: 'https://tx.clover.finance/#/'
+        },
+        {
+          text: t('EVMBridge'),
+          url: 'https://bridge.clv.org/#/'
+        },
+        {
+          text: t('CLVScan'),
+          url: 'https://clvscan.com/'
+        },
+      ]
     },
     {
       name: t('wallet'),

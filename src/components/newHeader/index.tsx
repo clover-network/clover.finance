@@ -73,8 +73,18 @@ const NavWrapper = styled.div<{
 }>`
   display: flex;
   align-items: center;
+  height: 96px;
+  &>span {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    &:hover .menu-list {
+      display: inline-block;
+    }
+  }
   
-  span {
+  &>span>span {
     font-family: Inter;
     font-weight: 400;
     font-size: 16px;
@@ -90,6 +100,36 @@ const NavWrapper = styled.div<{
     &.selected {
       opacity: 0.6;
     }
+  }
+`
+
+const MenuList = styled.div`
+  position: absolute;
+  top: 95px;
+  left: 0;
+  background: #141414;
+  border: 1px solid #303440;
+  box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+  padding: 12px 20px;
+  display: none;
+`
+
+const MenuItem = styled.div`
+  white-space: nowrap;
+  margin-bottom: 12px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0.006em;
+  color: #FFFFFF;
+  opacity: 0.6;
+  cursor: pointer;
+  &:last-child {
+    margin: 0;
+  }
+  &:hover {
+    opacity: 1;
   }
 `
 
@@ -183,7 +223,20 @@ export default function NewHeader(props: any): ReactElement {
                       onClick={() => handleChange(nav)}
                       key={nav.name}
                     >
-                    {nav.name}
+                      <span>{nav.name}</span>
+                      {nav.menuList && (
+                          <MenuList
+                              className="menu-list"
+                              onClick={(e) => e.stopPropagation()}
+                          >
+                            {nav.menuList.map((menu: any) => (
+                                <MenuItem
+                                    key={nav.name}
+                                    onClick={(e) => window.open(menu.url, "_blank")}
+                                >{menu.text}</MenuItem>
+                            ))}
+                          </MenuList>
+                      )}
                   </span>
                   ))}
                 </NavWrapper>
