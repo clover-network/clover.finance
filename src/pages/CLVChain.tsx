@@ -9,26 +9,8 @@ import { useRouter } from 'next/router';
 export const CLVChain: React.FC = () => {
   const location = useRouter();
   const [selectFaq, setSelectFaq] = useState(0)
-  const [play, setPlay] = useState(false)
-  let intervalRewind: any;
-
-  const rewind = (rewindSpeed: any) => {
-    const playVideo: any = document.getElementById('playVideo')
-    clearInterval(intervalRewind);
-    const startSystemTime = new Date().getTime();
-    const startVideoTime = playVideo.currentTime;
-
-    intervalRewind = setInterval(function(){
-      playVideo.playbackRate = 1.0;
-      if(playVideo.currentTime == 0){
-        clearInterval(intervalRewind);
-        playVideo.pause();
-      } else {
-        const elapsed = new Date().getTime()-startSystemTime;
-        playVideo.currentTime = Math.max(startVideoTime - elapsed*rewindSpeed/1000.0, 0);
-      }
-    }, 30);
-  }
+  const [isReverse, setIsReserve] = useState(false)
+  let videoStatus = 'start'
 
   const faqsList = [
     {
@@ -80,13 +62,15 @@ export const CLVChain: React.FC = () => {
         mouseDown = false
       }
     }
-    const playVideo: any = document.getElementById('playVideo')
-    if (mouseDown && playVideo.currentTime >= (playVideo.duration - 0.00005)) {
-      rewind(1.0)
-      return
+    let playVideo1: any = document.getElementById('playVideo1')
+    let playVideo2: any = document.getElementById('playVideoReverse1')
+    const display = playVideo1.style.display
+    let playVideo: any = display === 'none' ? playVideo2 : playVideo1
+
+    if (!mouseDown && videoStatus === 'start' && playVideo != playVideo2 && window.scrollY > 900) {
+      playVideo.play()
     }
-    if (window.scrollY > 920 && window.scrollY < 2500 && playVideo.currentTime <= 0.00005) {
-      setPlay(true)
+    if (mouseDown && videoStatus === 'start' && playVideo != playVideo1 && window.scrollY > 900 && window.scrollY < 2500) {
       playVideo.play()
     }
   }
@@ -99,6 +83,23 @@ export const CLVChain: React.FC = () => {
       window.removeEventListener(mousewheel, handleScroll)
     }
   }, [location]);
+
+
+  useEffect(() => {
+    let playVideo1: any = document.getElementById('playVideo1')
+    let playVideo2: any = document.getElementById('playVideoReverse1')
+    const display = playVideo1.style.display
+    let playVideo: any = display === 'none' ? playVideo2 : playVideo1
+
+    playVideo.addEventListener('playing', () => {
+      videoStatus = 'playing'
+    })
+    playVideo.addEventListener('ended', () => {
+      videoStatus = 'start'
+      setIsReserve(!isReverse)
+      playVideo.currentTime = 0
+    })
+  }, [document, isReverse]);
 
   return (
       <div id='CLVChain'>
@@ -159,7 +160,8 @@ export const CLVChain: React.FC = () => {
                 </FeaturesTitle>
                 <FeaturesContent>
                   <FeaturesLeft>
-                    <video id='playVideo' autoPlay={play} muted src='videos/CLVDevPageSequence.mp4'></video>
+                    <video style={{display: isReverse ? 'none' : 'inline-block'}}  id='playVideo1' muted src='videos/CLVDevPageSequence.mp4'></video>
+                    <video style={{display: !isReverse ? 'none' : 'inline-block'}} id='playVideoReverse1' muted src='videos/CLVDevPageSequence2.mp4'></video>
                   </FeaturesLeft>
                   <FeaturesRight>
                     <div>

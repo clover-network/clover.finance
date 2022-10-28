@@ -82,6 +82,11 @@ const NavWrapper = styled.div<{
     &:hover .menu-list {
       display: inline-block;
     }
+    &.selected {
+      &>span {
+        opacity: 0.6!important;
+      }
+    }
   }
   
   &>span>span {
@@ -95,10 +100,6 @@ const NavWrapper = styled.div<{
     margin-left: 32px;
     &:hover {
       opacity: 0.8;
-    }
-    
-    &.selected {
-      opacity: 0.6;
     }
   }
 `

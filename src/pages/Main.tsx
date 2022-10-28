@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import styled, {css} from "styled-components";
 import {breakpoint} from "../mixins/breakpoint";
 import {t} from '../i18n/intl';
@@ -14,26 +14,8 @@ interface TypeProps {
 
 export const Main = ({startBuild}: TypeProps) => {
     const location = useRouter();
-
-    const [play, setPlay] = useState(false)
-    let intervalRewind: any;
-    const rewind = (rewindSpeed: any) => {
-        const playVideo: any = document.getElementById('playVideo1')
-        clearInterval(intervalRewind);
-        const startSystemTime = new Date().getTime();
-        const startVideoTime = playVideo.currentTime;
-
-        intervalRewind = setInterval(function () {
-            playVideo.playbackRate = 1.0;
-            if (playVideo.currentTime == 0) {
-                clearInterval(intervalRewind);
-                playVideo.pause();
-            } else {
-                const elapsed = new Date().getTime() - startSystemTime;
-                playVideo.currentTime = Math.max(startVideoTime - elapsed * rewindSpeed / 1000.0, 0);
-            }
-        }, 30);
-    }
+    const [isReverse, setIsReserve] = useState(false)
+    let videoStatus = 'start'
 
     const handleScroll = (e: any) => {
         let mouseDown
@@ -51,13 +33,15 @@ export const Main = ({startBuild}: TypeProps) => {
                 mouseDown = false
             }
         }
-        const playVideo: any = document.getElementById('playVideo1')
-        if (mouseDown && playVideo.currentTime >= (playVideo.duration - 0.00005)) {
-            rewind(1.0)
-            return
+        let playVideo1: any = document.getElementById('playVideo')
+        let playVideo2: any = document.getElementById('playVideoReverse')
+        const display = playVideo1.style.display
+        let playVideo: any = display === 'none' ? playVideo2 : playVideo1
+
+        if (!mouseDown && videoStatus === 'start' && playVideo != playVideo2 && window.scrollY > 1000) {
+            playVideo.play()
         }
-        if (window.scrollY > 800 && window.scrollY < 2500 && playVideo.currentTime <= 0.00005) {
-            setPlay(true)
+        if (mouseDown && videoStatus === 'start' && playVideo != playVideo1 && window.scrollY > 1000 && window.scrollY < 2300) {
             playVideo.play()
         }
     }
@@ -70,6 +54,23 @@ export const Main = ({startBuild}: TypeProps) => {
             window.removeEventListener(mousewheel, handleScroll)
         }
     }, [location]);
+
+
+    useEffect(() => {
+        let playVideo1: any = document.getElementById('playVideo')
+        let playVideo2: any = document.getElementById('playVideoReverse')
+        const display = playVideo1.style.display
+        let playVideo: any = display === 'none' ? playVideo2 : playVideo1
+
+        playVideo.addEventListener('playing', () => {
+            videoStatus = 'playing'
+        })
+        playVideo.addEventListener('ended', () => {
+            videoStatus = 'start'
+            setIsReserve(!isReverse)
+            playVideo.currentTime = 0
+        })
+    }, [document, isReverse]);
 
     return (
         <Wrapper>
@@ -148,13 +149,14 @@ export const Main = ({startBuild}: TypeProps) => {
                     </AdvantagesTitle>
                     <AdvantagesContent>
                         <AdvantagesLeft>
-                            <video id='playVideo1' autoPlay={play} muted
+                            <video style={{display: isReverse ? 'none' : 'inline-block'}} id='playVideo' muted
                                    src='videos/CLVMainInteractiveAnimation.mp4'></video>
+                            <video style={{display: !isReverse ? 'none' : 'inline-block'}} id='playVideoReverse' muted
+                                   src='videos/CLVMainInteractiveAnimation2.mp4'></video>
                         </AdvantagesLeft>
                         <AdvantagesRight>
                             <div>
                                 <AdvantagesRightItem>
-                                    <h3>{t('gasFeeRedistribution')}</h3>
                                     <span>{t('gasFeeRedistributionHint1')}</span>
                                     <span>{t('gasFeeRedistributionHint2')}</span>
                                 </AdvantagesRightItem>
