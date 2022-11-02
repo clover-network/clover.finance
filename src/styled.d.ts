@@ -50,6 +50,8 @@ declare module "styled-components" {
     };
     breakpoints: {
       mobile: string;
+      tablet_mini: string;
+      tablet: string;
     };
     misc: {
       DEFAULT_BORDER_RADIUS: string;

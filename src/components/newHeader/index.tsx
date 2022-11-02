@@ -14,10 +14,19 @@ const Wrapper = styled.div<{
   top: 0;
   z-index: 10;
   background: transparent;
-  border-bottom: 1px solid ${({isWallet}) => (isWallet ? '#EFF5F5' : '#333232')};
-  ${breakpoint(css`
-    height: 70px;
-  `)};
+  border-bottom: 1px solid ${({ isWallet }) => (isWallet ? '#EFF5F5' : '#333232')};
+  height: 70px;
+  ${breakpoint({
+  mobile: css`
+  height: 48px;
+  `,
+  tablet: css`
+  height: 70px;
+  `,
+  tablet_mini: css`
+  height: 48px;
+  `
+})};
 `
 
 const HeaderWrapper = styled.div`
@@ -95,7 +104,7 @@ const NavWrapper = styled.div<{
     font-size: 16px;
     line-height: 32px;
     letter-spacing: 0.006em;
-    color: ${({isWallet}) => (isWallet ? '#000000' : '#ffffff')};
+    color: ${({ isWallet }) => (isWallet ? '#000000' : '#ffffff')};
     cursor: pointer;
     margin-left: 32px;
     &:hover {
@@ -204,7 +213,7 @@ export default function NewHeader(props: any): ReactElement {
     <Wrapper isWallet={isWallet}>
       <HeaderWrapper>
         <HeaderContent>
-          <HeaderDiv onClick={() => {location.push('/', undefined, { shallow: true });}}>
+          <HeaderDiv onClick={() => { location.push('/', undefined, { shallow: true }); }}>
             <img src={isWallet ? 'images/Logo.svg' : 'images/logo_white.svg'} alt="" />
           </HeaderDiv>
           <WrapperMobileOnly>
@@ -226,19 +235,19 @@ export default function NewHeader(props: any): ReactElement {
                     >
                       <span>{nav.name}</span>
                       {nav.menuList && (
-                          <MenuList
-                              className="menu-list"
-                              onClick={(e) => e.stopPropagation()}
-                          >
-                            {nav.menuList.map((menu: any) => (
-                                <MenuItem
-                                    key={nav.name}
-                                    onClick={(e) => window.open(menu.url, "_blank")}
-                                >{menu.text}</MenuItem>
-                            ))}
-                          </MenuList>
+                        <MenuList
+                          className="menu-list"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          {nav.menuList.map((menu: any) => (
+                            <MenuItem
+                              key={nav.name}
+                              onClick={(e) => window.open(menu.url, "_blank")}
+                            >{menu.text}</MenuItem>
+                          ))}
+                        </MenuList>
                       )}
-                  </span>
+                    </span>
                   ))}
                 </NavWrapper>
               </div>

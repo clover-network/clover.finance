@@ -41,7 +41,9 @@ export const ThemeSakura: DefaultTheme = {
     MINI_GUTTER_HORIZONTAL: "40px",
   },
   breakpoints: {
-    mobile: "860px",
+    mobile: "375px",
+    tablet: "1026px",
+    tablet_mini: "744px",
   },
   misc: {
     DEFAULT_BORDER_RADIUS: "20px",
