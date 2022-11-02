@@ -11,13 +11,25 @@ import { CLVChain } from './CLVChain';
 import { Wallet } from './Wallet';
 import { Developers } from './Developers';
 import { Ecosystem } from './Ecosystem';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { breakpoint } from "../mixins/breakpoint";
 
 SwiperCore.use([Pagination]);
 
 const Wrapper = styled.div`
   overflow: hidden;
-  min-width: 1440px;
+  // min-width: 1440px;
+  ${breakpoint({
+  mobile: css`
+    min-width: 375px;
+    `,
+  tablet_mini: css`
+    min-width: 744px;
+    `,
+  tablet: css`
+    min-width: 1026px;
+    `
+})}
 `
 
 export const NewContent = () => {
@@ -102,7 +114,7 @@ export const NewContent = () => {
         currentTab={selectTab}
         handleChange={(tab: any) => changeTab(tab)}
       />
-      {(selectTab.name === t('home') || window.location.search === '') && <Main startBuild={() => {changeTab(navList[4])}} />}
+      {(selectTab.name === t('home') || window.location.search === '') && <Main startBuild={() => { changeTab(navList[4]) }} />}
       {selectTab.name === t('about') && <About />}
       {selectTab.name === t('CLVChain') && <CLVChain />}
       {selectTab.name === t('wallet') && <Wallet />}
