@@ -12,12 +12,32 @@ import { Wallet } from './Wallet';
 import { Developers } from './Developers';
 import { Ecosystem } from './Ecosystem';
 import styled from 'styled-components';
+import {device} from "../utils/device";
 
 SwiperCore.use([Pagination]);
 
 const Wrapper = styled.div`
   overflow: hidden;
-  min-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+`
+
+const TestWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: aqua;
+  
+  @media ${device.mobile} {
+    background-color: green;
+  }
+  @media ${device.table} {
+    background-color: red;
+  }
+  @media ${device.desktop} {
+    background-color: coral;
+  }
 `
 
 export const NewContent = () => {
