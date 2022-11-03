@@ -5,13 +5,15 @@ type InputType = Record<
   FlattenInterpolation<any>
 >;
 
-// TODO: 加类型
-const sorted = ['mobile', 'desktop'];
+const scopes: Array<keyof DefaultTheme['breakpoints']> = [
+  'mobile',
+  'tablet_mini',
+  'tablet',
+];
 export const breakpoint = (input: InputType | FlattenInterpolation<any>) => {
   if (Object.prototype.hasOwnProperty.call(input, 'mobile')) {
     const query = (props: any) =>
-      sorted.reduce((q, key) => {
-        // @ts-ignore
+      scopes.reduce((q, key) => {
         const value = (input as InputType)[key];
         q += `  
 
