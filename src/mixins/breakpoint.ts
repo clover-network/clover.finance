@@ -6,9 +6,9 @@ type InputType = Record<
 >;
 
 const scopes: Array<keyof DefaultTheme['breakpoints']> = [
-  'mobile',
-  'tablet_mini',
   'tablet',
+  'tablet_mini',
+  'mobile',
 ];
 export const breakpoint = (input: InputType | FlattenInterpolation<any>) => {
   if (Object.prototype.hasOwnProperty.call(input, 'mobile')) {
@@ -23,6 +23,7 @@ export const breakpoint = (input: InputType | FlattenInterpolation<any>) => {
     `;
         return q;
       }, '');
+
     return css`
       ${query}
     `;
