@@ -14,6 +14,7 @@ export const breakpoint = (input: InputType | FlattenInterpolation<any>) => {
         // @ts-ignore
         const value = (input as InputType)[key];
         q += `  
+
     @media screen and (max-width: ${props.theme.breakpoints[key]}) {
       ${value}
     }
