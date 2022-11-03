@@ -800,8 +800,8 @@ const LandingContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 64px 64px;
-  max-width: 1440px;
-  min-width: 1440px;
+  //max-width: 1440px;
+  //min-width: 1440px;
   margin: 0 auto;
 
   ${breakpoint({

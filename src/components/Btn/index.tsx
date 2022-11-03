@@ -19,7 +19,7 @@ export const NormalButton = styled.div<{
   font-size: 20px;
   line-height: 32px;
   text-align: center;
-  color: #0C0B0B;
+  color: ${({ color }) => (color ? color : '#0C0B0B')};
   display: flex;
   align-items: center;
   justify-content: center;

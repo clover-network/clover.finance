@@ -4,39 +4,48 @@ import { WrapperDesktopOnly, WrapperMobileOnly } from '../../CloverLibrary';
 import { breakpoint } from "../../mixins/breakpoint";
 import { t } from '../../i18n/intl';
 import { useRouter } from 'next/router';
+import {createStyles, makeStyles, Popover, Theme, Typography} from "@material-ui/core";
+import {HeaderMobileMenu} from "./HeaderMobileMenu";
 
 const Wrapper = styled.div<{
   isWallet?: boolean
 }>`
   width: 100%;
-  height: 96px;
+  height: 93px;
   position: absolute;
   top: 0;
   z-index: 10;
   background: transparent;
   border-bottom: 1px solid ${({ isWallet }) => (isWallet ? '#EFF5F5' : '#333232')};
-  height: 70px;
   ${breakpoint({
-  mobile: css`
-  height: 48px;
-  `,
-  tablet: css`
-  height: 70px;
-  `,
-  tablet_mini: css`
-  height: 48px;
-  `
-})};
+    mobile: css`
+      height: 48px;
+    `,
+    tablet: css`
+      height: 70px;
+    `,
+    tablet_mini: css`
+      height: 48px;
+    `
+  })};
 `
 
 const HeaderWrapper = styled.div`
   height: 100%;
-  max-width: 1440px;
-  min-width: 1440px;
+  width: 100%;
   margin: 0 auto;
-  ${breakpoint(css`
-    height: 70px;
-  `)};
+  position: relative;
+
+  ${breakpoint({
+    mobile: css`
+    `,
+    tablet: css`
+      height: 70px;
+    `,
+    tablet_mini: css`
+      height: 48px;
+    `
+  })};
 `;
 const HeaderContent = styled.div`
   display: flex;
@@ -45,10 +54,15 @@ const HeaderContent = styled.div`
   height: 100%;
   padding: 0 64px;
   margin: 0 auto;
-  ${breakpoint(css`
-    min-width: initial;
-    padding: 25px;
-  `)};
+  ${breakpoint({
+    mobile: css`
+      padding: 0 24px !important;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
 `;
 
 const HeaderIcon = styled.img`
@@ -222,6 +236,9 @@ export default function NewHeader(props: any): ReactElement {
               alt=""
               onClick={() => setShowNavs(!showNavs)}
             />
+            <div hidden={!showNavs}>
+              <HeaderMobileMenu/>
+            </div>
           </WrapperMobileOnly>
           <WrapperDesktopOnly>
             <HeaderRight>
