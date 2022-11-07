@@ -7,6 +7,8 @@ import CLVIsBacked from './components/CLVBacked';
 import { Footer } from './components/Footer';
 import { useRouter } from 'next/router';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {WrapperDesktopOnly, WrapperMobileOnly} from '../CloverLibrary';
+import {HeaderMobileMenu} from "../components/newHeader/HeaderMobileMenu";
 
 interface TypeProps {
   startBuild: () => void;
@@ -74,39 +76,36 @@ export const Main = ({ startBuild }: TypeProps) => {
 
   return (
     <Wrapper>
+      {/*<div style={{width: '200px', height: '200px', background: "red"}}/>*/}
       <LandingContainer>
         <SeamlesslyCompatible>
-          <div>
-            <ContentWrapper>
-              <TextWrapper>
-                <div>
-                  {t('seamlesslyCompatible')}
-                  <img src='images/clv_icon1.svg' alt='' />
-                </div>
-                <span>{t('seamlesslyCompatibleHint')}</span>
-                <Btns>
-                  <NormalButton
-                    width='316px'
+          <ContentWrapper>
+            <TextWrapper>
+              <div>
+                {t('seamlesslyCompatible')}
+                <img src='images/clv_icon1.svg' alt='' />
+              </div>
+              <span>{t('seamlesslyCompatibleHint')}</span>
+              <Btns>
+                <NormalButton
                     onClick={() =>
-                      startBuild()
+                        startBuild()
                     }
-                  >{t('startBuilding')}</NormalButton>
-                  <GrayButton
-                    width='316px'
+                >{t('startBuilding')}</NormalButton>
+                <GrayButton
                     onClick={() =>
-                      window.open(
-                        "https://docs.clv.org/",
-                        "_blank"
-                      )
+                        window.open(
+                            "https://docs.clv.org/",
+                            "_blank"
+                        )
                     }
-                  >{t('viewDocumentation')}</GrayButton>
-                </Btns>
-              </TextWrapper>
-              <VideoWrapper>
-                <video autoPlay loop muted src='videos/heroAnimation.mp4'></video>
-              </VideoWrapper>
-            </ContentWrapper>
-          </div>
+                >{t('viewDocumentation')}</GrayButton>
+              </Btns>
+            </TextWrapper>
+            <VideoWrapper>
+              <video autoPlay loop muted src='videos/heroAnimation.mp4'></video>
+            </VideoWrapper>
+          </ContentWrapper>
           <BalanceWrapper>
             <BalanceItem>
               <AnimationTextWrapper>
@@ -157,6 +156,9 @@ export const Main = ({ startBuild }: TypeProps) => {
             <AdvantagesRight>
               <div>
                 <AdvantagesRightItem>
+                  <WrapperMobileOnly>
+                    <h3>{t('gasFeeRedistributionTitle')}</h3>
+                  </WrapperMobileOnly>
                   <span>{t('gasFeeRedistributionHint1')}</span>
                   <span>{t('gasFeeRedistributionHint2')}</span>
                 </AdvantagesRightItem>
@@ -172,6 +174,7 @@ export const Main = ({ startBuild }: TypeProps) => {
                 </AdvantagesRightItem>
               </div>
             </AdvantagesRight>
+            <ForegroundShadow/>
           </AdvantagesContent>
         </Advantages>
         <ToolsOnCLV>
@@ -188,32 +191,65 @@ export const Main = ({ startBuild }: TypeProps) => {
                 <span>{t('forBuildersHint')}</span>
               </div>
               <ToolBtns>
-                <GrayButton
-                  margin='0 0 24px'
-                  color="#0C0B0B"
-                  hoverBackground='#ffffff'
-                  disabledBackground='rgba(255, 255, 255, 0.8)'
-                  onClick={() =>
-                    window.open("https://docs.clv.org/clv-chain-developer-guide/introduction", "_blank")
-                  }
-                >{t('readDocs')}</GrayButton>
-                <GrayButton
-                  margin='0 0 24px'
-                  color="#0C0B0B"
-                  hoverBackground='#ffffff'
-                  disabledBackground='rgba(255, 255, 255, 0.8)'
-                  onClick={() =>
-                    window.open("https://github.com/clover-network", "_blank")
-                  }
-                >{t('getGithubRepo')}</GrayButton>
-                <GrayButton
-                  color="#0C0B0B"
-                  hoverBackground='#ffffff'
-                  disabledBackground='rgba(255, 255, 255, 0.8)'
-                  onClick={() =>
-                    window.open("https://docs.clv.org/clv-chain-developer-guide/using-testnet", "_blank")
-                  }
-                >{t('viewTestnet')}</GrayButton>
+                <WrapperDesktopOnly>
+                  <GrayButton
+                      margin='0 0 24px'
+                      color="#0C0B0B"
+                      hoverBackground='#ffffff'
+                      disabledBackground='rgba(255, 255, 255, 0.8)'
+                      onClick={() =>
+                          window.open("https://docs.clv.org/clv-chain-developer-guide/introduction", "_blank")
+                      }
+                  >{t('readDocs')}</GrayButton>
+                  <GrayButton
+                      margin='0 0 24px'
+                      color="#0C0B0B"
+                      hoverBackground='#ffffff'
+                      disabledBackground='rgba(255, 255, 255, 0.8)'
+                      onClick={() =>
+                          window.open("https://github.com/clover-network", "_blank")
+                      }
+                  >{t('getGithubRepo')}</GrayButton>
+                  <GrayButton
+                      color="#0C0B0B"
+                      hoverBackground='#ffffff'
+                      disabledBackground='rgba(255, 255, 255, 0.8)'
+                      onClick={() =>
+                          window.open("https://docs.clv.org/clv-chain-developer-guide/using-testnet", "_blank")
+                      }
+                  >{t('viewTestnet')}</GrayButton>
+                </WrapperDesktopOnly>
+                <WrapperMobileOnly>
+                  <GrayButton
+                      height='40px'
+                      margin='0 0 8px'
+                      color="#0C0B0B"
+                      hoverBackground='#ffffff'
+                      disabledBackground='rgba(255, 255, 255, 0.8)'
+                      onClick={() =>
+                          window.open("https://docs.clv.org/clv-chain-developer-guide/introduction", "_blank")
+                      }
+                  >{t('readDocs')}</GrayButton>
+                  <GrayButton
+                      height='40px'
+                      margin='0 0 8px'
+                      color="#0C0B0B"
+                      hoverBackground='#ffffff'
+                      disabledBackground='rgba(255, 255, 255, 0.8)'
+                      onClick={() =>
+                          window.open("https://github.com/clover-network", "_blank")
+                      }
+                  >{t('getGithubRepo')}</GrayButton>
+                  <GrayButton
+                      height='40px'
+                      color="#0C0B0B"
+                      hoverBackground='#ffffff'
+                      disabledBackground='rgba(255, 255, 255, 0.8)'
+                      onClick={() =>
+                          window.open("https://docs.clv.org/clv-chain-developer-guide/using-testnet", "_blank")
+                      }
+                  >{t('viewTestnet')}</GrayButton>
+                </WrapperMobileOnly>
               </ToolBtns>
             </ToolsOnCLVContentLeft>
             <ToolsOnCLVContentRight>
@@ -223,49 +259,108 @@ export const Main = ({ startBuild }: TypeProps) => {
                   <span>{t('integrateCLVWallet')}</span>
                 </div>
                 <span>{t('integrateCLVWalletHint')}</span>
-                <GrayButton
-                  onClick={() => {
-                    window.open('https://docs.clv.org/use-clv-wallet/clv-extension-wallet', "_blank")
-                  }}
-                >{t('CLVWalletInforamtion')}</GrayButton>
+                <WrapperDesktopOnly>
+                  <GrayButton
+                      onClick={() => {
+                        window.open('https://docs.clv.org/use-clv-wallet/clv-extension-wallet', "_blank")
+                      }}
+                  >{t('CLVWalletInforamtion')}</GrayButton>
+                </WrapperDesktopOnly>
+                <WrapperMobileOnly>
+                  <GrayButton
+                      height='40px'
+                      onClick={() => {
+                        window.open('https://docs.clv.org/use-clv-wallet/clv-extension-wallet', "_blank")
+                      }}
+                  >{t('CLVWalletInforamtion')}</GrayButton>
+                </WrapperMobileOnly>
               </ToolsOnCLVItem>
               <ToolsOnCLVItem>
                 <div>{t('partnerWithCLV')}</div>
                 <span>{t('partnerWithCLVHint')}</span>
-                <GrayButton
-                  onClick={() => {
-                    window.open('https://docs.google.com/forms/d/e/1FAIpQLSfQevVEw_hL44vvbcMkYB8kKdzTFAbtD1pR-QVraaA7h4jpKg/viewform', "_blank")
-                  }}
-                >{t('contactUs')}</GrayButton>
+                <WrapperDesktopOnly>
+                  <GrayButton
+                      onClick={() => {
+                        window.open('https://docs.google.com/forms/d/e/1FAIpQLSfQevVEw_hL44vvbcMkYB8kKdzTFAbtD1pR-QVraaA7h4jpKg/viewform', "_blank")
+                      }}
+                  >{t('contactUs')}</GrayButton>
+                </WrapperDesktopOnly>
+                <WrapperMobileOnly>
+                  <GrayButton
+                      height='40px'
+                      onClick={() => {
+                        window.open('https://docs.google.com/forms/d/e/1FAIpQLSfQevVEw_hL44vvbcMkYB8kKdzTFAbtD1pR-QVraaA7h4jpKg/viewform', "_blank")
+                      }}
+                  >{t('contactUs')}</GrayButton>
+                </WrapperMobileOnly>
+
               </ToolsOnCLVItem>
             </ToolsOnCLVContentRight>
           </ToolsOnCLVContent>
         </ToolsOnCLV>
         <CLVIsBacked />
       </LandingContainer>
-      <Footer />
+      {/*<Footer />*/}
     </Wrapper>
   );
 };
 
+const ForegroundShadow = styled.div`
+  ${breakpoint({
+    mobile: css`
+      position: absolute;
+      height: 90px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(180deg, rgba(57, 57, 57, 0) -8.93%, #000000 100%);
+      flex: none;
+      order: 3;
+      flex-grow: 0;
+      z-index: 3;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
+`
+
 const SeamlesslyCompatible = styled.div`
   width: 100%;
   position: relative;
+  background-color: #000000;
 
+  ${breakpoint({
+    mobile: css`
+      display: flex;
+      flex-direction: column;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
 `
 const ContentWrapper = styled.div`
   width: 100%;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  padding-top: 100px;
   position: relative;
+  height: 100%;
 
-  ${breakpoint(css`
-    width: unset;
-    flex-direction: column;
-    margin-left: 0;
-  `)};
+  ${breakpoint({
+    mobile: css`
+      flex-direction: column;
+      padding-top: 0;
+      height: 560px;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
 `;
 
 const TextWrapper = styled.div`
@@ -277,6 +372,23 @@ const TextWrapper = styled.div`
   margin-right: 16px;
   min-height: 680px;
 
+  ${breakpoint({
+    mobile: css`
+      min-height: 0;
+      width: 100%;
+      padding: 0 24px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 160px;
+      z-index: 1;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
+
   & > div:first-child {
     font-weight: 600;
     font-size: 72px;
@@ -284,8 +396,31 @@ const TextWrapper = styled.div`
     letter-spacing: 0.008em;
     color: #FFFFFF;
 
+    ${breakpoint({
+      mobile: css`
+        font-weight: 590;
+        font-size: 40px;
+        line-height: 40px;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })};
+
     img {
       margin-left: 10px;
+
+      ${breakpoint({
+        mobile: css`
+          width: 24px;
+          height: 24px;
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+      })};
     }
   }
 
@@ -297,22 +432,62 @@ const TextWrapper = styled.div`
     letter-spacing: 0.006em;
     color: #FFFFFF;
     margin: 40px 0 30px;
-  }
 
-  ${breakpoint(css`
-    span {
-      font-size: 15px;
-      line-height: 24px;
-    }
-  `)};
+    ${breakpoint({
+      mobile: css`
+        margin: 80px 0 24px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 20px;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })};
+  }
 `;
 
 const Btns = styled.div`
   display: flex;
   align-items: center;
 
+  ${breakpoint({
+    mobile: css`
+      flex-direction: column;
+    `,
+    tablet: css`
+      flex: 1;
+    `,
+    tablet_mini: css`
+    `
+  })};
+  
+  div {
+    ${breakpoint({
+      mobile: css`
+        height: 40px;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })};
+  }
+
   div:first-child {
     margin-right: 16px;
+
+    ${breakpoint({
+      mobile: css`
+        margin-bottom: 16px;
+        margin-right: 0;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })};
   }
 `
 
@@ -321,6 +496,18 @@ const BalanceWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-top: 80px;
+
+  ${breakpoint({
+    mobile: css`
+      margin-top: 40px;
+      padding: 0 24px;
+      flex-direction: column;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
 `;
 
 const BalanceItem = styled.div`
@@ -333,12 +520,36 @@ const BalanceItem = styled.div`
   flex: 1;
   border: 2px solid transparent;
 
+  ${breakpoint({
+    mobile: css`
+      flex: 1;
+      width: 100%;
+      margin: 4px 0;
+      padding: 21px 16px;
+      border-radius: 16px;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
+
   &:hover {
     border: 2px solid #0C0B0B;
   }
 
   &:last-child {
     margin: 0;
+
+    ${breakpoint({
+      mobile: css`
+        margin: 4px 0;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })};
   }
 
   h3 {
@@ -359,6 +570,18 @@ const BalanceItem = styled.div`
     letter-spacing: 0.006em;
     color: #FFFFFF;
     opacity: 0.6;
+
+    ${breakpoint({
+      mobile: css`
+        font-size: 12px;
+        margin-top: 4px;
+        line-height: 12px;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })};
   }
 `;
 
@@ -373,6 +596,18 @@ const AnimationTextWrapper = styled.div`
     line-height: 40px;
     letter-spacing: 0.008em;
     color: #FFFFFF;
+
+    ${breakpoint({
+      mobile: css`
+        font-size: 16px;
+        line-height: 16px;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })};
+
   }
 `
 
@@ -393,205 +628,46 @@ const AnimationTextItem = styled.div<{
   }
 `
 
-// export const AnimationText = styled.div<{
-//     height?: string,
-// }>`
-//   height: ${({height}) => (height ? height : '40px')};
-//
-//   & > div:nth-child(odd) {
-//     &.down.go .front:before {
-//       animation-delay: 0.4s;
-//     }
-//
-//     &.down.go .back:after {
-//       animation-delay: 0.4s;
-//     }
-//   }
-//
-//   & > div:last-child, & > div:first-child {
-//     &.down.go .front:before {
-//       animation-delay: 0.2s;
-//     }
-//
-//     &.down.go .back:after {
-//       animation-delay: 0.2s;
-//     }
-//   }
-// `
-//
-// export const AnimationItem = styled.div<{
-//     color?: string,
-//     height?: string,
-//     width?: string,
-//     fontSize?: string
-//     background?: string
-// }>`
-//   display: inline-block;
-//   position: relative;
-//   width: ${({width}) => (width ? width : '20px')};
-//   height: ${({height}) => (height ? height : '40px')};
-//   line-height: ${({height}) => (height ? height : '40px')};
-//   color: ${({color}) => (color ? color : '#fff')};
-//   font-size: ${({fontSize}) => (fontSize ? fontSize : '32px')};
-//   text-align: center;
-//
-//   .digital:before,
-//   .digital:after {
-//     content: "";
-//     position: absolute;
-//     left: 0;
-//     right: 0;
-//     background: ${({background}) => (background ? background : '#141414')};
-//     overflow: hidden;
-//     box-sizing: border-box;
-//   }
-//
-//   .digital:before {
-//     top: 0;
-//     bottom: 50%;
-//   }
-//
-//   .digital:after {
-//     top: 50%;
-//     bottom: 0;
-//     line-height: 0;
-//   }
-//
-//   .null:before,
-//   .null:after {
-//     content: " ";
-//   }
-//
-//   .number0:before,
-//   .number0:after {
-//     content: "0";
-//   }
-//
-//   .number1:before,
-//   .number1:after {
-//     content: "1";
-//   }
-//
-//   .number2:before,
-//   .number2:after {
-//     content: "2";
-//   }
-//
-//   .number3:before,
-//   .number3:after {
-//     content: "3";
-//   }
-//
-//   .number4:before,
-//   .number4:after {
-//     content: "4";
-//   }
-//
-//   .number5:before,
-//   .number5:after {
-//     content: "5";
-//   }
-//
-//   .number6:before,
-//   .number6:after {
-//     content: "6";
-//   }
-//
-//   .number7:before,
-//   .number7:after {
-//     content: "7";
-//   }
-//
-//   .number8:before,
-//   .number8:after {
-//     content: "8";
-//   }
-//
-//   .number9:before,
-//   .number9:after {
-//     content: "9";
-//   }
-//
-//   .point:before,
-//   .point:after {
-//     content: ".";
-//   }
-//
-//   .comma:before,
-//   .comma:after {
-//     content: ",";
-//   }
-//
-//   .dollar:before,
-//   .dollar:after {
-//     content: "$";
-//   }
-//
-//   &.down .front:before {
-//     z-index: 3;
-//   }
-//
-//   &.down .back:after {
-//     z-index: 2;
-//     transform-origin: 50% 0%;
-//     transform: perspective(160px) rotateX(180deg);
-//   }
-//
-//   &.down .front:after,
-//   &.down .back:before {
-//     z-index: 1;
-//   }
-//
-//   &.down.go .front:before {
-//     transform-origin: 50% 100%;
-//     animation: frontFlipDown 0.4s ease-in-out both;
-//     box-shadow: 0 -2px 6px rgba(255, 255, 255, 0.3);
-//     backface-visibility: hidden;
-//     animation-iteration-count: 3;
-//   }
-//
-//   &.down.go .back:after {
-//     animation: backFlipDown 0.4s ease-in-out both;
-//     animation-iteration-count: 3;
-//
-//   }
-//
-//   @keyframes frontFlipDown {
-//     0% {
-//       transform: perspective(160px) rotateX(0deg);
-//     }
-//
-//     100% {
-//       transform: perspective(160px) rotateX(-180deg);
-//     }
-//   }
-//
-//   @keyframes backFlipDown {
-//     0% {
-//       transform: perspective(160px) rotateX(180deg);
-//     }
-//
-//     100% {
-//       transform: perspective(160px) rotateX(0deg);
-//     }
-//   }
-// `
-
 const VideoWrapper = styled.div`
   width: 50%;
   position: absolute;
   right: 0;
-  top: 100px;
+  top: 0;
+  z-index: 0;
 
   video {
     width: 100%;
     max-width: 630px;
   }
+
+  ${breakpoint({
+    mobile: css`
+      top: 0;
+      width: 100%;
+      padding: 24px;
+    `,
+    tablet: css`
+      width: 50%;
+    `,
+    tablet_mini: css`
+      width: 50%;
+    `
+  })};
 `;
 
 const Advantages = styled.div`
   margin-top: 180px;
   width: 100%;
+
+  ${breakpoint({
+    mobile: css`
+      margin-top: 64px;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
 `
 
 const AdvantagesTitle = styled.div`
@@ -601,10 +677,34 @@ const AdvantagesTitle = styled.div`
   line-height: 68px;
   letter-spacing: 0.008em;
 
+  ${breakpoint({
+    mobile: css`
+      width: 100%;
+      padding-left: 24px;
+      font-size: 32px;
+      line-height: 32px;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
+
   h3 {
     color: #FFFFFF;
     font-size: 64px;
     line-height: 68px;
+
+    ${breakpoint({
+      mobile: css`
+        font-size: 32px;
+        line-height: 32px;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })};
   }
 
   span {
@@ -616,11 +716,35 @@ const AdvantagesContent = styled.div`
   width: 100%;
   display: flex;
   margin-top: 64px;
+
+  ${breakpoint({
+    mobile: css`
+      position: relative;
+      height: 470px;
+      justify-content: center;
+      margin-top: 0;
+      overflow: hidden;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
 `
 
 const AdvantagesLeft = styled.div`
   width: 50%;
   margin-right: 16px;
+
+  ${breakpoint({
+    mobile: css`
+      position: absolute;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
 
   video {
     width: 100%;
@@ -630,6 +754,18 @@ const AdvantagesLeft = styled.div`
 
 const AdvantagesRight = styled.div`
   width: 50%;
+
+  ${breakpoint({
+    mobile: css`
+      width: 100%;
+      top: 230px;
+      position: absolute;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
 
   & > div {
     & > div:last-child {
@@ -643,6 +779,17 @@ const AdvantagesRightItem = styled.div`
   flex-direction: column;
   margin-bottom: 120px;
 
+  ${breakpoint({
+    mobile: css`
+      padding: 0 24px;
+      margin-bottom: 16px;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
+
   h3 {
     font-weight: 600;
     font-size: 48px;
@@ -650,6 +797,19 @@ const AdvantagesRightItem = styled.div`
     letter-spacing: 0.008em;
     color: #FFFFFF;
     margin-bottom: 32px;
+
+    ${breakpoint({
+      mobile: css`
+        font-weight: 590;
+        font-size: 20px;
+        line-height: 28px;
+        margin-bottom: 8px;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })};
   }
 
   & > span {
@@ -661,6 +821,18 @@ const AdvantagesRightItem = styled.div`
     color: #FFFFFF;
     margin-bottom: 20px;
 
+    ${breakpoint({
+      mobile: css`
+        font-size: 12px;
+        line-height: 20px;
+        margin-bottom: 0px;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })};
+
     &:last-child {
       margin: 0 !important;
     }
@@ -668,18 +840,50 @@ const AdvantagesRightItem = styled.div`
 
   & > div {
     margin-top: 12px;
+
+    ${breakpoint({
+      mobile: css`
+        margin-top: 8px;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })};
   }
 `
 
 const ToolsOnCLV = styled.div`
   margin-top: 180px;
   width: 100%;
+
+  ${breakpoint({
+    mobile: css`
+      margin-top: 64px;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
+
 `
 
 const ToolsOnCLVTitle = styled.div`
   width: 100%;
   display: flex;
   justify-content: flex-end;
+
+  ${breakpoint({
+    mobile: css`
+      flex-direction: column;
+      justify-content: flex-start;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
 
   & > div {
     width: 50%;
@@ -690,10 +894,36 @@ const ToolsOnCLVTitle = styled.div`
     margin-bottom: 64px;
     text-align: right;
 
+    ${breakpoint({
+      mobile: css`
+        width: 100%;
+        font-size: 32px;
+        line-height: 32px;
+        text-align: start;
+        padding-left: 24px;
+        margin-bottom: 24px;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })};
+
     h3 {
       color: #FFFFFF;
       font-size: 64px;
       line-height: 68px;
+
+      ${breakpoint({
+        mobile: css`
+          font-size: 32px;
+          line-height: 32px;
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+      })};
     }
 
     span {
@@ -706,6 +936,17 @@ const ToolsOnCLVContent = styled.div`
   display: flex;
   align-items: stretch;
   width: 100%;
+
+  ${breakpoint({
+    mobile: css`
+      flex-direction: column;
+      padding: 0 24px;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
 `
 
 const ToolsOnCLVContentLeft = styled.div`
@@ -719,6 +960,18 @@ const ToolsOnCLVContentLeft = styled.div`
   justify-content: space-between;
   background: linear-gradient(28.19deg, #BDFDE2 -14.72%, #9BDAF6 116.35%);
 
+  ${breakpoint({
+    mobile: css`
+      margin: 0 0 8px;
+      padding: 16px;
+      border-radius: 16px;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
+
   & > div:first-child {
     div {
       color: #141414;
@@ -726,6 +979,17 @@ const ToolsOnCLVContentLeft = styled.div`
       font-size: 32px;
       line-height: 40px;
       letter-spacing: 0.008em;
+
+      ${breakpoint({
+        mobile: css`
+          font-size: 16px;
+          line-height: 24px;
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+      })};
     }
 
     span {
@@ -738,6 +1002,18 @@ const ToolsOnCLVContentLeft = styled.div`
       opacity: 0.6;
       margin: 24px 0;
       display: inline-block;
+
+      ${breakpoint({
+        mobile: css`
+          margin: 8px 0;
+          font-size: 12px;
+          line-height: 20px;
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+      })};
     }
   }
 `
@@ -747,6 +1023,16 @@ const ToolsOnCLVContentRight = styled.div`
 
   & > div:first-child {
     margin-bottom: 16px;
+
+    ${breakpoint({
+      mobile: css`
+        margin-bottom: 8px;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })};
   }
 `
 
@@ -756,6 +1042,18 @@ const ToolsOnCLVItem = styled.div`
   padding: 48px;
   min-height: 304px;
 
+  ${breakpoint({
+    mobile: css`
+      border-radius: 16px;
+      padding: 16px;
+      min-height: 0px;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
+
   & > div:first-child {
     display: flex;
     align-items: center;
@@ -763,6 +1061,16 @@ const ToolsOnCLVItem = styled.div`
     img {
       width: 32px;
       margin-right: 16px;
+
+      ${breakpoint({
+        mobile: css`
+          width: 24px;
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+      })};
     }
 
     color: #FFFFFF;
@@ -770,6 +1078,17 @@ const ToolsOnCLVItem = styled.div`
     font-size: 32px;
     line-height: 40px;
     letter-spacing: 0.008em;
+
+    ${breakpoint({
+      mobile: css`
+        font-size: 16px;
+        line-height: 24px;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })};
   }
 
   & > span {
@@ -782,6 +1101,19 @@ const ToolsOnCLVItem = styled.div`
     opacity: 0.6;
     margin: 24px 0;
     display: inline-block;
+
+    ${breakpoint({
+      mobile: css`
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 20px;
+        margin: 8px 0;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })};
   }
 `
 
@@ -795,27 +1127,24 @@ const ToolBtns = styled.div`
 
 const Wrapper = styled.div`
   background: #000000;
+  height: 100vh;
+  width: 100%;
 `
+
 const LandingContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 64px 64px;
-  //max-width: 1440px;
-  //min-width: 1440px;
   margin: 0 auto;
+  background: #000000;
 
   ${breakpoint({
-  mobile: css`
-    height: unset;
-    min-height: 120vw;
-    padding: 48px 0 0;
-    max-width: 375px;
-  `,
-  tablet: css`
-    max-width: 1024px;
+    mobile: css`
+      padding: 0;
     `,
-  tablet_mini: css`
-    max-width: 744px;
-  `
-})}
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })}
 `;

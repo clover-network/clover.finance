@@ -1,28 +1,78 @@
 import React, { ReactElement } from "react";
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import { t } from '../../i18n/intl';
+import {breakpoint} from "../../mixins/breakpoint";
 
 const CLVIsBackedWrapper = styled.div`
   width: 100%;
   margin-top: 180px;
+
+  ${breakpoint({
+    mobile: css`
+        margin-top: 64px;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
 `;
+
 const CLVIsBackedTop = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+
+    ${breakpoint({
+        mobile: css`
+	        padding: 0 24px;
+            flex-direction: column;
+            align-items: flex-start;
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+    })};
 `;
+
 const CLVIsBackedTitle = styled.div`
   width: 50%;
   font-weight: 600;
   font-size: 48px;
   line-height: 60px;
-  width: 50%;
   margin-right: 16px;
+
+    ${breakpoint({
+        mobile: css`
+            width: 100%;
+            font-weight: 590;
+            font-size: 32px;
+            line-height: 32px;
+	        margin-bottom: 8px;
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+    })};
 
   h3 {
     font-size: 48px;
     line-height: 60px;
     color: #FFFFFF;
+
+      ${breakpoint({
+          mobile: css`
+              font-weight: 590;
+              font-size: 32px;
+              line-height: 32px;
+          `,
+          tablet: css`
+          `,
+          tablet_mini: css`
+          `
+      })};
   }
   span {
     color: #9BDAF6;
@@ -37,6 +87,19 @@ const CLVIsBackedHint = styled.div`
   color: #FFFFFF;
   opacity: 0.6;
   width: 50%;
+
+    ${breakpoint({
+        mobile: css`
+            width: 100%;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 20px;
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+    })};
 `
 
 const CLVIsBackedBottom = styled.div`
@@ -49,11 +112,35 @@ const CLVIsBackedBottom = styled.div`
   align-items: center;
   justify-content: space-between;
   grid-gap: 0;
+
+    ${breakpoint({
+        mobile: css`
+            display:flex;
+            flex-wrap: wrap;
+	        margin: 28px 24px 0;
+            grid-template-columns: unset;
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+    })};
 `
 
 const CLVIsBackedBottomItem = styled.div`
   img {
     height: 96px;
+
+      ${breakpoint({
+          mobile: css`
+	          height: unset;
+	          width: 35vw;
+          `,
+          tablet: css`
+          `,
+          tablet_mini: css`
+          `
+      })};
   }
 `
 

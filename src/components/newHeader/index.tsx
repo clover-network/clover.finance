@@ -12,7 +12,7 @@ const Wrapper = styled.div<{
 }>`
   width: 100%;
   height: 93px;
-  position: absolute;
+  //position: absolute;
   top: 0;
   z-index: 10;
   background: transparent;

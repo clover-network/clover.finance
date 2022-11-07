@@ -41,7 +41,7 @@ export const ThemeClover: DefaultTheme = {
     MINI_GUTTER_HORIZONTAL: "40px",
   },
   breakpoints: {
-    mobile: "375px",
+    mobile: "480px",
     tablet_mini: "744px",
     tablet: "1026px",
   },
