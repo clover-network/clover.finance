@@ -244,11 +244,11 @@ export default function NewHeader(props: any): ReactElement {
             <HeaderRight>
               <div>
                 <NavWrapper isWallet={isWallet}>
-                  {navList.map((nav: any) => (
+                  {navList.map((nav: any, index: number) => (
                     <span
                       className={currentTab.name === nav.name ? 'selected' : ''}
                       onClick={() => handleChange(nav)}
-                      key={nav.name}
+                      key={`navList_${nav.name}_${index}`}
                     >
                       <span>{nav.name}</span>
                       {nav.menuList && (
@@ -256,9 +256,9 @@ export default function NewHeader(props: any): ReactElement {
                           className="menu-list"
                           onClick={(e) => e.stopPropagation()}
                         >
-                          {nav.menuList.map((menu: any) => (
+                          {nav.menuList.map((menu: any, index: number) => (
                             <MenuItem
-                              key={nav.name}
+                              key={`nav_menuList_${nav.name}_${index}`}
                               onClick={(e) => window.open(menu.url, "_blank")}
                             >{menu.text}</MenuItem>
                           ))}

@@ -168,7 +168,7 @@ export default function CLVIsBacked(props: any): ReactElement {
       </CLVIsBackedTop>
       <CLVIsBackedBottom>
         {images.map((item, index) => (
-          <CLVIsBackedBottomItem>
+          <CLVIsBackedBottomItem key={`CLVIsBackedBottomItem_images_${index}`}>
             <img src={item} alt='' />
           </CLVIsBackedBottomItem>
         ))}
