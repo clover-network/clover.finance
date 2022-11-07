@@ -8,7 +8,7 @@ import NewHeader from '../components/newHeader';
 import { Main } from './Main';
 import { About } from './About';
 import { CLVChain } from './CLVChain';
-import { Wallet } from './Wallet/Wallet';
+import { Wallet } from './Wallet';
 import { Developers } from './Developers';
 import { Ecosystem } from './Ecosystem';
 import styled, { css } from 'styled-components';
