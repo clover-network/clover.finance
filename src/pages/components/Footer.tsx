@@ -2,6 +2,7 @@ import React from "react";
 import styled, { css } from 'styled-components';
 import { breakpoint } from "../../mixins/breakpoint";
 import { t } from '../../i18n/intl';
+import {WrapperDesktopOnly, WrapperMobileOnly} from "../../CloverLibrary";
 
 interface FooterProps {
   isWallet?: boolean;
@@ -14,6 +15,12 @@ export const Footer = ({isWallet}: FooterProps) => {
       <FooterWrapper>
         <DivFooterColumns>
           <FooterTop>
+            <WrapperMobileOnly>
+              <FooterTopRight isWallet={isWallet}>
+                <div>{t('comeSayHello')}</div>
+                <a href="mailto:info@clover.finance">info@clover.finance</a>
+              </FooterTopRight>
+            </WrapperMobileOnly>
             <FooterTopLeft>
               <FooterColumn>
                 <FooterColumnLabel isWallet={isWallet}>{t('resources')}</FooterColumnLabel>
@@ -103,39 +110,68 @@ export const Footer = ({isWallet}: FooterProps) => {
                 </Links>
               </FooterColumn>
             </FooterTopLeft>
-            <FooterTopRight isWallet={isWallet}>
-              <div>{t('comeSayHello')}</div>
-              <a href="mailto:info@clover.finance">info@clover.finance</a>
-            </FooterTopRight>
+            <WrapperDesktopOnly>
+              <FooterTopRight isWallet={isWallet}>
+                <div>{t('comeSayHello')}</div>
+                <a href="mailto:info@clover.finance">info@clover.finance</a>
+              </FooterTopRight>
+            </WrapperDesktopOnly>
           </FooterTop>
           <FooterBottom>
+            <WrapperMobileOnly>
+              <FooterBottomRight isWallet={isWallet}>
+                <span>{t('orFollowUs')}</span>
+                <SocialsDiv>
+                  <a href="https://t.me/clvorg" target="_blank" rel="noreferrer">
+                    <SocialsImg src={`images/${prefix}telegram.svg`} />
+                  </a>
+                  <a href="https://twitter.com/clover_finance/" target="_blank" rel="noreferrer">
+                    <SocialsImg src={`images/${prefix}twitter.svg`} />
+                  </a>
+                  <a href="https://discord.com/invite/M6SxuXqMVB" target="_blank" rel="noreferrer">
+                    <SocialsImg src={`images/${prefix}discord.svg`} />
+                  </a>
+                  <a href="https://medium.com/@clv_org" target="_blank" rel="noreferrer">
+                    <SocialsImg src={`images/${prefix}medium.svg`} />
+                  </a>
+                  <a href="https://www.youtube.com/channel/UCrEoV9sw6lxTR6PLasqfP9Q" target="_blank" rel="noreferrer">
+                    <SocialsImg src={`images/${prefix}youtobe.svg`} />
+                  </a>
+                  <a href="https://www.tiktok.com/@clvbyclover" target="_blank" rel="noreferrer">
+                    <SocialsImg src={`images/${prefix}tiktok.svg`} />
+                  </a>
+                </SocialsDiv>
+              </FooterBottomRight>
+            </WrapperMobileOnly>
             <FooterBottomLeft isWallet={isWallet}>
               <img src={isWallet ? 'images/logo_gray2.svg' : 'images/logo_gray.svg'} alt='' />
               <span>CLV © All Rights Reserved</span>
             </FooterBottomLeft>
-            <FooterBottomRight isWallet={isWallet}>
-              <span>{t('orFollowUs')}</span>
-              <SocialsDiv>
-                <a href="https://t.me/clvorg" target="_blank" rel="noreferrer">
-                  <SocialsImg src={`images/${prefix}telegram.svg`} />
-                </a>
-                <a href="https://twitter.com/clover_finance/" target="_blank" rel="noreferrer">
-                  <SocialsImg src={`images/${prefix}twitter.svg`} />
-                </a>
-                <a href="https://discord.com/invite/M6SxuXqMVB" target="_blank" rel="noreferrer">
-                  <SocialsImg src={`images/${prefix}discord.svg`} />
-                </a>
-                <a href="https://medium.com/@clv_org" target="_blank" rel="noreferrer">
-                  <SocialsImg src={`images/${prefix}medium.svg`} />
-                </a>
-                <a href="https://www.youtube.com/channel/UCrEoV9sw6lxTR6PLasqfP9Q" target="_blank" rel="noreferrer">
-                  <SocialsImg src={`images/${prefix}youtobe.svg`} />
-                </a>
-                <a href="https://www.tiktok.com/@clvbyclover" target="_blank" rel="noreferrer">
-                  <SocialsImg src={`images/${prefix}tiktok.svg`} />
-                </a>
-              </SocialsDiv>
-            </FooterBottomRight>
+            <WrapperDesktopOnly>
+              <FooterBottomRight isWallet={isWallet}>
+                <span>{t('orFollowUs')}</span>
+                <SocialsDiv>
+                  <a href="https://t.me/clvorg" target="_blank" rel="noreferrer">
+                    <SocialsImg src={`images/${prefix}telegram.svg`} />
+                  </a>
+                  <a href="https://twitter.com/clover_finance/" target="_blank" rel="noreferrer">
+                    <SocialsImg src={`images/${prefix}twitter.svg`} />
+                  </a>
+                  <a href="https://discord.com/invite/M6SxuXqMVB" target="_blank" rel="noreferrer">
+                    <SocialsImg src={`images/${prefix}discord.svg`} />
+                  </a>
+                  <a href="https://medium.com/@clv_org" target="_blank" rel="noreferrer">
+                    <SocialsImg src={`images/${prefix}medium.svg`} />
+                  </a>
+                  <a href="https://www.youtube.com/channel/UCrEoV9sw6lxTR6PLasqfP9Q" target="_blank" rel="noreferrer">
+                    <SocialsImg src={`images/${prefix}youtobe.svg`} />
+                  </a>
+                  <a href="https://www.tiktok.com/@clvbyclover" target="_blank" rel="noreferrer">
+                    <SocialsImg src={`images/${prefix}tiktok.svg`} />
+                  </a>
+                </SocialsDiv>
+              </FooterBottomRight>
+            </WrapperDesktopOnly>
           </FooterBottom>
         </DivFooterColumns>
       </FooterWrapper>
@@ -158,13 +194,34 @@ const FooterWrapper = styled.div<{
   min-width: 1440px;
   margin: 0 auto;
   padding: 80px 64px;
+
+  ${breakpoint({
+    mobile: css`
+      padding: 24px;
+      min-width: unset;
+      max-width: unset;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })}
 `
 
 const FooterColumn = styled.div`
   padding-right: 48px;
-  ${breakpoint(css`
-    margin-bottom: 24px;
-  `)};
+
+  ${breakpoint({
+    mobile: css`
+      padding: 0;
+      flex: 1;
+      width: 0;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })}
 `;
 
 const FooterColumnLabel = styled.div<{
@@ -176,6 +233,18 @@ const FooterColumnLabel = styled.div<{
   line-height: 28px;
   letter-spacing: 0.006em;
   color: ${({isWallet}) => (isWallet ? '#000000' : '#FFFFFF')};
+
+  ${breakpoint({
+    mobile: css`
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 20px;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })}
 `;
 
 const DivFooterColumns = styled.div`
@@ -185,12 +254,34 @@ const FooterTop = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+
+  ${breakpoint({
+    mobile: css`
+      flex-direction: column;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })}
 `
 
 const FooterTopLeft = styled.div`
   display: flex;
   justify-content: flex-start;
   flex: 0 0 50%;
+
+  ${breakpoint({
+    mobile: css`
+      width: 100%;
+      flex-direction: row;
+      margin-top: 32px;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })}
 `
 
 const FooterTopRight = styled.div<{
@@ -207,6 +298,21 @@ const FooterTopRight = styled.div<{
     letter-spacing: 0.002em;
     color: ${({isWallet}) => (isWallet ? '#000000' : '#FFFFFF')};
     margin-bottom: 24px;
+
+    ${breakpoint({
+      mobile: css`
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 20px;
+        color: #FFFFFF;
+        opacity: 0.6;
+        margin-bottom: 4px;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })}
   }
   
   a {
@@ -216,6 +322,19 @@ const FooterTopRight = styled.div<{
     letter-spacing: 0.008em;
     color: ${({isWallet}) => (isWallet ? '#000000' : '#FFFFFF')};
     text-decoration: none;
+
+    ${breakpoint({
+      mobile: css`
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 36px;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })}
+
     &:hover {
       background-image:-webkit-linear-gradient(right, #9BDAF6, #BDFDE2);
       -webkit-background-clip:text;
@@ -227,6 +346,16 @@ const FooterTopRight = styled.div<{
 const FooterBottom = styled.div`
   display: flex;
   justify-content: space-between;
+
+  ${breakpoint({
+    mobile: css`
+      flex-direction: column;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })}
 `
 
 const FooterBottomLeft = styled.div<{
@@ -236,6 +365,18 @@ const FooterBottomLeft = styled.div<{
   align-items: center;
   margin-top: 88px;
   flex: 0 0 50%;
+
+  ${breakpoint({
+    mobile: css`
+      margin-top: 32px;
+      flex-direction: row;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })}
+  
   span {
     font-family: Inter;
     font-weight: 400;
@@ -244,9 +385,33 @@ const FooterBottomLeft = styled.div<{
     letter-spacing: 0.006em;
     color: ${({isWallet}) => (isWallet ? '#000000' : '#FFFFFF')};
     opacity: 0.6;
+
+    ${breakpoint({
+      mobile: css`
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 20px;
+        flex: 1;
+        text-align: end;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })}
   }
   img {
     margin-right: 60px;
+
+    ${breakpoint({
+      mobile: css`
+        margin-right: 0;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })}
   }
 `
 
@@ -255,6 +420,7 @@ const FooterBottomRight = styled.div<{
 }>`
   flex: 0 0 50%;
   margin-top: 48px;
+  
   & > span {
     font-family: Inter;
     font-weight: 400;
@@ -263,6 +429,19 @@ const FooterBottomRight = styled.div<{
     letter-spacing: 0.006em;
     color: ${({isWallet}) => (isWallet ? '#000000' : '#FFFFFF')};
     opacity: 0.6;
+
+    ${breakpoint({
+      mobile: css`
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 20px;
+        letter-spacing: 0.006em;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })}
   }
 `
 
@@ -270,6 +449,16 @@ const SocialsDiv = styled.div`
   display: flex;
   align-items: center;
   margin-top: 16px;
+
+  ${breakpoint({
+    mobile: css`
+      margin-top: 8px;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })}
 `
 
 const SocialsImg = styled.img`
@@ -307,4 +496,16 @@ const Link = styled.div`
   letter-spacing: 0.006em;
   margin-top: 12px;
   white-space: nowrap;
+
+  ${breakpoint({
+    mobile: css`
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 20px;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })}
 `;

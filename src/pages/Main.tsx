@@ -300,7 +300,7 @@ export const Main = ({ startBuild }: TypeProps) => {
         </ToolsOnCLV>
         <CLVIsBacked />
       </LandingContainer>
-      {/*<Footer />*/}
+      <Footer />
     </Wrapper>
   );
 };
@@ -1140,7 +1140,7 @@ const LandingContainer = styled.div`
 
   ${breakpoint({
     mobile: css`
-      padding: 0;
+      padding: 0 0 24px;
     `,
     tablet: css`
     `,
