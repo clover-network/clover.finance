@@ -1010,17 +1010,27 @@ export const ToolsOnCLVContent = styled.div`
     tablet_mini: css``,
     tablet: css``,
   })}
-
-  & > div:first-child,
-  & > div:nth-child(2) {
-    /* min-height: 304px !important; */
+  & > div:last-child {
+    & > div {
+      span {
+        margin: 10px 0;
+      }
+    }
     ${breakpoint({
       mobile: css``,
       tablet_mini: css`
-        /* min-height: 188px !important; */
+        & > div {
+          span {
+            margin: 16px 0;
+          }
+        }
       `,
       tablet: css`
-        /* min-height: 268px !important; */
+        & > div {
+          span {
+            margin: 2px 0;
+          }
+        }
       `,
     })}
   }
