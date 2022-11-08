@@ -8,7 +8,6 @@ import { Footer } from './components/Footer';
 import { useRouter } from 'next/router';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {WrapperDesktopOnly, WrapperMobileOnly} from '../CloverLibrary';
-import {HeaderMobileMenu} from "../components/newHeader/HeaderMobileMenu";
 
 interface TypeProps {
   startBuild: () => void;
@@ -1129,6 +1128,7 @@ const Wrapper = styled.div`
   background: #000000;
   height: 100vh;
   width: 100%;
+  overflow-y: auto;
 `
 
 const LandingContainer = styled.div`

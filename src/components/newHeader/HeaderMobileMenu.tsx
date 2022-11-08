@@ -1,10 +1,14 @@
-import React from 'react';
-import styled from "styled-components";
-import {GrayButton, NormalButton} from "../Btn";
+import React, {useState} from 'react';
+import styled, {css} from "styled-components";
 import {t} from "../../i18n/intl";
 import {Accordion, AccordionDetails, AccordionSummary} from "@material-ui/core";
+import {breakpoint} from "../../mixins/breakpoint";
+import { WrapperTableOnly } from '../../CloverLibrary';
 
 interface Props {
+	startBuild: () => void;
+	navList: any[];
+	handleChange: (tab: any) => void;
 }
 
 const Wrapper = styled.div`
@@ -15,8 +19,21 @@ const Wrapper = styled.div`
     width: 100vw;
     padding: 24px 24px 20px;
 	background-color: ${(props) => props.theme.colors.BACKGROUND};
-	
-	.MuiPaper-root {
+	z-index: 9;
+
+    ${breakpoint({
+        mobile: css`
+            top: 48px;
+        `,
+        tablet_mini: css`
+            top: 48px;
+        `,
+        tablet: css`
+            top: 64px;
+        `,
+    })};
+
+    .MuiPaper-root {
         background-color: ${(props) => props.theme.colors.BACKGROUND};
 		
 		.MuiAccordionSummary-root {
@@ -44,7 +61,7 @@ const Wrapper = styled.div`
 const TopButtonGroup = styled.div`
 	display: flex;
 	flex-direction: row;
-	
+
 	div {
 		height: 40px;
 		flex: 1;
@@ -56,6 +73,19 @@ const TopButtonGroup = styled.div`
 		align-items: center;
 		justify-content: center;
 		cursor: pointer;
+
+        ${breakpoint({
+            mobile: css`
+                flex: 1;
+            `,
+            tablet_mini: css`
+                flex: 1;
+            `,
+            tablet: css`
+                flex: unset;
+	            width: 152px;
+            `,
+        })};
 	}
 
     .menu-start-building {
@@ -90,6 +120,7 @@ const MenuItem = styled.div<{ showBorder?: boolean }>`
     color: ${(props) => props.theme.colors.TITLE};
 	padding: 12px 0;
     border-top: ${({showBorder, theme}) => showBorder ? `1px solid ${theme.colors.BODY}` : 'unset'};
+    cursor: pointer;
 `
 
 const ClvChains = styled.div`
@@ -103,6 +134,7 @@ const ClvChainItem = styled.div<{ isSelected?: boolean }>`
     line-height: 24px;
     color: ${(props) => props.theme.colors.TITLE};
 	opacity: ${({isSelected}) => isSelected ? '1' : '0.6'};
+    cursor: pointer;
 `
 
 const StoreIcon = styled.div`
@@ -113,6 +145,17 @@ const StoreIcon = styled.div`
 	align-items: center;
 	justify-content: center;
     background-color: #141414;
+	cursor: pointer;
+
+    ${breakpoint({
+        mobile: css`
+        `,
+        tablet_mini: css`
+        `,
+        tablet: css`
+	        margin-right: 8px;
+        `,
+    })};
 `
 
 const BottomDescribe = styled.div`
@@ -141,22 +184,93 @@ const SocialsImg = styled.img`
     }
 `
 
+const MobileAndTableMini = styled.div`
+	display: none;
+    ${breakpoint({
+        mobile: css`
+            display: initial;
+        `,
+        tablet_mini: css`
+            display: initial;
+        `,
+        tablet: css`
+            display: none;
+        `,
+    })};
+`
+
+const TableTitle = styled.span`
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: 0.008em;
+    color: #FFFFFF;
+`
+
+const StoreGroup = styled.div`
+    display: flex;
+	
+    ${breakpoint({
+        mobile: css`
+            flex-direction: column;
+        `,
+        tablet_mini: css`
+            flex-direction: column;
+        `,
+        tablet: css`
+            flex-direction: row;
+        `,
+    })};
+`
+
+const ClvChainGroup = styled.div`
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+    border-top: ${({theme}) => `1px solid ${theme.colors.BODY}`};
+	align-items: center;
+	
+	img {
+		width: 20px;
+		height: 20px;
+	}
+`
+
 export const HeaderMobileMenu = (props: Props) => {
 
-	const onStartBuilding = () => {
-	}
+	const [showMore, setShowMore] = useState(false);
+
 	const onViewDocumentation = () => {
+		window.open("https://docs.clv.org/", "_blank")
+	}
+
+	const onClickGoogle = () => {
+		window.open("https://github.com/clover-network/clover-multichain-mobile-wallet-release/releases/latest/download/clover.apk", "_blank")
+	}
+
+	const onClickApple = () => {
+		window.open("https://apps.apple.com/app/clover-wallet/id1570072858", "_blank")
 	}
 
 	return (
 		<Wrapper>
-			<TopButtonGroup>
-				<div className='menu-start-building' onClick={onStartBuilding}>{t('startBuilding')}</div>
-				<div className='menu-view-documentation' onClick={onViewDocumentation}>{t('viewDocumentation')}</div>
-			</TopButtonGroup>
-			<Title>{t('Menu')}</Title>
-			<MenuItem>Home</MenuItem>
-			<MenuItem>About</MenuItem>
+			<MobileAndTableMini>
+				<TopButtonGroup>
+					<div className='menu-start-building' onClick={props.startBuild}>{t('startBuilding')}</div>
+					<div className='menu-view-documentation' onClick={onViewDocumentation}>{t('viewDocumentation')}</div>
+				</TopButtonGroup>
+				<Title>{t('Menu')}</Title>
+			</MobileAndTableMini>
+			<WrapperTableOnly>
+				<TopButtonGroup>
+					<TableTitle>{t('Menu')}</TableTitle>
+					<div style={{flex: 1}}/>
+					<div className='menu-start-building' onClick={props.startBuild}>{t('startBuilding')}</div>
+					<div className='menu-view-documentation' onClick={onViewDocumentation}>{t('viewDocumentation')}</div>
+				</TopButtonGroup>
+			</WrapperTableOnly>
+			<MenuItem onClick={() => props.handleChange(props.navList[0])}>Home</MenuItem>
+			<MenuItem onClick={() => props.handleChange(props.navList[1])}>About</MenuItem>
 
 			<Accordion>
 				<AccordionSummary
@@ -164,25 +278,50 @@ export const HeaderMobileMenu = (props: Props) => {
 					aria-controls="panel1a-content"
 					id="panel1a-header"
 				>
-					<MenuItem showBorder={true}>CLV Chains</MenuItem>
+					<ClvChainGroup>
+						<MenuItem onClick={() => {
+							setShowMore(!showMore)
+							props.handleChange(props.navList[2]);
+						}}>CLV Chains</MenuItem>
+						<div style={{flex: 1}}/>
+						<img
+							src={showMore ? 'images/arrow_to_up.svg' : 'images/arrow_to_down.svg'}
+							alt=''
+							onClick={() => setShowMore(!showMore)}
+						/>
+					</ClvChainGroup>
 				</AccordionSummary>
 				<AccordionDetails>
 					<ClvChains>
-						<ClvChainItem>Cross Chain Explorer</ClvChainItem>
-						<ClvChainItem>EVM Bridge</ClvChainItem>
-						<ClvChainItem>CLV Scan</ClvChainItem>
+						<ClvChainItem
+							onClick={() => window.open(props.navList[2].menuList[0].url, "_blank")}
+						>
+							Cross Chain Explorer
+						</ClvChainItem>
+						<ClvChainItem
+							onClick={() => window.open(props.navList[2].menuList[1].url, "_blank")}
+						>
+							EVM Bridge
+						</ClvChainItem>
+						<ClvChainItem
+							onClick={() => window.open(props.navList[2].menuList[2].url, "_blank")}
+						>
+							CLV Scan
+						</ClvChainItem>
 					</ClvChains>
 				</AccordionDetails>
 			</Accordion>
-			<MenuItem showBorder={true}>Wallet</MenuItem>
-			<MenuItem showBorder={true}>Developers</MenuItem>
-			<MenuItem showBorder={true}>Ecosystem</MenuItem>
-			<StoreIcon style={{marginBottom: '8px'}}>
-				<img src='images/logo_google.svg' alt='' />
-			</StoreIcon>
-			<StoreIcon style={{marginBottom: '20px'}}>
-				<img src='images/logo_apple.svg' alt='' />
-			</StoreIcon>
+			<MenuItem onClick={() => props.handleChange(props.navList[3])} showBorder={true}>Wallet</MenuItem>
+			<MenuItem onClick={() => props.handleChange(props.navList[4])} showBorder={true}>Developers</MenuItem>
+			<MenuItem onClick={() => props.handleChange(props.navList[5])} showBorder={true}>Ecosystem</MenuItem>
+			<StoreGroup>
+				<StoreIcon style={{marginBottom: '8px'}} onClick={onClickGoogle}>
+					<img src='images/logo_google.svg' alt='' />
+				</StoreIcon>
+				<StoreIcon style={{marginBottom: '20px'}} onClick={onClickApple}>
+					<img src='images/logo_apple.svg' alt='' />
+				</StoreIcon>
+			</StoreGroup>
 			<BottomDescribe>Follow us in social media</BottomDescribe>
 			<SocialButtonGroup>
 				<a href="https://t.me/clvorg" target="_blank" rel="noreferrer">

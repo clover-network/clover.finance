@@ -2,6 +2,8 @@ import styled, { css } from "styled-components";
 import { breakpoint } from "./mixins/breakpoint";
 import { mobileOnly } from "./mixins/mobileOnly";
 import { desktopOnly } from "./mixins/desktopOnly";
+import {tableOnly} from "./mixins/tableOnly";
+import {tableMiniOnly} from "./mixins/tableMiniOnly";
 
 export const Title = styled.h1`
   font-size: ${(props) => props.theme.fontSizes.TITLE};
@@ -235,6 +237,14 @@ export const WrapperDesktopOnly = styled.div`
 
 export const WrapperMobileOnly = styled.div`
   ${mobileOnly};
+`;
+
+export const WrapperTableOnly = styled.div`
+  ${tableOnly};
+`;
+
+export const WrapperTableMiniOnly = styled.div`
+  ${tableMiniOnly};
 `;
 
 export const AvoidWrap = styled.span`

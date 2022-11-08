@@ -1,11 +1,16 @@
 import React, { ReactElement, useState } from "react";
 import styled, { css } from "styled-components";
-import { WrapperDesktopOnly, WrapperMobileOnly } from '../../CloverLibrary';
+import {WrapperDesktopOnly, WrapperMobileOnly, WrapperTableMiniOnly, WrapperTableOnly} from '../../CloverLibrary';
 import { breakpoint } from "../../mixins/breakpoint";
 import { t } from '../../i18n/intl';
 import { useRouter } from 'next/router';
-import {createStyles, makeStyles, Popover, Theme, Typography} from "@material-ui/core";
 import {HeaderMobileMenu} from "./HeaderMobileMenu";
+
+interface Props {
+  navList: any[];
+  currentTab: any;
+  handleChange: (tab: any) => void;
+}
 
 const Wrapper = styled.div<{
   isWallet?: boolean
@@ -15,36 +20,38 @@ const Wrapper = styled.div<{
   //position: absolute;
   top: 0;
   z-index: 10;
-  background: transparent;
+  background: black;
   border-bottom: 1px solid ${({ isWallet }) => (isWallet ? '#EFF5F5' : '#333232')};
+
   ${breakpoint({
     mobile: css`
       height: 48px;
     `,
-    tablet: css`
-      height: 70px;
-    `,
     tablet_mini: css`
       height: 48px;
-    `
+    `,
+    tablet: css`
+      height: 64px;
+    `,
   })};
 `
 
 const HeaderWrapper = styled.div`
-  height: 100%;
+  height: 93px;
   width: 100%;
   margin: 0 auto;
   position: relative;
 
   ${breakpoint({
     mobile: css`
-    `,
-    tablet: css`
-      height: 70px;
+      height: 48px;
     `,
     tablet_mini: css`
       height: 48px;
-    `
+    `,
+    tablet: css`
+      height: 64px;
+    `,
   })};
 `;
 const HeaderContent = styled.div`
@@ -54,6 +61,7 @@ const HeaderContent = styled.div`
   height: 100%;
   padding: 0 64px;
   margin: 0 auto;
+  
   ${breakpoint({
     mobile: css`
       padding: 0 24px !important;
@@ -67,6 +75,18 @@ const HeaderContent = styled.div`
 
 const HeaderIcon = styled.img`
   width: 20px;
+  cursor: pointer;
+
+  ${breakpoint({
+    mobile: css`
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+      width: 24px;
+      height: 24px;
+    `
+  })};
 `
 
 const HeaderDiv = styled.div`
@@ -76,11 +96,16 @@ const HeaderDiv = styled.div`
   font-size: 30px;
   line-height: 36px;
   cursor: pointer;
-  ${breakpoint(css`
-    //width: 100%;
-    //justify-content: center;
-  `)};
 
+  ${breakpoint({
+    mobile: css`
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
+  
   img {
     height: 32px;
     object-fit: contain;
@@ -213,14 +238,52 @@ const ButtonIcon = styled.div`
     cursor: pointer;
   }
 `
-export default function NewHeader(props: any): ReactElement {
+
+const TableMiniIconText = styled.div`
+  margin-left: 12px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: 0.016em;
+  color: #FFFFFF;
+`
+
+const TableMiniIconGroup = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  ${breakpoint({
+    mobile: css`
+      display: none;
+    `,
+    tablet_mini: css`
+      display: none;
+    `,
+    tablet: css`
+      display: flex;
+    `,
+  })};
+`
+
+export default function NewHeader(props: Props): ReactElement {
   const { navList, currentTab, handleChange } = props;
   const [showNavs, setShowNavs] = useState(false);
   const isWallet = currentTab.name === t('wallet')
   const location = useRouter();
 
-  const openUrl = (url: string) => {
+  const onOpenUrl = (url: string) => {
     window.open(url, '_blank');
+  }
+
+  const onStartBuild = () => {
+    setShowNavs(!showNavs);
+    handleChange(navList[4]);
+  }
+
+  const handleTabChange = (tab: any) => {
+    setShowNavs(!showNavs);
+    handleChange(tab);
   }
 
   return (
@@ -230,16 +293,52 @@ export default function NewHeader(props: any): ReactElement {
           <HeaderDiv onClick={() => { location.push('/', undefined, { shallow: true }); }}>
             <img src={isWallet ? 'images/Logo.svg' : 'images/logo_white.svg'} alt="" />
           </HeaderDiv>
+          <div style={{flex: 1}}/>
           <WrapperMobileOnly>
             <HeaderIcon
-              src={showNavs ? 'images/close_icon.svg' : 'images/menu_icon.svg'}
-              alt=""
-              onClick={() => setShowNavs(!showNavs)}
+                src={showNavs ? 'images/close_icon.svg' : 'images/menu_icon.svg'}
+                alt=""
+                onClick={() => setShowNavs(!showNavs)}
             />
             <div hidden={!showNavs}>
-              <HeaderMobileMenu/>
+              <HeaderMobileMenu
+                  startBuild={onStartBuild}
+                  navList={navList}
+                  handleChange={(tab: any) => handleTabChange(tab)}/>
             </div>
           </WrapperMobileOnly>
+
+          <WrapperTableMiniOnly>
+            <HeaderIcon
+                src={showNavs ? 'images/close_icon.svg' : 'images/menu_icon.svg'}
+                alt=""
+                onClick={() => setShowNavs(!showNavs)}
+            />
+            <div hidden={!showNavs}>
+              <HeaderMobileMenu
+                  startBuild={onStartBuild}
+                  navList={navList}
+                  handleChange={(tab: any) => handleTabChange(tab)}/>
+            </div>
+          </WrapperTableMiniOnly>
+
+          <WrapperTableOnly>
+            <TableMiniIconGroup onClick={() => setShowNavs(!showNavs)}>
+              <HeaderIcon
+                  src='images/clv_icon1.svg'
+                  alt=""
+              />
+              <TableMiniIconText hidden={showNavs}>Show Menu</TableMiniIconText>
+              <TableMiniIconText hidden={!showNavs}>Hide Menu</TableMiniIconText>
+            </TableMiniIconGroup>
+            <div hidden={!showNavs}>
+              <HeaderMobileMenu
+                  startBuild={onStartBuild}
+                  navList={navList}
+                  handleChange={(tab: any) => handleTabChange(tab)}/>
+            </div>
+          </WrapperTableOnly>
+
           <WrapperDesktopOnly>
             <HeaderRight>
               <div>
@@ -270,11 +369,11 @@ export default function NewHeader(props: any): ReactElement {
               </div>
               {isWallet && <WalletBtns>
                 <ButtonIcon>
-                  <img onClick={() => openUrl('https://apps.apple.com/app/clover-wallet/id1570072858')} src="images/apple_icon.svg" alt="" />
-                  <img onClick={() => openUrl('https://github.com/clover-network/clover-multichain-mobile-wallet-release/releases/latest/download/clover.apk')} src="images/google_play_icon.svg" alt="" />
-                  <img onClick={() => openUrl('https://chrome.google.com/webstore/detail/clv-wallet/nhnkbkgjikgcigadomkphalanndcapjk')} src="images/chrome_icon.svg" alt="" />
+                  <img onClick={() => onOpenUrl('https://apps.apple.com/app/clover-wallet/id1570072858')} src="images/apple_icon.svg" alt="" />
+                  <img onClick={() => onOpenUrl('https://github.com/clover-network/clover-multichain-mobile-wallet-release/releases/latest/download/clover.apk')} src="images/google_play_icon.svg" alt="" />
+                  <img onClick={() => onOpenUrl('https://chrome.google.com/webstore/detail/clv-wallet/nhnkbkgjikgcigadomkphalanndcapjk')} src="images/chrome_icon.svg" alt="" />
                 </ButtonIcon>
-                <LogIn onClick={() => openUrl('https://portal.clv.org')}>CLV Portal</LogIn>
+                <LogIn onClick={() => onOpenUrl('https://portal.clv.org')}>CLV Portal</LogIn>
                 {/*<SignUp onClick={() => openUrl('https://portal.clv.org')}>Sign Up</SignUp>*/}
               </WalletBtns>}
             </HeaderRight>

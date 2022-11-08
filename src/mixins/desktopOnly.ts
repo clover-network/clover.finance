@@ -1,7 +1,17 @@
-import { css } from "styled-components";
+import {css} from "styled-components";
+import {breakpoint} from "./breakpoint";
 
 export const desktopOnly = css`
-  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
-    display: none;
-  }
+    display: initial;
+    ${breakpoint({
+        mobile: css`
+            display: none;
+        `,
+        tablet_mini: css`
+            display: none;
+        `,
+        tablet: css`
+            display: none;
+        `,
+    })};
 `;

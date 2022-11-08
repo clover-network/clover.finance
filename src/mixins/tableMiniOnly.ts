@@ -1,14 +1,14 @@
 import {css} from "styled-components";
 import {breakpoint} from "./breakpoint";
 
-export const mobileOnly = css`
+export const tableMiniOnly = css`
     display: none;
     ${breakpoint({
         mobile: css`
-            display: initial;
+            display: none;
         `,
         tablet_mini: css`
-            display: none;
+            display: initial;
         `,
         tablet: css`
             display: none;
