@@ -7,6 +7,35 @@ import {GrayButton, NormalButton} from '../components/Btn';
 import CLVIsBacked from './components/CLVBacked';
 import { WrapperDesktopOnly, WrapperMobileOnly } from "../CloverLibrary";
 
+const DesktopAndTable = styled.div`
+    ${breakpoint({
+        mobile: css`
+            display: none;
+        `,
+        tablet_mini: css`
+            display: initial;
+        `,
+        tablet: css`
+            display: initial;
+        `,
+    })};
+`
+
+const MobileAndMiniTable = styled.div`
+    display: none;
+    ${breakpoint({
+        mobile: css`
+            display: initial;
+        `,
+        tablet_mini: css`
+            display: initial;
+        `,
+        tablet: css`
+            display: none;
+        `,
+    })};
+`
+
 export const About: React.FC = () => {
     const [scrollTop, setScrollTop] = useState(0)
     const handleScroll = () => {
@@ -27,10 +56,10 @@ export const About: React.FC = () => {
                     <video autoPlay loop muted src='videos/particles.mp4'></video>
                     <ContentWrapper>
                         <TextWrapper>
-                            <WrapperDesktopOnly>
+                            <DesktopAndTable>
                                 {t('universalInfrastructure')}
                                 <img src='images/clv_icon1.svg' alt=''/>
-                            </WrapperDesktopOnly>
+                            </DesktopAndTable>
                             <WrapperMobileOnly>
                                 <MobileTitle>
                                     {t('aboutTitle')}
@@ -63,7 +92,7 @@ export const About: React.FC = () => {
                         </ContentBottom>
                     </WrapperDesktopOnly>
                 </UniversalInfrastructure>
-                <WrapperMobileOnly>
+                <MobileAndMiniTable>
                     <ContentBottom>
                         <ContentBottomLeft>
                             <h3>{t('technology')}</h3>
@@ -85,7 +114,7 @@ export const About: React.FC = () => {
                             </div>
                         </ContentBottomRight>
                     </ContentBottom>
-                </WrapperMobileOnly>
+                </MobileAndMiniTable>
                 <Content>
                     <div>
                         <Progress>
@@ -332,20 +361,20 @@ export const About: React.FC = () => {
                                         <span>{t('globalPresenseHint')}</span>
                                     </div>
                                 </GlobalPresenseContentTop>
-                                <GlobalPresenseContentBottom>
-                                    <IframeWrapper>
-                                        <iframe
-                                            id='myIframe'
-                                            title='map'
-                                            src='https://telemetry.polkadot.io/#map/0xe923f1773f4197a862cb4fc4a562f93585b26131dadbc943d524a82bbeecd2eb'
-                                            frameBorder='0'
-                                            scrolling='no'
-                                        ></iframe>
-                                    </IframeWrapper>
-                                    <WrapperDesktopOnly>
+                                <WrapperDesktopOnly>
+                                    <GlobalPresenseContentBottom>
+                                        <IframeWrapper>
+                                            <iframe
+                                                id='myIframe'
+                                                title='map'
+                                                src='https://telemetry.polkadot.io/#map/0xe923f1773f4197a862cb4fc4a562f93585b26131dadbc943d524a82bbeecd2eb'
+                                                frameBorder='0'
+                                                scrolling='no'
+                                            ></iframe>
+                                        </IframeWrapper>
                                         <span>*By clicking the button you agree to our newsletter</span>
-                                    </WrapperDesktopOnly>
-                                </GlobalPresenseContentBottom>
+                                    </GlobalPresenseContentBottom>
+                                </WrapperDesktopOnly>
                             </GlobalPresenseContent>
                         </GlobalPresense>
                         <CLVIsBacked/>
@@ -405,8 +434,10 @@ const UniversalInfrastructure = styled.div`
             padding-top: 0;
         `,
         tablet: css`
+            height: 500px;
         `,
         tablet_mini: css`
+            height: 350px;
         `
     })};
 
@@ -431,8 +462,12 @@ const UniversalInfrastructure = styled.div`
               padding: 0;
           `,
           tablet: css`
+              min-width: 1024px;
+              max-width: 1024px;
           `,
           tablet_mini: css`
+              min-width: 744px;
+              max-width: 744px;
           `
       })};
   }
@@ -482,6 +517,7 @@ const TextWrapper = styled.div`
         tablet: css`
         `,
         tablet_mini: css`
+            width: 80%;
         `
     })};
 
@@ -533,10 +569,11 @@ const TextWrapper = styled.div`
 `;
 
 const ContentBottom = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 80px;
+    padding: 0 64px;
 
     ${breakpoint({
         mobile: css`
@@ -544,10 +581,13 @@ const ContentBottom = styled.div`
             flex-direction: column;
             padding: 0 24px;
         `,
+        tablet_mini: css`
+            margin-top: 24px;
+            flex-direction: column;
+            padding: 0 24px;
+        `,
         tablet: css`
         `,
-        tablet_mini: css`
-        `
     })};
 `;
 
@@ -567,10 +607,16 @@ const ContentBottomLeft = styled.div`
             height: unset;
             margin: 0 0 8px;
         `,
+        tablet_mini: css`
+            width: 100%;
+            border-radius: 16px;
+            padding: 12px 16px;
+            height: unset;
+            margin: 0 0 8px;
+        `,
         tablet: css`
         `,
-        tablet_mini: css`
-        `
+        
     })};
 
   h3 {
@@ -589,10 +635,15 @@ const ContentBottomLeft = styled.div`
               letter-spacing: 0.008em;
               margin-bottom: 4px;
           `,
+          tablet_mini: css`
+              font-weight: 590;
+              font-size: 16px;
+              line-height: 20px;
+              letter-spacing: 0.008em;
+              margin-bottom: 4px;
+          `,
           tablet: css`
           `,
-          tablet_mini: css`
-          `
       })};
   }
 
@@ -613,10 +664,15 @@ const ContentBottomLeft = styled.div`
               letter-spacing: 0.006em;
               opacity: 0.6;
           `,
+          tablet_mini: css`
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 18px;
+              letter-spacing: 0.006em;
+              opacity: 0.6;
+          `,
           tablet: css`
           `,
-          tablet_mini: css`
-          `
       })};
   }
 `;
@@ -639,6 +695,11 @@ const ContentBottomRight = styled.div`
         tablet: css`
         `,
         tablet_mini: css`
+            border-radius: 16px;
+            padding: 12px 16px;
+            height: unset;
+            display: flex;
+            flex-direction: column;
         `
     })};
 
@@ -661,6 +722,11 @@ const ContentBottomRight = styled.div`
           tablet: css`
           `,
           tablet_mini: css`
+              font-weight: 600;
+              font-size: 16px;
+              line-height: 20px;
+              letter-spacing: 0.008em;
+              margin-bottom: 4px;
           `
       })};
   }
@@ -684,6 +750,11 @@ const ContentBottomRight = styled.div`
           tablet: css`
           `,
           tablet_mini: css`
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 18px;
+              letter-spacing: 0.006em;
+              opacity: 0.6;
           `
       })};
   }
@@ -1014,6 +1085,8 @@ const ProgressQ1Left = styled.div`
         mobile: css`
             margin: 0;
             padding: 24px;
+            width: 100%;
+            border-radius: 16px;
         `,
         tablet: css`
         `,

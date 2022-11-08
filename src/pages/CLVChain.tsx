@@ -527,8 +527,12 @@ const Content = styled.div`
         padding: 0 24px;
       `,
       tablet: css`
+        min-width: 1024px;
+        max-width: 1024px;
       `,
       tablet_mini: css`
+        min-width: 744px;
+        max-width: 744px;
       `
     })};
   }
@@ -568,8 +572,12 @@ const IntrodusingTheCLV = styled.div`
         padding: 40px 24px;
       `,
       tablet: css`
+        min-width: 1024px;
+        max-width: 1024px;
       `,
       tablet_mini: css`
+        min-width: 744px;
+        max-width: 744px;
       `
     })};
   }
