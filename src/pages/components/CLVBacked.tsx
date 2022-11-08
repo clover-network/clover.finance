@@ -26,7 +26,7 @@ const CLVIsBackedTop = styled.div`
 
     ${breakpoint({
         mobile: css`
-	        padding: 0 24px;
+	        padding: 0;
             flex-direction: column;
             align-items: flex-start;
         `,
@@ -118,7 +118,7 @@ const CLVIsBackedBottom = styled.div`
         mobile: css`
             display:flex;
             flex-wrap: wrap;
-	        margin: 28px 24px 0;
+	        margin: 28px 0;
             grid-template-columns: unset;
         `,
         tablet: css`
