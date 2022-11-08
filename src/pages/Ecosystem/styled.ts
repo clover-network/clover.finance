@@ -55,15 +55,15 @@ export const Content = styled.div`
 export const EnterWeb3 = styled.div`
   width: 100%;
   padding-top: 96px;
-  position: relative;
   video {
     position: absolute;
     z-index: -1;
-    top: 0;
+    top: 80px;
+    left: 0;
+    right: 0;
     width: 100%;
     ${breakpoint({
       mobile: css`
-        height: 25%;
         padding-top: 0;
       `,
       tablet_mini: css``,

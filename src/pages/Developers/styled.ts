@@ -67,7 +67,6 @@ export const UpperCaseSpan = styled.div`
 export const EnterWeb3 = styled.div`
   width: 100%;
   padding-top: 289px;
-  position: relative;
   ${breakpoint({
     mobile: css`
       padding-top: 0;
@@ -82,11 +81,12 @@ export const EnterWeb3 = styled.div`
   video {
     position: absolute;
     z-index: -1;
-    top: 0;
+    top: 80px;
+    left: 0;
+    right: 0;
     width: 100%;
     ${breakpoint({
       mobile: css`
-        height: 25%;
       `,
       tablet_mini: css``,
       tablet: css``,

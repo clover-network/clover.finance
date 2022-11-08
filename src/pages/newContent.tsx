@@ -18,6 +18,7 @@ SwiperCore.use([Pagination]);
 
 const Wrapper = styled.div`
   overflow: hidden;
+  position: relative;
 
   ${breakpoint({
     mobile: css`
