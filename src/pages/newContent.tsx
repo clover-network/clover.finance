@@ -17,19 +17,20 @@ import { breakpoint } from '../mixins/breakpoint';
 SwiperCore.use([Pagination]);
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  background: #000000;
-
+  overflow: hidden;
+  // min-width: 1440px;
   ${breakpoint({
-  mobile: css`
+    mobile: css`
+      max-width: 375px;
     `,
-  tablet_mini: css`
+    tablet_mini: css`
+      max-width: 744px;
     `,
-  tablet: css`
-    `
-})}
-`
+    tablet: css`
+      max-width: 1026px;
+    `,
+  })}
+`;
 
 export const NewContent = () => {
   const navList = [
