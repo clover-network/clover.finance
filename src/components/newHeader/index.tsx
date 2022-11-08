@@ -110,9 +110,18 @@ const HeaderDiv = styled.div`
     height: 32px;
     object-fit: contain;
     flex: 1 1 0%;
-    ${breakpoint(css`
-      height: 24px;
-    `)};
+
+    ${breakpoint({
+      mobile: css`
+        height: 24px;
+      `,
+      tablet: css`
+        height: 24px;
+      `,
+      tablet_mini: css`
+        height: 24px;
+      `
+    })};
   }
 `;
 
