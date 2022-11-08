@@ -543,6 +543,13 @@ export const IdealAvailableContent = styled.div`
     &:last-child {
       & > img {
         margin-right: -16px;
+        ${breakpoint({
+          mobile: css``,
+          tablet_mini: css``,
+          tablet: css`
+            margin-right: 0;
+          `,
+        })}
       }
     }
   }

@@ -9,11 +9,6 @@ export const Content = styled.div`
   & > div {
     max-width: 1440px;
     margin: 0 auto;
-    ${breakpoint({
-      mobile: css``,
-      tablet_mini: css``,
-      tablet: css``,
-    })}
   }
 `;
 
@@ -75,7 +70,7 @@ export const EnterWeb3 = styled.div`
   position: relative;
   ${breakpoint({
     mobile: css`
-      padding-top: 40px;
+      padding-top: 0;
     `,
     tablet_mini: css`
       padding-top: 144px;
@@ -347,11 +342,9 @@ export const ContentBottomLeftContent = styled.div`
   grid-template-columns: repeat(3, 30%);
   align-items: center;
   gap: 16px;
-  & > last-child {
-    div {
-      img {
-        margin-bottom: 0;
-      }
+  & > div:last-child {
+    img {
+      margin-bottom: 0;
     }
   }
 `;
