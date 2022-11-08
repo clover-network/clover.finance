@@ -5,6 +5,122 @@ import { t } from '../i18n/intl';
 import { Footer } from './components/Footer';
 import { GrayButton, NormalButton } from '../components/Btn';
 import { useRouter } from 'next/router';
+import {WrapperDesktopOnly, WrapperMobileOnly } from "../CloverLibrary";
+
+const ContentInfo = styled.div`
+  
+`
+
+const FeaturesContentMobile = styled.div`
+  position: relative;
+  height: 416px;
+`
+
+const FeaturesLeftMobile = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  
+  video {
+    width: 200px;
+    z-index: 0;
+  }
+`
+
+const FeaturesRightItemMobile = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 224px;
+
+  h3 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0.008em;
+    color: #FFFFFF;
+    margin-bottom: 8px;
+  }
+
+  & > span {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0.006em;
+    color: #FFFFFF;
+  }
+`
+
+const FeaturesBottomItemMobile = styled.div`
+  position: absolute;
+  height: 90px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, rgba(57, 57, 57, 0) -8.93%, #0C0B0B 100%);
+  order: 4;
+  flex-grow: 0;
+  z-index: 4;
+`
+
+const ClvTokenTopMobile = styled.div`
+  position: relative;
+  height: 370px;
+
+  & > img:first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin-top: 16px;
+  }
+`
+
+const ClvTokenTopMobileTitle = styled.div`
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 144px;
+  
+  span {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 32px;
+    letter-spacing: 0.008em;
+    color: #BDFDE2;
+  }
+  
+  img {
+    width: 32px;
+    height: 32px;
+    margin-left: 12px;
+  }
+`
+
+const ClvTokenTopMobileSenTitle = styled.div`
+  position: absolute;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 32px;
+  letter-spacing: 0.008em;
+  color: #FFFFFF;
+  top: 184px;
+`
+
+const ClvTokenTopMobileSubtitle = styled.div`
+  position: absolute;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.006em;
+  color: #FFFFFF;
+  opacity: 0.6;
+  top: 264px;
+`
 
 export const CLVChain: React.FC = () => {
   const location = useRouter();
@@ -46,60 +162,60 @@ export const CLVChain: React.FC = () => {
     },
   ]
 
-  const handleScroll = (e: any) => {
-    let mouseDown
-    const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1
-    if (isFirefox) {
-      if (e.detail > 0) {
-        mouseDown = true
-      } else {
-        mouseDown = false
-      }
-    } else {
-      if (e.wheelDelta > 0) {
-        mouseDown = true
-      } else {
-        mouseDown = false
-      }
-    }
-    let playVideo1: any = document.getElementById('playVideo1')
-    let playVideo2: any = document.getElementById('playVideoReverse1')
-    const display = playVideo1.style.display
-    let playVideo: any = display === 'none' ? playVideo2 : playVideo1
-
-    if (!mouseDown && videoStatus === 'start' && playVideo != playVideo2 && window.scrollY > 900) {
-      playVideo.play()
-    }
-    if (mouseDown && videoStatus === 'start' && playVideo != playVideo1 && window.scrollY > 900 && window.scrollY < 2500) {
-      playVideo.play()
-    }
-  }
-
-  useEffect(() => {
-    const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1
-    const mousewheel = isFirefox ? 'DOMMouseScroll' : 'mousewheel'
-    window.addEventListener(mousewheel, handleScroll)
-    return () => {
-      window.removeEventListener(mousewheel, handleScroll)
-    }
-  }, [location]);
-
-
-  useEffect(() => {
-    let playVideo1: any = document.getElementById('playVideo1')
-    let playVideo2: any = document.getElementById('playVideoReverse1')
-    const display = playVideo1.style.display
-    let playVideo: any = display === 'none' ? playVideo2 : playVideo1
-
-    playVideo.addEventListener('playing', () => {
-      videoStatus = 'playing'
-    })
-    playVideo.addEventListener('ended', () => {
-      videoStatus = 'start'
-      setIsReserve(!isReverse)
-      playVideo.currentTime = 0
-    })
-  }, [document, isReverse]);
+  // const handleScroll = (e: any) => {
+  //   let mouseDown
+  //   const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1
+  //   if (isFirefox) {
+  //     if (e.detail > 0) {
+  //       mouseDown = true
+  //     } else {
+  //       mouseDown = false
+  //     }
+  //   } else {
+  //     if (e.wheelDelta > 0) {
+  //       mouseDown = true
+  //     } else {
+  //       mouseDown = false
+  //     }
+  //   }
+  //   let playVideo1: any = document.getElementById('playVideo1')
+  //   let playVideo2: any = document.getElementById('playVideoReverse1')
+  //   const display = playVideo1.style.display
+  //   let playVideo: any = display === 'none' ? playVideo2 : playVideo1
+  //
+  //   if (!mouseDown && videoStatus === 'start' && playVideo != playVideo2 && window.scrollY > 900) {
+  //     playVideo.play()
+  //   }
+  //   if (mouseDown && videoStatus === 'start' && playVideo != playVideo1 && window.scrollY > 900 && window.scrollY < 2500) {
+  //     playVideo.play()
+  //   }
+  // }
+  //
+  // useEffect(() => {
+  //   const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1
+  //   const mousewheel = isFirefox ? 'DOMMouseScroll' : 'mousewheel'
+  //   window.addEventListener(mousewheel, handleScroll)
+  //   return () => {
+  //     window.removeEventListener(mousewheel, handleScroll)
+  //   }
+  // }, [location]);
+  //
+  //
+  // useEffect(() => {
+  //   let playVideo1: any = document.getElementById('playVideo1')
+  //   let playVideo2: any = document.getElementById('playVideoReverse1')
+  //   const display = playVideo1.style.display
+  //   let playVideo: any = display === 'none' ? playVideo2 : playVideo1
+  //
+  //   playVideo.addEventListener('playing', () => {
+  //     videoStatus = 'playing'
+  //   })
+  //   playVideo.addEventListener('ended', () => {
+  //     videoStatus = 'start'
+  //     setIsReserve(!isReverse)
+  //     playVideo.currentTime = 0
+  //   })
+  // }, [document, isReverse]);
 
   return (
       <div id='CLVChain'>
@@ -117,38 +233,72 @@ export const CLVChain: React.FC = () => {
                   <span>{t('introdusingTheCLVHint')}</span>
                 </TextWrapper>
               </ContentWrapper>
-              <ContentBottom>
-                <ContentBottomLeft>
-                  <img className="img-top" src='images/introdusing_top.svg' alt='' />
-                  <ContentBottomItem>
-                    <img src='images/introdusing_icon1.svg' alt='' />
-                    <span>{t('CLVMainnet')}</span>
-                  </ContentBottomItem>
-                  <ContentBottomItemNormal style={{margin: '0'}}>
-                    <img src='images/introdusing_icon2.svg' alt='' />
-                    <span>{t('governanceExchange')}</span>
-                  </ContentBottomItemNormal>
-                  <img className="img-bottom" src='images/introdusing_bottom.svg' alt='' />
-                </ContentBottomLeft>
-                <ContentBottomCenter>
-                  <img src='images/introdusing_icon3.svg' alt='' />
-                  <span>{t('bridgingTechnology')}</span>
-                </ContentBottomCenter>
-                <ContentBottomRight>
-                  <ContentBottomItemNormal>
-                    <img src='images/introdusing_icon4.svg' alt='' />
-                    <span>{t('dAppDevelopment')}</span>
-                  </ContentBottomItemNormal>
-                  <ContentBottomItem>
-                    <img src='images/introdusing_icon5.svg' alt='' />
-                    <span>{t('CLVParachain')}</span>
-                  </ContentBottomItem>
-                  <ContentBottomItemNormal style={{margin: '0'}}>
-                    <img src='images/introdusing_icon6.svg' alt='' />
-                    <span>{t('smartContract')}</span>
-                  </ContentBottomItemNormal>
-                </ContentBottomRight>
-              </ContentBottom>
+              <WrapperMobileOnly>
+                <ContentBottom>
+                  <img className="img-top" src='images/mobile_clv_chain_left.svg' alt='' />
+                  <ContentInfo>
+                    <ContentBottomItem>
+                      <img src='images/introdusing_icon1.svg' alt='' />
+                      <span>{t('CLVMainnet')}</span>
+                    </ContentBottomItem>
+                    <ContentBottomItemNormal>
+                      <img src='images/introdusing_icon2.svg' alt='' />
+                      <span>{t('governanceExchange')}</span>
+                    </ContentBottomItemNormal>
+                    <ContentBottomItemNormal>
+                      <img src='images/introdusing_icon3.svg' alt='' />
+                      <span>{t('bridgingTechnology')}</span>
+                    </ContentBottomItemNormal>
+                    <ContentBottomItemNormal>
+                      <img src='images/introdusing_icon4.svg' alt='' />
+                      <span>{t('dAppDevelopment')}</span>
+                    </ContentBottomItemNormal>
+                    <ContentBottomItem>
+                      <img src='images/introdusing_icon5.svg' alt='' />
+                      <span>{t('CLVParachain')}</span>
+                    </ContentBottomItem>
+                    <ContentBottomItemNormal>
+                      <img src='images/introdusing_icon6.svg' alt='' />
+                      <span>{t('smartContract')}</span>
+                    </ContentBottomItemNormal>
+                  </ContentInfo>
+                  <img className="img-top" src='images/mobile_clv_chain_right.svg' alt='' />
+                </ContentBottom>
+              </WrapperMobileOnly>
+              <WrapperDesktopOnly>
+                <ContentBottom>
+                  <ContentBottomLeft>
+                    <img className="img-top" src='images/introdusing_top.svg' alt='' />
+                    <ContentBottomItem>
+                      <img src='images/introdusing_icon1.svg' alt='' />
+                      <span>{t('CLVMainnet')}</span>
+                    </ContentBottomItem>
+                    <ContentBottomItemNormal style={{margin: '0'}}>
+                      <img src='images/introdusing_icon2.svg' alt='' />
+                      <span>{t('governanceExchange')}</span>
+                    </ContentBottomItemNormal>
+                    <img className="img-bottom" src='images/introdusing_bottom.svg' alt='' />
+                  </ContentBottomLeft>
+                  <ContentBottomCenter>
+                    <img src='images/introdusing_icon3.svg' alt='' />
+                    <span>{t('bridgingTechnology')}</span>
+                  </ContentBottomCenter>
+                  <ContentBottomRight>
+                    <ContentBottomItemNormal>
+                      <img src='images/introdusing_icon4.svg' alt='' />
+                      <span>{t('dAppDevelopment')}</span>
+                    </ContentBottomItemNormal>
+                    <ContentBottomItem>
+                      <img src='images/introdusing_icon5.svg' alt='' />
+                      <span>{t('CLVParachain')}</span>
+                    </ContentBottomItem>
+                    <ContentBottomItemNormal style={{margin: '0'}}>
+                      <img src='images/introdusing_icon6.svg' alt='' />
+                      <span>{t('smartContract')}</span>
+                    </ContentBottomItemNormal>
+                  </ContentBottomRight>
+                </ContentBottom>
+              </WrapperDesktopOnly>
             </div>
           </IntrodusingTheCLV>
           <Content>
@@ -158,65 +308,101 @@ export const CLVChain: React.FC = () => {
                   <span>{t('features')}</span>
                   <h3>{t('thatMakesTheDifference')}</h3>
                 </FeaturesTitle>
-                <FeaturesContent>
-                  <FeaturesLeft>
-                    <video style={{display: isReverse ? 'none' : 'inline-block'}}  id='playVideo1' muted src='videos/CLVDevPageSequence.mp4'></video>
-                    <video style={{display: !isReverse ? 'none' : 'inline-block'}} id='playVideoReverse1' muted src='videos/CLVDevPageSequence2.mp4'></video>
-                  </FeaturesLeft>
-                  <FeaturesRight>
-                    <div>
-                      <FeaturesRightItem>
-                        <h3>{t('etheriumCompatible')}</h3>
-                        <span>{t('etheriumCompatibleHint')}</span>
-                        <GrayButton
-                            onClick={() => {
-                              window.open('https://docs.clv.org/clv-chain-developer-guide/dapp-example/setup-dapp-project', "_blank")
-                            }}
-                        >{t('learnMore')}</GrayButton>
-                      </FeaturesRightItem>
-                      <FeaturesRightItem>
-                        <h3>{t('EconomicIncentive')}</h3>
-                        <span>{t('EconomicIncentiveHint')}</span>
-                        <GrayButton
-                            onClick={() => {
-                              window.open('https://docs.clv.org/clover-ecosystem/incentive-programs', "_blank")
-                            }}
-                        >{t('learnMore')}</GrayButton>
-                      </FeaturesRightItem>
-                      <FeaturesRightItem>
-                        <h3>{t('highStakingReturn')}</h3>
-                        <p>Current avg. APY <span>26.62%</span></p>
-                        <span>{t('highStakingReturnHint')}</span>
-                        <Btns>
-                          <NormalButton
-                              width='316px'
+                <WrapperDesktopOnly>
+                  <FeaturesContent>
+                    <FeaturesLeft>
+                      <video style={{display: isReverse ? 'none' : 'inline-block'}}  id='playVideo1' muted src='videos/CLVDevPageSequence.mp4'></video>
+                      <video style={{display: !isReverse ? 'none' : 'inline-block'}} id='playVideoReverse1' muted src='videos/CLVDevPageSequence2.mp4'></video>
+                    </FeaturesLeft>
+                    <FeaturesRight>
+                      <div>
+                        <FeaturesRightItem>
+                          <h3>{t('etheriumCompatible')}</h3>
+                          <span>{t('etheriumCompatibleHint')}</span>
+                          <GrayButton
                               onClick={() => {
-                                window.open('https://apps.apple.com/app/clover-wallet/id1570072858', "_blank")
+                                window.open('https://docs.clv.org/clv-chain-developer-guide/dapp-example/setup-dapp-project', "_blank")
                               }}
-                          >{t('stakeOnMobile')}</NormalButton>
-                          <GrayButton width='316px'>{t('enterCLVPortal')}</GrayButton>
-                        </Btns>
-                      </FeaturesRightItem>
-                      <FeaturesRightItem>
-                        <h3>{t('smartContractsGovernance')}</h3>
-                        <span>{t('smartContractsGovernanceHint')}</span>
-                      </FeaturesRightItem>
-                    </div>
-                  </FeaturesRight>
-                </FeaturesContent>
+                          >{t('learnMore')}</GrayButton>
+                        </FeaturesRightItem>
+                        <FeaturesRightItem>
+                          <h3>{t('EconomicIncentive')}</h3>
+                          <span>{t('EconomicIncentiveHint')}</span>
+                          <GrayButton
+                              onClick={() => {
+                                window.open('https://docs.clv.org/clover-ecosystem/incentive-programs', "_blank")
+                              }}
+                          >{t('learnMore')}</GrayButton>
+                        </FeaturesRightItem>
+                        <FeaturesRightItem>
+                          <h3>{t('highStakingReturn')}</h3>
+                          <p>Current avg. APY <span>26.62%</span></p>
+                          <span>{t('highStakingReturnHint')}</span>
+                          <Btns>
+                            <NormalButton
+                                width='316px'
+                                onClick={() => {
+                                  window.open('https://apps.apple.com/app/clover-wallet/id1570072858', "_blank")
+                                }}
+                            >{t('stakeOnMobile')}</NormalButton>
+                            <GrayButton width='316px'>{t('enterCLVPortal')}</GrayButton>
+                          </Btns>
+                        </FeaturesRightItem>
+                        <FeaturesRightItem>
+                          <h3>{t('smartContractsGovernance')}</h3>
+                          <span>{t('smartContractsGovernanceHint')}</span>
+                        </FeaturesRightItem>
+                      </div>
+                    </FeaturesRight>
+                  </FeaturesContent>
+                </WrapperDesktopOnly>
+                <WrapperMobileOnly>
+                  <FeaturesContentMobile>
+                    <FeaturesLeftMobile>
+                      <video style={{display: isReverse ? 'none' : 'inline-block'}}  id='playVideo1' muted src='videos/CLVDevPageSequence.mp4'></video>
+                      <video style={{display: !isReverse ? 'none' : 'inline-block'}} id='playVideoReverse1' muted src='videos/CLVDevPageSequence2.mp4'></video>
+                    </FeaturesLeftMobile>
+                    <FeaturesRightItemMobile>
+                      <h3>{t('etheriumCompatible')}</h3>
+                      <span>{t('etheriumCompatibleHint')}</span>
+                      <GrayButton
+                          margin='8px 0'
+                          height='40px'
+                          onClick={() => {
+                            window.open('https://docs.clv.org/clv-chain-developer-guide/dapp-example/setup-dapp-project', "_blank")
+                          }}
+                      >{t('learnMore')}</GrayButton>
+                      <h3>{t('EconomicIncentive')}</h3>
+                    </FeaturesRightItemMobile>
+                    <FeaturesBottomItemMobile/>
+                  </FeaturesContentMobile>
+                </WrapperMobileOnly>
               </Features>
               <ClvToken>
-                <ClvTokenTop>
-                  <div>
+                <WrapperDesktopOnly>
+                  <ClvTokenTop>
                     <div>
+                      <div>
+                        <span>{t('CLVToken')}</span>
+                        <img src='images/clv_icon_green.svg' alt='' />
+                      </div>
+                      <h3>{t('CLVTokenTitle')}</h3>
+                      <span>{t('CLVTokenHint')}</span>
+                    </div>
+                    <img src='images/clv_token_img.svg' alt='' />
+                  </ClvTokenTop>
+                </WrapperDesktopOnly>
+                <WrapperMobileOnly>
+                  <ClvTokenTopMobile>
+                    <img src='images/clv_token_img.svg' alt='' />
+                    <ClvTokenTopMobileTitle>
                       <span>{t('CLVToken')}</span>
                       <img src='images/clv_icon_green.svg' alt='' />
-                    </div>
-                    <h3>{t('CLVTokenTitle')}</h3>
-                    <span>{t('CLVTokenHint')}</span>
-                  </div>
-                  <img src='images/clv_token_img.svg' alt='' />
-                </ClvTokenTop>
+                    </ClvTokenTopMobileTitle>
+                    <ClvTokenTopMobileSenTitle>{t('CLVTokenTitle')}</ClvTokenTopMobileSenTitle>
+                    <ClvTokenTopMobileSubtitle>{t('CLVTokenHint')}</ClvTokenTopMobileSubtitle>
+                  </ClvTokenTopMobile>
+                </WrapperMobileOnly>
                 <ClvTokenBottom>
                   <span>{t('CLVIsAvailable')}</span>
                   <div>
@@ -333,6 +519,18 @@ const Content = styled.div`
     min-width: 1440px;
     padding: 0 64px 180px;
     margin: 0 auto;
+
+    ${breakpoint({
+      mobile: css`
+        max-width: unset;
+        min-width: unset;
+        padding: 0 24px;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })};
   }
 `
 
@@ -340,6 +538,17 @@ const IntrodusingTheCLV = styled.div`
   width: 100%;
   padding-top: 96px;
   position: relative;
+
+  ${breakpoint({
+    mobile: css`
+      padding-top: 0;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
+  
   video {
     position: absolute;
     z-index: -1;
@@ -351,6 +560,18 @@ const IntrodusingTheCLV = styled.div`
     max-width: 1440px;
     min-width: 1440px;
     margin: 0 auto;
+
+    ${breakpoint({
+      mobile: css`
+        max-width: unset;
+        min-width: unset;
+        padding: 40px 24px;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })};
   }
 `
 
@@ -371,11 +592,15 @@ const ContentWrapper = styled.div`
   justify-content: space-between;
   padding-top: 240px;
 
-  ${breakpoint(css`
-    width: unset;
-    flex-direction: column;
-    margin-left: 0;
-  `)};
+  ${breakpoint({
+    mobile: css`
+      padding-top: 0;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
 `;
 
 const TextWrapper = styled.div`
@@ -385,14 +610,48 @@ const TextWrapper = styled.div`
   justify-content: center;
   margin-right: 16px;
 
+  ${breakpoint({
+    mobile: css`
+      width: 100%;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
+
   & > div:first-child {
     font-weight: 600;
     font-size: 72px;
     line-height: 76px;
     letter-spacing: 0.008em;
     color: #FFFFFF;
+
+    ${breakpoint({
+      mobile: css`
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 40px;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })};
+    
     img {
       margin-left: 10px;
+
+      ${breakpoint({
+        mobile: css`
+          width: 24px;
+          height: 24px;
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+      })};
     }
   }
 
@@ -404,14 +663,20 @@ const TextWrapper = styled.div`
     letter-spacing: 0.006em;
     color: #FFFFFF;
     margin: 40px 0 30px;
-  }
 
-  ${breakpoint(css`
-    span {
-      font-size: 15px;
-      line-height: 24px;
-    }
-  `)};
+    ${breakpoint({
+      mobile: css`
+        margin: 24px 0;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 20px;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })};
+  }
 `;
 
 const ContentBottom = styled.div`
@@ -419,6 +684,17 @@ const ContentBottom = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-top: 80px;
+
+  ${breakpoint({
+    mobile: css`
+      flex-direction: row;
+      margin-top: 64px;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
 `;
 
 const ContentBottomLeft = styled.div`
@@ -454,10 +730,45 @@ const ContentBottomItem = styled.div`
   letter-spacing: 0.006em;
   color: #0C0B0B;
   margin-bottom: 16px;
+
+  ${breakpoint({
+    mobile: css`
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
+
+  ${breakpoint({
+    mobile: css`
+      width: 100%;
+      height: 80px;
+      margin-bottom: 8px;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
+  
   img {
     width: 68px;
     height: 70px;
     margin-right: 32px;
+
+    ${breakpoint({
+      mobile: css`
+        margin-right: 0;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })};
   }
 `
 
@@ -506,6 +817,16 @@ const Btns = styled.div`
 const Features = styled.div`
   margin-top: 180px;
   width: 100%;
+
+  ${breakpoint({
+    mobile: css`
+      margin-top: 64px;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
 `
 
 const FeaturesTitle = styled.div`
@@ -514,10 +835,36 @@ const FeaturesTitle = styled.div`
   font-size: 64px;
   line-height: 68px;
   letter-spacing: 0.008em;
+
+  ${breakpoint({
+    mobile: css`
+      width: unset;
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 32px;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
+  
   h3 {
     font-size: 64px;
     line-height: 68px;
     color: #FFFFFF;
+
+    ${breakpoint({
+      mobile: css`
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 32px;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })};
   }
   span {
     color: #9BDAF6;
@@ -534,9 +881,28 @@ const FeaturesLeft = styled.div`
   width: 50%;
   margin-right: 16px;
 
+  ${breakpoint({
+    mobile: css`
+      width: 50%;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
+
   video {
     width: 100%;
     max-width: 630px;
+
+    ${breakpoint({
+      mobile: css`
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })};
   }
 `
 
@@ -594,10 +960,21 @@ const FeaturesRightItem = styled.div`
 
 const ClvToken = styled.div`
   background: #141414;
-  //background: #0c0b0b;
   border-radius: 32px;
   padding: 48px;
   margin-top: 180px;
+
+  ${breakpoint({
+    mobile: css`
+      padding: 16px;
+      border-radius: 16px;
+      margin-top: 72px;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
 `
 
 const ClvTokenTop = styled.div`
@@ -657,12 +1034,36 @@ const ClvTokenBottom = styled.div`
     color: rgba(255, 255, 255, 0.6);
     padding: 22px 0;
     display: inline-block;
+
+    ${breakpoint({
+      mobile: css`
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.026em;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })};
   }
   &>div {
     display: grid;
     grid-template-columns: auto auto auto auto;
     align-items: center;
     gap: 20px;
+
+    ${breakpoint({
+      mobile: css`
+        display: flex;
+        flex-direction: column;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })};
   }
 `
 
@@ -685,6 +1086,19 @@ const ClvTokenBottomItem = styled.div`
   color: #0C0B0B;
   padding: 16px;
   border: 1px solid #BDFDE2;
+
+  ${breakpoint({
+    mobile: css`
+      height: 60px;
+      width: 100%;
+      font-size: 12px;
+      line-height: 14px;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
 `
 
 const Ecosystem = styled.div`
@@ -693,6 +1107,16 @@ const Ecosystem = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+
+  ${breakpoint({
+    mobile: css`
+      margin-top: 64px;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
 `
 
 const EcosystemTitle = styled.div`
@@ -703,10 +1127,36 @@ const EcosystemTitle = styled.div`
   letter-spacing: 0.008em;
   text-align: right;
 
+  ${breakpoint({
+    mobile: css`
+      width: 100%;
+      text-align: left;
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 32px;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
+
   h3 {
     font-size: 64px;
     line-height: 68px;
     color: #FFFFFF;
+
+    ${breakpoint({
+      mobile: css`
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 32px;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })};
   }
   span {
     color: #BDFDE2;
@@ -721,6 +1171,18 @@ const EcosystemContent = styled.div`
   gap: 16px;
   align-items: center;
   //flex-wrap: wrap;
+
+  ${breakpoint({
+    mobile: css`
+      display: flex;
+      flex-direction: column;
+      margin-top: 24px;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
 `
 
 const EcosystemItem = styled.div`
@@ -732,6 +1194,30 @@ const EcosystemItem = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
+  ${breakpoint({
+    mobile: css`
+      padding: 16px;
+      height: unset;
+      border-radius: 16px;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
+
+  &>div:last-child {
+    ${breakpoint({
+      mobile: css`
+        height: 40px;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })};
+  }
+  
   &>div:first-child {
     div {
       display: flex;
@@ -739,6 +1225,19 @@ const EcosystemItem = styled.div`
       img {
         width: 32px;
         margin-right: 16px;
+
+        ${breakpoint({
+          mobile: css`
+            width: 24px;
+            height: 24px;
+            margin-right: 12px;
+            justify-content: center;
+          `,
+          tablet: css`
+          `,
+          tablet_mini: css`
+          `
+        })};
       }
       h3 {
         font-weight: 600;
@@ -746,6 +1245,19 @@ const EcosystemItem = styled.div`
         line-height: 40px;
         letter-spacing: 0.008em;
         color: #FFFFFF;
+
+        ${breakpoint({
+          mobile: css`
+            font-weight:600;
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: 0;
+          `,
+          tablet: css`
+          `,
+          tablet_mini: css`
+          `
+        })};
       }
     }
   }
@@ -760,12 +1272,36 @@ const EcosystemItem = styled.div`
     opacity: 0.6;
     display: inline-block;
     margin: 24px 0;
+
+    ${breakpoint({
+      mobile: css`
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 20px;
+        margin: 8px 0 12px;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })};
   }
 `
 
 const FAQs = styled.div`
   margin-top: 180px;
   width: 100%;
+
+  ${breakpoint({
+    mobile: css`
+      margin-top: 64px;
+      margin-bottom: 64px;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
 `
 
 const FAQsTitle = styled.div`
@@ -775,15 +1311,48 @@ const FAQsTitle = styled.div`
   line-height: 80px;
   letter-spacing: 0.008em;
   color: #FFFFFF;
+
+  ${breakpoint({
+    mobile: css`
+      font-weight: 590;
+      font-size: 32px;
+      line-height: 32px;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
 `
 
 const FAQsContent = styled.div`
   margin-top: 64px;
+
+  ${breakpoint({
+    mobile: css`
+      margin-top: 24px;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
 `
 
 const FAQsItem = styled.div`
   border-top: 1px solid #333232;
   padding: 34px 0;
+
+  ${breakpoint({
+    mobile: css`
+      padding: 16px 0;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
+  
   &>div {
     display: flex;
     align-items: center;
@@ -795,12 +1364,35 @@ const FAQsItem = styled.div`
       line-height: 36px;
       letter-spacing: 0.008em;
       color: #FFFFFF;
+
+      ${breakpoint({
+        mobile: css`
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 20px;
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+      })};
     }
     img {
       opacity: 0.5;
       &.selected {
         opacity: 1!important;
       }
+
+      ${breakpoint({
+        mobile: css`
+          width: 20px;
+          height: 20px;
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+      })};
     }
   }
 `
@@ -820,15 +1412,22 @@ const FAQsItemContent = styled.div`
     opacity: 0.6;
     margin-top: 26px;
     display: inline-block;
+
+    ${breakpoint({
+      mobile: css`
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 20px;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })};
   }
 `
 
 const LandingContainer = styled.div`
   display: flex;
   flex-direction: column;
-  ${breakpoint(css`
-    height: unset;
-    min-height: 120vw;
-    padding: 48px 0 0;
-  `)}
 `;
