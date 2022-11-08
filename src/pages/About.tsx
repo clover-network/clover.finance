@@ -5,6 +5,7 @@ import {t} from '../i18n/intl';
 import {Footer} from './components/Footer';
 import {GrayButton, NormalButton} from '../components/Btn';
 import CLVIsBacked from './components/CLVBacked';
+import { WrapperDesktopOnly, WrapperMobileOnly } from "../CloverLibrary";
 
 export const About: React.FC = () => {
     const [scrollTop, setScrollTop] = useState(0)
@@ -17,22 +18,29 @@ export const About: React.FC = () => {
             window.removeEventListener('scroll', handleScroll)
         }
     }, [location]);
+
     return (
         <div>
             <Background/>
             <LandingContainer>
                 <UniversalInfrastructure>
                     <video autoPlay loop muted src='videos/particles.mp4'></video>
-                    <div>
-                        <ContentWrapper>
-                            <TextWrapper>
-                                <div>
-                                    {t('universalInfrastructure')}
+                    <ContentWrapper>
+                        <TextWrapper>
+                            <WrapperDesktopOnly>
+                                {t('universalInfrastructure')}
+                                <img src='images/clv_icon1.svg' alt=''/>
+                            </WrapperDesktopOnly>
+                            <WrapperMobileOnly>
+                                <MobileTitle>
+                                    {t('aboutTitle')}
                                     <img src='images/clv_icon1.svg' alt=''/>
-                                </div>
-                                <span>{t('universalInfrastructureHint')}</span>
-                            </TextWrapper>
-                        </ContentWrapper>
+                                </MobileTitle>
+                            </WrapperMobileOnly>
+                            <span>{t('universalInfrastructureHint')}</span>
+                        </TextWrapper>
+                    </ContentWrapper>
+                    <WrapperDesktopOnly>
                         <ContentBottom>
                             <ContentBottomLeft>
                                 <h3>{t('technology')}</h3>
@@ -53,8 +61,31 @@ export const About: React.FC = () => {
                                 </div>
                             </ContentBottomRight>
                         </ContentBottom>
-                    </div>
+                    </WrapperDesktopOnly>
                 </UniversalInfrastructure>
+                <WrapperMobileOnly>
+                    <ContentBottom>
+                        <ContentBottomLeft>
+                            <h3>{t('technology')}</h3>
+                            <span>{t('technologyHint')}</span>
+                        </ContentBottomLeft>
+                        <ContentBottomRight>
+                            <div style={{marginBottom: '12px'}}>
+                                <h3>{t('saveTime')}</h3>
+                                <span>{t('saveTimeHint')}</span>
+                            </div>
+                            <div>
+                                <NormalButton
+                                    width='100%'
+                                    height='40px'
+                                    onClick={() => {
+                                        window.open('https://docs.clv.org/use-clv-chain/beginners-guide', "_blank")
+                                    }}
+                                >{t('viewDocumentation')}</NormalButton>
+                            </div>
+                        </ContentBottomRight>
+                    </ContentBottom>
+                </WrapperMobileOnly>
                 <Content>
                     <div>
                         <Progress>
@@ -112,6 +143,11 @@ export const About: React.FC = () => {
                                         background: 'url(images/bg-middle.svg) no-repeat',
                                     }}
                                 >
+                                    <WrapperMobileOnly>
+                                        <ProgressQ1Right>
+                                            <div className={scrollTop > 1200 ? 'animation1' : ''}>2022</div>
+                                        </ProgressQ1Right>
+                                    </WrapperMobileOnly>
                                     <ProgressQ1Left>
                                         <h3 className={scrollTop > 1200 ? 'animation2' : ''}>(Q1)</h3>
                                         <div className={scrollTop > 1200 ? 'animation3' : ''}>
@@ -182,9 +218,11 @@ export const About: React.FC = () => {
                                             <span>{t('CLVAssetsSwap')}</span>
                                         </div>
                                     </ProgressQ1Left>
-                                    <ProgressQ1Right>
-                                        <div className={scrollTop > 1200 ? 'animation1' : ''}>2022</div>
-                                    </ProgressQ1Right>
+                                    <WrapperDesktopOnly>
+                                        <ProgressQ1Right>
+                                            <div className={scrollTop > 1200 ? 'animation1' : ''}>2022</div>
+                                        </ProgressQ1Right>
+                                    </WrapperDesktopOnly>
                                 </ProgressItem>
                                 <ProgressItem
                                     style={{
@@ -223,7 +261,9 @@ export const About: React.FC = () => {
                                 }}>
                                     <NewsUpdateItemLeft>
                                         <span>13 Oct 2022</span>
-                                        <img src="images/news2.svg" alt=""/>
+                                        <WrapperDesktopOnly>
+                                            <img src="images/news2.svg" alt=""/>
+                                        </WrapperDesktopOnly>
                                     </NewsUpdateItemLeft>
                                     <NewsUpdateItemRight>
                                         <div>{t('seamlessAccess')}</div>
@@ -235,7 +275,9 @@ export const About: React.FC = () => {
                                 }}>
                                     <NewsUpdateItemLeft>
                                         <span>05 Oct 2022</span>
-                                        <img src="images/news3.svg" alt=""/>
+                                        <WrapperDesktopOnly>
+                                            <img src="images/news3.svg" alt=""/>
+                                        </WrapperDesktopOnly>
                                     </NewsUpdateItemLeft>
                                     <NewsUpdateItemRight>
                                         <div>{t('CLVQuarterly')}</div>
@@ -247,18 +289,33 @@ export const About: React.FC = () => {
                                 }}>
                                     <NewsUpdateItemLeft>
                                         <span>20 Sep 2022</span>
-                                        <img src="images/news1.svg" alt=""/>
+                                        <WrapperDesktopOnly>
+                                            <img src="images/news1.svg" alt=""/>
+                                        </WrapperDesktopOnly>
                                     </NewsUpdateItemLeft>
                                     <NewsUpdateItemRight>
                                         <div>{t('introducingCLV')}</div>
                                         <span>{t('Q1Hint')}</span>
-                                        <GrayButton
-                                            onClick={(e) => {
-                                                e.stopPropagation()
-                                                window.open('https://medium.com/@clv_org')
-                                            }}
-                                            margin="80px 0 0 0"
-                                        >{t('seeMore')}</GrayButton>
+
+                                        <WrapperMobileOnly>
+                                            <GrayButton
+                                                onClick={(e) => {
+                                                    e.stopPropagation()
+                                                    window.open('https://medium.com/@clv_org')
+                                                }}
+                                                height='40px'
+                                                margin="24px 0 0 0"
+                                            >{t('seeMore')}</GrayButton>
+                                        </WrapperMobileOnly>
+                                        <WrapperDesktopOnly>
+                                            <GrayButton
+                                                onClick={(e) => {
+                                                    e.stopPropagation()
+                                                    window.open('https://medium.com/@clv_org')
+                                                }}
+                                                margin="80px 0 0 0"
+                                            >{t('seeMore')}</GrayButton>
+                                        </WrapperDesktopOnly>
                                     </NewsUpdateItemRight>
                                 </NewsUpdateItem>
                             </NewsUpdateContent>
@@ -285,7 +342,9 @@ export const About: React.FC = () => {
                                             scrolling='no'
                                         ></iframe>
                                     </IframeWrapper>
-                                    <span>*By clicking the button you agree to our newsletter</span>
+                                    <WrapperDesktopOnly>
+                                        <span>*By clicking the button you agree to our newsletter</span>
+                                    </WrapperDesktopOnly>
                                 </GlobalPresenseContentBottom>
                             </GlobalPresenseContent>
                         </GlobalPresense>
@@ -298,15 +357,38 @@ export const About: React.FC = () => {
     );
 };
 
+const MobileTitle = styled.div`
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: 0.008em;
+    color: #FFFFFF;
+    display: inline-block;
+    
+    img {
+        margin-left: 16px;
+        width: 24px;
+        height: 24px;
+    }
+`
+
 const Content = styled.div`
   width: 100%;
   background: #000000;
 
   & > div {
-    max-width: 1440px;
-    min-width: 1440px;
     padding: 0 64px 64px;
     margin: 0 auto;
+
+      ${breakpoint({
+          mobile: css`
+              padding: 0 24px;
+          `,
+          tablet: css`
+          `,
+          tablet_mini: css`
+          `
+      })};
   }
 `
 
@@ -315,10 +397,23 @@ const UniversalInfrastructure = styled.div`
   padding-top: 96px;
   position: relative;
 
+    ${breakpoint({
+        mobile: css`
+            display: flex;
+            flex-direction: column;
+            height: 280px;
+            padding-top: 0;
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+    })};
+
   video {
     position: absolute;
     z-index: -1;
-    top: 0;
+    top: 80px;
     width: 100%;
   }
 
@@ -327,6 +422,19 @@ const UniversalInfrastructure = styled.div`
     max-width: 1440px;
     min-width: 1440px;
     margin: 0 auto;
+
+      ${breakpoint({
+          mobile: css`
+              min-width: unset;
+              max-width: unset;
+              margin: 0;
+              padding: 0;
+          `,
+          tablet: css`
+          `,
+          tablet_mini: css`
+          `
+      })};
   }
 `
 
@@ -347,11 +455,16 @@ const ContentWrapper = styled.div`
   justify-content: space-between;
   padding-top: 240px;
 
-  ${breakpoint(css`
-    width: unset;
-    flex-direction: column;
-    margin-left: 0;
-  `)};
+    ${breakpoint({
+        mobile: css`
+            position: absolute;
+            padding: 40px 20px !important;
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+    })};
 `;
 
 const TextWrapper = styled.div`
@@ -360,6 +473,17 @@ const TextWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   margin-right: 16px;
+
+    ${breakpoint({
+        mobile: css`
+            width: 100%;
+            margin-right: 0;
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+    })};
 
   & > div:first-child {
     font-weight: 600;
@@ -381,14 +505,31 @@ const TextWrapper = styled.div`
     letter-spacing: 0.006em;
     color: #FFFFFF;
     margin: 40px 0 30px;
+
+      ${breakpoint({
+          mobile: css`
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 20px;
+              letter-spacing: 0.006em;
+              color: #FFFFFF;
+              margin: 16px 0;
+          `,
+          tablet: css`
+          `,
+          tablet_mini: css`
+          `
+      })};
   }
 
-  ${breakpoint(css`
-    span {
-      font-size: 15px;
-      line-height: 24px;
-    }
-  `)};
+    ${breakpoint({
+        mobile: css`
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+    })};
 `;
 
 const ContentBottom = styled.div`
@@ -396,6 +537,18 @@ const ContentBottom = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-top: 80px;
+
+    ${breakpoint({
+        mobile: css`
+            margin-top: 24px;
+            flex-direction: column;
+            padding: 0 24px;
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+    })};
 `;
 
 const ContentBottomLeft = styled.div`
@@ -407,6 +560,19 @@ const ContentBottomLeft = styled.div`
   margin-right: 16px;
   height: 248px;
 
+    ${breakpoint({
+        mobile: css`
+            border-radius: 16px;
+            padding: 12px 16px;
+            height: unset;
+            margin: 0 0 8px;
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+    })};
+
   h3 {
     font-weight: 600;
     font-size: 32px;
@@ -414,6 +580,20 @@ const ContentBottomLeft = styled.div`
     letter-spacing: 0.008em;
     color: #FFFFFF;
     margin: 0 0 16px;
+
+      ${breakpoint({
+          mobile: css`
+              font-weight: 590;
+              font-size: 16px;
+              line-height: 20px;
+              letter-spacing: 0.008em;
+              margin-bottom: 4px;
+          `,
+          tablet: css`
+          `,
+          tablet_mini: css`
+          `
+      })};
   }
 
   span {
@@ -424,6 +604,20 @@ const ContentBottomLeft = styled.div`
     letter-spacing: 0.006em;
     color: #FFFFFF;
     opacity: 0.6;
+
+      ${breakpoint({
+          mobile: css`
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 18px;
+              letter-spacing: 0.006em;
+              opacity: 0.6;
+          `,
+          tablet: css`
+          `,
+          tablet_mini: css`
+          `
+      })};
   }
 `;
 
@@ -434,6 +628,20 @@ const ContentBottomRight = styled.div`
   padding: 48px;
   height: 248px;
 
+    ${breakpoint({
+        mobile: css`
+            border-radius: 16px;
+            padding: 12px 16px;
+            height: unset;
+            display: flex;
+            flex-direction: column;
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+    })};
+
   h3 {
     font-weight: 600;
     font-size: 32px;
@@ -441,6 +649,20 @@ const ContentBottomRight = styled.div`
     letter-spacing: 0.008em;
     color: #FFFFFF;
     margin: 0 0 16px;
+
+      ${breakpoint({
+          mobile: css`
+              font-weight: 600;
+              font-size: 16px;
+              line-height: 20px;
+              letter-spacing: 0.008em;
+              margin-bottom: 4px;
+          `,
+          tablet: css`
+          `,
+          tablet_mini: css`
+          `
+      })};
   }
 
   span {
@@ -450,6 +672,20 @@ const ContentBottomRight = styled.div`
     letter-spacing: 0.006em;
     color: #FFFFFF;
     opacity: 0.6;
+
+      ${breakpoint({
+          mobile: css`
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 18px;
+              letter-spacing: 0.006em;
+              opacity: 0.6;
+          `,
+          tablet: css`
+          `,
+          tablet_mini: css`
+          `
+      })};
   }
 
   & > div:last-child {
@@ -457,7 +693,16 @@ const ContentBottomRight = styled.div`
     align-items: center;
     justify-content: flex-end;
     flex-direction: column;
-    margin-left: 24px;
+
+      ${breakpoint({
+          mobile: css`
+              margin-left: 0;
+          `,
+          tablet: css`
+          `,
+          tablet_mini: css`
+          `
+      })};
 
     span {
       font-weight: 500;
@@ -475,6 +720,16 @@ const ContentBottomRight = styled.div`
 const Progress = styled.div`
   margin-top: 180px;
   width: 100%;
+
+    ${breakpoint({
+        mobile: css`
+            margin-top: 64px;
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+    })};
 `
 
 const ProgressTitle = styled.div`
@@ -484,10 +739,36 @@ const ProgressTitle = styled.div`
   line-height: 68px;
   letter-spacing: 0.008em;
 
+    ${breakpoint({
+        mobile: css`
+            width: 100%;
+            font-size: 32px;
+            line-height: 32px;
+            font-weight: 600;
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+    })};
+
   h3 {
     color: #FFFFFF;
     font-size: 64px;
     line-height: 68px;
+
+      ${breakpoint({
+          mobile: css`
+              font-weight: 590;
+              font-size: 32px;
+              line-height: 32px;
+              letter-spacing: 0.008em;
+        `,
+          tablet: css`
+        `,
+          tablet_mini: css`
+        `
+      })};
   }
 
   span {
@@ -499,6 +780,16 @@ const ProgressContent = styled.div`
   width: 100%;
   margin-top: 64px;
   opacity: 1;
+
+    ${breakpoint({
+        mobile: css`
+            margin-top: 0;
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+    })};
 
   .animation1 {
     opacity: 0;
@@ -557,6 +848,18 @@ const ProgressItem = styled.div`
   align-items: flex-start;
   margin-bottom: 48px;
   background-size: cover;
+
+    ${breakpoint({
+        mobile: css`
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 24px;
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+    })};
 `
 
 const ProgressQ0Left = styled.div`
@@ -566,6 +869,16 @@ const ProgressQ0Left = styled.div`
   justify-content: center;
   align-items: flex-end;
 
+    ${breakpoint({
+        mobile: css`
+            padding: 24px 0 0;
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+    })};
+
   div {
     font-weight: 600;
     font-size: 64px;
@@ -573,6 +886,18 @@ const ProgressQ0Left = styled.div`
     letter-spacing: 0.008em;
     color: #FFFFFF;
     margin-bottom: 16px;
+
+      ${breakpoint({
+          mobile: css`
+              font-weight: 590;
+              font-size: 24px;
+              line-height: 28px;
+          `,
+          tablet: css`
+          `,
+          tablet_mini: css`
+          `
+      })};
   }
 `
 
@@ -583,10 +908,33 @@ const ProgressQ0Right = styled.div`
   background: #141414;
   margin-top: 16px;
 
+    ${breakpoint({
+        mobile: css`
+            width: 100%;
+            margin: 0;
+            border-radius: 16px;
+            padding: 24px;
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+    })};
+
   div {
     display: flex;
     align-items: flex-start;
     margin-bottom: 24px;
+
+      ${breakpoint({
+          mobile: css`
+              margin-bottom: 12px;
+          `,
+          tablet: css`
+          `,
+          tablet_mini: css`
+          `
+      })};
 
     &:last-child {
       margin: 0 !important;
@@ -595,6 +943,18 @@ const ProgressQ0Right = styled.div`
     img {
       width: 32px;
       margin-right: 16px;
+
+        ${breakpoint({
+            mobile: css`
+                width: 16px;
+                height: 16px;
+                margin-right: 8px;
+            `,
+            tablet: css`
+            `,
+            tablet_mini: css`
+            `
+        })};
     }
 
     span {
@@ -604,6 +964,18 @@ const ProgressQ0Right = styled.div`
       line-height: 32px;
       letter-spacing: 0.006em;
       color: #ffffff;
+
+        ${breakpoint({
+            mobile: css`
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 16px;
+          `,
+            tablet: css`
+          `,
+            tablet_mini: css`
+          `
+        })};
     }
   }
 
@@ -615,6 +987,20 @@ const ProgressQ0Right = styled.div`
     color: #FFFFFF;
     opacity: 0.3;
     margin-bottom: 24px;
+
+      ${breakpoint({
+          mobile: css`
+              font-weight: 600;
+              font-size: 24px;
+              line-height: 28px;
+              margin-bottom: 12px;
+          `,
+          tablet: css`
+          `,
+          tablet_mini: css`
+          `
+      })};
+
   }
 `
 
@@ -623,6 +1009,17 @@ const ProgressQ1Left = styled.div`
   border-radius: 32px;
   padding: 48px;
   margin-right: 16px;
+
+    ${breakpoint({
+        mobile: css`
+            margin: 0;
+            padding: 24px;
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+    })};
 
   h3 {
     font-weight: 600;
@@ -633,6 +1030,19 @@ const ProgressQ1Left = styled.div`
     color: #0C0B0B;
     opacity: 0.7;
     margin-bottom: 24px;
+
+      ${breakpoint({
+          mobile: css`
+              font-weight: 600;
+              font-size: 24px;
+              line-height: 28px;
+              margin-bottom: 12px;
+          `,
+          tablet: css`
+          `,
+          tablet_mini: css`
+          `
+      })};
   }
 
   div {
@@ -640,13 +1050,36 @@ const ProgressQ1Left = styled.div`
     align-items: center;
     margin-bottom: 24px;
 
-    &:last-child {
+      ${breakpoint({
+          mobile: css`
+              margin-bottom: 12px;
+          `,
+          tablet: css`
+          `,
+          tablet_mini: css`
+          `
+      })};
+
+
+      &:last-child {
       margin: 0 !important;
     }
 
     img {
       width: 32px;
       margin-right: 16px;
+
+        ${breakpoint({
+            mobile: css`
+                width: 16px;
+                height: 16px;
+                margin-right: 8px;
+            `,
+            tablet: css`
+            `,
+            tablet_mini: css`
+            `
+        })};
     }
 
     span {
@@ -656,6 +1089,18 @@ const ProgressQ1Left = styled.div`
       line-height: 32px;
       letter-spacing: 0.006em;
       color: #0C0B0B;
+
+        ${breakpoint({
+            mobile: css`
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 16px;
+          `,
+            tablet: css`
+          `,
+            tablet_mini: css`
+          `
+        })};
     }
   }
 `
@@ -666,12 +1111,34 @@ const ProgressQ1Right = styled.div`
   flex-direction: column;
   justify-content: center;
 
+    ${breakpoint({
+        mobile: css`
+            padding: 0;
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+    })};
+
   div {
     font-weight: 600;
     font-size: 64px;
     line-height: 68px;
     letter-spacing: 0.008em;
     color: #FFFFFF;
+
+      ${breakpoint({
+          mobile: css`
+              font-weight: 590;
+              font-size: 24px;
+              line-height: 28px;
+          `,
+          tablet: css`
+          `,
+          tablet_mini: css`
+          `
+      })};
   }
 `
 
@@ -682,11 +1149,30 @@ const ProgressQ2Right = styled(ProgressQ0Right)``
 const NewsUpdate = styled.div`
   width: 100%;
   margin-top: 100px;
+
+    ${breakpoint({
+        mobile: css`
+            margin-top: 64px;
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+    })};
 `
 
 const NewsUpdateTitle = styled(ProgressTitle)`
   display: flex;
 
+    ${breakpoint({
+        mobile: css`
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+    })};
+    
   span {
     color: #9BDAF6;
   }
@@ -694,6 +1180,16 @@ const NewsUpdateTitle = styled(ProgressTitle)`
 
 const NewsUpdateContent = styled.div`
   margin-top: 64px;
+
+    ${breakpoint({
+        mobile: css`
+            margin-top: 28px;
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+    })};
 
   & > div:last-child {
     padding-bottom: 0;
@@ -705,6 +1201,17 @@ const NewsUpdateItem = styled.div`
   padding: 40px 0;
   border-top: 1px solid #333232;
   cursor: pointer;
+
+    ${breakpoint({
+        mobile: css`
+            flex-direction: column;
+            padding: 16px 0;
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+    })};
 `
 
 const NewsUpdateItemLeft = styled.div`
@@ -722,6 +1229,19 @@ const NewsUpdateItemLeft = styled.div`
     letter-spacing: 0.026em;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.6);
+
+      ${breakpoint({
+          mobile: css`
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 18px;
+              margin-bottom: 8px;
+          `,
+          tablet: css`
+          `,
+          tablet_mini: css`
+          `
+      })};
   }
 
   img {
@@ -732,6 +1252,16 @@ const NewsUpdateItemLeft = styled.div`
 const NewsUpdateItemRight = styled.div`
   width: 50%;
 
+    ${breakpoint({
+        mobile: css`
+            width: 100%;
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+    })};
+
   div:first-child {
     font-weight: 600;
     font-size: 32px;
@@ -739,6 +1269,19 @@ const NewsUpdateItemRight = styled.div`
     letter-spacing: 0.008em;
     color: #FFFFFF;
     margin-bottom: 16px;
+
+      ${breakpoint({
+          mobile: css`
+              font-weight: 600;
+              font-size: 16px;
+              line-height: 24px;
+              margin-bottom: 4px;
+        `,
+          tablet: css`
+        `,
+          tablet_mini: css`
+        `
+      })};
   }
 
   span {
@@ -749,12 +1292,34 @@ const NewsUpdateItemRight = styled.div`
     letter-spacing: 0.006em;
     color: #FFFFFF;
     opacity: 0.6;
+
+      ${breakpoint({
+          mobile: css`
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 20px;
+        `,
+          tablet: css`
+        `,
+          tablet_mini: css`
+        `
+      })};
   }
 `
 
 const GlobalPresense = styled.div`
   width: 100%;
   margin-top: 180px;
+
+    ${breakpoint({
+        mobile: css`
+            margin-top: 64px;
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+    })};
 `
 
 const GlobalPresenseTitle = styled(ProgressTitle)`
@@ -768,8 +1333,28 @@ const GlobalPresenseContentTop = styled.div`
   align-items: center;
   justify-content: flex-end;
 
+    ${breakpoint({
+        mobile: css`
+            margin-top: 12px;
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+    })};
+
   div {
     width: 50%;
+
+      ${breakpoint({
+          mobile: css`
+              width: 100%;
+          `,
+          tablet: css`
+          `,
+          tablet_mini: css`
+          `
+      })};
 
     h3 {
       font-weight: 600;
@@ -777,6 +1362,18 @@ const GlobalPresenseContentTop = styled.div`
       line-height: 40px;
       letter-spacing: 0.008em;
       color: #FFFFFF;
+
+        ${breakpoint({
+            mobile: css`
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 24px;
+            `,
+            tablet: css`
+            `,
+            tablet_mini: css`
+            `
+        })};
     }
 
     span {
@@ -787,6 +1384,18 @@ const GlobalPresenseContentTop = styled.div`
       letter-spacing: 0.006em;
       color: #FFFFFF;
       opacity: 0.6;
+
+        ${breakpoint({
+            mobile: css`
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 20px;
+            `,
+            tablet: css`
+            `,
+            tablet_mini: css`
+            `
+        })};
     }
   }
 `
@@ -795,6 +1404,17 @@ const GlobalPresenseContentBottom = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+
+    ${breakpoint({
+        mobile: css`
+            margin-top: 0;
+            height: 240px;
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+    })};
 
   & > span {
     font-weight: 400;
@@ -806,6 +1426,7 @@ const GlobalPresenseContentBottom = styled.div`
     opacity: 0.6;
   }
 `
+
 const IframeWrapper = styled.div`
   width: 100%;
   height: 630px;
@@ -815,6 +1436,16 @@ const IframeWrapper = styled.div`
   overflow: hidden;
   border-radius: 32px;
 
+    ${breakpoint({
+        mobile: css`
+            margin-top: 0;
+        `,
+        tablet: css`
+        `,
+        tablet_mini: css`
+        `
+    })};
+
   & > iframe {
     border-radius: 32px;
     position: absolute;
@@ -822,6 +1453,16 @@ const IframeWrapper = styled.div`
     width: 100%;
     height: 100%;
     filter: hue-rotate(180deg) saturate(10%) contrast(150%) brightness(400%);
+
+      ${breakpoint({
+          mobile: css`
+              margin-top: 0;
+        `,
+          tablet: css`
+        `,
+          tablet_mini: css`
+        `
+      })};
 
     .Chain-content {
       background: #000000 !important;
@@ -834,9 +1475,4 @@ const IframeWrapper = styled.div`
 const LandingContainer = styled.div`
   display: flex;
   flex-direction: column;
-  ${breakpoint(css`
-    height: unset;
-    min-height: 120vw;
-    padding: 48px 0 0;
-  `)}
 `;

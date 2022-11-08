@@ -5,6 +5,7 @@ import { t } from '../i18n/intl';
 import { Footer } from './components/Footer';
 import { GrayButton, NormalButton } from '../components/Btn';
 import { useRouter } from 'next/router';
+import {WrapperDesktopOnly, WrapperMobileOnly } from "../CloverLibrary";
 
 export const CLVChain: React.FC = () => {
   const location = useRouter();
@@ -47,32 +48,32 @@ export const CLVChain: React.FC = () => {
   ]
 
   const handleScroll = (e: any) => {
-    let mouseDown
-    const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1
-    if (isFirefox) {
-      if (e.detail > 0) {
-        mouseDown = true
-      } else {
-        mouseDown = false
-      }
-    } else {
-      if (e.wheelDelta > 0) {
-        mouseDown = true
-      } else {
-        mouseDown = false
-      }
-    }
-    let playVideo1: any = document.getElementById('playVideo1')
-    let playVideo2: any = document.getElementById('playVideoReverse1')
-    const display = playVideo1.style.display
-    let playVideo: any = display === 'none' ? playVideo2 : playVideo1
-
-    if (!mouseDown && videoStatus === 'start' && playVideo != playVideo2 && window.scrollY > 900) {
-      playVideo.play()
-    }
-    if (mouseDown && videoStatus === 'start' && playVideo != playVideo1 && window.scrollY > 900 && window.scrollY < 2500) {
-      playVideo.play()
-    }
+    // let mouseDown
+    // const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1
+    // if (isFirefox) {
+    //   if (e.detail > 0) {
+    //     mouseDown = true
+    //   } else {
+    //     mouseDown = false
+    //   }
+    // } else {
+    //   if (e.wheelDelta > 0) {
+    //     mouseDown = true
+    //   } else {
+    //     mouseDown = false
+    //   }
+    // }
+    // let playVideo1: any = document.getElementById('playVideo1')
+    // let playVideo2: any = document.getElementById('playVideoReverse1')
+    // const display = playVideo1.style.display
+    // let playVideo: any = display === 'none' ? playVideo2 : playVideo1
+    //
+    // if (!mouseDown && videoStatus === 'start' && playVideo != playVideo2 && window.scrollY > 900) {
+    //   playVideo.play()
+    // }
+    // if (mouseDown && videoStatus === 'start' && playVideo != playVideo1 && window.scrollY > 900 && window.scrollY < 2500) {
+    //   playVideo.play()
+    // }
   }
 
   useEffect(() => {
@@ -84,22 +85,23 @@ export const CLVChain: React.FC = () => {
     }
   }, [location]);
 
+  //
+  // useEffect(() => {
+  //   let playVideo1: any = document.getElementById('playVideo1')
+  //   let playVideo2: any = document.getElementById('playVideoReverse1')
+  //   const display = playVideo1.style.display
+  //   let playVideo: any = display === 'none' ? playVideo2 : playVideo1
+  //
+  //   playVideo.addEventListener('playing', () => {
+  //     videoStatus = 'playing'
+  //   })
+  //   playVideo.addEventListener('ended', () => {
+  //     videoStatus = 'start'
+  //     setIsReserve(!isReverse)
+  //     playVideo.currentTime = 0
+  //   })
+  // }, [document, isReverse]);
 
-  useEffect(() => {
-    let playVideo1: any = document.getElementById('playVideo1')
-    let playVideo2: any = document.getElementById('playVideoReverse1')
-    const display = playVideo1.style.display
-    let playVideo: any = display === 'none' ? playVideo2 : playVideo1
-
-    playVideo.addEventListener('playing', () => {
-      videoStatus = 'playing'
-    })
-    playVideo.addEventListener('ended', () => {
-      videoStatus = 'start'
-      setIsReserve(!isReverse)
-      playVideo.currentTime = 0
-    })
-  }, [document, isReverse]);
 
   return (
       <div id='CLVChain'>
@@ -107,6 +109,7 @@ export const CLVChain: React.FC = () => {
         <LandingContainer>
           <IntrodusingTheCLV>
             <video autoPlay loop muted src='videos/particles.mp4'></video>
+
             <div>
               <ContentWrapper>
                 <TextWrapper>
@@ -117,210 +120,246 @@ export const CLVChain: React.FC = () => {
                   <span>{t('introdusingTheCLVHint')}</span>
                 </TextWrapper>
               </ContentWrapper>
-              <ContentBottom>
-                <ContentBottomLeft>
-                  <img className="img-top" src='images/introdusing_top.svg' alt='' />
-                  <ContentBottomItem>
-                    <img src='images/introdusing_icon1.svg' alt='' />
-                    <span>{t('CLVMainnet')}</span>
-                  </ContentBottomItem>
-                  <ContentBottomItemNormal style={{margin: '0'}}>
-                    <img src='images/introdusing_icon2.svg' alt='' />
-                    <span>{t('governanceExchange')}</span>
-                  </ContentBottomItemNormal>
-                  <img className="img-bottom" src='images/introdusing_bottom.svg' alt='' />
-                </ContentBottomLeft>
-                <ContentBottomCenter>
-                  <img src='images/introdusing_icon3.svg' alt='' />
-                  <span>{t('bridgingTechnology')}</span>
-                </ContentBottomCenter>
-                <ContentBottomRight>
-                  <ContentBottomItemNormal>
-                    <img src='images/introdusing_icon4.svg' alt='' />
-                    <span>{t('dAppDevelopment')}</span>
-                  </ContentBottomItemNormal>
-                  <ContentBottomItem>
-                    <img src='images/introdusing_icon5.svg' alt='' />
-                    <span>{t('CLVParachain')}</span>
-                  </ContentBottomItem>
-                  <ContentBottomItemNormal style={{margin: '0'}}>
-                    <img src='images/introdusing_icon6.svg' alt='' />
-                    <span>{t('smartContract')}</span>
-                  </ContentBottomItemNormal>
-                </ContentBottomRight>
-              </ContentBottom>
+              <WrapperMobileOnly>
+                <ContentBottom>
+                  <ContentBottomLeft>
+                    <img className="img-top" src='images/introdusing_top.svg' alt='' />
+                    <ContentBottomItem>
+                      <img src='images/introdusing_icon1.svg' alt='' />
+                      <span>{t('CLVMainnet')}</span>
+                    </ContentBottomItem>
+                    <ContentBottomItemNormal style={{margin: '0'}}>
+                      <img src='images/introdusing_icon2.svg' alt='' />
+                      <span>{t('governanceExchange')}</span>
+                    </ContentBottomItemNormal>
+                    <img className="img-bottom" src='images/introdusing_bottom.svg' alt='' />
+                  </ContentBottomLeft>
+                  <ContentBottomCenter>
+                    <img src='images/introdusing_icon3.svg' alt='' />
+                    <span>{t('bridgingTechnology')}</span>
+                  </ContentBottomCenter>
+                  <ContentBottomRight>
+                    <ContentBottomItemNormal>
+                      <img src='images/introdusing_icon4.svg' alt='' />
+                      <span>{t('dAppDevelopment')}</span>
+                    </ContentBottomItemNormal>
+                    <ContentBottomItem>
+                      <img src='images/introdusing_icon5.svg' alt='' />
+                      <span>{t('CLVParachain')}</span>
+                    </ContentBottomItem>
+                    <ContentBottomItemNormal style={{margin: '0'}}>
+                      <img src='images/introdusing_icon6.svg' alt='' />
+                      <span>{t('smartContract')}</span>
+                    </ContentBottomItemNormal>
+                  </ContentBottomRight>
+                </ContentBottom>
+              </WrapperMobileOnly>
+              <WrapperDesktopOnly>
+                <ContentBottom>
+                  <ContentBottomLeft>
+                    <img className="img-top" src='images/introdusing_top.svg' alt='' />
+                    <ContentBottomItem>
+                      <img src='images/introdusing_icon1.svg' alt='' />
+                      <span>{t('CLVMainnet')}</span>
+                    </ContentBottomItem>
+                    <ContentBottomItemNormal style={{margin: '0'}}>
+                      <img src='images/introdusing_icon2.svg' alt='' />
+                      <span>{t('governanceExchange')}</span>
+                    </ContentBottomItemNormal>
+                    <img className="img-bottom" src='images/introdusing_bottom.svg' alt='' />
+                  </ContentBottomLeft>
+                  <ContentBottomCenter>
+                    <img src='images/introdusing_icon3.svg' alt='' />
+                    <span>{t('bridgingTechnology')}</span>
+                  </ContentBottomCenter>
+                  <ContentBottomRight>
+                    <ContentBottomItemNormal>
+                      <img src='images/introdusing_icon4.svg' alt='' />
+                      <span>{t('dAppDevelopment')}</span>
+                    </ContentBottomItemNormal>
+                    <ContentBottomItem>
+                      <img src='images/introdusing_icon5.svg' alt='' />
+                      <span>{t('CLVParachain')}</span>
+                    </ContentBottomItem>
+                    <ContentBottomItemNormal style={{margin: '0'}}>
+                      <img src='images/introdusing_icon6.svg' alt='' />
+                      <span>{t('smartContract')}</span>
+                    </ContentBottomItemNormal>
+                  </ContentBottomRight>
+                </ContentBottom>
+              </WrapperDesktopOnly>
             </div>
           </IntrodusingTheCLV>
-          <Content>
-            <div>
-              <Features>
-                <FeaturesTitle>
-                  <span>{t('features')}</span>
-                  <h3>{t('thatMakesTheDifference')}</h3>
-                </FeaturesTitle>
-                <FeaturesContent>
-                  <FeaturesLeft>
-                    <video style={{display: isReverse ? 'none' : 'inline-block'}}  id='playVideo1' muted src='videos/CLVDevPageSequence.mp4'></video>
-                    <video style={{display: !isReverse ? 'none' : 'inline-block'}} id='playVideoReverse1' muted src='videos/CLVDevPageSequence2.mp4'></video>
-                  </FeaturesLeft>
-                  <FeaturesRight>
-                    <div>
-                      <FeaturesRightItem>
-                        <h3>{t('etheriumCompatible')}</h3>
-                        <span>{t('etheriumCompatibleHint')}</span>
-                        <GrayButton
-                            onClick={() => {
-                              window.open('https://docs.clv.org/clv-chain-developer-guide/dapp-example/setup-dapp-project', "_blank")
-                            }}
-                        >{t('learnMore')}</GrayButton>
-                      </FeaturesRightItem>
-                      <FeaturesRightItem>
-                        <h3>{t('EconomicIncentive')}</h3>
-                        <span>{t('EconomicIncentiveHint')}</span>
-                        <GrayButton
-                            onClick={() => {
-                              window.open('https://docs.clv.org/clover-ecosystem/incentive-programs', "_blank")
-                            }}
-                        >{t('learnMore')}</GrayButton>
-                      </FeaturesRightItem>
-                      <FeaturesRightItem>
-                        <h3>{t('highStakingReturn')}</h3>
-                        <p>Current avg. APY <span>26.62%</span></p>
-                        <span>{t('highStakingReturnHint')}</span>
-                        <Btns>
-                          <NormalButton
-                              width='316px'
-                              onClick={() => {
-                                window.open('https://apps.apple.com/app/clover-wallet/id1570072858', "_blank")
-                              }}
-                          >{t('stakeOnMobile')}</NormalButton>
-                          <GrayButton width='316px'>{t('enterCLVPortal')}</GrayButton>
-                        </Btns>
-                      </FeaturesRightItem>
-                      <FeaturesRightItem>
-                        <h3>{t('smartContractsGovernance')}</h3>
-                        <span>{t('smartContractsGovernanceHint')}</span>
-                      </FeaturesRightItem>
-                    </div>
-                  </FeaturesRight>
-                </FeaturesContent>
-              </Features>
-              <ClvToken>
-                <ClvTokenTop>
-                  <div>
-                    <div>
-                      <span>{t('CLVToken')}</span>
-                      <img src='images/clv_icon_green.svg' alt='' />
-                    </div>
-                    <h3>{t('CLVTokenTitle')}</h3>
-                    <span>{t('CLVTokenHint')}</span>
-                  </div>
-                  <img src='images/clv_token_img.svg' alt='' />
-                </ClvTokenTop>
-                <ClvTokenBottom>
-                  <span>{t('CLVIsAvailable')}</span>
-                  <div>
-                    <ClvTokenBottomItem>
-                      <span>Ethereum Mainnet</span>
-                      <span>(ERC20)</span>
-                    </ClvTokenBottomItem>
-                    <ClvTokenBottomItem>
-                      <span>BNB Smart Chain</span>
-                      <span>(BEP20)</span>
-                    </ClvTokenBottomItem>
-                    <ClvTokenBottomItem>
-                      <span>CLV Mainnet</span>
-                      <span>(Substrate native)</span>
-                    </ClvTokenBottomItem>
-                    <ClvTokenBottomItem>
-                      <span>CLV Parachain</span>
-                      <span>(EVM native)</span>
-                    </ClvTokenBottomItem>
-                  </div>
-                </ClvTokenBottom>
-              </ClvToken>
-              <Ecosystem>
-                <EcosystemTitle>
-                  <span>{t('anEcosystem')}</span>
-                  <h3>{t('thatProvidesTransparency')}</h3>
-                </EcosystemTitle>
-                <EcosystemContent>
-                  <EcosystemItem>
-                    <div>
-                      <div>
-                        <h3>{t('CLVPortal')}</h3>
-                      </div>
-                      <span>{t('CLVPortalHint')}</span>
-                    </div>
-                    <NormalButton onClick={() => window.open('https://portal.clv.org')}>{t('visitCLVPortal')}</NormalButton>
-                  </EcosystemItem>
-                  <EcosystemItem>
-                    <div>
-                      <div>
-                        <h3>{t('EVMBridge')}</h3>
-                      </div>
-                      <span>{t('EVMBridgeHint')}</span>
-                    </div>
-                    <GrayButton
-                        onClick={() => {
-                          window.open('https://bridge.clv.org/#/', "_blank")
-                        }}
-                    >{t('visitTheSolution')}</GrayButton>
-                  </EcosystemItem>
-                  <EcosystemItem>
-                    <div>
-                      <div>
-                        <img src='images/clv_icon1.svg' alt='' />
-                        <h3>{t('crossChainExplorer')}</h3>
-                      </div>
-                      <span>{t('crossChainExplorerHint')}</span>
-                    </div>
-                    <GrayButton
-                        onClick={() => {
-                          window.open('https://tx.clover.finance/#/', "_blank")
-                        }}
-                    >{t('visitTheSolution')}</GrayButton>
-                  </EcosystemItem>
-                  <EcosystemItem>
-                    <div>
-                      <div>
-                        <h3>{t('CLVScan')}</h3>
-                      </div>
-                      <span>{t('CLVScanHint')}</span>
-                    </div>
-                    <GrayButton
-                        onClick={() => {
-                          window.open('https://clvscan.com/', "_blank")
-                        }}
-                    >{t('visitTheSolution')}</GrayButton>
-                  </EcosystemItem>
-                </EcosystemContent>
-              </Ecosystem>
-              <FAQs>
-                <FAQsTitle>{t('FAQ’s')}</FAQsTitle>
-                <FAQsContent>
-                  {faqsList.map((faq, index) => (
-                      <FAQsItem
-                          key={`faq_${index}`}
-                          onClick={() => setSelectFaq(index)}
-                      >
-                        <div>
-                          <h3>{faq.title}</h3>
-                          <img
-                              src={selectFaq === index ? 'images/arrow_to_up.svg' : 'images/arrow_to_down.svg'}
-                              className={selectFaq === index ? 'selected' : ''}
-                              alt=''
-                          />
-                        </div>
-                        {selectFaq === index && <FAQsItemContent>{faq.content}</FAQsItemContent>}
-                      </FAQsItem>
-                  ))}
-                </FAQsContent>
-              </FAQs>
-            </div>
-          </Content>
+          {/*<Content>*/}
+          {/*  <div>*/}
+          {/*    <Features>*/}
+          {/*      <FeaturesTitle>*/}
+          {/*        <span>{t('features')}</span>*/}
+          {/*        <h3>{t('thatMakesTheDifference')}</h3>*/}
+          {/*      </FeaturesTitle>*/}
+          {/*      <FeaturesContent>*/}
+          {/*        <FeaturesLeft>*/}
+          {/*          <video style={{display: isReverse ? 'none' : 'inline-block'}}  id='playVideo1' muted src='videos/CLVDevPageSequence.mp4'></video>*/}
+          {/*          <video style={{display: !isReverse ? 'none' : 'inline-block'}} id='playVideoReverse1' muted src='videos/CLVDevPageSequence2.mp4'></video>*/}
+          {/*        </FeaturesLeft>*/}
+          {/*        <FeaturesRight>*/}
+          {/*          <div>*/}
+          {/*            <FeaturesRightItem>*/}
+          {/*              <h3>{t('etheriumCompatible')}</h3>*/}
+          {/*              <span>{t('etheriumCompatibleHint')}</span>*/}
+          {/*              <GrayButton*/}
+          {/*                  onClick={() => {*/}
+          {/*                    window.open('https://docs.clv.org/clv-chain-developer-guide/dapp-example/setup-dapp-project', "_blank")*/}
+          {/*                  }}*/}
+          {/*              >{t('learnMore')}</GrayButton>*/}
+          {/*            </FeaturesRightItem>*/}
+          {/*            <FeaturesRightItem>*/}
+          {/*              <h3>{t('EconomicIncentive')}</h3>*/}
+          {/*              <span>{t('EconomicIncentiveHint')}</span>*/}
+          {/*              <GrayButton*/}
+          {/*                  onClick={() => {*/}
+          {/*                    window.open('https://docs.clv.org/clover-ecosystem/incentive-programs', "_blank")*/}
+          {/*                  }}*/}
+          {/*              >{t('learnMore')}</GrayButton>*/}
+          {/*            </FeaturesRightItem>*/}
+          {/*            <FeaturesRightItem>*/}
+          {/*              <h3>{t('highStakingReturn')}</h3>*/}
+          {/*              <p>Current avg. APY <span>26.62%</span></p>*/}
+          {/*              <span>{t('highStakingReturnHint')}</span>*/}
+          {/*              <Btns>*/}
+          {/*                <NormalButton*/}
+          {/*                    width='316px'*/}
+          {/*                    onClick={() => {*/}
+          {/*                      window.open('https://apps.apple.com/app/clover-wallet/id1570072858', "_blank")*/}
+          {/*                    }}*/}
+          {/*                >{t('stakeOnMobile')}</NormalButton>*/}
+          {/*                <GrayButton width='316px'>{t('enterCLVPortal')}</GrayButton>*/}
+          {/*              </Btns>*/}
+          {/*            </FeaturesRightItem>*/}
+          {/*            <FeaturesRightItem>*/}
+          {/*              <h3>{t('smartContractsGovernance')}</h3>*/}
+          {/*              <span>{t('smartContractsGovernanceHint')}</span>*/}
+          {/*            </FeaturesRightItem>*/}
+          {/*          </div>*/}
+          {/*        </FeaturesRight>*/}
+          {/*      </FeaturesContent>*/}
+          {/*    </Features>*/}
+          {/*    <ClvToken>*/}
+          {/*      <ClvTokenTop>*/}
+          {/*        <div>*/}
+          {/*          <div>*/}
+          {/*            <span>{t('CLVToken')}</span>*/}
+          {/*            <img src='images/clv_icon_green.svg' alt='' />*/}
+          {/*          </div>*/}
+          {/*          <h3>{t('CLVTokenTitle')}</h3>*/}
+          {/*          <span>{t('CLVTokenHint')}</span>*/}
+          {/*        </div>*/}
+          {/*        <img src='images/clv_token_img.svg' alt='' />*/}
+          {/*      </ClvTokenTop>*/}
+          {/*      <ClvTokenBottom>*/}
+          {/*        <span>{t('CLVIsAvailable')}</span>*/}
+          {/*        <div>*/}
+          {/*          <ClvTokenBottomItem>*/}
+          {/*            <span>Ethereum Mainnet</span>*/}
+          {/*            <span>(ERC20)</span>*/}
+          {/*          </ClvTokenBottomItem>*/}
+          {/*          <ClvTokenBottomItem>*/}
+          {/*            <span>BNB Smart Chain</span>*/}
+          {/*            <span>(BEP20)</span>*/}
+          {/*          </ClvTokenBottomItem>*/}
+          {/*          <ClvTokenBottomItem>*/}
+          {/*            <span>CLV Mainnet</span>*/}
+          {/*            <span>(Substrate native)</span>*/}
+          {/*          </ClvTokenBottomItem>*/}
+          {/*          <ClvTokenBottomItem>*/}
+          {/*            <span>CLV Parachain</span>*/}
+          {/*            <span>(EVM native)</span>*/}
+          {/*          </ClvTokenBottomItem>*/}
+          {/*        </div>*/}
+          {/*      </ClvTokenBottom>*/}
+          {/*    </ClvToken>*/}
+          {/*    <Ecosystem>*/}
+          {/*      <EcosystemTitle>*/}
+          {/*        <span>{t('anEcosystem')}</span>*/}
+          {/*        <h3>{t('thatProvidesTransparency')}</h3>*/}
+          {/*      </EcosystemTitle>*/}
+          {/*      <EcosystemContent>*/}
+          {/*        <EcosystemItem>*/}
+          {/*          <div>*/}
+          {/*            <div>*/}
+          {/*              <h3>{t('CLVPortal')}</h3>*/}
+          {/*            </div>*/}
+          {/*            <span>{t('CLVPortalHint')}</span>*/}
+          {/*          </div>*/}
+          {/*          <NormalButton onClick={() => window.open('https://portal.clv.org')}>{t('visitCLVPortal')}</NormalButton>*/}
+          {/*        </EcosystemItem>*/}
+          {/*        <EcosystemItem>*/}
+          {/*          <div>*/}
+          {/*            <div>*/}
+          {/*              <h3>{t('EVMBridge')}</h3>*/}
+          {/*            </div>*/}
+          {/*            <span>{t('EVMBridgeHint')}</span>*/}
+          {/*          </div>*/}
+          {/*          <GrayButton*/}
+          {/*              onClick={() => {*/}
+          {/*                window.open('https://bridge.clv.org/#/', "_blank")*/}
+          {/*              }}*/}
+          {/*          >{t('visitTheSolution')}</GrayButton>*/}
+          {/*        </EcosystemItem>*/}
+          {/*        <EcosystemItem>*/}
+          {/*          <div>*/}
+          {/*            <div>*/}
+          {/*              <img src='images/clv_icon1.svg' alt='' />*/}
+          {/*              <h3>{t('crossChainExplorer')}</h3>*/}
+          {/*            </div>*/}
+          {/*            <span>{t('crossChainExplorerHint')}</span>*/}
+          {/*          </div>*/}
+          {/*          <GrayButton*/}
+          {/*              onClick={() => {*/}
+          {/*                window.open('https://tx.clover.finance/#/', "_blank")*/}
+          {/*              }}*/}
+          {/*          >{t('visitTheSolution')}</GrayButton>*/}
+          {/*        </EcosystemItem>*/}
+          {/*        <EcosystemItem>*/}
+          {/*          <div>*/}
+          {/*            <div>*/}
+          {/*              <h3>{t('CLVScan')}</h3>*/}
+          {/*            </div>*/}
+          {/*            <span>{t('CLVScanHint')}</span>*/}
+          {/*          </div>*/}
+          {/*          <GrayButton*/}
+          {/*              onClick={() => {*/}
+          {/*                window.open('https://clvscan.com/', "_blank")*/}
+          {/*              }}*/}
+          {/*          >{t('visitTheSolution')}</GrayButton>*/}
+          {/*        </EcosystemItem>*/}
+          {/*      </EcosystemContent>*/}
+          {/*    </Ecosystem>*/}
+          {/*    <FAQs>*/}
+          {/*      <FAQsTitle>{t('FAQ’s')}</FAQsTitle>*/}
+          {/*      <FAQsContent>*/}
+          {/*        {faqsList.map((faq, index) => (*/}
+          {/*            <FAQsItem*/}
+          {/*                key={`faq_${index}`}*/}
+          {/*                onClick={() => setSelectFaq(index)}*/}
+          {/*            >*/}
+          {/*              <div>*/}
+          {/*                <h3>{faq.title}</h3>*/}
+          {/*                <img*/}
+          {/*                    src={selectFaq === index ? 'images/arrow_to_up.svg' : 'images/arrow_to_down.svg'}*/}
+          {/*                    className={selectFaq === index ? 'selected' : ''}*/}
+          {/*                    alt=''*/}
+          {/*                />*/}
+          {/*              </div>*/}
+          {/*              {selectFaq === index && <FAQsItemContent>{faq.content}</FAQsItemContent>}*/}
+          {/*            </FAQsItem>*/}
+          {/*        ))}*/}
+          {/*      </FAQsContent>*/}
+          {/*    </FAQs>*/}
+          {/*  </div>*/}
+          {/*</Content>*/}
         </LandingContainer>
-        <Footer />
+        {/*<Footer />*/}
       </div>
   );
 };
@@ -328,6 +367,7 @@ export const CLVChain: React.FC = () => {
 const Content = styled.div`
   width: 100%;
   background: #000000;
+  margin-top: 1000px;
   & > div {
     max-width: 1440px;
     min-width: 1440px;
@@ -338,8 +378,9 @@ const Content = styled.div`
 
 const IntrodusingTheCLV = styled.div`
   width: 100%;
-  padding-top: 96px;
   position: relative;
+  z-index: 1;
+
   video {
     position: absolute;
     z-index: -1;
@@ -351,6 +392,19 @@ const IntrodusingTheCLV = styled.div`
     max-width: 1440px;
     min-width: 1440px;
     margin: 0 auto;
+    position: absolute;
+
+    ${breakpoint({
+      mobile: css`
+        max-width: unset;
+        min-width: unset;
+        padding: 40px 24px;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })};
   }
 `
 
@@ -370,12 +424,17 @@ const ContentWrapper = styled.div`
   align-items: flex-end;
   justify-content: space-between;
   padding-top: 240px;
+  background: transparent;
 
-  ${breakpoint(css`
-    width: unset;
-    flex-direction: column;
-    margin-left: 0;
-  `)};
+  ${breakpoint({
+    mobile: css`
+      padding-top: 0;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
 `;
 
 const TextWrapper = styled.div`
@@ -385,12 +444,35 @@ const TextWrapper = styled.div`
   justify-content: center;
   margin-right: 16px;
 
+  ${breakpoint({
+    mobile: css`
+      width: 100%;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
+
   & > div:first-child {
     font-weight: 600;
     font-size: 72px;
     line-height: 76px;
     letter-spacing: 0.008em;
     color: #FFFFFF;
+
+    ${breakpoint({
+      mobile: css`
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 40px;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })};
+    
     img {
       margin-left: 10px;
     }
@@ -404,6 +486,16 @@ const TextWrapper = styled.div`
     letter-spacing: 0.006em;
     color: #FFFFFF;
     margin: 40px 0 30px;
+
+    ${breakpoint({
+      mobile: css`
+        margin: 24px 0;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })};
   }
 
   ${breakpoint(css`
@@ -826,9 +918,4 @@ const FAQsItemContent = styled.div`
 const LandingContainer = styled.div`
   display: flex;
   flex-direction: column;
-  ${breakpoint(css`
-    height: unset;
-    min-height: 120vw;
-    padding: 48px 0 0;
-  `)}
 `;

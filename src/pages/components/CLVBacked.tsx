@@ -10,6 +10,7 @@ const CLVIsBackedWrapper = styled.div`
   ${breakpoint({
     mobile: css`
         margin-top: 64px;
+        margin-bottom: 24px;
     `,
     tablet: css`
     `,
@@ -134,7 +135,7 @@ const CLVIsBackedBottomItem = styled.div`
       ${breakpoint({
           mobile: css`
 	          height: unset;
-	          width: 35vw;
+	          width: 30vw;
           `,
           tablet: css`
           `,
