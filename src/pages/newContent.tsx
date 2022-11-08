@@ -18,16 +18,13 @@ SwiperCore.use([Pagination]);
 
 const Wrapper = styled.div`
   overflow: hidden;
-  // min-width: 1440px;
+
   ${breakpoint({
     mobile: css`
-      max-width: 375px;
     `,
     tablet_mini: css`
-      max-width: 744px;
     `,
     tablet: css`
-      max-width: 1026px;
     `,
   })}
 `;
