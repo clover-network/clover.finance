@@ -39,21 +39,42 @@ export const Main = ({ startBuild }: TypeProps) => {
     let playVideo2: any = document.getElementById('playVideoReverse')
     const display = playVideo1.style.display
     let playVideo: any = display === 'none' ? playVideo2 : playVideo1
-    const startScrollY = isMobile ? 600 : 1000;
-    const goBackScrollY = isMobile ? 900 : 2300;
 
-    if (videoStatus === 'start' && playVideo != playVideo2 && window.scrollY > startScrollY) {
-      playVideo.play()
+    if (isMobile) {
+      if (videoStatus === 'start' && playVideo != playVideo2 && window.scrollY > 600) {
+        playVideo.play()
+      }
+      if (videoStatus === 'start' && playVideo != playVideo1 && window.scrollY > 600 && window.scrollY < 900) {
+        playVideo.play()
+      }
+    } else {
+      if (!mouseDown && videoStatus === 'start' && playVideo != playVideo2 && window.scrollY > 1000) {
+        playVideo.play()
+      }
+      if (mouseDown && videoStatus === 'start' && playVideo != playVideo1 && window.scrollY > 1000 && window.scrollY < 2300) {
+        playVideo.play()
+      }
     }
-    if (videoStatus === 'start' && playVideo != playVideo1 && window.scrollY > startScrollY && window.scrollY < goBackScrollY) {
-      playVideo.play()
-    }
+
   }
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
+    if (isMobile) {
+      window.addEventListener('scroll', handleScroll)
+    } else {
+      const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1
+      const mousewheel = isFirefox ? 'DOMMouseScroll' : 'mousewheel'
+      window.addEventListener(mousewheel, handleScroll)
+    }
     return () => {
-      window.removeEventListener('scroll', handleScroll)
+      if (isMobile) {
+        window.removeEventListener('scroll', handleScroll)
+      } else {
+        const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1
+        const mousewheel = isFirefox ? 'DOMMouseScroll' : 'mousewheel'
+        window.removeEventListener(mousewheel, handleScroll)
+      }
+
     }
   }, [location]);
 

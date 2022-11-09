@@ -183,21 +183,41 @@ export const CLVChain: React.FC = () => {
     let playVideo2: any = document.getElementById('playVideoReverse1')
     const display = playVideo1.style.display
     let playVideo: any = display === 'none' ? playVideo2 : playVideo1
-    const startScrollY = isMobile ? 350 : 900;
-    const goBackScrollY = isMobile ? 700 : 2500;
 
-    if (videoStatus === 'start' && playVideo != playVideo2 && window.scrollY > startScrollY) {
-      playVideo.play()
-    }
-    if (videoStatus === 'start' && playVideo != playVideo1 && window.scrollY > startScrollY && window.scrollY < goBackScrollY) {
-      playVideo.play()
+    if (isMobile) {
+      if (videoStatus === 'start' && playVideo != playVideo2 && window.scrollY > 350) {
+        playVideo.play()
+      }
+      if (videoStatus === 'start' && playVideo != playVideo1 && window.scrollY > 350 && window.scrollY < 700) {
+        playVideo.play()
+      }
+    } else {
+      if (!mouseDown && videoStatus === 'start' && playVideo != playVideo2 && window.scrollY > 900) {
+        playVideo.play()
+      }
+      if (mouseDown && videoStatus === 'start' && playVideo != playVideo1 && window.scrollY > 900 && window.scrollY < 2500) {
+        playVideo.play()
+      }
     }
   }
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
+    if (isMobile) {
+      window.addEventListener('scroll', handleScroll)
+    } else {
+      const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1
+      const mousewheel = isFirefox ? 'DOMMouseScroll' : 'mousewheel'
+      window.addEventListener(mousewheel, handleScroll)
+    }
+
     return () => {
-      window.removeEventListener('scroll', handleScroll)
+      if (isMobile) {
+        window.removeEventListener('scroll', handleScroll)
+      } else {
+        const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1
+        const mousewheel = isFirefox ? 'DOMMouseScroll' : 'mousewheel'
+        window.removeEventListener(mousewheel, handleScroll)
+      }
     }
   }, [location]);
 
