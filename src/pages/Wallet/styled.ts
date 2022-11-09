@@ -77,7 +77,7 @@ export const UpperCaseSpan = styled.span`
 `;
 
 export const BuiltForCryptoUsersSpan = styled.div`
-  font-family: 'Roboto Flex';
+  font-family: RobotoFlex;
   font-weight: 600;
   font-size: 72px;
   line-height: 76px;
@@ -1314,6 +1314,31 @@ export const CloverFinanceBottomFlexWrapper = styled.div`
   display: flex;
   flex-direction: row;
   gap: 4px;
+
+  ${breakpoint({
+    mobile: css`
+      gap: 0;
+      p {
+        font-size: 8px !important;
+        transform: scale(0.8) !important;
+      }
+
+      span {
+        font-size: 8px !important;
+        transform: scale(0.8) !important;
+      }
+
+      div {
+        font-size: 8px !important;
+        transform: scale(0.8) !important;
+      }
+    `,
+    tablet_mini: css`
+    `,
+    tablet: css``,
+  })}
+  
+
 `;
 
 export const Wrapper = styled.div`

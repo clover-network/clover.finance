@@ -138,7 +138,7 @@ export const BuildWithCLVEnterWeb3Img = styled.img`
 `;
 
 export const BuildWithCLVEnterWeb3 = styled.div`
-  font-family: 'Roboto Flex';
+  font-family: RobotoFlex;
   font-weight: 600;
   font-size: 72px;
   line-height: 76px;

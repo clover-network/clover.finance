@@ -20,7 +20,7 @@ const Wrapper = styled.div<{
   //position: absolute;
   top: 0;
   z-index: 10;
-  background: black;
+  background: ${({isWallet}) => (isWallet ? 'transparent' : '#000000')};
   border-bottom: 1px solid ${({ isWallet }) => (isWallet ? '#EFF5F5' : '#333232')};
 
   ${breakpoint({
@@ -295,8 +295,12 @@ export default function NewHeader(props: Props): ReactElement {
     handleChange(tab);
   }
 
+  const lightNavIcon = showNavs ? 'images/close_icon.svg' : 'images/menu_icon.svg';
+  const blackNavIcon = showNavs ? 'images/close_icon.svg' : 'images/menu_icon_black.svg';
+  const navIcon = isWallet ? blackNavIcon : lightNavIcon;
+
   return (
-    <Wrapper isWallet={isWallet}>
+    <Wrapper isWallet={isWallet && !showNavs}>
       <HeaderWrapper>
         <HeaderContent>
           <HeaderDiv onClick={() => { location.push('/', undefined, { shallow: true }); }}>
@@ -305,7 +309,7 @@ export default function NewHeader(props: Props): ReactElement {
           <div style={{flex: 1}}/>
           <WrapperMobileOnly>
             <HeaderIcon
-                src={showNavs ? 'images/close_icon.svg' : 'images/menu_icon.svg'}
+                src={navIcon}
                 alt=""
                 onClick={() => setShowNavs(!showNavs)}
             />
