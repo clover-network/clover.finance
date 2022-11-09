@@ -8,6 +8,7 @@ import { Footer } from './components/Footer';
 import { useRouter } from 'next/router';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {WrapperDesktopOnly, WrapperMobileOnly} from '../CloverLibrary';
+import { isMobile } from 'react-device-detect';
 
 interface TypeProps {
   startBuild: () => void;
@@ -38,21 +39,21 @@ export const Main = ({ startBuild }: TypeProps) => {
     let playVideo2: any = document.getElementById('playVideoReverse')
     const display = playVideo1.style.display
     let playVideo: any = display === 'none' ? playVideo2 : playVideo1
+    const startScrollY = isMobile ? 600 : 1000;
+    const goBackScrollY = isMobile ? 900 : 2300;
 
-    if (!mouseDown && videoStatus === 'start' && playVideo != playVideo2 && window.scrollY > 1000) {
+    if (videoStatus === 'start' && playVideo != playVideo2 && window.scrollY > startScrollY) {
       playVideo.play()
     }
-    if (mouseDown && videoStatus === 'start' && playVideo != playVideo1 && window.scrollY > 1000 && window.scrollY < 2300) {
+    if (videoStatus === 'start' && playVideo != playVideo1 && window.scrollY > startScrollY && window.scrollY < goBackScrollY) {
       playVideo.play()
     }
   }
 
   useEffect(() => {
-    const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1
-    const mousewheel = isFirefox ? 'DOMMouseScroll' : 'mousewheel'
-    window.addEventListener(mousewheel, handleScroll)
+    window.addEventListener('scroll', handleScroll)
     return () => {
-      window.removeEventListener(mousewheel, handleScroll)
+      window.removeEventListener('scroll', handleScroll)
     }
   }, [location]);
 
@@ -1139,7 +1140,7 @@ const ToolBtns = styled.div`
 
 const Wrapper = styled.div`
   background: #000000;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   overflow-y: auto;
 `

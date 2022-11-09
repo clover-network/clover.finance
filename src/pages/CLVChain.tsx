@@ -6,6 +6,7 @@ import { Footer } from './components/Footer';
 import { GrayButton, NormalButton } from '../components/Btn';
 import { useRouter } from 'next/router';
 import {WrapperDesktopOnly, WrapperMobileOnly } from "../CloverLibrary";
+import {isMobile} from "react-device-detect";
 
 const ContentInfo = styled.div`
   
@@ -194,21 +195,21 @@ export const CLVChain: React.FC = () => {
     let playVideo2: any = document.getElementById('playVideoReverse1')
     const display = playVideo1.style.display
     let playVideo: any = display === 'none' ? playVideo2 : playVideo1
+    const startScrollY = isMobile ? 350 : 900;
+    const goBackScrollY = isMobile ? 700 : 2500;
 
-    if (!mouseDown && videoStatus === 'start' && playVideo != playVideo2 && window.scrollY > 900) {
+    if (videoStatus === 'start' && playVideo != playVideo2 && window.scrollY > startScrollY) {
       playVideo.play()
     }
-    if (mouseDown && videoStatus === 'start' && playVideo != playVideo1 && window.scrollY > 900 && window.scrollY < 2500) {
+    if (videoStatus === 'start' && playVideo != playVideo1 && window.scrollY > startScrollY && window.scrollY < goBackScrollY) {
       playVideo.play()
     }
   }
 
   useEffect(() => {
-    const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1
-    const mousewheel = isFirefox ? 'DOMMouseScroll' : 'mousewheel'
-    window.addEventListener(mousewheel, handleScroll)
+    window.addEventListener('scroll', handleScroll)
     return () => {
-      window.removeEventListener(mousewheel, handleScroll)
+      window.removeEventListener('scroll', handleScroll)
     }
   }, [location]);
 
