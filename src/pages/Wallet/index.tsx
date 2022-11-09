@@ -300,10 +300,7 @@ export const Wallet: React.FC = () => {
                           style={{ marginLeft: '1px' }}
                         />
                       </p>
-
-                      <p>
-                        <span></span>70,000+ Users<span></span>
-                      </p>
+                      <span>70,000+ Users</span>
                       <Productivity>Productivity</Productivity>
                     </CloverFinanceBottomFlexWrapper>
                   </StyledFlex>

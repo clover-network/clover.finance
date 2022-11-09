@@ -1320,17 +1320,17 @@ export const CloverFinanceBottomFlexWrapper = styled.div`
       gap: 0;
       p {
         font-size: 8px !important;
-        transform: scale(0.8) !important;
+        transform: scale(0.7) !important;
       }
 
       span {
         font-size: 8px !important;
-        transform: scale(0.8) !important;
+        transform: scale(0.7) !important;
       }
 
       div {
         font-size: 8px !important;
-        transform: scale(0.8) !important;
+        transform: scale(0.7) !important;
       }
     `,
     tablet_mini: css`
