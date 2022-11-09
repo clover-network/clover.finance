@@ -1362,6 +1362,9 @@ export const LandingContainer = styled.div`
     ${breakpoint({
       mobile: css`
         height: 96%;
+        width: unset;
+        right: 0;
+        top: 0;
       `,
       tablet: css`
         height: 109%;
