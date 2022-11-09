@@ -86,8 +86,7 @@ export const EnterWeb3 = styled.div`
     right: 0;
     width: 100%;
     ${breakpoint({
-      mobile: css`
-      `,
+      mobile: css``,
       tablet_mini: css``,
       tablet: css``,
     })}
@@ -258,9 +257,11 @@ export const ContentBottomLeft = styled.div`
       padding: 16px;
       width: 100%;
       gap: 12px;
+      border-radius: 16px;
     `,
     tablet_mini: css`
       padding: 16px;
+      border-radius: 16px;
     `,
     tablet: css`
       padding: 24px 32px;
@@ -607,16 +608,19 @@ export const JoinCommunityItem = styled.div`
       padding: 16px;
       gap: 2px;
       margin-bottom: 16px;
+      border-radius: 16px;
     `,
     tablet_mini: css`
       padding: 16px;
       gap: 2px;
-      min-height: 245px;
+      min-height: 194px;
+      border-radius: 16px;
     `,
     tablet: css`
       padding: 32px;
       gap: 4px;
       min-height: 308px;
+      border-radius: 16px;
     `,
   })}
 
@@ -661,6 +665,8 @@ export const JoinCommunityItem = styled.div`
         margin: 8px 0 12px 0;
       `,
       tablet_mini: css`
+        font-size: 12px;
+        line-height: 20px;
         margin: 8px 0 12px 0;
       `,
       tablet: css`
@@ -737,6 +743,7 @@ export const InterestedPartnerships = styled.div`
       color: #ffffff;
       display: inline-block;
       margin-bottom: 20px;
+      opacity: 0.6;
       ${breakpoint({
         mobile: css`
           font-size: 12px;
@@ -769,14 +776,17 @@ export const InterestedPartnerships = styled.div`
       flex-direction: column-reverse;
       margin-top: 64px;
       gap: 0;
+      border-radius: 16px;
     `,
     tablet_mini: css`
       padding: 16px;
       gap: 12px;
+      border-radius: 16px;
     `,
     tablet: css`
       margin-top: 120px;
       gap: 40px;
+      border-radius: 16px;
     `,
   })}
 `;

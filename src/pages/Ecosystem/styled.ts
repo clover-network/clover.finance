@@ -364,6 +364,7 @@ export const ContentBottomItem = styled.div`
       align-items: center;
       height: 80px;
       justify-content: flex-start;
+      border-radius: 16px;
     `,
     tablet_mini: css`
       width: 100%;
@@ -371,11 +372,13 @@ export const ContentBottomItem = styled.div`
       flex-direction: row;
       align-items: center;
       justify-content: flex-start;
+      border-radius: 16px;
     `,
     tablet: css`
       width: 176px;
       height: 144px;
       padding: 16px;
+      border-radius: 16px;
     `,
   })}
 
@@ -608,15 +611,19 @@ export const CLVChainItem = styled.div`
   border: 1px solid #333232;
   transition: background 0.3s ease-in-out;
   ${breakpoint({
-    mobile: css``,
+    mobile: css`
+      border-radius: 16px;
+    `,
     tablet_mini: css`
       width: 100%;
       height: 90px;
+      border-radius: 16px;
     `,
     tablet: css`
       width: 176px;
       height: 144px;
       padding: 16px;
+      border-radius: 16px;
     `,
   })}
 
@@ -695,6 +702,8 @@ export const ProductSolutionLeft = styled.div`
   ${breakpoint({
     mobile: css`
       width: 100%;
+      border: 0 solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
     `,
     tablet_mini: css``,
     tablet: css``,
@@ -715,6 +724,7 @@ export const ProductSolutionItem = styled.div`
     mobile: css`
       padding: 8px;
       gap: 14px;
+      border-radius: 16px;
     `,
     tablet_mini: css`
       padding: 8px;
