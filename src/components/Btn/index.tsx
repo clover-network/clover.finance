@@ -51,8 +51,14 @@ export const NormalButton = styled.div<{
       line-height: 20px;
     `,
     tablet: css`
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 28px;
     `,
     tablet_mini: css`
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 20px;
     `
   })};
 `;
@@ -114,8 +120,14 @@ export const GrayButton = styled.div<{
       line-height: 20px;
     `,
     tablet: css`
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 28px;
     `,
     tablet_mini: css`
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 20px;
     `
   })};
 `;

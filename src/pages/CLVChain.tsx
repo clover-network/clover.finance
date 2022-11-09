@@ -67,18 +67,6 @@ const FeaturesRightItemMobile = styled.div`
   }
 `
 
-const FeaturesBottomItemMobile = styled.div`
-  position: absolute;
-  height: 90px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(180deg, rgba(57, 57, 57, 0) -8.93%, #0C0B0B 100%);
-  order: 4;
-  flex-grow: 0;
-  z-index: 4;
-`
-
 const ClvTokenTopMobile = styled.div`
   position: relative;
   height: 370px;
@@ -411,7 +399,6 @@ export const CLVChain: React.FC = () => {
                       <h3>{t('smartContractsGovernance')}</h3>
                       <span>{t('smartContractsGovernanceHint')}</span>
                     </FeaturesRightItemMobile>
-                    <FeaturesBottomItemMobile/>
                   </FeaturesContentMobile>
                 </WrapperMobileOnly>
               </Features>
@@ -564,12 +551,12 @@ const Content = styled.div`
         padding: 0 24px;
       `,
       tablet: css`
-        min-width: 1024px;
-        max-width: 1024px;
+        max-width: unset;
+        min-width: unset;
       `,
       tablet_mini: css`
-        min-width: 744px;
-        max-width: 744px;
+        max-width: unset;
+        min-width: unset;
       `
     })};
   }
@@ -1019,8 +1006,10 @@ const ClvToken = styled.div`
       margin-top: 72px;
     `,
     tablet: css`
+      margin-top: 72px;
     `,
     tablet_mini: css`
+      margin-top: 72px;
     `
   })};
 `
@@ -1108,8 +1097,12 @@ const ClvTokenBottom = styled.div`
         flex-direction: column;
       `,
       tablet: css`
+        display: flex;
+        flex-direction: column;
       `,
       tablet_mini: css`
+        display: flex;
+        flex-direction: column;
       `
     })};
   }
@@ -1143,8 +1136,10 @@ const ClvTokenBottomItem = styled.div`
       line-height: 14px;
     `,
     tablet: css`
+      width: 100%;
     `,
     tablet_mini: css`
+      width: 100%;
     `
   })};
 `
@@ -1249,8 +1244,10 @@ const EcosystemItem = styled.div`
       border-radius: 16px;
     `,
     tablet: css`
+      padding: 16px;
     `,
     tablet_mini: css`
+      padding: 16px;
     `
   })};
 
@@ -1302,8 +1299,14 @@ const EcosystemItem = styled.div`
             margin-bottom: 0;
           `,
           tablet: css`
+            font-size: 22px;
+            line-height: 24px;
+            margin-bottom: 0;
           `,
           tablet_mini: css`
+            font-size: 22px;
+            line-height: 24px;
+            margin-bottom: 0;
           `
         })};
       }

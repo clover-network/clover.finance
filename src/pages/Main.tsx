@@ -173,7 +173,6 @@ export const Main = ({ startBuild }: TypeProps) => {
                 </AdvantagesRightItem>
               </div>
             </AdvantagesRight>
-            <ForegroundShadow/>
           </AdvantagesContent>
         </Advantages>
         <ToolsOnCLV>
@@ -318,27 +317,6 @@ const ClvBackGroup = styled.div`
   })};
 `
 
-const ForegroundShadow = styled.div`
-  ${breakpoint({
-    mobile: css`
-      position: absolute;
-      height: 90px;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(180deg, rgba(57, 57, 57, 0) -8.93%, #000000 100%);
-      flex: none;
-      order: 3;
-      flex-grow: 0;
-      z-index: 3;
-    `,
-    tablet: css`
-    `,
-    tablet_mini: css`
-    `
-  })};
-`
-
 const SeamlesslyCompatible = styled.div`
   width: 100%;
   position: relative;
@@ -411,13 +389,16 @@ const TextWrapper = styled.div`
 
     ${breakpoint({
       mobile: css`
-        font-weight: 590;
         font-size: 40px;
         line-height: 40px;
       `,
       tablet: css`
+        font-size: 40px;
+        line-height: 40px;
       `,
       tablet_mini: css`
+        font-size: 40px;
+        line-height: 40px;
       `
     })};
 
@@ -430,8 +411,12 @@ const TextWrapper = styled.div`
           height: 24px;
         `,
         tablet: css`
+          width: 24px;
+          height: 24px;
         `,
         tablet_mini: css`
+          width: 24px;
+          height: 24px;
         `
       })};
     }
@@ -540,10 +525,13 @@ const BalanceItem = styled.div`
       margin: 4px 0;
       padding: 21px 16px;
       border-radius: 16px;
+      min-height: 0;
     `,
     tablet: css`
+      min-height: 140px;
     `,
     tablet_mini: css`
+      min-height: 140px;
     `
   })};
 
@@ -733,7 +721,7 @@ const AdvantagesContent = styled.div`
   ${breakpoint({
     mobile: css`
       position: relative;
-      height: 650px;
+      height: 700px;
       justify-content: center;
       margin-top: 0;
       overflow: hidden;
@@ -1142,7 +1130,6 @@ const Wrapper = styled.div`
   background: #000000;
   height: 100%;
   width: 100%;
-  overflow-y: auto;
 `
 
 const LandingContainer = styled.div`

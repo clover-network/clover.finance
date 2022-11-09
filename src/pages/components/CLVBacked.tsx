@@ -140,8 +140,10 @@ const CLVIsBackedBottomItem = styled.div`
 	          width: 35vw;
           `,
           tablet: css`
+              height: 44px;
           `,
           tablet_mini: css`
+              height: 44px;
           `
       })};
   }

@@ -818,8 +818,16 @@ const ProgressTitle = styled.div`
             font-weight: 600;
         `,
         tablet: css`
+            width: 100%;
+            font-size: 32px;
+            line-height: 32px;
+            font-weight: 600;
         `,
         tablet_mini: css`
+            width: 100%;
+            font-size: 32px;
+            line-height: 32px;
+            font-weight: 600;
         `
     })};
 
@@ -830,14 +838,22 @@ const ProgressTitle = styled.div`
 
       ${breakpoint({
           mobile: css`
-              font-weight: 590;
+              font-weight: 600;
               font-size: 32px;
               line-height: 32px;
               letter-spacing: 0.008em;
         `,
           tablet: css`
+              font-weight: 600;
+              font-size: 32px;
+              line-height: 32px;
+              letter-spacing: 0.008em;
         `,
           tablet_mini: css`
+              font-weight: 590;
+              font-size: 32px;
+              line-height: 32px;
+              letter-spacing: 0.008em;
         `
       })};
   }
@@ -945,6 +961,7 @@ const ProgressQ0Left = styled.div`
             padding: 24px 0 0;
         `,
         tablet: css`
+            
         `,
         tablet_mini: css`
         `
@@ -987,8 +1004,10 @@ const ProgressQ0Right = styled.div`
             padding: 24px;
         `,
         tablet: css`
+            padding: 24px;
         `,
         tablet_mini: css`
+            padding: 24px;
         `
     })};
 
@@ -1043,8 +1062,14 @@ const ProgressQ0Right = styled.div`
                 line-height: 16px;
           `,
             tablet: css`
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 16px;
           `,
             tablet_mini: css`
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 16px;
           `
         })};
     }
@@ -1089,8 +1114,10 @@ const ProgressQ1Left = styled.div`
             border-radius: 16px;
         `,
         tablet: css`
+            padding: 24px;
         `,
         tablet_mini: css`
+            padding: 24px;
         `
     })};
 
@@ -1170,8 +1197,14 @@ const ProgressQ1Left = styled.div`
                 line-height: 16px;
           `,
             tablet: css`
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 16px;
           `,
             tablet_mini: css`
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 16px;
           `
         })};
     }
@@ -1389,8 +1422,10 @@ const GlobalPresense = styled.div`
             margin-top: 64px;
         `,
         tablet: css`
+            margin-top: 64px;
         `,
         tablet_mini: css`
+            margin-top: 64px;
         `
     })};
 `
