@@ -121,6 +121,7 @@ const CLVIsBackedBottom = styled.div`
 	        margin: 28px 0;
             grid-template-columns: unset;
             border-radius: 16px;
+            padding: 16px;
         `,
         tablet: css`
         `,
@@ -136,7 +137,7 @@ const CLVIsBackedBottomItem = styled.div`
       ${breakpoint({
           mobile: css`
 	          height: unset;
-	          width: 30vw;
+	          width: 35vw;
           `,
           tablet: css`
           `,

@@ -13,7 +13,7 @@ const ContentInfo = styled.div`
 
 const FeaturesContentMobile = styled.div`
   position: relative;
-  height: 416px;
+  height: 950px;
 `
 
 const FeaturesLeftMobile = styled.div`
@@ -51,6 +51,18 @@ const FeaturesRightItemMobile = styled.div`
     line-height: 20px;
     letter-spacing: 0.006em;
     color: #FFFFFF;
+  }
+
+  & > p {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    color: #FFFFFF;
+    margin-bottom: 8px;
+    span {
+      color: #A9FFE0;
+    }
   }
 `
 
@@ -372,7 +384,31 @@ export const CLVChain: React.FC = () => {
                             window.open('https://docs.clv.org/clv-chain-developer-guide/dapp-example/setup-dapp-project', "_blank")
                           }}
                       >{t('learnMore')}</GrayButton>
-                      <h3>{t('EconomicIncentive')}</h3>
+                      <h3 style={{marginTop: '16px'}}>{t('EconomicIncentive')}</h3>
+                      <span>{t('EconomicIncentiveHint')}</span>
+                      <GrayButton
+                          margin='8px 0'
+                          height='40px'
+                          onClick={() => {
+                            window.open('https://docs.clv.org/clover-ecosystem/incentive-programs', "_blank")
+                          }}
+                      >{t('learnMore')}</GrayButton>
+                      <h3 style={{marginTop: '16px'}}>{t('highStakingReturn')}</h3>
+                      <p>Current avg. APY <span>26.62%</span></p>
+                      <span style={{marginBottom: '8px'}}>{t('highStakingReturnHint')}</span>
+                      <NormalButton
+                          margin='8px 0'
+                          height='40px'
+                          onClick={() => {
+                            window.open('https://apps.apple.com/app/clover-wallet/id1570072858', "_blank")
+                          }}
+                      >{t('stakeOnMobile')}</NormalButton>
+                      <GrayButton
+                          margin='8px 0'
+                          height='40px'
+                      >{t('enterCLVPortal')}</GrayButton>
+                      <h3>{t('smartContractsGovernance')}</h3>
+                      <span>{t('smartContractsGovernanceHint')}</span>
                     </FeaturesRightItemMobile>
                     <FeaturesBottomItemMobile/>
                   </FeaturesContentMobile>
@@ -674,7 +710,7 @@ const TextWrapper = styled.div`
 
     ${breakpoint({
       mobile: css`
-        margin: 24px 0;
+        margin: 16px 0;
         font-weight: 400;
         font-size: 12px;
         line-height: 20px;
@@ -744,6 +780,7 @@ const ContentBottomItem = styled.div`
       font-weight: 400;
       font-size: 12px;
       line-height: 18px;
+      border-radius: 16px;
     `,
     tablet: css`
     `,
@@ -770,7 +807,9 @@ const ContentBottomItem = styled.div`
 
     ${breakpoint({
       mobile: css`
-        margin-right: 0;
+        margin-right: 12px;
+        width: 48px;
+        height: 48px;
       `,
       tablet: css`
       `,
