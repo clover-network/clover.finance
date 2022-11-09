@@ -242,12 +242,15 @@ export const ContentBottomTop = styled.div`
       align-items: flex-start;
       gap: 16px;
       padding: 16px;
+      border-radius: 16px;
     `,
     tablet_mini: css`
       padding: 16px;
+      border-radius: 16px;
     `,
     tablet: css`
       padding: 16px 16px 16px 24px;
+      border-radius: 16px;
     `,
   })}
 `;
@@ -544,8 +547,12 @@ export const IdealAvailableContent = styled.div`
       & > img {
         margin-right: -16px;
         ${breakpoint({
-          mobile: css``,
-          tablet_mini: css``,
+          mobile: css`
+            margin-right: -16px;
+          `,
+          tablet_mini: css`
+            margin-right: 0;
+          `,
           tablet: css`
             margin-right: 0;
           `,
@@ -609,12 +616,15 @@ export const IdealAvailableItem = styled.div`
     mobile: css`
       flex-direction: column;
       padding: 0 16px;
+      border-radius: 16px;
     `,
     tablet_mini: css`
       gap: 24px;
+      border-radius: 16px;
     `,
     tablet: css`
       padding: 0;
+      border-radius: 16px;
     `,
   })}
 `;
@@ -634,12 +644,15 @@ export const ReverseIdealAvailableItem = styled.div`
     mobile: css`
       flex-direction: column-reverse;
       padding: 0 16px;
+      border-radius: 16px;
     `,
     tablet_mini: css`
       gap: 24px;
+      border-radius: 16px;
     `,
     tablet: css`
       padding: 0;
+      border-radius: 16px;
     `,
   })}
 `;
@@ -1070,14 +1083,17 @@ export const YourPassportTopItem = styled.div`
     mobile: css`
       padding: 16px;
       height: 204px;
+      border-radius: 16px;
     `,
     tablet_mini: css`
       padding: 16px;
       height: 244px;
+      border-radius: 16px;
     `,
     tablet: css`
       padding: 32px;
       height: 408px;
+      border-radius: 16px;
     `,
   })}
 `;
@@ -1095,12 +1111,15 @@ export const YourPassportBottom = styled.div`
       flex-direction: column;
       align-items: flex-start;
       padding: 16px;
+      border-radius: 16px;
     `,
     tablet_mini: css`
       padding: 16px;
+      border-radius: 16px;
     `,
     tablet: css`
       padding: 24px;
+      border-radius: 16px;
     `,
   })}
 `;

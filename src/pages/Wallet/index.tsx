@@ -115,9 +115,9 @@ export const Wallet: React.FC = () => {
                 <CreateWalletSpan>{t('createdAWalletInCLV')}</CreateWalletSpan>
               </div>
               <ContentBottomTopRight>
-                <NormalButton onClick={() => scrollTo()}>
+                <GetTheExtensionButton onClick={() => scrollTo()}>
                   {t('createWallet')}
-                </NormalButton>
+                </GetTheExtensionButton>
               </ContentBottomTopRight>
             </ContentBottomTop>
             <ContentBottomBottom>
