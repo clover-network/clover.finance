@@ -372,7 +372,7 @@ export const About: React.FC = () => {
                                                 scrolling='no'
                                             ></iframe>
                                         </IframeWrapper>
-                                        <span>*By clicking the button you agree to our newsletter</span>
+                                        <span>* Interactive map of dynamic nodes</span>
                                     </GlobalPresenseContentBottom>
                                 </WrapperDesktopOnly>
                             </GlobalPresenseContent>
