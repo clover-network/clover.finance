@@ -43,6 +43,18 @@ export const NormalButton = styled.div<{
     border: 2px solid #ffffff;
     opacity: 0.5;
   }
+
+  ${breakpoint({
+    mobile: css`
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 20px;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
 `;
 
 export const GrayButton = styled.div<{
@@ -94,4 +106,16 @@ export const GrayButton = styled.div<{
       ${({ disabled, disabledBackground }) =>
         disabled ? disabledBackground : '#ffffff'};
   }
+
+  ${breakpoint({
+    mobile: css`
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 20px;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
 `;

@@ -1345,9 +1345,9 @@ const NewsUpdateItemRight = styled.div`
 
       ${breakpoint({
           mobile: css`
-              font-weight: 600;
-              font-size: 16px;
-              line-height: 24px;
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 20px;
               margin-bottom: 4px;
         `,
           tablet: css`
