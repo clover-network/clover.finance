@@ -75,7 +75,6 @@ export const Main = ({ startBuild }: TypeProps) => {
 
   return (
     <Wrapper>
-      {/*<div style={{width: '200px', height: '200px', background: "red"}}/>*/}
       <LandingContainer>
         <SeamlesslyCompatible>
           <ContentWrapper>
@@ -297,12 +296,26 @@ export const Main = ({ startBuild }: TypeProps) => {
             </ToolsOnCLVContentRight>
           </ToolsOnCLVContent>
         </ToolsOnCLV>
-        <CLVIsBacked />
+        <ClvBackGroup>
+          <CLVIsBacked />
+        </ClvBackGroup>
       </LandingContainer>
       <Footer />
     </Wrapper>
   );
 };
+
+const ClvBackGroup = styled.div`
+  ${breakpoint({
+    mobile: css`
+      padding: 0 24px;
+    `,
+    tablet: css`
+    `,
+    tablet_mini: css`
+    `
+  })};
+`
 
 const ForegroundShadow = styled.div`
   ${breakpoint({
@@ -719,7 +732,7 @@ const AdvantagesContent = styled.div`
   ${breakpoint({
     mobile: css`
       position: relative;
-      height: 470px;
+      height: 650px;
       justify-content: center;
       margin-top: 0;
       overflow: hidden;

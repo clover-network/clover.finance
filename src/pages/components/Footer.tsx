@@ -453,6 +453,7 @@ const SocialsDiv = styled.div`
   ${breakpoint({
     mobile: css`
       margin-top: 8px;
+      justify-content: space-between;
     `,
     tablet: css`
     `,

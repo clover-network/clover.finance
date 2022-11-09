@@ -162,60 +162,60 @@ export const CLVChain: React.FC = () => {
     },
   ]
 
-  // const handleScroll = (e: any) => {
-  //   let mouseDown
-  //   const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1
-  //   if (isFirefox) {
-  //     if (e.detail > 0) {
-  //       mouseDown = true
-  //     } else {
-  //       mouseDown = false
-  //     }
-  //   } else {
-  //     if (e.wheelDelta > 0) {
-  //       mouseDown = true
-  //     } else {
-  //       mouseDown = false
-  //     }
-  //   }
-  //   let playVideo1: any = document.getElementById('playVideo1')
-  //   let playVideo2: any = document.getElementById('playVideoReverse1')
-  //   const display = playVideo1.style.display
-  //   let playVideo: any = display === 'none' ? playVideo2 : playVideo1
-  //
-  //   if (!mouseDown && videoStatus === 'start' && playVideo != playVideo2 && window.scrollY > 900) {
-  //     playVideo.play()
-  //   }
-  //   if (mouseDown && videoStatus === 'start' && playVideo != playVideo1 && window.scrollY > 900 && window.scrollY < 2500) {
-  //     playVideo.play()
-  //   }
-  // }
-  //
-  // useEffect(() => {
-  //   const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1
-  //   const mousewheel = isFirefox ? 'DOMMouseScroll' : 'mousewheel'
-  //   window.addEventListener(mousewheel, handleScroll)
-  //   return () => {
-  //     window.removeEventListener(mousewheel, handleScroll)
-  //   }
-  // }, [location]);
-  //
-  //
-  // useEffect(() => {
-  //   let playVideo1: any = document.getElementById('playVideo1')
-  //   let playVideo2: any = document.getElementById('playVideoReverse1')
-  //   const display = playVideo1.style.display
-  //   let playVideo: any = display === 'none' ? playVideo2 : playVideo1
-  //
-  //   playVideo.addEventListener('playing', () => {
-  //     videoStatus = 'playing'
-  //   })
-  //   playVideo.addEventListener('ended', () => {
-  //     videoStatus = 'start'
-  //     setIsReserve(!isReverse)
-  //     playVideo.currentTime = 0
-  //   })
-  // }, [document, isReverse]);
+  const handleScroll = (e: any) => {
+    let mouseDown
+    const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1
+    if (isFirefox) {
+      if (e.detail > 0) {
+        mouseDown = true
+      } else {
+        mouseDown = false
+      }
+    } else {
+      if (e.wheelDelta > 0) {
+        mouseDown = true
+      } else {
+        mouseDown = false
+      }
+    }
+    let playVideo1: any = document.getElementById('playVideo1')
+    let playVideo2: any = document.getElementById('playVideoReverse1')
+    const display = playVideo1.style.display
+    let playVideo: any = display === 'none' ? playVideo2 : playVideo1
+
+    if (!mouseDown && videoStatus === 'start' && playVideo != playVideo2 && window.scrollY > 900) {
+      playVideo.play()
+    }
+    if (mouseDown && videoStatus === 'start' && playVideo != playVideo1 && window.scrollY > 900 && window.scrollY < 2500) {
+      playVideo.play()
+    }
+  }
+
+  useEffect(() => {
+    const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1
+    const mousewheel = isFirefox ? 'DOMMouseScroll' : 'mousewheel'
+    window.addEventListener(mousewheel, handleScroll)
+    return () => {
+      window.removeEventListener(mousewheel, handleScroll)
+    }
+  }, [location]);
+
+
+  useEffect(() => {
+    let playVideo1: any = document.getElementById('playVideo1')
+    let playVideo2: any = document.getElementById('playVideoReverse1')
+    const display = playVideo1.style.display
+    let playVideo: any = display === 'none' ? playVideo2 : playVideo1
+
+    playVideo.addEventListener('playing', () => {
+      videoStatus = 'playing'
+    })
+    playVideo.addEventListener('ended', () => {
+      videoStatus = 'start'
+      setIsReserve(!isReverse)
+      playVideo.currentTime = 0
+    })
+  }, [document, isReverse]);
 
   return (
       <div id='CLVChain'>

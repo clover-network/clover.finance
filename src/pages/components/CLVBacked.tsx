@@ -120,6 +120,7 @@ const CLVIsBackedBottom = styled.div`
             flex-wrap: wrap;
 	        margin: 28px 0;
             grid-template-columns: unset;
+            border-radius: 16px;
         `,
         tablet: css`
         `,
