@@ -42,8 +42,8 @@ export const ThemeClover: DefaultTheme = {
   },
   breakpoints: {
     mobile: "481px",
-    tablet_mini: "744px",
-    tablet: "1026px",
+    tablet_mini: "820px",
+    tablet: "1280px",
   },
   misc: {
     DEFAULT_BORDER_RADIUS: "20px",

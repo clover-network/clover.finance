@@ -220,7 +220,8 @@ export const ContentWrapper = styled.div`
       padding-top: 0;
     `,
     tablet: css`
-      padding-top: 0;`,
+      padding-top: 0;
+    `,
   })}
 `;
 
@@ -429,7 +430,7 @@ export const Wallet3DImg = styled.img`
       width: 195px !important;
     `,
     tablet: css`
-      width: 300px !important;
+      width: 257.26px !important;
     `,
   })}
 `;
@@ -446,7 +447,7 @@ export const ImgWrapper = styled.div`
     `,
     tablet: css`
       width: 50%;
-      padding-left: 32px;
+      padding-left: -39.18%;
     `,
   })}
 `;
@@ -986,7 +987,7 @@ export const YourPassportContent = styled.div`
 
 export const YourPassportTop = styled.div`
   display: flex;
-  align-items: center;
+  align-items: stretch;
   margin-bottom: 12px;
   gap: 16px;
   ${breakpoint({
@@ -1079,21 +1080,22 @@ export const YourPassportTopItem = styled.div`
   background: rgb(248, 252, 254);
   border: 1px solid #eff5f5;
   border-radius: 32px;
-  height: 444px;
+
+  flex: 1;
   ${breakpoint({
     mobile: css`
       padding: 16px;
-      height: 204px;
+
       border-radius: 16px;
     `,
     tablet_mini: css`
       padding: 16px;
-      height: 244px;
+
       border-radius: 16px;
     `,
     tablet: css`
       padding: 16px;
-      height: 408px;
+
       border-radius: 16px;
     `,
   })}
@@ -1334,12 +1336,9 @@ export const CloverFinanceBottomFlexWrapper = styled.div`
         transform: scale(0.7) !important;
       }
     `,
-    tablet_mini: css`
-    `,
+    tablet_mini: css``,
     tablet: css``,
   })}
-  
-
 `;
 
 export const Wrapper = styled.div`
