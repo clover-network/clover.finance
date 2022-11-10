@@ -217,9 +217,10 @@ export const ContentWrapper = styled.div`
       padding-top: 40px;
     `,
     tablet_mini: css`
-      padding-top: 40px;
+      padding-top: 0;
     `,
-    tablet: css``,
+    tablet: css`
+      padding-top: 0;`,
   })}
 `;
 
@@ -445,7 +446,7 @@ export const ImgWrapper = styled.div`
     `,
     tablet: css`
       width: 50%;
-      padding-left: 13%;
+      padding-left: 32px;
     `,
   })}
 `;
@@ -1043,8 +1044,8 @@ export const YourPassportTopItemDiv = styled.div`
     tablet: css`
       margin-bottom: 16px;
       margin-top: 16px;
-      font-size: 24px;
-      line-height: 32px;
+      font-size: 18px;
+      line-height: 24px;
     `,
   })}
 `;
@@ -1068,7 +1069,7 @@ export const YourPassportTopItemSpan = styled.span`
     `,
     tablet: css`
       font-size: 16px;
-      line-height: 28px;
+      line-height: 18px;
     `,
   })}
 `;
@@ -1091,7 +1092,7 @@ export const YourPassportTopItem = styled.div`
       border-radius: 16px;
     `,
     tablet: css`
-      padding: 32px;
+      padding: 16px;
       height: 408px;
       border-radius: 16px;
     `,

@@ -248,13 +248,15 @@ const ButtonIcon = styled.div`
   }
 `
 
-const TableMiniIconText = styled.div`
+const TableMiniIconText = styled.div<{
+  color?: string
+}>`
   margin-left: 12px;
   font-weight: 400;
   font-size: 16px;
   line-height: 32px;
   letter-spacing: 0.016em;
-  color: #FFFFFF;
+  color: ${({color}) => color};
 `
 
 const TableMiniIconGroup = styled.div`
@@ -271,6 +273,22 @@ const TableMiniIconGroup = styled.div`
     `,
     tablet: css`
       display: flex;
+    `,
+  })};
+`
+
+const WrapperTableAndTableMini = styled.div`
+  display: none;
+
+  ${breakpoint({
+    mobile: css`
+      display: none;
+    `,
+    tablet_mini: css`
+      display: initial;
+    `,
+    tablet: css`
+      display: initial;
     `,
   })};
 `
@@ -323,7 +341,7 @@ export default function NewHeader(props: Props): ReactElement {
 
           <WrapperTableMiniOnly>
             <HeaderIcon
-                src={showNavs ? 'images/close_icon.svg' : 'images/menu_icon.svg'}
+                src={showNavs ? 'images/close_icon.svg' : 'images/menu_icon_black.svg'}
                 alt=""
                 onClick={() => setShowNavs(!showNavs)}
             />
@@ -335,14 +353,14 @@ export default function NewHeader(props: Props): ReactElement {
             </div>
           </WrapperTableMiniOnly>
 
-          <WrapperTableOnly>
+          <WrapperTableAndTableMini>
             <TableMiniIconGroup onClick={() => setShowNavs(!showNavs)}>
               <HeaderIcon
-                  src='images/clv_icon1.svg'
+                  src={isWallet && !showNavs ? 'images/clv_icon1_black.svg' : 'images/clv_icon1.svg'}
                   alt=""
               />
-              <TableMiniIconText hidden={showNavs}>Show Menu</TableMiniIconText>
-              <TableMiniIconText hidden={!showNavs}>Hide Menu</TableMiniIconText>
+              <TableMiniIconText color={isWallet && !showNavs ? '#000' : '#FFF'} hidden={showNavs}>Show Menu</TableMiniIconText>
+              <TableMiniIconText color={isWallet && !showNavs ? '#000' : '#FFF'} hidden={!showNavs}>Hide Menu</TableMiniIconText>
             </TableMiniIconGroup>
             <div hidden={!showNavs}>
               <HeaderMobileMenu
@@ -350,7 +368,7 @@ export default function NewHeader(props: Props): ReactElement {
                   navList={navList}
                   handleChange={(tab: any) => handleTabChange(tab)}/>
             </div>
-          </WrapperTableOnly>
+          </WrapperTableAndTableMini>
 
           <WrapperDesktopOnly>
             <HeaderRight>
