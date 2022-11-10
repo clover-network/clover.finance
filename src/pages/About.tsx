@@ -6,6 +6,7 @@ import {Footer} from './components/Footer';
 import {GrayButton, NormalButton} from '../components/Btn';
 import CLVIsBacked from './components/CLVBacked';
 import { WrapperDesktopOnly, WrapperMobileOnly } from "../CloverLibrary";
+import {isMobile} from "react-device-detect";
 
 const DesktopAndTable = styled.div`
     ${breakpoint({
@@ -38,6 +39,10 @@ const MobileAndMiniTable = styled.div`
 
 export const About: React.FC = () => {
     const [scrollTop, setScrollTop] = useState(0)
+    const firstProgressTop = isMobile ? 160 : 550;
+    const secondProgressTop = isMobile ? 560 : 1200;
+    const thirdProgressTop = isMobile ? 1300 : 2500;
+
     const handleScroll = () => {
         setScrollTop(window.scrollY)
     }
@@ -128,40 +133,40 @@ export const About: React.FC = () => {
                                     }}
                                 >
                                     <ProgressQ0Left>
-                                        <div className={scrollTop > 550 ? 'animation1' : ''}>2021</div>
+                                        <div className={scrollTop > firstProgressTop ? 'animation1' : ''}>2021</div>
                                     </ProgressQ0Left>
                                     <ProgressQ0Right>
-                                        <h3 className={scrollTop > 550 ? 'animation2' : ''}>(Q3)</h3>
-                                        <div className={scrollTop > 550 ? 'animation3' : ''}>
+                                        <h3 className={scrollTop > firstProgressTop ? 'animation2' : ''}>(Q3)</h3>
+                                        <div className={scrollTop > firstProgressTop ? 'animation3' : ''}>
                                             <img src='images/progress_icon1_white.svg' alt=''/>
                                             <span>{t('CLVEVMBridge')}</span>
                                         </div>
-                                        <div className={scrollTop > 550 ? 'animation3' : ''}>
+                                        <div className={scrollTop > firstProgressTop ? 'animation3' : ''}>
                                             <img src='images/progress_icon1_white.svg' alt=''/>
                                             <span>{t('walletMultiChain')}</span>
                                         </div>
-                                        <div className={scrollTop > 550 ? 'animation3' : ''}>
+                                        <div className={scrollTop > firstProgressTop ? 'animation3' : ''}>
                                             <img src='images/progress_icon1_white.svg' alt=''/>
                                             <span>{t('walletAuthorizationManagement')}</span>
                                         </div>
-                                        <div className={scrollTop > 550 ? 'animation3' : ''}>
+                                        <div className={scrollTop > firstProgressTop ? 'animation3' : ''}>
                                             <img src='images/progress_icon1_white.svg' alt=''/>
                                             <span>{t('walletSocialAccountLogin')}</span>
                                         </div>
-                                        <h3 className={scrollTop > 550 ? 'animation2' : ''}>(Q4)</h3>
-                                        <div className={scrollTop > 550 ? 'animation3' : ''}>
+                                        <h3 className={scrollTop > firstProgressTop ? 'animation2' : ''}>(Q4)</h3>
+                                        <div className={scrollTop > firstProgressTop ? 'animation3' : ''}>
                                             <img src='images/progress_icon1_white.svg' alt=''/>
                                             <span>{t('CLVDAppInteractiveProtocol')}</span>
                                         </div>
-                                        <div className={scrollTop > 550 ? 'animation3' : ''}>
+                                        <div className={scrollTop > firstProgressTop ? 'animation3' : ''}>
                                             <img src='images/progress_icon1_white.svg' alt=''/>
                                             <span>{t('CLVCrossChainExplorer')}</span>
                                         </div>
-                                        <div className={scrollTop > 550 ? 'animation3' : ''}>
+                                        <div className={scrollTop > firstProgressTop ? 'animation3' : ''}>
                                             <img src='images/progress_icon1_white.svg' alt=''/>
                                             <span>{t('CLVParachainLaunch')}</span>
                                         </div>
-                                        <div className={scrollTop > 550 ? 'animation3' : ''}>
+                                        <div className={scrollTop > firstProgressTop ? 'animation3' : ''}>
                                             <img src='images/progress_icon1_white.svg' alt=''/>
                                             <span>{t('walletMultiChainNFTSupport')}</span>
                                         </div>
@@ -174,82 +179,82 @@ export const About: React.FC = () => {
                                 >
                                     <WrapperMobileOnly>
                                         <ProgressQ1Right>
-                                            <div className={scrollTop > 1200 ? 'animation1' : ''}>2022</div>
+                                            <div className={scrollTop > secondProgressTop ? 'animation1' : ''}>2022</div>
                                         </ProgressQ1Right>
                                     </WrapperMobileOnly>
                                     <ProgressQ1Left>
-                                        <h3 className={scrollTop > 1200 ? 'animation2' : ''}>(Q1)</h3>
-                                        <div className={scrollTop > 1200 ? 'animation3' : ''}>
+                                        <h3 className={scrollTop > secondProgressTop ? 'animation2' : ''}>(Q1)</h3>
+                                        <div className={scrollTop > secondProgressTop ? 'animation3' : ''}>
                                             <img src='images/progress_icon1.svg' alt=''/>
                                             <span>{t('enableCLVEVM')}</span>
                                         </div>
-                                        <div className={scrollTop > 1200 ? 'animation3' : ''}>
+                                        <div className={scrollTop > secondProgressTop ? 'animation3' : ''}>
                                             <img src='images/progress_icon1.svg' alt=''/>
                                             <span>{t('enableCLVEVMGovernance')}</span>
                                         </div>
-                                        <div className={scrollTop > 1200 ? 'animation3' : ''}>
+                                        <div className={scrollTop > secondProgressTop ? 'animation3' : ''}>
                                             <img src='images/progress_icon1.svg' alt=''/>
                                             <span>{t('CLVBlockchainExplorer')}</span>
                                         </div>
-                                        <div className={scrollTop > 1200 ? 'animation3' : ''}>
+                                        <div className={scrollTop > secondProgressTop ? 'animation3' : ''}>
                                             <img src='images/progress_icon1.svg' alt=''/>
                                             <span>{t('validatorProgram')}</span>
                                         </div>
-                                        <div className={scrollTop > 1200 ? 'animation3' : ''}>
+                                        <div className={scrollTop > secondProgressTop ? 'animation3' : ''}>
                                             <img src='images/progress_icon1.svg' alt=''/>
                                             <span>{t('walletAssetSwap')}</span>
                                         </div>
-                                        <h3 className={scrollTop > 1200 ? 'animation2' : ''}>(Q2)</h3>
-                                        <div className={scrollTop > 1200 ? 'animation3' : ''}>
+                                        <h3 className={scrollTop > secondProgressTop ? 'animation2' : ''}>(Q2)</h3>
+                                        <div className={scrollTop > secondProgressTop ? 'animation3' : ''}>
                                             <img src='images/progress_icon1.svg' alt=''/>
                                             <span>{t('enableUniversalCrossChain')}</span>
                                         </div>
-                                        <div className={scrollTop > 1200 ? 'animation3' : ''}>
+                                        <div className={scrollTop > secondProgressTop ? 'animation3' : ''}>
                                             <img src='images/progress_icon1.svg' alt=''/>
                                             <span>{t('upgradableSmartContract')}</span>
                                         </div>
-                                        <div className={scrollTop > 1200 ? 'animation3' : ''}>
+                                        <div className={scrollTop > secondProgressTop ? 'animation3' : ''}>
                                             <img src='images/progress_icon1.svg' alt=''/>
                                             <span>{t('upgradeCLVEVMBridge')}</span>
                                         </div>
-                                        <div className={scrollTop > 1200 ? 'animation3' : ''}>
+                                        <div className={scrollTop > secondProgressTop ? 'animation3' : ''}>
                                             <img src='images/progress_icon1.svg' alt=''/>
                                             <span>{t('CLVWalletAssetBridge')}</span>
                                         </div>
-                                        <h3 className={scrollTop > 1200 ? 'animation2' : ''}>(Q3)</h3>
-                                        <div className={scrollTop > 1200 ? 'animation3' : ''}>
+                                        <h3 className={scrollTop > secondProgressTop ? 'animation2' : ''}>(Q3)</h3>
+                                        <div className={scrollTop > secondProgressTop ? 'animation3' : ''}>
                                             <img src='images/progress_icon1.svg' alt=''/>
                                             <span>{t('powerfulAndStable')}</span>
                                         </div>
-                                        <div className={scrollTop > 1200 ? 'animation3' : ''}>
+                                        <div className={scrollTop > secondProgressTop ? 'animation3' : ''}>
                                             <img src='images/progress_icon1.svg' alt=''/>
                                             <span>{t('nativeParachainAssetSupport')}</span>
                                         </div>
-                                        <div className={scrollTop > 1200 ? 'animation3' : ''}>
+                                        <div className={scrollTop > secondProgressTop ? 'animation3' : ''}>
                                             <img src='images/progress_icon1.svg' alt=''/>
                                             <span>{t('CLVWalletAssetStaking')}</span>
                                         </div>
-                                        <div className={scrollTop > 1200 ? 'animation3' : ''}>
+                                        <div className={scrollTop > secondProgressTop ? 'animation3' : ''}>
                                             <img src='images/progress_icon1.svg' alt=''/>
                                             <span>{t('CLVWalletSupport')}</span>
                                         </div>
-                                        <h3 className={scrollTop > 1200 ? 'animation2' : ''}>(Q4)</h3>
-                                        <div className={scrollTop > 1200 ? 'animation3' : ''}>
+                                        <h3 className={scrollTop > secondProgressTop ? 'animation2' : ''}>(Q4)</h3>
+                                        <div className={scrollTop > secondProgressTop ? 'animation3' : ''}>
                                             <img src='images/progress_icon1.svg' alt=''/>
                                             <span>{t('supportDApps')}</span>
                                         </div>
-                                        <div className={scrollTop > 1200 ? 'animation3' : ''}>
+                                        <div className={scrollTop > secondProgressTop ? 'animation3' : ''}>
                                             <img src='images/progress_icon1.svg' alt=''/>
                                             <span>{t('XCMMultiAssetSupport')}</span>
                                         </div>
-                                        <div className={scrollTop > 1200 ? 'animation3' : ''}>
+                                        <div className={scrollTop > secondProgressTop ? 'animation3' : ''}>
                                             <img src='images/progress_icon1.svg' alt=''/>
                                             <span>{t('CLVAssetsSwap')}</span>
                                         </div>
                                     </ProgressQ1Left>
                                     <WrapperDesktopOnly>
                                         <ProgressQ1Right>
-                                            <div className={scrollTop > 1200 ? 'animation1' : ''}>2022</div>
+                                            <div className={scrollTop > secondProgressTop ? 'animation1' : ''}>2022</div>
                                         </ProgressQ1Right>
                                     </WrapperDesktopOnly>
                                 </ProgressItem>
@@ -259,19 +264,19 @@ export const About: React.FC = () => {
                                     }}
                                 >
                                     <ProgressQ2Left>
-                                        <div className={scrollTop > 2500 ? 'animation1' : ''}>2023</div>
+                                        <div className={scrollTop > thirdProgressTop ? 'animation1' : ''}>2023</div>
                                     </ProgressQ2Left>
                                     <ProgressQ2Right>
-                                        <h3 className={scrollTop > 2500 ? 'animation2' : ''}>(Q1)</h3>
-                                        <div className={scrollTop > 2500 ? 'animation3' : ''}>
+                                        <h3 className={scrollTop > thirdProgressTop ? 'animation2' : ''}>(Q1)</h3>
+                                        <div className={scrollTop > thirdProgressTop ? 'animation3' : ''}>
                                             <img src='images/progress_icon1_white.svg' alt=''/>
                                             <span>Enhanced version of CLV wallet; improved user experience and web3 features</span>
                                         </div>
-                                        <div className={scrollTop > 2500 ? 'animation3' : ''}>
+                                        <div className={scrollTop > thirdProgressTop ? 'animation3' : ''}>
                                             <img src='images/progress_icon1_white.svg' alt=''/>
                                             <span>Integration of new blockchains into CLV ecosystem</span>
                                         </div>
-                                        <div className={scrollTop > 2500 ? 'animation3' : ''}>
+                                        <div className={scrollTop > thirdProgressTop ? 'animation3' : ''}>
                                             <img src='images/progress_icon1_white.svg' alt=''/>
                                             <span>Continue to build strategic partnerships with Web3 and Defi entities.</span>
                                         </div>
