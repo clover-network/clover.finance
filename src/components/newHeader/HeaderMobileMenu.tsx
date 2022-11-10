@@ -119,7 +119,7 @@ const MenuItem = styled.div<{ showBorder?: boolean }>`
     line-height: 32px;
     color: ${(props) => props.theme.colors.TITLE};
 	padding: 12px 0;
-    border-top: ${({showBorder, theme}) => showBorder ? `1px solid ${theme.colors.BODY}` : 'unset'};
+    border-top: ${({showBorder, theme}) => showBorder ? `1px solid #333232` : 'unset'};
     cursor: pointer;
 `
 
@@ -227,7 +227,7 @@ const ClvChainGroup = styled.div`
 	display: flex;
 	flex-direction: row;
 	width: 100%;
-    border-top: ${({theme}) => `1px solid ${theme.colors.BODY}`};
+    border-top: ${({theme}) => `1px solid #333232`};
 	align-items: center;
 	
 	img {
