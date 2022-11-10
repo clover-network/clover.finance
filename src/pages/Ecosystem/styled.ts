@@ -189,6 +189,7 @@ export const ContentBottom = styled.div`
   padding: 40px 40px 20px;
   background: #141414;
   border-radius: 30px;
+  justify-content: center;
   ${breakpoint({
     mobile: css`
       margin-top: 40px;
@@ -265,8 +266,9 @@ export const ContentBottomContent = styled.div`
 export const ContentBottomTop = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
+  gap: 24px;
   ${breakpoint({
     mobile: css`
       flex-direction: column;
@@ -292,6 +294,7 @@ export const ContentBottomBottom = styled.div`
     color: rgba(255, 255, 255, 0.6);
     display: inline-block;
     margin: 10px 0;
+
     ${breakpoint({
       mobile: css`
         padding: 0;
@@ -322,6 +325,8 @@ export const ContentBottomBottom = styled.div`
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    gap: 24px;
+    justify-content: center;
     ${breakpoint({
       mobile: css`
         display: flex;
@@ -333,7 +338,9 @@ export const ContentBottomBottom = styled.div`
         grid-template-columns: repeat(2, 50%);
         gap: 8px;
       `,
-      tablet: css``,
+      tablet: css`
+        gap: 20px;
+      `,
     })}
   }
 `;
@@ -347,8 +354,8 @@ export const ContentBottomItem = styled.div`
   align-items: center;
   border: 1px solid #333232;
   height: 210px;
-  width: 230px;
   padding: 24px;
+  flex: 1;
   font-family: Inter;
   font-weight: 400;
   font-size: 20px;
@@ -375,7 +382,7 @@ export const ContentBottomItem = styled.div`
       border-radius: 16px;
     `,
     tablet: css`
-      width: 176px;
+      flex: 1;
       height: 144px;
       padding: 16px;
       border-radius: 16px;
@@ -447,7 +454,7 @@ export const ContentBottomItem = styled.div`
 export const DAppFeaturesItem = styled.div`
   height: 116px;
   padding: 16px;
-  width: 230px;
+  flex: 1;
   background: #0e0d0d;
   border: 1px solid #333232;
   border-radius: 80px;
@@ -466,8 +473,8 @@ export const DAppFeaturesItem = styled.div`
       height: 46px;
     `,
     tablet: css`
-      width: 166.4px;
       height: 86px;
+      flex: 1;
     `,
   })}
 
@@ -578,15 +585,16 @@ export const CLVChainTitle = styled.div`
 `;
 
 export const CLVChainContent = styled.div`
-  display: grid;
+  display: flex;
   grid-template-columns: auto auto auto auto auto;
   gap: 24px;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-top: 60px;
   ${breakpoint({
     mobile: css``,
     tablet_mini: css`
+      display: grid;
       grid-template-columns: repeat(2, 50%);
       justify-content: center;
       margin-top: 16px;
@@ -600,7 +608,7 @@ export const CLVChainContent = styled.div`
 
 export const CLVChainItem = styled.div`
   height: 210px;
-  width: 230px;
+  flex: 1;
   padding: 24px;
   background: #000000;
   border-radius: 32px;
@@ -620,7 +628,6 @@ export const CLVChainItem = styled.div`
       border-radius: 16px;
     `,
     tablet: css`
-      width: 176px;
       height: 144px;
       padding: 16px;
       border-radius: 16px;
