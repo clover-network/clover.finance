@@ -130,7 +130,7 @@ export const Ecosystem: React.FC = () => {
       <Background />
       <LandingContainer>
         <EnterWeb3>
-          <video autoPlay loop muted src="videos/particles.mp4"></video>
+          <video webkit-playsinline autoPlay loop muted src="videos/particles.mp4"></video>
           <div>
             <ContentWrapper>
               <TextWrapper>

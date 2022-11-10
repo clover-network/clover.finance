@@ -79,7 +79,7 @@ export const Wallet: React.FC = () => {
   return (
     <Wrapper>
       <LandingContainer>
-        <video autoPlay src="videos/walletPageParticles.mp4"></video>
+        <video webkit-playsinline autoPlay src="videos/walletPageParticles.mp4"></video>
         <IntroducingCrypto>
           <ContentWrapper>
             <LayoutWrapper>

@@ -53,7 +53,7 @@ export const About: React.FC = () => {
             <Background/>
             <LandingContainer>
                 <UniversalInfrastructure>
-                    <video autoPlay loop muted src='videos/particles.mp4'></video>
+                    <video webkit-playsinline autoPlay loop muted src='videos/particles.mp4'></video>
                     <ContentWrapper>
                         <TextWrapper>
                             <DesktopAndTable>

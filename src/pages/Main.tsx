@@ -123,7 +123,7 @@ export const Main = ({ startBuild }: TypeProps) => {
               </Btns>
             </TextWrapper>
             <VideoWrapper>
-              <video autoPlay loop muted src='videos/heroAnimation.mp4'></video>
+              <video autoPlay loop muted webkit-playsinline src='videos/heroAnimation.mp4'></video>
             </VideoWrapper>
           </ContentWrapper>
           <BalanceWrapper>
@@ -168,9 +168,9 @@ export const Main = ({ startBuild }: TypeProps) => {
           </AdvantagesTitle>
           <AdvantagesContent>
             <AdvantagesLeft>
-              <video style={{ display: isReverse ? 'none' : 'inline-block' }} id='playVideo' muted
+              <video webkit-playsinline style={{ display: isReverse ? 'none' : 'inline-block' }} id='playVideo' muted
                 src='videos/CLVMainInteractiveAnimation.mp4'></video>
-              <video style={{ display: !isReverse ? 'none' : 'inline-block' }} id='playVideoReverse' muted
+              <video webkit-playsinline style={{ display: !isReverse ? 'none' : 'inline-block' }} id='playVideoReverse' muted
                 src='videos/CLVMainInteractiveAnimation2.mp4'></video>
             </AdvantagesLeft>
             <AdvantagesRight>

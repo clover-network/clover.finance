@@ -243,7 +243,7 @@ export const CLVChain: React.FC = () => {
         <Background />
         <LandingContainer>
           <IntrodusingTheCLV>
-            <video autoPlay loop muted src='videos/particles.mp4'></video>
+            <video webkit-playsinline autoPlay loop muted src='videos/particles.mp4'></video>
             <div>
               <ContentWrapper>
                 <TextWrapper>
@@ -332,8 +332,8 @@ export const CLVChain: React.FC = () => {
                 <WrapperDesktopOnly>
                   <FeaturesContent>
                     <FeaturesLeft>
-                      <video style={{display: isReverse ? 'none' : 'inline-block'}}  id='playVideo1' muted src='videos/CLVDevPageSequence.mp4'></video>
-                      <video style={{display: !isReverse ? 'none' : 'inline-block'}} id='playVideoReverse1' muted src='videos/CLVDevPageSequence2.mp4'></video>
+                      <video webkit-playsinline style={{display: isReverse ? 'none' : 'inline-block'}}  id='playVideo1' muted src='videos/CLVDevPageSequence.mp4'></video>
+                      <video webkit-playsinline style={{display: !isReverse ? 'none' : 'inline-block'}} id='playVideoReverse1' muted src='videos/CLVDevPageSequence2.mp4'></video>
                     </FeaturesLeft>
                     <FeaturesRight>
                       <div>
@@ -380,8 +380,8 @@ export const CLVChain: React.FC = () => {
                 <WrapperMobileOnly>
                   <FeaturesContentMobile>
                     <FeaturesLeftMobile>
-                      <video style={{display: isReverse ? 'none' : 'inline-block'}}  id='playVideo1' muted src='videos/CLVDevPageSequence.mp4'></video>
-                      <video style={{display: !isReverse ? 'none' : 'inline-block'}} id='playVideoReverse1' muted src='videos/CLVDevPageSequence2.mp4'></video>
+                      <video webkit-playsinline style={{display: isReverse ? 'none' : 'inline-block'}}  id='playVideo1' muted src='videos/CLVDevPageSequence.mp4'></video>
+                      <video webkit-playsinline style={{display: !isReverse ? 'none' : 'inline-block'}} id='playVideoReverse1' muted src='videos/CLVDevPageSequence2.mp4'></video>
                     </FeaturesLeftMobile>
                     <FeaturesRightItemMobile>
                       <h3>{t('etheriumCompatible')}</h3>
