@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useCallback} from "react";
 import styled, { css } from "styled-components";
 import { breakpoint } from "../mixins/breakpoint";
 import { t } from '../i18n/intl';
@@ -46,6 +46,10 @@ const FeaturesRightItemMobile = styled.div`
     letter-spacing: 0.008em;
     color: #FFFFFF;
     margin-bottom: 8px;
+  }
+
+  & > h3:last-child {
+    color: #BDFDE2;
   }
 
   & > span {
@@ -184,6 +188,11 @@ export const CLVChain: React.FC = () => {
     }
     let playVideo1: any = document.getElementById('playVideo1')
     let playVideo2: any = document.getElementById('playVideoReverse1')
+    if (isMobile) {
+      playVideo1 = document.getElementById('playVideoMobile1')
+      playVideo2 = document.getElementById('playVideoReverseMobile1')
+    }
+
     const display = playVideo1.style.display
     let playVideo: any = display === 'none' ? playVideo2 : playVideo1
 
@@ -228,6 +237,10 @@ export const CLVChain: React.FC = () => {
   useEffect(() => {
     let playVideo1: any = document.getElementById('playVideo1')
     let playVideo2: any = document.getElementById('playVideoReverse1')
+    if (isMobile) {
+      playVideo1 = document.getElementById('playVideoMobile1')
+      playVideo2 = document.getElementById('playVideoReverseMobile1')
+    }
     const display = playVideo1.style.display
     let playVideo: any = display === 'none' ? playVideo2 : playVideo1
 
@@ -390,8 +403,8 @@ export const CLVChain: React.FC = () => {
                 <WrapperMobileOnly>
                   <FeaturesContentMobile>
                     <FeaturesLeftMobile>
-                      <video playsInline style={{display: isReverse ? 'none' : 'inline-block'}}  id='playVideo1' muted src='videos/CLVDevPageSequence.mp4'></video>
-                      <video playsInline style={{display: !isReverse ? 'none' : 'inline-block'}} id='playVideoReverse1' muted src='videos/CLVDevPageSequence2.mp4'></video>
+                      <video playsInline style={{display: isReverse ? 'none' : 'inline-block'}}  id='playVideoMobile1' muted src='videos/CLVDevPageSequence.mp4'></video>
+                      <video playsInline style={{display: !isReverse ? 'none' : 'inline-block'}} id='playVideoReverseMobile1' muted src='videos/CLVDevPageSequence2.mp4'></video>
                     </FeaturesLeftMobile>
                     <FeaturesRightItemMobile>
                       <h3>{t('etheriumCompatible')}</h3>
@@ -728,7 +741,7 @@ const TextWrapper = styled.div`
 
     ${breakpoint({
       mobile: css`
-        font-weight: 600;
+        font-weight: 500;
         font-size: 40px;
         line-height: 40px;
       `,
@@ -949,17 +962,17 @@ const FeaturesTitle = styled.div`
 
     ${breakpoint({
       mobile: css`
-        font-weight: 600;
+        font-weight: 500;
         font-size: 32px;
         line-height: 32px;
       `,
       tablet: css`
-        font-weight: 600;
+        font-weight: 500;
         font-size: 32px;
         line-height: 32px;
       `,
       tablet_mini: css`
-        font-weight: 600;
+        font-weight: 500;
         font-size: 32px;
         line-height: 32px;
       `
@@ -1264,7 +1277,7 @@ const EcosystemTitle = styled.div`
 
     ${breakpoint({
       mobile: css`
-        font-weight: 600;
+        font-weight: 500;
         font-size: 32px;
         line-height: 32px;
       `,
@@ -1366,17 +1379,19 @@ const EcosystemItem = styled.div`
 
         ${breakpoint({
           mobile: css`
-            font-weight:600;
+            font-weight:500;
             font-size: 16px;
             line-height: 24px;
             margin-bottom: 0;
           `,
           tablet: css`
+            font-weight:500;
             font-size: 22px;
             line-height: 24px;
             margin-bottom: 0;
           `,
           tablet_mini: css`
+            font-weight:500;
             font-size: 22px;
             line-height: 24px;
             margin-bottom: 0;
@@ -1491,7 +1506,7 @@ const FAQsItem = styled.div`
 
       ${breakpoint({
         mobile: css`
-          font-weight: 400;
+          font-weight: 500;
           font-size: 12px;
           line-height: 20px;
         `,

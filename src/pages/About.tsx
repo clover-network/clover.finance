@@ -76,7 +76,7 @@ export const About: React.FC = () => {
                             </DesktopAndTable>
                             <WrapperMobileOnly>
                                 <MobileTitle>
-                                    {t('aboutTitle')}
+                                    {t('universalInfrastructure')}
                                     <img src='images/clv_icon1.svg' alt=''/>
                                 </MobileTitle>
                             </WrapperMobileOnly>
@@ -296,7 +296,7 @@ export const About: React.FC = () => {
                         <NewsUpdate>
                             <NewsUpdateTitle>
                                 <h3>{t('news')}</h3>
-                                <span>&nbsp;&nbsp;{t('update')}</span>
+                                <h3>&nbsp;&nbsp;{t('update')}</h3>
                             </NewsUpdateTitle>
                             <NewsUpdateContent>
                                 <NewsUpdateItem onClick={() => {
@@ -738,7 +738,7 @@ const ContentBottomRight = styled.div`
 
       ${breakpoint({
           mobile: css`
-              font-weight: 600;
+              font-weight: 500;
               font-size: 16px;
               line-height: 20px;
               letter-spacing: 0.008em;
@@ -747,7 +747,7 @@ const ContentBottomRight = styled.div`
           tablet: css`
           `,
           tablet_mini: css`
-              font-weight: 600;
+              font-weight: 500;
               font-size: 16px;
               line-height: 20px;
               letter-spacing: 0.008em;
@@ -857,25 +857,25 @@ const ProgressTitle = styled.div`
     })};
 
   h3 {
-    color: #BDFDE2;
+    color: #FFFFFF;
     font-size: 64px;
     line-height: 68px;
 
       ${breakpoint({
           mobile: css`
-              font-weight: 600;
+              font-weight: 500;
               font-size: 32px;
               line-height: 32px;
               letter-spacing: 0.008em;
         `,
           tablet: css`
-              font-weight: 600;
+              font-weight: 500;
               font-size: 32px;
               line-height: 32px;
               letter-spacing: 0.008em;
         `,
           tablet_mini: css`
-              font-weight: 590;
+              font-weight: 500;
               font-size: 32px;
               line-height: 32px;
               letter-spacing: 0.008em;
@@ -883,15 +883,19 @@ const ProgressTitle = styled.div`
       })};
   }
 
+    & > h3:last-child {
+        color: #9BDAF6;
+    }
+
   span {
     color: #BDFDE2;
   }
 `
 
 const ProgressContent = styled.div`
-  width: 100%;
-  margin-top: 64px;
-  opacity: 1;
+    width: 100%;
+    margin-top: 64px;
+    opacity: 1;
 
     ${breakpoint({
         mobile: css`
@@ -903,44 +907,65 @@ const ProgressContent = styled.div`
         `
     })};
 
-  .animation1 {
-    animation: overScroll 0.5s forwards ease-in-out;
-    @keyframes overScroll {
-      0% {
-        transform: translateY(100px);
-      }
-      100% {
-        transform: translateY(0);
-      }
+    .animation1 {
+        opacity: 0;
+        animation: overScroll 0.5s forwards ease-in-out;
+        @keyframes overScroll {
+            0% {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+            100% {
+                opacity: 1 !important;
+                transform: translateY(0);
+            }
+        }
     }
-  }
 
-  .animation2 {
-    animation: overScroll 0.5s forwards ease-in-out;
-    animation-delay: 0.5s;
-    @keyframes overScroll {
-      0% {
-        transform: translateY(100px);
-      }
-      100% {
-        transform: translateY(0);
-      }
+    .animation2 {
+        opacity: 0;
+        animation: overScroll 0.5s forwards ease-in-out;
+        animation-delay: 0.5s;
+        @keyframes overScroll {
+            0% {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     }
-  }
 
-  .animation3 {
-    animation: overScroll 0.5s forwards ease-in-out;
-    animation-delay: 1s;
-
-    @keyframes overScroll {
-      0% {
-        transform: translateY(100px);
-      }
-      100% {
-        transform: translateY(0);
-      }
+    h3 {
+        opacity: 0.3;
+        @keyframes overScroll {
+            0% {
+                opacity: 0 !important;
+            }
+            100% {
+                opacity: 0.3 !important;
+            }
+        }
     }
-  }
+
+    .animation3 {
+        opacity: 0;
+        animation: overScroll 0.5s forwards ease-in-out;
+        animation-delay: 1s;
+
+        @keyframes overScroll {
+            0% {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
 `
 
 const ProgressItem = styled.div`
@@ -1102,7 +1127,7 @@ const ProgressQ0Right = styled.div`
 
       ${breakpoint({
           mobile: css`
-              font-weight: 600;
+              font-weight: 500;
               font-size: 24px;
               line-height: 28px;
               margin-bottom: 12px;
@@ -1149,7 +1174,7 @@ const ProgressQ1Left = styled.div`
 
       ${breakpoint({
           mobile: css`
-              font-weight: 600;
+              font-weight: 500;
               font-size: 24px;
               line-height: 28px;
               margin-bottom: 12px;
@@ -1489,7 +1514,7 @@ const GlobalPresenseContentTop = styled.div`
 
         ${breakpoint({
             mobile: css`
-                font-weight: 600;
+                font-weight: 500;
                 font-size: 16px;
                 line-height: 24px;
             `,

@@ -210,7 +210,7 @@ export const Main = ({ startBuild }: TypeProps) => {
           <ToolsOnCLVTitle>
             <div>
               <h3>{t('toolsOnCLV')}</h3>
-              <span>{t('ecosystem')}</span>
+              <h3>{t('ecosystem')}</h3>
             </div>
           </ToolsOnCLVTitle>
           <ToolsOnCLVContent>
@@ -393,6 +393,7 @@ const TextWrapper = styled.div`
   justify-content: center;
   margin-right: 16px;
   min-height: 680px;
+  
 
   ${breakpoint({
     mobile: css`
@@ -412,7 +413,7 @@ const TextWrapper = styled.div`
   })};
   
   h3 {
-    font-weight: 600;
+    font-weight: 500;
     font-size: 72px;
     line-height: 76px;
     letter-spacing: 0.008em;
@@ -421,14 +422,17 @@ const TextWrapper = styled.div`
 
     ${breakpoint({
       mobile: css`
+        font-weight: 500;
         font-size: 40px;
         line-height: 40px;
       `,
       tablet: css`
+        font-weight: 500;
         font-size: 40px;
         line-height: 40px;
       `,
       tablet_mini: css`
+        font-weight: 500;
         font-size: 40px;
         line-height: 40px;
       `
@@ -690,7 +694,7 @@ const VideoWrapper = styled.div`
   right: 0;
   top: 0;
   z-index: 0;
-
+  
   video {
     width: 100%;
     max-width: 630px;
@@ -701,6 +705,7 @@ const VideoWrapper = styled.div`
       top: 0;
       width: 100%;
       padding: 24px;
+      opacity: 0.5;
     `,
     tablet: css`
       width: 50%;
@@ -754,19 +759,19 @@ const AdvantagesTitle = styled.div`
 
     ${breakpoint({
       mobile: css`
-        font-weight: 600;
+        font-weight: 500;
         font-size: 32px;
         line-height: 32px;
         margin-bottom: 0;
       `,
       tablet: css`
-        font-weight: 600;
+        font-weight: 500;
         font-size: 32px;
         line-height: 32px;
         margin-bottom: 0;
       `,
       tablet_mini: css`
-        font-weight: 600;
+        font-weight: 500;
         font-size: 32px;
         line-height: 32px;
         margin-bottom: 0;
@@ -976,6 +981,10 @@ const ToolsOnCLVTitle = styled.div`
       `
     })};
 
+    & > h3:last-child {
+      color: #BDFDE2;
+    }
+
     h3 {
       color: #FFFFFF;
       font-size: 64px;
@@ -983,12 +992,19 @@ const ToolsOnCLVTitle = styled.div`
 
       ${breakpoint({
         mobile: css`
+          font-weight: 500;
           font-size: 32px;
           line-height: 32px;
         `,
         tablet: css`
+          font-weight: 500;
+          font-size: 32px;
+          line-height: 32px;
         `,
         tablet_mini: css`
+          font-weight: 500;
+          font-size: 32px;
+          line-height: 32px;
         `
       })};
     }

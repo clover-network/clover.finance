@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { t } from '../../i18n/intl';
 import { Footer } from '../components/Footer';
+import {WrapperDesktopOnly, WrapperMobileOnly} from '../../CloverLibrary';
 import {
   Content,
   IntroducingCrypto,
@@ -90,11 +91,14 @@ export const Wallet: React.FC = () => {
   return (
     <Wrapper>
       <LandingContainer>
-        <video
-          playsInline
-          autoPlay
-          src="videos/walletPageParticles.mp4"
-        ></video>
+        <WrapperDesktopOnly>
+          <video playsInline autoPlay src="videos/walletPageParticles.mp4"></video>
+        </WrapperDesktopOnly>
+        <WrapperMobileOnly>
+          <div style={{opacity: 0.5}}>
+            <video playsInline autoPlay src="videos/walletPageParticles.mp4"></video>
+          </div>
+        </WrapperMobileOnly>
         <IntroducingCrypto>
           <ContentWrapper>
             <LayoutWrapper>
