@@ -258,7 +258,7 @@ export const ContentBottomTop = styled.div`
 `;
 
 export const LeftContainer = styled.div`
-  font-family: 'Roboto Flex';
+  font-family: 'RobotoFlex';
   font-weight: 600;
   font-size: 48px;
   line-height: 60px;
@@ -734,7 +734,7 @@ export const ItemContentSpan = styled.span`
   })}
 `;
 
-export const ItemContentH3 = styled.h3`
+export const ItemContentH3 = styled.div`
   font-family: Inter;
   font-weight: 600;
   font-size: 24px;
@@ -762,10 +762,11 @@ export const H4Image = styled.img`
   margin-right: 16px;
   ${breakpoint({
     mobile: css`
-      height: 14.82px;
+      height: 16.82px;
+      margin-right: 7.41px;
     `,
     tablet_mini: css`
-      height: 14.82px;
+      height: 16.82px;
     `,
     tablet: css`
       height: 24px;
@@ -832,17 +833,14 @@ export const Title = styled.span`
   color: #0c0b0b;
   ${breakpoint({
     mobile: css`
-      padding: 4px 0 14px;
       font-size: 20px;
       line-height: 28px;
     `,
     tablet_mini: css`
-      font-weight: 590;
       font-size: 20px;
       line-height: 28px;
     `,
     tablet: css`
-      font-weight: 590;
       font-size: 32px;
       line-height: 40px;
     `,
@@ -854,9 +852,17 @@ export const AppStoreImg = styled.img`
   ${breakpoint({
     mobile: css`
       width: 100%;
+      border-radius: 12px;
+      border: 1px solid #eff5f5;
+      background-color: #ffffff;
+      height: 56px;
     `,
     tablet_mini: css`
       width: 100%;
+      border-radius: 12px;
+      border: 1px solid #eff5f5;
+      background-color: #ffffff;
+      height: 56px;
     `,
     tablet: css`
       width: 50%;
@@ -865,17 +871,46 @@ export const AppStoreImg = styled.img`
 `;
 export const GooglePlayImg = styled.img`
   cursor: pointer;
+  height: 76px;
   ${breakpoint({
     mobile: css`
       width: 100%;
+      background-color: #ffffff;
+      border-radius: 12px;
+      border: 1px solid #eff5f5;
+      height: 56px;
     `,
     tablet_mini: css`
       width: 100%;
+      border-radius: 12px;
+      border: 1px solid #eff5f5;
+      background-color: #ffffff;
+      height: 56px;
     `,
     tablet: css`
       width: 50%;
     `,
   })};
+`;
+export const MobileBtns = styled.div`
+  display: none;
+  ${breakpoint({
+    mobile: css`
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 8px;
+      gap: 4px;
+    `,
+    tablet_mini: css`
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 8px;
+      gap: 4px;
+    `,
+    tablet: css``,
+  })}
 `;
 
 export const Btns = styled.div`
@@ -885,11 +920,10 @@ export const Btns = styled.div`
   gap: 12px;
   ${breakpoint({
     mobile: css`
-      flex-direction: column;
+      display: none;
     `,
     tablet_mini: css`
-      flex-direction: column;
-      align-items: flex-start;
+      display: none;
     `,
     tablet: css`
       max-width: 500px;

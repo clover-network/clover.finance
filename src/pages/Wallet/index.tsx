@@ -1,7 +1,6 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { t } from '../../i18n/intl';
 import { Footer } from '../components/Footer';
-import { NormalButton } from '../../components/Btn';
 import {
   Content,
   IntroducingCrypto,
@@ -43,6 +42,7 @@ import {
   GetTheExtensionButton,
   GooglePlayImg,
   AppStoreImg,
+  MobileBtns,
   Btns,
   YourPassport,
   YourPassportH3,
@@ -68,7 +68,7 @@ import {
   Wrapper,
   LandingContainer,
 } from './styled';
-import {isMobile} from "react-device-detect";
+import { isMobile } from 'react-device-detect';
 // @ts-ignore
 import enableInlineVideo from 'iphone-inline-video';
 
@@ -85,12 +85,16 @@ export const Wallet: React.FC = () => {
       const video = document.querySelector('video');
       enableInlineVideo(video);
     }
-  })
+  });
 
   return (
     <Wrapper>
       <LandingContainer>
-        <video playsInline autoPlay src="videos/walletPageParticles.mp4"></video>
+        <video
+          playsInline
+          autoPlay
+          src="videos/walletPageParticles.mp4"
+        ></video>
         <IntroducingCrypto>
           <ContentWrapper>
             <LayoutWrapper>
@@ -167,11 +171,14 @@ export const Wallet: React.FC = () => {
                     <ItemContentSpan>
                       {t('crossChainCompatibilityHint2')}
                     </ItemContentSpan>
-                    <ItemContentH3>70,000+ Users</ItemContentH3>
-                    <ItemContentH4>
-                      <H4Image src="images/reviews.svg" alt="" />
-                      <H4Span>398 Reviews</H4Span>
-                    </ItemContentH4>
+                    <div>
+                      <ItemContentH3>70,000+ Users</ItemContentH3>
+                      <ItemContentH4>
+                        <H4Image src="images/reviews.svg" alt="" />
+                        <H4Span>398 Reviews</H4Span>
+                      </ItemContentH4>
+                    </div>
+
                     <GetTheExtensionButton
                       onClick={() => {
                         window.open(
@@ -188,8 +195,10 @@ export const Wallet: React.FC = () => {
               <ReverseIdealAvailableItem>
                 <FirstIdealAvailableItemWrapper>
                   <IdealAvailableItemContent>
-                    <UpperCaseSpan>{t('CLVMobileWallet')}</UpperCaseSpan>
-                    <Title>{t('DcentralizedFinance')}</Title>
+                    <FirstRow>
+                      <UpperCaseSpan>{t('CLVMobileWallet')}</UpperCaseSpan>
+                      <Title>{t('DcentralizedFinance')}</Title>
+                    </FirstRow>
                     <ItemContentSpan>
                       {t('DcentralizedFinanceHint1')}
                     </ItemContentSpan>
@@ -219,14 +228,38 @@ export const Wallet: React.FC = () => {
                       alt=""
                     />
                   </Btns>
+                  <MobileBtns>
+                    <AppStoreImg
+                      onClick={() => {
+                        window.open(
+                          'https://apps.apple.com/app/clover-wallet/id1570072858',
+                          '_blank',
+                        );
+                      }}
+                      src="images/app_store_mobile.svg"
+                      alt=""
+                    />
+                    <GooglePlayImg
+                      onClick={() => {
+                        window.open(
+                          'https://github.com/clover-network/clover-multichain-mobile-wallet-release/releases/latest/download/clover.apk',
+                          '_blank',
+                        );
+                      }}
+                      src="images/google_play_mobile.svg"
+                      alt=""
+                    />
+                  </MobileBtns>
                 </FirstIdealAvailableItemWrapper>
                 <IdealAvailableItemImg src="images/stake_to_earn.svg" alt="" />
               </ReverseIdealAvailableItem>
               <ReverseIdealAvailableItem>
                 <FirstIdealAvailableItemWrapper>
                   <IdealAvailableItemContent>
-                    <UpperCaseSpan>{t('CLVPortal')}</UpperCaseSpan>
-                    <Title>{t('onePortalOfAll')}</Title>
+                    <FirstRow>
+                      <UpperCaseSpan>{t('CLVPortal')}</UpperCaseSpan>
+                      <Title>{t('onePortalOfAll')}</Title>
+                    </FirstRow>
                     <ItemContentSpan>{t('onePortalOfAllHint')}</ItemContentSpan>
                     <GetTheExtensionButton>
                       {t('exploreNow')}
