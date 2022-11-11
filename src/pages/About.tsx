@@ -133,7 +133,7 @@ export const About: React.FC = () => {
                     <div>
                         <Progress>
                             <ProgressTitle>
-                                <span>{t('roadmap')}</span>
+                                <h3>{t('roadmap')}</h3>
                             </ProgressTitle>
                             <ProgressContent>
                                 <ProgressItem
@@ -366,7 +366,7 @@ export const About: React.FC = () => {
                         <GlobalPresense>
                             <GlobalPresenseTitle>
                                 <h3>{t('global')}</h3>
-                                <span>&nbsp;&nbsp;{t('presense')}</span>
+                                <h3>&nbsp;{t('presense')}</h3>
                             </GlobalPresenseTitle>
                             <GlobalPresenseContent>
                                 <GlobalPresenseContentTop>
@@ -375,6 +375,11 @@ export const About: React.FC = () => {
                                         <span>{t('globalPresenseHint')}</span>
                                     </div>
                                 </GlobalPresenseContentTop>
+                                <WrapperMobileOnly>
+                                    <GlobalPresenseBg>
+                                        <img src='images/global-presense-bg.png' alt='' />
+                                    </GlobalPresenseBg>
+                                </WrapperMobileOnly>
                                 <WrapperDesktopOnly>
                                     <GlobalPresenseContentBottom>
                                         <IframeWrapper>
@@ -399,6 +404,12 @@ export const About: React.FC = () => {
         </div>
     );
 };
+
+const GlobalPresenseBg = styled.div`
+    img {
+        width: 100%;
+    }
+`
 
 const MobileTitle = styled.div`
     font-weight: 600;
@@ -846,7 +857,7 @@ const ProgressTitle = styled.div`
     })};
 
   h3 {
-    color: #FFFFFF;
+    color: #BDFDE2;
     font-size: 64px;
     line-height: 68px;
 
@@ -893,48 +904,39 @@ const ProgressContent = styled.div`
     })};
 
   .animation1 {
-    opacity: 0;
     animation: overScroll 0.5s forwards ease-in-out;
     @keyframes overScroll {
       0% {
-        opacity: 0;
         transform: translateY(100px);
       }
       100% {
-        opacity: 1 !important;
         transform: translateY(0);
       }
     }
   }
 
   .animation2 {
-    opacity: 0;
     animation: overScroll 0.5s forwards ease-in-out;
     animation-delay: 0.5s;
     @keyframes overScroll {
       0% {
-        opacity: 0;
         transform: translateY(100px);
       }
       100% {
-        opacity: 1;
         transform: translateY(0);
       }
     }
   }
 
   .animation3 {
-    opacity: 0;
     animation: overScroll 0.5s forwards ease-in-out;
     animation-delay: 1s;
 
     @keyframes overScroll {
       0% {
-        opacity: 0;
         transform: translateY(100px);
       }
       100% {
-        opacity: 1;
         transform: translateY(0);
       }
     }
@@ -1393,7 +1395,7 @@ const NewsUpdateItemRight = styled.div`
       ${breakpoint({
           mobile: css`
               font-weight: 400;
-              font-size: 12px;
+              font-size: 16px;
               line-height: 20px;
               margin-bottom: 4px;
         `,

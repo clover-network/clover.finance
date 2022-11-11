@@ -112,7 +112,7 @@ export const Main = ({ startBuild }: TypeProps) => {
           <ContentWrapper>
             <TextWrapper>
               <div>
-                {t('seamlesslyCompatible')}
+                <h3>{t('seamlesslyCompatible')}</h3>
                 <img src='images/clv_icon1.svg' alt='' />
               </div>
               <span>{t('seamlesslyCompatibleHint')}</span>
@@ -174,7 +174,7 @@ export const Main = ({ startBuild }: TypeProps) => {
         <Advantages>
           <AdvantagesTitle>
             <h3>{t('AdvantagesForEveryone')}</h3>
-            <span>{t('allAtOnce')}</span>
+            <h3>{t('allAtOnce')}</h3>
           </AdvantagesTitle>
           <AdvantagesContent>
             <AdvantagesLeft>
@@ -410,6 +410,30 @@ const TextWrapper = styled.div`
     tablet_mini: css`
     `
   })};
+  
+  h3 {
+    font-weight: 600;
+    font-size: 72px;
+    line-height: 76px;
+    letter-spacing: 0.008em;
+    color: #FFFFFF;
+    display: initial;
+
+    ${breakpoint({
+      mobile: css`
+        font-size: 40px;
+        line-height: 40px;
+      `,
+      tablet: css`
+        font-size: 40px;
+        line-height: 40px;
+      `,
+      tablet_mini: css`
+        font-size: 40px;
+        line-height: 40px;
+      `
+    })};
+  }
 
   & > div:first-child {
     font-weight: 600;
@@ -726,20 +750,31 @@ const AdvantagesTitle = styled.div`
     color: #FFFFFF;
     font-size: 64px;
     line-height: 68px;
+    width: 60%;
 
     ${breakpoint({
       mobile: css`
+        font-weight: 600;
         font-size: 32px;
         line-height: 32px;
+        margin-bottom: 0;
       `,
       tablet: css`
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 32px;
+        margin-bottom: 0;
       `,
       tablet_mini: css`
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 32px;
+        margin-bottom: 0;
       `
     })};
   }
 
-  span {
+  & > h3:last-child {
     color: #9BDAF6;
   }
 `

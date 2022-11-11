@@ -89,12 +89,13 @@ const ClvTokenTopMobileTitle = styled.div`
   align-items: center;
   top: 144px;
   
-  span {
+  h3 {
     font-weight: 600;
     font-size: 32px;
     line-height: 32px;
     letter-spacing: 0.008em;
     color: #BDFDE2;
+    margin-bottom: 0;
   }
   
   img {
@@ -122,7 +123,7 @@ const ClvTokenTopMobileSubtitle = styled.div`
   letter-spacing: 0.006em;
   color: #FFFFFF;
   opacity: 0.6;
-  top: 264px;
+  top: 280px;
 `
 
 export const CLVChain: React.FC = () => {
@@ -257,7 +258,7 @@ export const CLVChain: React.FC = () => {
               <ContentWrapper>
                 <TextWrapper>
                   <div>
-                    {t('introdusingTheCLV')}
+                    <h3>{t('introdusingTheCLV')}</h3>
                     <img src='images/clv_icon1.svg' alt='' />
                   </div>
                   <span>{t('introdusingTheCLVHint')}</span>
@@ -335,7 +336,7 @@ export const CLVChain: React.FC = () => {
             <div>
               <Features>
                 <FeaturesTitle>
-                  <span>{t('features')}</span>
+                  <h3>{t('features')}</h3>
                   <h3>{t('thatMakesTheDifference')}</h3>
                 </FeaturesTitle>
                 <WrapperDesktopOnly>
@@ -436,7 +437,7 @@ export const CLVChain: React.FC = () => {
                   <ClvTokenTop>
                     <div>
                       <div>
-                        <span>{t('CLVToken')}</span>
+                        <h3>{t('CLVToken')}</h3>
                         <img src='images/clv_icon_green.svg' alt='' />
                       </div>
                       <h3>{t('CLVTokenTitle')}</h3>
@@ -449,7 +450,7 @@ export const CLVChain: React.FC = () => {
                   <ClvTokenTopMobile>
                     <img src='images/clv_token_img.svg' alt='' />
                     <ClvTokenTopMobileTitle>
-                      <span>{t('CLVToken')}</span>
+                      <h3>{t('CLVToken')}</h3>
                       <img src='images/clv_icon_green.svg' alt='' />
                     </ClvTokenTopMobileTitle>
                     <ClvTokenTopMobileSenTitle>{t('CLVTokenTitle')}</ClvTokenTopMobileSenTitle>
@@ -665,7 +666,7 @@ const ContentWrapper = styled.div`
 `;
 
 const TextWrapper = styled.div`
-  width: 50%;
+  width: 45%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -714,6 +715,28 @@ const TextWrapper = styled.div`
         `
       })};
     }
+  }
+
+  h3 {
+    font-weight: 600;
+    font-size: 72px;
+    line-height: 76px;
+    letter-spacing: 0.008em;
+    color: #FFFFFF;
+    display: initial;
+    width: 50%;
+
+    ${breakpoint({
+      mobile: css`
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 40px;
+      `,
+      tablet: css`
+      `,
+      tablet_mini: css`
+      `
+    })};
   }
 
   span {
@@ -912,6 +935,12 @@ const FeaturesTitle = styled.div`
     tablet_mini: css`
     `
   })};
+
+
+  h3:first-child {
+    color: #9BDAF6;
+    margin-bottom: 0;
+  }
   
   h3 {
     font-size: 64px;
@@ -925,11 +954,18 @@ const FeaturesTitle = styled.div`
         line-height: 32px;
       `,
       tablet: css`
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 32px;
       `,
       tablet_mini: css`
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 32px;
       `
     })};
   }
+  
   span {
     color: #9BDAF6;
   }
@@ -1052,6 +1088,14 @@ const ClvTokenTop = styled.div`
     div {
       display: flex;
       align-items: center;
+      h3 {
+        font-weight: 600;
+        font-size: 64px;
+        line-height: 68px;
+        letter-spacing: 0.008em;
+        color: #BDFDE2;
+        letter-spacing: 0.008em;
+      }
       span {
         font-weight: 600;
         font-size: 64px;
