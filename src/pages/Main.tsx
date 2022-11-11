@@ -9,6 +9,8 @@ import { useRouter } from 'next/router';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {WrapperDesktopOnly, WrapperMobileOnly} from '../CloverLibrary';
 import { isMobile } from 'react-device-detect';
+// @ts-ignore
+import enableInlineVideo from 'iphone-inline-video';
 
 interface TypeProps {
   startBuild: () => void;
@@ -95,6 +97,14 @@ export const Main = ({ startBuild }: TypeProps) => {
     })
   }, [document, isReverse]);
 
+  useEffect(() => {
+    if (isMobile) {
+      const video = document.querySelector('video');
+      // const enableInlineVideo = require('iphone-inline-video');
+      enableInlineVideo(video);
+    }
+  })
+
   return (
     <Wrapper>
       <LandingContainer>
@@ -123,7 +133,7 @@ export const Main = ({ startBuild }: TypeProps) => {
               </Btns>
             </TextWrapper>
             <VideoWrapper>
-              <video autoPlay loop muted webkit-playsinline src='videos/heroAnimation.mp4'></video>
+              <video playsInline autoPlay loop muted src='videos/heroAnimation.mp4'></video>
             </VideoWrapper>
           </ContentWrapper>
           <BalanceWrapper>
@@ -168,9 +178,9 @@ export const Main = ({ startBuild }: TypeProps) => {
           </AdvantagesTitle>
           <AdvantagesContent>
             <AdvantagesLeft>
-              <video webkit-playsinline style={{ display: isReverse ? 'none' : 'inline-block' }} id='playVideo' muted
+              <video playsInline style={{ display: isReverse ? 'none' : 'inline-block' }} id='playVideo' muted
                 src='videos/CLVMainInteractiveAnimation.mp4'></video>
-              <video webkit-playsinline style={{ display: !isReverse ? 'none' : 'inline-block' }} id='playVideoReverse' muted
+              <video playsInline style={{ display: !isReverse ? 'none' : 'inline-block' }} id='playVideoReverse' muted
                 src='videos/CLVMainInteractiveAnimation2.mp4'></video>
             </AdvantagesLeft>
             <AdvantagesRight>

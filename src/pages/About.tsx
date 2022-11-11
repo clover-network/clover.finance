@@ -7,6 +7,8 @@ import {GrayButton, NormalButton} from '../components/Btn';
 import CLVIsBacked from './components/CLVBacked';
 import { WrapperDesktopOnly, WrapperMobileOnly } from "../CloverLibrary";
 import {isMobile} from "react-device-detect";
+// @ts-ignore
+import enableInlineVideo from 'iphone-inline-video';
 
 const DesktopAndTable = styled.div`
     ${breakpoint({
@@ -53,12 +55,19 @@ export const About: React.FC = () => {
         }
     }, [location]);
 
+    useEffect(() => {
+        if (isMobile) {
+            const video = document.querySelector('video');
+            enableInlineVideo(video);
+        }
+    })
+
     return (
         <div>
             <Background/>
             <LandingContainer>
                 <UniversalInfrastructure>
-                    <video webkit-playsinline autoPlay loop muted src='videos/particles.mp4'></video>
+                    <video playsInline autoPlay loop muted src='videos/particles.mp4'></video>
                     <ContentWrapper>
                         <TextWrapper>
                             <DesktopAndTable>

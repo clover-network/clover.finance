@@ -7,6 +7,8 @@ import { GrayButton, NormalButton } from '../components/Btn';
 import { useRouter } from 'next/router';
 import {WrapperDesktopOnly, WrapperMobileOnly } from "../CloverLibrary";
 import {isMobile} from "react-device-detect";
+// @ts-ignore
+import enableInlineVideo from 'iphone-inline-video';
 
 const ContentInfo = styled.div`
   
@@ -238,12 +240,19 @@ export const CLVChain: React.FC = () => {
     })
   }, [document, isReverse]);
 
+  useEffect(() => {
+    if (isMobile) {
+      const video = document.querySelector('video');
+      enableInlineVideo(video);
+    }
+  })
+
   return (
       <div id='CLVChain'>
         <Background />
         <LandingContainer>
           <IntrodusingTheCLV>
-            <video webkit-playsinline autoPlay loop muted src='videos/particles.mp4'></video>
+            <video playsInline autoPlay loop muted src='videos/particles.mp4'></video>
             <div>
               <ContentWrapper>
                 <TextWrapper>
@@ -332,8 +341,8 @@ export const CLVChain: React.FC = () => {
                 <WrapperDesktopOnly>
                   <FeaturesContent>
                     <FeaturesLeft>
-                      <video webkit-playsinline style={{display: isReverse ? 'none' : 'inline-block'}}  id='playVideo1' muted src='videos/CLVDevPageSequence.mp4'></video>
-                      <video webkit-playsinline style={{display: !isReverse ? 'none' : 'inline-block'}} id='playVideoReverse1' muted src='videos/CLVDevPageSequence2.mp4'></video>
+                      <video playsInline style={{display: isReverse ? 'none' : 'inline-block'}}  id='playVideo1' muted src='videos/CLVDevPageSequence.mp4'></video>
+                      <video playsInline style={{display: !isReverse ? 'none' : 'inline-block'}} id='playVideoReverse1' muted src='videos/CLVDevPageSequence2.mp4'></video>
                     </FeaturesLeft>
                     <FeaturesRight>
                       <div>
@@ -380,8 +389,8 @@ export const CLVChain: React.FC = () => {
                 <WrapperMobileOnly>
                   <FeaturesContentMobile>
                     <FeaturesLeftMobile>
-                      <video webkit-playsinline style={{display: isReverse ? 'none' : 'inline-block'}}  id='playVideo1' muted src='videos/CLVDevPageSequence.mp4'></video>
-                      <video webkit-playsinline style={{display: !isReverse ? 'none' : 'inline-block'}} id='playVideoReverse1' muted src='videos/CLVDevPageSequence2.mp4'></video>
+                      <video playsInline style={{display: isReverse ? 'none' : 'inline-block'}}  id='playVideo1' muted src='videos/CLVDevPageSequence.mp4'></video>
+                      <video playsInline style={{display: !isReverse ? 'none' : 'inline-block'}} id='playVideoReverse1' muted src='videos/CLVDevPageSequence2.mp4'></video>
                     </FeaturesLeftMobile>
                     <FeaturesRightItemMobile>
                       <h3>{t('etheriumCompatible')}</h3>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { t } from '../../i18n/intl';
 import { Footer } from '../components/Footer';
 import {
@@ -30,6 +30,9 @@ import {
   StyledNormalButton,
   Wrapper,
 } from './styled';
+import {isMobile} from "react-device-detect";
+// @ts-ignore
+import enableInlineVideo from 'iphone-inline-video';
 
 export const Developers: React.FC = () => {
   const tools = [
@@ -58,12 +61,20 @@ export const Developers: React.FC = () => {
       name: 'Standard Protocol',
     },
   ];
+
+  useEffect(() => {
+    if (isMobile) {
+      const video = document.querySelector('video');
+      enableInlineVideo(video);
+    }
+  })
+
   return (
     <Wrapper>
       <Background />
       <LandingContainer>
         <EnterWeb3>
-          <video webkit-playsinline autoPlay loop muted src="videos/particles.mp4"></video>
+          <video playsInline autoPlay loop muted src="videos/particles.mp4"></video>
           <div>
             <ContentWrapper>
               <TextWrapper>

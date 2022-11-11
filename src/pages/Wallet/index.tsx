@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { t } from '../../i18n/intl';
 import { Footer } from '../components/Footer';
 import { NormalButton } from '../../components/Btn';
@@ -68,6 +68,9 @@ import {
   Wrapper,
   LandingContainer,
 } from './styled';
+import {isMobile} from "react-device-detect";
+// @ts-ignore
+import enableInlineVideo from 'iphone-inline-video';
 
 export const Wallet: React.FC = () => {
   const scrollTo = () => {
@@ -76,10 +79,18 @@ export const Wallet: React.FC = () => {
       anchorElement.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  useEffect(() => {
+    if (isMobile) {
+      const video = document.querySelector('video');
+      enableInlineVideo(video);
+    }
+  })
+
   return (
     <Wrapper>
       <LandingContainer>
-        <video webkit-playsinline autoPlay src="videos/walletPageParticles.mp4"></video>
+        <video playsInline autoPlay src="videos/walletPageParticles.mp4"></video>
         <IntroducingCrypto>
           <ContentWrapper>
             <LayoutWrapper>
