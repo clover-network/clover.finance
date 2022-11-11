@@ -351,7 +351,7 @@ const FooterTopRight = styled.div<{
         font-weight: 400;
         font-size: 12px;
         line-height: 20px;
-        color: unset;
+        color: ${({ isWallet }) => (isWallet ? 'unset' : '#FFFFFF')};
         opacity: 0.6;
         margin-bottom: 4px;
       `,

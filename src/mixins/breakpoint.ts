@@ -1,4 +1,4 @@
-import { css, FlattenInterpolation, DefaultTheme } from 'styled-components';
+import { css, DefaultTheme, FlattenInterpolation } from 'styled-components';
 
 type InputType = Record<
   keyof DefaultTheme['breakpoints'],
@@ -12,20 +12,18 @@ const scopes: Array<keyof DefaultTheme['breakpoints']> = [
 ];
 export const breakpoint = (input: InputType | FlattenInterpolation<any>) => {
   if (Object.prototype.hasOwnProperty.call(input, 'mobile')) {
-    const query = (props: any) =>
-      scopes.reduce((q, key) => {
+    const queries = (props: any) =>
+      scopes.map(key => {
         const value = (input as InputType)[key];
-        q += `  
-
-    @media screen and (max-width: ${props.theme.breakpoints[key]}) {
-      ${value}
-    }
-    `;
-        return q;
-      }, '');
+        return css`
+          @media screen and (max-width: ${props.theme.breakpoints[key]}) {
+            ${value}
+          }
+        `;
+      });
 
     return css`
-      ${query}
+      ${queries}
     `;
   }
 
