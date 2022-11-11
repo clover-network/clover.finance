@@ -347,11 +347,11 @@ const FooterTopRight = styled.div<{
     margin-bottom: 24px;
 
     ${breakpoint({
-      mobile: css`
+      mobile: css<{ isWallet: boolean }>`
         font-weight: 400;
         font-size: 12px;
         line-height: 20px;
-        color: #ffffff;
+        color: unset;
         opacity: 0.6;
         margin-bottom: 4px;
       `,

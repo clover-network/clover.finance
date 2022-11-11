@@ -825,7 +825,7 @@ export const IdealAvailableItemContent = styled.div`
 `;
 
 export const Title = styled.span`
-  font-family: 'Roboto Flex';
+  font-family: 'RobotoFlex';
   font-weight: 590;
   font-size: 48px;
   line-height: 60px;
@@ -1060,7 +1060,7 @@ export const YourPassportTopItemDiv = styled.div`
   color: #0c0b0b;
   margin-bottom: 16px;
   margin-top: 36px;
-  font-family: 'Roboto Flex';
+  font-family: 'RobotoFlex';
 
   ${breakpoint({
     mobile: css`
