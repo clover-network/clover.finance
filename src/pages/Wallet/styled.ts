@@ -1321,6 +1321,7 @@ export const CloverFinanceBottomFlexWrapper = styled.div`
   ${breakpoint({
     mobile: css`
       gap: 0;
+      align-items: center;
       p {
         font-size: 8px !important;
         transform: scale(0.7) !important;
