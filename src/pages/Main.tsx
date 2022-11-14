@@ -39,22 +39,38 @@ export const Main = ({ startBuild }: TypeProps) => {
     }
     let playVideo1: any = document.getElementById('playVideo')
     let playVideo2: any = document.getElementById('playVideoReverse')
-    const display = playVideo1.style.display
-    let playVideo: any = display === 'none' ? playVideo2 : playVideo1
+    // const display = playVideo1.style.display
+    // let playVideo: any = display === 'none' ? playVideo2 : playVideo1
 
     if (isMobile) {
-      if (videoStatus === 'start' && playVideo != playVideo2 && window.scrollY > 600) {
-        playVideo.play()
+      if (videoStatus === 'start' && playVideo1 != playVideo2 && window.scrollY > 600) {
+        playVideo1.play()
       }
-      if (videoStatus === 'start' && playVideo != playVideo1 && window.scrollY > 600 && window.scrollY < 900) {
-        playVideo.play()
+      if (videoStatus === 'start' && playVideo1 != playVideo1 && window.scrollY > 600 && window.scrollY < 900) {
+        playVideo1.play()
       }
     } else {
-      if (!mouseDown && videoStatus === 'start' && playVideo != playVideo2 && window.scrollY > 1000) {
-        playVideo.play()
+      if (!mouseDown && videoStatus === 'start' && playVideo1 != playVideo2 && window.scrollY > 1000) {
+        playVideo1.play()
       }
-      if (mouseDown && videoStatus === 'start' && playVideo != playVideo1 && window.scrollY > 1000 && window.scrollY < 2300) {
-        playVideo.play()
+      if (mouseDown && videoStatus === 'start' && playVideo1 != playVideo1 && window.scrollY > 1000 && window.scrollY < 2300) {
+        playVideo1.play()
+      }
+    }
+
+    if (isMobile) {
+      if (videoStatus === 'start' && playVideo2 != playVideo2 && window.scrollY > 600) {
+        playVideo2.play()
+      }
+      if (videoStatus === 'start' && playVideo2 != playVideo1 && window.scrollY > 600 && window.scrollY < 900) {
+        playVideo2.play()
+      }
+    } else {
+      if (!mouseDown && videoStatus === 'start' && playVideo2 != playVideo2 && window.scrollY > 1000) {
+        playVideo2.play()
+      }
+      if (mouseDown && videoStatus === 'start' && playVideo2 != playVideo1 && window.scrollY > 1000 && window.scrollY < 2300) {
+        playVideo2.play()
       }
     }
 
@@ -84,18 +100,27 @@ export const Main = ({ startBuild }: TypeProps) => {
   useEffect(() => {
     let playVideo1: any = document.getElementById('playVideo')
     let playVideo2: any = document.getElementById('playVideoReverse')
-    const display = playVideo1.style.display
-    let playVideo: any = display === 'none' ? playVideo2 : playVideo1
+    // const display = playVideo1.style.display
+    // let playVideo: any = display === 'none' ? playVideo2 : playVideo1
 
-    playVideo.addEventListener('playing', () => {
+    playVideo1.addEventListener('playing', () => {
       videoStatus = 'playing'
     })
-    playVideo.addEventListener('ended', () => {
+    playVideo1.addEventListener('ended', () => {
       videoStatus = 'start'
-      setIsReserve(!isReverse)
-      playVideo.currentTime = 0
+      setIsReserve(true)
+      playVideo1.currentTime = 0
     })
-  }, [document, isReverse]);
+
+    playVideo2.addEventListener('playing', () => {
+      videoStatus = 'playing'
+    })
+    playVideo2.addEventListener('ended', () => {
+      videoStatus = 'start'
+      setIsReserve(false)
+      playVideo2.currentTime = 0
+    })
+  }, []);
 
   useEffect(() => {
     if (isMobile) {
@@ -178,9 +203,9 @@ export const Main = ({ startBuild }: TypeProps) => {
           </AdvantagesTitle>
           <AdvantagesContent>
             <AdvantagesLeft>
-              <video playsInline style={{ display: isReverse ? 'none' : 'inline-block' }} id='playVideo' muted
+              <video playsInline style={{ visibility: isReverse ? 'hidden' : 'initial' }} id='playVideo' muted
                 src='videos/CLVMainInteractiveAnimation.mp4'></video>
-              <video playsInline style={{ display: !isReverse ? 'none' : 'inline-block' }} id='playVideoReverse' muted
+              <video playsInline style={{ visibility: !isReverse ? 'hidden' : 'initial' }} id='playVideoReverse' muted
                 src='videos/CLVMainInteractiveAnimation2.mp4'></video>
             </AdvantagesLeft>
             <AdvantagesRight>
@@ -807,7 +832,7 @@ const AdvantagesContent = styled.div`
 const AdvantagesLeft = styled.div`
   width: 50%;
   margin-right: 16px;
-
+  position: relative;
   ${breakpoint({
     mobile: css`
       position: absolute;
@@ -820,6 +845,7 @@ const AdvantagesLeft = styled.div`
 
   video {
     width: 100%;
+    position:absolute;
     max-width: 630px;
   }
 `
