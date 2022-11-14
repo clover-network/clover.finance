@@ -816,7 +816,7 @@ const AdvantagesContent = styled.div`
   ${breakpoint({
     mobile: css`
       position: relative;
-      height: 700px;
+      height: 735px;
       justify-content: center;
       margin-top: 0;
       overflow: hidden;
@@ -855,7 +855,7 @@ const AdvantagesRight = styled.div`
   ${breakpoint({
     mobile: css`
       width: 100%;
-      top: 230px;
+      top: 265px;
       position: absolute;
     `,
     tablet: css`

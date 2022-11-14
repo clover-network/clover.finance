@@ -16,7 +16,7 @@ const ContentInfo = styled.div`
 
 const FeaturesContentMobile = styled.div`
   position: relative;
-  height: 950px;
+  height: 1000px;
 `
 
 const FeaturesLeftMobile = styled.div`
@@ -37,7 +37,7 @@ const FeaturesRightItemMobile = styled.div`
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 224px;
+  top: 275px;
 
   h3 {
     font-weight: 600;
