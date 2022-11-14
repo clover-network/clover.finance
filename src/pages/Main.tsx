@@ -43,33 +43,33 @@ export const Main = ({ startBuild }: TypeProps) => {
     // let playVideo: any = display === 'none' ? playVideo2 : playVideo1
 
     if (isMobile) {
-      if (videoStatus === 'start' && playVideo1 != playVideo2 && window.scrollY > 600) {
+      if (videoStatus === 'start' && window.scrollY > 600) {
         playVideo1.play()
       }
-      if (videoStatus === 'start' && playVideo1 != playVideo1 && window.scrollY > 600 && window.scrollY < 900) {
+      if (videoStatus === 'start' && window.scrollY > 600 && window.scrollY < 900) {
         playVideo1.play()
       }
     } else {
-      if (!mouseDown && videoStatus === 'start' && playVideo1 != playVideo2 && window.scrollY > 1000) {
+      if (!mouseDown && videoStatus === 'start' && window.scrollY > 1000) {
         playVideo1.play()
       }
-      if (mouseDown && videoStatus === 'start' && playVideo1 != playVideo1 && window.scrollY > 1000 && window.scrollY < 2300) {
+      if (mouseDown && videoStatus === 'start' && window.scrollY > 1000 && window.scrollY < 2300) {
         playVideo1.play()
       }
     }
 
     if (isMobile) {
-      if (videoStatus === 'start' && playVideo2 != playVideo2 && window.scrollY > 600) {
+      if (videoStatus === 'start' && window.scrollY > 600) {
         playVideo2.play()
       }
-      if (videoStatus === 'start' && playVideo2 != playVideo1 && window.scrollY > 600 && window.scrollY < 900) {
+      if (videoStatus === 'start' && window.scrollY > 600 && window.scrollY < 900) {
         playVideo2.play()
       }
     } else {
-      if (!mouseDown && videoStatus === 'start' && playVideo2 != playVideo2 && window.scrollY > 1000) {
+      if (!mouseDown && videoStatus === 'start' && window.scrollY > 1000) {
         playVideo2.play()
       }
-      if (mouseDown && videoStatus === 'start' && playVideo2 != playVideo1 && window.scrollY > 1000 && window.scrollY < 2300) {
+      if (mouseDown && videoStatus === 'start' && window.scrollY > 1000 && window.scrollY < 2300) {
         playVideo2.play()
       }
     }
@@ -125,7 +125,6 @@ export const Main = ({ startBuild }: TypeProps) => {
   useEffect(() => {
     if (isMobile) {
       const video = document.querySelector('video');
-      // const enableInlineVideo = require('iphone-inline-video');
       enableInlineVideo(video);
     }
   })

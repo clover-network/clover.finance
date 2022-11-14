@@ -193,22 +193,35 @@ export const CLVChain: React.FC = () => {
       playVideo2 = document.getElementById('playVideoReverseMobile1')
     }
 
-    const display = playVideo1.style.display
-    let playVideo: any = display === 'none' ? playVideo2 : playVideo1
-
     if (isMobile) {
-      if (videoStatus === 'start' && playVideo != playVideo2 && window.scrollY > 350) {
-        playVideo.play()
+      if (videoStatus === 'start' && window.scrollY > 350) {
+        playVideo1.play()
       }
-      if (videoStatus === 'start' && playVideo != playVideo1 && window.scrollY > 350 && window.scrollY < 700) {
-        playVideo.play()
+      if (videoStatus === 'start' && window.scrollY > 350 && window.scrollY < 700) {
+        playVideo1.play()
       }
     } else {
-      if (!mouseDown && videoStatus === 'start' && playVideo != playVideo2 && window.scrollY > 900) {
-        playVideo.play()
+      if (!mouseDown && videoStatus === 'start' && window.scrollY > 900) {
+        playVideo1.play()
       }
-      if (mouseDown && videoStatus === 'start' && playVideo != playVideo1 && window.scrollY > 900 && window.scrollY < 2500) {
-        playVideo.play()
+      if (mouseDown && videoStatus === 'start' && window.scrollY > 900 && window.scrollY < 2500) {
+        playVideo1.play()
+      }
+    }
+
+    if (isMobile) {
+      if (videoStatus === 'start' && window.scrollY > 350) {
+        playVideo2.play()
+      }
+      if (videoStatus === 'start' && window.scrollY > 350 && window.scrollY < 700) {
+        playVideo2.play()
+      }
+    } else {
+      if (!mouseDown && videoStatus === 'start' && window.scrollY > 900) {
+        playVideo2.play()
+      }
+      if (mouseDown && videoStatus === 'start' && window.scrollY > 900 && window.scrollY < 2500) {
+        playVideo2.play()
       }
     }
   }
@@ -241,16 +254,22 @@ export const CLVChain: React.FC = () => {
       playVideo1 = document.getElementById('playVideoMobile1')
       playVideo2 = document.getElementById('playVideoReverseMobile1')
     }
-    const display = playVideo1.style.display
-    let playVideo: any = display === 'none' ? playVideo2 : playVideo1
 
-    playVideo.addEventListener('playing', () => {
+    playVideo1.addEventListener('playing', () => {
       videoStatus = 'playing'
     })
-    playVideo.addEventListener('ended', () => {
+    playVideo1.addEventListener('ended', () => {
       videoStatus = 'start'
       setIsReserve(!isReverse)
-      playVideo.currentTime = 0
+      playVideo1.currentTime = 0
+    })
+    playVideo2.addEventListener('playing', () => {
+      videoStatus = 'playing'
+    })
+    playVideo2.addEventListener('ended', () => {
+      videoStatus = 'start'
+      setIsReserve(!isReverse)
+      playVideo2.currentTime = 0
     })
   }, [document, isReverse]);
 
