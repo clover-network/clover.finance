@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useCallback} from "react";
+import React, {useState, useEffect, useCallback, useRef} from "react";
 import styled, { css } from "styled-components";
 import { breakpoint } from "../mixins/breakpoint";
 import { t } from '../i18n/intl';
@@ -9,6 +9,7 @@ import {WrapperDesktopOnly, WrapperMobileOnly } from "../CloverLibrary";
 import {isMobile} from "react-device-detect";
 // @ts-ignore
 import enableInlineVideo from 'iphone-inline-video';
+import {ScreenScrollDirection} from "./Main";
 
 const ContentInfo = styled.div`
   
@@ -135,6 +136,33 @@ export const CLVChain: React.FC = () => {
   const [selectFaq, setSelectFaq] = useState(0)
   const [isReverse, setIsReserve] = useState(false)
   let videoStatus = 'start'
+  const [y, setY] = useState(window.scrollY);
+  const direction = useRef<ScreenScrollDirection>(ScreenScrollDirection.Down);
+  const isReverseRef = useRef<boolean>(false);
+
+  useEffect(() => {
+    isReverseRef.current = isReverse;
+  }, [isReverse])
+
+  const handleNavigation = useCallback((e) => {
+    const window = e.currentTarget;
+    if (y > window.scrollY) {
+      direction.current = ScreenScrollDirection.Up;
+    } else if (y < window.scrollY) {
+      direction.current = ScreenScrollDirection.Down;
+    }
+    setY(window.scrollY);
+  }, [y])
+
+  useEffect(() => {
+    setY(window.scrollY);
+    window.addEventListener("scroll", handleNavigation);
+
+    return () => {
+      window.removeEventListener("scroll", handleNavigation);
+    };
+  }, [handleNavigation]);
+
 
   const faqsList = [
     {
@@ -171,56 +199,30 @@ export const CLVChain: React.FC = () => {
   ]
 
   const handleScroll = (e: any) => {
-    let mouseDown
-    const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1
-    if (isFirefox) {
-      if (e.detail > 0) {
-        mouseDown = true
-      } else {
-        mouseDown = false
-      }
-    } else {
-      if (e.wheelDelta > 0) {
-        mouseDown = true
-      } else {
-        mouseDown = false
-      }
-    }
     let playVideo1: any = document.getElementById('playVideo1')
     let playVideo2: any = document.getElementById('playVideoReverse1')
+    const rev = isReverseRef.current
+    if (videoStatus === 'playing') return;
+
     if (isMobile) {
       playVideo1 = document.getElementById('playVideoMobile1')
       playVideo2 = document.getElementById('playVideoReverseMobile1')
     }
 
     if (isMobile) {
-      if (videoStatus === 'start' && window.scrollY > 350) {
+      if (!rev && window.scrollY > 300 && window.scrollY < 600) {
         playVideo1.play()
       }
-      if (videoStatus === 'start' && window.scrollY > 350 && window.scrollY < 700) {
-        playVideo1.play()
-      }
-    } else {
-      if (!mouseDown && videoStatus === 'start' && window.scrollY > 900) {
-        playVideo1.play()
-      }
-      if (mouseDown && videoStatus === 'start' && window.scrollY > 900 && window.scrollY < 2500) {
-        playVideo1.play()
-      }
-    }
-
-    if (isMobile) {
-      if (videoStatus === 'start' && window.scrollY > 350) {
-        playVideo2.play()
-      }
-      if (videoStatus === 'start' && window.scrollY > 350 && window.scrollY < 700) {
+      if (rev && window.scrollY < 600) {
         playVideo2.play()
       }
     } else {
-      if (!mouseDown && videoStatus === 'start' && window.scrollY > 900) {
-        playVideo2.play()
+      const dir = direction.current;
+      const isScrollDown = dir === ScreenScrollDirection.Down;
+      if (!rev && isScrollDown && window.scrollY > 900 && window.scrollY < 2500) {
+        playVideo1.play()
       }
-      if (mouseDown && videoStatus === 'start' && window.scrollY > 900 && window.scrollY < 2500) {
+      if (rev && !isScrollDown && window.scrollY < 2500) {
         playVideo2.play()
       }
     }
@@ -244,7 +246,7 @@ export const CLVChain: React.FC = () => {
         window.removeEventListener(mousewheel, handleScroll)
       }
     }
-  }, [location]);
+  }, []);
 
 
   useEffect(() => {
@@ -255,23 +257,20 @@ export const CLVChain: React.FC = () => {
       playVideo2 = document.getElementById('playVideoReverseMobile1')
     }
 
-    playVideo1.addEventListener('playing', () => {
-      videoStatus = 'playing'
-    })
+    playVideo1.addEventListener('playing', () => videoStatus = 'playing')
+    playVideo2.addEventListener('playing', () => videoStatus = 'playing')
+
     playVideo1.addEventListener('ended', () => {
       videoStatus = 'start'
-      setIsReserve(!isReverse)
+      setIsReserve(true)
       playVideo1.currentTime = 0
-    })
-    playVideo2.addEventListener('playing', () => {
-      videoStatus = 'playing'
     })
     playVideo2.addEventListener('ended', () => {
       videoStatus = 'start'
-      setIsReserve(!isReverse)
+      setIsReserve(false)
       playVideo2.currentTime = 0
     })
-  }, [document, isReverse]);
+  }, []);
 
   useEffect(() => {
     if (isMobile) {

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, {useCallback, useEffect, useRef, useState} from 'react';
 import styled, { css } from "styled-components";
 import { breakpoint } from "../mixins/breakpoint";
 import { t } from '../i18n/intl';
@@ -12,6 +12,11 @@ import { isMobile } from 'react-device-detect';
 // @ts-ignore
 import enableInlineVideo from 'iphone-inline-video';
 
+export enum ScreenScrollDirection {
+  Up,
+  Down,
+}
+
 interface TypeProps {
   startBuild: () => void;
 }
@@ -20,61 +25,57 @@ export const Main = ({ startBuild }: TypeProps) => {
   const location = useRouter();
   const [isReverse, setIsReserve] = useState(false)
   let videoStatus = 'start'
+  const [y, setY] = useState(window.scrollY);
+  const direction = useRef<ScreenScrollDirection>(ScreenScrollDirection.Down);
+  const isReverseRef = useRef<boolean>(false);
 
-  const handleScroll = (e: any) => {
-    let mouseDown
-    const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1
-    if (isFirefox) {
-      if (e.detail > 0) {
-        mouseDown = true
-      } else {
-        mouseDown = false
-      }
-    } else {
-      if (e.wheelDelta > 0) {
-        mouseDown = true
-      } else {
-        mouseDown = false
-      }
+  useEffect(() => {
+    isReverseRef.current = isReverse;
+  }, [isReverse])
+
+  const handleNavigation = useCallback((e) => {
+    const window = e.currentTarget;
+    if (y > window.scrollY) {
+      direction.current = ScreenScrollDirection.Up;
+    } else if (y < window.scrollY) {
+      direction.current = ScreenScrollDirection.Down;
     }
-    let playVideo1: any = document.getElementById('playVideo')
-    let playVideo2: any = document.getElementById('playVideoReverse')
-    // const display = playVideo1.style.display
-    // let playVideo: any = display === 'none' ? playVideo2 : playVideo1
+    setY(window.scrollY);
+  }, [y])
+
+  useEffect(() => {
+    setY(window.scrollY);
+    window.addEventListener("scroll", handleNavigation);
+
+    return () => {
+      window.removeEventListener("scroll", handleNavigation);
+    };
+  }, [handleNavigation]);
+
+  const handleScroll = useCallback((e: any) => {
+    const playVideo1: any = document.getElementById('playVideo')
+    const playVideo2: any = document.getElementById('playVideoReverse')
+    const rev = isReverseRef.current
+    if (videoStatus === 'playing') return;
 
     if (isMobile) {
-      if (videoStatus === 'start' && window.scrollY > 600) {
+      if (!rev && window.scrollY > 430 && window.scrollY < 900) {
         playVideo1.play()
       }
-      if (videoStatus === 'start' && window.scrollY > 600 && window.scrollY < 900) {
-        playVideo1.play()
-      }
-    } else {
-      if (!mouseDown && videoStatus === 'start' && window.scrollY > 1000) {
-        playVideo1.play()
-      }
-      if (mouseDown && videoStatus === 'start' && window.scrollY > 1000 && window.scrollY < 2300) {
-        playVideo1.play()
-      }
-    }
-
-    if (isMobile) {
-      if (videoStatus === 'start' && window.scrollY > 600) {
-        playVideo2.play()
-      }
-      if (videoStatus === 'start' && window.scrollY > 600 && window.scrollY < 900) {
+      if (rev && window.scrollY < 800) {
         playVideo2.play()
       }
     } else {
-      if (!mouseDown && videoStatus === 'start' && window.scrollY > 1000) {
-        playVideo2.play()
+      const dir = direction.current;
+      const isScrollDown = dir === ScreenScrollDirection.Down;
+      if (!rev && isScrollDown && window.scrollY > 1000 && window.scrollY < 2300) {
+        playVideo1.play()
       }
-      if (mouseDown && videoStatus === 'start' && window.scrollY > 1000 && window.scrollY < 2300) {
+      if (rev && !isScrollDown && window.scrollY < 2300) {
         playVideo2.play()
       }
     }
-
-  }
+  }, [direction, isReverse])
 
   useEffect(() => {
     if (isMobile) {
@@ -92,28 +93,20 @@ export const Main = ({ startBuild }: TypeProps) => {
         const mousewheel = isFirefox ? 'DOMMouseScroll' : 'mousewheel'
         window.removeEventListener(mousewheel, handleScroll)
       }
-
     }
   }, [location]);
 
-
   useEffect(() => {
-    let playVideo1: any = document.getElementById('playVideo')
-    let playVideo2: any = document.getElementById('playVideoReverse')
-    // const display = playVideo1.style.display
-    // let playVideo: any = display === 'none' ? playVideo2 : playVideo1
+    const playVideo1: any = document.getElementById('playVideo')
+    const playVideo2: any = document.getElementById('playVideoReverse')
 
-    playVideo1.addEventListener('playing', () => {
-      videoStatus = 'playing'
-    })
+    playVideo1.addEventListener('playing', () => videoStatus = 'playing')
+    playVideo2.addEventListener('playing', () => videoStatus = 'playing')
+
     playVideo1.addEventListener('ended', () => {
       videoStatus = 'start'
       setIsReserve(true)
       playVideo1.currentTime = 0
-    })
-
-    playVideo2.addEventListener('playing', () => {
-      videoStatus = 'playing'
     })
     playVideo2.addEventListener('ended', () => {
       videoStatus = 'start'

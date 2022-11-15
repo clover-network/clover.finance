@@ -2354,6 +2354,11 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
+"@smakss/react-scroll-direction@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.npmmirror.com/@smakss/react-scroll-direction/-/react-scroll-direction-1.0.1.tgz#372cd612fd5072de6171c50f197e448ad70ad776"
+  integrity sha512-6SnPibn1sOSjiiLI9+L/J0ZK4BxPT6VRlRqxa1wz4ZemSExyI2aFE5VcA3IY8bMR+jYU1nHWui1yiJjM7Ali4A==
+
 "@styled-system/background@^5.1.2":
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/@styled-system/background/-/background-5.1.2.tgz#75c63d06b497ab372b70186c0bf608d62847a2ba"
