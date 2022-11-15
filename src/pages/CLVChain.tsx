@@ -21,16 +21,19 @@ const FeaturesContentMobile = styled.div`
 `
 
 const FeaturesLeftMobile = styled.div`
-  position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   
   video {
     width: 200px;
     z-index: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
   }
 `
 
@@ -422,8 +425,8 @@ export const CLVChain: React.FC = () => {
                 <WrapperMobileOnly>
                   <FeaturesContentMobile>
                     <FeaturesLeftMobile>
-                      <video playsInline style={{display: isReverse ? 'none' : 'inline-block'}}  id='playVideoMobile1' muted src='videos/CLVDevPageSequence.mp4'></video>
-                      <video playsInline style={{display: !isReverse ? 'none' : 'inline-block'}} id='playVideoReverseMobile1' muted src='videos/CLVDevPageSequence2.mp4'></video>
+                      <video playsInline style={{visibility: isReverse ? 'hidden' : 'initial'}}  id='playVideoMobile1' muted src='videos/CLVDevPageSequence.mp4'></video>
+                      <video playsInline style={{visibility: !isReverse ? 'hidden' : 'initial'}} id='playVideoReverseMobile1' muted src='videos/CLVDevPageSequence2.mp4'></video>
                     </FeaturesLeftMobile>
                     <FeaturesRightItemMobile>
                       <h3>{t('etheriumCompatible')}</h3>
