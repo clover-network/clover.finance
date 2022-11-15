@@ -199,32 +199,29 @@ export const CLVChain: React.FC = () => {
   ]
 
   const handleScroll = (e: any) => {
-    let playVideo1: any = document.getElementById('playVideo1')
-    let playVideo2: any = document.getElementById('playVideoReverse1')
-    const rev = isReverseRef.current
     if (videoStatus === 'playing') return;
 
+    let playVideo1: any = document.getElementById('playVideo1')
+    let playVideo2: any = document.getElementById('playVideoReverse1')
     if (isMobile) {
       playVideo1 = document.getElementById('playVideoMobile1')
       playVideo2 = document.getElementById('playVideoReverseMobile1')
     }
+    const rev = isReverseRef.current
+    const dir = direction.current;
+    const isScrollDown = dir === ScreenScrollDirection.Down;
+    let startY = 900;
+    let endY = 2500;
 
     if (isMobile) {
-      if (!rev && window.scrollY > 300 && window.scrollY < 600) {
-        playVideo1.play()
-      }
-      if (rev && window.scrollY < 600) {
-        playVideo2.play()
-      }
-    } else {
-      const dir = direction.current;
-      const isScrollDown = dir === ScreenScrollDirection.Down;
-      if (!rev && isScrollDown && window.scrollY > 900 && window.scrollY < 2500) {
-        playVideo1.play()
-      }
-      if (rev && !isScrollDown && window.scrollY < 2500) {
-        playVideo2.play()
-      }
+      startY = 300;
+      endY = 680;
+    }
+    if (!rev && isScrollDown && window.scrollY > startY && window.scrollY < endY) {
+      playVideo1.play()
+    }
+    if (rev && !isScrollDown && window.scrollY < endY) {
+      playVideo2.play()
     }
   }
 
@@ -256,7 +253,11 @@ export const CLVChain: React.FC = () => {
       playVideo1 = document.getElementById('playVideoMobile1')
       playVideo2 = document.getElementById('playVideoReverseMobile1')
     }
-
+    if (isMobile) {
+      playVideo2.play();
+      playVideo2.pause();
+      playVideo2.currentTime = 0;
+    }
     playVideo1.addEventListener('playing', () => videoStatus = 'playing')
     playVideo2.addEventListener('playing', () => videoStatus = 'playing')
 

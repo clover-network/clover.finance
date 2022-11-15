@@ -53,27 +53,25 @@ export const Main = ({ startBuild }: TypeProps) => {
   }, [handleNavigation]);
 
   const handleScroll = useCallback((e: any) => {
+    if (videoStatus === 'playing') return;
+
     const playVideo1: any = document.getElementById('playVideo')
     const playVideo2: any = document.getElementById('playVideoReverse')
     const rev = isReverseRef.current
-    if (videoStatus === 'playing') return;
+    const dir = direction.current;
+    const isScrollDown = dir === ScreenScrollDirection.Down;
+    let startY = 1000;
+    let endY = 2300;
 
     if (isMobile) {
-      if (!rev && window.scrollY > 430 && window.scrollY < 900) {
-        playVideo1.play()
-      }
-      if (rev && window.scrollY < 800) {
-        playVideo2.play()
-      }
-    } else {
-      const dir = direction.current;
-      const isScrollDown = dir === ScreenScrollDirection.Down;
-      if (!rev && isScrollDown && window.scrollY > 1000 && window.scrollY < 2300) {
-        playVideo1.play()
-      }
-      if (rev && !isScrollDown && window.scrollY < 2300) {
-        playVideo2.play()
-      }
+      startY = 430;
+      endY = 800;
+    }
+    if (!rev && isScrollDown && window.scrollY > startY && window.scrollY < endY) {
+      playVideo1.play()
+    }
+    if (rev && !isScrollDown && window.scrollY < endY) {
+      playVideo2.play()
     }
   }, [direction, isReverse])
 
@@ -113,6 +111,11 @@ export const Main = ({ startBuild }: TypeProps) => {
       setIsReserve(false)
       playVideo2.currentTime = 0
     })
+    if (isMobile) {
+      playVideo2.play();
+      playVideo2.pause();
+      playVideo2.currentTime = 0;
+    }
   }, []);
 
   useEffect(() => {
