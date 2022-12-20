@@ -269,9 +269,7 @@ export const HeaderMobileMenu = (props: Props) => {
 					<div className='menu-view-documentation' onClick={onViewDocumentation}>{t('viewDocumentation')}</div>
 				</TopButtonGroup>
 			</WrapperTableOnly>
-			<MenuItem onClick={() => props.handleChange(props.navList[0])}>Home</MenuItem>
-			<MenuItem onClick={() => props.handleChange(props.navList[1])}>About</MenuItem>
-
+			<MenuItem onClick={() => props.handleChange(props.navList[0])} showBorder={true}>Wallet</MenuItem>
 			<Accordion>
 				<AccordionSummary
 					// expandIcon={<ExpandMoreIcon />}
@@ -281,7 +279,7 @@ export const HeaderMobileMenu = (props: Props) => {
 					<ClvChainGroup>
 						<MenuItem onClick={() => {
 							setShowMore(!showMore)
-							props.handleChange(props.navList[2]);
+							props.handleChange(props.navList[1]);
 						}}>CLV Chains</MenuItem>
 						<div style={{flex: 1}}/>
 						<img
@@ -311,7 +309,9 @@ export const HeaderMobileMenu = (props: Props) => {
 					</ClvChains>
 				</AccordionDetails>
 			</Accordion>
-			<MenuItem onClick={() => props.handleChange(props.navList[3])} showBorder={true}>Wallet</MenuItem>
+			<MenuItem onClick={() => props.handleChange(props.navList[2])}>Home</MenuItem>
+			<MenuItem onClick={() => props.handleChange(props.navList[3])}>About</MenuItem>
+
 			<MenuItem onClick={() => props.handleChange(props.navList[4])} showBorder={true}>Developers</MenuItem>
 			<MenuItem onClick={() => props.handleChange(props.navList[5])} showBorder={true}>Ecosystem</MenuItem>
 			<StoreGroup>

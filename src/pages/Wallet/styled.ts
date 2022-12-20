@@ -1,7 +1,6 @@
-import styled, { css } from 'styled-components';
-import { breakpoint } from '../../mixins/breakpoint';
-import { NormalButton } from '../../components/Btn';
-import { GrayButton } from '../../components/Btn';
+import styled, {css} from 'styled-components';
+import {breakpoint} from '../../mixins/breakpoint';
+import {GrayButton, NormalButton} from '../../components/Btn';
 
 export const Content = styled.div`
   width: 100%;
@@ -315,7 +314,7 @@ export const AnimationTextWrapper = styled.div`
 
 export const AnimationTextItem = styled.div<{ delay?: string }>`
   animation: textUp 0.3s ease-in-out both;
-  animation-delay: ${({ delay }) => (delay ? delay : 0)};
+  animation-delay: ${({delay}) => (delay ? delay : 0)};
 
   @keyframes textUp {
     0% {
@@ -397,6 +396,7 @@ export const ContentBottomBottom = styled.div`
       flex-wrap: wrap;
       gap: 16px;
       flex-shrink: 1;
+
       > img {
         width: 40%;
         height: 40px;
@@ -405,6 +405,7 @@ export const ContentBottomBottom = styled.div`
     tablet_mini: css`
       margin-top: 16px;
       flex-shrink: 1;
+
       > img {
         width: 25%;
         height: 40px;
@@ -412,6 +413,7 @@ export const ContentBottomBottom = styled.div`
     `,
     tablet: css`
       flex-shrink: 1;
+
       > img {
         width: 25%;
         height: 62px;
@@ -440,7 +442,7 @@ export const ImgWrapper = styled.div`
   padding-left: 16%;
   ${breakpoint({
     mobile: css`
-      width: 100%; ;
+      width: 100%;;
     `,
     tablet_mini: css`
       width: 50%;
@@ -533,6 +535,7 @@ export const IdealAvailableTitle = styled.div`
 export const IdealAvailableContent = styled.div`
   width: 100%;
   margin-top: 80px;
+
   ${breakpoint({
     mobile: css``,
     tablet_mini: css`
@@ -1024,6 +1027,7 @@ export const YourPassportTop = styled.div`
   align-items: stretch;
   margin-bottom: 12px;
   gap: 16px;
+
   ${breakpoint({
     mobile: css`
       flex-direction: column;
@@ -1031,23 +1035,22 @@ export const YourPassportTop = styled.div`
     tablet_mini: css``,
     tablet: css``,
   })}
-
   & > div:last-child {
     margin-right: 0;
   }
 `;
 
 export const YourPassportTopItemImg = styled.img`
-  width: 103px;
+  width: 132px;
   ${breakpoint({
     mobile: css`
-      width: 37.71px;
+      width: 48px;
     `,
     tablet_mini: css`
-      width: 37.71px;
+      width: 48px;
     `,
     tablet: css`
-      width: 62.86px;
+      width: 80px;
     `,
   })}
 `;
@@ -1165,6 +1168,7 @@ export const YourPassportBottomLeft = styled.div`
   display: flex;
   align-items: center;
   gap: 16px;
+
   ${breakpoint({
     mobile: css`
       gap: 10px;
@@ -1356,6 +1360,7 @@ export const CloverFinanceBottomFlexWrapper = styled.div`
     mobile: css`
       gap: 0;
       align-items: center;
+
       p {
         font-size: 8px !important;
         transform: scale(0.7) !important;

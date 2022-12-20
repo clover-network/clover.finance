@@ -142,6 +142,7 @@ const NavWrapper = styled.div<{
     &.selected {
       &>span {
         opacity: 0.6!important;
+        margin-right: 44px;
       }
     }
   }
@@ -154,7 +155,7 @@ const NavWrapper = styled.div<{
     letter-spacing: 0.006em;
     color: ${({ isWallet }) => (isWallet ? '#000000' : '#ffffff')};
     cursor: pointer;
-    margin-left: 32px;
+    margin-left: 28px;
     &:hover {
       opacity: 0.8;
     }

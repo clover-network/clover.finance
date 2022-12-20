@@ -33,12 +33,8 @@ const Wrapper = styled.div`
 export const NewContent = () => {
   const navList = [
     {
-      name: t('home'),
-      path: "/",
-    },
-    {
-      name: t('about'),
-      path: "/?type=about",
+      name: t('wallet'),
+      path: "/?type=wallet",
     },
     {
       name: t('CLVChain'),
@@ -59,8 +55,12 @@ export const NewContent = () => {
       ]
     },
     {
-      name: t('wallet'),
-      path: "/?type=wallet",
+      name: t('home'),
+      path: "/",
+    },
+    {
+      name: t('about'),
+      path: "/?type=about",
     },
     {
       name: t('developers'),
@@ -78,16 +78,16 @@ export const NewContent = () => {
     const routeSearch = window.location.search;
     switch (routeSearch) {
       case "":
-        setSelectTab(navList[0]);
-        break;
-      case "?type=about":
-        setSelectTab(navList[1]);
-        break;
-      case "?type=CLVChain":
         setSelectTab(navList[2]);
         break;
-      case "?type=wallet":
+      case "?type=about":
         setSelectTab(navList[3]);
+        break;
+      case "?type=CLVChain":
+        setSelectTab(navList[1]);
+        break;
+      case "?type=wallet":
+        setSelectTab(navList[0]);
         break;
       case "?type=developers":
         setSelectTab(navList[4]);
@@ -112,6 +112,8 @@ export const NewContent = () => {
         currentTab={selectTab}
         handleChange={(tab: any) => changeTab(tab)}
       />
+      {selectTab.name === t('wallet') && <Wallet />}
+      {selectTab.name === t('CLVChain') && <CLVChain />}
       {(selectTab.name === t('home') || window.location.search === '') && (
         <Main
           startBuild={() => {
@@ -120,8 +122,6 @@ export const NewContent = () => {
         />
       )}
       {selectTab.name === t('about') && <About />}
-      {selectTab.name === t('CLVChain') && <CLVChain />}
-      {selectTab.name === t('wallet') && <Wallet />}
       {selectTab.name === t('developers') && <Developers />}
       {selectTab.name === t('ecosystem') && <Ecosystem />}
     </Wrapper>

@@ -1,75 +1,75 @@
-import React, { useEffect } from 'react';
-import { t } from '../../i18n/intl';
-import { Footer } from '../components/Footer';
+import React, {useEffect} from 'react';
+import {t} from '../../i18n/intl';
+import {Footer} from '../components/Footer';
 import {WrapperDesktopOnly, WrapperMobileOnly} from '../../CloverLibrary';
 import {
-  Content,
-  IntroducingCrypto,
-  BuiltForCryptoUsersSpan,
-  BuiltForCryptoUsersImg,
+  AnimationTextItem,
+  AnimationTextWrapper,
+  AppStoreImg,
+  Btns,
   BuiltForCryptoUsersHint,
-  UpperCaseSpan,
-  TextWrapper,
-  LayoutWrapper,
+  BuiltForCryptoUsersImg,
+  BuiltForCryptoUsersSpan,
+  CloverFinanceBottomFlexWrapper,
+  Content,
+  ContentBottom,
+  ContentBottomBottom,
+  ContentBottomTop,
+  ContentBottomTopRight,
   ContentWrapper,
   CreateWalletSpan,
-  ContentBottom,
-  ContentBottomTop,
-  LeftContainer,
-  AnimationTextWrapper,
-  AnimationTextItem,
-  ContentBottomTopRight,
-  ContentBottomBottom,
-  ImgWrapper,
-  Wallet3DImg,
+  FirstIdealAvailableItemWrapper,
+  FirstRow,
+  GetTheExtensionButton,
+  GooglePlayImg,
+  H4Image,
+  H4Span,
   IdealAvailable,
+  IdealAvailableContent,
+  IdealAvailableItem,
+  IdealAvailableItemContent,
+  IdealAvailableItemImg,
   IdealAvailableTitle,
   IdealAvailableTitleHeaderSpan,
   IdealAvailableTitleSpan,
-  IdealAvailableContent,
-  IdealAvailableItem,
-  ReverseIdealAvailableItem,
-  IdealAvailableItemImg,
-  SecondIdealAvailableItemWrapper,
-  FirstIdealAvailableItemWrapper,
-  IdealAvailableItemContent,
-  ItemContentSpan,
+  ImgWrapper,
+  IntroducingCrypto,
   ItemContentH3,
   ItemContentH4,
-  H4Image,
-  H4Span,
-  FirstRow,
-  Title,
-  GetTheExtensionButton,
-  GooglePlayImg,
-  AppStoreImg,
+  ItemContentSpan,
+  LandingContainer,
+  LayoutWrapper,
+  LeftContainer,
   MobileBtns,
-  Btns,
+  Productivity,
+  ReverseIdealAvailableItem,
+  SecondIdealAvailableItemWrapper,
+  StyledFlex,
+  StyledGrayButton,
+  TextWrapper,
+  Title,
+  UpperCaseSpan,
+  Wallet3DImg,
+  Wrapper,
   YourPassport,
-  YourPassportH3,
-  YourPassportSpan,
-  YourPassportTitle,
-  YourPassportContent,
-  YourPassportTopItemSpan,
-  YourPassportTopItemDiv,
-  YourPassportTopItemImg,
-  YourPassportTop,
-  YourPassportTopItem,
   YourPassportBottom,
   YourPassportBottomLeft,
-  YourPassportBottomLeftImg,
   YourPassportBottomLeftH3,
+  YourPassportBottomLeftImg,
   YourPassportCloverFinance,
   YourPassportCloverFinanceImg,
   YourPassportCloverFinanceSpan,
-  CloverFinanceBottomFlexWrapper,
-  StyledFlex,
-  Productivity,
-  StyledGrayButton,
-  Wrapper,
-  LandingContainer,
+  YourPassportContent,
+  YourPassportH3,
+  YourPassportSpan,
+  YourPassportTitle,
+  YourPassportTop,
+  YourPassportTopItem,
+  YourPassportTopItemDiv,
+  YourPassportTopItemImg,
+  YourPassportTopItemSpan,
 } from './styled';
-import { isMobile } from 'react-device-detect';
+import {isMobile} from 'react-device-detect';
 // @ts-ignore
 import enableInlineVideo from 'iphone-inline-video';
 
@@ -77,7 +77,7 @@ export const Wallet: React.FC = () => {
   const scrollTo = () => {
     let anchorElement = document.getElementById('idealAvailableContent');
     if (anchorElement) {
-      anchorElement.scrollIntoView({ behavior: 'smooth' });
+      anchorElement.scrollIntoView({behavior: 'smooth'});
     }
   };
 
@@ -106,14 +106,14 @@ export const Wallet: React.FC = () => {
                 <UpperCaseSpan>{t('introducingCrypto')}</UpperCaseSpan>
                 <BuiltForCryptoUsersSpan>
                   {t('builtForCryptoUsers')}
-                  <BuiltForCryptoUsersImg src="images/clv_icon2.svg" alt="" />
+                  <BuiltForCryptoUsersImg src="images/clv_icon2.svg" alt=""/>
                 </BuiltForCryptoUsersSpan>
                 <BuiltForCryptoUsersHint>
                   {t('builtForCryptoUsersHint')}
                 </BuiltForCryptoUsersHint>
               </TextWrapper>
               <ImgWrapper>
-                <Wallet3DImg src="images/wallet_3d.svg" alt="" />
+                <Wallet3DImg src="images/wallet_3d.svg" alt=""/>
               </ImgWrapper>
             </LayoutWrapper>
           </ContentWrapper>
@@ -140,10 +140,10 @@ export const Wallet: React.FC = () => {
               </ContentBottomTopRight>
             </ContentBottomTop>
             <ContentBottomBottom>
-              <img src="images/gray_forbes.svg" alt="" />
-              <img src="images/gray_telegraph.svg" alt="" />
-              <img src="images/gray_coindesk.svg" alt="" />
-              <img src="images/gray_yahoo.svg" alt="" />
+              <img src="images/gray_forbes.svg" alt=""/>
+              <img src="images/gray_telegraph.svg" alt=""/>
+              <img src="images/gray_coindesk.svg" alt=""/>
+              <img src="images/gray_yahoo.svg" alt=""/>
             </ContentBottomBottom>
           </ContentBottom>
         </IntroducingCrypto>
@@ -161,7 +161,7 @@ export const Wallet: React.FC = () => {
             </IdealAvailableTitle>
             <IdealAvailableContent id="idealAvailableContent">
               <IdealAvailableItem>
-                <IdealAvailableItemImg src="images/cross_chain.svg" alt="" />
+                <IdealAvailableItemImg src="images/cross_chain.svg" alt=""/>
                 <SecondIdealAvailableItemWrapper>
                   <IdealAvailableItemContent>
                     <FirstRow>
@@ -178,7 +178,7 @@ export const Wallet: React.FC = () => {
                     <div>
                       <ItemContentH3>70,000+ Users</ItemContentH3>
                       <ItemContentH4>
-                        <H4Image src="images/reviews.svg" alt="" />
+                        <H4Image src="images/reviews.svg" alt=""/>
                         <H4Span>398 Reviews</H4Span>
                       </ItemContentH4>
                     </div>
@@ -255,7 +255,7 @@ export const Wallet: React.FC = () => {
                     />
                   </MobileBtns>
                 </FirstIdealAvailableItemWrapper>
-                <IdealAvailableItemImg src="images/stake_to_earn.svg" alt="" />
+                <IdealAvailableItemImg src="images/stake_to_earn.svg" alt=""/>
               </ReverseIdealAvailableItem>
               <ReverseIdealAvailableItem>
                 <FirstIdealAvailableItemWrapper>
@@ -270,7 +270,7 @@ export const Wallet: React.FC = () => {
                     </GetTheExtensionButton>
                   </IdealAvailableItemContent>
                 </FirstIdealAvailableItemWrapper>
-                <IdealAvailableItemImg src="images/dashboard.svg" alt="" />
+                <IdealAvailableItemImg src="images/dashboard.svg" alt=""/>
               </ReverseIdealAvailableItem>
             </IdealAvailableContent>
           </IdealAvailable>
@@ -283,7 +283,7 @@ export const Wallet: React.FC = () => {
               <YourPassportTop>
                 <YourPassportTopItem>
                   <YourPassportTopItemImg
-                    src="images/introdusing_icon1.svg"
+                    src="images/passport-img1.png"
                     alt=""
                   />
                   <YourPassportTopItemDiv>
@@ -295,7 +295,7 @@ export const Wallet: React.FC = () => {
                 </YourPassportTopItem>
                 <YourPassportTopItem>
                   <YourPassportTopItemImg
-                    src="images/introdusing_icon1.svg"
+                    src="images/passport-img2.png"
                     alt=""
                   />
                   <YourPassportTopItemDiv>
@@ -307,7 +307,7 @@ export const Wallet: React.FC = () => {
                 </YourPassportTopItem>
                 <YourPassportTopItem>
                   <YourPassportTopItemImg
-                    src="images/introdusing_icon1.svg"
+                    src="images/passport-img3.png"
                     alt=""
                   />
                   <YourPassportTopItemDiv>
@@ -328,7 +328,7 @@ export const Wallet: React.FC = () => {
                     <YourPassportBottomLeftH3>
                       {t('CLVWallet')}
                       <YourPassportCloverFinance>
-                        <img src="images/clover_finance.svg" alt="" />
+                        <img src="images/clover_finance.svg" alt=""/>
                         <YourPassportCloverFinanceSpan>
                           {t('cloverFinance')}
                         </YourPassportCloverFinanceSpan>
@@ -345,7 +345,7 @@ export const Wallet: React.FC = () => {
                         <img
                           src="images/remind.svg"
                           alt=""
-                          style={{ marginLeft: '1px' }}
+                          style={{marginLeft: '1px'}}
                         />
                       </p>
                       <span>70,000+ Users</span>
@@ -382,7 +382,7 @@ export const Wallet: React.FC = () => {
           {/*</JoinUs>*/}
         </div>
       </Content>
-      <Footer isWallet />
+      <Footer isWallet/>
     </Wrapper>
   );
 };
