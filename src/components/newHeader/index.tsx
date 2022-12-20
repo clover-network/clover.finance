@@ -142,8 +142,11 @@ const NavWrapper = styled.div<{
     &.selected {
       &>span {
         opacity: 0.6!important;
-        margin-right: 44px;
+       
       }
+    }
+    &:nth-child(2){
+      margin-right: 44px;
     }
   }
   
