@@ -8,7 +8,7 @@ import {
   AppStoreImg,
   Btns,
   BuiltForCryptoUsersHint,
-  BuiltForCryptoUsersImg,
+  BuiltForCryptoUsersHintBottom,
   BuiltForCryptoUsersSpan,
   CloverFinanceBottomFlexWrapper,
   Content,
@@ -106,11 +106,11 @@ export const Wallet: React.FC = () => {
                 <UpperCaseSpan>{t('introducingCrypto')}</UpperCaseSpan>
                 <BuiltForCryptoUsersSpan>
                   {t('builtForCryptoUsers')}
-                  <BuiltForCryptoUsersImg src="images/clv_icon2.svg" alt=""/>
                 </BuiltForCryptoUsersSpan>
                 <BuiltForCryptoUsersHint>
                   {t('builtForCryptoUsersHint')}
                 </BuiltForCryptoUsersHint>
+                <BuiltForCryptoUsersHintBottom>{t('builtForCryptoUsersHintBottom')}</BuiltForCryptoUsersHintBottom>
               </TextWrapper>
               <ImgWrapper>
                 <Wallet3DImg src="images/wallet_3d.svg" alt=""/>

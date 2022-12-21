@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import SwiperCore, { Pagination } from 'swiper';
-import { t } from '../i18n/intl';
-import { useRouter } from 'next/router';
+import SwiperCore, {Pagination} from 'swiper';
+import {t} from '../i18n/intl';
+import {useRouter} from 'next/router';
 import NewHeader from '../components/newHeader';
-import { Main } from './Main';
-import { About } from './About';
-import { CLVChain } from './CLVChain';
-import { Wallet } from './Wallet';
-import { Developers } from './Developers';
-import { Ecosystem } from './Ecosystem';
-import styled, { css } from 'styled-components';
-import { breakpoint } from '../mixins/breakpoint';
+import {Main} from './Main';
+import {About} from './About';
+import {CLVChain} from './CLVChain';
+import {Wallet} from './Wallet';
+import {Developers} from './Developers';
+import {Ecosystem} from './Ecosystem';
+import styled, {css} from 'styled-components';
+import {breakpoint} from '../mixins/breakpoint';
 
 SwiperCore.use([Pagination]);
 
@@ -34,7 +34,7 @@ export const NewContent = () => {
   const navList = [
     {
       name: t('wallet'),
-      path: "/?type=wallet",
+      path: "/",
     },
     {
       name: t('CLVChain'),
@@ -56,7 +56,7 @@ export const NewContent = () => {
     },
     {
       name: t('home'),
-      path: "/",
+      path: "/?type=home",
     },
     {
       name: t('about'),
@@ -78,6 +78,9 @@ export const NewContent = () => {
     const routeSearch = window.location.search;
     switch (routeSearch) {
       case "":
+        setSelectTab(navList[0]);
+        break;
+      case "?type=home":
         setSelectTab(navList[2]);
         break;
       case "?type=about":
@@ -85,9 +88,6 @@ export const NewContent = () => {
         break;
       case "?type=CLVChain":
         setSelectTab(navList[1]);
-        break;
-      case "?type=wallet":
-        setSelectTab(navList[0]);
         break;
       case "?type=developers":
         setSelectTab(navList[4]);
@@ -101,9 +101,10 @@ export const NewContent = () => {
     }
   }, [location]);
   const changeTab = (tab: any) => {
-    location.push(tab.path, undefined, { shallow: true });
+    location.push(tab.path, undefined, {shallow: true});
     setSelectTab(tab);
   };
+  console.log({selectTab})
 
   return (
     <Wrapper>
@@ -112,8 +113,8 @@ export const NewContent = () => {
         currentTab={selectTab}
         handleChange={(tab: any) => changeTab(tab)}
       />
-      {selectTab.name === t('wallet') && <Wallet />}
-      {selectTab.name === t('CLVChain') && <CLVChain />}
+      {selectTab.name === t('wallet') && <Wallet/>}
+      {selectTab.name === t('CLVChain') && <CLVChain/>}
       {(selectTab.name === t('home') || window.location.search === '') && (
         <Main
           startBuild={() => {
@@ -121,9 +122,9 @@ export const NewContent = () => {
           }}
         />
       )}
-      {selectTab.name === t('about') && <About />}
-      {selectTab.name === t('developers') && <Developers />}
-      {selectTab.name === t('ecosystem') && <Ecosystem />}
+      {selectTab.name === t('about') && <About/>}
+      {selectTab.name === t('developers') && <Developers/>}
+      {selectTab.name === t('ecosystem') && <Ecosystem/>}
     </Wrapper>
   );
 };

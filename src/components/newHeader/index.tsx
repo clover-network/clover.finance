@@ -175,6 +175,7 @@ const MenuList = styled.div`
   border-radius: 16px;
   padding: 12px 20px;
   display: none;
+  z-index: 9;
 `
 
 const MenuItem = styled.div`

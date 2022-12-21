@@ -309,8 +309,8 @@ export const HeaderMobileMenu = (props: Props) => {
 					</ClvChains>
 				</AccordionDetails>
 			</Accordion>
-			<MenuItem onClick={() => props.handleChange(props.navList[2])}>Home</MenuItem>
-			<MenuItem onClick={() => props.handleChange(props.navList[3])}>About</MenuItem>
+			<MenuItem onClick={() => props.handleChange(props.navList[2])} showBorder={true}>Home</MenuItem>
+			<MenuItem onClick={() => props.handleChange(props.navList[3])} showBorder={true}>About</MenuItem>
 
 			<MenuItem onClick={() => props.handleChange(props.navList[4])} showBorder={true}>Developers</MenuItem>
 			<MenuItem onClick={() => props.handleChange(props.navList[5])} showBorder={true}>Ecosystem</MenuItem>

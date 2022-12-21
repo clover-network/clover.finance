@@ -147,6 +147,35 @@ export const BuiltForCryptoUsersHint = styled.span`
   })};
 `;
 
+export const BuiltForCryptoUsersHintBottom = styled.span`
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 40px;
+  letter-spacing: 0.006em;
+
+  color: #0C0B0B;
+  margin-top: 40px;
+  ${breakpoint({
+    mobile: css`
+      font-size: 12px;
+      line-height: 20px;
+      margin-bottom: 0;
+    `,
+    tablet_mini: css`
+      font-size: 12px;
+      line-height: 20px;
+      margin-bottom: 0;
+    `,
+    tablet: css`
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 0;
+    `,
+  })};
+`
+
 export const TextWrapper = styled.div`
   width: 50%;
   padding-bottom: 64px;
