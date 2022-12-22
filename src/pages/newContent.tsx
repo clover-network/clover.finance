@@ -104,7 +104,6 @@ export const NewContent = () => {
     location.push(tab.path, undefined, {shallow: true});
     setSelectTab(tab);
   };
-  console.log({selectTab})
 
   return (
     <Wrapper>

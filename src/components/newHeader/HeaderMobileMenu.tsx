@@ -9,6 +9,7 @@ interface Props {
 	startBuild: () => void;
 	navList: any[];
 	handleChange: (tab: any) => void;
+	currentTab: any;
 }
 
 const Wrapper = styled.div`
@@ -112,15 +113,16 @@ const Title = styled.div`
     color: ${(props) => props.theme.colors.TITLE};
 `
 
-const MenuItem = styled.div<{ showBorder?: boolean }>`
+const MenuItem = styled.div<{ showBorder?: boolean, isSelected?: boolean }>`
 	width: 100%;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 32px;
-    color: ${(props) => props.theme.colors.TITLE};
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 32px;
+	color: ${(props) => props.theme.colors.TITLE};
+	opacity: ${({isSelected}) => isSelected ? '0.6' : '1'};
 	padding: 12px 0;
-    border-top: ${({showBorder, theme}) => showBorder ? `1px solid #333232` : 'unset'};
-    cursor: pointer;
+	border-top: ${({showBorder, theme}) => showBorder ? `1px solid #333232` : 'unset'};
+	cursor: pointer;
 `
 
 const ClvChains = styled.div`
@@ -237,7 +239,6 @@ const ClvChainGroup = styled.div`
 `
 
 export const HeaderMobileMenu = (props: Props) => {
-
 	const [showMore, setShowMore] = useState(false);
 
 	const onViewDocumentation = () => {
@@ -269,7 +270,7 @@ export const HeaderMobileMenu = (props: Props) => {
 					<div className='menu-view-documentation' onClick={onViewDocumentation}>{t('viewDocumentation')}</div>
 				</TopButtonGroup>
 			</WrapperTableOnly>
-			<MenuItem onClick={() => props.handleChange(props.navList[0])} showBorder={true}>Wallet</MenuItem>
+			<MenuItem isSelected={props.currentTab.name === t('wallet')} onClick={() => props.handleChange(props.navList[0])} showBorder={true}>Wallet</MenuItem>
 			<Accordion>
 				<AccordionSummary
 					// expandIcon={<ExpandMoreIcon />}
@@ -277,7 +278,7 @@ export const HeaderMobileMenu = (props: Props) => {
 					id="panel1a-header"
 				>
 					<ClvChainGroup>
-						<MenuItem onClick={() => {
+						<MenuItem isSelected={props.currentTab.name === t('CLVChains')} onClick={() => {
 							setShowMore(!showMore)
 							props.handleChange(props.navList[1]);
 						}}>CLV Chains</MenuItem>
@@ -309,11 +310,11 @@ export const HeaderMobileMenu = (props: Props) => {
 					</ClvChains>
 				</AccordionDetails>
 			</Accordion>
-			<MenuItem onClick={() => props.handleChange(props.navList[2])} showBorder={true}>Home</MenuItem>
-			<MenuItem onClick={() => props.handleChange(props.navList[3])} showBorder={true}>About</MenuItem>
+			<MenuItem isSelected={props.currentTab.name === t('home')} onClick={() => props.handleChange(props.navList[2])} showBorder={true}>Home</MenuItem>
+			<MenuItem isSelected={props.currentTab.name === t('about')} onClick={() => props.handleChange(props.navList[3])} showBorder={true}>About</MenuItem>
 
-			<MenuItem onClick={() => props.handleChange(props.navList[4])} showBorder={true}>Developers</MenuItem>
-			<MenuItem onClick={() => props.handleChange(props.navList[5])} showBorder={true}>Ecosystem</MenuItem>
+			<MenuItem isSelected={props.currentTab.name === t('developers')} onClick={() => props.handleChange(props.navList[4])} showBorder={true}>Developers</MenuItem>
+			<MenuItem isSelected={props.currentTab.name === t('ecosystem')} onClick={() => props.handleChange(props.navList[5])} showBorder={true}>Ecosystem</MenuItem>
 			<StoreGroup>
 				<StoreIcon style={{marginBottom: '8px'}} onClick={onClickGoogle}>
 					<img src='images/logo_google.svg' alt='' />

@@ -338,9 +338,10 @@ export default function NewHeader(props: Props): ReactElement {
             />
             <div hidden={!showNavs}>
               <HeaderMobileMenu
-                  startBuild={onStartBuild}
-                  navList={navList}
-                  handleChange={(tab: any) => handleTabChange(tab)}/>
+                currentTab={currentTab}
+                startBuild={onStartBuild}
+                navList={navList}
+                handleChange={(tab: any) => handleTabChange(tab)}/>
             </div>
           </WrapperMobileOnly>
 
@@ -352,9 +353,10 @@ export default function NewHeader(props: Props): ReactElement {
             />
             <div hidden={!showNavs}>
               <HeaderMobileMenu
-                  startBuild={onStartBuild}
-                  navList={navList}
-                  handleChange={(tab: any) => handleTabChange(tab)}/>
+                currentTab={currentTab}
+                startBuild={onStartBuild}
+                navList={navList}
+                handleChange={(tab: any) => handleTabChange(tab)}/>
             </div>
           </WrapperTableMiniOnly>
 
@@ -369,9 +371,10 @@ export default function NewHeader(props: Props): ReactElement {
             </TableMiniIconGroup>
             <div hidden={!showNavs}>
               <HeaderMobileMenu
-                  startBuild={onStartBuild}
-                  navList={navList}
-                  handleChange={(tab: any) => handleTabChange(tab)}/>
+                currentTab={currentTab}
+                startBuild={onStartBuild}
+                navList={navList}
+                handleChange={(tab: any) => handleTabChange(tab)}/>
             </div>
           </WrapperTableAndTableMini>
 
