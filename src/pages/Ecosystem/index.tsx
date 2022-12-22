@@ -1,36 +1,36 @@
 import React, {useEffect} from 'react';
-import { t } from '../../i18n/intl';
-import { Footer } from '../components/Footer';
+import {t} from '../../i18n/intl';
+import {Footer} from '../components/Footer';
 import {
   Background,
-  Content,
-  EnterWeb3,
-  ContentWrapper,
-  TextWrapper,
-  ContentBottom,
-  ContentBottomTitle,
-  ContentBottomContent,
-  ContentBottomTop,
-  ContentBottomBottom,
-  ContentBottomItem,
-  DAppFeaturesItem,
   Btns,
   CLVChain,
-  CLVChainTitle,
   CLVChainContent,
   CLVChainItem,
+  CLVChainTitle,
+  Content,
+  ContentBottom,
+  ContentBottomBottom,
+  ContentBottomContent,
+  ContentBottomItem,
+  ContentBottomTitle,
+  ContentBottomTop,
+  ContentWrapper,
+  DAppFeaturesItem,
+  EnterWeb3,
+  LandingContainer,
+  Mobile,
   ProductSolution,
-  ProductSolutionLeft,
   ProductSolutionItem,
+  ProductSolutionLeft,
   ProductSolutionRight,
+  StyledGrayButton,
+  StyledNormalButton,
+  TextWrapper,
   ToolsOnCLV,
-  ToolsOnCLVTitle,
   ToolsOnCLVContent,
   ToolsOnCLVItem,
-  LandingContainer,
-  StyledNormalButton,
-  StyledGrayButton,
-  Mobile,
+  ToolsOnCLVTitle,
   Wrapper,
 } from './styled';
 import {isMobile} from "react-device-detect";
@@ -138,7 +138,7 @@ export const Ecosystem: React.FC = () => {
 
   return (
     <Wrapper>
-      <Background />
+      <Background/>
       <LandingContainer>
         <EnterWeb3>
           <video playsInline autoPlay loop muted src="videos/particles.mp4"></video>
@@ -147,7 +147,7 @@ export const Ecosystem: React.FC = () => {
               <TextWrapper>
                 <div>
                   {t('theCLVInfrastructure')}
-                  <img src="images/clv_icon1.svg" alt="" />
+                  <img src="images/clv_icon1.svg" alt=""/>
                 </div>
               </TextWrapper>
             </ContentWrapper>
@@ -160,7 +160,7 @@ export const Ecosystem: React.FC = () => {
                       key={`ecosystem_${index}`}
                       className={index === 2 ? 'selected' : ''}
                     >
-                      <img src={item.icon} alt="" />
+                      <img src={item.icon} alt=""/>
                       <span>{item.name}</span>
                     </ContentBottomItem>
                   ))}
@@ -192,7 +192,7 @@ export const Ecosystem: React.FC = () => {
               <CLVChainContent>
                 {clvChains.map((item, index) => (
                   <CLVChainItem key={`CLVChain_${index}`}>
-                    <img src={item.icon} alt="" />
+                    <img src={item.icon} alt=""/>
                     <span>{item.content}</span>
                   </CLVChainItem>
                 ))}
@@ -210,7 +210,7 @@ export const Ecosystem: React.FC = () => {
                       window.open(item.url, '_blank');
                     }}
                   >
-                    <img src={item.icon} alt="" />
+                    <img src={item.icon} alt=""/>
                     <div>
                       <h3>{item.title}</h3>
                       <span>{item.content}</span>
@@ -242,7 +242,7 @@ export const Ecosystem: React.FC = () => {
                 <ToolsOnCLVItem>
                   <div>
                     <div>
-                      <img src="images/clv_icon1.svg" alt="" />
+                      <img src="images/clv_icon1.svg" alt=""/>
                       <span>{t('integrateCLVWallet')}</span>
                     </div>
                     <span>{t('integrateCLVWalletHint')}</span>
@@ -279,7 +279,13 @@ export const Ecosystem: React.FC = () => {
                     <div>{t('CLVPortal')}</div>
                     <span>{t('CLVPortalHint2')}</span>
                   </div>
-                  <StyledGrayButton>{t('learnMore')}</StyledGrayButton>
+                  <StyledGrayButton
+                    onClick={() => {
+                      window.open('https://portal.clv.org/', '_blank')
+                    }}
+                  >
+                    {t('learnMore')}
+                  </StyledGrayButton>
                 </ToolsOnCLVItem>
                 <ToolsOnCLVItem>
                   <div>
@@ -313,7 +319,7 @@ export const Ecosystem: React.FC = () => {
           </div>
         </Content>
       </LandingContainer>
-      <Footer />
+      <Footer/>
     </Wrapper>
   );
 };
