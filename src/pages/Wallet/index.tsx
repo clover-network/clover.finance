@@ -265,7 +265,9 @@ export const Wallet: React.FC = () => {
                       <Title>{t('onePortalOfAll')}</Title>
                     </FirstRow>
                     <ItemContentSpan>{t('onePortalOfAllHint')}</ItemContentSpan>
-                    <GetTheExtensionButton>
+                    <GetTheExtensionButton onClick={()=>{
+                      window.open('https://portal.clv.org/','_blank')
+                    }}>
                       {t('exploreNow')}
                     </GetTheExtensionButton>
                   </IdealAvailableItemContent>
