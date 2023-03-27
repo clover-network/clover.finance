@@ -620,6 +620,18 @@ export const IdealAvailableItemImg = styled.img`
   })}
 `;
 
+export const StakeToEarnImg = styled(IdealAvailableItemImg)`
+  width: 25%;
+  margin-top: 30px;
+  margin-right: 70px;
+  ${breakpoint({
+    tablet: css`
+      width: 280px;
+      top: 52px;
+    `,
+  })}
+`
+
 export const GetTheExtensionButton = styled(NormalButton)`
   height: 64px;
   ${breakpoint({

@@ -83,7 +83,7 @@ export const Ecosystem: React.FC = () => {
     {
       icon: 'images/product1.svg',
       title: 'Killswitch',
-      content: 'Mutichain Yield Aggregator with Stoploss & Takeprofit',
+      content: 'A Muti-chain DeFi Aggregator.',
       url: 'https://www.killswitch.finance/',
     },
     {

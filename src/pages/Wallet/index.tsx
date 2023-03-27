@@ -29,6 +29,7 @@ import {
   IdealAvailableItem,
   IdealAvailableItemContent,
   IdealAvailableItemImg,
+  StakeToEarnImg,
   IdealAvailableTitle,
   IdealAvailableTitleHeaderSpan,
   IdealAvailableTitleSpan,
@@ -255,7 +256,7 @@ export const Wallet: React.FC = () => {
                     />
                   </MobileBtns>
                 </FirstIdealAvailableItemWrapper>
-                <IdealAvailableItemImg src="images/stake_to_earn.svg" alt=""/>
+                <StakeToEarnImg src="images/stake_to_earn.svg" alt=""/>
               </ReverseIdealAvailableItem>
               <ReverseIdealAvailableItem>
                 <FirstIdealAvailableItemWrapper>
@@ -265,6 +266,7 @@ export const Wallet: React.FC = () => {
                       <Title>{t('onePortalOfAll')}</Title>
                     </FirstRow>
                     <ItemContentSpan>{t('onePortalOfAllHint')}</ItemContentSpan>
+                    <ItemContentSpan>{t('onePortalOfAllHint1')}</ItemContentSpan>
                     <GetTheExtensionButton onClick={()=>{
                       window.open('https://portal.clv.org/','_blank')
                     }}>

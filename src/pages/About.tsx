@@ -300,45 +300,45 @@ export const About: React.FC = () => {
                             </NewsUpdateTitle>
                             <NewsUpdateContent>
                                 <NewsUpdateItem onClick={() => {
-                                    window.open('https://medium.com/@clv_org/seamless-access-to-all-things-defi-with-clv-8c4002a001b4')
+                                    window.open('https://medium.com/@clv_org/clv-wallet-now-supports-btc-ordinals-1d41735be96e')
                                 }}>
                                     <NewsUpdateItemLeft>
-                                        <span>13 Oct 2022</span>
+                                        <span>13 MAR 2023</span>
                                         <WrapperDesktopOnly>
                                             <img src="images/news2.svg" alt=""/>
                                         </WrapperDesktopOnly>
                                     </NewsUpdateItemLeft>
                                     <NewsUpdateItemRight>
-                                        <div>{t('seamlessAccess')}</div>
-                                        <span>{t('seamlessAccessHint')}</span>
+                                        <div>{t('CLVWalletNow')}</div>
+                                        <span>{t('CLVWalletNowHint')}</span>
                                     </NewsUpdateItemRight>
                                 </NewsUpdateItem>
                                 <NewsUpdateItem onClick={() => {
-                                    window.open('https://medium.com/@clv_org/clv-quarterly-wrap-up-a-look-into-q3-2022-722a7baeae11')
+                                    window.open('https://medium.com/@clv_org/the-short-month-that-packed-a-punch-a-recap-of-clvs-february-2023-ad482c3bc2e')
                                 }}>
                                     <NewsUpdateItemLeft>
-                                        <span>05 Oct 2022</span>
+                                        <span>06 MAR 2023</span>
                                         <WrapperDesktopOnly>
                                             <img src="images/news3.svg" alt=""/>
                                         </WrapperDesktopOnly>
                                     </NewsUpdateItemLeft>
                                     <NewsUpdateItemRight>
-                                        <div>{t('CLVQuarterly')}</div>
-                                        <span>{t('CLVQuarterlyHint')}</span>
+                                        <div>{t('theShortMonth')}</div>
+                                        <span>{t('theShortMonthHint')}</span>
                                     </NewsUpdateItemRight>
                                 </NewsUpdateItem>
                                 <NewsUpdateItem onClick={() => {
-                                    window.open('https://medium.com/@clv_org/introducing-clvs-cornerstones-meet-more-clv-team-members-f88fb90900da')
+                                    window.open('https://medium.com/@clv_org/say-hello-to-the-new-member-of-clv-ecosystem-introducing-wallet-talk-by-clv-1f9ded2c843e')
                                 }}>
                                     <NewsUpdateItemLeft>
-                                        <span>20 Sep 2022</span>
+                                        <span>15 FEB 2023</span>
                                         <WrapperDesktopOnly>
                                             <img src="images/news1.svg" alt=""/>
                                         </WrapperDesktopOnly>
                                     </NewsUpdateItemLeft>
                                     <NewsUpdateItemRight>
-                                        <div>{t('introducingCLV')}</div>
-                                        <span>{t('Q1Hint')}</span>
+                                        <div>{t('sayHello')}</div>
+                                        <span>{t('sayHelloHint')}</span>
 
                                         <WrapperMobileOnly>
                                             <GrayButton

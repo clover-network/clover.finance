@@ -188,12 +188,6 @@ export const CLVChain: React.FC = () => {
       </div>
     },
     {
-      title: "Why did my CLV Wallet swap fail?",
-      content: <div>
-        <span>When you execute a swap through CLV Wallet, you interact directly with the liquidity source that offered the best price for your requested trade. The main reason why your swap might have failed is likely to be slippage. When you perform a swap, you agree to a price quote. If the price of the swap goes outside of the allowed slippage set (typically 2.5%), it will fail, in order to prevent you from seeing a huge variance in value when completed. There is a higher risk of slippage if you're trading a pair that includes a volatile asset, as its price is more likely to change while processing the transaction. If your swap fails, you can retry the swap, but this time, input a higher slippage percentage.</span>
-      </div>
-    },
-    {
       title: "Why did my CLV Wallet bridge fail?",
       content: <div>
         <span>The most common reason why bridging fails is due to an insufficient balance of native tokens in your account. Therefore, you must ensure you own sufficient native tokens to pay the cross-chain and transaction fees.</span>
@@ -400,24 +394,24 @@ export const CLVChain: React.FC = () => {
                               }}
                           >{t('learnMore')}</GrayButton>
                         </FeaturesRightItem>
-                        <FeaturesRightItem>
-                          <h3>{t('highStakingReturn')}</h3>
-                          <p>Current avg. APY <span>26.62%</span></p>
-                          <span>{t('highStakingReturnHint')}</span>
-                          <Btns>
-                            <NormalButton
-                                width='316px'
-                                onClick={() => {
-                                  window.open('https://apps.apple.com/app/clover-wallet/id1570072858', "_blank")
-                                }}
-                            >{t('stakeOnMobile')}</NormalButton>
-                            <GrayButton
-                              width='316px'
-                              onClick={()=>{window.open('https://portal.clv.org/','_blank')}}>
-                              {t('enterCLVPortal')}
-                            </GrayButton>
-                          </Btns>
-                        </FeaturesRightItem>
+                        {/*<FeaturesRightItem>*/}
+                        {/*  <h3>{t('highStakingReturn')}</h3>*/}
+                        {/*  <p>Current avg. APY <span>26.62%</span></p>*/}
+                        {/*  <span>{t('highStakingReturnHint')}</span>*/}
+                        {/*  <Btns>*/}
+                        {/*    <NormalButton*/}
+                        {/*        width='316px'*/}
+                        {/*        onClick={() => {*/}
+                        {/*          window.open('https://apps.apple.com/app/clover-wallet/id1570072858', "_blank")*/}
+                        {/*        }}*/}
+                        {/*    >{t('stakeOnMobile')}</NormalButton>*/}
+                        {/*    <GrayButton*/}
+                        {/*      width='316px'*/}
+                        {/*      onClick={()=>{window.open('https://portal.clv.org/','_blank')}}>*/}
+                        {/*      {t('enterCLVPortal')}*/}
+                        {/*    </GrayButton>*/}
+                        {/*  </Btns>*/}
+                        {/*</FeaturesRightItem>*/}
                         <FeaturesRightItem>
                           <h3>{t('smartContractsGovernance')}</h3>
                           <span>{t('smartContractsGovernanceHint')}</span>
