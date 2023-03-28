@@ -256,7 +256,7 @@ export const Wallet: React.FC = () => {
                     />
                   </MobileBtns>
                 </FirstIdealAvailableItemWrapper>
-                <StakeToEarnImg src="images/stake_to_earn.svg" alt=""/>
+                <StakeToEarnImg src="images/stake_to_earn1.svg" alt=""/>
               </ReverseIdealAvailableItem>
               <ReverseIdealAvailableItem>
                 <FirstIdealAvailableItemWrapper>
