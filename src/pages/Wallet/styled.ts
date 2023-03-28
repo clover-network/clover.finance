@@ -625,6 +625,12 @@ export const StakeToEarnImg = styled(IdealAvailableItemImg)`
   margin-top: 30px;
   margin-right: 70px;
   ${breakpoint({
+    mobile: css`
+      width: 43%;
+    `,
+    tablet_mini: css`
+      width: 35%;
+    `,
     tablet: css`
       width: 280px;
       top: 52px;
