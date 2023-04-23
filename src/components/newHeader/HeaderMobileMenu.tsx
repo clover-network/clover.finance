@@ -293,17 +293,17 @@ export const HeaderMobileMenu = (props: Props) => {
 				<AccordionDetails>
 					<ClvChains>
 						<ClvChainItem
-							onClick={() => window.open(props.navList[2].menuList[0].url, "_blank")}
+							onClick={() => window.open(props.navList[1].menuList[0].url, "_blank")}
 						>
 							Cross Chain Explorer
 						</ClvChainItem>
 						<ClvChainItem
-							onClick={() => window.open(props.navList[2].menuList[1].url, "_blank")}
+							onClick={() => window.open(props.navList[1].menuList[1].url, "_blank")}
 						>
 							EVM Bridge
 						</ClvChainItem>
 						<ClvChainItem
-							onClick={() => window.open(props.navList[2].menuList[2].url, "_blank")}
+							onClick={() => window.open(props.navList[1].menuList[2].url, "_blank")}
 						>
 							CLV Scan
 						</ClvChainItem>
