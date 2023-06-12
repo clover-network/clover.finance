@@ -300,10 +300,10 @@ export const About: React.FC = () => {
                             </NewsUpdateTitle>
                             <NewsUpdateContent>
                                 <NewsUpdateItem onClick={() => {
-                                    window.open('https://medium.com/@clv_org/clv-wallet-now-supports-btc-ordinals-1d41735be96e')
+                                    window.open('https://medium.com/@clv_org/clv-monthly-update-may-2023-a-month-of-thrilling-milestones-4a6fb6915a23')
                                 }}>
                                     <NewsUpdateItemLeft>
-                                        <span>13 MAR 2023</span>
+                                        <span>7 JUN 2023</span>
                                         <WrapperDesktopOnly>
                                             <img src="images/news2.svg" alt=""/>
                                         </WrapperDesktopOnly>
@@ -314,10 +314,10 @@ export const About: React.FC = () => {
                                     </NewsUpdateItemRight>
                                 </NewsUpdateItem>
                                 <NewsUpdateItem onClick={() => {
-                                    window.open('https://medium.com/@clv_org/the-short-month-that-packed-a-punch-a-recap-of-clvs-february-2023-ad482c3bc2e')
+                                    window.open('https://medium.com/@clv_org/clv-wallet-integrates-polygonid-to-create-a-trustless-secure-and-privacy-preserving-framework-for-304c6e714bc4')
                                 }}>
                                     <NewsUpdateItemLeft>
-                                        <span>06 MAR 2023</span>
+                                        <span>24 MAY 2023</span>
                                         <WrapperDesktopOnly>
                                             <img src="images/news3.svg" alt=""/>
                                         </WrapperDesktopOnly>
@@ -328,10 +328,10 @@ export const About: React.FC = () => {
                                     </NewsUpdateItemRight>
                                 </NewsUpdateItem>
                                 <NewsUpdateItem onClick={() => {
-                                    window.open('https://medium.com/@clv_org/say-hello-to-the-new-member-of-clv-ecosystem-introducing-wallet-talk-by-clv-1f9ded2c843e')
+                                    window.open('https://medium.com/@clv_org/clv-scan-reloaded-a-new-and-improved-blockchain-explorer-2345f19a95d3')
                                 }}>
                                     <NewsUpdateItemLeft>
-                                        <span>15 FEB 2023</span>
+                                        <span>12 APR 2023</span>
                                         <WrapperDesktopOnly>
                                             <img src="images/news1.svg" alt=""/>
                                         </WrapperDesktopOnly>
