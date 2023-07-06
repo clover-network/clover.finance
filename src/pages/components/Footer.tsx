@@ -70,15 +70,15 @@ export const Footer = ({ isWallet }: FooterProps) => {
                       {t('extensionWallet')}
                     </a>
                   </Link>
-                  <Link>
-                    <a
-                      href="https://portal.clv.org"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {t('CLVPortal')}
-                    </a>
-                  </Link>
+                  {/*<Link>*/}
+                  {/*  <a*/}
+                  {/*    href="https://portal.clv.org"*/}
+                  {/*    target="_blank"*/}
+                  {/*    rel="noreferrer"*/}
+                  {/*  >*/}
+                  {/*    {t('CLVPortal')}*/}
+                  {/*  </a>*/}
+                  {/*</Link>*/}
                   <Link>
                     <a
                       href="https://clover.subscan.io/"
