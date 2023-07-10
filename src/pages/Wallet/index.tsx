@@ -267,11 +267,11 @@ export const Wallet: React.FC = () => {
                     </FirstRow>
                     <ItemContentSpan>{t('onePortalOfAllHint')}</ItemContentSpan>
                     <ItemContentSpan>{t('onePortalOfAllHint1')}</ItemContentSpan>
-                    {/*<GetTheExtensionButton onClick={()=>{*/}
-                    {/*  window.open('https://portal.clv.org/','_blank')*/}
-                    {/*}}>*/}
-                    {/*  {t('exploreNow')}*/}
-                    {/*</GetTheExtensionButton>*/}
+                    <GetTheExtensionButton onClick={()=>{
+                      window.open('https://portal.clv.org/','_blank')
+                    }}>
+                      {t('exploreNow')}
+                    </GetTheExtensionButton>
                   </IdealAvailableItemContent>
                 </FirstIdealAvailableItemWrapper>
                 <IdealAvailableItemImg src="images/dashboard.svg" alt=""/>

@@ -642,7 +642,7 @@ export const GetTheExtensionButton = styled(NormalButton)`
   height: 64px;
   ${breakpoint({
     mobile: css`
-      height: 40px;
+      display: none;
     `,
     tablet_mini: css`
       height: 40px;
