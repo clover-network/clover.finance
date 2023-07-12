@@ -45,8 +45,8 @@ export const Developers: React.FC = () => {
       name: 'Onto Wallet',
     },
     {
-      icon: 'images/multichain.svg',
-      name: 'Multichain',
+      icon: 'images/polygon_id.svg',
+      name: 'Polygon ID',
     },
     {
       icon: 'images/Wanchain.svg',

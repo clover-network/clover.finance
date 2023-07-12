@@ -78,6 +78,7 @@ const TopButtonGroup = styled.div`
         ${breakpoint({
             mobile: css`
                 flex: 1;
+							display: none;
             `,
             tablet_mini: css`
                 flex: 1;
@@ -111,6 +112,7 @@ const Title = styled.div`
     line-height: 36px;
 	margin-top: 24px;
     color: ${(props) => props.theme.colors.TITLE};
+	
 `
 
 const MenuItem = styled.div<{ showBorder?: boolean, isSelected?: boolean }>`
@@ -260,7 +262,7 @@ export const HeaderMobileMenu = (props: Props) => {
 					<div className='menu-start-building' onClick={props.startBuild}>{t('startBuilding')}</div>
 					<div className='menu-view-documentation' onClick={onViewDocumentation}>{t('viewDocumentation')}</div>
 				</TopButtonGroup>
-				<Title>{t('Menu')}</Title>
+				{/*<Title>{t('Menu')}</Title>*/}
 			</MobileAndTableMini>
 			<WrapperTableOnly>
 				<TopButtonGroup>
@@ -270,7 +272,7 @@ export const HeaderMobileMenu = (props: Props) => {
 					<div className='menu-view-documentation' onClick={onViewDocumentation}>{t('viewDocumentation')}</div>
 				</TopButtonGroup>
 			</WrapperTableOnly>
-			<MenuItem isSelected={props.currentTab.name === t('wallet')} onClick={() => props.handleChange(props.navList[0])} showBorder={true}>Wallet</MenuItem>
+			<MenuItem isSelected={props.currentTab.name === t('wallet')} onClick={() => props.handleChange(props.navList[0])}>Wallet</MenuItem>
 			<Accordion>
 				<AccordionSummary
 					// expandIcon={<ExpandMoreIcon />}

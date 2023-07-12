@@ -49,6 +49,7 @@ export const NormalButton = styled.div<{
       font-weight: 400;
       font-size: 12px;
       line-height: 20px;
+      margin-bottom: 8px;
     `,
     tablet: css`
       font-weight: 500;
@@ -61,6 +62,66 @@ export const NormalButton = styled.div<{
       line-height: 20px;
     `
   })};
+`;
+
+export const CLVPortalButton = styled.div<{
+  width?: string;
+  height?: string;
+  margin?: string;
+  disabled?: boolean;
+}>`
+  width: ${({ width }) => (width ? width : '100%')};
+  height: ${({ height }) => (height ? height : '64px')};
+  min-width: fit-content;
+  white-space: nowrap;
+  --c1: #bdfde2;
+  --c2: #9bdaf6;
+  background: linear-gradient(
+      90deg,
+      var(--c1, #f6d365),
+      var(--c2, #fda085) 51%,
+      var(--c1, #f6d365)
+    )
+    var(--x, 0) / 200%;
+  border-radius: 32px;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 32px;
+  text-align: center;
+  color: ${({ color }) => (color ? color : '#0C0B0B')};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    --x: 100%;
+  }
+
+  &:disabled {
+    cursor: unset;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    opacity: 0.5;
+  }
+
+  ${breakpoint({
+  mobile: css`
+      display: none;
+    `,
+  tablet: css`
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 28px;
+    `,
+  tablet_mini: css`
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 20px;
+    `
+})};
 `;
 
 export const GrayButton = styled.div<{
@@ -118,6 +179,7 @@ export const GrayButton = styled.div<{
       font-weight: 400;
       font-size: 12px;
       line-height: 20px;
+      display: none;
     `,
     tablet: css`
       font-weight: 500;

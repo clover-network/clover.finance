@@ -253,6 +253,9 @@ export const ContentBottomContent = styled.div`
   ${breakpoint({
     mobile: css`
       gap: 8px;
+      padding: 8px;
+      background-color: #232323;
+      border-radius: 16px;
     `,
     tablet_mini: css`
       gap: 8px;
@@ -928,6 +931,22 @@ export const StyledGrayButton = styled(GrayButton)`
       height: 56px;
     `,
   })}
+`;
+
+export const StyledCLVPortalButton = styled(GrayButton)`
+  height: 64px;
+  ${breakpoint({
+  mobile: css`
+    display: none;
+      height: 40px;
+    `,
+  tablet_mini: css`
+      height: 40px;
+    `,
+  tablet: css`
+      height: 56px;
+    `,
+})}
 `;
 
 export const ToolsOnCLV = styled.div`

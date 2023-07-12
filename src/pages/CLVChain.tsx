@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 import { breakpoint } from "../mixins/breakpoint";
 import { t } from '../i18n/intl';
 import { Footer } from './components/Footer';
-import { GrayButton, NormalButton } from '../components/Btn';
+import {CLVPortalButton, GrayButton, NormalButton} from '../components/Btn';
 import { useRouter } from 'next/router';
 import {WrapperDesktopOnly, WrapperMobileOnly } from "../CloverLibrary";
 import {isMobile} from "react-device-detect";
@@ -41,7 +41,7 @@ const FeaturesRightItemMobile = styled.div`
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 275px;
+  top: 320px;
 
   h3 {
     font-weight: 600;
@@ -525,7 +525,7 @@ export const CLVChain: React.FC = () => {
                       </div>
                       <span>{t('CLVPortalHint')}</span>
                     </div>
-                    <NormalButton onClick={() => window.open('https://portal.clv.org')}>{t('visitCLVPortal')}</NormalButton>
+                    <CLVPortalButton onClick={() => window.open('https://portal.clv.org')}>{t('visitCLVPortal')}</CLVPortalButton>
                   </EcosystemItem>
                   <EcosystemItem>
                     <div>

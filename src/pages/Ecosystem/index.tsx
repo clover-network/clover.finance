@@ -24,6 +24,7 @@ import {
   ProductSolutionItem,
   ProductSolutionLeft,
   ProductSolutionRight,
+  StyledCLVPortalButton,
   StyledGrayButton,
   StyledNormalButton,
   TextWrapper,
@@ -279,13 +280,13 @@ export const Ecosystem: React.FC = () => {
                     <div>{t('CLVPortal')}</div>
                     <span>{t('CLVPortalHint2')}</span>
                   </div>
-                  <StyledGrayButton
+                  <StyledCLVPortalButton
                     onClick={() => {
                       window.open('https://portal.clv.org/', '_blank')
                     }}
                   >
                     {t('learnMore')}
-                  </StyledGrayButton>
+                  </StyledCLVPortalButton>
                 </ToolsOnCLVItem>
                 <ToolsOnCLVItem>
                   <div>
