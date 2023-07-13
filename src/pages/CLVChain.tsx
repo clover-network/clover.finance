@@ -506,10 +506,10 @@ export const CLVChain: React.FC = () => {
                             window.open('https://apps.apple.com/app/clover-wallet/id1570072858', "_blank")
                           }}
                       >{t('stakeOnMobile')}</NormalButton>
-                      <GrayButton
-                          margin='8px 0'
-                          height='40px'
-                      >{t('enterCLVPortal')}</GrayButton>
+                      {/*<GrayButton*/}
+                      {/*    margin='8px 0'*/}
+                      {/*    height='40px'*/}
+                      {/*>{t('enterCLVPortal')}</GrayButton>*/}
                       <h3>{t('smartContractsGovernance')}</h3>
                       <span>{t('smartContractsGovernanceHint')}</span>
                     </FeaturesRightItemMobile>

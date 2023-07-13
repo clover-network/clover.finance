@@ -179,7 +179,6 @@ export const GrayButton = styled.div<{
       font-weight: 400;
       font-size: 12px;
       line-height: 20px;
-      display: none;
     `,
     tablet: css`
       font-weight: 500;

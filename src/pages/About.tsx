@@ -43,7 +43,7 @@ export const About: React.FC = () => {
     const [scrollTop, setScrollTop] = useState(0)
     const firstProgressTop = isMobile ? 160 : 550;
     const secondProgressTop = isMobile ? 560 : 1200;
-    const thirdProgressTop = isMobile ? 1300 : 2500;
+    const thirdProgressTop = isMobile ? 600 : 2500;
 
     const handleScroll = () => {
         setScrollTop(window.scrollY)

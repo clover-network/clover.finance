@@ -68,7 +68,7 @@ import {
   YourPassportTopItem,
   YourPassportTopItemDiv,
   YourPassportTopItemImg,
-  YourPassportTopItemSpan,
+  YourPassportTopItemSpan, ExploreNowButton,
 } from './styled';
 import {isMobile} from 'react-device-detect';
 // @ts-ignore
@@ -267,11 +267,11 @@ export const Wallet: React.FC = () => {
                     </FirstRow>
                     <ItemContentSpan>{t('onePortalOfAllHint')}</ItemContentSpan>
                     <ItemContentSpan>{t('onePortalOfAllHint1')}</ItemContentSpan>
-                    <GetTheExtensionButton onClick={()=>{
+                    <ExploreNowButton onClick={()=>{
                       window.open('https://portal.clv.org/','_blank')
                     }}>
                       {t('exploreNow')}
-                    </GetTheExtensionButton>
+                    </ExploreNowButton>
                   </IdealAvailableItemContent>
                 </FirstIdealAvailableItemWrapper>
                 <IdealAvailableItemImg src="images/dashboard.svg" alt=""/>

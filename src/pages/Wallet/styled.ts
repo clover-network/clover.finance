@@ -642,7 +642,7 @@ export const GetTheExtensionButton = styled(NormalButton)`
   height: 64px;
   ${breakpoint({
     mobile: css`
-      display: none;
+      height: 40px;
     `,
     tablet_mini: css`
       height: 40px;
@@ -651,6 +651,21 @@ export const GetTheExtensionButton = styled(NormalButton)`
       height: 56px;
     `,
   })}
+`;
+
+export const ExploreNowButton = styled(NormalButton)`
+  height: 64px;
+  ${breakpoint({
+  mobile: css`
+      display: none;
+    `,
+  tablet_mini: css`
+      height: 40px;
+    `,
+  tablet: css`
+      height: 56px;
+    `,
+})}
 `;
 
 export const IdealAvailableItem = styled.div`
