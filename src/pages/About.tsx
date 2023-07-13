@@ -287,7 +287,51 @@ export const About: React.FC = () => {
                                         </div>
                                         <div className={scrollTop > thirdProgressTop ? 'animation3' : ''}>
                                             <img src='images/progress_icon1_white.svg' alt=''/>
-                                            <span>Continue to build strategic partnerships with Web3 and Defi entities.</span>
+                                            <span>Continue to build strategic partnerships with Web3 and Defi entities</span>
+                                        </div>
+
+                                        <h3 className={scrollTop > thirdProgressTop ? 'animation2' : ''}>(Q2)</h3>
+                                        <div className={scrollTop > thirdProgressTop ? 'animation3' : ''}>
+                                            <img src='images/progress_icon1_white.svg' alt=''/>
+                                            <span>Launch of in-wallet instant messaging feature: Wallet Talk MVP version</span>
+                                        </div>
+                                        <div className={scrollTop > thirdProgressTop ? 'animation3' : ''}>
+                                            <img src='images/progress_icon1_white.svg' alt=''/>
+                                            <span>CLV mobile wallet: Released version 6.1.0 (added new option to choose language)</span>
+                                        </div>
+                                        <div className={scrollTop > thirdProgressTop ? 'animation3' : ''}>
+                                            <img src='images/progress_icon1_white.svg' alt=''/>
+                                            <span>Upgraded to Chrome Manifest v3</span>
+                                        </div>
+                                        <div className={scrollTop > thirdProgressTop ? 'animation3' : ''}>
+                                            <img src='images/progress_icon1_white.svg' alt=''/>
+                                            <span>Optimised Ethereum transactions utilizing Alchemy RPC</span>
+                                        </div>
+                                        <div className={scrollTop > thirdProgressTop ? 'animation3' : ''}>
+                                            <img src='images/progress_icon1_white.svg' alt=''/>
+                                            <span>Flutter SDK upgraded to v3</span>
+                                        </div>
+                                        <div className={scrollTop > thirdProgressTop ? 'animation3' : ''}>
+                                            <img src='images/progress_icon1_white.svg' alt=''/>
+                                            <span>Support of Polygon ID</span>
+                                        </div>
+
+                                        <h3 className={scrollTop > thirdProgressTop ? 'animation2' : ''}>(Q3)</h3>
+                                        <div className={scrollTop > thirdProgressTop ? 'animation3' : ''}>
+                                            <img src='images/progress_icon1_white.svg' alt=''/>
+                                            <span>Wallet Talk second phase of development. Includes the possibility to create and manage groups, send documents and images seamlessly, and implementation of ChatGPT(more details to be announced soon)</span>
+                                        </div>
+                                        <div className={scrollTop > thirdProgressTop ? 'animation3' : ''}>
+                                            <img src='images/progress_icon1_white.svg' alt=''/>
+                                            <span>Enhancing new visual “Settings” displays for both CLV mobile & extension</span>
+                                        </div>
+                                        <div className={scrollTop > thirdProgressTop ? 'animation3' : ''}>
+                                            <img src='images/progress_icon1_white.svg' alt=''/>
+                                            <span>Improved mobile viewing. Adding WT as an in-wallet feature inside the extension and mobile wallet</span>
+                                        </div>
+                                        <div className={scrollTop > thirdProgressTop ? 'animation3' : ''}>
+                                            <img src='images/progress_icon1_white.svg' alt=''/>
+                                            <span>Release of Account Abstraction wallet - based on EIP 4337 protocol</span>
                                         </div>
                                     </ProgressQ2Right>
                                 </ProgressItem>

@@ -13,6 +13,56 @@ import {ScreenScrollDirection} from "./Main";
 
 const ContentInfo = styled.div`
   
+  &>div:nth-child(1){
+    position: relative;
+    background: linear-gradient(to right, #333232, #0C0B0B, #0C0B0B);
+    //background: linear-gradient(90deg, #0C0B0B, #0C0B0B),
+    //linear-gradient(90deg, #333232, #333232);
+
+    &::before{
+      content: " ";
+      background-image:url("/images/mobile_arrow_up.svg");
+      position: absolute;
+      height: 12px;
+      width: 14px;
+      left: 50%;
+      margin-left: -7px;
+      bottom: -14px;
+    }
+  }
+  &>div:nth-child(4){
+    position: relative;
+    &::before{
+      content: " ";
+      background-image:url("/images/mobile_arrow_down.svg");
+      position: absolute;
+      height: 14px;
+      width: 14px;
+      left: 50%;
+      margin-left: -7px;
+      bottom: -14px;
+    }
+  }
+
+  &>div:nth-child(5){
+    position: relative;
+    &::before{
+      content: " ";
+      background-image:url("/images/mobile_arrow_down.svg");
+      position: absolute;
+      height: 14px;
+      width: 14px;
+      left: 50%;
+      margin-left: -7px;
+      bottom: -14px;
+    }
+  }
+  &>div:nth-child(3){
+    background: linear-gradient(to right, #403F3F, #262626, #262626);
+   
+  }
+  
+
 `
 
 const FeaturesContentMobile = styled.div`
@@ -294,36 +344,37 @@ export const CLVChain: React.FC = () => {
                 </TextWrapper>
               </ContentWrapper>
               <WrapperMobileOnly>
-                <ContentBottom>
-                  <img className="img-top" src='images/mobile_clv_chain_left.svg' alt='' />
-                  <ContentInfo>
-                    <ContentBottomItem>
-                      <img src='images/introdusing_icon1.svg' alt='' />
-                      <span>{t('CLVMainnet')}</span>
-                    </ContentBottomItem>
-                    <ContentBottomItemNormal>
-                      <img src='images/introdusing_icon2.svg' alt='' />
-                      <span>{t('governanceExchange')}</span>
-                    </ContentBottomItemNormal>
-                    <ContentBottomItemNormal>
-                      <img src='images/introdusing_icon3.svg' alt='' />
-                      <span>{t('bridgingTechnology')}</span>
-                    </ContentBottomItemNormal>
-                    <ContentBottomItemNormal>
-                      <img src='images/introdusing_icon4.svg' alt='' />
-                      <span>{t('dAppDevelopment')}</span>
-                    </ContentBottomItemNormal>
-                    <ContentBottomItem>
-                      <img src='images/introdusing_icon5.svg' alt='' />
-                      <span>{t('CLVParachain')}</span>
-                    </ContentBottomItem>
-                    <ContentBottomItemNormal>
-                      <img src='images/introdusing_icon6.svg' alt='' />
-                      <span>{t('smartContract')}</span>
-                    </ContentBottomItemNormal>
-                  </ContentInfo>
-                  <img className="img-top" src='images/mobile_clv_chain_right.svg' alt='' />
-                </ContentBottom>
+                <img src="/images/mobile_chain_img.png" style={{width:'100%',marginTop:'20px'}} alt=""/>
+                {/*<ContentBottom>*/}
+                {/*  <img className="img-top" src='images/mobile_clv_chain_left.svg' alt='' />*/}
+                {/*  <ContentInfo>*/}
+                {/*    <ContentBottomItemNormal>*/}
+                {/*      <img src='images/introdusing_icon2.svg' alt='' />*/}
+                {/*      <span>{t('governanceExchange')}</span>*/}
+                {/*    </ContentBottomItemNormal>*/}
+                {/*    <ContentBottomItem>*/}
+                {/*      <img src='images/introdusing_icon1.svg' alt='' />*/}
+                {/*      <span style={{fontSize:'14px'}}> {t('CLVMainnet')}</span>*/}
+                {/*    </ContentBottomItem>*/}
+                {/*    <ContentBottomItemNormal>*/}
+                {/*      <img src='images/introdusing_icon3.svg' alt='' />*/}
+                {/*      <span style={{fontSize:'14px'}}>{t('bridgingTechnology')}</span>*/}
+                {/*    </ContentBottomItemNormal>*/}
+                {/*    <ContentBottomItem>*/}
+                {/*      <img src='images/introdusing_icon5.svg' alt='' />*/}
+                {/*      <span>{t('CLVParachain')}</span>*/}
+                {/*    </ContentBottomItem>*/}
+                {/*    <ContentBottomItemNormal>*/}
+                {/*      <img src='images/introdusing_icon6.svg' alt='' />*/}
+                {/*      <span>{t('smartContract')}</span>*/}
+                {/*    </ContentBottomItemNormal>*/}
+                {/*    <ContentBottomItemNormal>*/}
+                {/*      <img src='images/introdusing_icon4.svg' alt='' />*/}
+                {/*      <span>{t('dAppDevelopment')}</span>*/}
+                {/*    </ContentBottomItemNormal>*/}
+                {/*  </ContentInfo>*/}
+                {/*  <img className="img-top" src='images/mobile_clv_chain_right.png' alt='' />*/}
+                {/*</ContentBottom>*/}
               </WrapperMobileOnly>
               <WrapperDesktopOnly>
                 <ContentBottom>
@@ -865,7 +916,7 @@ const ContentBottomItem = styled.div`
     mobile: css`
       width: 100%;
       height: 80px;
-      margin-bottom: 8px;
+      margin-bottom: 14px;
     `,
     tablet: css`
     `,
