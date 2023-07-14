@@ -237,7 +237,7 @@ export const Developers: React.FC = () => {
                 <ContentBottomGraybutton
                   onClick={() =>
                     window.open(
-                      'https://docs.google.com/forms/u/3/d/e/1FAIpQLSfQevVEw_hL44vvbcMkYB8kKdzTFAbtD1pR-QVraaA7h4jpKg/viewform',
+                      'https://docs.google.com/forms/d/e/1FAIpQLSd9IwHsPoxTdEsgTmW6dS7c0Jb_wTku-hJI9DGlXSr6QU_yiw/viewform',
                       '_blank',
                     )
                   }
