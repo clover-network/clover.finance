@@ -840,7 +840,7 @@ export const Wrapper = styled.div`
   ${breakpoint({
     mobile: css`
       padding: 0 24px;
-      max-width: 375px;
+      max-width: 481px;
     `,
     tablet_mini: css`
       padding: 0 24px;
