@@ -1,24 +1,25 @@
-import React, { useContext, useEffect, useRef } from "react";
-import { HorizontallyCentered, SmallerSubtitle } from "./CloverLibrary";
-import styled, { css, useTheme } from "styled-components";
-import { SplashModeContext, SplashPageMode } from "./SplashModeContext";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { breakpoint } from "./mixins/breakpoint";
-import { AnchorLinkIds } from "./AnchorLinkIds";
-import { Socials } from "./Socials";
-import { MenuContext } from "./MenuContextProvider";
-import { HorizontalMiniGutters } from "./mixins/HorizontalGutters";
+import React, { useContext, useEffect, useRef } from 'react';
+import { HorizontallyCentered, SmallerSubtitle } from './CloverLibrary';
+import styled, { css, useTheme } from 'styled-components';
+import { SplashModeContext, SplashPageMode } from './SplashModeContext';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { breakpoint } from './mixins/breakpoint';
+import { AnchorLinkIds } from './AnchorLinkIds';
+import { Socials } from './Socials';
+import { MenuContext } from './MenuContextProvider';
+import { HorizontalMiniGutters } from './mixins/HorizontalGutters';
 
-export const SisterNet: React.FC<{ mode: SplashPageMode; src: string }> = (
-  props
-) => {
-  const url = props.mode === SplashPageMode.CLOVER ? "/sakura.html" : "/";
+export const SisterNet: React.FC<{
+  mode: SplashPageMode;
+  src: string;
+}> = props => {
+  const url = props.mode === SplashPageMode.CLOVER ? '/sakura.html' : '/';
   return (
     <>
       <SisterNetworkName>
         <a href={url}>
-          {props.mode === SplashPageMode.CLOVER && "SAKURA SISTERNET"}
+          {props.mode === SplashPageMode.CLOVER && 'SAKURA SISTERNET'}
         </a>
       </SisterNetworkName>
       <a href={url}>
@@ -30,16 +31,16 @@ export const SisterNet: React.FC<{ mode: SplashPageMode; src: string }> = (
 
 const Hr = styled.hr`
   height: 3px;
-  color: ${(props) => props.theme.colors.TITLE};
-  background-color: ${(props) => props.theme.colors.TITLE};
+  color: ${props => props.theme.colors.TITLE};
+  background-color: ${props => props.theme.colors.TITLE};
   border: none;
   margin: 1em 0;
 `;
 
 export const Navbar = () => {
   const mode = useContext(SplashModeContext);
-  const logo = mode ? "images/sakura.svg" : "images/Clover-Logo.svg";
-  const sisterLogo = mode ? "images/Clover-Logo.svg" : "images/sakura.svg";
+  const logo = mode ? 'images/sakura.svg' : 'images/Clover-Logo.svg';
+  const sisterLogo = mode ? 'images/Clover-Logo.svg' : 'images/sakura.svg';
   const ref = useRef<HTMLDivElement>(null);
 
   const { showMenu, setShowMenu } = useContext(MenuContext);
@@ -53,10 +54,10 @@ export const Navbar = () => {
       }
     }
     // Bind the event listener
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
     return () => {
       // Unbind the event listener on clean up
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [ref, setShowMenu]);
 
@@ -65,7 +66,7 @@ export const Navbar = () => {
     <>
       <DivNavbar>
         <ColRel>
-          <MenuBars
+          {/* <MenuBars
             icon={faBars}
             color={theme.colors.ACCENT}
             //https://fontawesome.com/v5.15/how-to-use/on-the-web/styling/sizing-icons
@@ -77,7 +78,7 @@ export const Navbar = () => {
               e.preventDefault();
               setShowMenu(true);
             }}
-          />
+          /> */}
         </ColRel>
         <ColAlignCenter>
           <ImgLogo src={logo} />
@@ -89,16 +90,16 @@ export const Navbar = () => {
         </ColAlignRight>
         {showMenu && (
           <DivMenu ref={ref}>
-            <Close
+            {/* <Close
               icon={faTimes}
               color={theme.colors.ACCENT}
-              width={"1.33em"}
-              size={"lg"}
-              onClick={(e) => {
+              width={'1.33em'}
+              size={'lg'}
+              onClick={e => {
                 e.stopPropagation();
                 setShowMenu(false);
               }}
-            />
+            /> */}
             <HorizontallyCentered>
               <SisterNet mode={mode} src={sisterLogo} />
             </HorizontallyCentered>
@@ -130,7 +131,7 @@ const CloverMenuItems: React.FC<{ closeMenu: () => void }> = ({
     <>
       <SmallerSubtitle>
         <a onClick={closeMenu} href={`#${AnchorLinkIds.ARTICLES}`}>
-          About Polkadot Parachain Auction{" "}
+          About Polkadot Parachain Auction{' '}
         </a>
       </SmallerSubtitle>
       <SmallerSubtitle>
@@ -145,17 +146,17 @@ const CloverMenuItems: React.FC<{ closeMenu: () => void }> = ({
       </SmallerSubtitle>
       <SmallerSubtitle>
         <a onClick={closeMenu} href={`#${AnchorLinkIds.TOKEN}`}>
-          CLV Token{" "}
+          CLV Token{' '}
         </a>
       </SmallerSubtitle>
       <SmallerSubtitle>
         <a onClick={closeMenu} href={`#${AnchorLinkIds.ECOSYSTEM}`}>
-          Build on CLV{" "}
+          Build on CLV{' '}
         </a>
       </SmallerSubtitle>
       <SmallerSubtitle>
         <a onClick={closeMenu} href={`#${AnchorLinkIds.DNA}`}>
-          Our Partners and Update{" "}
+          Our Partners and Update{' '}
         </a>
       </SmallerSubtitle>
     </>
@@ -169,7 +170,7 @@ const SakuraMenuItems: React.FC<{ closeMenu: () => void }> = ({
     <>
       <SmallerSubtitle>
         <a onClick={closeMenu} href={`#${AnchorLinkIds.ARTICLES}`}>
-          About Polkadot Parachain Auction{" "}
+          About Polkadot Parachain Auction{' '}
         </a>
       </SmallerSubtitle>
       <SmallerSubtitle>
@@ -184,12 +185,12 @@ const SakuraMenuItems: React.FC<{ closeMenu: () => void }> = ({
       </SmallerSubtitle>
       <SmallerSubtitle>
         <a onClick={closeMenu} href={`#${AnchorLinkIds.TOKEN}`}>
-          CLV Token{" "}
+          CLV Token{' '}
         </a>
       </SmallerSubtitle>
       <SmallerSubtitle>
         <a onClick={closeMenu} href={`#${AnchorLinkIds.DNA}`}>
-          Our Partners and Update{" "}
+          Our Partners and Update{' '}
         </a>
       </SmallerSubtitle>
     </>
@@ -204,9 +205,9 @@ const DivMenu = styled.div`
   top: 0;
   left: 0;
 
-  background: ${(props) => props.theme.colors.BACKGROUND};
+  background: ${props => props.theme.colors.BACKGROUND};
 
-  outline: ${(props) => props.theme.colors.NEUTRAL} solid 5px;
+  outline: ${props => props.theme.colors.NEUTRAL} solid 5px;
 
   line-height: 2em;
 
@@ -215,7 +216,7 @@ const DivMenu = styled.div`
 
   margin: 5px;
 
-  border-radius: ${(props) => props.theme.misc.DEFAULT_BORDER_RADIUS};
+  border-radius: ${props => props.theme.misc.DEFAULT_BORDER_RADIUS};
 
   ${breakpoint(css`
     margin: 0;
@@ -241,7 +242,7 @@ const SisterNetworkContainerHiddenOnMobile = styled(HorizontallyCentered)`
 const SisterNetworkName = styled(SmallerSubtitle)`
   cursor: pointer;
   margin: 0;
-  a{
+  a {
     text-decoration: none;
   }
 `;
@@ -254,7 +255,7 @@ const ImgLogo = styled.img`
 `;
 
 const MenuBars = styled(FontAwesomeIcon)`
-  color: ${(props) => props.theme.colors.ACCENT};
+  color: ${props => props.theme.colors.ACCENT};
 `;
 const Close = styled(MenuBars)`
   margin-left: auto;

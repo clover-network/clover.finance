@@ -1,12 +1,12 @@
-import React from "react";
-import { BodyText, Small, SpacerHorizontal } from "./CloverLibrary";
+import React from 'react';
+import { BodyText, Small, SpacerHorizontal } from './CloverLibrary';
 
-import { faCaretDown, faCaretUp } from "@fortawesome/free-solid-svg-icons";
+import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import styled from "styled-components";
-import { HorizontalMiniGutters } from "./mixins/HorizontalGutters";
+import styled from 'styled-components';
+import { HorizontalMiniGutters } from './mixins/HorizontalGutters';
 
 interface CoinInfo {
   label: string;
@@ -41,7 +41,7 @@ const CoinTicker: React.FC<{
         <EmphasisText>{`${stats.balance.toFixed(2)} USD`}</EmphasisText>
         <PriceAction>
           <PercentChangeSpan isPositive={isPositive}>
-            <FontAwesomeIcon icon={isPositive ? faCaretUp : faCaretDown} />
+            {/* <FontAwesomeIcon icon={isPositive ? faCaretUp : faCaretDown} /> */}
           </PercentChangeSpan>
           <SpacerHorizontal width="5px" />
           <PercentChangeSpan isPositive={isPositive}>
@@ -60,7 +60,7 @@ const PriceAction = styled(Small)`
 `;
 
 const PercentChangeSpan = styled.span<{ isPositive: boolean }>`
-  color: ${(props) =>
+  color: ${props =>
     props.isPositive
       ? props.theme.colors.TICKER_POSITIVE
       : props.theme.colors.TICKER_NEGATIVE};
@@ -86,7 +86,7 @@ const ImgCoin = styled.img`
 `;
 
 const EmphasisText = styled(BodyText)`
-  color: ${(props) => props.theme.colors.NEUTRAL};
+  color: ${props => props.theme.colors.NEUTRAL};
   margin: 0;
 `;
 
@@ -98,37 +98,37 @@ const DivTicker = styled.div`
   margin-left: 48px;
 `;
 
-export const PriceStats = (data:any) => {
+export const PriceStats = (data: any) => {
   const assetData = data.assetData;
   return (
     <DivPriceStatsContainer>
       <CoinTicker
         baseCoin={{
-          label: "Clover",
-          symbol: "CLV",
-          icon: "images/coins/CloverLogo.svg",
+          label: 'Clover',
+          symbol: 'CLV',
+          icon: 'images/coins/CloverLogo.svg',
         }}
         stats={{
           balance: assetData['CLV']?.curPrice ?? 0,
-          percentChange: assetData['CLV']?.changepct24hour ?? 0
+          percentChange: assetData['CLV']?.changepct24hour ?? 0,
         }}
       />
       <CoinTicker
         baseCoin={{
-          label: "Ethereum",
-          symbol: "ETH",
-          icon: "images/coins/EthereumLogo.svg",
+          label: 'Ethereum',
+          symbol: 'ETH',
+          icon: 'images/coins/EthereumLogo.svg',
         }}
         stats={{
           balance: assetData['ETH']?.curPrice ?? 0,
-          percentChange: assetData['ETH']?.changepct24hour ?? 0
+          percentChange: assetData['ETH']?.changepct24hour ?? 0,
         }}
       />
       <CoinTicker
         baseCoin={{
-          label: "Bitcoin",
-          symbol: "BTC",
-          icon: "images/coins/BitcoinLogo.svg",
+          label: 'Bitcoin',
+          symbol: 'BTC',
+          icon: 'images/coins/BitcoinLogo.svg',
         }}
         stats={{
           balance: assetData['BTC']?.curPrice ?? 0,
@@ -137,9 +137,9 @@ export const PriceStats = (data:any) => {
       />
       <CoinTicker
         baseCoin={{
-          label: "Polkadot",
-          symbol: "DOT",
-          icon: "images/coins/Polkadot.svg",
+          label: 'Polkadot',
+          symbol: 'DOT',
+          icon: 'images/coins/Polkadot.svg',
         }}
         stats={{
           balance: assetData['DOT']?.curPrice ?? 0,
@@ -148,9 +148,9 @@ export const PriceStats = (data:any) => {
       />
       <CoinTicker
         baseCoin={{
-          label: "Solana",
-          symbol: "SOL",
-          icon: "images/coins/SolanaLogo.svg",
+          label: 'Solana',
+          symbol: 'SOL',
+          icon: 'images/coins/SolanaLogo.svg',
         }}
         stats={{
           balance: assetData['SOL']?.curPrice ?? 0,
@@ -159,9 +159,9 @@ export const PriceStats = (data:any) => {
       />
       <CoinTicker
         baseCoin={{
-          label: "Fantom",
-          symbol: "FTM",
-          icon: "images/coins/FantomLogo.svg",
+          label: 'Fantom',
+          symbol: 'FTM',
+          icon: 'images/coins/FantomLogo.svg',
         }}
         stats={{
           balance: assetData['FTM']?.curPrice ?? 0,
@@ -170,9 +170,9 @@ export const PriceStats = (data:any) => {
       />
       <CoinTicker
         baseCoin={{
-          label: "Kusama",
-          symbol: "KSM",
-          icon: "images/coins/KusamaLogo.svg",
+          label: 'Kusama',
+          symbol: 'KSM',
+          icon: 'images/coins/KusamaLogo.svg',
         }}
         stats={{
           balance: assetData['KSM']?.curPrice ?? 0,

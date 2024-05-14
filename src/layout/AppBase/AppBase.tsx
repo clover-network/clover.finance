@@ -1,6 +1,6 @@
 import { ReactNode, useState, useEffect } from 'react';
 import intl from 'react-intl-universal';
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider } from 'styled-components';
 import { useLocale } from '../../i18n/useLocale';
 import { locales } from '../../i18n';
 import { ThemeClover } from '../../themes/ThemeClover';
@@ -27,7 +27,7 @@ export const AppBase = ({ children }: IAppBaseProps) => {
 
   return (
     <ThemeProvider theme={ThemeClover}>
-      {initDone && children}
+      <div>{initDone && children}</div>
     </ThemeProvider>
   );
 };
