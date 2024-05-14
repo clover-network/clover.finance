@@ -301,7 +301,7 @@ const WrapperTableAndTableMini = styled.div`
 export default function NewHeader(props: Props): ReactElement {
   const { navList, currentTab, handleChange } = props;
   const [showNavs, setShowNavs] = useState(false);
-  const isWallet = currentTab.name === t('wallet')
+  const isWallet = false
   const location = useRouter();
 
   const onOpenUrl = (url: string) => {

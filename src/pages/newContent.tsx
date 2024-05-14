@@ -1,18 +1,18 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import SwiperCore, {Pagination} from 'swiper';
-import {t} from '../i18n/intl';
-import {useRouter} from 'next/router';
+import SwiperCore, { Pagination } from 'swiper';
+import { t } from '../i18n/intl';
+import { useRouter } from 'next/router';
 import NewHeader from '../components/newHeader';
-import {Main} from './Main';
-import {About} from './About';
-import {CLVChain} from './CLVChain';
-import {Wallet} from './Wallet';
-import {Developers} from './Developers';
-import {Ecosystem} from './Ecosystem';
-import styled, {css} from 'styled-components';
-import {breakpoint} from '../mixins/breakpoint';
+import { Main } from './Main';
+import { About } from './About';
+import { CLVChain } from './CLVChain';
+import { Wallet } from './Wallet';
+import { Developers } from './Developers';
+import { Ecosystem } from './Ecosystem';
+import styled, { css } from 'styled-components';
+import { breakpoint } from '../mixins/breakpoint';
 
 SwiperCore.use([Pagination]);
 
@@ -21,54 +21,47 @@ const Wrapper = styled.div`
   position: relative;
 
   ${breakpoint({
-    mobile: css`
-    `,
-    tablet_mini: css`
-    `,
-    tablet: css`
-    `,
+    mobile: css``,
+    tablet_mini: css``,
+    tablet: css``,
   })}
 `;
 
 export const NewContent = () => {
   const navList = [
     {
-      name: t('wallet'),
-      path: "/",
+      name: t('home'),
+      path: '/',
     },
     {
       name: t('CLVChain'),
-      path: "/?type=CLVChain",
+      path: '/?type=CLVChain',
       menuList: [
         {
           text: t('crossChainExplorer'),
-          url: 'https://tx.clover.finance/#/'
+          url: 'https://tx.clover.finance/#/',
         },
         {
           text: t('EVMBridge'),
-          url: 'https://bridge.clv.org/#/'
+          url: 'https://bridge.clv.org/#/',
         },
         {
           text: t('CLVScan'),
-          url: 'https://clvscan.com/'
+          url: 'https://clvscan.com/',
         },
-      ]
-    },
-    {
-      name: t('home'),
-      path: "/?type=home",
+      ],
     },
     {
       name: t('about'),
-      path: "/?type=about",
+      path: '/?type=about',
     },
     {
       name: t('developers'),
-      path: "/?type=developers",
+      path: '/?type=developers',
     },
     {
       name: t('ecosystem'),
-      path: "/?type=ecosystem",
+      path: '/?type=ecosystem',
     },
   ];
   const [selectTab, setSelectTab] = useState(navList[0]);
@@ -77,23 +70,20 @@ export const NewContent = () => {
   useEffect(() => {
     const routeSearch = window.location.search;
     switch (routeSearch) {
-      case "":
+      case '':
         setSelectTab(navList[0]);
         break;
-      case "?type=home":
+      case '?type=about':
         setSelectTab(navList[2]);
         break;
-      case "?type=about":
-        setSelectTab(navList[3]);
-        break;
-      case "?type=CLVChain":
+      case '?type=CLVChain':
         setSelectTab(navList[1]);
         break;
-      case "?type=developers":
-        setSelectTab(navList[4]);
+      case '?type=developers':
+        setSelectTab(navList[3]);
         break;
-      case "?type=ecosystem":
-        setSelectTab(navList[5]);
+      case '?type=ecosystem':
+        setSelectTab(navList[4]);
         break;
       default:
         setSelectTab(navList[0]);
@@ -101,7 +91,7 @@ export const NewContent = () => {
     }
   }, [location]);
   const changeTab = (tab: any) => {
-    location.push(tab.path, undefined, {shallow: true});
+    location.push(tab.path, undefined, { shallow: true });
     setSelectTab(tab);
   };
 
@@ -112,18 +102,18 @@ export const NewContent = () => {
         currentTab={selectTab}
         handleChange={(tab: any) => changeTab(tab)}
       />
-      {selectTab.name === t('wallet' || window.location.search === '') && <Wallet/>}
-      {selectTab.name === t('CLVChain') && <CLVChain/>}
-      {(selectTab.name === t('home')) && (
+      {/* {selectTab.name === t('wallet' || window.location.search === '') && <Wallet/>} */}
+      {selectTab.name === t('CLVChain') && <CLVChain />}
+      {(selectTab.name === t('home') || window.location.search === '') && (
         <Main
           startBuild={() => {
             changeTab(navList[4]);
           }}
         />
       )}
-      {selectTab.name === t('about') && <About/>}
-      {selectTab.name === t('developers') && <Developers/>}
-      {selectTab.name === t('ecosystem') && <Ecosystem/>}
+      {selectTab.name === t('about') && <About />}
+      {selectTab.name === t('developers') && <Developers />}
+      {selectTab.name === t('ecosystem') && <Ecosystem />}
     </Wrapper>
   );
 };

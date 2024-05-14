@@ -1,14 +1,14 @@
 import React from 'react';
-import styled, {css} from 'styled-components';
-import {breakpoint} from '../../mixins/breakpoint';
-import {t} from '../../i18n/intl';
-import {WrapperDesktopOnly, WrapperMobileOnly} from '../../CloverLibrary';
+import styled, { css } from 'styled-components';
+import { breakpoint } from '../../mixins/breakpoint';
+import { t } from '../../i18n/intl';
+import { WrapperDesktopOnly, WrapperMobileOnly } from '../../CloverLibrary';
 
 interface FooterProps {
   isWallet?: boolean;
 }
 
-export const Footer = ({isWallet}: FooterProps) => {
+export const Footer = ({ isWallet }: FooterProps) => {
   const prefix = isWallet ? 'black-' : '';
   return (
     <Wrapper isWallet={isWallet}>
@@ -38,7 +38,7 @@ export const Footer = ({isWallet}: FooterProps) => {
                   </Link>
                 </Links>
               </FooterColumn>
-              <FooterColumn>
+              {/* <FooterColumn>
                 <FooterColumnLabel isWallet={isWallet}>
                   {t('products')}
                 </FooterColumnLabel>
@@ -89,7 +89,7 @@ export const Footer = ({isWallet}: FooterProps) => {
                     </a>
                   </Link>
                 </Links>
-              </FooterColumn>
+              </FooterColumn> */}
               <FooterColumn>
                 <FooterColumnLabel isWallet={isWallet}>
                   {t('contactUs')}
@@ -133,42 +133,42 @@ export const Footer = ({isWallet}: FooterProps) => {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <SocialsImg src={`images/${prefix}telegram.svg`}/>
+                    <SocialsImg src={`images/${prefix}telegram.svg`} />
                   </a>
                   <a
                     href="https://twitter.com/clover_finance/"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <SocialsImg src={`images/${prefix}twitter.svg`}/>
+                    <SocialsImg src={`images/${prefix}twitter.svg`} />
                   </a>
                   <a
                     href="https://discord.com/invite/M6SxuXqMVB"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <SocialsImg src={`images/${prefix}discord.svg`}/>
+                    <SocialsImg src={`images/${prefix}discord.svg`} />
                   </a>
                   <a
                     href="https://medium.com/@clv_org"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <SocialsImg src={`images/${prefix}medium.svg`}/>
+                    <SocialsImg src={`images/${prefix}medium.svg`} />
                   </a>
                   <a
                     href="https://www.youtube.com/channel/UCrEoV9sw6lxTR6PLasqfP9Q"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <SocialsImg src={`images/${prefix}youtobe.svg`}/>
+                    <SocialsImg src={`images/${prefix}youtobe.svg`} />
                   </a>
                   <a
                     href="https://www.tiktok.com/@clvbyclover"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <SocialsImg src={`images/${prefix}tiktok.svg`}/>
+                    <SocialsImg src={`images/${prefix}tiktok.svg`} />
                   </a>
                 </SocialsDiv>
               </FooterBottomRight>
@@ -191,42 +191,42 @@ export const Footer = ({isWallet}: FooterProps) => {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <SocialsImg src={`images/${prefix}telegram.svg`}/>
+                    <SocialsImg src={`images/${prefix}telegram.svg`} />
                   </a>
                   <a
                     href="https://twitter.com/clover_finance/"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <SocialsImg src={`images/${prefix}twitter.svg`}/>
+                    <SocialsImg src={`images/${prefix}twitter.svg`} />
                   </a>
                   <a
                     href="https://discord.com/invite/M6SxuXqMVB"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <SocialsImg src={`images/${prefix}discord.svg`}/>
+                    <SocialsImg src={`images/${prefix}discord.svg`} />
                   </a>
                   <a
                     href="https://medium.com/@clv_org"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <SocialsImg src={`images/${prefix}medium.svg`}/>
+                    <SocialsImg src={`images/${prefix}medium.svg`} />
                   </a>
                   <a
                     href="https://www.youtube.com/channel/UCrEoV9sw6lxTR6PLasqfP9Q"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <SocialsImg src={`images/${prefix}youtobe.svg`}/>
+                    <SocialsImg src={`images/${prefix}youtobe.svg`} />
                   </a>
                   <a
                     href="https://www.tiktok.com/@clvbyclover"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <SocialsImg src={`images/${prefix}tiktok.svg`}/>
+                    <SocialsImg src={`images/${prefix}tiktok.svg`} />
                   </a>
                 </SocialsDiv>
               </FooterBottomRight>
@@ -241,8 +241,8 @@ export const Footer = ({isWallet}: FooterProps) => {
 const Wrapper = styled.div<{
   isWallet?: boolean;
 }>`
-  border-top: 1px solid ${({isWallet}) => (isWallet ? '#EFF5F5' : '#333232')};
-  background: ${({isWallet}) => (isWallet ? 'transparent' : '#000000')};
+  border-top: 1px solid ${({ isWallet }) => (isWallet ? '#EFF5F5' : '#333232')};
+  background: ${({ isWallet }) => (isWallet ? 'transparent' : '#000000')};
   width: 100%;
 `;
 
@@ -286,7 +286,7 @@ const FooterColumnLabel = styled.div<{
   font-size: 16px;
   line-height: 28px;
   letter-spacing: 0.006em;
-  color: ${({isWallet}) => (isWallet ? '#000000' : '#FFFFFF')};
+  color: ${({ isWallet }) => (isWallet ? '#000000' : '#FFFFFF')};
 
   ${breakpoint({
     mobile: css`
@@ -344,7 +344,7 @@ const FooterTopRight = styled.div<{
     font-size: 32px;
     line-height: 32px;
     letter-spacing: 0.002em;
-    color: ${({isWallet}) => (isWallet ? '#000000' : '#FFFFFF')};
+    color: ${({ isWallet }) => (isWallet ? '#000000' : '#FFFFFF')};
     margin-bottom: 24px;
 
     ${breakpoint({
@@ -352,7 +352,7 @@ const FooterTopRight = styled.div<{
         font-weight: 400;
         font-size: 12px;
         line-height: 20px;
-        color: ${({isWallet}) => (isWallet ? 'unset' : '#FFFFFF')};
+        color: ${({ isWallet }) => (isWallet ? 'unset' : '#FFFFFF')};
         opacity: 0.6;
         margin-bottom: 4px;
       `,
@@ -366,7 +366,7 @@ const FooterTopRight = styled.div<{
     font-size: 48px;
     line-height: 52px;
     letter-spacing: 0.008em;
-    color: ${({isWallet}) => (isWallet ? '#000000' : '#FFFFFF')};
+    color: ${({ isWallet }) => (isWallet ? '#000000' : '#FFFFFF')};
     text-decoration: none;
 
     ${breakpoint({
@@ -421,7 +421,7 @@ const FooterBottomLeft = styled.div<{
     font-size: 16px;
     line-height: 28px;
     letter-spacing: 0.006em;
-    color: ${({isWallet}) => (isWallet ? '#000000' : '#FFFFFF')};
+    color: ${({ isWallet }) => (isWallet ? '#000000' : '#FFFFFF')};
     opacity: 0.6;
 
     ${breakpoint({
@@ -462,7 +462,7 @@ const FooterBottomRight = styled.div<{
     font-size: 16px;
     line-height: 28px;
     letter-spacing: 0.006em;
-    color: ${({isWallet}) => (isWallet ? '#000000' : '#FFFFFF')};
+    color: ${({ isWallet }) => (isWallet ? '#000000' : '#FFFFFF')};
     opacity: 0.6;
 
     ${breakpoint({
@@ -508,14 +508,14 @@ const Links = styled.div<{
   isWallet?: boolean;
 }>`
   & > div {
-    color: ${({isWallet}) => (isWallet ? '#000000' : '#FFFFFF')};
+    color: ${({ isWallet }) => (isWallet ? '#000000' : '#FFFFFF')};
     opacity: 0.6;
 
     &:hover {
       opacity: 1;
 
       a {
-        color: ${({isWallet}) => (isWallet ? '#000000' : '#FFFFFF')};
+        color: ${({ isWallet }) => (isWallet ? '#000000' : '#FFFFFF')};
       }
     }
   }
