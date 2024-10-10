@@ -130,7 +130,7 @@ const CloverSakuraColumns = () => {
         <FooterColumnLabel>
           <SpanEmailUs>
             {t('comeSayHelloAt')}{" "}
-            <a href="mailto:info@clover.finance">info@clover.finance</a>
+            <a href="mailto:business@clv.org">business@clv.org</a>
           </SpanEmailUs>
         </FooterColumnLabel>
       </EmailColumn>

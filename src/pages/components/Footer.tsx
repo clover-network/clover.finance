@@ -18,7 +18,7 @@ export const Footer = ({ isWallet }: FooterProps) => {
             <WrapperMobileOnly>
               <FooterTopRight isWallet={isWallet}>
                 <div>{t('comeSayHello')}</div>
-                <a href="mailto:info@clover.finance">info@clover.finance</a>
+                <a href="mailto:business@clv.org">business@clv.org</a>
               </FooterTopRight>
             </WrapperMobileOnly>
             <FooterTopLeft>
@@ -119,7 +119,7 @@ export const Footer = ({ isWallet }: FooterProps) => {
             <WrapperDesktopOnly>
               <FooterTopRight isWallet={isWallet}>
                 <div>{t('comeSayHello')}</div>
-                <a href="mailto:info@clover.finance">info@clover.finance</a>
+                <a href="mailto:business@clv.org">business@clv.org</a>
               </FooterTopRight>
             </WrapperDesktopOnly>
           </FooterTop>
