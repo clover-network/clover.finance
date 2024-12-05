@@ -27,6 +27,14 @@ const Wrapper = styled.div`
   })}
 `;
 
+const Banner = styled.div`
+  width: 100%;
+  text-align: center;
+  background-color: #00f2de;
+  padding: 4px 0;
+  cursor: pointer;
+`;
+
 export const NewContent = () => {
   const navList = [
     {
@@ -97,6 +105,11 @@ export const NewContent = () => {
 
   return (
     <Wrapper>
+      <Banner
+        onClick={() => window.open('https://clvlabs.notion.site/', '_blank')}
+      >
+        Find out more about CLV 2.0
+      </Banner>
       <NewHeader
         navList={navList}
         currentTab={selectTab}
