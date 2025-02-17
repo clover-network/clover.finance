@@ -106,7 +106,7 @@ export const NewContent = () => {
   return (
     <Wrapper>
       <Banner
-        onClick={() => window.open('https://clvlabs.notion.site/', '_blank')}
+        onClick={() => window.open('https://bit.ly/4hXqH3N', '_blank')}
       >
         Find out more about CLV 2.0
       </Banner>
